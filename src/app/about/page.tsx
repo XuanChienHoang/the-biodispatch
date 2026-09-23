@@ -1,64 +1,218 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { ArrowLeft, Award, BookOpen, GraduationCap, Microscope, ShieldCheck, Stethoscope } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About The BioDispatch | Dr. Xuan Chien Hoang",
-  description: "About The BioDispatch and Dr. Xuan Chien Hoang (Dr. rer. nat.), specialist in biotechnology, metabolomics, and health intelligence.",
+  title: "About Dr. Xuan Chien Hoang · The BioDispatch",
+  description:
+    "Curator Profile: Dr. Xuan Chien Hoang (Dr. rer. nat., University of Hamburg). Research background in biotechnology, metabolomics, and evidence-based health science.",
 };
 
 export default function AboutPage() {
   return (
-    <div className="container" style={{ maxWidth: "780px", padding: "4rem 1.5rem 6rem" }}>
-      <Link href="/" style={{ color: "var(--accent)", fontWeight: 600, fontSize: "0.9rem" }}>
-        ← Back to Dispatches
-      </Link>
-      
-      <div style={{ margin: "2rem 0 3rem" }}>
-        <h1 style={{ fontSize: "2.5rem", fontWeight: 800, letterSpacing: "-0.03em", marginBottom: "1rem" }}>
-          About The BioDispatch
-        </h1>
-        <p style={{ fontSize: "1.2rem", color: "var(--text-secondary)", lineHeight: 1.6 }}>
-          Evidence-based analysis at the intersection of biotechnology, metabolomics, and next-generation healthcare innovations.
-        </p>
-      </div>
+    <main className="bg-paper text-indigo-deep">
+      {/* Header */}
+      <header className="border-b border-slate-hair bg-paper-tint">
+        <div className="mx-auto max-w-[1080px] px-6 py-12 lg:px-10 lg:py-20">
+          <Link
+            href="/"
+            className="caps inline-flex items-center gap-1.5 text-slate-ink hover:text-indigo-deep transition-colors"
+          >
+            <ArrowLeft size={13} /> Return to Front
+          </Link>
 
-      <div className="article-content" style={{ padding: 0 }}>
-        <h2>Mission & Editorial Philosophy</h2>
-        <p>
-          <strong>The BioDispatch</strong> is an independent analytical publication dedicated to translating complex 
-          molecular research and high-dimensional clinical telemetry into clear, actionable intelligence.
-        </p>
-        <p>
-          In an era inundated with generic health claims and algorithmic marketing, The BioDispatch operates on a strict 
-          <strong> evidence-based paradigm</strong>: every premise is grounded in peer-reviewed scientific literature, 
-          empirical metabolomic data, and verified clinical consensus.
-        </p>
+          <div className="mt-8 flex flex-wrap items-center gap-2">
+            <span className="caps rounded-sm bg-indigo-deep px-2.5 py-1 text-trace font-medium">
+              Lead Investigator
+            </span>
+            <span className="caps rounded-sm border border-slate-hair px-2.5 py-1 text-slate-ink font-medium">
+              Editorial Board
+            </span>
+            <span className="caps rounded-sm border border-slate-hair px-2.5 py-1 text-slate-ink font-medium">
+              University of Hamburg
+            </span>
+          </div>
 
-        <h2>Curator & Lead Author</h2>
-        <div style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: "1rem", padding: "2rem", margin: "2rem 0" }}>
-          <h3 style={{ marginTop: 0, color: "#fff" }}>Dr. Xuan Chien Hoang (Dr. rer. nat.)</h3>
-          <p style={{ color: "var(--accent)", fontWeight: 600, fontSize: "0.9rem", marginBottom: "1rem" }}>
-            Doctor of Natural Sciences (University of Hamburg, Germany)
+          <h1 className="mt-5 font-display display-lg font-black leading-[0.95] tracking-[-0.035em] text-indigo-deep">
+            Dr. Xuan Chien Hoang
+          </h1>
+
+          <p className="mt-3 text-[1.2rem] font-medium text-trace-ink font-mono">
+            Doctor of Natural Sciences (Dr. rer. nat.) · Biotechnology & Metabolomics Specialist
           </p>
-          <p style={{ fontSize: "1rem", color: "var(--text-secondary)", marginBottom: "1rem" }}>
-            Dr. Hoang brings over 8 years of specialized industry and academic experience across Germany, Europe, and APAC. 
-            His career spans end-to-end healthcare product lifecycle management, metabolomic profiling, clinical quality governance, 
-            and data intelligence.
-          </p>
-          <p style={{ fontSize: "1rem", color: "var(--text-secondary)", margin: 0 }}>
-            He has overseen the successful market deployment of over 15 EU-compliant healthcare formulations, led diagnostic 
-            testing operations, and actively contributes to the international scientific and innovation exchange between 
-            Germany and Vietnam.
+
+          <p className="mt-5 max-w-2xl text-[1.08rem] leading-relaxed text-indigo-soft">
+            Bridging fundamental molecular biochemistry, mass spectrometry metabolomics, and real-world health product
+            lifecycles across Germany, Europe, and APAC.
           </p>
         </div>
+      </header>
 
-        <h2>Core Focus Areas</h2>
-        <ul>
-          <li><strong>Untargeted & Targeted Metabolomics:</strong> Mass spectrometry profiling, small molecule biomarkers, and metabolic pathway deconvolution.</li>
-          <li><strong>Gut Microbiome & Systemic Axis:</strong> Bioactive microbial metabolites (SCFAs, secondary bile acids) and cardiovascular/metabolic impact.</li>
-          <li><strong>TechBio & Regulatory Intelligence:</strong> Machine learning in spectral prediction, EU regulatory frameworks (MDR, HWG, EFSA), and digital diagnostics.</li>
-        </ul>
+      {/* Main Content */}
+      <div className="mx-auto max-w-[1080px] px-6 py-14 lg:px-10 lg:py-20">
+        <div className="grid gap-12 lg:grid-cols-[1fr_320px]">
+          <div className="space-y-12">
+            {/* Bio section */}
+            <section>
+              <span className="caps text-slate-ink font-semibold">§ 1 · Academic & Professional Background</span>
+              <h2 className="mt-3 font-display text-[1.85rem] font-bold tracking-tight text-indigo-deep">
+                The Intersection of Biology & Telemetry
+              </h2>
+              <div className="mt-5 space-y-4 text-[1.05rem] leading-[1.75] text-indigo-soft">
+                <p>
+                  Dr. Xuan Chien Hoang earned his doctorate in natural sciences (<strong>Dr. rer. nat.</strong>) from the{" "}
+                  <strong>University of Hamburg (Germany)</strong>, specializing in biological data modeling, experimental
+                  design, and high-resolution chemical profiling.
+                </p>
+                <p>
+                  With more than 8 years of post-doctoral industry experience in Hamburg, Rostock, and Potsdam, he has directed
+                  laboratory analytical testing operations, led quality assurance pipelines adhering to strict ISO and EU
+                  pharmaceutical standards, and successfully engineered over 15 EU-compliant healthcare formulations from
+                  concept to commercial deployment.
+                </p>
+                <p>
+                  His technical domain encompasses both targeted and untargeted metabolomics, pharmacokinetic modeling (1- and
+                  2-compartment systems), bioactive compound bio-enhancement, and algorithmic data pipelines.
+                </p>
+              </div>
+            </section>
+
+            {/* Core Pillars Bento */}
+            <section>
+              <span className="caps text-slate-ink font-semibold">§ 2 · Analytical Pillars</span>
+              <h2 className="mt-3 font-display text-[1.85rem] font-bold tracking-tight text-indigo-deep">
+                Core Research Domains
+              </h2>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                <div className="rounded-sm border border-slate-hair bg-paper-tint p-5">
+                  <div className="flex items-center gap-2.5 text-trace-ink">
+                    <Microscope size={18} />
+                    <h3 className="font-display text-[1.05rem] font-bold text-indigo-deep">
+                      Metabolomics & MS Profiling
+                    </h3>
+                  </div>
+                  <p className="mt-2 text-[0.88rem] leading-relaxed text-indigo-soft">
+                    High-resolution LC-MS/MS and GC-MS spectral deconvolution, identification of low-molecular-weight
+                    phenotypic markers, and metabolic flux analysis.
+                  </p>
+                </div>
+
+                <div className="rounded-sm border border-slate-hair bg-paper-tint p-5">
+                  <div className="flex items-center gap-2.5 text-syn-ink">
+                    <GraduationCap size={18} />
+                    <h3 className="font-display text-[1.05rem] font-bold text-indigo-deep">
+                      Evidence-Based Medicine (EBM)
+                    </h3>
+                  </div>
+                  <p className="mt-2 text-[0.88rem] leading-relaxed text-indigo-soft">
+                    Zero-hallucination citation protocol (Citation-Before-Claim), systematic meta-analyses, and Bayesian
+                    prior evaluation of clinical trial endpoints.
+                  </p>
+                </div>
+
+                <div className="rounded-sm border border-slate-hair bg-paper-tint p-5">
+                  <div className="flex items-center gap-2.5 text-plasma-ink">
+                    <BookOpen size={18} />
+                    <h3 className="font-display text-[1.05rem] font-bold text-indigo-deep">
+                      Interactive Simulation Engines
+                    </h3>
+                  </div>
+                  <p className="mt-2 text-[0.88rem] leading-relaxed text-indigo-soft">
+                    Client-side pharmacokinetic calculators, enzyme inhibition models (UGT1A1, CYP3A4), and dynamic
+                    synergy matrices running without server roundtrips.
+                  </p>
+                </div>
+
+                <div className="rounded-sm border border-slate-hair bg-paper-tint p-5">
+                  <div className="flex items-center gap-2.5 text-indigo-deep">
+                    <ShieldCheck size={18} />
+                    <h3 className="font-display text-[1.05rem] font-bold text-indigo-deep">
+                      EU Regulatory Compliance
+                    </h3>
+                  </div>
+                  <p className="mt-2 text-[0.88rem] leading-relaxed text-indigo-soft">
+                    Rigorous adherence to Regulation (EC) No 1924/2006 (NHCR), German Heilmittelwerbegesetz (HWG), and
+                    clinical evidence substantiation standards.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            {/* Editorial Philosophy */}
+            <section className="border-t border-slate-hair pt-8">
+              <span className="caps text-slate-ink font-semibold">§ 3 · Editorial Mission</span>
+              <h2 className="mt-3 font-display text-[1.85rem] font-bold tracking-tight text-indigo-deep">
+                Why The BioDispatch Exists
+              </h2>
+              <p className="mt-4 text-[1.05rem] leading-[1.75] text-indigo-soft">
+                Most biomedical journalism falls into two traps: either unreadable academic paywalls or hyper-simplified,
+                scientifically groundless marketing claims.
+              </p>
+              <p className="mt-3 text-[1.05rem] leading-[1.75] text-indigo-soft">
+                <strong>The BioDispatch</strong> is dedicated to a third path: explorable, rigorous, transparent science.
+                Every article links directly to verified PubMed/DOI records and provides interactive visual models that let
+                clinicians, researchers, and curious minds test the mathematical claims themselves.
+              </p>
+            </section>
+          </div>
+
+          {/* Sidebar */}
+          <aside className="space-y-6">
+            <div className="rounded-sm border border-slate-hair bg-paper p-6 shadow-sm">
+              <div className="flex items-center gap-3">
+                <div className="h-14 w-14 rounded-full bg-indigo-deep text-trace font-mono font-bold flex items-center justify-center text-xl">
+                  CH
+                </div>
+                <div>
+                  <h3 className="font-display text-[1.15rem] font-bold text-indigo-deep">Dr. Xuan Chien Hoang</h3>
+                  <p className="caps text-[0.68rem] text-slate-ink">Dr. rer. nat. · Hamburg</p>
+                </div>
+              </div>
+
+              <div className="mt-6 space-y-3.5 border-t border-slate-hair pt-5 text-xs">
+                <div>
+                  <span className="caps text-slate-ink block">Alma Mater</span>
+                  <span className="font-semibold text-indigo-deep">University of Hamburg, Germany</span>
+                </div>
+                <div>
+                  <span className="caps text-slate-ink block">Location</span>
+                  <span className="font-semibold text-indigo-deep">Hamburg, Germany</span>
+                </div>
+                <div>
+                  <span className="caps text-slate-ink block">Languages</span>
+                  <span className="font-semibold text-indigo-deep">German · English · Vietnamese</span>
+                </div>
+                <div>
+                  <span className="caps text-slate-ink block">Leadership</span>
+                  <span className="font-semibold text-indigo-deep">Board Member, VGI e.V. (since 2019)</span>
+                </div>
+                <div>
+                  <span className="caps text-slate-ink block">Contact / Editorial Inquiries</span>
+                  <a
+                    href="mailto:hoangxuanchien86@gmail.com"
+                    className="font-mono text-trace-ink underline block break-all"
+                  >
+                    hoangxuanchien86@gmail.com
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-sm border border-slate-hair bg-paper-tint p-6">
+              <span className="caps text-slate-ink block font-semibold mb-2">Publishing Pipeline</span>
+              <p className="text-xs text-indigo-soft leading-relaxed">
+                Authored and maintained in a private Git workspace with automated continuous deployment to Vercel.
+              </p>
+              <Link
+                href="/#directory"
+                className="caps mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-indigo-deep hover:text-trace-ink"
+              >
+                Browse Published Dispatches →
+              </Link>
+            </div>
+          </aside>
+        </div>
       </div>
-    </div>
+    </main>
   );
 }
