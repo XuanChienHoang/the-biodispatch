@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { RotateCcw, Camera, Quote, ShieldCheck, WifiOff } from "lucide-react";
 import { CiteModal } from "@/components/Citation";
 import { tick } from "@/components/ui";
+import { useLanguageStore } from "@/lib/i18n";
 
 export interface Telemetry {
   key: string;
@@ -50,6 +51,8 @@ export function BiomedicalGizmoContainer({
   onExport?: () => void;
 }) {
   const [cite, setCite] = useState(false);
+  const { lang } = useLanguageStore();
+  const isVi = lang === "vi";
 
   return (
     <motion.figure
@@ -69,7 +72,7 @@ export function BiomedicalGizmoContainer({
         <span className="ml-auto flex items-center gap-1.5">
           <span className="hidden items-center gap-1.5 rounded-sm border border-slate-hair bg-paper px-2 py-1 sm:flex">
             <WifiOff size={11} className="text-syn-ink" />
-            <span className="caps text-slate-ink">local</span>
+            <span className="caps text-slate-ink">{isVi ? "nội bộ" : "local"}</span>
           </span>
           <button
             type="button"
@@ -77,17 +80,17 @@ export function BiomedicalGizmoContainer({
               onReset?.();
               tick(900, 0.03);
             }}
-            className="caps flex items-center gap-1.5 rounded-sm border border-slate-hair bg-paper px-2.5 py-1.5 text-indigo-soft transition-colors hover:border-indigo-deep hover:text-indigo-deep"
+            className="caps flex items-center gap-1.5 rounded-sm border border-slate-hair bg-paper px-2.5 py-1.5 text-indigo-soft transition-colors hover:border-indigo-deep hover:text-indigo-deep cursor-pointer"
           >
-            <RotateCcw size={11} /> reset
+            <RotateCcw size={11} /> {isVi ? "đặt lại" : "reset"}
           </button>
           {onExport && (
             <button
               type="button"
               onClick={onExport}
-              className="caps flex items-center gap-1.5 rounded-sm border border-slate-hair bg-paper px-2.5 py-1.5 text-indigo-soft transition-colors hover:border-indigo-deep hover:text-indigo-deep"
+              className="caps flex items-center gap-1.5 rounded-sm border border-slate-hair bg-paper px-2.5 py-1.5 text-indigo-soft transition-colors hover:border-indigo-deep hover:text-indigo-deep cursor-pointer"
             >
-              <Camera size={11} /> export
+              <Camera size={11} /> {isVi ? "xuất ảnh" : "export"}
             </button>
           )}
         </span>
@@ -96,7 +99,7 @@ export function BiomedicalGizmoContainer({
       {/* ---- preset strip ---- */}
       {presets && presets.length > 0 && (
         <div className="flex flex-wrap items-center gap-2 border-b border-slate-hair bg-indigo-deep px-4 py-2.5">
-          <span className="caps text-white/40">preset scenarios</span>
+          <span className="caps text-white/40">{isVi ? "kịch bản mẫu" : "preset scenarios"}</span>
           <div className="flex flex-wrap gap-1.5">
             {presets.map((p) => {
               const on = p.id === activePreset;
@@ -108,7 +111,7 @@ export function BiomedicalGizmoContainer({
                     onPreset?.(p.id);
                     tick(1400);
                   }}
-                  className={`caps rounded-sm px-2.5 py-1.5 transition-all duration-200 ${
+                  className={`caps rounded-sm px-2.5 py-1.5 transition-all duration-200 cursor-pointer ${
                     on
                       ? "bg-trace text-indigo-deep"
                       : "bg-white/8 text-white/60 hover:bg-white/16 hover:text-white"
@@ -127,10 +130,12 @@ export function BiomedicalGizmoContainer({
       <div className="grid lg:grid-cols-[248px_minmax(0,1fr)]">
         {/* control deck */}
         <div className="order-2 space-y-5 border-t border-slate-hair bg-paper-tint p-4 lg:order-1 lg:border-r lg:border-t-0">
-          <p className="caps border-b border-slate-hair pb-2 text-slate-ink">Parameter control</p>
+          <p className="caps border-b border-slate-hair pb-2 text-slate-ink">
+            {isVi ? "Điều khiển tham số" : "Parameter control"}
+          </p>
           {controls}
           <p className="caps flex items-center gap-1.5 pt-1 text-slate-ink">
-            <ShieldCheck size={12} className="text-syn-ink" /> 0 bytes transmitted
+            <ShieldCheck size={12} className="text-syn-ink" /> {isVi ? "0 byte truyền ngoài" : "0 bytes transmitted"}
           </p>
         </div>
 
@@ -161,22 +166,22 @@ export function BiomedicalGizmoContainer({
       {/* ---- insight + cite ---- */}
       <figcaption className="flex flex-col gap-4 border-t border-slate-hair bg-paper px-4 py-4 sm:flex-row sm:items-start">
         <div className="min-w-0 flex-1">
-          <p className="caps text-slate-ink">Scientific insight</p>
+          <p className="caps text-slate-ink">{isVi ? "Phân tích khoa học" : "Scientific insight"}</p>
           <div className="mt-1.5 text-[0.9rem] leading-relaxed text-indigo-soft">{insight}</div>
         </div>
         <button
           type="button"
           onClick={() => setCite(true)}
-          className="caps flex shrink-0 items-center gap-1.5 self-start rounded-sm bg-indigo-deep px-3 py-2.5 text-paper transition-colors hover:bg-indigo-mid"
+          className="caps flex shrink-0 items-center gap-1.5 self-start rounded-sm bg-indigo-deep px-3 py-2.5 text-paper transition-colors hover:bg-indigo-mid cursor-pointer"
         >
-          <Quote size={11} /> cite this model
+          <Quote size={11} /> {isVi ? "trích dẫn mô hình" : "cite this model"}
         </button>
       </figcaption>
 
       <CiteModal
         open={cite}
         onClose={() => setCite(false)}
-        title={`LavaHealth Innovation Hub — ${title}`}
+        title={`The BioDispatch — ${title}`}
         params={citeParams}
       />
     </motion.figure>
