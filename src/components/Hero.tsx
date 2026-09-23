@@ -2,12 +2,14 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Activity, Timer, BadgeCheck, ShieldCheck, Microscope } from "lucide-react";
+import { ArrowUpRight, Globe } from "lucide-react";
 import { Wordmark } from "@/components/InstrumentRail";
-
-const CH = [0.12, 0.34, 0.2, 0.62, 0.44, 0.86, 0.58, 0.71, 0.4, 0.95, 0.52, 0.66];
+import { useLanguageStore, DICT } from "@/lib/i18n";
 
 export function Hero() {
+  const { lang, setLang } = useLanguageStore();
+  const t = DICT[lang];
+
   return (
     <header className="relative overflow-hidden border-b border-slate-hair">
       {/* masthead bar */}
@@ -17,10 +19,37 @@ export function Hero() {
         </span>
         <span className="caps font-semibold text-indigo-deep">The BioDispatch</span>
         <span className="hidden h-3 w-px bg-slate-hair sm:block" />
-        <span className="caps text-slate-ink">Curator: Dr. Xuan Chien Hoang (Dr. rer. nat.)</span>
+        <span className="caps text-slate-ink">{t.curatorRole}</span>
         <span className="hidden h-3 w-px bg-slate-hair sm:block" />
         <span className="caps text-slate-ink">University of Hamburg</span>
-        <span className="caps ml-auto text-slate-ink">Evidence-Based Editorial · 2026</span>
+
+        {/* Language Switcher Badge */}
+        <div className="ml-auto flex items-center gap-2">
+          <div className="inline-flex rounded-full border border-slate-hair bg-paper-tint p-0.5 text-xs font-mono shadow-xs">
+            <button
+              type="button"
+              onClick={() => setLang("vi")}
+              className={`rounded-full px-2.5 py-1 transition-all cursor-pointer ${
+                lang === "vi"
+                  ? "bg-indigo-deep text-white font-bold shadow-xs"
+                  : "text-slate-ink hover:text-indigo-deep"
+              }`}
+            >
+              🇻🇳 Tiếng Việt
+            </button>
+            <button
+              type="button"
+              onClick={() => setLang("en")}
+              className={`rounded-full px-2.5 py-1 transition-all cursor-pointer ${
+                lang === "en"
+                  ? "bg-indigo-deep text-white font-bold shadow-xs"
+                  : "text-slate-ink hover:text-indigo-deep"
+              }`}
+            >
+              🇬🇧 English
+            </button>
+          </div>
+        </div>
       </div>
 
       <div className="relative">
@@ -33,24 +62,22 @@ export function Hero() {
           >
             <div className="flex flex-wrap items-center gap-2">
               <span className="caps rounded-sm bg-indigo-deep px-2.5 py-1.5 text-trace font-medium">
-                Metabolomic Telemetry
+                {t.heroPill1}
               </span>
               <span className="caps rounded-sm border border-slate-hair px-2.5 py-1.5 text-slate-ink font-medium">
-                Interactive Simulation Engines
+                {t.heroPill2}
               </span>
               <span className="caps rounded-sm border border-slate-hair px-2.5 py-1.5 text-slate-ink font-medium">
-                Zero-Hallucination Verified
+                {t.heroPill3}
               </span>
             </div>
 
             <h1 className="display-xl mt-6 font-display font-black leading-[0.92] tracking-[-0.04em] text-indigo-deep">
-              The BioDispatch.
+              {t.heroTitle}
             </h1>
 
-            <p className="mt-6 max-w-2xl text-[1.18rem] leading-[1.62] text-indigo-soft">
-              An independent analytical publication delivering rigorous, evidence-based insights at the intersection of
-              biotechnology, metabolomics, and next-generation clinical healthcare. Every thesis is anchored in peer-reviewed
-              literature, mass spectrometry telemetry, and verifiable pharmacokinetic models.
+            <p className="mt-6 max-w-2xl text-[1.18rem] leading-[1.65] text-indigo-soft">
+              {t.heroSubtitle}
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -58,21 +85,21 @@ export function Hero() {
                 href="#directory"
                 className="caps inline-flex items-center gap-2 rounded-sm bg-indigo-deep px-6 py-3.5 text-white transition-all duration-300 hover:bg-[#101f34] hover:shadow-lg"
               >
-                <span>Explore Corpus & Dispatches</span>
+                <span>{t.exploreCorpus}</span>
                 <span className="text-trace">↓</span>
               </a>
               <Link
                 href="/gizmos"
                 className="caps inline-flex items-center gap-2 rounded-sm border border-slate-hair bg-paper px-6 py-3.5 text-indigo-deep transition-all duration-200 hover:border-indigo-deep hover:bg-paper-tint"
               >
-                <span>Interactive Gizmos Lab</span>
+                <span>{t.interactiveLab}</span>
                 <ArrowUpRight className="h-3.5 w-3.5" />
               </Link>
               <Link
                 href="/about"
                 className="caps inline-flex items-center gap-1.5 text-slate-ink hover:text-indigo-deep px-3 py-2 transition-colors"
               >
-                <span>About Lead Author</span>
+                <span>{t.aboutAuthor}</span>
                 <span>→</span>
               </Link>
             </div>
@@ -87,27 +114,27 @@ export function Hero() {
           >
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               <div className="border-l-2 border-indigo-deep pl-4">
-                <span className="caps text-slate-ink">Lead Investigator</span>
+                <span className="caps text-slate-ink">{t.leadInvestigator}</span>
                 <p className="num mt-1 text-[1.15rem] font-bold text-indigo-deep">Dr. Xuan Chien Hoang</p>
-                <p className="mt-0.5 text-[0.8rem] text-slate-ink">Doctor of Natural Sciences (Hamburg)</p>
+                <p className="mt-0.5 text-[0.8rem] text-slate-ink">{t.leadInvestigatorSub}</p>
               </div>
 
               <div className="border-l-2 border-trace pl-4">
-                <span className="caps text-slate-ink">Core Focus</span>
-                <p className="num mt-1 text-[1.15rem] font-bold text-indigo-deep">Metabolomics & TechBio</p>
-                <p className="mt-0.5 text-[0.8rem] text-slate-ink">Targeted / Untargeted mass spec profiling</p>
+                <span className="caps text-slate-ink">{t.coreFocus}</span>
+                <p className="num mt-1 text-[1.15rem] font-bold text-indigo-deep">{t.coreFocusTitle}</p>
+                <p className="mt-0.5 text-[0.8rem] text-slate-ink">{t.coreFocusSub}</p>
               </div>
 
               <div className="border-l-2 border-syn pl-4">
-                <span className="caps text-slate-ink">Editorial Rigour</span>
-                <p className="num mt-1 text-[1.15rem] font-bold text-indigo-deep">100% DOI Verified</p>
-                <p className="mt-0.5 text-[0.8rem] text-slate-ink">NCBI PubMed & CrossRef verified citations</p>
+                <span className="caps text-slate-ink">{t.editorialRigour}</span>
+                <p className="num mt-1 text-[1.15rem] font-bold text-indigo-deep">{t.editorialRigourTitle}</p>
+                <p className="mt-0.5 text-[0.8rem] text-slate-ink">{t.editorialRigourSub}</p>
               </div>
 
               <div className="border-l-2 border-plasma pl-4">
-                <span className="caps text-slate-ink">Simulation Engines</span>
-                <p className="num mt-1 text-[1.15rem] font-bold text-indigo-deep">4 Local Calculators</p>
-                <p className="mt-0.5 text-[0.8rem] text-slate-ink">1-compartment PK, Synergy & Biomarkers</p>
+                <span className="caps text-slate-ink">{t.simEngines}</span>
+                <p className="num mt-1 text-[1.15rem] font-bold text-indigo-deep">{t.simEnginesTitle}</p>
+                <p className="mt-0.5 text-[0.8rem] text-slate-ink">{t.simEnginesSub}</p>
               </div>
             </div>
           </motion.div>

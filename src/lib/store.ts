@@ -118,6 +118,70 @@ const SEED_REFS: Record<string, Ref[]> = {
         "Seminal discovery linking gut microbiota-dependent generation of trimethylamine N-oxide (TMAO) from dietary choline/phosphatidylcholine with incident major adverse cardiac events independently of traditional risk factors.",
     },
   ],
+  "metabolomic-horizon-clinical-diagnostics-vi": [
+    {
+      ordinal: 1,
+      label: "HMDB 5.0: Cơ sở dữ liệu Chuyển hóa Người (Human Metabolome Database 2022)",
+      pmid: "34986597",
+      doi: "10.1093/nar/gkab1062",
+      design: "Cơ sở Dữ liệu & Hệ thống Tri thức",
+      sampleSize: null,
+      journal: "Nucleic Acids Research",
+      year: 2022,
+      abstract:
+        "Hệ thống định danh 217.920 chất chuyển hóa ở người, các con đường chuyển hóa sinh học, dấu ấn lâm sàng và thư viện phổ tham chiếu khối phổ phân giải cao.",
+    },
+    {
+      ordinal: 2,
+      label: "Plant metabolomics: Chuyển hóa học hướng tới cơ chế và chức năng sinh học",
+      pmid: "16949326",
+      doi: "10.1016/j.tplants.2006.08.007",
+      design: "Tổng quan Phương pháp luận Khối phổ",
+      sampleSize: null,
+      journal: "Trends in Plant Science",
+      year: 2006,
+      abstract:
+        "Công trình kinh điển của TS. Nicolas Schauer và Alisdair Fernie về quy trình sắc ký khí ghép khối phổ (GC-MS), thuật toán bóc tách phổ và định lượng phân tử nhỏ.",
+    },
+    {
+      ordinal: 3,
+      label: "Chuyển hóa Choline của Hệ vi sinh đường ruột và Nguy cơ Bệnh Tim mạch (TMAO)",
+      pmid: "23614584",
+      doi: "10.1056/NEJMoa1109400",
+      design: "Nghiên cứu Đoàn hệ Lâm sàng Tiến cứu",
+      sampleSize: 4007,
+      journal: "New England Journal of Medicine",
+      year: 2013,
+      abstract:
+        "Nghiên cứu mang tính bước ngoặt chứng minh chất chuyển hóa TMAO do vi khuẩn đường ruột sinh ra từ thức ăn làm tăng đáng kể nguy cơ biến cố tim mạch và xơ vữa động mạch.",
+    },
+  ],
+  "curcumin-piperine-sinh-kha-dung": [
+    {
+      ordinal: 1,
+      label: "Ảnh hưởng của piperine lên dược động học của curcumin ở người tình nguyện khỏe mạnh",
+      pmid: "9618960",
+      doi: "10.1055/s-2006-957541",
+      design: "Thử nghiệm Lâm sàng Ngẫu nhiên Chéo (RCT)",
+      sampleSize: 8,
+      journal: "Planta Medica",
+      year: 1998,
+      abstract:
+        "Sử dụng đồng thời 20 mg piperine cùng 2 g curcumin giúp nồng độ curcumin trong huyết thanh tăng gấp 20 lần (2000%), nâng cao sinh khả dụng rõ rệt sau 1–2 giờ mà không gây tác dụng phụ.",
+    },
+    {
+      ordinal: 2,
+      label: "Sinh khả dụng của Curcumin: Những thách thức và triển vọng phát triển",
+      pmid: "17999464",
+      doi: "10.1021/mp700113r",
+      design: "Tổng quan Dược lý & Cơ chế Sinh học",
+      sampleSize: null,
+      journal: "Molecular Pharmaceutics",
+      year: 2007,
+      abstract:
+        "Phân tích toàn diện về các rào cản chuyển hóa qua gan pha II và các chiến lược nâng cao sinh khả dụng của curcuminoids bằng chất ức chế tự nhiên và phức hợp phospholipid.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

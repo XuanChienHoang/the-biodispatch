@@ -6,11 +6,21 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, FlaskConical, BookOpen, LineChart } from "lucide-react";
 import { ORGANS, TIERS, type Article, type Tier, type Organ } from "@/lib/content";
 import { inkOn, onPaper } from "@/lib/tones";
+import { useLanguageStore, DICT } from "@/lib/i18n";
 
-const TIER_META: Record<Tier, { icon: typeof BookOpen; color: string }> = {
-  Fundamentals: { icon: BookOpen, color: "#64748B" },
-  "Clinical Deep-Dive": { icon: LineChart, color: "#00F2FE" },
-  "Lab Gizmo": { icon: FlaskConical, color: "#10B981" },
+const TIER_META: Record<Tier, { icon: typeof BookOpen; color: string; labelVi: string }> = {
+  Fundamentals: { icon: BookOpen, color: "#64748B", labelVi: "Nền tảng Y sinh" },
+  "Clinical Deep-Dive": { icon: LineChart, color: "#00F2FE", labelVi: "Phân tích Lâm sàng" },
+  "Lab Gizmo": { icon: FlaskConical, color: "#10B981", labelVi: "Mô phỏng Dược học" },
+};
+
+const ORGAN_VI: Record<Organ, string> = {
+  Gut: "Đường ruột",
+  Heart: "Tim mạch",
+  Immune: "Miễn dịch",
+  "Cellular Aging": "Lão hóa Tế bào",
+  Metabolic: "Chuyển hóa",
+  Brain: "Não bộ",
 };
 
 function Chip({
@@ -42,13 +52,30 @@ function Chip({
 }
 
 export function Directory({ articles }: { articles: Article[] }) {
+  const { lang } = useLanguageStore();
+  const t = DICT[lang];
+
   const [organ, setOrgan] = useState<Organ | "All">("All");
   const [tier, setTier] = useState<Tier | "All">("All");
 
-  const list = useMemo(
-    () => articles.filter((a) => (organ === "All" || a.organ === organ) && (tier === "All" || a.tier === tier)),
-    [articles, organ, tier]
-  );
+  const list = useMemo(() => {
+    let filtered = articles.filter(
+      (a) => (organ === "All" || a.organ === organ) && (tier === "All" || a.tier === tier)
+    );
+
+    // If Vietnamese is selected, sort Vietnamese posts to top
+    if (lang === "vi") {
+      filtered = [...filtered].sort((a, b) => {
+        const aIsVi = a.slug.endsWith("-vi") || a.slug.includes("sinh-kha-dung");
+        const bIsVi = b.slug.endsWith("-vi") || b.slug.includes("sinh-kha-dung");
+        if (aIsVi && !bIsVi) return -1;
+        if (!aIsVi && bIsVi) return 1;
+        return 0;
+      });
+    }
+
+    return filtered;
+  }, [articles, organ, tier, lang]);
 
   const feature = list.find((a) => a.feature) ?? list[0];
   const rest = list.filter((a) => a !== feature);
@@ -57,37 +84,38 @@ export function Directory({ articles }: { articles: Article[] }) {
     <section id="directory" className="mx-auto max-w-[1240px] scroll-mt-8 px-6 py-16 lg:px-10 lg:py-24">
       <div className="flex flex-wrap items-end justify-between gap-6 border-b-2 border-indigo-deep pb-5">
         <div>
-          <span className="caps text-slate-ink">§ 1 · Article Directory & Corpus</span>
+          <span className="caps text-slate-ink">{t.corpusTitle}</span>
           <h2 className="mt-3 font-display display-lg font-black leading-[0.95] tracking-[-0.035em] text-indigo-deep">
-            The Corpus.
+            {t.corpusHead}
           </h2>
         </div>
         <p className="max-w-md text-[0.95rem] leading-relaxed text-slate-ink">
-          Filtered by organ system and by analytical depth — from foundational molecular physiology to full interactive
-          pharmacokinetic simulators.
+          {t.corpusDesc}
         </p>
       </div>
 
       {/* filters */}
       <div className="mt-6 space-y-3">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="caps w-24 shrink-0 text-slate-ink font-semibold">Organ Axis</span>
-          <Chip active={organ === "All"} onClick={() => setOrgan("All")}>All</Chip>
+          <span className="caps w-24 shrink-0 text-slate-ink font-semibold">{t.organAxis}</span>
+          <Chip active={organ === "All"} onClick={() => setOrgan("All")}>{t.all}</Chip>
           {ORGANS.map((o) => (
-            <Chip key={o} active={organ === o} onClick={() => setOrgan(o)}>{o}</Chip>
+            <Chip key={o} active={organ === o} onClick={() => setOrgan(o)}>
+              {lang === "vi" ? ORGAN_VI[o] : o}
+            </Chip>
           ))}
         </div>
         <div className="flex flex-wrap items-center gap-2">
-          <span className="caps w-24 shrink-0 text-slate-ink font-semibold">Complexity</span>
-          <Chip active={tier === "All"} onClick={() => setTier("All")}>All</Chip>
-          {TIERS.map((t) => (
+          <span className="caps w-24 shrink-0 text-slate-ink font-semibold">{t.complexityAxis}</span>
+          <Chip active={tier === "All"} onClick={() => setTier("All")}>{t.all}</Chip>
+          {TIERS.map((tierName) => (
             <Chip
-              key={t}
-              active={tier === t}
-              onClick={() => setTier(t)}
-              tone={onPaper(TIER_META[t].color)}
+              key={tierName}
+              active={tier === tierName}
+              onClick={() => setTier(tierName)}
+              tone={onPaper(TIER_META[tierName].color)}
             >
-              {t}
+              {lang === "vi" ? TIER_META[tierName].labelVi : tierName}
             </Chip>
           ))}
         </div>
@@ -95,14 +123,14 @@ export function Directory({ articles }: { articles: Article[] }) {
 
       <div className="mt-4 flex items-baseline justify-between border-t border-slate-hair pt-3">
         <p className="caps text-slate-ink">
-          Showing {list.length} of {articles.length} dispatches
+          {t.showingDispatches} {list.length} {t.of} {articles.length} {t.dispatchesText}
         </p>
         {(organ !== "All" || tier !== "All") && (
           <button
             onClick={() => { setOrgan("All"); setTier("All"); }}
             className="caps text-indigo-deep underline decoration-trace decoration-2 underline-offset-4 hover:text-trace-ink cursor-pointer"
           >
-            clear filters
+            {t.clearFilters}
           </button>
         )}
       </div>
@@ -112,16 +140,13 @@ export function Directory({ articles }: { articles: Article[] }) {
         <div className="mt-10 rounded-sm border border-dashed border-slate-hair bg-paper-tint px-8 py-16 text-center">
           <FlaskConical className="mx-auto text-slate-ink" size={26} />
           <p className="mt-4 font-display text-step-1 text-indigo-deep">
-            No papers match this intersection.
-          </p>
-          <p className="mx-auto mt-2 max-w-sm text-[0.9rem] leading-relaxed text-slate-ink">
-            The organ system and complexity tier you combined have not been published yet. Widen one of the two axes.
+            {lang === "vi" ? "Chưa có bài viết ở phân mục này." : "No papers match this intersection."}
           </p>
           <button
             onClick={() => { setOrgan("All"); setTier("All"); }}
             className="caps mt-6 rounded-sm bg-indigo-deep px-4 py-2.5 text-paper hover:bg-indigo-mid cursor-pointer"
           >
-            reset filters
+            {lang === "vi" ? "Đặt lại bộ lọc" : "Reset filters"}
           </button>
         </div>
       ) : (
@@ -151,30 +176,32 @@ export function Directory({ articles }: { articles: Article[] }) {
                 >
                   <div className="absolute left-6 top-6 flex flex-wrap gap-2 lg:left-8 lg:top-8">
                     <span className="caps rounded-sm bg-trace px-2.5 py-1 text-indigo-deep font-bold">
-                      Latest Featured Dispatch
+                      {lang === "vi" ? "Bài Phân tích Nổi bật" : "Latest Featured Dispatch"}
                     </span>
                     <span className="caps rounded-sm border border-white/25 px-2.5 py-1 text-white/80">
-                      {feature.organ}
+                      {lang === "vi" ? ORGAN_VI[feature.organ] : feature.organ}
                     </span>
                   </div>
-                  <span className="caps text-trace font-medium">{feature.tier}</span>
+                  <span className="caps text-trace font-medium">
+                    {lang === "vi" ? TIER_META[feature.tier].labelVi : feature.tier}
+                  </span>
                   <h3 className="mt-2.5 max-w-lg font-display text-step-3 font-bold leading-[1.02] tracking-[-0.03em] text-white">
-                    {feature.title}
+                    {lang === "vi" && feature.titleVi ? feature.titleVi : feature.title}
                   </h3>
                   <p className="mt-3.5 max-w-lg text-[0.98rem] leading-relaxed text-slate-300">
-                    {feature.dek}
+                    {lang === "vi" && feature.dekVi ? feature.dekVi : feature.dek}
                   </p>
                   <div className="mt-6 flex flex-wrap items-center gap-4 border-t border-white/12 pt-4">
                     <span className="caps flex items-center gap-1.5 text-white/60">
-                      <Timer0 /> {feature.minutes} min read
+                      <Timer0 /> {feature.minutes} {t.minRead}
                     </span>
                     {feature.gizmo && (
                       <span className="caps flex items-center gap-1.5 text-trace">
-                        <FlaskConical size={12} /> Embedded Simulation Gizmo
+                        <FlaskConical size={12} /> {t.embeddedGizmo}
                       </span>
                     )}
                     <span className="caps ml-auto flex items-center gap-1 text-trace transition-transform group-hover:translate-x-1 font-semibold">
-                      Read Full Analysis <ArrowUpRight size={14} />
+                      {t.readFull} <ArrowUpRight size={14} />
                     </span>
                   </div>
                 </Link>
@@ -184,6 +211,8 @@ export function Directory({ articles }: { articles: Article[] }) {
             {rest.map((a, i) => {
               const meta = TIER_META[a.tier];
               const Icon = meta.icon;
+              const displayTitle = lang === "vi" && a.titleVi ? a.titleVi : a.title;
+              const displayDek = lang === "vi" && a.dekVi ? a.dekVi : a.dek;
               return (
                 <motion.article
                   layout
@@ -200,20 +229,22 @@ export function Directory({ articles }: { articles: Article[] }) {
                   />
                   <Link href={`/blog/${a.slug}`} className="flex flex-1 flex-col p-5">
                     <div className="flex items-start justify-between gap-3">
-                      <span className="caps text-slate-ink">{a.organ}</span>
+                      <span className="caps text-slate-ink">
+                        {lang === "vi" ? ORGAN_VI[a.organ] : a.organ}
+                      </span>
                       <Icon size={15} style={{ color: onPaper(meta.color) }} className="shrink-0" />
                     </div>
                     <h3 className="mt-3 font-display text-[1.2rem] font-semibold leading-[1.15] tracking-[-0.02em] text-indigo-deep">
-                      {a.title}
+                      {displayTitle}
                     </h3>
                     <p className="mt-2.5 flex-1 text-[0.86rem] leading-relaxed text-slate-ink line-clamp-3">
-                      {a.dek}
+                      {displayDek}
                     </p>
                     <div className="mt-5 flex items-center justify-between border-t border-slate-hair pt-3">
                       <span className="caps font-semibold" style={{ color: onPaper(meta.color) }}>
-                        {a.tier}
+                        {lang === "vi" ? meta.labelVi : a.tier}
                       </span>
-                      <span className="caps text-slate-ink">{a.minutes} min</span>
+                      <span className="caps text-slate-ink">{a.minutes} {t.minRead}</span>
                     </div>
                   </Link>
                 </motion.article>

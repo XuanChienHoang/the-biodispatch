@@ -15,6 +15,7 @@ import PKGizmo from "@/components/gizmo/PKGizmo";
 import BiomarkerGizmo from "@/components/gizmo/BiomarkerGizmo";
 import PathwayGizmo from "@/components/gizmo/PathwayGizmo";
 import SynergyGizmo from "@/components/gizmo/SynergyGizmo";
+import { ArticleLanguageBar } from "@/components/ArticleLanguageBar";
 
 export const dynamic = "force-dynamic";
 
@@ -98,6 +99,8 @@ export default async function BlogPage({ params }: Params) {
     articleSection: article.tier,
   };
 
+  const isVi = slug.endsWith("-vi") || slug.includes("sinh-kha-dung") || Boolean(article.tags?.includes("Dược động học"));
+
   return (
     <main>
       <script
@@ -109,14 +112,22 @@ export default async function BlogPage({ params }: Params) {
       <header className="relative overflow-hidden border-b border-slate-hair bg-paper">
         <div className="relative mx-auto max-w-[1240px] px-6 py-12 lg:px-10 lg:py-20">
           <nav className="caps flex flex-wrap items-center gap-2 text-slate-ink">
-            <Link href="/" className="hover:text-indigo-deep">Front</Link>
+            <Link href="/" className="hover:text-indigo-deep">
+              {isVi ? "Trang chủ" : "Front"}
+            </Link>
             <span>/</span>
-            <Link href="/#directory" className="hover:text-indigo-deep">Corpus</Link>
+            <Link href="/#directory" className="hover:text-indigo-deep">
+              {isVi ? "Kho bài" : "Corpus"}
+            </Link>
             <span>/</span>
             <span className="text-indigo-deep font-semibold">{article.tier}</span>
           </nav>
 
           <div className="mt-7 max-w-3xl">
+            <div className="mb-6">
+              <ArticleLanguageBar currentSlug={slug} />
+            </div>
+
             <div className="flex flex-wrap items-center gap-2">
               <span className="caps rounded-sm bg-indigo-deep px-2.5 py-1.5 text-trace font-medium">
                 {article.tier}
@@ -125,10 +136,10 @@ export default async function BlogPage({ params }: Params) {
                 {article.organ}
               </span>
               <span className="caps flex items-center gap-1.5 rounded-sm border border-indigo-deep/25 px-2.5 py-1.5 text-indigo-deep">
-                <BadgeCheck size={13} className="text-syn-ink" /> Peer-Reviewed EBM
+                <BadgeCheck size={13} className="text-syn-ink" /> {isVi ? "Y sinh Thực chứng Đã Bình duyệt" : "Peer-Reviewed EBM"}
               </span>
               <span className="caps flex items-center gap-1.5 rounded-sm border border-indigo-deep/25 px-2.5 py-1.5 text-indigo-deep">
-                <Timer size={13} /> {article.minutes} min read
+                <Timer size={13} /> {article.minutes} {isVi ? "phút đọc" : "min read"}
               </span>
             </div>
 
@@ -147,10 +158,12 @@ export default async function BlogPage({ params }: Params) {
                 </div>
                 <div>
                   <span className="caps font-semibold text-indigo-deep block">
-                    {article.author || "Dr. Xuan Chien Hoang"}
+                    {isVi ? "TS. Hoàng Xuân Chiến" : (article.author || "Dr. Xuan Chien Hoang")}
                   </span>
                   <span className="text-[0.72rem] text-slate-ink block">
-                    {article.authorRole || "Dr. rer. nat. · University of Hamburg"}
+                    {isVi
+                      ? "Tiến sĩ Khoa học Tự nhiên · Đại học Hamburg, CHLB Đức"
+                      : (article.authorRole || "Dr. rer. nat. · University of Hamburg")}
                   </span>
                 </div>
               </div>
@@ -158,7 +171,7 @@ export default async function BlogPage({ params }: Params) {
               <span className="num text-[0.74rem] text-slate-ink">DOI: {article.doi}</span>
               {refs.length > 0 && (
                 <span className="caps ml-auto flex items-center gap-1.5 text-indigo-deep">
-                  <Quote size={12} className="text-trace-ink" /> {refs.length} Verified References
+                  <Quote size={12} className="text-trace-ink" /> {refs.length} {isVi ? "Nguồn Y văn Đã Đối soát" : "Verified References"}
                 </span>
               )}
             </div>
@@ -195,19 +208,24 @@ export default async function BlogPage({ params }: Params) {
                     CH
                   </div>
                   <div>
-                    <h4 className="font-display text-[1.1rem] font-bold text-indigo-deep">Dr. Xuan Chien Hoang</h4>
+                    <h4 className="font-display text-[1.1rem] font-bold text-indigo-deep">
+                      {isVi ? "TS. Hoàng Xuân Chiến" : "Dr. Xuan Chien Hoang"}
+                    </h4>
                     <p className="caps text-[0.7rem] text-trace-ink font-medium">
-                      Doctor of Natural Sciences (University of Hamburg, Germany)
+                      {isVi
+                        ? "Tiến sĩ Khoa học Tự nhiên (Đại học Hamburg, CHLB Đức)"
+                        : "Doctor of Natural Sciences (University of Hamburg, Germany)"}
                     </p>
                   </div>
                 </div>
                 <p className="mt-3 text-[0.88rem] leading-relaxed text-indigo-soft">
-                  Biomedical product lifecycle strategist and metabolomic profiling specialist with over 8 years of R&D,
-                  quality governance, and clinical evidence synthesis experience across Europe and APAC.
+                  {isVi
+                    ? "Chuyên gia hoạch định chiến lược sản phẩm y sinh và định lượng chuyển hóa học (metabolomics) với hơn 8 năm kinh nghiệm R&D, quản trị chất lượng và tổng hợp dữ liệu lâm sàng tại châu Âu và APAC."
+                    : "Biomedical product lifecycle strategist and metabolomic profiling specialist with over 8 years of R&D, quality governance, and clinical evidence synthesis experience across Europe and APAC."}
                 </p>
                 <div className="mt-4 flex gap-4 text-xs font-mono">
                   <Link href="/about" className="text-indigo-deep font-semibold underline decoration-trace">
-                    Read full profile & career history →
+                    {isVi ? "Xem hồ sơ khoa học & quá trình công tác →" : "Read full profile & career history →"}
                   </Link>
                 </div>
               </div>
@@ -216,18 +234,26 @@ export default async function BlogPage({ params }: Params) {
             {/* Sticky Sidebar Navigation */}
             <aside className="hidden lg:block">
               <div className="sticky top-20 rounded-sm border border-slate-hair bg-paper p-5">
-                <span className="caps text-slate-ink block mb-3 font-semibold">Article Metadata</span>
+                <span className="caps text-slate-ink block mb-3 font-semibold">
+                  {isVi ? "Thuộc tính Bài viết" : "Article Metadata"}
+                </span>
                 <div className="space-y-3 text-xs border-b border-slate-hair pb-4">
                   <div>
-                    <span className="caps text-slate-ink block">Organ System</span>
+                    <span className="caps text-slate-ink block">
+                      {isVi ? "Hệ Cơ quan" : "Organ System"}
+                    </span>
                     <span className="font-semibold text-indigo-deep">{article.organ}</span>
                   </div>
                   <div>
-                    <span className="caps text-slate-ink block">Analytical Depth</span>
+                    <span className="caps text-slate-ink block">
+                      {isVi ? "Độ sâu Phân tích" : "Analytical Depth"}
+                    </span>
                     <span className="font-semibold text-indigo-deep">{article.tier}</span>
                   </div>
                   <div>
-                    <span className="caps text-slate-ink block">Primary DOI</span>
+                    <span className="caps text-slate-ink block">
+                      {isVi ? "Định danh Y văn (DOI)" : "Primary DOI"}
+                    </span>
                     <a
                       href={`https://doi.org/${article.doi}`}
                       target="_blank"
@@ -240,9 +266,11 @@ export default async function BlogPage({ params }: Params) {
                 </div>
 
                 <div className="mt-4">
-                  <span className="caps text-slate-ink block mb-2 font-semibold">Navigation</span>
+                  <span className="caps text-slate-ink block mb-2 font-semibold">
+                    {isVi ? "Điều hướng" : "Navigation"}
+                  </span>
                   <Link href="/#directory" className="caps text-indigo-deep hover:text-trace-ink flex items-center gap-1 text-xs">
-                    <ArrowLeft size={12} /> Back to Corpus
+                    <ArrowLeft size={12} /> {isVi ? "Quay lại Kho bài viết" : "Back to Corpus"}
                   </Link>
                 </div>
               </div>
@@ -295,12 +323,18 @@ export default async function BlogPage({ params }: Params) {
           <section id="references" className="mt-16 scroll-mt-8 border-t-2 border-indigo-deep pt-8">
             <div className="flex flex-wrap items-end justify-between gap-4">
               <div>
-                <span className="caps text-slate-ink">§ 6 · References & Primary Evidence</span>
+                <span className="caps text-slate-ink">
+                  {isVi ? "§ 6 · Danh mục Nguồn Y văn & Bằng chứng Thực chứng" : "§ 6 · References & Primary Evidence"}
+                </span>
                 <h2 className="mt-2.5 font-display text-step-3 font-bold leading-tight tracking-[-0.03em] text-indigo-deep">
-                  Verified Source List.
+                  {isVi ? "Danh bạ Tài liệu Đã Đối soát." : "Verified Source List."}
                 </h2>
               </div>
-              <p className="caps text-slate-ink">All citations verified against NCBI PubMed / CrossRef APIs</p>
+              <p className="caps text-slate-ink">
+                {isVi
+                  ? "Tất cả trích dẫn đều được đối soát tự động qua API của NCBI PubMed / CrossRef"
+                  : "All citations verified against NCBI PubMed / CrossRef APIs"}
+              </p>
             </div>
 
             <ol className="mt-8 grid gap-px bg-slate-hair">
@@ -352,7 +386,9 @@ export default async function BlogPage({ params }: Params) {
 
         {/* ------------- Related Dispatches ------------- */}
         <section className="mt-16 border-t border-slate-hair pt-8">
-          <span className="caps text-slate-ink font-semibold">Related Analytical Dispatches</span>
+          <span className="caps text-slate-ink font-semibold">
+            {isVi ? "Các Bài Phân tích Cùng Chuyên đề" : "Related Analytical Dispatches"}
+          </span>
           <div className="mt-5 grid gap-4 md:grid-cols-3">
             {related.map((a) => (
               <Link
@@ -362,11 +398,13 @@ export default async function BlogPage({ params }: Params) {
               >
                 <span className="caps text-slate-ink">{a.organ}</span>
                 <h3 className="mt-2.5 font-display text-[1.1rem] font-semibold leading-snug tracking-[-0.015em] text-indigo-deep">
-                  {a.title}
+                  {isVi && a.titleVi ? a.titleVi : a.title}
                 </h3>
-                <p className="mt-2 line-clamp-3 text-[0.86rem] leading-relaxed text-slate-ink">{a.dek}</p>
+                <p className="mt-2 line-clamp-3 text-[0.86rem] leading-relaxed text-slate-ink">
+                  {isVi && a.dekVi ? a.dekVi : a.dek}
+                </p>
                 <span className="caps mt-4 inline-flex items-center gap-1 text-indigo-deep font-semibold transition-transform group-hover:translate-x-1">
-                  Open Dispatch <ArrowUpRight size={12} />
+                  {isVi ? "Đọc bài phân tích" : "Open Dispatch"} <ArrowUpRight size={12} />
                 </span>
               </Link>
             ))}
