@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 export type Language = "en" | "vi";
 
@@ -8,24 +9,21 @@ interface LanguageStore {
   toggleLang: () => void;
 }
 
-export const useLanguageStore = create<LanguageStore>((set) => ({
-  lang: "vi", // Default to Vietnamese as requested by Dr. Hoang
-  setLang: (lang) => {
-    if (typeof window !== "undefined") {
-      localStorage.setItem("biodispatch_lang", lang);
+export const useLanguageStore = create<LanguageStore>()(
+  persist(
+    (set) => ({
+      lang: "vi", // Default to Vietnamese as requested by Dr. Hoang
+      setLang: (lang) => set({ lang }),
+      toggleLang: () =>
+        set((state) => ({
+          lang: state.lang === "vi" ? "en" : "vi",
+        })),
+    }),
+    {
+      name: "biodispatch_lang",
     }
-    set({ lang });
-  },
-  toggleLang: () => {
-    set((state) => {
-      const next = state.lang === "vi" ? "en" : "vi";
-      if (typeof window !== "undefined") {
-        localStorage.setItem("biodispatch_lang", next);
-      }
-      return { lang: next };
-    });
-  },
-}));
+  )
+);
 
 export const DICT = {
   en: {

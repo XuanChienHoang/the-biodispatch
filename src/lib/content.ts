@@ -179,6 +179,7 @@ export const GIZMOS = [
     blurb: "One-compartment, first-order absorption. Move dose, delivery form and fed state; Cmax, Tmax, t½ and AUC recompute on every frame.",
     blurbVi: "Hấp thu bậc một 1 ngăn. Thay đổi liều, dạng bào chế và lúc no/đói; Cmax, Tmax, t½ và diện tích dưới đường cong (AUC) tái tính toán tức thì.",
     inputs: ["Dose 50–2000 mg", "3 delivery forms", "Fasting / high-fat meal"],
+    inputsVi: ["Liều 50–2000 mg", "3 dạng bào chế", "Lúc đói / Sau ăn no"],
     color: "#00F2FE",
   },
   {
@@ -190,6 +191,7 @@ export const GIZMOS = [
     blurb: "A hand-drawn cell. Select a ligand, watch signal propagate through the receptor to the nucleus, and read the downstream regulation panel.",
     blurbVi: "Tế bào sống trực quan. Chọn hoạt chất, quan sát đường truyền tín hiệu từ màng tế bào vào nhân và xem bảng điều hòa gen phản ứng.",
     inputs: ["4 ligands", "4 receptor nodes", "Nuclear translocation"],
+    inputsVi: ["4 hoạt chất sinh học", "4 thụ thể tế bào", "Chuyển vị vào nhân ADN"],
     color: "#10B981",
   },
   {
@@ -201,6 +203,7 @@ export const GIZMOS = [
     blurb: "An 8×8 matrix of supplement–supplement and supplement–drug pairings classified as synergistic, neutral, or antagonistic.",
     blurbVi: "Ma trận 8×8 giữa các hoạt chất tự nhiên và thuốc điều trị, phân loại rõ ràng: tăng tác dụng, trung tính, hay đối kháng gây hại.",
     inputs: ["64 pairings", "Mechanism cards", "Evidence grade"],
+    inputsVi: ["64 cặp tương tác", "Thẻ phân tích cơ chế", "Cấp độ bằng chứng A-B-C"],
     color: "#F59E0B",
   },
   {
@@ -212,6 +215,7 @@ export const GIZMOS = [
     blurb: "Set a baseline; the model returns a predicted change with 95% confidence bounds from pooled meta-analytic effect sizes.",
     blurbVi: "Thiết lập chỉ số nền ban đầu; mô hình dự báo mức giảm viêm kèm khoảng tin cậy 95% trích xuất từ dữ liệu lâm sàng thế giới.",
     inputs: ["4 biomarkers", "95% CI whiskers", "Pooled k / n readout"],
+    inputsVi: ["4 chỉ số sinh học", "Khoảng tin cậy 95% CI", "Phân tích gộp thử nghiệm"],
     color: "#FF6B4A",
   },
 ] as const;

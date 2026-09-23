@@ -139,7 +139,7 @@ export function GizmosDirectory() {
                 </p>
               </div>
               <ul className="shrink-0 space-y-1 md:w-52">
-                {g.inputs.map((i) => (
+                {(isVi && (g as any).inputsVi ? (g as any).inputsVi : g.inputs).map((i: string) => (
                   <li key={i} className="caps text-slate-ink">
                     {i}
                   </li>

@@ -82,7 +82,7 @@ export function HomeSimulationLab() {
                   {isVi && g.blurbVi ? g.blurbVi : g.blurb}
                 </p>
                 <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-1">
-                  {g.inputs.map((inp) => (
+                  {(isVi && (g as any).inputsVi ? (g as any).inputsVi : g.inputs).map((inp: string) => (
                     <li key={inp} className="caps text-white/40">
                       {inp}
                     </li>

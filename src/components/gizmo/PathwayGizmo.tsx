@@ -156,11 +156,11 @@ export default function PathwayGizmo() {
         onPreset={(id) => setSel(id as LigandId)}
         onReset={() => setSel("curcumin")}
         citeParams={[
-          ["Ligand", active.name],
-          ["Formula", active.formula],
-          ["Primary target", active.target],
-          ["Receptor site", isVi ? active.receptorVi : active.receptor],
-          ["Model", "schematic signalling"],
+          [isVi ? "Hoạt chất" : "Ligand", isVi ? active.nameVi : active.name],
+          [isVi ? "Công thức phân tử" : "Formula", active.formula],
+          [isVi ? "Đích tác động chính" : "Primary target", active.target],
+          [isVi ? "Vị trí thụ thể" : "Receptor site", isVi ? active.receptorVi : active.receptor],
+          [isVi ? "Mô hình" : "Model", isVi ? "mô phỏng tín hiệu tế bào" : "schematic signalling"],
         ]}
         controls={
           <div className="space-y-4">
@@ -423,7 +423,7 @@ function Cell({
               fontFamily="var(--font-mono)"
               letterSpacing="0.6"
             >
-              {l.name}
+              {isVi ? l.nameVi.split(" ")[0] : l.name}
             </text>
 
             {/* ligand → receptor transit */}
@@ -456,7 +456,7 @@ function Cell({
           letterSpacing="1.6"
           transform={`rotate(-90 263 200)`}
         >
-          {active.target} NODE
+          {active.target} {isVi ? "THỤ THỂ" : "NODE"}
         </text>
       </g>
 

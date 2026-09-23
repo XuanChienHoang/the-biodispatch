@@ -3,6 +3,7 @@
 import { useState, type ReactNode } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { FileText, Users, FlaskConical } from "lucide-react";
+import { useLanguageStore } from "@/lib/i18n";
 
 /* ------------------------------------------------------------------ */
 /* Inline PubMed citation with hover card: abstract, n, study design   */
@@ -110,7 +111,10 @@ export function CiteModal({
   title: string;
   params: [string, string][];
 }) {
-  const citation = `LavaHealth Innovation Lab (${new Date().getFullYear()}). ${title} [Interactive simulation model]. LavaHealth Innovation Hub. https://hub.lavahealth.de/gizmos (accessed ${new Date()
+  const { lang } = useLanguageStore();
+  const isVi = lang === "vi";
+
+  const citation = `Hoang, X. C. (${new Date().getFullYear()}). ${title} [Interactive pharmacokinetic engine]. The BioDispatch. https://the-biodispatch.vercel.app/gizmos (truy cập ${new Date()
     .toISOString()
     .slice(0, 10)}).`;
   const [copied, setCopied] = useState(false);
@@ -134,13 +138,17 @@ export function CiteModal({
           className="w-full max-w-xl overflow-hidden rounded-sm border border-slate-hair bg-paper"
         >
           <div className="flex items-center justify-between border-b border-slate-hair bg-paper-tint px-5 py-3">
-            <span className="caps text-indigo-soft">Cite this model</span>
-            <button onClick={onClose} className="caps text-slate-ink hover:text-indigo-deep" aria-label="Close">
+            <span className="caps text-indigo-soft">
+              {isVi ? "Trích dẫn mô hình khoa học này" : "Cite this model"}
+            </span>
+            <button onClick={onClose} className="caps text-slate-ink hover:text-indigo-deep cursor-pointer" aria-label="Close">
               esc ✕
             </button>
           </div>
           <div className="p-5">
-            <p className="caps text-slate-ink">Parameters in effect</p>
+            <p className="caps text-slate-ink">
+              {isVi ? "Các tham số đang áp dụng" : "Parameters in effect"}
+            </p>
             <dl className="mt-3 grid gap-x-6 border-y border-slate-hair py-3 sm:grid-cols-2">
               {params.map(([k, v]) => (
                 <div key={k} className="flex items-baseline justify-between gap-3 py-1">
@@ -149,26 +157,28 @@ export function CiteModal({
                 </div>
               ))}
             </dl>
-            <p className="caps mt-5 text-slate-ink">APA 7</p>
-            <p className="mt-2 rounded-sm bg-paper-tint p-3 font-mono text-[0.78rem] leading-relaxed text-indigo-soft">
+            <p className="caps mt-5 text-slate-ink">APA 7th Edition</p>
+            <p className="mt-2 rounded-sm bg-paper-tint p-3 font-mono text-[0.78rem] leading-relaxed text-indigo-soft select-all">
               {citation}
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
               <button
+                type="button"
                 onClick={() => {
                   navigator.clipboard?.writeText(citation).catch(() => {});
                   setCopied(true);
                   setTimeout(() => setCopied(false), 1800);
                 }}
-                className="caps rounded-sm bg-indigo-deep px-4 py-2.5 text-paper transition-colors hover:bg-indigo-mid"
+                className="caps rounded-sm bg-indigo-deep px-4 py-2.5 text-paper transition-colors hover:bg-indigo-mid cursor-pointer"
               >
-                {copied ? "copied ✓" : "copy citation"}
+                {copied ? (isVi ? "đã sao chép ✓" : "copied ✓") : (isVi ? "sao chép trích dẫn" : "copy citation")}
               </button>
               <button
+                type="button"
                 onClick={onClose}
-                className="caps rounded-sm border border-slate-hair px-4 py-2.5 text-indigo-soft transition-colors hover:border-indigo-deep hover:text-indigo-deep"
+                className="caps rounded-sm border border-slate-hair px-4 py-2.5 text-indigo-soft transition-colors hover:border-indigo-deep hover:text-indigo-deep cursor-pointer"
               >
-                close
+                {isVi ? "đóng" : "close"}
               </button>
             </div>
           </div>

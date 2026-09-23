@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { BiomedicalGizmoContainer } from "./Chassis";
 import { LabSlider, useCountUp, useExportPng, exportCsv, tick } from "@/components/ui";
 import { curcuminPiperine } from "@/lib/pk";
+import { useLanguageStore } from "@/lib/i18n";
 
 const W = 760;
 const H = 380;
@@ -14,6 +15,9 @@ const T = 22;
 const B = 322;
 
 export default function CurcuminPiperineGizmo() {
+  const { lang } = useLanguageStore();
+  const isVi = lang === "vi";
+
   const [piperine, setPiperine] = useState(0);
   const [dose, setDose] = useState(1000);
 
@@ -50,8 +54,8 @@ export default function CurcuminPiperineGizmo() {
   return (
     <BiomedicalGizmoContainer
       fig="Gizmo 01a"
-      title="Curcumin × Piperine Bio-enhancement"
-      subtitle="Phase II UGT1A1 inhibition model"
+      title={isVi ? "Tăng cường Sinh khả dụng: Curcumin × Piperine" : "Curcumin × Piperine Bio-enhancement"}
+      subtitle={isVi ? "Mô hình ức chế enzyme gan Pha II UGT1A1" : "Phase II UGT1A1 inhibition model"}
       canvas={
         <CurcuminPlot
           ctrlPath={ctrlPath}
@@ -64,12 +68,13 @@ export default function CurcuminPiperineGizmo() {
           xTicks={xTicks}
           dose={dose}
           m={m}
+          isVi={isVi}
         />
       }
       presets={[
-        { id: "off", label: "Piperine 0 mg" },
-        { id: "on", label: "Piperine 20 mg" },
-        { id: "black", label: "Pepper + fat" },
+        { id: "off", label: isVi ? "Piperine 0 mg (Không tiêu)" : "Piperine 0 mg" },
+        { id: "on", label: isVi ? "Piperine 20 mg (Chuẩn liều)" : "Piperine 20 mg" },
+        { id: "black", label: isVi ? "Tiêu đen + Chất béo" : "Pepper + fat" },
       ]}
       activePreset={piperine === 0 ? "off" : piperine >= 20 ? "on" : ""}
       onPreset={(id) => {
@@ -86,19 +91,21 @@ export default function CurcuminPiperineGizmo() {
         );
       }}
       citeParams={[
-        ["Curcumin dose", `${dose} mg`],
-        ["Piperine dose", `${piperine} mg`],
-        ["ke (treated)", `${m.keTreated.toFixed(3)} h⁻¹`],
-        ["t½ (treated)", `${m.halfLife.toFixed(1)} h`],
-        ["UGT1A1 suppression", `${m.ugtInhibition.toFixed(0)} %`],
-        ["AUC fold", `${m.aucFold.toFixed(1)} ×`],
-        ["Model", "first-order + UGT inhibition"],
+        [isVi ? "Liều Curcumin" : "Curcumin dose", `${dose} mg`],
+        [isVi ? "Liều Piperine" : "Piperine dose", `${piperine} mg`],
+        [isVi ? "Hằng số thải trừ ke" : "ke (treated)", `${m.keTreated.toFixed(3)} h⁻¹`],
+        [isVi ? "Thời gian bán thải t½" : "t½ (treated)", `${m.halfLife.toFixed(1)} h`],
+        [isVi ? "Mức ức chế UGT1A1" : "UGT1A1 suppression", `${m.ugtInhibition.toFixed(0)} %`],
+        [isVi ? "Mức tăng AUC" : "AUC fold", `${m.aucFold.toFixed(1)} ×`],
+        [isVi ? "Mô hình" : "Model", isVi ? "động học bậc 1 + ức chế UGT" : "first-order + UGT inhibition"],
       ]}
       controls={
         <div className="space-y-5">
           {/* --- THE SWITCH --- */}
           <div>
-            <p className="caps mb-1.5 text-slate-ink">Bio-enhancer</p>
+            <p className="caps mb-1.5 text-slate-ink">
+              {isVi ? "Chất kích hoạt hấp thu" : "Bio-enhancer"}
+            </p>
             <button
               type="button"
               onClick={() => {
@@ -114,8 +121,8 @@ export default function CurcuminPiperineGizmo() {
               }`}
             >
               <span className="flex flex-col items-start">
-                <span className={`caps ${on ? "text-trace" : "text-slate-ink"}`}>
-                  {on ? "engaged" : "bypass"}
+                <span className={`caps ${on ? "text-trace font-bold" : "text-slate-ink"}`}>
+                  {on ? (isVi ? "đang kích hoạt" : "engaged") : (isVi ? "chưa bật" : "bypass")}
                 </span>
                 <span className="num mt-0.5 text-[1.05rem] font-medium text-indigo-deep">
                   {piperine} mg piperine
@@ -134,13 +141,14 @@ export default function CurcuminPiperineGizmo() {
               </span>
             </button>
             <p className="mt-2 text-[0.73rem] leading-snug text-slate-ink">
-              Piperine competitively inhibits intestinal &amp; hepatic UGT1A1, collapsing glucuronidation
-              of curcuminoids.
+              {isVi
+                ? "Piperine ức chế cạnh tranh enzyme UGT1A1 ở ruột và gan, chặn đứng quá trình gắn gốc đường đào thải curcumin."
+                : "Piperine competitively inhibits intestinal & hepatic UGT1A1, collapsing glucuronidation of curcuminoids."}
             </p>
           </div>
 
           <LabSlider
-            label="Curcumin dose"
+            label={isVi ? "Liều Curcumin" : "Curcumin dose"}
             value={dose}
             min={250}
             max={2000}
@@ -150,18 +158,20 @@ export default function CurcuminPiperineGizmo() {
           />
 
           <LabSlider
-            label="Piperine dose"
+            label={isVi ? "Liều Piperine" : "Piperine dose"}
             value={piperine}
             min={0}
             max={20}
             step={1}
             unit="mg"
             onChange={(v) => { setPiperine(v); tick(2400, 0.012); }}
-            hint="UGT1A1 inhibition saturates at 20 mg"
+            hint={isVi ? "Mức ức chế enzyme UGT1A1 bão hòa ở liều 20 mg" : "UGT1A1 inhibition saturates at 20 mg"}
           />
 
           <div className="border-t border-slate-hair pt-3">
-            <p className="caps text-slate-ink">UGT1A1 suppression</p>
+            <p className="caps text-slate-ink">
+              {isVi ? "Mức độ ức chế đào thải gan UGT1A1" : "UGT1A1 suppression"}
+            </p>
             <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-paper-rule">
               <motion.div
                 className="h-full"
@@ -171,38 +181,56 @@ export default function CurcuminPiperineGizmo() {
               />
             </div>
             <p className="num mt-1.5 text-[0.78rem] text-indigo-soft">
-              {m.ugtInhibition.toFixed(1)} % · glucuronide fraction {m.glucuronideFrac.toFixed(0)} %
+              {isVi
+                ? `${m.ugtInhibition.toFixed(1)} % · tỷ lệ đào thải còn ${m.glucuronideFrac.toFixed(0)} %`
+                : `${m.ugtInhibition.toFixed(1)} % · glucuronide fraction ${m.glucuronideFrac.toFixed(0)} %`}
             </p>
           </div>
         </div>
       }
       telemetry={[
-        { key: "AUC fold-change", value: `${fold}`, unit: "×", tone: on ? "#00F2FE" : "#64748B" },
-        { key: "AUC (piperine)", value: aucOn, unit: "µg·h/mL", tone: "#00F2FE" },
-        { key: "t½ (treated)", value: m.halfLife.toFixed(1), unit: "h", tone: "#10B981" },
-        { key: "Cmax ratio", value: (m.treatedStats.cmax / Math.max(m.controlStats.cmax, 1e-9)).toFixed(2), unit: "×", tone: "#F59E0B" },
+        { key: isVi ? "Mức tăng hấp thu" : "AUC fold-change", value: `${fold}`, unit: "×", tone: on ? "#00F2FE" : "#64748B" },
+        { key: isVi ? "Diện tích AUC (+tiêu)" : "AUC (piperine)", value: aucOn, unit: "µg·h/mL", tone: "#00F2FE" },
+        { key: isVi ? "Thời gian bán thải t½" : "t½ (treated)", value: m.halfLife.toFixed(1), unit: "h", tone: "#10B981" },
+        { key: isVi ? "Tỷ số nồng độ Cmax" : "Cmax ratio", value: (m.treatedStats.cmax / Math.max(m.controlStats.cmax, 1e-9)).toFixed(2), unit: "×", tone: "#F59E0B" },
       ]}
       insight={
         on ? (
-          <>
-            With 20 mg piperine co-administered, the elimination rate constant falls from{" "}
-            <span className="num text-indigo-deep">0.128</span> to{" "}
-            <span className="num text-trace">{m.keTreated.toFixed(3)} h⁻¹</span> and apparent
-            bioavailability rises from 1.1 % to{" "}
-            <span className="num text-trace">{(m.F * 100).toFixed(2)} %</span>. The curve does not get
-            taller so much as <em>longer</em> — the terminal phase stretches because the glucuronide
-            sink is saturated. This is the mechanistic account of the ~20-fold AUC rise reported by
-            Shoba et&nbsp;al. (1998, n&nbsp;=&nbsp;8). AUC is area under the curve; here it is computed
-            by trapezoidal integration over 0–24 h.
-          </>
+          isVi ? (
+            <>
+              Khi uống cùng 20 mg piperine, hằng số tốc độ đào thải giảm mạnh từ{" "}
+              <span className="num text-indigo-deep">0.128</span> xuống{" "}
+              <span className="num text-trace">{m.keTreated.toFixed(3)} h⁻¹</span> và sinh khả dụng biểu kiến tăng từ 1.1% lên{" "}
+              <span className="num text-trace">{(m.F * 100).toFixed(2)} %</span>. Đường cong không chỉ tăng về đỉnh nồng độ mà chủ yếu là <em>kéo dài thời gian lưu hành</em> — pha đào thải kéo dài vì cỗ máy dán nhãn đào thải của gan đã bị vô hiệu hóa tạm thời. Đây là cơ chế giải thích cho hiện tượng nồng độ thuốc trong máu tăng ~20 lần theo nghiên cứu của Shoba et al. (1998, n=8).
+            </>
+          ) : (
+            <>
+              With 20 mg piperine co-administered, the elimination rate constant falls from{" "}
+              <span className="num text-indigo-deep">0.128</span> to{" "}
+              <span className="num text-trace">{m.keTreated.toFixed(3)} h⁻¹</span> and apparent
+              bioavailability rises from 1.1 % to{" "}
+              <span className="num text-trace">{(m.F * 100).toFixed(2)} %</span>. The curve does not get
+              taller so much as <em>longer</em> — the terminal phase stretches because the glucuronide
+              sink is saturated. This is the mechanistic account of the ~20-fold AUC rise reported by
+              Shoba et&nbsp;al. (1998, n&nbsp;=&nbsp;8). AUC is area under the curve; here it is computed
+              by trapezoidal integration over 0–24 h.
+            </>
+          )
         ) : (
-          <>
-            Control state: free curcuminoids at {dose} mg, unmodified Phase&nbsp;II clearance. Curcumin
-            is glucuronidated and sulfated within minutes, so the curve barely clears{" "}
-            <span className="num text-indigo-deep">{m.controlStats.cmax.toFixed(3)} µg/mL</span> —
-            essentially all of the dose is excreted before absorption finishes. Flip the bio-enhancer
-            switch to inhibit UGT1A1 and watch the terminal phase stretch.
-          </>
+          isVi ? (
+            <>
+              Trạng thái đối chứng: Dùng {dose} mg curcumin đơn độc, quá trình đào thải Pha II tại gan hoạt động tự do. Curcumin bị chuyển hóa thành dạng liên hợp glucuronide chỉ trong vài phút, khiến đường cong hầu như không vượt quá mức{" "}
+              <span className="num text-indigo-deep">{m.controlStats.cmax.toFixed(3)} µg/mL</span> — gần như toàn bộ liều uống bị gan tống khứ ra ngoài trước khi kịp phân phối đến các khớp xương và mô bị viêm. Hãy thử gạt công tắc hạt tiêu đen phía trên để kìm hãm enzyme UGT1A1 và quan sát kết quả.
+            </>
+          ) : (
+            <>
+              Control state: free curcuminoids at {dose} mg, unmodified Phase&nbsp;II clearance. Curcumin
+              is glucuronidated and sulfated within minutes, so the curve barely clears{" "}
+              <span className="num text-indigo-deep">{m.controlStats.cmax.toFixed(3)} µg/mL</span> —
+              essentially all of the dose is excreted before absorption finishes. Flip the bio-enhancer
+              switch to inhibit UGT1A1 and watch the terminal phase stretch.
+            </>
+          )
         )
       }
     />
@@ -220,9 +248,10 @@ interface PlotProps {
   xTicks: number[];
   dose: number;
   m: { controlStats: { cmax: number; tmax: number }; treatedStats: { cmax: number; tmax: number } };
+  isVi: boolean;
 }
 
-function CurcuminPlot({ ctrlPath, trtPath, trtArea, on, x, y, yTicks, xTicks, dose, m }: PlotProps) {
+function CurcuminPlot({ ctrlPath, trtPath, trtArea, on, x, y, yTicks, xTicks, dose, m, isVi }: PlotProps) {
   return (
     <svg
       id="cp-chart"
@@ -261,10 +290,10 @@ function CurcuminPlot({ ctrlPath, trtPath, trtArea, on, x, y, yTicks, xTicks, do
       <line x1={L} y1={T} x2={L} y2={B} stroke="#64748B" strokeWidth="1" />
 
       <text x={(L + R) / 2} y={H - 8} textAnchor="middle" fill="#94A3B8" fontSize="9.5" fontFamily="var(--font-mono)" letterSpacing="2.2">
-        TIME AFTER DOSE (h)
+        {isVi ? "THỜI GIAN SAU KHI UỐNG (GIỜ)" : "TIME AFTER DOSE (h)"}
       </text>
       <text x={14} y={(T + B) / 2} textAnchor="middle" fill="#94A3B8" fontSize="9.5" fontFamily="var(--font-mono)" letterSpacing="2.2" transform={`rotate(-90 14 ${(T + B) / 2})`}>
-        SERUM CURCUMIN (µg/mL)
+        {isVi ? "NỒNG ĐỘ NGHỆ TRONG MÁU (µg/mL)" : "SERUM CURCUMIN (µg/mL)"}
       </text>
 
       <g clipPath="url(#cp-clip)">
@@ -295,7 +324,9 @@ function CurcuminPlot({ ctrlPath, trtPath, trtArea, on, x, y, yTicks, xTicks, do
 
       {/* UGT band label */}
       <text x={L + 8} y={T + 15} fill="#F59E0B" fontSize="9.5" fontFamily="var(--font-mono)" letterSpacing="1.5" opacity={on ? 0.75 : 1}>
-        {on ? "UGT1A1 INHIBITED — GLUCURONIDE SINK COLLAPSED" : "PHASE II GLUCURONIDATION CLEARANCE"}
+        {on
+          ? (isVi ? "ĐÃ ỨC CHẾ UGT1A1 — TRIỆT TIÊU ĐÀO THẢI GLUCURONIDE" : "UGT1A1 INHIBITED — GLUCURONIDE SINK COLLAPSED")
+          : (isVi ? "VÙNG ĐÀO THẢI CHUYỂN HÓA PHA II CỦA GAN" : "PHASE II GLUCURONIDATION CLEARANCE")}
       </text>
 
       {on ? (
@@ -303,7 +334,7 @@ function CurcuminPlot({ ctrlPath, trtPath, trtArea, on, x, y, yTicks, xTicks, do
           <circle cx={x(m.treatedStats.tmax)} cy={y(m.treatedStats.cmax)} r="4" fill="#08121F" stroke="#00F2FE" strokeWidth="2" />
           <line x1={x(m.treatedStats.tmax)} y1={y(m.treatedStats.cmax)} x2={x(m.treatedStats.tmax) + 40} y2={y(m.treatedStats.cmax) - 26} stroke="#00F2FE" strokeWidth="1" opacity="0.7" />
           <text x={x(m.treatedStats.tmax) + 44} y={y(m.treatedStats.cmax) - 29} fill="#00F2FE" fontSize="11.5" fontFamily="var(--font-mono)" fontWeight="500">
-            +20 mg piperine
+            {isVi ? "+20 mg piperine (tiêu đen)" : "+20 mg piperine"}
           </text>
           <text x={x(m.treatedStats.tmax) + 44} y={y(m.treatedStats.cmax) - 17} fill="#94A3B8" fontSize="9.5" fontFamily="var(--font-mono)" letterSpacing="1.1">
             Cmax {m.treatedStats.cmax.toFixed(3)} µg/mL
@@ -311,12 +342,12 @@ function CurcuminPlot({ ctrlPath, trtPath, trtArea, on, x, y, yTicks, xTicks, do
         </g>
       ) : (
         <text x={R - 6} y={y(0) - 10} textAnchor="end" fill="#64748B" fontSize="10" fontFamily="var(--font-mono)" letterSpacing="1.2">
-          CONTROL · Cmax {m.controlStats.cmax.toFixed(3)}
+          {isVi ? `ĐỐI CHỨNG (KHÔNG TIÊU) · Cmax ${m.controlStats.cmax.toFixed(3)}` : `CONTROL · Cmax ${m.controlStats.cmax.toFixed(3)}`}
         </text>
       )}
 
       <text x={R} y={T + 2} textAnchor="end" fill="#334155" fontSize="9.5" fontFamily="var(--font-mono)" letterSpacing="1.6">
-        {dose} mg CURCUMIN
+        {dose} mg {isVi ? "CURCUMIN (NGHỆ)" : "CURCUMIN"}
       </text>
     </svg>
   );
