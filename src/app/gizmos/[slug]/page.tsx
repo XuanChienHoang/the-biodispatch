@@ -6,6 +6,7 @@ import PathwayGizmo from "@/components/gizmo/PathwayGizmo";
 import SynergyGizmo from "@/components/gizmo/SynergyGizmo";
 import BiomarkerGizmo from "@/components/gizmo/BiomarkerGizmo";
 import CurcuminPiperineGizmo from "@/components/gizmo/CurcuminPiperine";
+import TMAOGizmo from "@/components/gizmo/TMAOGizmo";
 import { GizmoViewWrapper } from "@/components/GizmoViewWrapper";
 
 const ENGINES: Record<
@@ -96,6 +97,22 @@ const ENGINES: Record<
       "Liều uống đơn lẻ, tích phân diện tích AUC trong cửa sổ 24 giờ",
     ],
     refs: "10.1055/s-2006-957541",
+  },
+  tmao: {
+    Comp: TMAOGizmo,
+    assumptions: [
+      "Microbial CutC/D conversion kinetics follows substrate saturation with DMB IC50 of 22 µM",
+      "Hepatic FMO3 monooxygenation is rapid and non-rate-limiting under physiological portal flow",
+      "Plasma TMAO clearance depends primarily on glomerular filtration rate (eGFR)",
+      "Macrophage CD36 upregulation and atheroma foam cell accumulation scale with chronic TMAO exposure >6.2 µM",
+    ],
+    assumptionsVi: [
+      "Động học chuyển hóa Choline của enzyme vi sinh CutC/D bão hòa theo nồng độ cơ chất và bị ức chế bởi DMB (IC50 ≈ 22 µM)",
+      "Quá trình oxy hóa Flavin bởi FMO3 tại gan diễn ra nhanh chóng dưới lưu lượng tuần hoàn tĩnh mạch cửa sinh lý",
+      "Đào thải TMAO khỏi huyết tương phụ thuộc chủ yếu vào độ lọc cầu thận (eGFR)",
+      "Sự biểu hiện quá mức thụ thể quét CD36 của đại thực bào và tích tụ tế bào bọt tăng mạnh khi nồng độ TMAO vượt ngưỡng 6.2 µmol/L",
+    ],
+    refs: "10.1056/NEJMoa1109400",
   },
 };
 

@@ -33,12 +33,13 @@ export const metadata: Metadata = {
     template: "%s · The BioDispatch",
   },
   description:
-    "Rigorous, evidence-based deep dives in biotechnology, metabolomics, and pharmacokinetic simulations by Dr. Xuan Chien Hoang (Dr. rer. nat., University of Hamburg).",
+    "Evidence-based biomedical intelligence by Dr. Xuan Chien Hoang (Dr. rer. nat. in Molecular Biology, Univ. of Hamburg). Bridging East-West ethnobotanicals, bioavailability enhancement, oncology care, and data-driven HealthTech.",
   openGraph: {
     type: "website",
     siteName: "The BioDispatch",
     title: "The BioDispatch · Dr. Xuan Chien Hoang",
-    description: "Evidence-based biomedical intelligence, mass spectrometry telemetry and pharmacokinetic explorables.",
+    description:
+      "East-West ethnobotanicals, bioavailability enhancement, supportive oncology, and interactive pharmacokinetic simulation engines.",
     locale: "en_US",
   },
 };
@@ -50,12 +51,13 @@ const JSONLD = {
       "@type": "MedicalWebPage",
       "@id": "https://the-biodispatch.vercel.app/#webpage",
       name: "The BioDispatch",
-      description: "Evidence-based deep dives in biotechnology and metabolomic health science.",
+      description:
+        "Evidence-based deep dives in biotechnology, metabolomics, and East-West botanical medicine.",
       inLanguage: "en",
       publisher: {
         "@type": "Person",
         name: "Dr. Xuan Chien Hoang",
-        jobTitle: "Doctor of Natural Sciences (Dr. rer. nat.)",
+        jobTitle: "Doctor of Natural Sciences (Dr. rer. nat. in Molecular Biology)",
         alumniOf: "University of Hamburg",
       },
       about: { "@type": "MedicalCondition", name: "Metabolic health" },

@@ -69,6 +69,18 @@ const ENGINE_ART: Record<string, React.ReactNode> = {
       </text>
     </g>
   ),
+  tmao: (
+    <g>
+      <circle cx="34" cy="46" r="14" fill="none" stroke="#F59E0B" strokeWidth="1.8" />
+      <path d="M48 46 H76" stroke="#F59E0B" strokeWidth="1.6" strokeDasharray="4 3" />
+      <polygon points="80,46 72,42 72,50" fill="#F59E0B" />
+      <circle cx="98" cy="46" r="18" fill="none" stroke="#10B981" strokeWidth="1.8" />
+      <path d="M116 46 H144" stroke="#EF4444" strokeWidth="1.6" strokeDasharray="4 3" />
+      <polygon points="148,46 140,42 140,50" fill="#EF4444" />
+      <circle cx="168" cy="46" r="15" fill="#450A0A" stroke="#DC2626" strokeWidth="2.2" />
+      <circle cx="168" cy="46" r="8" fill="#DC2626" />
+    </g>
+  ),
 };
 
 export function GizmosDirectory() {
@@ -93,13 +105,13 @@ export function GizmosDirectory() {
           <h1 className="mt-3 font-display display-xl font-black leading-[0.9] tracking-[-0.04em] text-indigo-deep">
             {isVi ? (
               <>
-                Bốn công cụ,
+                Năm công cụ,
                 <br />
                 một bàn làm việc.
               </>
             ) : (
               <>
-                Four instruments,
+                Five instruments,
                 <br />
                 one workbench.
               </>
@@ -161,6 +173,83 @@ export function GizmosDirectory() {
             </div>
           </Link>
         ))}
+      </div>
+
+      {/* Upcoming Simulation Roadmap */}
+      <div className="mt-14 rounded-sm border border-slate-hair bg-paper-tint p-8">
+        <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-hair pb-4">
+          <div>
+            <span className="caps text-trace-ink font-semibold">
+              {isVi ? "§ Lộ trình Mở rộng Phòng Thí nghiệm" : "§ Future Engine Roadmap"}
+            </span>
+            <h3 className="mt-1 font-display text-[1.4rem] font-bold text-indigo-deep">
+              {isVi ? "Các Mô hình Mô phỏng Chuyên sâu Đang Chuẩn bị" : "Advanced Engines Under Development"}
+            </h3>
+          </div>
+          <span className="caps rounded-sm bg-indigo-deep px-3 py-1 text-xs text-trace font-mono">
+            {isVi ? "Kế hoạch Triển khai Tiếp theo" : "Next Phase Roadmap"}
+          </span>
+        </div>
+
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 text-xs">
+          {[
+            {
+              id: "06",
+              titleVi: "Lên men Tinh bột kháng & SCFA",
+              titleEn: "Resistant Starch → SCFA Synthesis",
+              descVi: "Sinh tổng hợp Butyrate đường ruột, hạ pH đại tràng và hàn gắn hàng rào niêm mạc ruột (Tight Junctions).",
+              descEn: "Colonic fermentation, butyrate yield, HDAC inhibition, and Claudin-1 tight junction integrity.",
+            },
+            {
+              id: "07",
+              titleVi: "Ngã ba Mevalonate: Statin & CoQ10",
+              titleEn: "Mevalonate Shunt: Statin vs CoQ10",
+              descVi: "Mô hình hóa sự suy giảm CoQ10 ở ty thể cơ vân khi dùng thuốc Statin và cơ chế giảm đau mỏi cơ.",
+              descEn: "HMG-CoA reductase suppression, mitochondrial CoQ10 depletion, and myopathy risk profiling.",
+            },
+            {
+              id: "08",
+              titleVi: "Cửa sổ Thủy phân Sulforaphane",
+              titleEn: "Sulforaphane Myrosinase Kinetics",
+              descVi: "Nhiệt động học enzyme Myrosinase trong bông cải xanh, bảo toàn hoạt chất kích hoạt con đường Nrf2.",
+              descEn: "Thermal inactivation threshold, glucoraphanin hydrolysis, and Nrf2 phase II detoxification.",
+            },
+            {
+              id: "09",
+              titleVi: "Căn chỉnh Nhịp Sinh học & Melatonin",
+              titleEn: "Circadian Phase & Melatonin PRC",
+              descVi: "Đáp ứng pha của ánh sáng xanh và nồng độ Melatonin, tối ưu nhạy cảm Insulin và chu kỳ thức ngủ.",
+              descEn: "Phase Response Curve to 480nm light, pineal melatonin window, and core temperature rhythm.",
+            },
+            {
+              id: "10",
+              titleVi: "Bộ đếm Hạt mỡ xơ vữa ApoB vs LDL-C",
+              titleEn: "ApoB Particle Count Discordance",
+              descVi: "Phát hiện điểm mù tim mạch do hạt mỡ nhỏ đặc (sdLDL) ở người kháng insulin và gan nhiễm mỡ.",
+              descEn: "Atherogenic particle density vs cholesterol mass discordance in insulin-resistant phenotypes.",
+            },
+            {
+              id: "11",
+              titleVi: "Phức hợp EGCG & Chelate Sắt",
+              titleEn: "EGCG Iron Chelation Kinetics",
+              descVi: "Mô phỏng động học tạo phức không tan giữa polyphenol trà xanh và ion sắt, tối ưu cửa sổ hấp thu.",
+              descEn: "Gastric chelation kinetics, non-haem iron absorption suppression, and timing windows.",
+            },
+          ].map((m) => (
+            <div key={m.id} className="rounded-sm border border-slate-hair bg-paper p-4">
+              <div className="flex items-center justify-between text-slate-ink">
+                <span className="font-mono font-bold text-trace-ink">{m.id}</span>
+                <span className="caps text-[0.65rem]">{isVi ? "đang chuẩn hóa" : "in development"}</span>
+              </div>
+              <h4 className="mt-2 font-display text-[0.95rem] font-bold text-indigo-deep">
+                {isVi ? m.titleVi : m.titleEn}
+              </h4>
+              <p className="mt-1 text-[0.82rem] leading-relaxed text-indigo-soft">
+                {isVi ? m.descVi : m.descEn}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

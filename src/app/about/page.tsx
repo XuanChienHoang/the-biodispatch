@@ -4,7 +4,7 @@ import { AboutClient } from "@/components/AboutClient";
 export const metadata: Metadata = {
   title: "About Dr. Xuan Chien Hoang · The BioDispatch",
   description:
-    "Curator Profile: Dr. Xuan Chien Hoang (Dr. rer. nat., University of Hamburg). Research background in biotechnology, metabolomics, and evidence-based health science.",
+    "Curator Profile: Dr. Xuan Chien Hoang (Dr. rer. nat. in Molecular Biology, University of Hamburg). Founder of Lava Health GmbH, bridging Asian ethnobotanicals with European extraction standards, bioavailability enhancement, oncology supportive care, and biomedical Data Science.",
 };
 
 export default function AboutPage() {

@@ -213,15 +213,15 @@ export default async function BlogPage({ params }: Params) {
                     </h4>
                     <p className="caps text-[0.7rem] text-trace-ink font-medium">
                       {isVi
-                        ? "Tiến sĩ Khoa học Tự nhiên (Đại học Hamburg, CHLB Đức)"
-                        : "Doctor of Natural Sciences (University of Hamburg, Germany)"}
+                        ? "Tiến sĩ Sinh học Phân tử (Đại học Hamburg) · Sáng lập Lava Health GmbH"
+                        : "Doctor of Natural Sciences (Univ. of Hamburg) · Founder, Lava Health GmbH"}
                     </p>
                   </div>
                 </div>
                 <p className="mt-3 text-[0.88rem] leading-relaxed text-indigo-soft">
                   {isVi
-                    ? "Chuyên gia hoạch định chiến lược sản phẩm y sinh và định lượng chuyển hóa học (metabolomics) với hơn 8 năm kinh nghiệm R&D, quản trị chất lượng và tổng hợp dữ liệu lâm sàng tại châu Âu và APAC."
-                    : "Biomedical product lifecycle strategist and metabolomic profiling specialist with over 8 years of R&D, quality governance, and clinical evidence synthesis experience across Europe and APAC."}
+                    ? "Nhà khoa học và chuyên gia phát triển sản phẩm y sinh với hơn 10 năm kinh nghiệm tại Đức và Châu Á. Tiên phong kết hợp thảo dược Á Đông với tiêu chuẩn chiết xuất Châu Âu; tối ưu hóa sinh khả dụng, nghiên cứu giải pháp hỗ trợ ung thư, bệnh tim mạch và ứng dụng Data Science trong y tế thực chứng."
+                    : "Biomedical scientist and product development strategist with over a decade of international experience in Germany and APAC. Pioneering the East-West botanical bridge, bioavailability enhancement, supportive oncology formulations, and data-driven HealthTech."}
                 </p>
                 <div className="mt-4 flex gap-4 text-xs font-mono">
                   <Link href="/about" className="text-indigo-deep font-semibold underline decoration-trace">

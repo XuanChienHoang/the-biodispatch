@@ -57,8 +57,8 @@ export function ComplianceStrip() {
             </div>
             <p className="max-w-sm text-[0.95rem] leading-relaxed text-slate-300">
               {isVi
-                ? "Chủ biên bởi TS. Hoàng Xuân Chiến (Dr. rer. nat., Đại học Hamburg). Mọi phân tích lâm sàng đều kết nối trực tiếp chứng cứ dược động học với hệ thống theo dõi sức khỏe thực tế."
-                : "Curated by Dr. Xuan Chien Hoang (Dr. rer. nat., University of Hamburg). Every clinical analysis connects pharmacokinetic evidence with real-world health monitoring."}
+                ? "Chủ biên bởi TS. Hoàng Xuân Chiến (Dr. rer. nat. Sinh học Phân tử, ĐH Hamburg). Cầu nối kết hợp dược liệu Á - Âu, tối ưu sinh khả dụng, hỗ trợ ung thư, tim mạch và giải pháp HealthTech thực chứng."
+                : "Curated by Dr. Xuan Chien Hoang (Dr. rer. nat. in Molecular Biology, Univ. of Hamburg). Bridging East-West botanicals, bioavailability enhancement, oncology care, and data-driven HealthTech."}
             </p>
           </div>
 

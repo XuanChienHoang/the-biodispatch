@@ -218,6 +218,18 @@ export const GIZMOS = [
     inputsVi: ["4 chỉ số sinh học", "Khoảng tin cậy 95% CI", "Phân tích gộp thử nghiệm"],
     color: "#FF6B4A",
   },
+  {
+    slug: "tmao",
+    index: "05",
+    name: "Gut-Liver TMAO Axis & Atheroma Cascade",
+    nameVi: "Trục TMAO Tim - Gan - Ruột & Thác Xơ vữa Động mạch",
+    short: "TMAO Axis",
+    blurb: "Simulate microbial Choline cleavage by CutC/D, hepatic FMO3 oxidation to TMAO, and macrophage CD36 foam-cell atherogenesis.",
+    blurbVi: "Mô phỏng vi khuẩn bẻ gãy Choline thành TMA, enzyme FMO3 gan oxy hóa thành TMAO và thụ thể CD36 thúc đẩy mảng xơ vữa.",
+    inputs: ["Choline & Carnitine", "CutC/D & DMB Inhibitor", "eGFR Clearance"],
+    inputsVi: ["Khẩu phần Choline", "Enzyme CutC/D & DMB", "Độ lọc cầu thận eGFR"],
+    color: "#DC2626",
+  },
 ] as const;
 
 /* ------------------------------------------------------------------ */

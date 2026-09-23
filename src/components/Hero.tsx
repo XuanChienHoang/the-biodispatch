@@ -115,7 +115,9 @@ export function Hero() {
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               <div className="border-l-2 border-indigo-deep pl-4">
                 <span className="caps text-slate-ink">{t.leadInvestigator}</span>
-                <p className="num mt-1 text-[1.15rem] font-bold text-indigo-deep">Dr. Xuan Chien Hoang</p>
+                <p className="num mt-1 text-[1.15rem] font-bold text-indigo-deep">
+                  {lang === "vi" ? "TS. Hoàng Xuân Chiến" : "Dr. Xuan Chien Hoang"}
+                </p>
                 <p className="mt-0.5 text-[0.8rem] text-slate-ink">{t.leadInvestigatorSub}</p>
               </div>
 
