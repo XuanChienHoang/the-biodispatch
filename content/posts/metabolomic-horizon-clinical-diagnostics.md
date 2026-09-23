@@ -46,8 +46,8 @@ Capturing this breadth requires high-resolution hybrid instruments—specificall
 A salient example of metabolomics outperforming traditional diagnostics is in the quantification of gut-derived microbial metabolites:
 
 1. **Short-Chain Fatty Acids (SCFAs):** Acetate, propionate, and butyrate directly modulate intestinal epithelial barrier integrity, Treg cell differentiation, and histone deacetylase (HDAC) inhibition.
-2. **Trimethylene N-oxide (TMAO):** Formed via hepatic oxidation of gut-derived trimethylamine, TMAO correlates with endothelial dysfunction and accelerated atherosclerotic plaque progression far more acutely than baseline LDL-C metrics alone.
-3. **Bile Acid Transformation:** Secondary bile acid profiles (deoxycholic and lithocholic acids) serve as sensitive sensors for dysbiosis and inflammatory bowel conditions.
+2. **Trimethylamine N-oxide (TMAO):** Formed via hepatic flavin-containing monooxygenase 3 (FMO3) oxidation of gut-derived trimethylamine, elevated plasma TMAO correlates with endothelial dysfunction and accelerated atherosclerotic lesion progression.
+3. **Bile Acid Transformation:** Secondary bile acid profiles (deoxycholic and lithocholic acids) serve as sensitive sensors for dysbiosis and mucosal inflammation.
 
 Standard microbial 16S rRNA gene sequencing reveals *which taxa are present*, but metabolomic profiling proves *what bioactive compounds they are producing and translocating into systemic circulation*.
 
@@ -78,6 +78,6 @@ Metabolomics provides the immediate, functional readout necessary to evaluate th
 
 ### References & Selected Reading
 
-1. Wishart, D. S. et al. (2022). *HMDB 5.0: the Human Metabolome Database for metabolomics and metabolomics.* Nucleic Acids Res, 50(D1), D622-D631.
-2. Schauer, N., & Fernie, A. R. (2006). *Development and application of gas chromatography-mass spectrometry in metabolic profiling.* Trends in Plant Science, 11(12), 629-637.
-3. Tang, W. H. et al. (2013). *Intestinal microbial metabolism of phosphatidylcholine and cardiovascular risk.* New England Journal of Medicine, 368(17), 1575-1584.
+1. Wishart, D. S. et al. (2022). *HMDB 5.0: the Human Metabolome Database for 2022.* Nucleic Acids Research, 50(D1), D622–D631. [doi:10.1093/nar/gkab1062](https://doi.org/10.1093/nar/gkab1062)
+2. Schauer, N., & Fernie, A. R. (2006). *Plant metabolomics: towards biological function and mechanism.* Trends in Plant Science, 11(10), 508–516. [doi:10.1016/j.tplants.2006.08.007](https://doi.org/10.1016/j.tplants.2006.08.007)
+3. Tang, W. H. W. et al. (2013). *Intestinal Microbial Metabolism of Phosphatidylcholine and Cardiovascular Risk.* New England Journal of Medicine, 368(17), 1575–1584. [doi:10.1056/NEJMoa1109400](https://doi.org/10.1056/NEJMoa1109400)

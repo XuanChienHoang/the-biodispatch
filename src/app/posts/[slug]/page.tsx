@@ -2,6 +2,9 @@ import { notFound } from "next/navigation";
 import { getPostBySlug, getAllPosts } from "@/lib/posts";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
+import "katex/dist/katex.min.css";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -66,7 +69,10 @@ export default async function PostPage({ params }: Props) {
 
       <div className="container">
         <div className="article-content">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm, remarkMath]}
+            rehypePlugins={[rehypeKatex]}
+          >
             {post.content}
           </ReactMarkdown>
 
