@@ -57,3 +57,22 @@ Trước khi một bài viết được phép xuất bản lên The BioDispatch,
 * Luôn khai báo đầy đủ `doi` và `pmid` trong `SEED_REFS` tại `src/lib/store.ts`.
 * Nút **PubMed ↗** và **DOI ↗** phải hoạt động chính xác 100%.
 * Liên kết Gizmo mô phỏng phù hợp (`pathway`, `pk`, `synergy`, `biomarker` hoặc `null`).
+
+---
+
+## 5. Quy chuẩn Sơ đồ Cơ chế Phân tử (Pathway Flowchart Standards)
+
+Mọi bài viết sinh ra đều phải có sơ đồ dòng thác phân tử trực quan đặt trong khối ````text ... ```` để hệ thống tự động biên dịch sang component **Biological Flowchart v2**:
+
+1. **Cú pháp luồng chuẩn (Standard Linear Pipeline)**:
+   * Các mắt xích phân tử bắt buộc đặt trong ngoặc vuông: `[Giai đoạn 1] ──► [Giai đoạn 2] ──► [Giai đoạn 3]`.
+   * Mũi tên chuyển tiếp bắt buộc dùng ký tự nối dài: `──►` (hoặc `──(Inhibits)──►` khi có ức chế ngang).
+2. **Quy tắc phân tầng vai trò phân tử**:
+   * **Giai đoạn đầu (Input/Ligand)**: Ghi rõ tác nhân kích hoạt hoặc cơ chất ban đầu (ví dụ: `[GLP-1 gắn thụ thể GLP-1R]`, `[Giấc ngủ sâu NREM]`).
+   * **Giai đoạn trung gian (Sensors & Hubs)**: Các enzyme, kinase hoặc thụ thể then chốt (ví dụ: `[Kích hoạt AMPK]`, `[Kênh AQP4 mở van]`). Nếu là ức chế, bắt buộc chứa từ khóa `Ức chế`, `Inhibit`, `Kìm hãm`, `Chặn` để hệ thống tự động gán nhãn tấm khiên `ShieldAlert` màu đỏ hồng.
+   * **Giai đoạn đích (Biological Endpoint)**: Kết quả bảo vệ tế bào hoặc thoái giáng (ví dụ: `[Tái sinh Ty thể (Mitophagy)]`, `[Cuốn phăng Amyloid-Beta & Tau]`).
+3. **Độ súc tích của nhãn thẻ (Node Concision)**:
+   * Mỗi thẻ nên có độ dài vừa phải (dưới 45 ký tự) để hiển thị trọn vẹn trong thẻ Bio-Capsule và tự động kích hoạt ngăn giải mã chuyên sâu (**Micro-Mechanism Explainer**) khi người đọc click chuột.
+4. **Hiển thị thích ứng không bao giờ bị crop (Zero-Crop Guarantee)**:
+   * Các chuỗi từ 4 giai đoạn trở lên sẽ tự động hiển thị dạng Lưới Thích ứng 2-3 cột và hỗ trợ chuyển đổi sang Băng chuyền cuộn ngang có nút điều hướng trái/phải.
+

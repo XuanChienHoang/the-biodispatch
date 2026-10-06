@@ -228,6 +228,15 @@ export async function runAutonomousDispatch() {
   // 2. Tạo bài viết tiếng Anh
   const enPost = createDispatchMarkdown(nextTopic, 'en', scheduledIsoDate);
   const enFilePath = path.join(postsDir, `${enPost.slug}.md`);
+
+  const enValidation = validateDispatchContent(enPost.content, 'en');
+  if (!enValidation.isValid) {
+    console.error('❌ [Gatekeeper REJECT] Bài viết tiếng Anh chưa đạt chuẩn biên tập:');
+    enValidation.issues.forEach(issue => console.error(`   - ${issue}`));
+    throw new Error('Chất lượng bản thảo tiếng Anh không đạt chuẩn Gatekeeper!');
+  }
+  console.log(`🛡️ [Gatekeeper PASSED] Bản thảo tiếng Anh đạt ${enValidation.wordCount} từ và vượt qua toàn bộ 7 tiêu chuẩn biên tập!`);
+
   fs.writeFileSync(enFilePath, enPost.content, 'utf8');
   console.log(`📝 [Written] Đã tạo bản tiếng Anh: content/posts/${enPost.slug}.md`);
 
