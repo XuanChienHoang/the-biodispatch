@@ -51,6 +51,9 @@ A salient example of metabolomics outperforming traditional diagnostics is in th
 
 1. **Short-Chain Fatty Acids (SCFAs):** Acetate, propionate, and butyrate directly modulate intestinal epithelial barrier integrity, Treg cell differentiation, and histone deacetylase (HDAC) inhibition.
 2. **Trimethylamine N-oxide (TMAO):** Formed via hepatic flavin-containing monooxygenase 3 (FMO3) oxidation of gut-derived trimethylamine, elevated plasma TMAO correlates with endothelial dysfunction and accelerated atherosclerotic lesion progression.
+```text
+[Dietary Choline & Carnitine] ──► [Gut Microbiome Produces TMA] ──► [Hepatic FMO3 Oxidizes to TMAO] ──► [Endothelial Adhesion & Atherosclerosis]
+```
 3. **Bile Acid Transformation:** Secondary bile acid profiles (deoxycholic and lithocholic acids) serve as sensitive sensors for dysbiosis and mucosal inflammation.
 
 Standard microbial 16S rRNA gene sequencing reveals *which taxa are present*, but metabolomic profiling proves *what bioactive compounds they are producing and translocating into systemic circulation*.

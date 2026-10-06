@@ -39,12 +39,13 @@ export function PathwayFlowchart({ rawText, isVi = true }: PathwayFlowchartProps
     );
   }
 
-  // Linear pathway lines with ──► or ->
+  // Linear pathway lines with arrows
+  const arrowRegex = /──►|-->|->|→|=>/;
   const lines = rawText
     .trim()
     .split("\n")
     .map((l) => l.trim())
-    .filter((l) => l.includes("──►") || l.includes("->"));
+    .filter((l) => arrowRegex.test(l));
 
   if (lines.length === 0) {
     return (
@@ -57,11 +58,9 @@ export function PathwayFlowchart({ rawText, isVi = true }: PathwayFlowchartProps
   return (
     <div className="my-8 space-y-4">
       {lines.map((line, lineIdx) => {
-        // Split by ──► or ->
-        const delimiter = line.includes("──►") ? "──►" : "->";
         const steps = line
-          .split(delimiter)
-          .map((s) => s.trim().replace(/^\[|\]$/g, "").trim())
+          .split(arrowRegex)
+          .map((s) => s.replace(/\[/g, "").replace(/\]/g, "").trim())
           .filter(Boolean);
 
         return (

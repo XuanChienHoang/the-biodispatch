@@ -54,7 +54,9 @@ Một minh chứng rõ ràng nhất cho sức mạnh của chuyển hóa học l
 1. **Từ đĩa thức ăn**: Khi chúng ta ăn các thực phẩm giàu choline hoặc L-carnitine (như thịt đỏ, trứng).
 2. **Qua nhà máy vi khuẩn**: Một số chủng vi khuẩn đường ruột sẽ biến đổi các chất này thành phân tử khí **TMA (Trimethylamine)**.
 3. **Đến lá gan**: Khí TMA theo dòng máu về gan và bị enzyme **FMO3** (*flavin-containing monooxygenase 3*) của gan oxy hóa thành chất **TMAO**.
-4. **Hậu quả trên thành mạch**: Nồng độ TMAO tăng cao trong máu sẽ kích thích các tế bào miễn dịch bám dính vào thành mạch máu, thúc đẩy hình thành các mảng xơ vữa động mạch nguy hiểm.
+```text
+[Thịt đỏ & Trứng giàu Choline] ──► [Vi khuẩn đường ruột tạo khí TMA] ──► [Gan oxy hóa qua enzyme FMO3 tạo TMAO] ──► [Kích hoạt viêm nội mạc & Xơ vữa mạch máu]
+```
 
 Nếu chỉ xét nghiệm gen thông thường, bạn sẽ hoàn toàn "mù" trước quá trình này. Nhưng với xét nghiệm chuyển hóa học, bác sĩ có thể đo được chính xác nồng độ TMAO đang lưu hành, từ đó can thiệp sớm vào chế độ dinh dưỡng và hệ vi sinh đường ruột **trước khi mảng xơ vữa kịp làm tắc nghẽn động mạch**.
 

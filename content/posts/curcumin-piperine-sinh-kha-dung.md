@@ -63,6 +63,11 @@ Hạt tiêu đen chứa một hoạt chất cay mang tên **piperine**. Khi đi 
 Hiểu một cách nôm na:
 > *"Piperine giống như một vật cản làm kẹt tạm thời chiếc máy dán nhãn của lá gan. Trong khoảng thời gian chiếc máy này bị tạm dừng, các phân tử curcumin tự do được thảnh thơi đi vào dòng máu và lưu thông khắp cơ thể để phát huy tác dụng kháng viêm."*
 
+```text
+[Uống Curcumin đơn độc] ──► [Enzyme UGT1A1 dán nhãn liên hợp] ──► [Đào thải 99% qua mật và nước tiểu]
+[Phối hợp Piperine tiêu đen] ──► [Ức chế tạm thời UGT1A1 & CYP3A4] ──► [Curcumin tự do vào máu tăng 2000%]
+```
+
 Nhờ cơ chế này:
 * Tốc độ đào thải của nghệ chậm lại gấp 4 lần (thời gian bán thải kéo dài từ 5.4 giờ lên tới hơn 21 giờ).
 * Tỷ lệ hấp thu tăng vọt từ 1.1% lên 5.5%.
