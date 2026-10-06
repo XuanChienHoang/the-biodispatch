@@ -776,6 +776,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "During deep slow-wave NREM sleep, interstitial space volume expands by 60%, allowing cerebrospinal fluid to flush out neurotoxic oligomers. Unveiling the molecular machinery behind the brain's internal lymphatic wash.",
     },
   ],
+  "nad-cd38-sirtuin-mitochondria-cellular-aging": [
+    {
+      ordinal: 1,
+      label: "The NAD+-Sirtuin Axis and the CD38 Sink: Conserving Mitochondrial Bioenergetics Against Cellular Senescence",
+      pmid: "33318698",
+      doi: "10.1038/s41580-020-00313-x",
+      design: "Peer-reviewed Landmark Publication",
+      sampleSize: null,
+      journal: "Nature Reviews Molecular Cell Biology",
+      year: 2021,
+      abstract: "Aging depletes intracellular NAD+ pools not merely through synthesis decline, but via inflammatory hyper-activation of the ectoenzyme CD38. Dissecting the molecular warfare between CD38 consumption and Sirtuin mitochondrial fidelity.",
+    },
+  ],
+  "nad-cd38-sirtuin-mitochondria-cellular-aging-en": [
+    {
+      ordinal: 1,
+      label: "The NAD+-Sirtuin Axis and the CD38 Sink: Conserving Mitochondrial Bioenergetics Against Cellular Senescence",
+      pmid: "33318698",
+      doi: "10.1038/s41580-020-00313-x",
+      design: "Peer-reviewed Landmark Publication",
+      sampleSize: null,
+      journal: "Nature Reviews Molecular Cell Biology",
+      year: 2021,
+      abstract: "Aging depletes intracellular NAD+ pools not merely through synthesis decline, but via inflammatory hyper-activation of the ectoenzyme CD38. Dissecting the molecular warfare between CD38 consumption and Sirtuin mitochondrial fidelity.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
