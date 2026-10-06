@@ -828,6 +828,54 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Beyond fueling 70% of colonic epithelial energy requirements, microbially-derived butyrate functions as an endogenous epigenetic HDAC inhibitor, orchestrating Treg induction and Claudin-1 tight junction fidelity.",
     },
   ],
+  "policosanol-versus-statins": [
+    {
+      ordinal: 1,
+      label: "Effect of policosanol on lipid levels among patients with hypercholesterolemia or combined hyperlipidemia: a randomized controlled trial",
+      pmid: "16705107",
+      doi: "10.1001/jama.295.19.2262",
+      design: "Randomized Double-Blind Placebo-Controlled Trial",
+      sampleSize: 143,
+      journal: "JAMA",
+      year: 2006,
+      abstract: "In this randomized, double-blind, placebo-controlled trial across multiple doses up to 80 mg/d, policosanol did not show any statistically significant lipid-lowering effects compared with placebo.",
+    },
+    {
+      ordinal: 2,
+      label: "Policosanol: clinical pharmacology and therapeutic significance of a new lipid-lowering agent",
+      pmid: "11708574",
+      doi: "10.1016/s0002-8703(02)90184-7",
+      design: "Systematic Review & Meta-analysis",
+      sampleSize: null,
+      journal: "American Heart Journal",
+      year: 2002,
+      abstract: "Review of early clinical and pharmacological studies investigating policosanol efficacy in comparison with pravastatin and simvastatin.",
+    },
+  ],
+  "policosanol-versus-statins-en": [
+    {
+      ordinal: 1,
+      label: "Effect of policosanol on lipid levels among patients with hypercholesterolemia or combined hyperlipidemia: a randomized controlled trial",
+      pmid: "16705107",
+      doi: "10.1001/jama.295.19.2262",
+      design: "Randomized Double-Blind Placebo-Controlled Trial",
+      sampleSize: 143,
+      journal: "JAMA",
+      year: 2006,
+      abstract: "In this randomized, double-blind, placebo-controlled trial across multiple doses up to 80 mg/d, policosanol did not show any statistically significant lipid-lowering effects compared with placebo.",
+    },
+    {
+      ordinal: 2,
+      label: "Policosanol: clinical pharmacology and therapeutic significance of a new lipid-lowering agent",
+      pmid: "11708574",
+      doi: "10.1016/s0002-8703(02)90184-7",
+      design: "Systematic Review & Meta-analysis",
+      sampleSize: null,
+      journal: "American Heart Journal",
+      year: 2002,
+      abstract: "Review of early clinical and pharmacological studies investigating policosanol efficacy in comparison with pravastatin and simvastatin.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
@@ -853,9 +901,7 @@ const coverFor = (image?: string) => variantFor(image, "covers");
 /** Bài seed (không có file .md) mượn ảnh bìa cùng chủ đề để thẻ không bị trống. */
 const SEED_IMAGE_FALLBACK: Record<string, string> = {
   "curcumin-piperine-bioavailability": "/images/posts/curcumin-piperine-bioavailability.jpg",
-  "policosanol-versus-statins": "/images/posts/mevalonate-statin-coq10.jpg",
-  "coq10-depletion-in-statins": "/images/posts/mevalonate-statin-coq10.jpg",
-  "butyrate-colonocyte-fuel": "/images/posts/resistant-starch-scfa-gut.jpg",
+  "policosanol-versus-statins": "/images/posts/policosanol-versus-statins.jpg",
 };
 
 export async function getMarkdownPosts(): Promise<MarkdownArticleData[]> {
