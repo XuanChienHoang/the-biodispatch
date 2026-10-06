@@ -596,6 +596,84 @@ const SEED_REFS: Record<string, Ref[]> = {
         "Fruman DA và Cantley LC hệ thống hóa vai trò trung tâm của con đường truyền tín hiệu PI3K-Akt trong điều hòa hấp thu glucose, ức chế apoptosis và cơ chế kháng thuốc của tế bào ung thư.",
     },
   ],
+  "cholesterol-myth-vascular-inflammation": [
+    {
+      ordinal: 1,
+      label: "Atherosclerosis - An Inflammatory Disease",
+      pmid: "11988577",
+      doi: "10.1056/NEJMra010530",
+      design: "Tổng quan Bệnh sinh Học Lâm sàng",
+      sampleSize: null,
+      journal: "New England Journal of Medicine",
+      year: 2002,
+      abstract:
+        "Bản tổng quan kinh điển của Peter Libby chứng minh xơ vữa động mạch không phải là sự ứ đọng lipid đơn thuần mà là một phản ứng viêm mạn tính của thành mạch máu.",
+    },
+    {
+      ordinal: 2,
+      label: "Inflammation, Atherosclerosis, and Potential Biomarkers of Cardiovascular Risk",
+      pmid: "12490684",
+      doi: "10.1038/nature01323",
+      design: "Chuyên khảo Miễn dịch Tim mạch",
+      sampleSize: null,
+      journal: "Nature",
+      year: 2002,
+      abstract:
+        "Paul M. Ridker và Peter Libby khẳng định vai trò của các chỉ số viêm hs-CRP và interleukin trong việc phân tầng nguy cơ tim mạch vượt trội hơn hẳn LDL-C đơn lẻ.",
+    },
+  ],
+  "oxldl-sdldl-atherosclerosis-mechanism": [
+    {
+      ordinal: 1,
+      label: "Beyond cholesterol: Modifications of low-density lipoprotein that increase its atherogenicity",
+      pmid: "2648710",
+      doi: "10.1172/JCI114227",
+      design: "Nghiên cứu Cơ chế Phân tử Bệnh sinh",
+      sampleSize: null,
+      journal: "The Journal of Clinical Investigation",
+      year: 1989,
+      abstract:
+        "Daniel Steinberg và cộng sự đưa ra giả thuyết oxy hóa LDL: Quá trình oxy hóa lipid biến hạt LDL thành phối tử cho thụ thể scavenger của đại thực bào, dẫn đến sự tạo thành tế bào bọt.",
+    },
+    {
+      ordinal: 2,
+      label: "Low-density lipoprotein subclass patterns and risk of myocardial infarction",
+      pmid: "3235721",
+      doi: "10.1001/jama.1988.03410130125037",
+      design: "Nghiên cứu Bệnh - Chứng Lâm sàng",
+      sampleSize: null,
+      journal: "JAMA",
+      year: 1988,
+      abstract:
+        "Melissa A. Austin và Ronald M. Krauss phân lập hai kiểu hình hạt LDL: Kiểu hình B (hạt nhỏ đậm đặc sdLDL) làm tăng nguy cơ nhồi máu cơ tim gấp 3 lần so với kiểu hình A (hạt lớn nổi).",
+    },
+  ],
+  "triglyceride-hdl-ratio-metabolic-health": [
+    {
+      ordinal: 1,
+      label: "Fasting triglycerides, high-density lipoprotein, and risk of myocardial infarction",
+      pmid: "9342721",
+      doi: "10.1161/01.CIR.96.8.2520",
+      design: "Nghiên cứu Dịch tễ học Tim mạch Tiến cứu",
+      sampleSize: null,
+      journal: "Circulation",
+      year: 1997,
+      abstract:
+        "J. Michael Gaziano và cộng sự chứng minh tỉ số Triglyceride trên HDL là chỉ số tiên lượng độc lập mạnh nhất đối với nguy cơ nhồi máu cơ tim, với nhóm tứ phân vị cao nhất có nguy cơ tăng gấp 16 lần.",
+    },
+    {
+      ordinal: 2,
+      label: "Use of the ratio of triglycerides to HDL cholesterol to identify individuals with insulin resistance",
+      pmid: "12965377",
+      doi: "10.7326/0003-4819-139-6-200309160-00012",
+      design: "Thẩm định Dấu ấn Sinh học Lâm sàng",
+      sampleSize: null,
+      journal: "Annals of Internal Medicine",
+      year: 2003,
+      abstract:
+        "Tracey McLaughlin và Gerald Reaven khẳng định tỉ số TG/HDL là công cụ lâm sàng thực tiễn và chính xác nhất để phát hiện kháng insulin ở người trưởng thành thừa cân.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
