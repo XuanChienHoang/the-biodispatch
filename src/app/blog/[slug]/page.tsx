@@ -224,7 +224,7 @@ export default async function BlogPage({ params }: Params) {
           <div>
             {/* Top Area: Markdown Content + Sticky Sidebar */}
             <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_260px] lg:gap-14">
-              <article className="min-w-0 max-w-[70ch] prose-editorial">
+              <article className="min-w-0 max-w-[72ch] lg:max-w-[80ch] prose-editorial">
                 <ReactMarkdown
                   remarkPlugins={[remarkGfm, remarkMath]}
                   rehypePlugins={[rehypeKatex]}
