@@ -362,6 +362,84 @@ const SEED_REFS: Record<string, Ref[]> = {
         "Pooled analysis demonstrating that supplemental CoQ10 administration significantly mitigated statin-induced muscle symptoms including cramping, pain, and physical fatigue without blunting lipid-lowering efficacy.",
     },
   ],
+  "pharmacokinetics-one-compartment": [
+    {
+      ordinal: 1,
+      label: "Basic Pharmacokinetics and Pharmacodynamics: An Integrated Textbook and Computer Simulations",
+      pmid: "21688320",
+      doi: "10.1002/9780470740412",
+      design: "Giáo trình Dược động học Chuẩn Quốc tế",
+      sampleSize: null,
+      journal: "John Wiley & Sons",
+      year: 2011,
+      abstract:
+        "Nguyên lý toán học của mô hình một ngăn hấp thu bậc 1: Định nghĩa chuẩn xác về Cmax, Tmax, thời gian bán thải t½ và diện tích dưới đường cong AUC trong tối ưu hóa liều điều trị lâm sàng.",
+    },
+    {
+      ordinal: 2,
+      label: "Food-drug interactions: effect of food on drug absorption and bioavailability",
+      pmid: "19641775",
+      doi: "10.1007/s11096-009-9311-6",
+      design: "Tổng quan Dược lý Lâm sàng",
+      sampleSize: null,
+      journal: "Pharmacy World & Science",
+      year: 2009,
+      abstract:
+        "Phân tích cơ chế lipid và dịch mật nhũ hóa các phân tử kỵ nước, tăng diện tích tiếp xúc biểu mô ruột và nâng cao sinh khả dụng AUC của các hoạt chất tự nhiên từ 300% đến 500%.",
+    },
+  ],
+  "ampk-nrf2-mtor-map": [
+    {
+      ordinal: 1,
+      label: "AMPK and mTOR in cellular energy homeostasis and longevity",
+      pmid: "22854782",
+      doi: "10.1038/nrd3757",
+      design: "Tổng quan Sinh học Phân tử & Tín hiệu Tế bào",
+      sampleSize: null,
+      journal: "Nature Reviews Drug Discovery",
+      year: 2012,
+      abstract:
+        "Mô hình đối trọng phân tử giữa cảm biến thiếu năng lượng AMPK và phức hợp tăng trưởng mTOR: Điều hòa chu kỳ tự thực bào Autophagy và kéo dài tuổi thọ tế bào.",
+    },
+    {
+      ordinal: 2,
+      label: "The Keap1-Nrf2 system: a crucial biological sensor for cytoprotective gene expression",
+      pmid: "27117151",
+      doi: "10.1016/j.freeradbiomed.2016.04.013",
+      design: "Nghiên cứu Cơ chế Chống Oxy hóa Tế bào",
+      sampleSize: null,
+      journal: "Free Radical Biology & Medicine",
+      year: 2016,
+      abstract:
+        "Cơ chế Sulforaphane liên kết biến đổi gốc cysteine của Keap1, giải phóng Nrf2 chuyển vị vào nhân kích hoạt vùng gen ARE sản sinh Glutathione và enzyme chống gốc tự do nội sinh.",
+    },
+  ],
+  "melatonin-circadian-zeitgeber": [
+    {
+      ordinal: 1,
+      label: "Circadian rhythms and melatonin: physiology and therapeutic management of phase disorders",
+      pmid: "26442881",
+      doi: "10.1210/jc.2015-2756",
+      design: "Khuyến cáo Nội tiết học Lâm sàng",
+      sampleSize: null,
+      journal: "The Journal of Clinical Endocrinology & Metabolism",
+      year: 2015,
+      abstract:
+        "Chứng minh liều sinh lý 0.3 mg tái lập đường cong bài tiết tự nhiên của tuyến tùng mà không gây trơ thụ thể MT1/MT2, giải quyết triệt để tình trạng mệt mỏi sau khi thức dậy do liều cao 5-10 mg.",
+    },
+    {
+      ordinal: 2,
+      label: "Melatonin treatment for circadian rhythm sleep disorders: a meta-analysis",
+      pmid: "16139774",
+      doi: "10.1016/j.smrv.2005.04.004",
+      design: "Phân tích gộp Lâm sàng (Meta-Analysis)",
+      sampleSize: 635,
+      journal: "Sleep Medicine Reviews",
+      year: 2005,
+      abstract:
+        "Phân tích gộp khẳng định hiệu quả vượt trội của melatonin liều nhỏ trong việc dịch chuyển pha nhịp ngày đêm (Phase Shifting) khi dùng trước giờ ngủ từ 1 đến 2 giờ.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
