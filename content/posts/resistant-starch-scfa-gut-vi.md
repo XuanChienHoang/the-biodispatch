@@ -24,36 +24,25 @@ Chúng đi qua hệ tiêu hóa trên nguyên vẹn như một kiện hàng bọc
 
 ![Mô phỏng vi khuẩn đường ruột chuyển hóa tinh bột kháng thành Butyrate củng cố liên kết biểu mô](/images/posts/resistant-starch-scfa-gut.jpg)
 
+> *"Nếu hàng rào niêm mạc ruột là bức tường thành cổ, các tế bào biểu mô là từng viên gạch xếp sát nhau, thì các liên kết protein Claudin-1 chính là lớp vữa xi măng. Tế bào ruột không dùng đường từ máu mà phụ thuộc vào Butyrate để sống. Thiếu Butyrate, lớp vữa nứt toác, mở toang cánh cửa cho độc tố vi khuẩn rò rỉ vào dòng máu."*
+
 ---
 
-## 1. Ẩn dụ đời thực: Tường thành niêm mạc ruột và lớp vữa sinh học
+## 1. Cơ chế sinh học: Hàng rào niêm mạc và nhiên liệu tế bào
 
-Hãy tưởng tượng hàng rào niêm mạc ruột của chúng ta giống như một bức tường thành cổ bảo vệ thành phố:
+Để hiểu vai trò của tinh bột kháng, chúng ta cần quan sát cấu trúc sinh học của hàng rào biểu mô đại tràng:
 
-- **Các viên gạch**: Là hàng triệu tế bào biểu mô đại tràng (Colonocytes) xếp sát cạnh nhau.
-- **Lớp xi măng / Chốt khóa liên kết**: Chính là các phức hợp protein liên kết chặt (**Tight Junctions: Claudin-1, Occludin**).
-- **Kẻ thù ngoài cổng thành**: Hàng tỷ vi khuẩn có hại và các mảnh nội độc tố vi khuẩn (**Endotoxin LPS**).
-- **Thức ăn nuôi lính gác**: Tế bào biểu mô ruột không lấy năng lượng từ đường trong máu như các cơ quan khác, mà chúng phụ thuộc hơn 70% vào chất dinh dưỡng thẩm thấu từ lòng ruột: **Axit béo chuỗi ngắn Butyrate**.
-
-Khi cơ thể thiếu chất xơ và tinh bột kháng, người lính canh bị bỏ đói. Lớp vữa xi măng Claudin-1 bị rạn nứt, tạo ra những khe hở vi thể khiến độc tố LPS tràn qua thành ruột vào tĩnh mạch cửa về gan. Đó chính là nguồn cơn của hội chứng rò rỉ ruột (**Leaky Gut**) và phản ứng viêm âm ỉ toàn thân.
+- **Biểu mô đại tràng (Colonocytes)**: Tạo thành lớp đơn tế bào ngăn cách lòng ruột và hệ tuần hoàn chung.
+- **Liên kết chặt (Tight Junctions: Claudin-1 & Occludin)**: Phức hợp protein niêm phong các khe gian bào, ngăn chặn độc tố nội sinh LPS (*lipopolysaccharide*) tràn vào tĩnh mạch cửa.
 
 ---
 
 ## 2. Chuỗi phản ứng lên men 60:20:20 tại đại tràng
 
-Khi bạn ăn các nguồn tinh bột kháng như chuối xanh, yến mạch ngâm qua đêm hoặc cơm nấu chín để nguội trong ngăn mát tủ lạnh, các đại phân tử amylose kết tinh lại thành cấu trúc kháng tiêu hóa (RS2/RS3).
+Tại manh tràng và đại tràng, các chủng vi khuẩn kỵ khí như *Faecalibacterium prausnitzii* và *Bifidobacterium* lên men tinh bột kháng, giải phóng bộ ba axit béo chuỗi ngắn với tỷ lệ vàng sinh học:
 
-Tại đại tràng, các chủng vi khuẩn kỵ khí như *Faecalibacterium prausnitzii* và *Bifidobacterium* sử dụng bộ enzyme chuyên biệt để bẻ gãy tinh bột kháng, giải phóng bộ ba axit béo chuỗi ngắn với tỷ lệ vàng sinh học:
-
-```
-[Tinh bột kháng RS2/RS3 vào đại tràng]
-                  │
-                  ▼ (Lên men kỵ khí)
-   ┌──────────────┼──────────────┐
-   ▼              ▼              ▼
-Acetate (60%)  Propionate (20%) Butyrate (20%)
-(Năng lượng    (Về gan hạ      (Nhiên liệu vàng
-toàn thân)     cholesterol)     hàn gắn niêm mạc)
+```text
+[Tinh bột kháng RS2/RS3] ──► [Lên men Kỵ khí] ──► [Acetate 60% : Propionate 20% : Butyrate 20%]
 ```
 
 ### 3 Tác động sinh học đột phá của Butyrate:

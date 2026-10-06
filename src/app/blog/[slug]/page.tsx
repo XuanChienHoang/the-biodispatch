@@ -123,7 +123,12 @@ export default async function BlogPage({ params }: Params) {
     articleSection: article.tier,
   };
 
-  const isVi = slug.endsWith("-vi") || slug.includes("sinh-kha-dung") || Boolean(article.tags?.includes("Dược động học"));
+  const isVi =
+    article.lang === "vi" ||
+    slug.endsWith("-vi") ||
+    slug.includes("sinh-kha-dung") ||
+    slug.includes("keo-dai-tuoi-tho") ||
+    Boolean(article.tags?.includes("Dược động học"));
 
   return (
     <main>
@@ -362,16 +367,16 @@ export default async function BlogPage({ params }: Params) {
             <div className="flex flex-wrap items-end justify-between gap-4">
               <div>
                 <span className="caps text-slate-ink">
-                  {isVi ? "§ 6 · Danh mục Nguồn Y văn & Bằng chứng Thực chứng" : "§ 6 · References & Primary Evidence"}
+                  {isVi ? "§ 6 · Tài liệu Tham khảo & Y văn Đối soát" : "§ 6 · References & Primary Evidence"}
                 </span>
                 <h2 className="mt-2.5 font-display text-step-3 font-bold leading-tight tracking-[-0.03em] text-indigo-deep">
-                  {isVi ? "Danh bạ Tài liệu Đã Đối soát." : "Verified Source List."}
+                  {isVi ? "Danh mục Y văn Thực chứng." : "Verified Source List."}
                 </h2>
               </div>
               <p className="caps text-slate-ink">
                 {isVi
-                  ? "Tất cả trích dẫn đều được đối soát tự động qua API của NCBI PubMed / CrossRef"
-                  : "All citations verified against NCBI PubMed / CrossRef APIs"}
+                  ? "Tài liệu tham khảo đối soát qua PubMed & CrossRef"
+                  : "References indexed via NCBI PubMed & CrossRef"}
               </p>
             </div>
 

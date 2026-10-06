@@ -24,40 +24,25 @@ Dưới góc nhìn sinh học phân tử, hiện tượng này hoàn toàn khôn
 
 ![Sơ đồ phân nhánh con đường Mevalonate cho thấy vị trí statin chặn đứng tổng hợp CoQ10](/images/posts/mevalonate-statin-coq10.jpg)
 
----
-
-## 1. Ẩn dụ đời thực: Con đập thủy điện chặn nguồn nước tưới
-
-Để hiểu ngã ba Mevalonate, hãy hình dung tế bào của chúng ta như một con sông có xây đập thủy điện:
-
-- **Enzyme HMG-CoA Reductase**: Là con đập chặn ở đầu nguồn.
-- **Dòng nhánh 1 (Cholesterol)**: Là dòng nước chảy về hạ lưu để tế bào xây dựng màng và sản xuất hormone sinh dục.
-- **Dòng nhánh 2 (Coenzyme Q10 - Ubiquinone)**: Là dòng nước quý giá chảy về khu nhà máy phát điện ty thể để vận chuyển hạt electron và tạo năng lượng ATP cho từng thớ cơ co bóp.
-
-Khi chúng ta dùng Statin liều cao để hạ mỡ máu, cánh cổng đập ở đầu nguồn bị đóng chặt lại. Dòng nước tạo cholesterol giảm xuống như mong muốn, nhưng **dòng nước sinh ra CoQ10 cũng bị khóa van theo**!
-
-Khi màng trong ty thể tế bào cơ bị cạn kiệt CoQ10, chuỗi chuyền electron hô hấp bị ngắt quãng, ty thể phát ra tín hiệu kiệt quệ năng lượng và rò rỉ các gốc oxy hóa tự do. Người bệnh bắt đầu cảm thấy bắp chân, đùi rã rời, đau nhức mỗi khi đi bộ hay leo cầu thang.
+> *"Nếu tế bào là một con sông lớn có xây đập thủy điện HMG-CoA Reductase, thì Statin đóng chặt cửa đập để ngăn dòng nước hạ lưu tạo cholesterol. Nhưng con đập ấy cũng vô tình khóa luôn nhánh nước quý giá rẽ vào nhà máy ty thể: Coenzyme Q10. Cạn kiệt CoQ10, ty thể tế bào cơ kiệt sức, phát ra tín hiệu đau mỏi rã rời."*
 
 ---
 
-## 2. Bản đồ phân nhánh phân tử của con đường Mevalonate
+## 1. Cơ chế sinh học: Ngã ba rẽ nhánh của chuỗi Mevalonate
 
-```
-[Acetyl-CoA] ──► [HMG-CoA]
-                     │
-                     ▼ ◄─── [BỊ STATIN CHẶN ĐỨNG TẠI ĐÂY]
-                [Mevalonate]
-                     │
-                     ▼
-          [Farnesyl Pyrophosphate (FPP)]
-                     │
-         ┌───────────┴───────────┐
-         ▼                       ▼
-    [Squalene]            [Geranylgeranyl-PP]
-         │                       │
-         ▼                       ▼
-   [Cholesterol]       [Coenzyme Q10 (Ty thể)]
-   (Mục tiêu hạ)       (Vô tình sụt giảm 40-50%)
+Để hiểu vì sao thuốc hạ mỡ máu lại gây cảm giác mỏi cơ, chúng ta cần nhìn vào cấu trúc phân nhánh của con đường tổng hợp sinh học:
+
+- **Enzyme HMG-CoA Reductase**: Đích tác động chính của Statin, kiểm soát giai đoạn đầu của chu trình tạo sterol.
+- **Coenzyme Q10 (Ubiquinone)**: Phân tử vận chuyển điện tử sống còn tại màng trong ty thể, chịu trách nhiệm cho hơn 90% sản lượng ATP của cơ vân.
+
+---
+
+## 2. Dòng thác phân tử của con đường Mevalonate
+
+Khi thuốc Statin ức chế HMG-CoA Reductase, nồng độ phân tử trung gian *Farnesyl Pyrophosphate (FPP)* sụt giảm sâu, kéo theo sự thiếu hụt song song:
+
+```text
+[HMG-CoA] ──► [Mevalonate] ──► [FPP] ──► [Nhánh 1: Cholesterol (Giảm)] + [Nhánh 2: CoQ10 Ty thể (Sụt giảm)]
 ```
 
 Khi nồng độ CoQ10 trong huyết tương và mô cơ sụt giảm sâu:

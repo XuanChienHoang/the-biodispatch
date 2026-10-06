@@ -140,6 +140,54 @@ const MEDICAL_ANALOGIES: Record<
       },
     ],
   },
+  "resistant-starch-scfa-gut-vi": {
+    title: "Góc Y Khoa Dễ Hiểu: Tinh Bột Kháng & Hàng Rào Ruột",
+    hook: "Cơ chế bảo vệ niêm mạc ruột chống viêm rò rỉ qua 3 khái niệm sinh học:",
+    points: [
+      {
+        term: "Tinh bột kháng (Resistant Starch)",
+        layTerm: "Kiện hàng bọc thép đi thẳng xuống đại tràng",
+        analogy:
+          "Dạ dày và ruột non không tiêu hóa được tinh bột kháng. Nó đi nguyên vẹn xuống đại tràng để trở thành nguồn thức ăn quý giá cho hệ vi sinh đường ruột.",
+      },
+      {
+        term: "Khóa protein Claudin-1 & Occludin",
+        layTerm: "Lớp vữa xi măng gắn kết các viên gạch tế bào",
+        analogy:
+          "Các tế bào biểu mô ruột xếp sát nhau như tường thành. Claudin-1 là lớp vữa niêm phong các kẽ hở, ngăn không cho độc tố vi khuẩn tràn vào máu.",
+      },
+      {
+        term: "Axit béo Butyrate",
+        layTerm: "Nhiên liệu vàng nuôi dưỡng lính canh tế bào",
+        analogy:
+          "Tế bào đại tràng tiêu thụ tới 70% năng lượng từ Butyrate. Đủ Butyrate, tế bào ruột khỏe mạnh và lớp vữa thành ruột được gia cố vững chắc.",
+      },
+    ],
+  },
+  "mevalonate-statin-coq10-vi": {
+    title: "Góc Y Khoa Dễ Hiểu: Ngã Ba Mevalonate & Thuốc Statin",
+    hook: "Vì sao thuốc hạ mỡ máu lại gây cảm giác mỏi cơ bắp và cách khắc phục:",
+    points: [
+      {
+        term: "Enzyme HMG-CoA Reductase",
+        layTerm: "Chiếc van tổng kiểm soát ở đầu nguồn dòng chảy",
+        analogy:
+          "Thuốc Statin đóng chặt chiếc van này để giảm tổng hợp mỡ máu cholesterol, bảo vệ thành mạch vành khỏi xơ vữa.",
+      },
+      {
+        term: "Ngã ba Mevalonate",
+        layTerm: "Dòng sông rẽ đôi nhánh đi hai hướng",
+        analogy:
+          "Một nhánh nước tạo Cholesterol, nhưng nhánh còn lại tạo Coenzyme Q10 cho ty thể. Khi đóng van tổng, nhánh CoQ10 cũng vô tình bị khô cạn.",
+      },
+      {
+        term: "Coenzyme Q10 (Ubiquinol)",
+        layTerm: "Chất dẫn truyền tia lửa điện trong nhà máy ty thể",
+        analogy:
+          "Cạn kiệt CoQ10 khiến ty thể tế bào cơ bị đoản mạch năng lượng, gây đau mỏi cơ bắp. Bổ sung Ubiquinol giúp bù đắp lượng thiếu hụt này.",
+      },
+    ],
+  },
 };
 
 export function ArticleLanguageBar({ currentSlug }: { currentSlug: string }) {

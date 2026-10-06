@@ -371,6 +371,7 @@ export interface MarkdownArticleData extends Article {
   date?: string;
   tags?: string[];
   readingTime?: string;
+  lang?: "vi" | "en";
 }
 
 export async function getMarkdownPosts(): Promise<MarkdownArticleData[]> {
@@ -405,6 +406,7 @@ export async function getMarkdownPosts(): Promise<MarkdownArticleData[]> {
       date: data.date || "2026-09-23",
       tags: data.tags || ["Metabolomics", "Biomarkers"],
       readingTime: data.readingTime || "6 min read",
+      lang: (data.lang as "vi" | "en") || (slug.endsWith("-vi") ? "vi" : "en"),
     });
   }
 

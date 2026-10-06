@@ -24,39 +24,27 @@ Dưới góc độ sinh học phân tử một chút, câu chuyện thực tế 
 
 ![Mô phỏng con đường phân tử GLP-1 bảo vệ ty thể và đảo ngược lão hóa](/images/posts/glp1-aging-mitochondria.jpg)
 
----
-
-## 1. Ẩn dụ đời thực: Tế bào giống như một căn hộ chung cư cũ
-
-Để hiểu vì sao một hoạt chất kích thích thụ thể ruột lại tác động được tới tuổi thọ, hãy hình dung tế bào của chúng ta như một căn hộ chung cư:
-
-- **Ty thể (Mitochondria)**: Chính là chiếc máy phát điện mini hoặc lò sưởi đặt ở góc nhà, liên tục đốt than (glucose, mỡ) để cung cấp điện (phân tử ATP) cho cả căn hộ hoạt động.
-- **Rác thải chuyển hóa (ROS - Gốc tự do)**: Khi chiếc máy phát điện này chạy liên tục 40 hay 50 năm mà không được bảo dưỡng, nó bắt đầu rò rỉ khói đen độc hại, làm hỏng tường nhà (màng tế bào) và gỉ sét các thiết bị vi mạch (chuỗi ADN).
-- **Hiện tượng lão hóa sinh học**: Không phải là căn hộ tự nhiên mục nát, mà là do đống máy phát điện cũ kỹ bị hỏng hóc chất đầy nhà nhưng đội vệ sinh môi trường nội bào lại "đình công".
-
-Khi người ta già đi, quá trình tự dọn rác và thay mới máy phát điện (được gọi là **Mitophagy** - thực bào ty thể) bị suy giảm trầm trọng. Hậu quả là tế bào ngập chìm trong các lò sưởi rỉ sét, phát ra tín hiệu viêm mạn tính khắp cơ thể.
+> *"Nếu tế bào là một căn hộ chung cư cũ, thì ty thể chính là chiếc lò sưởi đặt ở góc nhà liên tục đốt than để sưởi ấm. Khi chiếc lò chạy suốt 50 năm không được bảo dưỡng, nó rò rỉ khói độc (gốc tự do ROS). Lão hóa sinh học xảy ra không phải vì căn hộ tự mục nát, mà vì đống lò sưởi rỉ sét chất đầy nhà khi đội vệ sinh nội bào đình công."*
 
 ---
 
-## 2. GLP-1 thực chất làm gì bên trong tế bào?
+## 1. Cơ chế phân tử: Khi năng lượng ty thể được thiết lập lại
 
-Hầu hết mọi người chỉ biết GLP-1 (Glucagon-like peptide-1) là một hormone đường ruột báo cho não bộ biết: *"Đã no rồi, đừng ăn nữa"*. 
+Để hiểu vì sao một hoạt chất kích thích thụ thể ruột lại tác động được tới tuổi thọ, chúng ta cần nhìn sâu vào nhà máy năng lượng nội bào:
 
-Nhưng thụ thể GLP-1R không chỉ nằm ở não hay tuyến tụy. Nó phân bố dày đặc ở tế bào nội mô mạch máu, cơ tim, đại thực bào và các tế bào thần kinh. 
+- **Ty thể (Mitochondria)**: Liên tục chuyển hóa cơ chất thành phân tử năng lượng ATP. Khi già đi, các màng trong bị thoái hóa làm rò rỉ các gốc oxy hóa tự do.
+- **Thực bào ty thể (Mitophagy)**: Quá trình tự thực bào chuyên biệt nhằm nhận diện và tiêu hủy các ty thể già cỗi, kích hoạt tái tạo ty thể mới có hiệu suất cao hơn.
 
-Khi các phân tử đồng vận thụ thể GLP-1 gắn vào màng tế bào, nó kích hoạt một loạt công tắc sinh học cốt lõi:
+---
 
-```
-[Phân tử GLP-1 gắn thụ thể GLP-1R]
-           │
-           ▼
-  [Kích hoạt Enzyme AMPK] ──(Ức chế)──► [mTOR: Tạm dừng tích tụ rác]
-           │
-           ▼
-  [Tăng cường PGC-1α]
-           │
-           ▼
-  [Khởi động Mitophagy: Thanh lọc ty thể cũ + Tái tạo lò vi phát điện mới]
+## 2. GLP-1 tái lập trình các mắt xích nội bào ra sao?
+
+Hầu hết mọi người chỉ biết GLP-1 (*Glucagon-like peptide-1*) là một hormone đường ruột điều hòa cảm giác no tại vùng dưới đồi. 
+
+Tuy nhiên, thụ thể GLP-1R phân bố dày đặc ở tế bào nội mô mạch máu, cơ tim và đại thực bào. Khi được kích hoạt, dòng thác tín hiệu nội bào diễn ra theo 3 chặng:
+
+```text
+[GLP-1 gắn thụ thể GLP-1R] ──► [Kích hoạt AMPK] ──► [Ức chế mTOR] ──► [Tái sinh Ty thể (Mitophagy)]
 ```
 
 ### Cơ chế 3 nhịp dọn dẹp tế bào:
