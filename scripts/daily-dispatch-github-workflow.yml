@@ -1,13 +1,16 @@
-name: Daily Biomedical Dispatch Pipeline
+name: Automated Dual-Dispatch Publishing Pipeline
 
 on:
   schedule:
-    # Chạy tự động lúc 06:00 sáng hàng ngày theo giờ Việt Nam (23:00 UTC)
-    - cron: '0 23 * * *'
-  workflow_dispatch: # Cho phép bấm nút "Run workflow" thủ công trên GitHub
+    # 09:00 CEST (Giờ mùa hè Đức UTC+2) -> 07:00 UTC
+    - cron: '0 7 * * *'
+    # 13:00 CEST (Giờ mùa hè Đức UTC+2) -> 11:00 UTC
+    - cron: '0 11 * * *'
+  workflow_dispatch: # Cho phép bấm nút "Run workflow" bất kỳ lúc nào để test
 
 jobs:
-  auto-dispatch:
+  publish-and-deploy:
+    name: Build and Deploy Production Dispatches
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -15,20 +18,22 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Set up Node.js
+      - name: Set up Node.js Runtime
         uses: actions/setup-node@v4
         with:
           node-version: '22'
           cache: 'npm'
 
-      - name: Install Dependencies
+      - name: Install Project Dependencies
         run: npm ci
 
-      - name: Verify Next.js Build
+      - name: Verify Full Production Build & Route Generation
         run: npm run build
 
-      - name: Deploy to Vercel (Production)
+      - name: Deploy to Vercel Production
         if: env.VERCEL_TOKEN != ''
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
