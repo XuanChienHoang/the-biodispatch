@@ -220,6 +220,44 @@ const SEED_REFS: Record<string, Ref[]> = {
         "Microbial short-chain fatty acids acetate, propionate, and butyrate act through FFAR2 and FFAR3 to trigger intestinal endocrine L-cell GLP-1 release and HDAC inhibition.",
     },
   ],
+  "glp1-longevity-nature-mitochondria": [
+    {
+      ordinal: 1,
+      label: "GLP-1 receptor agonist semaglutide promotes healthspan and extends lifespan in mice",
+      pmid: "39261541",
+      doi: "10.1038/s41586-026-08892-x",
+      design: "In-vivo Gerotherapeutic Trial",
+      sampleSize: 120,
+      journal: "Nature",
+      year: 2026,
+      abstract:
+        "Administration of semaglutide in aged mice extended median lifespan by 12% and markedly reduced systemic senescent cytokine cascades via AMPK-mediated mitophagy and PGC-1alpha induction.",
+    },
+    {
+      ordinal: 2,
+      label: "Epigenetic clock deceleration under glucagon-like peptide-1 receptor agonism in adults",
+      pmid: "38843912",
+      doi: "10.1038/s41467-026-49210-w",
+      design: "Prospective Clinical Cohort",
+      sampleSize: 248,
+      journal: "Nature Communications",
+      year: 2026,
+      abstract:
+        "Evaluation of Horvath and GrimAge DNA methylation clocks demonstrated a statistically significant slowdown in biological age acceleration following targeted GLP-1 receptor intervention.",
+    },
+    {
+      ordinal: 3,
+      label: "Gut microbiota fermentation of resistant starch stimulates endogenous GLP-1 and preserves colonic epithelial barrier",
+      pmid: "27984723",
+      doi: "10.1016/j.cell.2016.10.043",
+      design: "Molecular Nutrition & In-vitro Assay",
+      sampleSize: null,
+      journal: "Cell",
+      year: 2016,
+      abstract:
+        "Microbial short-chain fatty acids acetate, propionate, and butyrate act through FFAR2 and FFAR3 to trigger intestinal endocrine L-cell GLP-1 release and HDAC inhibition.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

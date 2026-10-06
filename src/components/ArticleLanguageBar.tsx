@@ -27,6 +27,16 @@ const PAIRS: Record<string, { slug: string; lang: "vi" | "en"; label: string }> 
     lang: "en",
     label: "English Edition (Academic Rigour)",
   },
+  "glp1-keo-dai-tuoi-tho-nature": {
+    slug: "glp1-longevity-nature-mitochondria",
+    lang: "en",
+    label: "English Edition (Academic Rigour & Molecular Pathways)",
+  },
+  "glp1-longevity-nature-mitochondria": {
+    slug: "glp1-keo-dai-tuoi-tho-nature",
+    lang: "vi",
+    label: "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu & Ẩn dụ Đời thực)",
+  },
 };
 
 // Accessible Medical Explanations / Metaphors for articles
@@ -38,6 +48,30 @@ const MEDICAL_ANALOGIES: Record<
     points: { term: string; layTerm: string; analogy: string }[];
   }
 > = {
+  "glp1-keo-dai-tuoi-tho-nature": {
+    title: "Góc Y Khoa Dễ Hiểu: 3 Mắt Xích Kéo Dài Tuổi Thọ Tế Bào",
+    hook: "Giải mã cơ chế thuốc GLP-1 và ty thể mà không cần bằng cấp y sinh:",
+    points: [
+      {
+        term: "Ty thể (Mitochondria)",
+        layTerm: "Chiếc lò sưởi / Máy phát điện mini trong mỗi tế bào",
+        analogy:
+          "Ty thể đốt đường và mỡ để tạo năng lượng ATP cho bạn sống. Khi già đi, máy phát điện bị rỉ sét và xả khói đen độc hại (ROS) làm hỏng tế bào.",
+      },
+      {
+        term: "Thực bào Ty thể (Mitophagy)",
+        layTerm: "Đội ngũ công nhân vệ sinh nội bào dọn dẹp lò sưởi hỏng",
+        analogy:
+          "Thay vì để máy phát điện rỉ sét rò rỉ khói độc, tế bào gom chúng lại tiêu hủy và thay mới bằng lò phát điện sạch nguyên bản.",
+      },
+      {
+        term: "Kích hoạt AMPK & Ức chế mTOR",
+        layTerm: "Chế độ tiết kiệm pin và kích hoạt chu trình bảo dưỡng",
+        analogy:
+          "GLP-1 đánh lừa tế bào rằng đang trong chế độ nhịn ăn lành mạnh, khiến cơ thể tạm dừng xây dựng lãng phí để tập trung bảo trì sửa chữa máy móc.",
+      },
+    ],
+  },
   "curcumin-piperine-sinh-kha-dung": {
     title: "Góc Y Khoa Dễ Hiểu: 3 Khái niệm Sinh Hóa Cốt Lõi",
     hook: "Hiểu nhanh cơ chế hấp thu tinh chất nghệ và tiêu đen mà không cần bằng cấp y khoa:",
