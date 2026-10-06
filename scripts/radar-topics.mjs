@@ -202,50 +202,68 @@ Pouring precursors into a biological system with hyperactive CD38 without addres
     flowchart: '[Chất xơ hòa tan & Tinh bột kháng] ──► [Hệ vi sinh lên men sinh Butyrate] ──► [Ức chế HDAC (Histone Deacetylase)] ──► [Kích hoạt tế bào Treg Foxp3 & Tăng sinh Claudin-1] ──► [Bảo vệ Hàng rào Ruột]',
     sectionsVi: [
       {
-        heading: '1. Nguồn nhiên liệu độc quyền nuôi dưỡng tế bào đại tràng (Colonocytes)',
-        body: `Khác với đa số tế bào trong cơ thể sử dụng glucose làm năng lượng chính, các tế bào biểu mô đại tràng (Colonocytes) lại tiến hóa để lấy **hơn 70% năng lượng** trực tiếp từ quá trình oxy hóa beta của Butyrate trong lòng ruột.
+        heading: '1. Nguồn nhiên liệu độc quyền nuôi dưỡng tế bào biểu mô đại tràng (Colonocytes)',
+        body: `Khác biệt hoàn toàn với đại đa số các tế bào trong cơ thể vốn phụ thuộc chủ yếu vào nguồn đường glucose tuần hoàn trong máu, các tế bào biểu mô đại tràng (Colonocytes) lại tiến hóa một cách độc đáo để lấy **hơn 70% tổng nhu cầu năng lượng** trực tiếp từ quá trình oxy hóa beta của Butyrate ngay trong lòng ống tiêu hóa.
 
-Khi nguồn cung cấp Butyrate bị thiếu hụt do chế độ ăn nghèo chất xơ, các tế bào niêm mạc rơi vào trạng thái "đói năng lượng" (Energy starvation), dẫn tới teo mỏng lớp màng nhầy và phá vỡ cấu trúc liên kết vi mô.`
+Khi nguồn cung cấp Butyrate bị thiếu hụt nghiêm trọng do chế độ ăn uống hiện đại nghèo chất xơ và nhiều thực phẩm siêu chế biến, các tế bào niêm mạc ruột sẽ lập tức rơi vào trạng thái "khủng hoảng sinh năng lượng" (Bioenergetic crisis). Hậu quả trực tiếp là lớp tế bào này mất khả năng duy trì lớp màng nhầy bảo vệ (Mucus layer), khiến biểu mô ruột bị teo mỏng và dễ bị các độc tố vi khuẩn tấn công.`
       },
       {
-        heading: '2. Tác động Biểu sinh: Ức chế tự nhiên enzyme HDAC',
-        body: `Khám phá đột phá nhất về Butyrate nằm ở khả năng hoạt động như một chất ức chế **Histone Deacetylase (HDAC)** nội sinh.
+        heading: '2. Tác động Biểu sinh: Ức chế tự nhiên enzyme HDAC và điều hòa miễn dịch',
+        body: `Khám phá đột phá nhất về Butyrate nằm ở khả năng hoạt động như một chất ức chế **Histone Deacetylase (HDAC)** nội sinh tự nhiên của cơ thể. 
 
-Bằng cách ngăn chặn việc loại bỏ nhóm acetyl khỏi protein histone trong nhân tế bào, Butyrate giữ cho cấu trúc chất nhiễm sắc (Chromatin) ở trạng thái mở:
-* Cho phép yếu tố phiên mã **Foxp3** tiếp cận ADN, thúc đẩy sự biệt hóa của các tế bào T điều hòa (**Treg**) để ngăn chặn các bệnh tự miễn và viêm ruột mạn tính.
-* Tăng cường phiên mã các protein liên kết chặt chẽ như **Claudin-1**, **Occludin** và **ZO-1**, hàn gắn triệt để hiện tượng rò rỉ ruột (Leaky Gut).`
+Bằng cách kìm hãm hoạt động của HDAC, Butyrate ngăn cản việc loại bỏ các nhóm acetyl khỏi protein histone trong nhân tế bào, giữ cho cấu trúc chất nhiễm sắc (Chromatin) luôn ở trạng thái mở linh hoạt:
+
+* **Kích hoạt yếu tố phiên mã Foxp3**: Thúc đẩy các tế bào T ngây thơ biệt hóa thành tế bào T điều hòa (**Treg**), phát tín hiệu dập tắt các phản ứng viêm quá mức và ngăn chặn các đợt bùng phát bệnh tự miễn.
+* **Tái thiết lập cấu trúc liên kết chặt (Tight Junctions)**: Kích hoạt phiên mã các protein thiết yếu như **Claudin-1**, **Occludin** và **ZO-1**, hàn gắn từng vi tổn thương để triệt tiêu hội chứng rò rỉ ruột (Leaky Gut).
+
+| Chỉ số Phân tử & Sinh lý | Thiếu hụt Butyrate (Loạn khuẩn) | Trạng thái Bổ sung Chuẩn mực | Cơ chế Tác động Phân tử |
+| :--- | :--- | :--- | :--- |
+| **Nồng độ Butyrate Lòng ruột** | < 5 mM (Rất thấp) | 15 - 25 mM (Tối ưu) | Lên men tinh bột kháng bởi vi khuẩn kỵ khí |
+| **Nồng độ Zonulin Huyết thanh** | Tăng vọt (Hàng rào lỏng lẻo) | Hạ về mức an toàn tối thiểu | Phục hồi phức hợp Claudin-1 & Occludin |
+| **Tỷ lệ Tế bào Treg / Th17** | Giảm mạnh (Thiên về viêm) | Tăng cân bằng miễn dịch | Ức chế HDAC giải phóng biểu hiện Foxp3 |
+| **Tính thấm Màng ruột (Lactulose/Mannitol)** | Rất cao (> 0.05) | Ổn định chặt chẽ (< 0.02) | Phục hồi toàn vẹn biểu mô vi nhung mao |`
       },
       {
-        heading: '3. Chiến lược dinh dưỡng gia tăng Butyrate chuẩn mực',
-        body: `Uống trực tiếp viên muối butyrate thường bị hấp thu sớm ở dạ dày và ruột non trước khi tới được đại tràng. Giải pháp sinh học tối ưu là nuôi dưỡng các chủng vi khuẩn sinh butyrate (*Faecalibacterium prausnitzii*, *Roseburia*):
+        heading: '3. Chiến lược dinh dưỡng gia tăng Butyrate thực chứng và an toàn',
+        body: `Nhiều người tìm cách uống trực tiếp các viên muối natri butyrate, nhưng đa phần chúng sẽ bị hấp thu sớm ở dạ dày và ruột non trước khi kịp chạm tới đại tràng. Giải pháp sinh học bền vững và hiệu quả nhất là nuôi dưỡng chính các chủng vi khuẩn kỵ khí sinh butyrate nội sinh (*Faecalibacterium prausnitzii*, *Roseburia*, *Eubacterium rectale*):
 
-* **Tinh bột kháng loại 3 (RS3)**: Cơm hoặc khoai tây nấu chín để nguội trong tủ lạnh 12-24 giờ làm tái kết tinh cấu trúc tinh bột, đi thẳng xuống đại tràng để vi sinh vật lên men.
-* **Inulin và FOS tự nhiên**: Hành tây, tỏi, măng tây và atisô cung cấp các chuỗi fructan lý tưởng.
-* **Bơ ghee hữu cơ**: Nguồn butyrate tự nhiên nguyên bản trong ẩm thực cổ truyền.`
+* **Tinh bột kháng loại 3 (Retrograded Resistant Starch - RS3)**: Nấu chín cơm, yến mạch hoặc khoai tây rồi để nguội trong ngăn mát tủ lạnh từ 12 đến 24 giờ. Quá trình này giúp chuỗi phân tử amylose kết tinh lại, hoàn toàn trơ trước enzyme tiêu hóa ở ruột non và đi nguyên vẹn xuống đại tràng để trở thành đại tiệc lên men cho vi sinh vật.
+* **Inulin và FOS tự nhiên**: Thường xuyên bổ sung các loại thực phẩm giàu fructan như hành tây, tỏi tây, măng tây và rễ cây rau diếp xoăn.
+* **Bơ Ghee hữu cơ và chất béo chuỗi ngắn**: Bổ sung tributyrin tự nhiên trong ẩm thực giúp hỗ trợ chống viêm niêm mạc thực quản và dạ dày.
+* **Hạn chế kháng sinh bừa bãi**: Bảo vệ thảm thực vật vi sinh kỵ khí tuyệt đối nhạy cảm với các loại kháng sinh phổ rộng.`
       }
     ],
     sectionsEn: [
       {
-        heading: '1. Preferred Fuel Substrate for Colonic Epithelium',
-        body: `Unlike systemic somatic cells that rely predominantly on circulating glucose, colonic epithelial cells (colonocytes) derive over **70% of their metabolic energy** directly from luminal butyrate beta-oxidation.
+        heading: '1. The Exclusive Fuel Source Powering Colonic Epithelial Cells',
+        body: `Unlike the overwhelming majority of systemic human tissues that depend on circulating blood glucose as their primary energetic substrate, colonic epithelial cells (colonocytes) have evolved to acquire **more than 70% of their total metabolic ATP** directly from the luminal beta-oxidation of short-chain fatty acid Butyrate.
 
-Caloric deprivation of butyrate due to ultra-processed low-fiber dietary patterns plunges colonocytes into bioenergetic crisis, initiating autophagy, mucosal atrophy, and loss of epithelial homeostasis.`
+When the intraluminal supply of Butyrate drops precipitously—characteristic of modern ultra-processed, fiber-depleted diets—colonocytes enter a state of severe bioenergetic starvation. This triggers mucosal atrophy, degrades the protective mucus barrier, and leaves the host vulnerable to luminal bacterial endotoxin invasion.`
       },
       {
-        heading: '2. Epigenetic Potency: Endogenous HDAC Class I/II Inhibition',
-        body: `The most significant molecular discovery concerning butyrate is its action as an endogenous **Histone Deacetylase (HDAC)** inhibitor.
+        heading: '2. Epigenetic Potency: Endogenous HDAC Inhibition and Immunological Tolerance',
+        body: `The most profound molecular discovery regarding Butyrate centers on its ability to act as an endogenous inhibitor of **Histone Deacetylases (HDACs)**.
 
-By preventing the removal of acetyl groups from core histone tails within target cells, butyrate maintains chromatin in a transcriptionally accessible architecture:
-* Facilitates unhindered binding of **Foxp3**, driving peripheral differentiation of immunosuppressive regulatory T cells (**Tregs**).
-* Directly upregulates expression of **Claudin-1**, **Occludin**, and **ZO-1**, reinforcing paracellular gatekeeper complexes and resolving mucosal permeability.`
+By repressing HDAC catalytic activity within target mucosal cells, Butyrate halts the enzymatic removal of acetyl moieties from core histone proteins, sustaining chromatin in a transcriptionally permissive state:
+
+* **Induction of Transcription Factor Foxp3**: Guides naive CD4+ T cells to differentiate into immunosuppressive regulatory T cells (**Tregs**), curbing rampant autoimmune reactivity.
+* **Reassembly of Paracellular Tight Junctions**: Directly stimulates transcript levels of **Claudin-1**, **Occludin**, and **ZO-1**, rapidly reinforcing the intestinal permeability barrier.
+
+| Biomarker & Physiologic Marker | Butyrate Depletion (Dysbiosis) | Optimized Homeostasis | Molecular Mechanism |
+| :--- | :--- | :--- | :--- |
+| **Luminal Butyrate Concentration** | < 5 mM (Subclinical deficit) | 15 - 25 mM (Physiologic peak) | Anaerobic fermentation of non-digestible carbs |
+| **Circulating Serum Zonulin** | Dramatically elevated | Suppressed to basal baseline | Claudin-1 and Occludin junction restoration |
+| **Treg to Th17 Balance** | Skewed towards chronic inflammation | Restored immune tolerance | Epigenetic HDAC inhibition freeing Foxp3 loci |
+| **Mucosal Permeability Ratio (L/M)** | Highly permeable (> 0.05) | Tight and selective (< 0.02) | Structural epithelial renewal and mucus thickening |`
       },
       {
-        heading: '3. Microbiome Optimization Protocols',
-        body: `Direct oral butyrate salts often undergo rapid upper gastrointestinal absorption before reaching the colon. Optimal physiologic delivery relies on fueling native butyrogenic species (*Faecalibacterium prausnitzii*, *Roseburia*):
+        heading: '3. Evidence-Based Dietary Interventions to Maximize Endogenous Butyrate',
+        body: `While oral butyrate salts exist as nutritional supplements, they frequently undergo rapid proximal absorption in the stomach and duodenum, failing to reach the distal colonic epithelial niche. The gold standard translational strategy focuses on feeding indigenous anaerobic butyrogenic taxa (*Faecalibacterium prausnitzii*, *Roseburia*, *Eubacterium rectale*):
 
-* **Retrograded Resistant Starch (RS3)**: Cooked and chilled tubers and grains undergo amylose recrystallization, resisting amylase breakdown and delivering substrate directly to the distal colon.
-* **Inulin and Fructooligosaccharides (FOS)**: Found naturally in leeks, onions, and Jerusalem artichokes to fuel microbial fermentation.
-* **Grass-fed Clarified Butter (Ghee)**: Rich dietary source of preformed bio-absorbable short-chain tributyrin.`
+* **Retrograded Resistant Starch (RS3)**: Boiling tubers, rice, or legumes and subsequently refrigerating them for 12 to 24 hours induces amylose recrystallization. This resists pancreatic alpha-amylase digestion, delivering an abundant prebiotic feast directly to distal microbial fermenters.
+* **Prebiotic Inulin and Natural FOS**: Integrating prebiotic fructan-dense foods such as leeks, garlic, onions, and chicory root.
+* **Organic Clarified Ghee**: Supplies natural tributyrin to alleviate upper gastrointestinal mucosal stress.
+* **Judicious Antibiotic Stewardship**: Preserving fragile obligate anaerobic taxa from collateral broad-spectrum depletion.`
       }
     ]
   }
