@@ -1,0 +1,42 @@
+name: Automated Dual-Dispatch Publishing Pipeline
+
+on:
+  schedule:
+    # 09:00 CEST (Giờ Đức)
+    - cron: '0 7 * * *'
+    # 13:00 CEST (Giờ Đức)
+    - cron: '0 11 * * *'
+  workflow_dispatch: # Nút bấm chạy thử thủ công
+
+jobs:
+  publish-and-deploy:
+    name: Build and Deploy Production Dispatches
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js Runtime
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install Project Dependencies
+        run: npm ci
+
+      - name: Verify Full Production Build & Route Generation
+        run: npm run build
+
+      - name: Deploy to Vercel Production
+        if: env.VERCEL_TOKEN != ''
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: npx vercel --prod --token=$VERCEL_TOKEN --yes
