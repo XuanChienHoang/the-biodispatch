@@ -518,6 +518,84 @@ const SEED_REFS: Record<string, Ref[]> = {
         "Chuẩn hóa 3 phân tầng nguy cơ tim mạch theo nồng độ hs-CRP: Dưới 1 mg/L (nguy cơ thấp), 1-3 mg/L (nguy cơ trung bình), và trên 3 mg/L (nguy cơ cao cần can thiệp phối hợp lối sống và hoạt chất).",
     },
   ],
+  "warburg-effect-cancer-metabolism": [
+    {
+      ordinal: 1,
+      label: "Understanding the Warburg Effect: The Metabolic Requirements of Cell Proliferation",
+      pmid: "19460998",
+      doi: "10.1126/science.1160809",
+      design: "Tổng quan Sinh hóa & Chuyển hóa Khối u",
+      sampleSize: null,
+      journal: "Science",
+      year: 2009,
+      abstract:
+        "Công trình kinh điển của Vander Heiden, Cantley và Thompson giải mã vì sao tế bào tăng sinh cần đường phân hiếu khí để tạo vật liệu sinh học hơn là tối ưu hóa sản lượng ATP.",
+    },
+    {
+      ordinal: 2,
+      label: "On the Origin of Cancer Cells",
+      pmid: "13324101",
+      doi: "10.1126/science.123.3191.309",
+      design: "Luận thuyết Nobel Lịch sử",
+      sampleSize: null,
+      journal: "Science",
+      year: 1956,
+      abstract:
+        "Bản báo cáo kinh điển của Otto Warburg đặt nền móng cho học thuyết chuyển hóa ung thư: Tổn thương ty thể không thể phục hồi dẫn đến sự chuyển đổi sang quá trình lên men glucose hiếu khí.",
+    },
+  ],
+  "cancer-seed-and-soil-metabolism": [
+    {
+      ordinal: 1,
+      label: "The pathogenesis of cancer metastasis: the 'seed and soil' hypothesis revisited",
+      pmid: "12778138",
+      doi: "10.1038/nrc1198",
+      design: "Tổng quan Sinh học Khối u & Di căn",
+      sampleSize: null,
+      journal: "Nature Reviews Cancer",
+      year: 2003,
+      abstract:
+        "Isaiah J. Fidler phân tích và mở rộng giả thuyết Hạt giống & Thổ nhưỡng của Stephen Paget: Sự tương tác sống còn giữa tế bào đột biến và vi môi trường tổ chức đích trong quá trình di căn.",
+    },
+    {
+      ordinal: 2,
+      label: "Hallmarks of cancer: the next generation",
+      pmid: "21376230",
+      doi: "10.1016/j.cell.2011.02.013",
+      design: "Chuyên khảo Sinh học Ung thư Cốt lõi",
+      sampleSize: null,
+      journal: "Cell",
+      year: 2011,
+      abstract:
+        "Douglas Hanahan và Robert A. Weinberg bổ sung 'Tái lập trình chuyển hóa năng lượng' và 'Trốn thoát sự giám sát của hệ miễn dịch' vào danh mục các đặc tính cốt lõi của ung thư hiện đại.",
+    },
+  ],
+  "insulin-igf1-cancer-proliferation": [
+    {
+      ordinal: 1,
+      label: "Insulin and insulin-like growth factor signalling in neoplasia",
+      pmid: "18768841",
+      doi: "10.1016/j.cmet.2008.08.011",
+      design: "Tổng quan Nội tiết & Ung bướu Phân tử",
+      sampleSize: null,
+      journal: "Cell Metabolism",
+      year: 2008,
+      abstract:
+        "Michael Pollak làm rõ cơ chế tăng insulin máu và tăng IGF-1 kích hoạt trục PI3K-Akt-mTOR, chứng minh béo phì và kháng insulin là động lực thúc đẩy tăng sinh tế bào ác tính.",
+    },
+    {
+      ordinal: 2,
+      label: "The PI3K pathway in human disease",
+      pmid: "28825708",
+      doi: "10.1016/j.cell.2017.07.029",
+      design: "Tổng quan Sinh học Tế bào & Dược lý Học",
+      sampleSize: null,
+      journal: "Cell",
+      year: 2017,
+      abstract:
+        "Fruman DA và Cantley LC hệ thống hóa vai trò trung tâm của con đường truyền tín hiệu PI3K-Akt trong điều hòa hấp thu glucose, ức chế apoptosis và cơ chế kháng thuốc của tế bào ung thư.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
