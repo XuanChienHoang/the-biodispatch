@@ -151,6 +151,12 @@ export function ComplianceStrip() {
                     Google Sitemap (XML)
                   </a>
                 </li>
+                <li>
+                  <Link className="transition-colors hover:text-trace-ink flex items-center gap-1.5" href="/admin">
+                    <span className="h-1.5 w-1.5 rounded-full bg-cyan-500 inline-block" />
+                    {isVi ? "Editorial Studio (Quản trị)" : "Editorial Studio (CMS)"}
+                  </Link>
+                </li>
               </ul>
             </div>
             <div>
