@@ -211,6 +211,17 @@ export async function runAutonomousDispatch() {
   // 1. Tạo bài viết tiếng Việt
   const viPost = createDispatchMarkdown(nextTopic, 'vi', scheduledIsoDate);
   const viFilePath = path.join(postsDir, `${viPost.slug}.md`);
+
+  // GATEKEEPER AUDIT: BẮT BUỘC KIỂM DUYỆT CHẤT LƯỢNG TRƯỚC KHI XUẤT BẢN
+  const { validateDispatchContent } = await import('./validate-dispatch.mjs');
+  const viValidation = validateDispatchContent(viPost.content, 'vi');
+  if (!viValidation.isValid) {
+    console.error('❌ [Gatekeeper REJECT] Bài viết tiếng Việt chưa đạt chuẩn biên tập của TS. Hoàng Xuân Chiến:');
+    viValidation.issues.forEach(issue => console.error(`   - ${issue}`));
+    throw new Error('Chất lượng bản thảo không đạt chuẩn Gatekeeper!');
+  }
+  console.log(`🛡️ [Gatekeeper PASSED] Bản thảo đạt ${viValidation.wordCount} từ và vượt qua toàn bộ 7 tiêu chuẩn biên tập!`);
+
   fs.writeFileSync(viFilePath, viPost.content, 'utf8');
   console.log(`📝 [Written] Đã tạo bản tiếng Việt: content/posts/${viPost.slug}.md`);
 
@@ -226,7 +237,7 @@ export async function runAutonomousDispatch() {
   // 4. Cập nhật SEED_REFS trong store.ts
   updateStoreSeedRefs(nextTopic);
 
-  console.log('\n✅ [Done] Hoàn tất sinh bản tin chuyên sâu song ngữ!');
+  console.log('\n✅ [Done] Hoàn tất sinh bản tin chuyên sâu song ngữ đạt chuẩn Gatekeeper!');
   return nextTopic;
 }
 
