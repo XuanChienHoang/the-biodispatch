@@ -63,6 +63,13 @@ Quy trình đột phá này vận hành qua 3 bước cốt lõi:
 
 Lần đầu tiên trong lịch sử loài người, các nhà khoa học có thể kiểm soát hoạt động của các mạng lưới nơ-ron sống với độ phân giải thời gian tính bằng mili-giây và độ chính xác tế bào đạt tuyệt đối.
 
+| Tiêu chí So sánh | Kích thích Điện truyền thống (Electrodes) | Dược lý học Hóa chất (Pharmacology) | Quang Di truyền học (Optogenetics) |
+| :--- | :--- | :--- | :--- |
+| **Độ phân giải thời gian** | Nhanh (vài mili-giây) | Rất chậm (vài phút đến hàng giờ) | **Cực nhanh (dưới 1 mili-giây)** |
+| **Độ đặc hiệu tế bào** | Rất kém (kích thích lẫn lộn mọi tế bào xung quanh) | Khá (phụ thuộc thụ thể nhưng lan tỏa toàn thân) | **Chuẩn xác 100% (chỉ đúng nơ-ron mang gen đích)** |
+| **Khả năng đảo ngược** | Khó điều khiển hai chiều | Phải chờ đào thải thuốc qua gan/thận | **Bật/Tắt tức thì theo xung ánh sáng laser** |
+| **Xâm lấn mô** | Dễ tạo mô sẹo quanh điện cực kim loại | Gây tác dụng phụ toàn thân ngoài đích | **Truyền dẫn qua sợi quang vi mô hoặc hạt nano** |
+
 ---
 
 ## 3. Tầm ảnh hưởng làm thay đổi vĩnh viễn diện mạo ngành Khoa học Thần kinh

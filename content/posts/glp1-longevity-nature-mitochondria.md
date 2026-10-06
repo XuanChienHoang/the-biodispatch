@@ -24,6 +24,8 @@ From a molecular biology standpoint, the reality is far more compelling than sup
 
 ![Molecular pathway of GLP-1 receptor agonism preserving mitochondrial homeostasis](/images/posts/glp1-aging-mitochondria.jpg)
 
+> *"If a living cell is a metropolitan apartment, mitochondria are the aging basement generators burning coal day and night. When left unmaintained for decades, they leak toxic exhaust (reactive oxygen species). Biological aging is not spontaneous decay: it is the gradual choking of cellular real estate as defective furnaces pile up while the internal recycling crew goes on strike."*
+
 ---
 
 ## 1. The Cellular Analogy: The Aging Apartment and Failing Generators

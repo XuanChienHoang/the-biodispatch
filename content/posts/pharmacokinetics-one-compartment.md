@@ -65,7 +65,7 @@ Thước đo quan trọng nhất đại diện cho **tổng lượng hoạt ch�
 
 ---
 
-## 3. Ảnh hưởng của trạng thái no và đói tới đường cong hấp thu
+## 3. Lời khuyên Thực hành và Ứng dụng Lâm sàng: Tối ưu hóa hấp thu theo bữa ăn
 
 Một sai lầm rất phổ biến là luôn uống mọi thứ vào lúc đói với suy nghĩ "dạ dày rỗng sẽ hấp thu nhanh hơn".
 

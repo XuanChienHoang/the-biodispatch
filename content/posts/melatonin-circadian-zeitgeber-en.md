@@ -58,15 +58,21 @@ This tiny micro-dose is biologically optimal to saturate high-affinity MT1 and M
 
 ---
 
-## 3. Three Evidence-Based Rules for Restoring Endogenous Circadian Rhythms
+## 3. Practical Protocols & Clinical Action Plan for Circadian Restoration
 
 For those struggling with disrupted sleep architecture, optimizing neuroendocrine zeitgeber timing proves infinitely superior to escalating exogenous hormone intake:
 
-1. **Secure Morning Sunlight Exposure (10 - 15 minutes)**:
-   Natural dawn sunlight striking intrinsically photosensitive retinal ganglion cells (ipRGCs) resets the central SCN oscillator, driving daytime serotonin synthesis as the direct biochemical precursor for evening melatonin.
-2. **Eliminate Blue Light Exposure After 9:00 PM**:
-   Screens and high-Kelvin LED fixtures emit concentrated 460-480 nm wavelengths that directly suppress pineal melatonin synthesis by up to 80%.
-3. **Micro-Dose Exogenous Melatonin When Needed (0.3 - 0.5 mg)**:
-   Administer 60 to 90 minutes prior to your target bedtime. This precise physiological timing facilitates smooth circadian phase advance without lingering morning receptor desensitization.
+### Protocol 1: Securing Morning Photonic Synchronization
+* **Dawn Sunlight Exposure**: Within 30 to 60 minutes of waking, obtain 10 to 15 minutes of direct natural sunlight (without sunglasses). Photons striking melanopsin-expressing retinal ganglion cells (ipRGCs) halt nocturnal melatonin and trigger a healthy cortisol awakening response, anchoring the 16-hour circadian timer.
+
+### Protocol 2: Evening Blue Light Attenuation
+* **Photonic Wind-Down**: After 9:00 PM, eliminate direct exposure to 460-480 nm blue light from mobile devices and overhead LED lighting. Blue photons suppress pineal melatonin synthesis by up to 80%, artificially simulating daytime and delaying the onset of slow-wave sleep.
+
+### Protocol 3: Physiological Micro-Dosing (When Phase-Shifting is Needed)
+* **Physiological Dosage**: If navigating jet lag or circadian shift work, administer an ultra-low physiological micro-dose (0.3 mg to 0.5 mg) approximately 60 to 90 minutes before your target sleep window. This mirrors natural pineal amplitude without triggering receptor down-regulation or morning grogginess.
+
+### Clinical Safety Caveats:
+* Never utilize supra-physiological mega-doses (5 mg to 10 mg) as a nightly chronic crutch. Chronic receptor inundation down-regulates hypothalamic MT1/MT2 density and can exacerbate daytime fatigue and mood instability.
+* Individuals with autoimmune disorders should exercise caution with chronic melatonin supplementation, as melatonin stimulates Th1 immune activity and pro-inflammatory cytokine expression.
 
 Recognizing melatonin as a circadian time-giver rather than a biochemical hammer allows you to reclaim authentic restorative sleep while safeguarding next-day cognitive clarity.

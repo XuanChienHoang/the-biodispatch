@@ -59,7 +59,7 @@ Khi hoạt chất chiếm giữ hoặc vô hiệu hóa enzyme chuyển hóa:
 
 ---
 
-## 3. Khám phá Ma trận Tương tác 64 Cặp Hoạt chất bên dưới
+## 3. Lời khuyên Thực hành và Hướng dẫn An toàn: Ma trận Tương tác Hoạt chất
 
 Ngay dưới đây là công cụ **Synergy & Interaction Checker** được chúng tôi tích hợp. Bạn có thể tự mình lựa chọn cặp hoạt chất bạn đang quan tâm để xem phân loại chính xác:
 * **Màu xanh lục (Hiệp đồng)**: Tương hỗ an toàn, nâng cao tác dụng sinh học.

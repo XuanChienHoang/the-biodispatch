@@ -68,10 +68,12 @@ Hiểu một cách nôm na:
 [Phối hợp Piperine tiêu đen] ──► [Ức chế tạm thời UGT1A1 & CYP3A4] ──► [Curcumin tự do vào máu tăng 2000%]
 ```
 
-Nhờ cơ chế này:
-* Tốc độ đào thải của nghệ chậm lại gấp 4 lần (thời gian bán thải kéo dài từ 5.4 giờ lên tới hơn 21 giờ).
-* Tỷ lệ hấp thu tăng vọt từ 1.1% lên 5.5%.
-* **Tổng diện tích dưới đường cong nồng độ máu (AUC) tăng vọt đúng 20 lần (2000%)** chỉ với một lượng piperine rất nhỏ (khoảng 20 mg).
+| Thông số Dược động học | Uống Curcumin Đơn độc | Phối hợp Curcumin + Piperine 20 mg | Ý nghĩa Lâm sàng Thực tế |
+| :--- | :--- | :--- | :--- |
+| **Nồng độ đỉnh huyết tương (Cmax)** | 0.006 mcg/mL (Rất thấp) | 0.18 mcg/mL (Tăng 30 lần) | Hoạt chất thực sự chạm ngưỡng có hoạt tính kháng viêm |
+| **Thời gian đạt đỉnh (Tmax)** | 1.0 giờ | 0.8 giờ | Hấp thu nhanh hơn do không bị phân hủy sớm |
+| **Thời gian bán thải (T1/2)** | 5.4 giờ | 21.6 giờ (Kéo dài gấp 4 lần) | Giữ hoạt chất trong máu cả ngày thay vì bị tống khứ sau vài giờ |
+| **Diện tích dưới đường cong (AUC)** | Mức cơ bản (100%) | Tăng vọt 2000% (Gấp 20 lần) | Tối ưu hóa tối đa giá trị sinh học của liều uống |
 
 ![Chụp mô phỏng tả thực 3D vi cấu trúc liposome nano-micelle bao bọc hoạt chất Curcumin bảo vệ khỏi enzyme gan tại phòng thí nghiệm Max Planck Institute](/images/posts/curcumin-liposome-carrier-realistic.jpg)
 

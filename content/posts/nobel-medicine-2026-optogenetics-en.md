@@ -63,6 +63,13 @@ This engineering feat hinges upon three interdependent technological steps:
 
 For the first time in scientific history, researchers could modulate living neural networks with millisecond temporal resolution and flawless cellular specificity.
 
+| Evaluative Axis | Traditional Electrical Stimulation (Electrodes) | Small-Molecule Pharmacology | Optogenetic Neuromodulation |
+| :--- | :--- | :--- | :--- |
+| **Temporal Precision** | Fast (milliseconds) | Very Slow (minutes to hours) | **Sub-millisecond optical control** |
+| **Cell-Type Specificity** | Poor (indiscriminately shocks adjacent tissue) | Moderate (receptor-dependent, systemic spread) | **Absolute (100% restricted to target promoter)** |
+| **Reversibility** | Difficult bidirectional control | Dependent on hepatic and renal clearance | **Instant ON/OFF switching via photon pulses** |
+| **Tissue Invasiveness** | Provokes micro-glial scarring and wire fouling | Causes systemic off-target toxicities | **Delivered via biocompatible fibers or wireless upconversion** |
+
 ---
 
 ## 3. Revolutionary Impact: Deciphering the Enigmas of Neuroscience
@@ -80,7 +87,7 @@ Optogenetics has isolated the precise aberrant circuits responsible for Parkinso
 
 ---
 
-## 4. The Translational Clinical Horizon: Light as a Direct Therapeutic Modality
+## 4. Clinical Applications & Actionable Future Horizon: Light as a Direct Therapeutic Modality
 
 Beyond basic neurobiology, the 2026 Nobel Prize honors optogenetics because its translational clinical applications are actively advancing into human clinical trials:
 

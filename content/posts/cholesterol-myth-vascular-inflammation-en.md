@@ -75,11 +75,19 @@ Atherogenesis does not proceed as a passive accumulation of fat sticking to arte
 
 ---
 
-## 4. Three Pillars of Endothelial Protection
+## 4. Practical Protocols & Clinical Action Plan for Endothelial Protection
 
-1. **Extinguishing Systemic Inflammation via Antioxidant Support**:
-   Incorporate dietary polyphenols from wild berries, green tea, cold-pressed extra virgin olive oil, and sulforaphane to reinforce endogenous glutathione pools, suppressing the conversion of native LDL into cytotoxic oxLDL.
-2. **Restoring Endothelial Nitric Oxide (NO) Synthesis**:
-   Increase dietary dietary nitrates from beetroot and dark leafy greens. Practice nasal breathing to capitalize on nasally generated nitric oxide, maintaining vascular compliance and platelet quiescence.
-3. **Eliminating Glycemic Spikes (Glycation Defense)**:
-   Avoid rapid glucose surges by sequencing protein and soluble fiber before carbohydrates. Circulating free glucose directly cross-links vascular collagen via advanced glycation end-products (AGEs), stiffening the arterial tree.
+### Protocol 1: Extinguishing Systemic Inflammation via Antioxidant Support
+* **Dietary Polyphenols**: Incorporate extra virgin cold-pressed olive oil (high in oleocanthal), dark berries, green tea polyphenols (EGCG), and sulforaphane to maintain endogenous glutathione and protect native LDL particles from oxidative conversion into cytotoxic oxLDL.
+* **Target Biomarkers**: Monitor high-sensitivity C-reactive protein (hs-CRP, optimal < 0.8 mg/L) alongside ApoB rather than relying on total cholesterol alone.
+
+### Protocol 2: Restoring Endothelial Nitric Oxide (NO) Synthesis
+* **Dietary Inorganic Nitrates**: Consume leafy greens (arugula, spinach) and dietary beetroot to fuel the enterosalivary nitrate-nitrite-NO pathway, keeping arterial tone relaxed.
+* **Nasal Breathing**: Practice diaphragmatic nasal breathing during rest and zone 2 aerobic exercise to deliver endogenous paranasal nitric oxide directly to the pulmonary and systemic circulation.
+
+### Protocol 3: Eliminating Glycemic Spikes (Glycation Defense)
+* **Meal Sequencing**: Consume dietary fiber and proteins prior to complex carbohydrates. Spikes in postprandial glucose foster advanced glycation end-products (AGEs), creating structural micro-tears in the delicate glycocalyx lining.
+
+### Clinical Safety Caveats:
+* Patients diagnosed with familial hypercholesterolemia, advanced coronary artery calcium (CAC > 100), or established carotid plaques must never abruptly discontinue prescribed lipid-lowering therapies (such as statins or PCSK9 inhibitors) without cardiology consultation.
+* Cardiovascular prevention requires dual vigilance: managing atherogenic particle number (ApoB) while simultaneously extinguishing systemic endothelial inflammation.

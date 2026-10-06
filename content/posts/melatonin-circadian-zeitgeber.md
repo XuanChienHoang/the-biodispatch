@@ -23,7 +23,7 @@ Kết quả là rất nhiều người sau khi uống liều cao vào ban đêm:
 * Thức dậy vào sáng hôm sau với cảm giác nặng đầu, chếnh choáng và lờ đờ kéo dài tới tận trưa (hiện tượng Melatonin Hangover).
 * Sau vài tuần sử dụng, cơ thể bị phụ thuộc và mất hoàn toàn khả năng tự buồn ngủ tự nhiên.
 
-Lý do là hầu hết mọi người đang nhầm lẫn bản chất cơ bản: **Melatonin không phải là một viên thuốc ngủ hay thuốc an thần (Sedative). Melatonin là một Zeitgeber — một chiếc máy lên dây cót đồng hồ sinh học.**
+Lý do là hầu hết mọi người đang nhầm lẫn bản chất cơ bản: **Melatonin không phải là một viên thuốc ngủ hay thuốc an thần (Sedative). Melatonin là một Zeitgeber: chiếc máy lên dây cót đồng hồ sinh học.**
 
 ![Đồ thị nhịp sinh học nội tiết thần kinh giữa nhân trên chéo SCN và tuyến tùng](/images/posts/melatonin-circadian-zeitgeber.jpg)
 
@@ -57,7 +57,7 @@ Lượng hormone cực nhỏ này là vừa đủ để gắn vào các thụ th
 
 ---
 
-## 3. Ba nguyên tắc vàng để tái thiết lập giấc ngủ tự nhiên
+## 3. Ứng dụng thực tế và 3 nguyên tắc vàng để tái thiết lập giấc ngủ tự nhiên
 
 Nếu bạn đang gặp khó khăn về giấc ngủ, hãy áp dụng nguyên tắc điều hòa nhịp sinh học thay vì lạm dụng hormone liều cao:
 

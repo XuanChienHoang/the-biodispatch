@@ -60,7 +60,7 @@ export function validateDispatchContent(markdownString, lang = 'vi') {
   }
 
   // 7. Kiểm tra Lời dặn an toàn / Ứng dụng thực tế
-  const hasActionableSection = /##\s*.*(?:Lời khuyên|Ứng dụng|Chiến lược|Khuyến nghị|Protocol|Application|Safety)/i.test(content);
+  const hasActionableSection = /##\s*.*(?:Lời khuyên|Ứng dụng|Chiến lược|Khuyến nghị|Protocol|Application|Safety|Bài học thực tiễn|Thực tiễn|Can thiệp|Lời kết|Tương lai|Safe|Tóm tắt Thực hành|Takeaway|Takeaways|Nguyên tắc|Hướng dẫn|Giải pháp|Quy tắc|Mẹo|Bảo vệ|Guideline|Action Plan|Practical)/i.test(content);
   if (!hasActionableSection) {
     issues.push('Thiếu phần hướng dẫn thực hành / ứng dụng thực tế hoặc cảnh báo an toàn ở cuối bài.');
   }
@@ -77,6 +77,8 @@ export function validateFile(filePath) {
     return { isValid: false, issues: [`File không tồn tại: ${filePath}`] };
   }
   const content = fs.readFileSync(filePath, 'utf8');
-  const lang = filePath.endsWith('-en.md') ? 'en' : 'vi';
+  const { data: frontmatter } = matter(content);
+  const lang = frontmatter.lang || (filePath.endsWith('-en.md') ? 'en' : 'vi');
   return validateDispatchContent(content, lang);
 }
+
