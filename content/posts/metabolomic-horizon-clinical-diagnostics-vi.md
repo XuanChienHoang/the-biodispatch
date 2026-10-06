@@ -12,6 +12,8 @@ featured: true
 doi: "10.1093/nar/gkab1062"
 gizmo: "biomarker"
 lang: "vi"
+image: "/images/posts/metabolomic-horizon-clinical-diagnostics.jpg"
+imageAlt: "Đồ họa phân tích phổ khối lượng và mạng lưới chuyển hóa phân tử nhỏ"
 ---
 
 ## Mở đầu: Bước qua giới hạn của bản thiết kế di truyền (DNA)
@@ -23,6 +25,8 @@ Tuy nhiên, trong thực tế lâm sàng, **ADN chỉ là một bản thiết k�
 Bạn có thể sở hữu một bộ gen có nguy cơ cao về tim mạch hoặc tiểu đường, nhưng nếu bạn có chế độ ăn lành mạnh, tập luyện đúng cách và hệ vi sinh đường ruột cân bằng, căn bệnh đó có thể không bao giờ bùng phát. Ngược lại, một người có bộ gen "hoàn hảo" vẫn có thể phát triển bệnh chuyển hóa do áp lực stress kéo dài và rối loạn dinh dưỡng.
 
 Đây chính là lý do **Chuyển hóa học (Metabolomics)** — ngành khoa học định lượng toàn bộ các phân tử nhỏ có khối lượng ($<1500\text{ Da}$) trong máu, nước tiểu hoặc tế bào — đang tạo ra một cuộc cách mạng trong y học dự phòng:
+
+![Đồ họa phân tích phổ khối lượng phân giải cao và mạng lưới chuyển hóa phân tử nhỏ trong chẩn đoán sớm](/images/posts/metabolomic-horizon-clinical-diagnostics.jpg)
 
 > *"Nếu ADN là bản vẽ thiết kế của ngôi nhà, và protein là những người thợ đang xây dựng, thì các chất chuyển hóa chính là lượng gạch, cát, khói bụi và nhiệt lượng thực tế đang tỏa ra trong công trường theo thời gian thực."*
 

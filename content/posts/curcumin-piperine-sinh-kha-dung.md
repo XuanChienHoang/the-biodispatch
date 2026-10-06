@@ -12,6 +12,8 @@ featured: true
 doi: "10.1055/s-2006-957541"
 gizmo: "curcumin-piperine"
 lang: "vi"
+image: "/images/posts/curcumin-piperine-bioavailability.jpg"
+imageAlt: "Mô phỏng phân tử Curcumin và Piperine ức chế enzyme đào thải tại gan"
 ---
 
 ## Mở đầu: Câu chuyện "thần dược" và rào cản sinh khả dụng
@@ -22,6 +24,10 @@ Con số 20 lần này là **hoàn toàn có thật trong các nghiên cứu lâ
 
 * Mọi người thường nghĩ: Hạt tiêu đen làm giãn nở niêm mạc ruột, giúp nghệ "chui" vào mạch máu nhiều hơn.
 * **Sự thật y khoa là**: Piperine không giúp nghệ hấp thu thần kỳ hơn, mà nó đóng vai trò như một **"chiếc phanh sinh học"** kìm hãm lá gan của bạn đào thải nghệ quá sớm!
+
+![Mô phỏng phân tử Curcumin và Piperine ức chế enzyme Glucuronidation tại gan nâng cao nồng độ hoạt chất trong máu](/images/posts/curcumin-piperine-bioavailability.jpg)
+
+> *"Gan của chúng ta giống như một hải quan kiểm soát biên giới cực kỳ mẫn cảm. Bất kỳ phân tử thực vật lạ nào như curcumin vừa cập cảng tĩnh mạch cửa là bị gắn ngay chiếc thẻ 'rác thải' để tống khứ ra ngoài. Piperine của tiêu đen không phải chiếc chìa khóa mở ruột, mà là viên thuốc ru ngủ tạm thời khiến hải quan lơ đãng để curcumin tự do đi vào tuần hoàn máu."*
 
 ---
 

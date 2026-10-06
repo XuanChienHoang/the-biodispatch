@@ -7,6 +7,8 @@ authorRole: "Dr. rer. nat. | University of Hamburg"
 tags: ["Metabolomics", "Biomarkers", "Clinical Diagnostics", "TechBio"]
 readingTime: "6 min read"
 featured: true
+image: "/images/posts/metabolomic-horizon-clinical-diagnostics.jpg"
+imageAlt: "High-resolution mass spectrometry and small-molecule metabolic network"
 ---
 
 ## Introduction: Moving Beyond the Genetic Blueprint
@@ -16,6 +18,8 @@ For the past two decades, genomic sequencing has dominated the precision medicin
 In clinical reality, phenotypes are governed by dynamic environmental interactions: nutrition, gut microbiota metabolism, pharmacological interventions, and acute cellular stress. 
 
 This is where **metabolomics**—the comprehensive analysis of low-molecular-weight molecules ($<1500\text{ Da}$) within a biological system—presents an unprecedented paradigm shift. Metabolites represent the downstream functional endpoints of gene expression and proteomic cascades.
+
+![High-resolution mass spectrometry and small-molecule metabolic network visualization](/images/posts/metabolomic-horizon-clinical-diagnostics.jpg)
 
 > *"If genomics is the blueprint, and proteomics is the machinery, metabolomics is the real-time operational telemetry of the organism."*
 
