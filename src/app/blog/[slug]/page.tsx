@@ -211,99 +211,148 @@ export default async function BlogPage({ params }: Params) {
       {/* ------------- Article Body ------------- */}
       <div className="mx-auto max-w-[1240px] px-6 py-14 lg:px-10 lg:py-20">
         {article.content ? (
-          <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_260px] lg:gap-14">
-            <article className="min-w-0 max-w-[70ch] prose-editorial">
-              <ReactMarkdown
-                remarkPlugins={[remarkGfm, remarkMath]}
-                rehypePlugins={[rehypeKatex]}
-              >
-                {article.content}
-              </ReactMarkdown>
+          <div>
+            {/* Top Area: Markdown Content + Sticky Sidebar */}
+            <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_260px] lg:gap-14">
+              <article className="min-w-0 max-w-[70ch] prose-editorial">
+                <ReactMarkdown
+                  remarkPlugins={[remarkGfm, remarkMath]}
+                  rehypePlugins={[rehypeKatex]}
+                >
+                  {article.content}
+                </ReactMarkdown>
+              </article>
 
-              {article.gizmo && (
-                <div className="my-12">
-                  <div className="mb-3 border-l-2 border-trace pl-3">
-                    <span className="caps text-trace-ink font-semibold">Interactive Laboratory Simulation</span>
-                    <p className="text-xs text-slate-ink">Model calculations execute entirely client-side.</p>
-                  </div>
-                  {renderEmbeddedGizmo(article.gizmo)}
-                </div>
-              )}
-
-              {/* ------------- References Section (Ngay cuối bài viết) ------------- */}
-              {refs.length > 0 && (
-                <section id="references" className="mt-14 scroll-mt-8 border-t-2 border-indigo-deep pt-8">
-                  <div className="flex flex-wrap items-end justify-between gap-4">
+              {/* Sticky Sidebar Navigation */}
+              <aside className="hidden lg:block">
+                <div className="sticky top-20 rounded-sm border border-slate-hair bg-paper p-5">
+                  <span className="caps text-slate-ink block mb-3 font-semibold">
+                    {isVi ? "Thuộc tính Bài viết" : "Article Metadata"}
+                  </span>
+                  <div className="space-y-3 text-xs border-b border-slate-hair pb-4">
                     <div>
-                      <span className="caps text-slate-ink">
-                        {isVi ? "§ 6 · Tài liệu Tham khảo & Y văn Đối soát" : "§ 6 · References & Primary Evidence"}
+                      <span className="caps text-slate-ink block">
+                        {isVi ? "Hệ Cơ quan" : "Organ System"}
                       </span>
-                      <h2 className="mt-2 font-display text-[1.4rem] font-bold leading-tight tracking-[-0.03em] text-indigo-deep">
-                        {isVi ? "Danh mục Y văn Thực chứng." : "Verified Source List."}
-                      </h2>
+                      <span className="font-semibold text-indigo-deep">{article.organ}</span>
                     </div>
-                    <p className="caps text-[0.72rem] text-slate-ink">
-                      {isVi
-                        ? "Tài liệu tham khảo đối soát qua PubMed & CrossRef"
-                        : "References indexed via NCBI PubMed & CrossRef"}
-                    </p>
+                    <div>
+                      <span className="caps text-slate-ink block">
+                        {isVi ? "Độ sâu Phân tích" : "Analytical Depth"}
+                      </span>
+                      <span className="font-semibold text-indigo-deep">{article.tier}</span>
+                    </div>
+                    <div>
+                      <span className="caps text-slate-ink block">
+                        {isVi ? "Định danh Y văn (DOI)" : "Primary DOI"}
+                      </span>
+                      <a
+                        href={`https://doi.org/${article.doi}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-trace-ink underline truncate block"
+                      >
+                        {article.doi}
+                      </a>
+                    </div>
                   </div>
 
-                  <ol className="mt-6 grid gap-px bg-slate-hair">
-                    {refs.map((r) => {
-                      const Icon = designIcon(r.design);
-                      const href = r.doi
-                        ? `https://doi.org/${r.doi}`
-                        : `https://pubmed.ncbi.nlm.nih.gov/${r.pmid}/`;
-                      return (
-                        <li key={r.ordinal} className="group bg-paper">
-                          <a
-                            href={href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="grid gap-x-4 gap-y-2 p-4 transition-colors duration-200 hover:bg-paper-tint md:grid-cols-[40px_minmax(0,1fr)_auto]"
-                          >
-                            <span className="num rounded-sm bg-indigo-deep py-1 text-center text-[0.74rem] text-trace font-bold h-fit">
-                              {String(r.ordinal).padStart(2, "0")}
-                            </span>
-                            <div className="min-w-0">
-                              <p className="font-display text-[0.98rem] font-semibold leading-snug tracking-[-0.01em] text-indigo-deep group-hover:text-trace-ink">
-                                {r.label}
-                              </p>
-                              <p className="mt-1 text-[0.8rem] text-slate-ink">
-                                {r.journal} · {r.year}
-                              </p>
-                              <p className="mt-1.5 text-[0.84rem] leading-relaxed text-indigo-soft">
-                                {r.abstract}
-                              </p>
-                            </div>
-                            <div className="flex flex-row items-start gap-2 md:flex-col md:items-end">
-                              <span className="caps flex items-center gap-1 whitespace-nowrap rounded-sm border border-slate-hair px-2 py-0.5 text-[0.68rem] text-indigo-soft">
-                                <Icon size={10} className="text-trace-ink" /> {r.design}
-                              </span>
-                              <span className="num whitespace-nowrap text-[0.7rem] text-slate-ink">
-                                {r.sampleSize ? `n = ${r.sampleSize}` : "n = systematic/in-vitro"}
-                              </span>
-                              <span className="caps flex items-center gap-1 whitespace-nowrap text-indigo-deep font-semibold text-[0.72rem] transition-transform group-hover:translate-x-0.5">
-                                {r.doi ? `DOI ${r.doi}` : `PMID ${r.pmid}`} <ExternalLink size={10} />
-                              </span>
-                            </div>
-                          </a>
-                        </li>
-                      );
-                    })}
-                  </ol>
-                </section>
-              )}
+                  <div className="mt-4">
+                    <span className="caps text-slate-ink block mb-2 font-semibold">
+                      {isVi ? "Điều hướng" : "Navigation"}
+                    </span>
+                    <Link href="/#directory" className="caps text-indigo-deep hover:text-trace-ink flex items-center gap-1 text-xs">
+                      <ArrowLeft size={12} /> {isVi ? "Quay lại Kho bài viết" : "Back to Corpus"}
+                    </Link>
+                  </div>
+                </div>
+              </aside>
+            </div>
 
-              {/* Social Share Strip */}
-              <div className="mt-12">
-                <SocialShare
-                  title={isVi && article.titleVi ? article.titleVi : article.title}
-                  url={`https://the-biodispatch.vercel.app/blog/${article.slug}`}
-                  isVi={isVi}
-                />
+            {/* ------------- References Section (Ngay dưới phần kết bài, tràn rộng toàn trang) ------------- */}
+            {refs.length > 0 && (
+              <section id="references" className="mt-14 scroll-mt-8 border-t-2 border-indigo-deep pt-8">
+                <div className="flex flex-wrap items-end justify-between gap-4">
+                  <div>
+                    <span className="caps text-slate-ink">
+                      {isVi ? "§ 6 · Tài liệu Tham khảo & Y văn Đối soát" : "§ 6 · References & Primary Evidence"}
+                    </span>
+                    <h2 className="mt-2 font-display text-[1.4rem] font-bold leading-tight tracking-[-0.03em] text-indigo-deep">
+                      {isVi ? "Danh mục Y văn Thực chứng." : "Verified Source List."}
+                    </h2>
+                  </div>
+                  <p className="caps text-[0.74rem] text-slate-ink">
+                    {isVi
+                      ? "Tài liệu tham khảo đối soát qua PubMed & CrossRef"
+                      : "References indexed via NCBI PubMed & CrossRef"}
+                  </p>
+                </div>
+
+                <ol className="mt-6 grid gap-px bg-slate-hair">
+                  {refs.map((r) => {
+                    const Icon = designIcon(r.design);
+                    const href = r.doi
+                      ? `https://doi.org/${r.doi}`
+                      : `https://pubmed.ncbi.nlm.nih.gov/${r.pmid}/`;
+                    return (
+                      <li key={r.ordinal} className="group bg-paper">
+                        <a
+                          href={href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="grid gap-x-6 gap-y-2 p-5 transition-colors duration-200 hover:bg-paper-tint md:grid-cols-[46px_minmax(0,1fr)_auto]"
+                        >
+                          <span className="num rounded-sm bg-indigo-deep py-1 text-center text-[0.78rem] text-trace font-bold h-fit">
+                            {String(r.ordinal).padStart(2, "0")}
+                          </span>
+                          <div className="min-w-0">
+                            <p className="font-display text-[1.04rem] font-semibold leading-snug tracking-[-0.01em] text-indigo-deep group-hover:text-trace-ink">
+                              {r.label}
+                            </p>
+                            <p className="mt-1.5 text-[0.84rem] text-slate-ink">
+                              {r.journal} · {r.year}
+                            </p>
+                            <p className="mt-2 max-w-4xl text-[0.87rem] leading-relaxed text-indigo-soft">
+                              {r.abstract}
+                            </p>
+                          </div>
+                          <div className="flex flex-row items-start gap-3 md:flex-col md:items-end">
+                            <span className="caps flex items-center gap-1.5 whitespace-nowrap rounded-sm border border-slate-hair px-2.5 py-1 text-xs text-indigo-soft">
+                              <Icon size={11} className="text-trace-ink" /> {r.design}
+                            </span>
+                            <span className="num whitespace-nowrap text-[0.74rem] text-slate-ink">
+                              {r.sampleSize ? `n = ${r.sampleSize}` : "n = systematic/in-vitro"}
+                            </span>
+                            <span className="caps flex items-center gap-1 whitespace-nowrap text-indigo-deep font-semibold text-xs transition-transform group-hover:translate-x-0.5">
+                              {r.doi ? `DOI ${r.doi}` : `PMID ${r.pmid}`} <ExternalLink size={11} />
+                            </span>
+                          </div>
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ol>
+              </section>
+            )}
+
+            {/* Interactive Simulation (Dưới danh mục Y văn tham khảo) */}
+            {article.gizmo && (
+              <div className="my-14 border-t border-slate-hair pt-8">
+                <div className="mb-4 border-l-2 border-trace pl-3">
+                  <span className="caps text-trace-ink font-semibold">Interactive Laboratory Simulation</span>
+                  <p className="text-xs text-slate-ink">Model calculations execute entirely client-side.</p>
+                </div>
+                {renderEmbeddedGizmo(article.gizmo)}
               </div>
+            )}
+
+            {/* Social Share & Author Card Strip */}
+            <div className="mt-12 max-w-3xl">
+              <SocialShare
+                title={isVi && article.titleVi ? article.titleVi : article.title}
+                url={`https://the-biodispatch.vercel.app/blog/${article.slug}`}
+                isVi={isVi}
+              />
 
               {/* Author bio card */}
               <div className="mt-10 rounded-sm border border-slate-hair bg-paper-tint p-6">
@@ -338,52 +387,7 @@ export default async function BlogPage({ params }: Params) {
               <div className="mt-10">
                 <NewsletterBox isVi={isVi} />
               </div>
-            </article>
-
-            {/* Sticky Sidebar Navigation */}
-            <aside className="hidden lg:block">
-              <div className="sticky top-20 rounded-sm border border-slate-hair bg-paper p-5">
-                <span className="caps text-slate-ink block mb-3 font-semibold">
-                  {isVi ? "Thuộc tính Bài viết" : "Article Metadata"}
-                </span>
-                <div className="space-y-3 text-xs border-b border-slate-hair pb-4">
-                  <div>
-                    <span className="caps text-slate-ink block">
-                      {isVi ? "Hệ Cơ quan" : "Organ System"}
-                    </span>
-                    <span className="font-semibold text-indigo-deep">{article.organ}</span>
-                  </div>
-                  <div>
-                    <span className="caps text-slate-ink block">
-                      {isVi ? "Độ sâu Phân tích" : "Analytical Depth"}
-                    </span>
-                    <span className="font-semibold text-indigo-deep">{article.tier}</span>
-                  </div>
-                  <div>
-                    <span className="caps text-slate-ink block">
-                      {isVi ? "Định danh Y văn (DOI)" : "Primary DOI"}
-                    </span>
-                    <a
-                      href={`https://doi.org/${article.doi}`}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-trace-ink underline truncate block"
-                    >
-                      {article.doi}
-                    </a>
-                  </div>
-                </div>
-
-                <div className="mt-4">
-                  <span className="caps text-slate-ink block mb-2 font-semibold">
-                    {isVi ? "Điều hướng" : "Navigation"}
-                  </span>
-                  <Link href="/#directory" className="caps text-indigo-deep hover:text-trace-ink flex items-center gap-1 text-xs">
-                    <ArrowLeft size={12} /> {isVi ? "Quay lại Kho bài viết" : "Back to Corpus"}
-                  </Link>
-                </div>
-              </div>
-            </aside>
+            </div>
           </div>
         ) : slug === "curcumin-piperine-bioavailability" && data.length > 0 ? (
           <ArticleBody refs={data} />
