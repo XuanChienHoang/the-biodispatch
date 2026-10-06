@@ -29,6 +29,24 @@ jobs:
 
       - name: Install Project Dependencies
         run: npm ci
+      - name: Run Autonomous Dispatch Engine
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          node scripts/generate-daily-dispatch.mjs
+          node scripts/make-thumbs.mjs
+
+      - name: Commit and Push New Dispatches to Main
+        run: |
+          git config --global user.name "BioDispatch Editorial Bot"
+          git config --global user.email "bot@the-biodispatch.vercel.app"
+          git add content/posts/ public/images/ src/lib/store.ts
+          if git diff --staged --quiet; then
+            echo "No new dispatches to commit."
+          else
+            git commit -m "content(auto-dispatch): publish scheduled bilingual dispatch [skip ci]"
+            git push origin main
+          fi
 
       - name: Verify Full Production Build & Route Generation
         run: npm run build
