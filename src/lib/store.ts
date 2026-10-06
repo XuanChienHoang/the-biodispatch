@@ -18,6 +18,82 @@ export interface Ref {
 }
 
 const SEED_REFS: Record<string, Ref[]> = {
+  "nobel-medicine-2026-optogenetics": [
+    {
+      ordinal: 1,
+      label: "Channelrhodopsin-1: a light-gated proton channel in green algae",
+      pmid: "12089443",
+      doi: "10.1126/science.1072068",
+      design: "In-vitro biophysical assay",
+      sampleSize: null,
+      journal: "Science",
+      year: 2002,
+      abstract:
+        "Identification and characterization of channelrhodopsin-1 from Chlamydomonas reinhardtii, demonstrating direct light-gated ion channel conductance across cellular membranes upon 470 nm photon absorption.",
+    },
+    {
+      ordinal: 2,
+      label: "Channelrhodopsin-2, a directly light-gated cation-selective membrane channel",
+      pmid: "14615590",
+      doi: "10.1073/pnas.1936192100",
+      design: "Electrophysiological patch-clamp",
+      sampleSize: null,
+      journal: "Proc Natl Acad Sci U S A",
+      year: 2003,
+      abstract:
+        "Functional expression of channelrhodopsin-2 in mammalian cell models showing passive cation conductance (Na+, K+, Ca2+) directly gated by light pulses with sub-millisecond kinetic onset.",
+    },
+    {
+      ordinal: 3,
+      label: "Millisecond-timescale, genetically targeted optical control of neural activity",
+      pmid: "16116456",
+      doi: "10.1038/nn1525",
+      design: "In-vivo mammalian optogenetic model",
+      sampleSize: null,
+      journal: "Nature Neuroscience",
+      year: 2005,
+      abstract:
+        "First demonstration of genetically targeted, virus-mediated delivery of Channelrhodopsin-2 into mammalian neurons, achieving fast, reversible, millisecond-scale optical elicitation of individual action potentials.",
+    },
+  ],
+  "nobel-medicine-2026-optogenetics-en": [
+    {
+      ordinal: 1,
+      label: "Channelrhodopsin-1: a light-gated proton channel in green algae",
+      pmid: "12089443",
+      doi: "10.1126/science.1072068",
+      design: "In-vitro biophysical assay",
+      sampleSize: null,
+      journal: "Science",
+      year: 2002,
+      abstract:
+        "Identification and characterization of channelrhodopsin-1 from Chlamydomonas reinhardtii, demonstrating direct light-gated ion channel conductance across cellular membranes upon 470 nm photon absorption.",
+    },
+    {
+      ordinal: 2,
+      label: "Channelrhodopsin-2, a directly light-gated cation-selective membrane channel",
+      pmid: "14615590",
+      doi: "10.1073/pnas.1936192100",
+      design: "Electrophysiological patch-clamp",
+      sampleSize: null,
+      journal: "Proc Natl Acad Sci U S A",
+      year: 2003,
+      abstract:
+        "Functional expression of channelrhodopsin-2 in mammalian cell models showing passive cation conductance (Na+, K+, Ca2+) directly gated by light pulses with sub-millisecond kinetic onset.",
+    },
+    {
+      ordinal: 3,
+      label: "Millisecond-timescale, genetically targeted optical control of neural activity",
+      pmid: "16116456",
+      doi: "10.1038/nn1525",
+      design: "In-vivo mammalian optogenetic model",
+      sampleSize: null,
+      journal: "Nature Neuroscience",
+      year: 2005,
+      abstract:
+        "First demonstration of genetically targeted, virus-mediated delivery of Channelrhodopsin-2 into mammalian neurons, achieving fast, reversible, millisecond-scale optical elicitation of individual action potentials.",
+    },
+  ],
   "curcumin-piperine-bioavailability": [
     {
       ordinal: 1,
