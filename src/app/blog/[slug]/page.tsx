@@ -231,7 +231,13 @@ export default async function BlogPage({ params }: Params) {
                   components={{
                     pre({ children, ...props }) {
                       const rawText = extractTextFromChildren(children);
-                      if (rawText.includes("──►") || rawText.includes("->")) {
+                      if (
+                        rawText.includes("──►") ||
+                        rawText.includes("->") ||
+                        rawText.includes("→") ||
+                        rawText.includes("┌") ||
+                        (rawText.includes("│") && rawText.includes("▼"))
+                      ) {
                         return <PathwayFlowchart rawText={rawText} isVi={isVi} />;
                       }
                       return <pre {...props}>{children}</pre>;
