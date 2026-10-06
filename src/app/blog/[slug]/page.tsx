@@ -16,6 +16,8 @@ import BiomarkerGizmo from "@/components/gizmo/BiomarkerGizmo";
 import PathwayGizmo from "@/components/gizmo/PathwayGizmo";
 import SynergyGizmo from "@/components/gizmo/SynergyGizmo";
 import { ArticleLanguageBar } from "@/components/ArticleLanguageBar";
+import { SocialShare } from "@/components/SocialShare";
+import { NewsletterBox } from "@/components/NewsletterBox";
 
 export const dynamic = "force-dynamic";
 
@@ -223,8 +225,17 @@ export default async function BlogPage({ params }: Params) {
                 </div>
               )}
 
+              {/* Social Share Strip */}
+              <div className="mt-10">
+                <SocialShare
+                  title={isVi && article.titleVi ? article.titleVi : article.title}
+                  url={`https://the-biodispatch.vercel.app/blog/${article.slug}`}
+                  isVi={isVi}
+                />
+              </div>
+
               {/* Author bio card */}
-              <div className="mt-14 rounded-sm border border-slate-hair bg-paper-tint p-6">
+              <div className="mt-10 rounded-sm border border-slate-hair bg-paper-tint p-6">
                 <div className="flex items-center gap-4">
                   <div className="h-12 w-12 rounded-full bg-indigo-deep text-trace font-mono font-bold flex items-center justify-center text-base">
                     CH
@@ -250,6 +261,11 @@ export default async function BlogPage({ params }: Params) {
                     {isVi ? "Xem hồ sơ khoa học & quá trình công tác →" : "Read full profile & career history →"}
                   </Link>
                 </div>
+              </div>
+
+              {/* Weekly Dispatch Newsletter Signup Box */}
+              <div className="mt-10">
+                <NewsletterBox isVi={isVi} />
               </div>
             </article>
 

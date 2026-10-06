@@ -140,6 +140,17 @@ export function ComplianceStrip() {
                     {isVi ? "Kho mã nguồn GitHub (Riêng tư)" : "GitHub Workspace (Private)"}
                   </a>
                 </li>
+                <li>
+                  <a className="transition-colors hover:text-trace-ink flex items-center gap-1.5" href="/feed.xml">
+                    <span className="h-1.5 w-1.5 rounded-full bg-orange-500 inline-block" />
+                    RSS 2.0 Feed
+                  </a>
+                </li>
+                <li>
+                  <a className="transition-colors hover:text-trace-ink" href="/sitemap.xml">
+                    Google Sitemap (XML)
+                  </a>
+                </li>
               </ul>
             </div>
             <div>
