@@ -99,7 +99,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className="bg-paper text-indigo-deep antialiased">
         <MotionProvider>
           <InstrumentRail />
-          <div className="md:pl-[72px]">
+          <div className="pt-14 md:pt-0 md:pl-[72px]">
             {children}
             <ComplianceStrip />
           </div>

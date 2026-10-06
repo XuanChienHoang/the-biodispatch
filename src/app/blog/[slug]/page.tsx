@@ -51,18 +51,34 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   ogUrl.searchParams.set("organ", a.organ);
   ogUrl.searchParams.set("tier", a.tier);
 
+  const directImage = a.image ? (a.image.startsWith("http") ? a.image : `https://the-biodispatch.vercel.app${a.image}`) : ogUrl.toString();
+
   return {
     title: `${a.title} · The BioDispatch`,
     description: a.dek,
+    alternates: {
+      canonical: `https://the-biodispatch.vercel.app/blog/${slug}`,
+    },
+    keywords: [
+      a.organ,
+      a.tier,
+      ...(a.tags || []),
+      "TS. Hoàng Xuân Chiến",
+      "Dr. Xuan Chien Hoang",
+      "Biomedical Intelligence",
+      "Metabolomics",
+    ],
     openGraph: {
       title: `${a.title} · The BioDispatch`,
       description: a.dek,
+      url: `https://the-biodispatch.vercel.app/blog/${slug}`,
       type: "article",
+      publishedTime: a.date,
       authors: [a.author || "Dr. Xuan Chien Hoang"],
-      tags: [a.organ, a.tier],
+      tags: [a.organ, a.tier, ...(a.tags || [])],
       images: [
         {
-          url: ogUrl.toString(),
+          url: directImage,
           width: 1200,
           height: 630,
           alt: a.title,
@@ -73,7 +89,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       card: "summary_large_image",
       title: `${a.title} · The BioDispatch`,
       description: a.dek,
-      images: [ogUrl.toString()],
+      images: [directImage],
       creator: "@DrXuanChienHoang",
     },
   };
