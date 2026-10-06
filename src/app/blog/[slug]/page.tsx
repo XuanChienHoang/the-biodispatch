@@ -230,8 +230,74 @@ export default async function BlogPage({ params }: Params) {
                 </div>
               )}
 
+              {/* ------------- References Section (Ngay cuối bài viết) ------------- */}
+              {refs.length > 0 && (
+                <section id="references" className="mt-14 scroll-mt-8 border-t-2 border-indigo-deep pt-8">
+                  <div className="flex flex-wrap items-end justify-between gap-4">
+                    <div>
+                      <span className="caps text-slate-ink">
+                        {isVi ? "§ 6 · Tài liệu Tham khảo & Y văn Đối soát" : "§ 6 · References & Primary Evidence"}
+                      </span>
+                      <h2 className="mt-2 font-display text-[1.4rem] font-bold leading-tight tracking-[-0.03em] text-indigo-deep">
+                        {isVi ? "Danh mục Y văn Thực chứng." : "Verified Source List."}
+                      </h2>
+                    </div>
+                    <p className="caps text-[0.72rem] text-slate-ink">
+                      {isVi
+                        ? "Tài liệu tham khảo đối soát qua PubMed & CrossRef"
+                        : "References indexed via NCBI PubMed & CrossRef"}
+                    </p>
+                  </div>
+
+                  <ol className="mt-6 grid gap-px bg-slate-hair">
+                    {refs.map((r) => {
+                      const Icon = designIcon(r.design);
+                      const href = r.doi
+                        ? `https://doi.org/${r.doi}`
+                        : `https://pubmed.ncbi.nlm.nih.gov/${r.pmid}/`;
+                      return (
+                        <li key={r.ordinal} className="group bg-paper">
+                          <a
+                            href={href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="grid gap-x-4 gap-y-2 p-4 transition-colors duration-200 hover:bg-paper-tint md:grid-cols-[40px_minmax(0,1fr)_auto]"
+                          >
+                            <span className="num rounded-sm bg-indigo-deep py-1 text-center text-[0.74rem] text-trace font-bold h-fit">
+                              {String(r.ordinal).padStart(2, "0")}
+                            </span>
+                            <div className="min-w-0">
+                              <p className="font-display text-[0.98rem] font-semibold leading-snug tracking-[-0.01em] text-indigo-deep group-hover:text-trace-ink">
+                                {r.label}
+                              </p>
+                              <p className="mt-1 text-[0.8rem] text-slate-ink">
+                                {r.journal} · {r.year}
+                              </p>
+                              <p className="mt-1.5 text-[0.84rem] leading-relaxed text-indigo-soft">
+                                {r.abstract}
+                              </p>
+                            </div>
+                            <div className="flex flex-row items-start gap-2 md:flex-col md:items-end">
+                              <span className="caps flex items-center gap-1 whitespace-nowrap rounded-sm border border-slate-hair px-2 py-0.5 text-[0.68rem] text-indigo-soft">
+                                <Icon size={10} className="text-trace-ink" /> {r.design}
+                              </span>
+                              <span className="num whitespace-nowrap text-[0.7rem] text-slate-ink">
+                                {r.sampleSize ? `n = ${r.sampleSize}` : "n = systematic/in-vitro"}
+                              </span>
+                              <span className="caps flex items-center gap-1 whitespace-nowrap text-indigo-deep font-semibold text-[0.72rem] transition-transform group-hover:translate-x-0.5">
+                                {r.doi ? `DOI ${r.doi}` : `PMID ${r.pmid}`} <ExternalLink size={10} />
+                              </span>
+                            </div>
+                          </a>
+                        </li>
+                      );
+                    })}
+                  </ol>
+                </section>
+              )}
+
               {/* Social Share Strip */}
-              <div className="mt-10">
+              <div className="mt-12">
                 <SocialShare
                   title={isVi && article.titleVi ? article.titleVi : article.title}
                   url={`https://the-biodispatch.vercel.app/blog/${article.slug}`}
@@ -359,72 +425,6 @@ export default async function BlogPage({ params }: Params) {
               </Link>
             </div>
           </div>
-        )}
-
-        {/* ------------- References Section ------------- */}
-        {refs.length > 0 && (
-          <section id="references" className="mt-16 scroll-mt-8 border-t-2 border-indigo-deep pt-8">
-            <div className="flex flex-wrap items-end justify-between gap-4">
-              <div>
-                <span className="caps text-slate-ink">
-                  {isVi ? "§ 6 · Tài liệu Tham khảo & Y văn Đối soát" : "§ 6 · References & Primary Evidence"}
-                </span>
-                <h2 className="mt-2.5 font-display text-step-3 font-bold leading-tight tracking-[-0.03em] text-indigo-deep">
-                  {isVi ? "Danh mục Y văn Thực chứng." : "Verified Source List."}
-                </h2>
-              </div>
-              <p className="caps text-slate-ink">
-                {isVi
-                  ? "Tài liệu tham khảo đối soát qua PubMed & CrossRef"
-                  : "References indexed via NCBI PubMed & CrossRef"}
-              </p>
-            </div>
-
-            <ol className="mt-8 grid gap-px bg-slate-hair">
-              {refs.map((r) => {
-                const Icon = designIcon(r.design);
-                const href = r.doi
-                  ? `https://doi.org/${r.doi}`
-                  : `https://pubmed.ncbi.nlm.nih.gov/${r.pmid}/`;
-                return (
-                  <li key={r.ordinal} className="group bg-paper">
-                    <a
-                      href={href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="grid gap-x-6 gap-y-2 p-5 transition-colors duration-200 hover:bg-paper-tint md:grid-cols-[46px_minmax(0,1fr)_auto]"
-                    >
-                      <span className="num rounded-sm bg-indigo-deep py-1 text-center text-[0.78rem] text-trace font-bold">
-                        {String(r.ordinal).padStart(2, "0")}
-                      </span>
-                      <div className="min-w-0">
-                        <p className="font-display text-[1.04rem] font-semibold leading-snug tracking-[-0.01em] text-indigo-deep">
-                          {r.label}
-                        </p>
-                        <p className="mt-1.5 text-[0.84rem] text-slate-ink">
-                          {r.journal} · {r.year}
-                        </p>
-                        <p className="mt-2 max-w-3xl text-[0.87rem] leading-relaxed text-indigo-soft">
-                          {r.abstract}
-                        </p>
-                      </div>
-                      <div className="flex flex-row items-start gap-3 md:flex-col md:items-end">
-                        <span className="caps flex items-center gap-1.5 whitespace-nowrap rounded-sm border border-slate-hair px-2 py-1 text-indigo-soft">
-                          <Icon size={11} className="text-trace-ink" /> {r.design}
-                        </span>
-                        <span className="num whitespace-nowrap text-[0.74rem] text-slate-ink">
-                          {r.sampleSize ? `n = ${r.sampleSize}` : "n = systematic/in-vitro"}
-                        </span>
-                        <span className="caps flex items-center gap-1 whitespace-nowrap text-indigo-deep font-semibold transition-transform group-hover:translate-x-0.5">
-                          {r.doi ? `DOI ${r.doi}` : `PMID ${r.pmid}`} <ExternalLink size={11} />
-                        </span>
-                      </div>
-                    </a>
-                  </li>
-                );
-              })}
-            </ol>
-          </section>
         )}
 
         {/* ------------- Related Dispatches ------------- */}
