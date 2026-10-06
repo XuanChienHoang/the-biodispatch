@@ -750,6 +750,32 @@ const SEED_REFS: Record<string, Ref[]> = {
         "Tracey McLaughlin và Gerald Reaven khẳng định tỉ số TG/HDL là công cụ lâm sàng thực tiễn và chính xác nhất để phát hiện kháng insulin ở người trưởng thành thừa cân.",
     },
   ],
+  "glymphatic-deep-sleep-brain-cleaning": [
+    {
+      ordinal: 1,
+      label: "The Glymphatic System and the Midnight Brain Wash: Molecular Clearance of Amyloid-Beta During Deep Slow-Wave Sleep",
+      pmid: "24136966",
+      doi: "10.1126/science.1241224",
+      design: "Peer-reviewed Landmark Publication",
+      sampleSize: null,
+      journal: "Science",
+      year: 2013,
+      abstract: "During deep slow-wave NREM sleep, interstitial space volume expands by 60%, allowing cerebrospinal fluid to flush out neurotoxic oligomers. Unveiling the molecular machinery behind the brain's internal lymphatic wash.",
+    },
+  ],
+  "glymphatic-deep-sleep-brain-cleaning-en": [
+    {
+      ordinal: 1,
+      label: "The Glymphatic System and the Midnight Brain Wash: Molecular Clearance of Amyloid-Beta During Deep Slow-Wave Sleep",
+      pmid: "24136966",
+      doi: "10.1126/science.1241224",
+      design: "Peer-reviewed Landmark Publication",
+      sampleSize: null,
+      journal: "Science",
+      year: 2013,
+      abstract: "During deep slow-wave NREM sleep, interstitial space volume expands by 60%, allowing cerebrospinal fluid to flush out neurotoxic oligomers. Unveiling the molecular machinery behind the brain's internal lymphatic wash.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
