@@ -86,9 +86,6 @@ export function AdminLogin({ onSuccess }: AdminLoginProps) {
                   className="w-full pl-10 pr-4 py-3 bg-[#060d16] border border-slate-700/80 rounded-xl text-white placeholder-slate-500 font-mono tracking-widest text-lg focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all"
                 />
               </div>
-              <p className="text-[11px] text-slate-400 mt-2 font-mono">
-                💡 PIN mặc định: <span className="text-cyan-400 font-bold">2026</span> (có thể đổi bằng biến <code className="text-slate-300">ADMIN_PIN</code>)
-              </p>
             </div>
 
             {error && (

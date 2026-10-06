@@ -1,7 +1,7 @@
 import { cookies } from "next/headers";
 import crypto from "crypto";
 
-const DEFAULT_PIN = "2026";
+const DEFAULT_PIN = "ChienHoang2026";
 const COOKIE_NAME = "biodispatch_admin_session";
 
 function getExpectedToken(): string {
