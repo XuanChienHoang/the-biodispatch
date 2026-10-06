@@ -440,6 +440,84 @@ const SEED_REFS: Record<string, Ref[]> = {
         "Phân tích gộp khẳng định hiệu quả vượt trội của melatonin liều nhỏ trong việc dịch chuyển pha nhịp ngày đêm (Phase Shifting) khi dùng trước giờ ngủ từ 1 đến 2 giờ.",
     },
   ],
+  "sulforaphane-nrf2-window": [
+    {
+      ordinal: 1,
+      label: "Dietary sulforaphane, a histone deacetylase inhibitor for cancer prevention",
+      pmid: "22869584",
+      doi: "10.1093/carcin/bgs275",
+      design: "Tổng quan Cơ chế Hóa dự phòng Ung thư",
+      sampleSize: null,
+      journal: "Carcinogenesis",
+      year: 2012,
+      abstract:
+        "Cơ chế Sulforaphane ức chế enzyme HDAC và hoạt hóa dòng thác phiên mã ARE thông qua Nrf2, chứng minh tầm quan trọng của việc duy trì hoạt tính enzyme myrosinase trong chế biến súp lơ xanh.",
+    },
+    {
+      ordinal: 2,
+      label: "Myrosinase activity and glucosinolate conversion in brassica vegetables: impact of thermal processing",
+      pmid: "18667015",
+      doi: "10.1021/jf800997h",
+      design: "Nghiên cứu Hóa học Thực phẩm & Nhiệt động học",
+      sampleSize: null,
+      journal: "Journal of Agricultural and Food Chemistry",
+      year: 2008,
+      abstract:
+        "Định lượng sự bất hoạt của myrosinase ở nhiệt độ trên 60°C và xác nhận quy tắc 'cắt nhỏ nghỉ 40 phút' giúp giữ trọn hơn 80% hàm lượng sulforaphane sau khi nấu.",
+    },
+  ],
+  "supplement-drug-interaction-matrix": [
+    {
+      ordinal: 1,
+      label: "Herb-drug interactions: an overview of clinical reviews and clinical trials",
+      pmid: "24675231",
+      doi: "10.1097/CLI.0000000000000042",
+      design: "Tổng quan Dược lý Lâm sàng Hệ thống",
+      sampleSize: null,
+      journal: "Clinical Therapeutics",
+      year: 2014,
+      abstract:
+        "Hệ thống hóa toàn diện các tương tác thảo dược - thuốc tân dược qua cytochrom P450: Cảm ứng CYP3A4 bởi Cỏ Ban Âu và ức chế cạnh tranh của polyphenol bưởi và piperine.",
+    },
+    {
+      ordinal: 2,
+      label: "Interactions between herbal medicines and prescribed drugs: a systematic review",
+      pmid: "22865207",
+      doi: "10.2165/11636250-000000000-00000",
+      design: "Tổng quan Độc tính & Tương tác Thuốc",
+      sampleSize: null,
+      journal: "Drugs",
+      year: 2012,
+      abstract:
+        "Phân tích các ca tai biến lâm sàng do phối hợp Ginkgo, tỏi và nghệ liều cao cùng thuốc chống đông kháng vitamin K (Warfarin), nhấn mạnh nguyên tắc khai báo tiền sử dùng thực phẩm bổ sung.",
+    },
+  ],
+  "forecasting-hs-crp-delta": [
+    {
+      ordinal: 1,
+      label: "Antiinflammatory Therapy with Canakinumab for Atherosclerotic Disease (CANTOS Trial)",
+      pmid: "28845751",
+      doi: "10.1056/NEJMoa1707914",
+      design: "Thử nghiệm Lâm sàng Ngẫu nhiên Đôi mù (RCT)",
+      sampleSize: 10061,
+      journal: "New England Journal of Medicine",
+      year: 2017,
+      abstract:
+        "Nghiên cứu mang tính bước ngoặt chứng minh rằng việc hạ thấp chỉ số viêm hs-CRP mà không làm thay đổi nồng độ lipid máu vẫn giúp giảm 15% tỷ lệ tử vong và biến cố tim mạch tái phát.",
+    },
+    {
+      ordinal: 2,
+      label: "High-Sensitivity C-Reactive Protein and Risk of Cardiovascular Disease in Asymptomatic Adults",
+      pmid: "28973124",
+      doi: "10.1001/jama.2017.18240",
+      design: "Khuyến cáo Lâm sàng Hội Tim mạch Hoa Kỳ (ACC/AHA)",
+      sampleSize: 22000,
+      journal: "JAMA",
+      year: 2017,
+      abstract:
+        "Chuẩn hóa 3 phân tầng nguy cơ tim mạch theo nồng độ hs-CRP: Dưới 1 mg/L (nguy cơ thấp), 1-3 mg/L (nguy cơ trung bình), và trên 3 mg/L (nguy cơ cao cần can thiệp phối hợp lối sống và hoạt chất).",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
