@@ -83,10 +83,3 @@ Ngay dưới đây là công cụ tính toán dược động học do phòng la
 Mặc dù piperine rất hữu ích để tăng hấp thu nghệ, nhưng vì nó ức chế enzyme gan CYP3A4, **nó cũng có thể làm tăng nồng độ của nhiều loại thuốc kê đơn khác** trong máu nếu dùng chung (chẳng hạn như thuốc hạ huyết áp, thuốc chống đông máu warfarin). 
 
 Vì vậy, nếu bạn đang sử dụng các loại thuốc điều trị bệnh mạn tính, hãy tham khảo ý kiến bác sĩ trước khi sử dụng các chế phẩm tinh chất nghệ liều cao có kèm hạt tiêu đen.
-
----
-
-### Tài liệu Trích dẫn Y khoa
-
-1. Shoba, G. et al. (1998). *Influence of piperine on the pharmacokinetics of curcumin in animals and human volunteers.* Planta Medica, 64(4), 353–356. [doi:10.1055/s-2006-957541](https://doi.org/10.1055/s-2006-957541)
-2. Anand, P. et al. (2007). *Bioavailability of curcumin: problems and promises.* Molecular Pharmaceutics, 4(6), 807–818. [doi:10.1021/mp700113r](https://doi.org/10.1021/mp700113r)

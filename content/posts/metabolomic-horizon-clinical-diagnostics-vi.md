@@ -76,11 +76,3 @@ Y học tương lai sẽ không còn là việc "chờ có bệnh rồi mới ch
 Bằng cách theo dõi các phân tử nhỏ chuyển hóa trong cơ thể, chúng ta có thể nhìn thấy những lệch lạc về mặt trao đổi chất từ rất sớm — nhiều năm trước khi các tổn thương thực thể xuất hiện trên phim chụp hay xét nghiệm máu cơ bản thông thường.
 
 *Tương lai của y học không chỉ là đọc bản thiết kế gen; mà là lắng nghe cơ thể bạn đang vận hành ra sao mỗi ngày.*
-
----
-
-### Tài liệu Trích dẫn & Y văn Tham khảo Đối soát
-
-1. Wishart, D. S. et al. (2022). *HMDB 5.0: the Human Metabolome Database for 2022.* Nucleic Acids Research, 50(D1), D622–D631. [doi:10.1093/nar/gkab1062](https://doi.org/10.1093/nar/gkab1062)
-2. Schauer, N., & Fernie, A. R. (2006). *Plant metabolomics: towards biological function and mechanism.* Trends in Plant Science, 11(10), 508–516. [doi:10.1016/j.tplants.2006.08.007](https://doi.org/10.1016/j.tplants.2006.08.007)
-3. Tang, W. H. W. et al. (2013). *Intestinal Microbial Metabolism of Phosphatidylcholine and Cardiovascular Risk.* New England Journal of Medicine, 368(17), 1575–1584. [doi:10.1056/NEJMoa1109400](https://doi.org/10.1056/NEJMoa1109400)

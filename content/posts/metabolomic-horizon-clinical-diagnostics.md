@@ -73,11 +73,3 @@ The clinical transition from *reactive disease management* to *presymptomatic pr
 Metabolomics provides the immediate, functional readout necessary to evaluate therapeutic efficacy, dietary interventions, and early metabolic deviation years before histological damage manifests.
 
 *The future of diagnostic medicine is not merely reading the code; it is monitoring the live system.*
-
----
-
-### References & Selected Reading
-
-1. Wishart, D. S. et al. (2022). *HMDB 5.0: the Human Metabolome Database for 2022.* Nucleic Acids Research, 50(D1), D622–D631. [doi:10.1093/nar/gkab1062](https://doi.org/10.1093/nar/gkab1062)
-2. Schauer, N., & Fernie, A. R. (2006). *Plant metabolomics: towards biological function and mechanism.* Trends in Plant Science, 11(10), 508–516. [doi:10.1016/j.tplants.2006.08.007](https://doi.org/10.1016/j.tplants.2006.08.007)
-3. Tang, W. H. W. et al. (2013). *Intestinal Microbial Metabolism of Phosphatidylcholine and Cardiovascular Risk.* New England Journal of Medicine, 368(17), 1575–1584. [doi:10.1056/NEJMoa1109400](https://doi.org/10.1056/NEJMoa1109400)
