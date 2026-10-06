@@ -32,6 +32,13 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params;
   const a = await getArticle(slug);
   if (!a) return { title: "Dispatch Not Found" };
+
+  const ogUrl = new URL("https://the-biodispatch.vercel.app/api/og");
+  ogUrl.searchParams.set("title", a.title);
+  ogUrl.searchParams.set("dek", a.dek);
+  ogUrl.searchParams.set("organ", a.organ);
+  ogUrl.searchParams.set("tier", a.tier);
+
   return {
     title: `${a.title} · The BioDispatch`,
     description: a.dek,
@@ -41,6 +48,21 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       type: "article",
       authors: [a.author || "Dr. Xuan Chien Hoang"],
       tags: [a.organ, a.tier],
+      images: [
+        {
+          url: ogUrl.toString(),
+          width: 1200,
+          height: 630,
+          alt: a.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${a.title} · The BioDispatch`,
+      description: a.dek,
+      images: [ogUrl.toString()],
+      creator: "@DrXuanChienHoang",
     },
   };
 }

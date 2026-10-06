@@ -34,6 +34,11 @@ export const metadata: Metadata = {
   },
   description:
     "Evidence-based biomedical intelligence by Dr. Xuan Chien Hoang (Dr. rer. nat. in Molecular Biology, Univ. of Hamburg). Bridging East-West ethnobotanicals, bioavailability enhancement, oncology care, and data-driven HealthTech.",
+  alternates: {
+    types: {
+      "application/rss+xml": "https://the-biodispatch.vercel.app/feed.xml",
+    },
+  },
   openGraph: {
     type: "website",
     siteName: "The BioDispatch",
@@ -41,6 +46,23 @@ export const metadata: Metadata = {
     description:
       "East-West ethnobotanicals, bioavailability enhancement, supportive oncology, and interactive pharmacokinetic simulation engines.",
     locale: "en_US",
+    images: [
+      {
+        url: "https://the-biodispatch.vercel.app/api/og?title=The%20BioDispatch&dek=Biomedical%20Intelligence%20%26%20Simulation%20Engines&organ=Integrative&tier=Evidence-Based",
+        width: 1200,
+        height: 630,
+        alt: "The BioDispatch",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The BioDispatch · Dr. Xuan Chien Hoang",
+    description:
+      "East-West ethnobotanicals, bioavailability enhancement, supportive oncology, and interactive pharmacokinetic simulation engines.",
+    images: [
+      "https://the-biodispatch.vercel.app/api/og?title=The%20BioDispatch&dek=Biomedical%20Intelligence%20%26%20Simulation%20Engines&organ=Integrative&tier=Evidence-Based",
+    ],
   },
 };
 
