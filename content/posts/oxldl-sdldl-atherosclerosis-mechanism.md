@@ -1,11 +1,11 @@
 ---
 title: "Mật mã Tim mạch Phần 2: Hạt mỡ oxLDL & sdLDL: Kẻ đục thủng thành mạch thực sự"
-date: "2026-10-06"
+date: "2026-10-06T11:02"
 excerpt: "Đừng chỉ nhìn vào con số LDL-C trên phiếu xét nghiệm. Kích thước hạt và trạng thái oxy hóa mới là yếu tố quyết định hạt mỡ là nguồn sống của tế bào hay quả bom nổ chậm trong lòng động mạch vành."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"
 tags: ["Mật mã Tim mạch", "oxLDL", "sdLDL", "Xơ vữa động mạch"]
-organ: "Cardiovascular"
+organ: "Heart"
 tier: "Clinical Deep-Dive"
 readingTime: "8 phút đọc"
 featured: true

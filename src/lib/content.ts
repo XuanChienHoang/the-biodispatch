@@ -15,6 +15,15 @@ export interface Article {
   doi: string;
   gizmo: string | null;
   feature?: boolean;
+  /** Ảnh bìa 16:9 đầy đủ, ví dụ /images/posts/<slug>.jpg */
+  image?: string;
+  /** Thumbnail WebP nhẹ cho thẻ danh sách, ví dụ /images/thumbs/<slug>.webp */
+  thumb?: string;
+  /** Cover WebP 1280px cho bài tiêu điểm, ví dụ /images/covers/<slug>.webp */
+  cover?: string;
+  /** ISO date hoặc datetime, dùng để xếp bài mới nhất lên đầu */
+  date?: string;
+  lang?: "vi" | "en";
 }
 
 export const ORGANS: Organ[] = ["Brain", "Heart", "Gut", "Cellular Aging", "Immune", "Metabolic"];

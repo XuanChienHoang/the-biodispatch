@@ -1,11 +1,11 @@
 ---
 title: "Mật mã Tim mạch Phần 1: Huyền thoại Cholesterol: Vì sao Mỡ máu không làm nghẽn mạch nếu thiếu Viêm?"
-date: "2026-10-06"
+date: "2026-10-06T11:03"
 excerpt: "Trong hơn nửa thế kỷ, cholesterol bị coi là thủ phạm số một gây nhồi máu cơ tim. Thế nhưng, tại sao hơn 50% bệnh nhân đột quỵ tim lại có mức cholesterol hoàn toàn bình thường? Khám phá vai trò thực sự của phản ứng viêm nội mạc trong bệnh sinh mạch vành."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"
 tags: ["Mật mã Tim mạch", "Cholesterol", "Viêm mạch máu", "Nội mạc"]
-organ: "Cardiovascular"
+organ: "Heart"
 tier: "Clinical Deep-Dive"
 readingTime: "8 phút đọc"
 featured: true
@@ -40,6 +40,8 @@ Cơ thể con người không bao giờ tiến hóa để tạo ra một phân t
    Gan dùng cholesterol để sản xuất dịch mật giúp nhũ hóa chất béo và hấp thu các vitamin tan trong dầu (A, D, E, K).
 4. **Vật liệu sửa chữa vết thương nội mô**:
    Khi thành mạch máu bị cọ xát, rách vi thể do huyết áp cao, đường huyết tăng vọt hoặc khói thuốc lá, các hạt lipoprotein mang cholesterol sẽ lập tức cập bến để trám kín vết thương.
+
+![Mô hình giải phẫu 3D tả thực tim mạch và mạng lưới động mạch vành nuôi cơ tim](/images/posts/cardiovascular-heart-realistic.jpg)
 
 ---
 

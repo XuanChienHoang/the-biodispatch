@@ -73,6 +73,8 @@ Nhờ cơ chế này:
 * Tỷ lệ hấp thu tăng vọt từ 1.1% lên 5.5%.
 * **Tổng diện tích dưới đường cong nồng độ máu (AUC) tăng vọt đúng 20 lần (2000%)** chỉ với một lượng piperine rất nhỏ (khoảng 20 mg).
 
+![Chụp mô phỏng tả thực 3D vi cấu trúc liposome nano-micelle bao bọc hoạt chất Curcumin bảo vệ khỏi enzyme gan tại phòng thí nghiệm Max Planck Institute](/images/posts/curcumin-liposome-carrier-realistic.jpg)
+
 ---
 
 ## 4. Lời khuyên an toàn từ chuyên gia

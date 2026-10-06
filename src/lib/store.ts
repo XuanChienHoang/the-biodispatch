@@ -686,6 +686,24 @@ export interface MarkdownArticleData extends Article {
   lang?: "vi" | "en";
 }
 
+/** /images/posts/foo.jpg -> /images/<dir>/foo.webp (sinh bởi scripts/make-thumbs.mjs). Trả undefined nếu file chưa được sinh. */
+function variantFor(image: string | undefined, dir: "thumbs" | "covers"): string | undefined {
+  if (!image) return undefined;
+  const name = path.basename(image).replace(/\.[^.]+$/, "");
+  const file = path.join(process.cwd(), "public", "images", dir, `${name}.webp`);
+  return fs.existsSync(file) ? `/images/${dir}/${name}.webp` : undefined;
+}
+const thumbFor = (image?: string) => variantFor(image, "thumbs");
+const coverFor = (image?: string) => variantFor(image, "covers");
+
+/** Bài seed (không có file .md) mượn ảnh bìa cùng chủ đề để thẻ không bị trống. */
+const SEED_IMAGE_FALLBACK: Record<string, string> = {
+  "curcumin-piperine-bioavailability": "/images/posts/curcumin-piperine-bioavailability.jpg",
+  "policosanol-versus-statins": "/images/posts/mevalonate-statin-coq10.jpg",
+  "coq10-depletion-in-statins": "/images/posts/mevalonate-statin-coq10.jpg",
+  "butyrate-colonocyte-fuel": "/images/posts/resistant-starch-scfa-gut.jpg",
+};
+
 export async function getMarkdownPosts(): Promise<MarkdownArticleData[]> {
   if (!fs.existsSync(postsDirectory)) return [];
 
@@ -712,6 +730,9 @@ export async function getMarkdownPosts(): Promise<MarkdownArticleData[]> {
       doi: data.doi || "10.1093/nar/gkab1062",
       gizmo: data.gizmo || null,
       feature: data.featured ?? true,
+      image: data.image || undefined,
+      thumb: thumbFor(data.image),
+      cover: coverFor(data.image),
       content,
       author: data.author || "Dr. Xuan Chien Hoang",
       authorRole: data.authorRole || "Dr. rer. nat. | University of Hamburg",
@@ -730,10 +751,14 @@ export async function getArticles(): Promise<Article[]> {
   const mdSlugs = new Set(mdPosts.map((p) => p.slug));
 
   // Filter out any seed articles that share the slug
-  const remainingSeed = ARTICLES.filter((a) => !mdSlugs.has(a.slug));
+  const remainingSeed: Article[] = ARTICLES.filter((a) => !mdSlugs.has(a.slug)).map((a) => {
+    const image = SEED_IMAGE_FALLBACK[a.slug];
+    return { ...a, image, thumb: thumbFor(image), cover: coverFor(image), date: a.date ?? "2026-09-01" };
+  });
 
-  // Markdown posts are placed first as live dispatches
-  return [...mdPosts, ...remainingSeed];
+  // Mới nhất lên đầu. Cho phép date dạng datetime (2026-10-06T11:03) để phân thứ tự trong cùng một ngày.
+  const ts = (a: Article) => new Date(a.date ?? "2026-09-01").getTime() || 0;
+  return [...mdPosts, ...remainingSeed].sort((a, b) => ts(b) - ts(a));
 }
 
 export async function getArticle(slug: string): Promise<MarkdownArticleData | null> {

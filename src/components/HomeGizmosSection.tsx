@@ -16,8 +16,8 @@ export function HomeFeaturedGizmo() {
           <div>
             <span className="caps text-slate-ink">
               {isVi
-                ? "§ 0 · Dụng cụ Mô phỏng Dược động học Tương tác"
-                : "§ 0 · Interactive Pharmacokinetic Instrument"}
+                ? "§ 2 · Dụng cụ Mô phỏng Dược động học Tương tác"
+                : "§ 2 · Interactive Pharmacokinetic Instrument"}
             </span>
             <h2 className="mt-3 max-w-2xl font-display display-lg font-black leading-[0.95] tracking-[-0.035em] text-indigo-deep">
               {isVi ? "Chỉ một công tắc. Hấp thu tăng gấp 20 lần." : "One switch. Twenty-fold exposure."}
@@ -49,8 +49,8 @@ export function HomeSimulationLab() {
           <div>
             <span className="caps text-trace">
               {isVi
-                ? "§ 2 · Phòng Thí nghiệm Mô phỏng Trực quan"
-                : "§ 2 · Simulation Engines & Gizmos Lab"}
+                ? "§ 3 · Phòng Thí nghiệm Mô phỏng Trực quan"
+                : "§ 3 · Simulation Engines & Gizmos Lab"}
             </span>
             <h2 className="mt-3 font-display display-lg font-black leading-[0.95] tracking-[-0.035em]">
               {isVi ? "Bốn Công cụ Đo lường Dược học." : "Four Laboratory Engines."}

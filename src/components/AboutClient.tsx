@@ -1,6 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowLeft,
   BookOpen,
@@ -14,12 +16,16 @@ import {
   Database,
   Building2,
   ExternalLink,
+  BookMarked,
+  Layers,
+  ShoppingBag,
 } from "lucide-react";
 import { useLanguageStore } from "@/lib/i18n";
 
 export function AboutClient() {
   const { lang, setLang } = useLanguageStore();
   const isVi = lang === "vi";
+  const [activeCover, setActiveCover] = useState<"en" | "vn">("en");
 
   return (
     <main className="bg-paper text-indigo-deep">
@@ -72,6 +78,9 @@ export function AboutClient() {
             </span>
             <span className="caps rounded-sm border border-slate-hair px-2.5 py-1 text-slate-ink font-medium">
               VGI e.V. Board Member
+            </span>
+            <span className="caps rounded-sm bg-trace/15 border border-trace/40 px-2.5 py-1 text-indigo-deep font-semibold">
+              {isVi ? "Tác giả Sách: The Cancer Code (Amazon)" : "Author: The Cancer Code (Amazon)"}
             </span>
           </div>
 
@@ -208,10 +217,176 @@ export function AboutClient() {
               </div>
             </section>
 
+            {/* Published Book Showcase */}
+            <section className="rounded-sm border border-indigo-deep/20 bg-paper-tint p-6 lg:p-8">
+              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-hair pb-4">
+                <div>
+                  <span className="caps text-slate-ink font-semibold">
+                    {isVi ? "§ 2 · Sách Chuyên khảo & Tác phẩm Xuất bản Quốc tế" : "§ 2 · Published Monograph & International Book"}
+                  </span>
+                  <div className="mt-1 flex items-center gap-2">
+                    <span className="caps rounded-sm bg-indigo-deep px-2 py-0.5 text-[0.68rem] text-trace font-bold">
+                      Amazon Worldwide
+                    </span>
+                    <span className="caps rounded-sm border border-slate-hair bg-paper px-2 py-0.5 text-[0.68rem] text-slate-ink font-mono">
+                      ASIN: B0HFVW9PFB
+                    </span>
+                  </div>
+                </div>
+
+                {/* Cover Toggle Button */}
+                <div className="inline-flex rounded-full border border-slate-hair bg-paper p-0.5 text-xs font-mono">
+                  <button
+                    type="button"
+                    onClick={() => setActiveCover("en")}
+                    className={`rounded-full px-2.5 py-1 transition-all cursor-pointer ${
+                      activeCover === "en"
+                        ? "bg-indigo-deep text-white font-bold shadow-xs"
+                        : "text-slate-ink hover:text-indigo-deep"
+                    }`}
+                  >
+                    Bìa Quốc tế (EN)
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setActiveCover("vn")}
+                    className={`rounded-full px-2.5 py-1 transition-all cursor-pointer ${
+                      activeCover === "vn"
+                        ? "bg-indigo-deep text-white font-bold shadow-xs"
+                        : "text-slate-ink hover:text-indigo-deep"
+                    }`}
+                  >
+                    Bìa Việt Nam (VN)
+                  </button>
+                </div>
+              </div>
+
+              <div className="mt-6 grid gap-8 md:grid-cols-[240px_1fr] lg:grid-cols-[280px_1fr] items-start">
+                {/* Book Cover Graphic */}
+                <div className="group relative mx-auto w-full max-w-[260px] md:max-w-none">
+                  <div className="relative aspect-[1/1.5] w-full overflow-hidden rounded-sm border border-slate-hair bg-indigo-deep shadow-[0_18px_38px_-15px_rgba(11,25,44,0.45)] transition-transform duration-300 group-hover:-translate-y-1">
+                    <Image
+                      src={
+                        activeCover === "en"
+                          ? "/images/books/the-cancer-code-en.jpg"
+                          : "/images/books/mat-ma-ung-thu-vn.jpg"
+                      }
+                      alt="The Cancer Code - Book Cover"
+                      fill
+                      sizes="(min-width: 1024px) 280px, 240px"
+                      className="object-cover"
+                      priority
+                    />
+                  </div>
+                  <p className="mt-2 text-center text-[0.72rem] font-mono text-slate-ink">
+                    {activeCover === "en"
+                      ? "Bản quyền phát hành toàn cầu trên Amazon KDP"
+                      : "Phiên bản thiết kế Việt hóa: Mật Mã Ung Thư"}
+                  </p>
+                </div>
+
+                {/* Book Details */}
+                <div className="space-y-4">
+                  <div>
+                    <h3 className="font-display text-[1.65rem] font-black leading-tight tracking-tight text-indigo-deep">
+                      THE CANCER CODE
+                    </h3>
+                    <p className="mt-1 text-[0.98rem] font-medium text-trace-ink font-mono">
+                      From the Petri Dish to the Dinner Table: An Evidence-Based Guide to Cellular Defense, Natural Bioactives, and Integrative Oncology
+                    </p>
+                    <p className="mt-1 text-xs text-slate-ink">
+                      {isVi ? "Tác giả: TS. Hoàng Xuân Chiến · Dr. rer. nat. (ĐH Hamburg)" : "Author: Dr. Xuan Chien Hoang · Dr. rer. nat. (Univ. of Hamburg)"}
+                    </p>
+                  </div>
+
+                  <p className="text-[0.95rem] leading-relaxed text-indigo-soft">
+                    {isVi
+                      ? "Cuốn sách đúc kết hơn một thập kỷ nghiên cứu y sinh học phân tử và tổng thuật hơn 1.000 công trình lâm sàng quốc tế có bình duyệt. Phá vỡ ranh giới giữa phòng thí nghiệm và đời sống, tác phẩm bóc tách bản chất sinh học ung thư (hiệu ứng Warburg, đột biến p53, vi môi trường khối u), giải mã điểm nghẽn sinh khả dụng của hoạt chất tự nhiên (Sulforaphane, Curcumin - Piperine, EGCG, Berberine, Sâm Ngọc Linh) và xây dựng phác đồ dinh dưỡng bảo vệ tế bào thực chứng."
+                      : "Tearing down the invisible wall between biomedical laboratory research and daily human nutrition. Drawing upon hands-on laboratory discovery and over 1,000 peer-reviewed international clinical studies, Dr. Hoang delivers an authoritative masterclass in metabolic oncology, natural bioactives bioavailability, and cellular defense."}
+                  </p>
+
+                  {/* 3 Editions Container */}
+                  <div className="space-y-2 pt-2">
+                    <span className="caps text-[0.75rem] font-bold text-indigo-deep block">
+                      {isVi ? "Phát hành chính thức với 3 ấn bản trên Amazon:" : "Available Globally in 3 Official Editions:"}
+                    </span>
+
+                    <div className="grid gap-3 sm:grid-cols-3">
+                      {/* Edition 1: eBook */}
+                      <div className="rounded-sm border border-slate-hair bg-paper p-3 shadow-2xs">
+                        <div className="flex items-center gap-1.5 text-trace-ink">
+                          <BookOpen size={15} />
+                          <span className="caps text-xs font-bold text-indigo-deep">Kindle eBook</span>
+                        </div>
+                        <p className="mt-1 text-[0.78rem] text-indigo-soft">
+                          {isVi
+                            ? "Đọc tức thì trên máy Kindle, ứng dụng iOS, Android và PC."
+                            : "Instant digital reading across Kindle, iPad, iOS, Android & PC."}
+                        </p>
+                        <span className="mt-2 inline-block rounded-xs bg-paper-tint px-1.5 py-0.5 text-[0.65rem] font-mono text-slate-ink">
+                          ASIN: B0HFVW9PFB
+                        </span>
+                      </div>
+
+                      {/* Edition 2: Paperback */}
+                      <div className="rounded-sm border border-slate-hair bg-paper p-3 shadow-2xs">
+                        <div className="flex items-center gap-1.5 text-indigo-deep">
+                          <Layers size={15} />
+                          <span className="caps text-xs font-bold text-indigo-deep">Paperback</span>
+                        </div>
+                        <p className="mt-1 text-[0.78rem] text-indigo-soft">
+                          {isVi
+                            ? "Bìa mềm chuẩn thương mại 6x9 inch, giấy cream cao cấp chống mỏi mắt."
+                            : "Standard 6x9 inch trade paperback on archival cream paper."}
+                        </p>
+                        <span className="mt-2 inline-block rounded-xs bg-paper-tint px-1.5 py-0.5 text-[0.65rem] font-mono text-slate-ink">
+                          Amazon KDP Print
+                        </span>
+                      </div>
+
+                      {/* Edition 3: Hardcover */}
+                      <div className="rounded-sm border border-slate-hair bg-paper p-3 shadow-2xs">
+                        <div className="flex items-center gap-1.5 text-syn-ink">
+                          <BookMarked size={15} />
+                          <span className="caps text-xs font-bold text-indigo-deep">Hardcover</span>
+                        </div>
+                        <p className="mt-1 text-[0.78rem] text-indigo-soft">
+                          {isVi
+                            ? "Bản bìa cứng đóng gáy cao cấp, lưu trữ lâu dài cho thư viện y khoa."
+                            : "Case-laminate durable hardcover, designed for medical libraries."}
+                        </p>
+                        <span className="mt-2 inline-block rounded-xs bg-paper-tint px-1.5 py-0.5 text-[0.65rem] font-mono text-slate-ink">
+                          Case Laminate 6x9
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Amazon CTA Button */}
+                  <div className="pt-2 flex flex-wrap items-center gap-4">
+                    <a
+                      href="https://www.amazon.com/CANCER-CODE-Evidence-Based-Bioactives-Integrative-ebook/dp/B0HFVW9PFB/ref=sr_1_1?crid=32EIDTVIFZXPU&dib=eyJ2IjoiMSJ9._0XKQ_D9j8dGnHNwFjveCsRdRzY4ubvVmPn01TKr8OhUkuwgQs9nHF4R27uzUY54.qTeTUa5SQjqcM6bR4oT_eNCDbia84fDGlZnyk48I4cQ&dib_tag=se&keywords=the+cancer+code+dr.+xuan+chien+hoang&qid=1791279105&sprefix=%2Caps%2C191&sr=8-1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-sm bg-indigo-deep px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-mid transition-all cursor-pointer"
+                    >
+                      <ShoppingBag size={16} />
+                      <span>{isVi ? "Xem và Mua Sách trên Amazon (3 Phiên bản)" : "Order on Amazon (All 3 Editions)"}</span>
+                      <ExternalLink size={14} className="opacity-80" />
+                    </a>
+
+                    <span className="text-xs text-slate-ink">
+                      {isVi ? "Phát hành toàn cầu qua mạng lưới Amazon Fulfillment." : "Global shipping & distribution via Amazon."}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </section>
+
             {/* Core Strategic Pillars Bento Grid */}
             <section>
               <span className="caps text-slate-ink font-semibold">
-                {isVi ? "§ 2 · Sáu Trụ cột Chiến lược & Năng lực Chuyên môn" : "§ 2 · Six Strategic Pillars & Core Competencies"}
+                {isVi ? "§ 3 · Sáu Trụ cột Chiến lược & Năng lực Chuyên môn" : "§ 3 · Six Strategic Pillars & Core Competencies"}
               </span>
               <h2 className="mt-3 font-display text-[1.85rem] font-bold tracking-tight text-indigo-deep">
                 {isVi ? "Định hướng Nghiên cứu & Phát triển Sản phẩm" : "Research Domains & Product Development Focus"}
@@ -312,7 +487,7 @@ export function AboutClient() {
             {/* Editorial Philosophy & Science Communication */}
             <section className="border-t border-slate-hair pt-8">
               <span className="caps text-slate-ink font-semibold">
-                {isVi ? "§ 3 · Sứ mệnh Bình dân hóa Tri thức Y sinh" : "§ 3 · Editorial Mission & Science Communication"}
+                {isVi ? "§ 4 · Sứ mệnh Bình dân hóa Tri thức Y sinh" : "§ 4 · Editorial Mission & Science Communication"}
               </span>
               <h2 className="mt-3 font-display text-[1.85rem] font-bold tracking-tight text-indigo-deep">
                 {isVi ? "Vì sao The BioDispatch theo đuổi Tri thức Thực chứng?" : "Democratizing Biomedical Evidence for Clinicians and the Public"}
@@ -380,6 +555,23 @@ export function AboutClient() {
                       ? "Tiến sĩ Sinh học Phân tử (Dr. rer. nat.) · ĐH Hamburg, Đức"
                       : "Doctor of Natural Sciences (Dr. rer. nat.) · Univ. of Hamburg"}
                   </span>
+                </div>
+                <div>
+                  <span className="caps text-slate-ink block">{isVi ? "Tác phẩm Xuất bản" : "Published Books"}</span>
+                  <span className="font-semibold text-indigo-deep">
+                    THE CANCER CODE (Amazon)
+                  </span>
+                  <span className="text-[0.7rem] text-slate-ink block mt-0.5">
+                    {isVi ? "3 ấn bản: eBook · Bìa mềm · Bìa cứng" : "3 editions: eBook · Paperback · Hardcover"}
+                  </span>
+                  <a
+                    href="https://www.amazon.com/CANCER-CODE-Evidence-Based-Bioactives-Integrative-ebook/dp/B0HFVW9PFB/ref=sr_1_1?crid=32EIDTVIFZXPU&dib=eyJ2IjoiMSJ9._0XKQ_D9j8dGnHNwFjveCsRdRzY4ubvVmPn01TKr8OhUkuwgQs9nHF4R27uzUY54.qTeTUa5SQjqcM6bR4oT_eNCDbia84fDGlZnyk48I4cQ&dib_tag=se&keywords=the+cancer+code+dr.+xuan+chien+hoang&qid=1791279105&sprefix=%2Caps%2C191&sr=8-1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 font-mono text-trace-ink underline block text-[0.72rem] hover:text-indigo-deep"
+                  >
+                    {isVi ? "Xem trên Amazon ↗" : "View on Amazon ↗"}
+                  </a>
                 </div>
                 <div>
                   <span className="caps text-slate-ink block">{isVi ? "Chứng chỉ Chuyên sâu" : "Certifications"}</span>

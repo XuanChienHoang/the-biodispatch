@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Globe } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Wordmark } from "@/components/InstrumentRail";
 import { useLanguageStore, DICT } from "@/lib/i18n";
 
+/** Masthead gọn: tên ấn phẩm + tiêu đề một dòng. Dành chỗ cho bài tiêu điểm ngay trong màn hình đầu. */
 export function Hero() {
   const { lang, setLang } = useLanguageStore();
   const t = DICT[lang];
@@ -52,14 +53,15 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="relative">
-        <div className="relative mx-auto max-w-[1240px] px-6 pb-16 pt-10 lg:px-10 lg:pb-24 lg:pt-16">
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-[54rem]"
-          >
+      {/* compact intro */}
+      <div className="mx-auto max-w-[1240px] px-6 pb-8 pt-4 lg:px-10 lg:pb-10 lg:pt-6">
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="grid items-end gap-6 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] lg:gap-12"
+        >
+          <div>
             <div className="flex flex-wrap items-center gap-2">
               <span className="caps rounded-sm bg-indigo-deep px-2.5 py-1.5 text-trace font-medium">
                 {t.heroPill1}
@@ -67,81 +69,83 @@ export function Hero() {
               <span className="caps rounded-sm border border-slate-hair px-2.5 py-1.5 text-slate-ink font-medium">
                 {t.heroPill2}
               </span>
-              <span className="caps rounded-sm border border-slate-hair px-2.5 py-1.5 text-slate-ink font-medium">
+              <span className="caps hidden rounded-sm border border-slate-hair px-2.5 py-1.5 text-slate-ink font-medium sm:inline">
                 {t.heroPill3}
               </span>
             </div>
-
-            <h1 className="display-xl mt-6 font-display font-black leading-[0.92] tracking-[-0.04em] text-indigo-deep">
+            <h1 className="mt-4 font-display text-[clamp(1.9rem,4.4vw,3.35rem)] font-black leading-[0.98] tracking-[-0.035em] text-indigo-deep">
               {t.heroTitle}
             </h1>
+          </div>
 
-            <p className="mt-6 max-w-2xl text-[1.18rem] leading-[1.65] text-indigo-soft">
-              {t.heroSubtitle}
-            </p>
-
-            <div className="mt-8 flex flex-wrap items-center gap-4">
+          <div>
+            <p className="max-w-xl text-[1.02rem] leading-[1.6] text-indigo-soft">{t.heroSubtitle}</p>
+            <div className="mt-5 flex flex-wrap items-center gap-3">
               <a
                 href="#directory"
-                className="caps inline-flex items-center gap-2 rounded-sm bg-indigo-deep px-6 py-3.5 text-white transition-all duration-300 hover:bg-[#101f34] hover:shadow-lg"
+                className="caps inline-flex items-center gap-2 rounded-sm bg-indigo-deep px-5 py-3 text-white transition-all duration-300 hover:bg-[#101f34] hover:shadow-lg"
               >
                 <span>{t.exploreCorpus}</span>
                 <span className="text-trace">↓</span>
               </a>
               <Link
                 href="/gizmos"
-                className="caps inline-flex items-center gap-2 rounded-sm border border-slate-hair bg-paper px-6 py-3.5 text-indigo-deep transition-all duration-200 hover:border-indigo-deep hover:bg-paper-tint"
+                className="caps inline-flex items-center gap-2 rounded-sm border border-slate-hair bg-paper px-5 py-3 text-indigo-deep transition-all duration-200 hover:border-indigo-deep hover:bg-paper-tint"
               >
                 <span>{t.interactiveLab}</span>
                 <ArrowUpRight className="h-3.5 w-3.5" />
               </Link>
               <Link
                 href="/about"
-                className="caps inline-flex items-center gap-1.5 text-slate-ink hover:text-indigo-deep px-3 py-2 transition-colors"
+                className="caps inline-flex items-center gap-1.5 px-2 py-2 text-slate-ink transition-colors hover:text-indigo-deep"
               >
                 <span>{t.aboutAuthor}</span>
                 <span>→</span>
               </Link>
             </div>
-          </motion.div>
-
-          {/* live instrument telemetry strip */}
-          <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-14 border-t border-slate-hair pt-8"
-          >
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              <div className="border-l-2 border-indigo-deep pl-4">
-                <span className="caps text-slate-ink">{t.leadInvestigator}</span>
-                <p className="num mt-1 text-[1.15rem] font-bold text-indigo-deep">
-                  {lang === "vi" ? "TS. Hoàng Xuân Chiến" : "Dr. Xuan Chien Hoang"}
-                </p>
-                <p className="mt-0.5 text-[0.8rem] text-slate-ink">{t.leadInvestigatorSub}</p>
-              </div>
-
-              <div className="border-l-2 border-trace pl-4">
-                <span className="caps text-slate-ink">{t.coreFocus}</span>
-                <p className="num mt-1 text-[1.15rem] font-bold text-indigo-deep">{t.coreFocusTitle}</p>
-                <p className="mt-0.5 text-[0.8rem] text-slate-ink">{t.coreFocusSub}</p>
-              </div>
-
-              <div className="border-l-2 border-syn pl-4">
-                <span className="caps text-slate-ink">{t.editorialRigour}</span>
-                <p className="num mt-1 text-[1.15rem] font-bold text-indigo-deep">{t.editorialRigourTitle}</p>
-                <p className="mt-0.5 text-[0.8rem] text-slate-ink">{t.editorialRigourSub}</p>
-              </div>
-
-              <div className="border-l-2 border-plasma pl-4">
-                <span className="caps text-slate-ink">{t.simEngines}</span>
-                <p className="num mt-1 text-[1.15rem] font-bold text-indigo-deep">{t.simEnginesTitle}</p>
-                <p className="mt-0.5 text-[0.8rem] text-slate-ink">{t.simEnginesSub}</p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </div>
     </header>
+  );
+}
+
+/** Dải thông tin 4 cột (tác giả, trọng tâm, chuẩn biên tập, công cụ mô phỏng), đặt giữa kho bài và phòng lab. */
+export function HeroStrip() {
+  const { lang } = useLanguageStore();
+  const t = DICT[lang];
+
+  return (
+    <section className="border-y border-slate-hair bg-paper-tint">
+      <div className="mx-auto max-w-[1240px] px-6 py-10 lg:px-10">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="border-l-2 border-indigo-deep pl-4">
+            <span className="caps text-slate-ink">{t.leadInvestigator}</span>
+            <p className="num mt-1 text-[1.15rem] font-bold text-indigo-deep">
+              {lang === "vi" ? "TS. Hoàng Xuân Chiến" : "Dr. Xuan Chien Hoang"}
+            </p>
+            <p className="mt-0.5 text-[0.8rem] text-slate-ink">{t.leadInvestigatorSub}</p>
+          </div>
+
+          <div className="border-l-2 border-trace pl-4">
+            <span className="caps text-slate-ink">{t.coreFocus}</span>
+            <p className="num mt-1 text-[1.15rem] font-bold text-indigo-deep">{t.coreFocusTitle}</p>
+            <p className="mt-0.5 text-[0.8rem] text-slate-ink">{t.coreFocusSub}</p>
+          </div>
+
+          <div className="border-l-2 border-syn pl-4">
+            <span className="caps text-slate-ink">{t.editorialRigour}</span>
+            <p className="num mt-1 text-[1.15rem] font-bold text-indigo-deep">{t.editorialRigourTitle}</p>
+            <p className="mt-0.5 text-[0.8rem] text-slate-ink">{t.editorialRigourSub}</p>
+          </div>
+
+          <div className="border-l-2 border-plasma pl-4">
+            <span className="caps text-slate-ink">{t.simEngines}</span>
+            <p className="num mt-1 text-[1.15rem] font-bold text-indigo-deep">{t.simEnginesTitle}</p>
+            <p className="mt-0.5 text-[0.8rem] text-slate-ink">{t.simEnginesSub}</p>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }

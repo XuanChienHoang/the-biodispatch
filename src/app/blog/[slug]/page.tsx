@@ -416,13 +416,21 @@ export default async function BlogPage({ params }: Params) {
                 </div>
                 <p className="mt-3 text-[0.88rem] leading-relaxed text-indigo-soft">
                   {isVi
-                    ? "Nhà khoa học và chuyên gia phát triển sản phẩm y sinh với hơn 10 năm kinh nghiệm tại Đức và Châu Á. Tiên phong kết hợp thảo dược Á Đông với tiêu chuẩn chiết xuất Châu Âu; tối ưu hóa sinh khả dụng, nghiên cứu giải pháp hỗ trợ ung thư, bệnh tim mạch và ứng dụng Data Science trong y tế thực chứng."
-                    : "Biomedical scientist and product development strategist with over a decade of international experience in Germany and APAC. Pioneering the East-West botanical bridge, bioavailability enhancement, supportive oncology formulations, and data-driven HealthTech."}
+                    ? "Nhà khoa học và chuyên gia phát triển sản phẩm y sinh với hơn 10 năm kinh nghiệm tại Đức và Châu Á. Tác giả cuốn sách chuyên khảo The Cancer Code (Amazon: eBook, Bìa mềm, Bìa cứng). Tiên phong kết hợp thảo dược Á Đông với tiêu chuẩn chiết xuất Châu Âu; tối ưu hóa sinh khả dụng, nghiên cứu giải pháp hỗ trợ ung thư và ứng dụng Data Science trong y tế thực chứng."
+                    : "Biomedical scientist and product developer with over a decade of international experience in Germany and APAC. Author of The Cancer Code (Amazon: eBook, Paperback, Hardcover). Pioneering the East-West botanical bridge, bioavailability enhancement, and data-driven HealthTech."}
                 </p>
-                <div className="mt-4 flex gap-4 text-xs font-mono">
+                <div className="mt-4 flex flex-wrap items-center gap-4 text-xs font-mono">
                   <Link href="/about" className="text-indigo-deep font-semibold underline decoration-trace">
                     {isVi ? "Xem hồ sơ khoa học & quá trình công tác →" : "Read full profile & career history →"}
                   </Link>
+                  <a
+                    href="https://www.amazon.com/CANCER-CODE-Evidence-Based-Bioactives-Integrative-ebook/dp/B0HFVW9PFB/ref=sr_1_1?crid=32EIDTVIFZXPU&dib=eyJ2IjoiMSJ9._0XKQ_D9j8dGnHNwFjveCsRdRzY4ubvVmPn01TKr8OhUkuwgQs9nHF4R27uzUY54.qTeTUa5SQjqcM6bR4oT_eNCDbia84fDGlZnyk48I4cQ&dib_tag=se&keywords=the+cancer+code+dr.+xuan+chien+hoang&qid=1791279105&sprefix=%2Caps%2C191&sr=8-1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-trace-ink font-semibold underline decoration-trace"
+                  >
+                    {isVi ? "Sách: The Cancer Code (Amazon) ↗" : "Book: The Cancer Code (Amazon) ↗"}
+                  </a>
                 </div>
               </div>
 
