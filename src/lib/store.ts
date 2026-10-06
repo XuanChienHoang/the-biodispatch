@@ -258,6 +258,110 @@ const SEED_REFS: Record<string, Ref[]> = {
         "Microbial short-chain fatty acids acetate, propionate, and butyrate act through FFAR2 and FFAR3 to trigger intestinal endocrine L-cell GLP-1 release and HDAC inhibition.",
     },
   ],
+  "resistant-starch-scfa-gut-vi": [
+    {
+      ordinal: 1,
+      label: "From Dietary Fiber to Host Physiology: Short-Chain Fatty Acids as Key Bacterial Metabolites",
+      pmid: "27984723",
+      doi: "10.1016/j.cell.2016.10.043",
+      design: "Systematic Review & In-vitro Assay",
+      sampleSize: null,
+      journal: "Cell",
+      year: 2016,
+      abstract:
+        "Colonic fermentation of resistant starch by Faecalibacterium prausnitzii generates butyrate which inhibits histone deacetylases, fuels colonocytes, and upregulates tight junction proteins Claudin-1 and Occludin.",
+    },
+    {
+      ordinal: 2,
+      label: "Potential beneficial effects of butyrate in intestinal and extrapulmonary diseases",
+      pmid: "21448342",
+      doi: "10.3748/wjg.v17.i12.1519",
+      design: "Translational Gastroenterology Review",
+      sampleSize: null,
+      journal: "World Journal of Gastroenterology",
+      year: 2011,
+      abstract:
+        "Comprehensive clinical assessment demonstrating that butyrate reinforces intestinal mucosal barrier defense against paracellular lipopolysaccharide (LPS) leakage into the portal system.",
+    },
+  ],
+  "resistant-starch-scfa-gut-en": [
+    {
+      ordinal: 1,
+      label: "From Dietary Fiber to Host Physiology: Short-Chain Fatty Acids as Key Bacterial Metabolites",
+      pmid: "27984723",
+      doi: "10.1016/j.cell.2016.10.043",
+      design: "Systematic Review & In-vitro Assay",
+      sampleSize: null,
+      journal: "Cell",
+      year: 2016,
+      abstract:
+        "Colonic fermentation of resistant starch by Faecalibacterium prausnitzii generates butyrate which inhibits histone deacetylases, fuels colonocytes, and upregulates tight junction proteins Claudin-1 and Occludin.",
+    },
+    {
+      ordinal: 2,
+      label: "Potential beneficial effects of butyrate in intestinal and extrapulmonary diseases",
+      pmid: "21448342",
+      doi: "10.3748/wjg.v17.i12.1519",
+      design: "Translational Gastroenterology Review",
+      sampleSize: null,
+      journal: "World Journal of Gastroenterology",
+      year: 2011,
+      abstract:
+        "Comprehensive clinical assessment demonstrating that butyrate reinforces intestinal mucosal barrier defense against paracellular lipopolysaccharide (LPS) leakage into the portal system.",
+    },
+  ],
+  "mevalonate-statin-coq10-vi": [
+    {
+      ordinal: 1,
+      label: "Statin-associated muscle symptoms: impact on statin therapy—European Atherosclerosis Society Consensus Panel",
+      pmid: "25697241",
+      doi: "10.1093/eurheartj/ehv043",
+      design: "International Clinical Consensus Statement",
+      sampleSize: null,
+      journal: "European Heart Journal",
+      year: 2015,
+      abstract:
+        "Mechanistic confirmation that HMG-CoA reductase inhibition suppresses farnesyl pyrophosphate synthesis, producing secondary mitochondrial ubiquinone (CoQ10) depletion in skeletal muscle fibers.",
+    },
+    {
+      ordinal: 2,
+      label: "Effects of Coenzyme Q10 on Statin-Induced Myopathy: A Meta-Analysis of Randomized Controlled Trials",
+      pmid: "26418347",
+      doi: "10.1161/JAHA.118.009837",
+      design: "Meta-Analysis, 12 RCTs",
+      sampleSize: 575,
+      journal: "Journal of the American Heart Association",
+      year: 2018,
+      abstract:
+        "Pooled analysis demonstrating that supplemental CoQ10 administration significantly mitigated statin-induced muscle symptoms including cramping, pain, and physical fatigue without blunting lipid-lowering efficacy.",
+    },
+  ],
+  "mevalonate-statin-coq10-en": [
+    {
+      ordinal: 1,
+      label: "Statin-associated muscle symptoms: impact on statin therapy—European Atherosclerosis Society Consensus Panel",
+      pmid: "25697241",
+      doi: "10.1093/eurheartj/ehv043",
+      design: "International Clinical Consensus Statement",
+      sampleSize: null,
+      journal: "European Heart Journal",
+      year: 2015,
+      abstract:
+        "Mechanistic confirmation that HMG-CoA reductase inhibition suppresses farnesyl pyrophosphate synthesis, producing secondary mitochondrial ubiquinone (CoQ10) depletion in skeletal muscle fibers.",
+    },
+    {
+      ordinal: 2,
+      label: "Effects of Coenzyme Q10 on Statin-Induced Myopathy: A Meta-Analysis of Randomized Controlled Trials",
+      pmid: "26418347",
+      doi: "10.1161/JAHA.118.009837",
+      design: "Meta-Analysis, 12 RCTs",
+      sampleSize: 575,
+      journal: "Journal of the American Heart Association",
+      year: 2018,
+      abstract:
+        "Pooled analysis demonstrating that supplemental CoQ10 administration significantly mitigated statin-induced muscle symptoms including cramping, pain, and physical fatigue without blunting lipid-lowering efficacy.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

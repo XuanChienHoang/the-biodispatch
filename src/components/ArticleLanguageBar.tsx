@@ -37,6 +37,26 @@ const PAIRS: Record<string, { slug: string; lang: "vi" | "en"; label: string }> 
     lang: "vi",
     label: "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu & Ẩn dụ Đời thực)",
   },
+  "resistant-starch-scfa-gut-vi": {
+    slug: "resistant-starch-scfa-gut-en",
+    lang: "en",
+    label: "English Edition (Academic Rigour & Microbial Kinetics)",
+  },
+  "resistant-starch-scfa-gut-en": {
+    slug: "resistant-starch-scfa-gut-vi",
+    lang: "vi",
+    label: "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu & Ẩn dụ Đời thực)",
+  },
+  "mevalonate-statin-coq10-vi": {
+    slug: "mevalonate-statin-coq10-en",
+    lang: "en",
+    label: "English Edition (Academic Rigour & Pharmacogenomics)",
+  },
+  "mevalonate-statin-coq10-en": {
+    slug: "mevalonate-statin-coq10-vi",
+    lang: "vi",
+    label: "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu & Ẩn dụ Đời thực)",
+  },
 };
 
 // Accessible Medical Explanations / Metaphors for articles
