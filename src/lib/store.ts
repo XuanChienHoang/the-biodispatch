@@ -802,6 +802,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Aging depletes intracellular NAD+ pools not merely through synthesis decline, but via inflammatory hyper-activation of the ectoenzyme CD38. Dissecting the molecular warfare between CD38 consumption and Sirtuin mitochondrial fidelity.",
     },
   ],
+  "butyrate-scfa-epigenetics-histone-gut-barrier": [
+    {
+      ordinal: 1,
+      label: "Short-Chain Fatty Acid Butyrate: Epigenetic Master Key of Gut Barrier Integrity and Histone Deacetylase Inhibition",
+      pmid: "24226770",
+      doi: "10.1038/nature12721",
+      design: "Peer-reviewed Landmark Publication",
+      sampleSize: null,
+      journal: "Nature",
+      year: 2013,
+      abstract: "Beyond fueling 70% of colonic epithelial energy requirements, microbially-derived butyrate functions as an endogenous epigenetic HDAC inhibitor, orchestrating Treg induction and Claudin-1 tight junction fidelity.",
+    },
+  ],
+  "butyrate-scfa-epigenetics-histone-gut-barrier-en": [
+    {
+      ordinal: 1,
+      label: "Short-Chain Fatty Acid Butyrate: Epigenetic Master Key of Gut Barrier Integrity and Histone Deacetylase Inhibition",
+      pmid: "24226770",
+      doi: "10.1038/nature12721",
+      design: "Peer-reviewed Landmark Publication",
+      sampleSize: null,
+      journal: "Nature",
+      year: 2013,
+      abstract: "Beyond fueling 70% of colonic epithelial energy requirements, microbially-derived butyrate functions as an endogenous epigenetic HDAC inhibitor, orchestrating Treg induction and Claudin-1 tight junction fidelity.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
