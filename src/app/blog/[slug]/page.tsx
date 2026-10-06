@@ -16,8 +16,18 @@ import BiomarkerGizmo from "@/components/gizmo/BiomarkerGizmo";
 import PathwayGizmo from "@/components/gizmo/PathwayGizmo";
 import SynergyGizmo from "@/components/gizmo/SynergyGizmo";
 import { ArticleLanguageBar } from "@/components/ArticleLanguageBar";
+import { PathwayFlowchart } from "@/components/PathwayFlowchart";
 import { SocialShare } from "@/components/SocialShare";
 import { NewsletterBox } from "@/components/NewsletterBox";
+
+function extractTextFromChildren(children: any): string {
+  if (typeof children === "string") return children;
+  if (Array.isArray(children)) return children.map(extractTextFromChildren).join("");
+  if (children && typeof children === "object" && children.props?.children) {
+    return extractTextFromChildren(children.props.children);
+  }
+  return "";
+}
 
 export const dynamic = "force-dynamic";
 
@@ -218,6 +228,15 @@ export default async function BlogPage({ params }: Params) {
                 <ReactMarkdown
                   remarkPlugins={[remarkGfm, remarkMath]}
                   rehypePlugins={[rehypeKatex]}
+                  components={{
+                    pre({ children, ...props }) {
+                      const rawText = extractTextFromChildren(children);
+                      if (rawText.includes("──►") || rawText.includes("->")) {
+                        return <PathwayFlowchart rawText={rawText} isVi={isVi} />;
+                      }
+                      return <pre {...props}>{children}</pre>;
+                    },
+                  }}
                 >
                   {article.content}
                 </ReactMarkdown>

@@ -289,6 +289,24 @@ input[type="range"].lab:focus-visible {
   box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.5);
 }
 
+.prose-editorial pre::-webkit-scrollbar {
+  height: 6px;
+}
+
+.prose-editorial pre::-webkit-scrollbar-track {
+  background: #09101b;
+  border-radius: 3px;
+}
+
+.prose-editorial pre::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.4);
+  border-radius: 3px;
+}
+
+.prose-editorial pre::-webkit-scrollbar-thumb:hover {
+  background: rgba(56, 189, 248, 0.7);
+}
+
 .prose-editorial pre code {
   background: transparent !important;
   border: none !important;
