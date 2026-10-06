@@ -24,7 +24,7 @@ Tuy nhiên, trong thực tế lâm sàng, **ADN chỉ là một bản thiết k�
 
 Bạn có thể sở hữu một bộ gen có nguy cơ cao về tim mạch hoặc tiểu đường, nhưng nếu bạn có chế độ ăn lành mạnh, tập luyện đúng cách và hệ vi sinh đường ruột cân bằng, căn bệnh đó có thể không bao giờ bùng phát. Ngược lại, một người có bộ gen "hoàn hảo" vẫn có thể phát triển bệnh chuyển hóa do áp lực stress kéo dài và rối loạn dinh dưỡng.
 
-Đây chính là lý do **Chuyển hóa học (Metabolomics)** — ngành khoa học định lượng toàn bộ các phân tử nhỏ có khối lượng ($<1500\text{ Da}$) trong máu, nước tiểu hoặc tế bào — đang tạo ra một cuộc cách mạng trong y học dự phòng:
+Đây chính là lý do **Chuyển hóa học (Metabolomics)**, ngành khoa học định lượng toàn bộ các phân tử nhỏ có khối lượng ($<1500\text{ Da}$) trong máu, nước tiểu hoặc tế bào, đang tạo ra một cuộc cách mạng trong y học dự phòng:
 
 ![Đồ họa phân tích phổ khối lượng phân giải cao và mạng lưới chuyển hóa phân tử nhỏ trong chẩn đoán sớm](/images/posts/metabolomic-horizon-clinical-diagnostics.jpg)
 
@@ -77,6 +77,6 @@ Hiện nay, sự kết hợp giữa **mô hình trí tuệ nhân tạo (AI Deep 
 
 Y học tương lai sẽ không còn là việc "chờ có bệnh rồi mới chữa" (Reactive Healthcare), mà là **chủ động theo dõi và can thiệp từ giai đoạn chưa có triệu chứng (Presymptomatic Intervention)**.
 
-Bằng cách theo dõi các phân tử nhỏ chuyển hóa trong cơ thể, chúng ta có thể nhìn thấy những lệch lạc về mặt trao đổi chất từ rất sớm — nhiều năm trước khi các tổn thương thực thể xuất hiện trên phim chụp hay xét nghiệm máu cơ bản thông thường.
+Bằng cách theo dõi các phân tử nhỏ chuyển hóa trong cơ thể, chúng ta có thể nhìn thấy những lệch lạc về mặt trao đổi chất từ rất sớm, nhiều năm trước khi các tổn thương thực thể xuất hiện trên phim chụp hay xét nghiệm máu cơ bản thông thường.
 
 *Tương lai của y học không chỉ là đọc bản thiết kế gen; mà là lắng nghe cơ thể bạn đang vận hành ra sao mỗi ngày.*

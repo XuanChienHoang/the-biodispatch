@@ -288,46 +288,70 @@ export default async function BlogPage({ params }: Params) {
                   </p>
                 </div>
 
-                <ol className="mt-6 grid gap-px bg-slate-hair">
+                <ol className="mt-6 grid gap-3">
                   {refs.map((r) => {
                     const Icon = designIcon(r.design);
-                    const href = r.doi
-                      ? `https://doi.org/${r.doi}`
-                      : `https://pubmed.ncbi.nlm.nih.gov/${r.pmid}/`;
+                    const pubmedUrl = r.pmid ? `https://pubmed.ncbi.nlm.nih.gov/${r.pmid}/` : null;
+                    const doiUrl = r.doi ? `https://doi.org/${r.doi}` : null;
+                    const primaryUrl = pubmedUrl || doiUrl || "#";
+
                     return (
-                      <li key={r.ordinal} className="group bg-paper">
-                        <a
-                          href={href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="grid gap-x-6 gap-y-2 p-5 transition-colors duration-200 hover:bg-paper-tint md:grid-cols-[46px_minmax(0,1fr)_auto]"
-                        >
+                      <li key={r.ordinal} className="group rounded-sm border border-slate-hair bg-paper p-5 transition-all duration-200 hover:border-indigo-deep hover:shadow-md">
+                        <div className="grid gap-x-6 gap-y-3 md:grid-cols-[46px_minmax(0,1fr)_auto]">
                           <span className="num rounded-sm bg-indigo-deep py-1 text-center text-[0.78rem] text-trace font-bold h-fit">
                             {String(r.ordinal).padStart(2, "0")}
                           </span>
                           <div className="min-w-0">
-                            <p className="font-display text-[1.04rem] font-semibold leading-snug tracking-[-0.01em] text-indigo-deep group-hover:text-trace-ink">
+                            <a
+                              href={primaryUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="font-display text-[1.06rem] font-semibold leading-snug tracking-[-0.01em] text-indigo-deep hover:text-trace-ink hover:underline block"
+                            >
                               {r.label}
-                            </p>
-                            <p className="mt-1.5 text-[0.84rem] text-slate-ink">
+                            </a>
+                            <p className="mt-1 text-[0.84rem] text-slate-ink">
                               {r.journal} · {r.year}
                             </p>
-                            <p className="mt-2 max-w-4xl text-[0.87rem] leading-relaxed text-indigo-soft">
+                            <p className="mt-2 max-w-4xl text-[0.88rem] leading-relaxed text-indigo-soft">
                               {r.abstract}
                             </p>
                           </div>
-                          <div className="flex flex-row items-start gap-3 md:flex-col md:items-end">
+                          <div className="flex flex-row flex-wrap items-start gap-2 md:flex-col md:items-end">
                             <span className="caps flex items-center gap-1.5 whitespace-nowrap rounded-sm border border-slate-hair px-2.5 py-1 text-xs text-indigo-soft">
                               <Icon size={11} className="text-trace-ink" /> {r.design}
                             </span>
                             <span className="num whitespace-nowrap text-[0.74rem] text-slate-ink">
                               {r.sampleSize ? `n = ${r.sampleSize}` : "n = systematic/in-vitro"}
                             </span>
-                            <span className="caps flex items-center gap-1 whitespace-nowrap text-indigo-deep font-semibold text-xs transition-transform group-hover:translate-x-0.5">
-                              {r.doi ? `DOI ${r.doi}` : `PMID ${r.pmid}`} <ExternalLink size={11} />
-                            </span>
+                            
+                            {/* Explicit Clickable Source Buttons */}
+                            <div className="mt-2 flex flex-wrap gap-2">
+                              {pubmedUrl && (
+                                <a
+                                  href={pubmedUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="caps inline-flex items-center gap-1 rounded bg-[#0071BC]/10 px-2.5 py-1 text-xs font-semibold text-[#0071BC] transition-colors hover:bg-[#0071BC] hover:text-white"
+                                  title={`Xem bài báo gốc trên PubMed (PMID: ${r.pmid})`}
+                                >
+                                  PubMed <ExternalLink size={10} />
+                                </a>
+                              )}
+                              {doiUrl && (
+                                <a
+                                  href={doiUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="caps inline-flex items-center gap-1 rounded bg-indigo-deep/10 px-2.5 py-1 text-xs font-semibold text-indigo-deep transition-colors hover:bg-indigo-deep hover:text-white"
+                                  title={`Mở bài báo gốc qua DOI (${r.doi})`}
+                                >
+                                  DOI <ExternalLink size={10} />
+                                </a>
+                              )}
+                            </div>
                           </div>
-                        </a>
+                        </div>
                       </li>
                     );
                   })}

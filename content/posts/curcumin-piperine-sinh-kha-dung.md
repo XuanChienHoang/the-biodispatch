@@ -41,7 +41,7 @@ Hãy tưởng tượng bạn uống một viên tinh chất nghệ 1000 mg vào 
 3. Đi theo tĩnh mạch cửa về thẳng "nhà máy lọc chất độc" lớn nhất cơ thể: **Lá Gan**.
 4. Vượt qua sự kiểm soát của gan để vào được dòng máu chung đi nuôi các khớp xương, tế bào và mô bị viêm.
 
-**Sinh khả dụng** chính là tỷ lệ phần trăm hoạt chất thực sự vượt qua được tất cả các "cửa ải" trên và xuất hiện nguyên vẹn trong máu của bạn. Với nghệ thông thường, sinh khả dụng chỉ vỏn vẹn **chưa đầy 1%** — nghĩa là gần như toàn bộ lượng nghệ bạn uống vào đều bị cơ thể loại bỏ ngay lập tức.
+**Sinh khả dụng** chính là tỷ lệ phần trăm hoạt chất thực sự vượt qua được tất cả các "cửa ải" trên và xuất hiện nguyên vẹn trong máu của bạn. Với nghệ thông thường, sinh khả dụng chỉ vỏn vẹn **chưa đầy 1%**, tức là gần như toàn bộ lượng nghệ bạn uống vào đều bị cơ thể loại bỏ ngay lập tức.
 
 ---
 
@@ -70,21 +70,7 @@ Nhờ cơ chế này:
 
 ---
 
-## 4. Trải nghiệm trực tiếp với Công cụ Mô phỏng Dược học bên dưới
-
-Ngay dưới đây là công cụ tính toán dược động học do phòng lab của chúng tôi xây dựng. Bạn có thể tự mình kéo thanh trượt liều lượng Piperine từ 0 mg lên 20 mg và quan sát:
-1. **Đường cong màu xanh lam (Control)**: Khi không có tiêu đen, nghệ tụt dốc rất nhanh.
-2. **Đường cong màu ngọc bích (Treated)**: Khi bổ sung tiêu đen, đỉnh nồng độ cao hơn và đường cong kéo dài cả ngày trong cơ thể.
-
----
-
-### Dụng cụ Mô phỏng Tương tác
-
-*(Công cụ tính toán chạy trực tiếp trên máy của bạn theo thời gian thực)*
-
----
-
-## Lời khuyên an toàn từ chuyên gia
+## 4. Lời khuyên an toàn từ chuyên gia
 
 Mặc dù piperine rất hữu ích để tăng hấp thu nghệ, nhưng vì nó ức chế enzyme gan CYP3A4, **nó cũng có thể làm tăng nồng độ của nhiều loại thuốc kê đơn khác** trong máu nếu dùng chung (chẳng hạn như thuốc hạ huyết áp, thuốc chống đông máu warfarin). 
 

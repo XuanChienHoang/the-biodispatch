@@ -16,7 +16,7 @@ image: "/images/posts/mevalonate-statin-coq10.jpg"
 imageAlt: "Mevalonate bifurcation showing downstream statin-induced depletion of mitochondrial CoQ10"
 ---
 
-In modern cardiovascular therapeutics, 3-hydroxy-3-methylglutaryl-coenzyme A (HMG-CoA) reductase inhibitors—statins—remain the cornerstone for lowering low-density lipoprotein cholesterol (LDL-C) and curbing atherosclerotic plaque progression.
+In modern cardiovascular therapeutics, 3-hydroxy-3-methylglutaryl-coenzyme A (HMG-CoA) reductase inhibitors (statins) remain the cornerstone for lowering low-density lipoprotein cholesterol (LDL-C) and curbing atherosclerotic plaque progression.
 
 Yet, a frequent clinical hurdle compromising patient adherence is **Statin-Associated Muscle Symptoms (SAMS)**, ranging from mild proximal myalgia to severe myopathy.
 
@@ -57,7 +57,7 @@ Depleted of inner-membrane ubiquinone, skeletal muscle mitochondria suffer elect
          │                       │
          ▼                       ▼
    [Cholesterol]       [Coenzyme Q10 (Ubiquinone)]
-   (Therapeutic Goal)  (Unintentional 40–50% Depletion)
+   (Therapeutic Goal)  (Unintentional 40-50% Depletion)
 ```
 
 ### Cellular Pathophysiology:

@@ -17,7 +17,7 @@ For the past two decades, genomic sequencing has dominated the precision medicin
 
 In clinical reality, phenotypes are governed by dynamic environmental interactions: nutrition, gut microbiota metabolism, pharmacological interventions, and acute cellular stress. 
 
-This is where **metabolomics**—the comprehensive analysis of low-molecular-weight molecules ($<1500\text{ Da}$) within a biological system—presents an unprecedented paradigm shift. Metabolites represent the downstream functional endpoints of gene expression and proteomic cascades.
+This is where **metabolomics**, the comprehensive analysis of low-molecular-weight molecules ($<1500\text{ Da}$) within a biological system, presents an unprecedented paradigm shift. Metabolites represent the downstream functional endpoints of gene expression and proteomic cascades.
 
 ![High-resolution mass spectrometry and small-molecule metabolic network visualization](/images/posts/metabolomic-horizon-clinical-diagnostics.jpg)
 
@@ -41,7 +41,7 @@ Unlike the uniform chemical nature of nucleic acids (four nucleotide bases), the
 | **Proteomics** | Functional enzymes, cytokines | Dynamic | Structural & functional signaling |
 | **Metabolomics** | Amino acids, acylcarnitines, lipids | **Real-Time** | **Immediate physiological state** |
 
-Capturing this breadth requires high-resolution hybrid instruments—specifically **Ultra-High Performance Liquid Chromatography coupled to Quadrupole-Time-of-Flight Mass Spectrometry (UHPLC-QTOF-MS)** and **Gas Chromatography-Mass Spectrometry (GC-MS)** for volatile compounds.
+Capturing this breadth requires high-resolution hybrid instruments: specifically **Ultra-High Performance Liquid Chromatography coupled to Quadrupole-Time-of-Flight Mass Spectrometry (UHPLC-QTOF-MS)** and **Gas Chromatography-Mass Spectrometry (GC-MS)** for volatile compounds.
 
 ---
 
