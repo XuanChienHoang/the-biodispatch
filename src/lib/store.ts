@@ -928,6 +928,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "For decades, classical medicine has regarded Uncoupling Protein 1 (UCP1) as the sole executioner of non-shivering thermogenesis in brown adipose tissue (BAT). However, recent pioneering studies have unveiled a profound biological paradox: UCP1-knockout mice retain a remarkable capacity to tolerate cold exposure through previously unknown metabolic pathways. The key to this adaptive mechanism lies within the creatine futile cycle and intracellular succinate accumulation, which activates the GPR91 receptor. This monograph dissects the molecular mechanisms of UCP1-independent thermogenesis, offering a paradigm shift in treating obesity and metabolic syndrome through mitochondrial reprogramming and targeted bioenergetic manipulation.",
     },
   ],
+  "chuyen-hoa-mo-nau-ucp1-ro-ri-proton": [
+    {
+      ordinal: 1,
+      label: "The Mitochondrial Proton Leak Paradox: Activating UCP1 in Brown Adipose Tissue to Rewire Metabolism and Extend Longevity",
+      pmid: "29925975",
+      doi: "10.1038/nature26141",
+      design: "Peer-reviewed Landmark Publication",
+      sampleSize: null,
+      journal: "Nature",
+      year: 2018,
+      abstract: "Brown Adipose Tissue (BAT) has long been viewed as a simple biological furnace, but its molecular mechanism extends far beyond mere thermoregulation. At the heart of this process is Uncoupling Protein 1 (UCP1), a mitochondrial inner membrane channel that dissipates the proton gradient, releasing energy as heat instead of synthesizing ATP. While conventional wisdom suggests that wasting the proton motive force is detrimental to cellular energetics, the biological paradox lies in the fact that this controlled proton leak alleviates electron pressure on the respiratory chain. This prevents the generation of damaging reactive oxygen species (ROS) and triggers an intracellular signaling cascade that reverses insulin resistance and metabolic syndrome.",
+    },
+  ],
+  "brown-fat-ucp1-mitochondrial-proton-leak": [
+    {
+      ordinal: 1,
+      label: "The Mitochondrial Proton Leak Paradox: Activating UCP1 in Brown Adipose Tissue to Rewire Metabolism and Extend Longevity",
+      pmid: "29925975",
+      doi: "10.1038/nature26141",
+      design: "Peer-reviewed Landmark Publication",
+      sampleSize: null,
+      journal: "Nature",
+      year: 2018,
+      abstract: "Brown Adipose Tissue (BAT) has long been viewed as a simple biological furnace, but its molecular mechanism extends far beyond mere thermoregulation. At the heart of this process is Uncoupling Protein 1 (UCP1), a mitochondrial inner membrane channel that dissipates the proton gradient, releasing energy as heat instead of synthesizing ATP. While conventional wisdom suggests that wasting the proton motive force is detrimental to cellular energetics, the biological paradox lies in the fact that this controlled proton leak alleviates electron pressure on the respiratory chain. This prevents the generation of damaging reactive oxygen species (ROS) and triggers an intracellular signaling cascade that reverses insulin resistance and metabolic syndrome.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
