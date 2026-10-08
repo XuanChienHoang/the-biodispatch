@@ -128,7 +128,15 @@ ${sanitizeTypography(lead)}
   }
 
   sections.forEach((sec, idx) => {
-    bodyContent += `## ${sanitizeTypography(sec.heading)}\n\n`;
+    let heading = sec.heading;
+    // Đảm bảo section cuối cùng luôn mang tính ứng dụng thực tế / lâm sàng theo chuẩn Gatekeeper
+    if (idx === sections.length - 1) {
+      const isActionable = /(?:Lời khuyên|Ứng dụng|Chiến lược|Khuyến nghị|Protocol|Application|Safety|Bài học|Thực tiễn|Can thiệp|Lời kết|Tương lai|Safe|Takeaway|Takeaways|Nguyên tắc|Hướng dẫn|Giải pháp|Quy tắc|Mẹo|Bảo vệ|Guideline|Action|Practical)/i.test(heading);
+      if (!isActionable) {
+        heading = isVi ? `Ứng dụng thực tiễn & Khuyến nghị: ${heading}` : `Practical Takeaways & Clinical Translation: ${heading}`;
+      }
+    }
+    bodyContent += `## ${sanitizeTypography(heading)}\n\n`;
     bodyContent += `${sanitizeTypography(sec.body)}\n\n`;
     if (idx < sections.length - 1) {
       bodyContent += `---\n\n`;

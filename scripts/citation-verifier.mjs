@@ -10,7 +10,7 @@
  */
 
 const NCBI_BASE = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils';
-const NCBI_PARAMS = 'tool=ThePhytocodex&email=contact@thebiodispatch.com';
+const NCBI_PARAMS = 'tool=ThePhytocodex&email=contact@phytocodex.org';
 
 function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -20,7 +20,7 @@ async function fetchWithRetry(url, maxRetries = 3) {
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
       const res = await fetch(url, {
-        headers: { 'User-Agent': 'ThePhytocodex-Editorial/1.0 (contact@thebiodispatch.com)' }
+        headers: { 'User-Agent': 'ThePhytocodex-Editorial/1.0 (contact@phytocodex.org)' }
       });
       if (res.status === 429) {
         const wait = attempt * 1000;

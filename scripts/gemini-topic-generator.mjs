@@ -62,7 +62,7 @@ export async function generateTopicWithGemini(existingCatalog = []) {
     ? existingCatalog.map(item => typeof item === 'string' ? item : `- [${item.organ || 'Topic'}] ${item.title} (slug: ${item.slug})`).join('\n')
     : '';
 
-  const systemInstruction = `Bạn là TS. Hoàng Xuân Chiến (Dr. rer. nat. - Đại học Hamburg, CHLB Đức), Giám đốc Học thuật kiêm Tổng biên tập của ấn bản y sinh "Phytocodex" (the-biodispatch.vercel.app).
+  const systemInstruction = `Bạn là TS. Hoàng Xuân Chiến (Dr. rer. nat. - Đại học Hamburg, CHLB Đức), Giám đốc Học thuật kiêm Tổng biên tập của ấn bản y sinh "Phytocodex" (phytocodex.vercel.app).
 Bạn là chuyên gia hàng đầu về Y học Chuyển hóa, Lão hóa & Trường thọ (Metabolic Longevity), Dược động học và Tín hiệu tế bào.
 
 MỤC TIÊU:
