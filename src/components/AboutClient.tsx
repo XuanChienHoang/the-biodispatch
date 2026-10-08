@@ -606,6 +606,17 @@ export function AboutClient() {
                   <span className="font-semibold text-indigo-deep">Tiếng Việt · Tiếng Đức · Tiếng Anh</span>
                 </div>
                 <div>
+                  <span className="caps text-slate-ink block">{isVi ? "Hồ sơ Chuyên môn (LinkedIn)" : "Professional Profile"}</span>
+                  <a
+                    href="https://www.linkedin.com/in/dr-chien-xuan-hoang/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-mono text-trace-ink underline block break-all font-semibold hover:text-indigo-deep"
+                  >
+                    linkedin.com/in/dr-chien-xuan-hoang ↗
+                  </a>
+                </div>
+                <div>
                   <span className="caps text-slate-ink block">{isVi ? "Liên hệ Chuyên môn" : "Contact / Inquiries"}</span>
                   <a
                     href="mailto:hoangxuanchien86@gmail.com"

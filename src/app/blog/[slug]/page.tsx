@@ -191,7 +191,7 @@ export default async function BlogPage({ params }: Params) {
                 {article.organ}
               </span>
               <span className="caps flex items-center gap-1.5 rounded-sm border border-indigo-deep/25 px-2.5 py-1.5 text-indigo-deep">
-                <BadgeCheck size={13} className="text-syn-ink" /> {isVi ? "Y sinh Thực chứng Đã Bình duyệt" : "Peer-Reviewed EBM"}
+                <BadgeCheck size={13} className="text-syn-ink" /> {isVi ? "Đối soát Y văn (PubMed / DOI)" : "Literature-Synthesized & EBM-Verified"}
               </span>
               <span className="caps flex items-center gap-1.5 rounded-sm border border-indigo-deep/25 px-2.5 py-1.5 text-indigo-deep">
                 <Timer size={13} /> {article.minutes} {isVi ? "phút đọc" : "min read"}
@@ -226,7 +226,7 @@ export default async function BlogPage({ params }: Params) {
               <span className="num text-[0.74rem] text-slate-ink">DOI: {article.doi}</span>
               {refs.length > 0 && (
                 <span className="caps ml-auto flex items-center gap-1.5 text-indigo-deep">
-                  <Quote size={12} className="text-trace-ink" /> {refs.length} {isVi ? "Nguồn Y văn Đã Đối soát" : "Verified References"}
+                  <Quote size={12} className="text-trace-ink" /> {refs.length} {isVi ? "Tài liệu Y văn Tham chiếu" : "Referenced Literature"}
                 </span>
               )}
             </div>
@@ -442,6 +442,14 @@ export default async function BlogPage({ params }: Params) {
                     : "Biomedical scientist and product developer with over a decade of international experience in Germany and APAC. Author of The Cancer Code (Amazon: eBook, Paperback, Hardcover). Pioneering the East-West botanical bridge, bioavailability enhancement, and data-driven HealthTech."}
                 </p>
                 <div className="mt-4 flex flex-wrap items-center gap-4 text-xs font-mono">
+                  <a
+                    href="https://www.linkedin.com/in/dr-chien-xuan-hoang/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-indigo-deep font-semibold underline decoration-trace hover:text-trace-ink"
+                  >
+                    LinkedIn Profile ↗
+                  </a>
                   <Link href="/about" className="text-indigo-deep font-semibold underline decoration-trace">
                     {isVi ? "Xem hồ sơ khoa học & quá trình công tác →" : "Read full profile & career history →"}
                   </Link>

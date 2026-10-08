@@ -121,6 +121,11 @@ export function ComplianceStrip() {
                   </Link>
                 </li>
                 <li>
+                  <Link className="transition-colors hover:text-trace-ink" href="/editorial-policy">
+                    {isVi ? "Chính sách Biên tập & Đối soát Y văn" : "Editorial & Verification Policy"}
+                  </Link>
+                </li>
+                <li>
                   <Link className="transition-colors hover:text-trace-ink" href="/gizmos">
                     {isVi ? "Phòng Mô phỏng Dược học (Gizmos Lab)" : "Simulation Engines Lab"}
                   </Link>
@@ -130,17 +135,35 @@ export function ComplianceStrip() {
                     {isVi ? "Thư viện Báo cáo & Bài Phân tích" : "Article Directory & Corpus"}
                   </Link>
                 </li>
+                <li className="pt-2 border-t border-slate-hair/60 flex items-center gap-3 text-xs font-mono">
+                  <Link className="hover:text-trace-ink" href="/impressum">
+                    Impressum (§ 5 DDG)
+                  </Link>
+                  <span>·</span>
+                  <Link className="hover:text-trace-ink" href="/privacy">
+                    {isVi ? "Bảo mật (DSGVO)" : "Privacy Policy"}
+                  </Link>
+                </li>
               </ul>
             </div>
             <div>
               <p className="caps text-slate-ink">
-                {isVi ? "Bảo mật Dữ liệu & Kiến trúc Hệ thống" : "Data Privacy & Architecture"}
+                {isVi ? "Bảo mật Dữ liệu & Pháp chế" : "Data Privacy & Governance"}
               </p>
               <p className="mt-3 text-[0.86rem] leading-relaxed text-indigo-soft">
                 {isVi
-                  ? "Tuyệt đối không thu thập hay truyền dữ liệu sức khỏe người dùng ra ngoài. Toàn bộ các thuật toán mô phỏng và phương trình dược động học đều chạy 100% nội bộ trên trình duyệt của bạn."
-                  : "Zero health data telemetry is transmitted. All mathematical simulations and pharmacokinetic equations execute entirely client-side within your browser process."}
+                  ? "Tuyệt đối không thu thập dữ liệu sức khỏe hay sử dụng cookie theo dõi của bên thứ ba. Mô phỏng dược động học chạy 100% nội bộ trên trình duyệt."
+                  : "Zero health data telemetry is transmitted. All mathematical simulations execute entirely client-side within your browser process."}
               </p>
+              <div className="mt-4 flex items-center gap-3 text-xs font-mono">
+                <Link href="/impressum" className="text-indigo-deep underline font-semibold hover:text-trace-ink">
+                  Impressum ↗
+                </Link>
+                <span>·</span>
+                <Link href="/privacy" className="text-indigo-deep underline font-semibold hover:text-trace-ink">
+                  Datenschutzerklärung ↗
+                </Link>
+              </div>
             </div>
           </div>
           <div className="mt-6 flex flex-wrap items-center justify-between gap-4">

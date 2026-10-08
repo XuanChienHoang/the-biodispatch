@@ -410,7 +410,7 @@ export function ArticleLanguageBar({ currentSlug }: { currentSlug: string }) {
           <span className="text-slate-ink">
             {isViCurrent
               ? "Diễn giải y sinh thực chứng · Dễ hiểu"
-              : "Peer-reviewed scientific manuscript"}
+              : "Scientific Literature Synthesis"}
           </span>
         </div>
 
