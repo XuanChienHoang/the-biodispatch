@@ -1497,6 +1497,76 @@ const SEED_REFS: Record<string, Ref[]> = {
       year: 2011
     }
   ]
+  "alpha-ketoglutarate-dao-nguoc-dong-ho-bieu-sinh-vi": [
+    {
+      ordinal: 1,
+      label: "Alpha-Ketoglutarate, an Endogenous Metabolite, Extends Lifespan and Compresses Morbidity in Aging Mice",
+      pmid: "32877690",
+      doi: "10.1016/j.cmet.2020.08.004",
+      design: "In-vivo Mechanistic Study",
+      sampleSize: null,
+      journal: "Cell Metab",
+      year: 2020,
+      abstract: "This landmark study demonstrates that dietary administration of Alpha-Ketoglutarate (AKG) promotes longer, healthier lives in mice, associated with a decrease in systemic inflammatory cytokines. The authors show that AKG decreases chronic inflammation (inflammaging) and delays the onset of age-related frailty, suggesting a novel metabolic therapy to promote healthy aging.",
+    },
+    {
+      ordinal: 2,
+      label: "Rejuvant®, a potential life-extending compound formulation with alpha-ketoglutarate and vitamins, conferred an average 8-year reduction in biological age, evaluated by DNA methylation TruAge diagnostic test",
+      pmid: "34847066",
+      doi: "10.18632/aging.203736",
+      design: "Randomized Controlled Trial",
+      sampleSize: null,
+      journal: "Aging (Albany NY)",
+      year: 2021,
+      abstract: "This clinical trial evaluated the efficacy of a Calcium-AKG based formulation (Rejuvant) on biological age using DNA methylation clocks. After an average of 7 months of supplementation, subjects demonstrated a statistically significant reduction in biological age, averaging 8 years, highlighting the potential of metabolic intermediates to reprogram the human epigenome.",
+    },
+    {
+      ordinal: 3,
+      label: "The metabolite alpha-ketoglutarate extends lifespan by inhibiting ATP synthase and TOR",
+      pmid: "24828042",
+      doi: "10.1038/nature13264",
+      design: "Landmark Molecular Review",
+      sampleSize: null,
+      journal: "Nature",
+      year: 2014,
+      abstract: "This study identifies ATP synthase as a direct molecular target of Alpha-Ketoglutarate. By binding to the beta subunit of ATP synthase, AKG decreases mitochondrial oxygen consumption and ATP production, leading to downstream inhibition of the Target of Rapamycin (TOR) pathway, thereby mimicking caloric restriction and extending lifespan.",
+    },
+  ],
+  "alpha-ketoglutarate-epigenetic-clock-reversal-en": [
+    {
+      ordinal: 1,
+      label: "Alpha-Ketoglutarate, an Endogenous Metabolite, Extends Lifespan and Compresses Morbidity in Aging Mice",
+      pmid: "32877690",
+      doi: "10.1016/j.cmet.2020.08.004",
+      design: "In-vivo Mechanistic Study",
+      sampleSize: null,
+      journal: "Cell Metab",
+      year: 2020,
+      abstract: "This landmark study demonstrates that dietary administration of Alpha-Ketoglutarate (AKG) promotes longer, healthier lives in mice, associated with a decrease in systemic inflammatory cytokines. The authors show that AKG decreases chronic inflammation (inflammaging) and delays the onset of age-related frailty, suggesting a novel metabolic therapy to promote healthy aging.",
+    },
+    {
+      ordinal: 2,
+      label: "Rejuvant®, a potential life-extending compound formulation with alpha-ketoglutarate and vitamins, conferred an average 8-year reduction in biological age, evaluated by DNA methylation TruAge diagnostic test",
+      pmid: "34847066",
+      doi: "10.18632/aging.203736",
+      design: "Randomized Controlled Trial",
+      sampleSize: null,
+      journal: "Aging (Albany NY)",
+      year: 2021,
+      abstract: "This clinical trial evaluated the efficacy of a Calcium-AKG based formulation (Rejuvant) on biological age using DNA methylation clocks. After an average of 7 months of supplementation, subjects demonstrated a statistically significant reduction in biological age, averaging 8 years, highlighting the potential of metabolic intermediates to reprogram the human epigenome.",
+    },
+    {
+      ordinal: 3,
+      label: "The metabolite alpha-ketoglutarate extends lifespan by inhibiting ATP synthase and TOR",
+      pmid: "24828042",
+      doi: "10.1038/nature13264",
+      design: "Landmark Molecular Review",
+      sampleSize: null,
+      journal: "Nature",
+      year: 2014,
+      abstract: "This study identifies ATP synthase as a direct molecular target of Alpha-Ketoglutarate. By binding to the beta subunit of ATP synthase, AKG decreases mitochondrial oxygen consumption and ATP production, leading to downstream inhibition of the Target of Rapamycin (TOR) pathway, thereby mimicking caloric restriction and extending lifespan.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
