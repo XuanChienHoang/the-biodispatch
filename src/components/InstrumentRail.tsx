@@ -2,49 +2,19 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
-export function Wordmark({ size = 26 }: { size?: number }) {
+export function Wordmark({ size = 28 }: { size?: number }) {
   return (
-    <svg
+    <Image
+      src="/images/phytocodex-emblem.jpg"
+      alt="Phytocodex emblem"
       width={size}
       height={size}
-      viewBox="0 0 48 48"
-      fill="none"
-      aria-hidden="true"
-      className="shrink-0"
-    >
-      <defs>
-        <linearGradient id="lw-g" x1="8" y1="44" x2="40" y2="4" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#00F2FE" />
-          <stop offset="0.55" stopColor="#10B981" />
-          <stop offset="1" stopColor="#F59E0B" />
-        </linearGradient>
-      </defs>
-      {/* hexagonal flask bezel */}
-      <path
-        d="M24 2.6 42.8 13.3v21.4L24 45.4 5.2 34.7V13.3Z"
-        stroke="currentColor"
-        strokeWidth="2.1"
-        strokeLinejoin="round"
-        fill="none"
-      />
-      {/* liquid meniscus */}
-      <path
-        d="M11.4 31.2c3.1-3.4 5.6 2.4 8.7-.4 3.1-2.8 5.4 2.1 8.4-.6 3-2.7 5.6 2.3 8.1-.5v9.1L24 45.4 11.4 37.6Z"
-        fill="url(#lw-g)"
-        opacity="0.9"
-      />
-      {/* rising trace */}
-      <path
-        d="M14 27.5c3.4 0 3.9-9.6 7.2-9.6 3.3 0 3.1 6.9 6.4 6.9 2.4 0 3.4-4.6 5.4-8.6"
-        stroke="currentColor"
-        strokeWidth="2.1"
-        strokeLinecap="round"
-        fill="none"
-      />
-      <circle cx="14" cy="27.5" r="2.4" fill="#00F2FE" />
-    </svg>
+      className="rounded-full shrink-0 object-cover border border-amber-500/40 shadow-xs ring-1 ring-amber-400/20"
+      priority
+    />
   );
 }
 
@@ -65,9 +35,9 @@ export function InstrumentRail() {
     <>
       {/* Mobile Top Navigation Header */}
       <header className="fixed left-0 right-0 top-0 z-50 flex h-14 items-center justify-between border-b border-slate-hair bg-paper/95 px-4 backdrop-blur md:hidden">
-        <Link href="/" aria-label="The BioDispatch home" className="flex items-center gap-2 text-indigo-deep font-display font-bold">
-          <Wordmark size={24} />
-          <span className="text-sm tracking-tight">The BioDispatch</span>
+        <Link href="/" aria-label="Phytocodex home" className="flex items-center gap-2 text-indigo-deep font-display font-bold">
+          <Wordmark size={26} />
+          <span className="text-base font-black tracking-tight font-display text-indigo-deep">Phytocodex</span>
         </Link>
         <div className="flex items-center gap-3">
           <nav className="flex items-center gap-3 text-xs caps">
@@ -98,8 +68,8 @@ export function InstrumentRail() {
         aria-label="Instrument rail"
       >
         <div className="flex flex-col items-center gap-6">
-          <Link href="/" aria-label="The BioDispatch home" className="text-indigo-deep">
-            <Wordmark size={30} />
+          <Link href="/" aria-label="Phytocodex home" className="text-indigo-deep transition-transform hover:scale-105">
+            <Wordmark size={36} />
           </Link>
 
           {/* Rail Language Toggle Button */}

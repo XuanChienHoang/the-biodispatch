@@ -113,7 +113,7 @@ export function ComplianceStrip() {
               </p>
             </div>
             <div>
-              <p className="caps text-slate-ink">The BioDispatch</p>
+              <p className="caps text-slate-ink font-bold">Phytocodex</p>
               <ul className="mt-3 space-y-2 text-[0.88rem] text-indigo-soft">
                 <li>
                   <Link className="transition-colors hover:text-trace-ink" href="/about">
@@ -169,11 +169,11 @@ export function ComplianceStrip() {
           <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
             <p className="caps text-slate-ink">
               {isVi
-                ? "The BioDispatch · TS. Hoàng Xuân Chiến · Hamburg, CHLB Đức"
-                : "The BioDispatch · Dr. Xuan Chien Hoang · Hamburg, Germany"}
+                ? "Phytocodex · TS. Hoàng Xuân Chiến · Hamburg, CHLB Đức"
+                : "Phytocodex · Dr. Xuan Chien Hoang · Hamburg, Germany"}
             </p>
             <p className="caps text-slate-ink">
-              {isVi ? "Tòa soạn Y sinh Thực chứng · 2026" : "Evidence-Based Editorial System · 2026"}
+              {isVi ? "Giải mã Phân tử Sức khỏe · 2026" : "Decoding the Molecules of Health · 2026"}
             </p>
           </div>
         </div>

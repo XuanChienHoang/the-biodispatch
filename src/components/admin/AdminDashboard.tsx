@@ -264,7 +264,7 @@ ${post.content || ""}
           <div>
             <div className="flex items-center gap-2">
               <h1 className="text-base font-bold text-white tracking-tight">
-                BioDispatch Editorial Studio
+                Phytocodex Editorial Studio
               </h1>
               <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 font-semibold">
                 v2.4

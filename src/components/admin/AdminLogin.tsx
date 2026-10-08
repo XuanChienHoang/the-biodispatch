@@ -54,7 +54,7 @@ export function AdminLogin({ onSuccess }: AdminLoginProps) {
             </div>
             <div className="flex items-center justify-center gap-1.5 text-[11px] font-mono tracking-widest uppercase text-cyan-400 font-semibold mb-1">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>BioDispatch Editorial Studio</span>
+              <span>Phytocodex Editorial Studio</span>
             </div>
             <h1 className="text-2xl font-bold tracking-tight text-white">
               Cổng Quản Trị Bài Viết

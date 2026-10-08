@@ -490,7 +490,7 @@ export function AboutClient() {
                 {isVi ? "§ 4 · Sứ mệnh Bình dân hóa Tri thức Y sinh" : "§ 4 · Editorial Mission & Science Communication"}
               </span>
               <h2 className="mt-3 font-display text-[1.85rem] font-bold tracking-tight text-indigo-deep">
-                {isVi ? "Vì sao The BioDispatch theo đuổi Tri thức Thực chứng?" : "Democratizing Biomedical Evidence for Clinicians and the Public"}
+                {isVi ? "Vì sao Phytocodex theo đuổi Tri thức Thực chứng?" : "Why Phytocodex Pursues Evidence-Based Precision"}
               </h2>
               {isVi ? (
                 <div className="mt-5 space-y-4 text-[1.05rem] leading-[1.75] text-indigo-soft">
@@ -500,7 +500,7 @@ export function AboutClient() {
                     thương mại thổi phồng, thần thánh hóa thảo dược và thiếu căn cứ khoa học thực chứng.
                   </p>
                   <p>
-                    <strong>The BioDispatch</strong> ra đời để thực hiện một sứ mệnh khác biệt: <strong>Khoa học minh bạch, trực quan và dễ hiểu</strong>.
+                    <strong>Phytocodex</strong> ra đời để thực hiện một sứ mệnh khác biệt: <strong>Khoa học minh bạch, trực quan và dễ hiểu</strong>.
                     Chúng tôi tuân thủ triết lý <em>"Giáo dục trước, không bao giờ thương mại hóa"</em> (Educate first, never sell first).
                     Mọi bài phân tích đều neo chặt vào dữ liệu nghiên cứu thực tế có mã số định danh DOI/PubMed, kết hợp với các mô hình tính
                     toán tương tác giúp người đọc tự kiểm chứng cơ chế sinh học phân tử bằng trực giác của chính mình.
@@ -518,7 +518,7 @@ export function AboutClient() {
                     behind academic paywalls, or hyper-simplified, scientifically ungrounded marketing claims that overpromise herbal miracles.
                   </p>
                   <p>
-                    <strong>The BioDispatch</strong> is committed to a third path: <strong>explorable, transparent, and rigorous science</strong>.
+                    <strong>Phytocodex</strong> is committed to a third path: <strong>explorable, transparent, and rigorous science</strong>.
                     Guided by the principle <em>"Educate first, never sell first,"</em> every thesis links directly to verified PubMed/DOI records
                     and provides interactive visual calculators that let readers test physiological mechanisms themselves.
                   </p>

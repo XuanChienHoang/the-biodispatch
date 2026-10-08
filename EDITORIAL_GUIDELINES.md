@@ -1,6 +1,6 @@
-# Quy chuẩn Biên tập & Xuất bản The BioDispatch (Editorial Standards V2)
+# Quy chuẩn Biên tập & Xuất bản Phytocodex (Editorial Standards V2)
 
-Hệ thống The BioDispatch được định vị là ấn bản Y sinh Chuyển hóa & Công nghệ Sinh học (TechBio & Metabolic Medicine) chuẩn mực quốc tế của **TS. Hoàng Xuân Chiến** (Dr. rer. nat. · Đại học Hamburg, CHLB Đức).
+Hệ thống Phytocodex được định vị là ấn bản Y sinh Chuyển hóa & Công nghệ Sinh học (TechBio & Metabolic Medicine) chuẩn mực quốc tế của **TS. Hoàng Xuân Chiến** (Dr. rer. nat. · Đại học Hamburg, CHLB Đức).
 
 Mọi bài viết chuyên khảo mới khi khởi tạo hoặc cập nhật **BẮT BUỘC** tuân thủ các nguyên tắc bất di bất dịch và vượt qua **Cổng Kiểm Duyệt Chất Lượng (Quality Gatekeeper)** trước khi xuất bản.
 
@@ -31,7 +31,7 @@ Bài viết của TS. Hoàng Xuân Chiến **KHÔNG PHẢI** là bản tóm tắ
 
 ## 2. Cổng Kiểm Duyệt Chất Lượng Bắt Buộc (Quality Gatekeeper Rules)
 
-Trước khi một bài viết được phép xuất bản lên The BioDispatch, bộ lọc tự động `validate-dispatch.mjs` sẽ kiểm tra 7 tiêu chí:
+Trước khi một bài viết được phép xuất bản lên Phytocodex, bộ lọc tự động `validate-dispatch.mjs` sẽ kiểm tra 7 tiêu chí:
 
 | Tiêu chí | Chuẩn bắt buộc | Nếu vi phạm |
 | :--- | :--- | :--- |

@@ -69,7 +69,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const enSlug = !isCurrentVi ? slug : (root.endsWith("-en") ? root : `${root}-en`);
 
   return {
-    title: `${a.title} · The BioDispatch`,
+    title: `${a.title} · Phytocodex`,
     description: a.dek,
     alternates: {
       canonical: `https://the-biodispatch.vercel.app/blog/${slug}`,
@@ -89,7 +89,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       "Metabolomics",
     ],
     openGraph: {
-      title: `${a.title} · The BioDispatch`,
+      title: `${a.title} · Phytocodex`,
       description: a.dek,
       url: `https://the-biodispatch.vercel.app/blog/${slug}`,
       type: "article",
@@ -107,7 +107,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: `${a.title} · The BioDispatch`,
+      title: `${a.title} · Phytocodex`,
       description: a.dek,
       images: [directImage],
       creator: "@DrXuanChienHoang",
@@ -184,7 +184,7 @@ export default async function BlogPage({ params }: Params) {
     },
     publisher: {
       "@type": "Organization",
-      name: "The BioDispatch",
+      name: "Phytocodex",
       url: "https://the-biodispatch.vercel.app",
     },
     citation: refs.map((r) => ({
@@ -562,7 +562,7 @@ export default async function BlogPage({ params }: Params) {
             </h2>
             <p className="mt-4 max-w-2xl text-[1.02rem] leading-relaxed text-indigo-soft">
               The full analytical text of <span className="text-indigo-deep font-semibold">{article.title}</span> is being
-              evaluated against empirical metabolomic benchmarks. At The BioDispatch, articles are published strictly alongside
+              evaluated against empirical metabolomic benchmarks. At Phytocodex, articles are published strictly alongside
               verifiable citations.
             </p>
             <div className="mt-7 grid max-w-2xl gap-px border-t border-slate-hair bg-slate-hair sm:grid-cols-3">

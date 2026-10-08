@@ -11,7 +11,7 @@ export interface LaymanMedicalBoxData {
 }
 
 /**
- * Curated high-precision layman medical analogies for The BioDispatch corpus.
+ * Curated high-precision layman medical analogies for Phytocodex corpus.
  * Keyed by post slug or root twin slug.
  */
 export const CURATED_MEDICAL_ANALOGIES: Record<string, LaymanMedicalBoxData> = {

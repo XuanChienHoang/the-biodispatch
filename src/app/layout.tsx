@@ -28,12 +28,17 @@ const jetbrains = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://the-biodispatch.vercel.app"),
+  icons: {
+    icon: "/images/phytocodex-emblem.jpg",
+    shortcut: "/images/phytocodex-emblem.jpg",
+    apple: "/images/phytocodex-emblem.jpg",
+  },
   title: {
-    default: "The BioDispatch · Dr. Xuan Chien Hoang",
-    template: "%s · The BioDispatch",
+    default: "Phytocodex · Dr. Xuan Chien Hoang",
+    template: "%s · Phytocodex",
   },
   description:
-    "Evidence-based biomedical intelligence by Dr. Xuan Chien Hoang (Dr. rer. nat. in Molecular Biology, Univ. of Hamburg). Bridging East-West ethnobotanicals, bioavailability enhancement, oncology care, and data-driven HealthTech.",
+    "Decoding the molecules of health — where Eastern botanicals meet European science. Evidence-based biomedical monograph by Dr. Xuan Chien Hoang (Dr. rer. nat. in Molecular Biology, Univ. of Hamburg).",
   alternates: {
     types: {
       "application/rss+xml": "https://the-biodispatch.vercel.app/feed.xml",
@@ -41,27 +46,27 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    siteName: "The BioDispatch",
-    title: "The BioDispatch · Dr. Xuan Chien Hoang",
+    siteName: "Phytocodex",
+    title: "Phytocodex · Dr. Xuan Chien Hoang",
     description:
-      "East-West ethnobotanicals, bioavailability enhancement, supportive oncology, and interactive pharmacokinetic simulation engines.",
+      "Decoding the molecules of health — where Eastern botanicals meet European science. Evidence-based molecular pharmacology and pharmacokinetic simulation engines.",
     locale: "en_US",
     images: [
       {
-        url: "https://the-biodispatch.vercel.app/api/og?title=The%20BioDispatch&dek=Biomedical%20Intelligence%20%26%20Simulation%20Engines&organ=Integrative&tier=Evidence-Based",
+        url: "https://the-biodispatch.vercel.app/images/phytocodex-banner.jpg",
         width: 1200,
-        height: 630,
-        alt: "The BioDispatch",
+        height: 675,
+        alt: "Phytocodex — Decoding the Molecules of Health",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "The BioDispatch · Dr. Xuan Chien Hoang",
+    title: "Phytocodex · Dr. Xuan Chien Hoang",
     description:
-      "East-West ethnobotanicals, bioavailability enhancement, supportive oncology, and interactive pharmacokinetic simulation engines.",
+      "Decoding the molecules of health — where Eastern botanicals meet European science.",
     images: [
-      "https://the-biodispatch.vercel.app/api/og?title=The%20BioDispatch&dek=Biomedical%20Intelligence%20%26%20Simulation%20Engines&organ=Integrative&tier=Evidence-Based",
+      "https://the-biodispatch.vercel.app/images/phytocodex-banner.jpg",
     ],
   },
 };
@@ -72,9 +77,9 @@ const JSONLD = {
     {
       "@type": "MedicalWebPage",
       "@id": "https://the-biodispatch.vercel.app/#webpage",
-      name: "The BioDispatch",
+      name: "Phytocodex",
       description:
-        "Evidence-based deep dives in biotechnology, metabolomics, and East-West botanical medicine.",
+        "Decoding the molecules of health — where Eastern botanicals meet European science. Evidence-based deep dives in biotechnology, metabolomics, and East-West botanical medicine.",
       inLanguage: "en",
       publisher: {
         "@type": "Person",

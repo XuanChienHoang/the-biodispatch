@@ -55,8 +55,8 @@ export default function PrivacyPage() {
             </div>
             <p className="mt-4">
               {isVi
-                ? "The BioDispatch được xây dựng trên triết lý bảo vệ quyền riêng tư nghiêm ngặt nhất. Chúng tôi không kinh doanh dữ liệu, không bán quảng cáo và không sử dụng bất kỳ công cụ thu thập hành vi sức khỏe nào của độc giả."
-                : "The BioDispatch is built on privacy-by-design principles. We do not sell user data, serve third-party ads, or monitor personal health behaviors."}
+                ? "Phytocodex được xây dựng trên triết lý bảo vệ quyền riêng tư nghiêm ngặt nhất. Chúng tôi không kinh doanh dữ liệu, không bán quảng cáo và không sử dụng bất kỳ công cụ thu thập hành vi sức khỏe nào của độc giả."
+                : "Phytocodex is built on privacy-by-design principles. We do not sell user data, serve third-party ads, or monitor personal health behaviors."}
             </p>
             <div className="mt-4 space-y-2 text-xs font-mono">
               <div className="flex items-center gap-2 text-emerald-700">
@@ -106,7 +106,7 @@ export default function PrivacyPage() {
             </div>
             <p className="mt-4 text-xs leading-relaxed">
               {isVi
-                ? "Nếu bạn đăng ký nhận bản tin định kỳ, địa chỉ email của bạn chỉ được dùng duy nhất cho mục đích gửi các bài phân tích y sinh học mới từ The BioDispatch. Bạn có thể hủy đăng ký bất cứ lúc nào thông qua liên kết ở cuối mỗi email gửi đi hoặc bằng cách gửi email yêu cầu trực tiếp."
+                ? "Nếu bạn đăng ký nhận bản tin định kỳ, địa chỉ email của bạn chỉ được dùng duy nhất cho mục đích gửi các bài phân tích y sinh học mới từ Phytocodex. Bạn có thể hủy đăng ký bất cứ lúc nào thông qua liên kết ở cuối mỗi email gửi đi hoặc bằng cách gửi email yêu cầu trực tiếp."
                 : "If you subscribe to our dispatch newsletter, your email address is used solely to deliver periodic scientific analyses. You may revoke consent at any time."}
             </p>
           </section>

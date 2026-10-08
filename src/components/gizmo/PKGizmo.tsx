@@ -94,7 +94,7 @@ export default function PKGizmo() {
         }}
         onReset={() => { setDose(500); setForm("standard"); setFood("fasting"); setPreset("standard"); }}
         onExport={() => {
-          exportPng("pk-chart", "biodispatch-pk-curve");
+          exportPng("pk-chart", "phytocodex-pk-curve");
           exportCsv(
             [["t_h", "conc_ug_ml"], ...res.points.filter((_, i) => i % 8 === 0).map((p) => [p.t.toFixed(2), p.c.toFixed(4)])],
             "pk-curve"

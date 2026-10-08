@@ -6,8 +6,8 @@ export const runtime = "edge";
 export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
-    const title = searchParams.get("title") || "The BioDispatch";
-    const dek = searchParams.get("dek") || "Evidence-based Biomedical Intelligence & Pharmacokinetics";
+    const title = searchParams.get("title") || "Phytocodex";
+    const dek = searchParams.get("dek") || "Decoding the Molecules of Health";
     const organ = searchParams.get("organ") || "Biomedicine";
     const tier = searchParams.get("tier") || "Clinical Review";
 
@@ -22,7 +22,7 @@ export async function GET(req: NextRequest) {
             justifyContent: "space-between",
             padding: "60px 80px",
             backgroundColor: "#070B11",
-            backgroundImage: "radial-gradient(circle at 90% 10%, rgba(0, 242, 254, 0.12) 0%, transparent 40%), radial-gradient(circle at 10% 90%, rgba(16, 185, 129, 0.08) 0%, transparent 45%)",
+            backgroundImage: "radial-gradient(circle at 90% 10%, rgba(212, 175, 55, 0.15) 0%, transparent 40%), radial-gradient(circle at 10% 90%, rgba(16, 185, 129, 0.1) 0%, transparent 45%)",
             color: "#E2E8F0",
             fontFamily: "sans-serif",
           }}
@@ -35,8 +35,8 @@ export async function GET(req: NextRequest) {
                   width: "16px",
                   height: "16px",
                   borderRadius: "50%",
-                  backgroundColor: "#00F2FE",
-                  boxShadow: "0 0 20px #00F2FE",
+                  backgroundColor: "#D4AF37",
+                  boxShadow: "0 0 20px #D4AF37",
                 }}
               />
               <span
@@ -48,7 +48,7 @@ export async function GET(req: NextRequest) {
                   color: "#F8FAFC",
                 }}
               >
-                THE BIODISPATCH
+                PHYTOCODEX
               </span>
             </div>
             <div style={{ display: "flex", gap: "12px" }}>

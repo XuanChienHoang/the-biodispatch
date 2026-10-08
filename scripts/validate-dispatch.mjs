@@ -1,5 +1,5 @@
 /**
- * Quality Gatekeeper Validator for The BioDispatch
+ * Quality Gatekeeper Validator for Phytocodex
  * Ensures every dispatch meets Dr. Xuan Chien Hoang's editorial standards:
  * - Minimum word count (in-depth, not superficial)
  * - Ban on em-dash / en-dash

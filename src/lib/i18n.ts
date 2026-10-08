@@ -20,21 +20,21 @@ export const useLanguageStore = create<LanguageStore>()(
         })),
     }),
     {
-      name: "biodispatch_lang",
+      name: "phytocodex_lang",
     }
   )
 );
 
 export const DICT = {
   en: {
-    brandSubtitle: "Evidence-Based Editorial · 2026",
+    brandSubtitle: "Decoding the Molecules of Health · 2026",
     curatorRole: "Curator: Dr. Xuan Chien Hoang (Dr. rer. nat. · Univ. of Hamburg)",
     heroPill1: "East-West Botanical Bridge",
     heroPill2: "Bioavailability & Simulation",
     heroPill3: "Zero-Hallucination EBM",
-    heroTitle: "The BioDispatch.",
+    heroTitle: "Phytocodex.",
     heroSubtitle:
-      "An independent analytical publication curated by Dr. Xuan Chien Hoang. Bridging Asian ethnobotanical wisdom with cutting-edge European extraction standards; pioneering bioavailability optimization, supportive oncology formulations, cardiometabolic health, and data-driven HealthTech.",
+      "An independent analytical monograph curated by Dr. Xuan Chien Hoang. Decoding the molecules of health — where Eastern botanicals meet European science; pioneering bioavailability optimization, supportive oncology formulations, cardiometabolic health, and data-driven HealthTech.",
     exploreCorpus: "Explore Corpus & Dispatches",
     interactiveLab: "Interactive Gizmos Lab",
     aboutAuthor: "About Dr. Hoang",
@@ -74,14 +74,14 @@ export const DICT = {
     switchLanguage: "Tiếng Việt 🇻🇳",
   },
   vi: {
-    brandSubtitle: "Tòa soạn Y sinh Thực chứng · 2026",
+    brandSubtitle: "Giải mã Phân tử Sức khỏe · 2026",
     curatorRole: "Chủ biên: TS. Hoàng Xuân Chiến (Dr. rer. nat. · ĐH Hamburg)",
     heroPill1: "Cầu nối Dược liệu Á - Âu",
     heroPill2: "Tối ưu Hấp thu & Mô phỏng",
     heroPill3: "Y học Thực chứng Chuẩn xác",
-    heroTitle: "The BioDispatch.",
+    heroTitle: "Phytocodex.",
     heroSubtitle:
-      "Chuyên trang phân tích y sinh độc lập của TS. Hoàng Xuân Chiến. Cầu nối tiên phong giữa tinh hoa dược liệu Á Đông và công nghệ chiết xuất, chuẩn hóa Châu Âu; đột phá công nghệ tối ưu hấp thu (sinh khả dụng), các giải pháp hỗ trợ ung thư, bệnh tim mạch và ứng dụng Data Science trong HealthTech thực chứng.",
+      "Chuyên khảo phân tích y sinh độc lập của TS. Hoàng Xuân Chiến. Giải mã phân tử sức khỏe — nơi dược liệu Á Đông gặp khoa học Châu Âu; tiên phong nghiên cứu tối ưu hấp thu (sinh khả dụng), các giải pháp hỗ trợ ung thư, bệnh tim mạch và ứng dụng Data Science trong HealthTech thực chứng.",
     exploreCorpus: "Khám phá Kho Bài viết",
     interactiveLab: "Phòng Mô phỏng Dược học",
     aboutAuthor: "Về TS. Hoàng Xuân Chiến",

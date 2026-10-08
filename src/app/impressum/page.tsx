@@ -89,8 +89,8 @@ export default function ImpressumPage() {
             </div>
             <p className="mt-4 text-xs text-slate-ink leading-relaxed">
               {isVi
-                ? "The BioDispatch là ấn phẩm khoa học, tổng thuật y sinh học và thông tin giáo dục sức khỏe phi thương mại do cá nhân tác giả tự chủ biên và vận hành độc lập."
-                : "The BioDispatch is an independent, non-commercial scientific analysis, biomedical literature synthesis, and health-educational publication published personally by the author."}
+                ? "Phytocodex là ấn phẩm khoa học, tổng thuật y sinh học và thông tin giáo dục sức khỏe phi thương mại do cá nhân tác giả tự chủ biên và vận hành độc lập."
+                : "Phytocodex is an independent, non-commercial scientific analysis, biomedical literature synthesis, and health-educational publication published personally by the author."}
             </p>
           </section>
 

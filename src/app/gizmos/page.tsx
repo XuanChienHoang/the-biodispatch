@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { GizmosDirectory } from "@/components/GizmosDirectory";
 
 export const metadata: Metadata = {
-  title: "Simulation Index · The BioDispatch",
+  title: "Simulation Index · Phytocodex",
   description:
     "Four interactive biomedical engines: pharmacokinetics, molecular pathway, synergy matrix and biomarker forecasting.",
 };

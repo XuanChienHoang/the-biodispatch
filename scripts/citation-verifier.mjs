@@ -1,6 +1,6 @@
 /**
  * Deterministic Citation Verifier & Auto-Enricher
- * The BioDispatch Editorial Engine
+ * Phytocodex Editorial Engine
  * 
  * Verifies references against NCBI PubMed E-utilities and CrossRef.
  * Complies with NCBI usage guidelines:
@@ -10,7 +10,7 @@
  */
 
 const NCBI_BASE = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils';
-const NCBI_PARAMS = 'tool=TheBioDispatch&email=contact@thebiodispatch.com';
+const NCBI_PARAMS = 'tool=ThePhytocodex&email=contact@thebiodispatch.com';
 
 function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -20,7 +20,7 @@ async function fetchWithRetry(url, maxRetries = 3) {
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
       const res = await fetch(url, {
-        headers: { 'User-Agent': 'TheBioDispatch-Editorial/1.0 (contact@thebiodispatch.com)' }
+        headers: { 'User-Agent': 'ThePhytocodex-Editorial/1.0 (contact@thebiodispatch.com)' }
       });
       if (res.status === 429) {
         const wait = attempt * 1000;
@@ -120,7 +120,7 @@ export async function verifyDoi(doi) {
     const res = await fetch(`https://doi.org/${cleanDoi}`, {
       method: 'HEAD',
       redirect: 'follow',
-      headers: { 'User-Agent': 'TheBioDispatch-Editorial/1.0' }
+      headers: { 'User-Agent': 'ThePhytocodex-Editorial/1.0' }
     });
     return { valid: res.ok, status: res.status };
   } catch (err) {

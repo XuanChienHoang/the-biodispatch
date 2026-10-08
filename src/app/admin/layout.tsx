@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Editorial Studio · The BioDispatch Admin",
+  title: "Editorial Studio · Phytocodex Admin",
   description: "Internal editorial dashboard and dispatch manager for Dr. Xuan Chien Hoang",
   robots: {
     index: false,

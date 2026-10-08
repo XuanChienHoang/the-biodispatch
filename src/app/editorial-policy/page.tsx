@@ -41,8 +41,8 @@ export default function EditorialPolicyPage() {
 
           <p className="mt-4 text-[1.1rem] leading-relaxed text-indigo-soft">
             {isVi
-              ? "Quy trình tuyển chọn tài liệu y văn, nguyên tắc đối soát mã định danh quốc tế (PubMed PMID / DOI), tính độc lập học thuật và cam kết phi thương mại của The BioDispatch."
-              : "Source curation criteria, protocol for PMID/DOI cross-verification, academic independence, and editorial governance at The BioDispatch."}
+              ? "Quy trình tuyển chọn tài liệu y văn, nguyên tắc đối soát mã định danh quốc tế (PubMed PMID / DOI), tính độc lập học thuật và cam kết phi thương mại của Phytocodex."
+              : "Source curation criteria, protocol for PMID/DOI cross-verification, academic independence, and editorial governance at Phytocodex."}
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-mono text-slate-ink">
@@ -65,8 +65,8 @@ export default function EditorialPolicyPage() {
             </div>
             <p className="mt-4">
               {isVi
-                ? "The BioDispatch áp dụng hệ thống phân tầng bằng chứng nghiêm ngặt theo chuẩn Y học Thực chứng (Evidence-Based Medicine - EBM). Chúng tôi ưu tiên tuyệt đối các nguồn công bố trên các tạp chí quốc tế có uy tín hàng đầu trong hệ thống NLM / MEDLINE / PubMed:"
-                : "The BioDispatch adheres to rigorous Evidence-Based Medicine (EBM) standards. We prioritize peer-reviewed literature indexed in major biomedical databases including NLM / MEDLINE / PubMed:"}
+                ? "Phytocodex áp dụng hệ thống phân tầng bằng chứng nghiêm ngặt theo chuẩn Y học Thực chứng (Evidence-Based Medicine - EBM). Chúng tôi ưu tiên tuyệt đối các nguồn công bố trên các tạp chí quốc tế có uy tín hàng đầu trong hệ thống NLM / MEDLINE / PubMed:"
+                : "Phytocodex adheres to rigorous Evidence-Based Medicine (EBM) standards. We prioritize peer-reviewed literature indexed in major biomedical databases including NLM / MEDLINE / PubMed:"}
             </p>
             <ul className="mt-4 space-y-2.5 text-xs font-mono">
               <li className="flex items-start gap-2">
@@ -128,8 +128,8 @@ export default function EditorialPolicyPage() {
             </div>
             <p className="mt-4">
               {isVi
-                ? "The BioDispatch là ấn phẩm khoa học và giáo dục độc lập phi thương mại do cá nhân TS. Hoàng Xuân Chiến sáng lập và trực tiếp điều hành về mặt nội dung."
-                : "The BioDispatch is an independent, non-commercial scientific and educational publishing project founded and curated personally by Dr. Xuan Chien Hoang."}
+                ? "Phytocodex là ấn phẩm khoa học và giáo dục độc lập phi thương mại do cá nhân TS. Hoàng Xuân Chiến sáng lập và trực tiếp điều hành về mặt nội dung."
+                : "Phytocodex is an independent, non-commercial scientific and educational publishing project founded and curated personally by Dr. Xuan Chien Hoang."}
             </p>
             <div className="mt-4 space-y-3">
               <div className="flex items-start gap-2.5">
@@ -146,8 +146,8 @@ export default function EditorialPolicyPage() {
                 <span>
                   <strong>{isVi ? "Phân định ranh giới tổ chức:" : "Organizational boundary:"}</strong>{" "}
                   {isVi
-                    ? "Mặc dù người sáng lập có hoạt động nghiên cứu và phát triển sản phẩm y sinh, The BioDispatch duy trì sự phân định ranh giới độc lập tuyệt đối giữa nghiên cứu khoa học thực chứng và các hoạt động thương mại bên ngoài."
-                    : "While the founder engages in biomedical R&D, The BioDispatch maintains complete operational independence from external corporate entities."}
+                    ? "Mặc dù người sáng lập có hoạt động nghiên cứu và phát triển sản phẩm y sinh, Phytocodex duy trì sự phân định ranh giới độc lập tuyệt đối giữa nghiên cứu khoa học thực chứng và các hoạt động thương mại bên ngoài."
+                    : "While the founder engages in biomedical R&D, Phytocodex maintains complete operational independence from external corporate entities."}
                 </span>
               </div>
             </div>

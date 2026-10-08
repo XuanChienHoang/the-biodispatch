@@ -1,5 +1,5 @@
 /**
- * Autonomous Dispatch Engine for The BioDispatch
+ * Autonomous Dispatch Engine for Phytocodex
  * Dr. Xuan Chien Hoang (Dr. rer. nat. | University of Hamburg)
  * 
  * Flow:
@@ -262,7 +262,7 @@ async function createFallbackIllustration(slug, topic = {}) {
 
   <!-- Editorial Masthead Overlays -->
   <g font-family="system-ui, -apple-system, sans-serif">
-    <text x="96" y="240" fill="${palette.accent}" font-size="20" font-weight="700" letter-spacing="4">THE BIODISPATCH · ${organ.toUpperCase()}</text>
+    <text x="96" y="240" fill="${palette.accent}" font-size="20" font-weight="700" letter-spacing="4">PHYTOCODEX · ${organ.toUpperCase()}</text>
     <text x="96" y="280" fill="#94a3b8" font-size="14" font-weight="600" letter-spacing="2">${tier.toUpperCase()}</text>
     <rect x="96" y="320" width="80" height="4" fill="${palette.accent}" />
     <text x="96" y="380" fill="#f8fafc" font-size="44" font-weight="800" letter-spacing="-1">${title}</text>
@@ -286,7 +286,7 @@ async function createFallbackIllustration(slug, topic = {}) {
 
 export async function runAutonomousDispatch() {
   console.log('================================================================');
-  console.log('  THE BIODISPATCH — AUTONOMOUS DISPATCH ENGINE');
+  console.log('  PHYTOCODEX — AUTONOMOUS DISPATCH ENGINE');
   console.log('  Editorial Director: Dr. Xuan Chien Hoang');
   console.log('================================================================\n');
 

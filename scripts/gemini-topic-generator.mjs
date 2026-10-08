@@ -1,5 +1,5 @@
 /**
- * Autonomous Gemini Topic & Content Generator for The BioDispatch
+ * Autonomous Gemini Topic & Content Generator for Phytocodex
  * Dr. Xuan Chien Hoang (Dr. rer. nat. | University of Hamburg)
  * 
  * Generates brand new cutting-edge bilingual dispatches adhering to:
@@ -62,7 +62,7 @@ export async function generateTopicWithGemini(existingCatalog = []) {
     ? existingCatalog.map(item => typeof item === 'string' ? item : `- [${item.organ || 'Topic'}] ${item.title} (slug: ${item.slug})`).join('\n')
     : '';
 
-  const systemInstruction = `Bạn là TS. Hoàng Xuân Chiến (Dr. rer. nat. - Đại học Hamburg, CHLB Đức), Giám đốc Học thuật kiêm Tổng biên tập của ấn bản y sinh "The BioDispatch" (the-biodispatch.vercel.app).
+  const systemInstruction = `Bạn là TS. Hoàng Xuân Chiến (Dr. rer. nat. - Đại học Hamburg, CHLB Đức), Giám đốc Học thuật kiêm Tổng biên tập của ấn bản y sinh "Phytocodex" (the-biodispatch.vercel.app).
 Bạn là chuyên gia hàng đầu về Y học Chuyển hóa, Lão hóa & Trường thọ (Metabolic Longevity), Dược động học và Tín hiệu tế bào.
 
 MỤC TIÊU:
@@ -161,7 +161,7 @@ QUY TẮC BẮT BUỘC:
   const randomPillar = DOMAIN_PILLARS[Math.floor(Math.random() * DOMAIN_PILLARS.length)];
   const randomIdea = randomPillar.ideas[Math.floor(Math.random() * randomPillar.ideas.length)];
 
-  const prompt = `Hãy sáng tạo một bài phân tích chuyên khảo y sinh song ngữ (Tiếng Việt và Tiếng Anh) cho ấn bản The BioDispatch của TS. Hoàng Xuân Chiến.
+  const prompt = `Hãy sáng tạo một bài phân tích chuyên khảo y sinh song ngữ (Tiếng Việt và Tiếng Anh) cho ấn bản Phytocodex của TS. Hoàng Xuân Chiến.
 
 GỢI Ý LĨNH VỰC CHO KỲ NÀY:
 - Lĩnh vực: ${randomPillar.domain}

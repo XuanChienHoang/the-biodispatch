@@ -131,7 +131,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const g = GIZMOS.find((x) => x.slug === slug);
   const title = slug === "curcumin-piperine" ? "Curcumin × Piperine Bio-enhancement" : g?.name;
-  return { title: `${title} · The BioDispatch` };
+  return { title: `${title} · Phytocodex` };
 }
 
 export default async function GizmoPage({

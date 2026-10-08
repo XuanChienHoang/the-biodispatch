@@ -30,7 +30,7 @@ export function Hero({ articles = [] }: { articles?: Article[] }) {
                 <Wordmark size={22} />
               </span>
               <span className="font-display font-black text-sm tracking-tight text-indigo-deep">
-                The BioDispatch
+                Phytocodex
               </span>
               <span className="hidden h-3.5 w-px bg-slate-hair sm:block" />
               <span className="caps hidden text-xs font-semibold text-slate-ink sm:inline">
@@ -233,8 +233,8 @@ export function Hero({ articles = [] }: { articles?: Article[] }) {
           >
             <div className="relative aspect-[21/9] w-full min-h-[220px] max-h-[380px] sm:aspect-[24/9]">
               <Image
-                src="/images/biodispatch-hero-banner.jpg"
-                alt="The BioDispatch — Molecular Bridge between Botanical Pharmacology and Precision Medicine"
+                src="/images/phytocodex-banner.jpg"
+                alt="Phytocodex — Decoding the Molecules of Health"
                 fill
                 priority
                 sizes="(min-width: 1280px) 1240px, 100vw"

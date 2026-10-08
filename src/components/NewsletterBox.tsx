@@ -58,7 +58,7 @@ export function NewsletterBox({ isVi = true }: NewsletterBoxProps) {
         <div className="flex items-center gap-2 text-trace-ink">
           <Mail size={16} />
           <span className="caps text-[0.72rem] font-bold tracking-widest text-trace-ink">
-            {isVi ? "THE BIODISPATCH · BẢN TIN ĐỊNH KỲ" : "THE BIODISPATCH · WEEKLY BRIEF"}
+            {isVi ? "PHYTOCODEX · BẢN TIN ĐỊNH KỲ" : "PHYTOCODEX · WEEKLY BRIEF"}
           </span>
         </div>
 

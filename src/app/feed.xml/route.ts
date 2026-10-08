@@ -50,7 +50,7 @@ export async function GET() {
   const rssFeed = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>The BioDispatch · Dr. Xuan Chien Hoang</title>
+    <title>Phytocodex · Dr. Xuan Chien Hoang</title>
     <link>${BASE_URL}</link>
     <description>Evidence-based biomedical dispatches, pharmacokinetics, and interactive cellular simulation models by Dr. rer. nat. Xuan Chien Hoang (University of Hamburg).</description>
     <language>vi</language>

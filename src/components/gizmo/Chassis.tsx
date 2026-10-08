@@ -181,7 +181,7 @@ export function BiomedicalGizmoContainer({
       <CiteModal
         open={cite}
         onClose={() => setCite(false)}
-        title={`The BioDispatch — ${title}`}
+        title={`Phytocodex — ${title}`}
         params={citeParams}
       />
     </motion.figure>
