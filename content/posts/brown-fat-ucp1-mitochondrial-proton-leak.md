@@ -12,13 +12,13 @@ featured: true
 doi: "10.1038/nature26141"
 gizmo: "pathway"
 lang: "en"
-image: "/images/posts/chuyen-hoa-mo-nau-ucp1-ro-ri-proton.jpg"
+image: "/images/posts/brown-fat-ucp1-mitochondrial-proton-leak.jpg"
 imageAlt: "Biomedical molecular illustration for The Mitochondrial Proton Leak Paradox: Activating UCP1 in Brown Adipose Tissue to Rewire Metabolism and Extend Longevity"
 ---
 
 For decades, clinical medicine has viewed obesity and metabolic decline through the simplistic lens of energy intake versus energy expenditure. Conventional guidelines focused almost exclusively on caloric restriction or physical exercise to burn energy via ATP-dependent pathways. However, groundbreaking discoveries in mitochondrial biology have unveiled a radically different truth: our bodies possess an incredibly sophisticated active energy dissipation system that bypasses muscle contraction entirely: non-shivering thermogenesis in Brown Adipose Tissue (BAT). The prevailing misconception was that any energy leak within the cell represents pathology or metabolic inefficiency. In reality, actively dissipating the proton gradient through the Uncoupling Protein 1 (UCP1) channel is not just a primitive mechanism to survive cold exposure, but a vital biological safety valve. Upon UCP1 activation, brown adipocytes siphon massive amounts of glucose and free fatty acids directly from the circulation to fuel this molecular furnace, dramatically restoring insulin sensitivity independent of pancreatic insulin secretion. This monograph explores the precise molecular architecture of UCP1, the therapeutic paradox of mitochondrial uncoupling, and cutting-edge clinical strategies to harness brown fat activation for reversing metabolic aging.
 
-![Biomedical molecular illustration for The Mitochondrial Proton Leak Paradox: Activating UCP1 in Brown Adipose Tissue to Rewire Metabolism and Extend Longevity](/images/posts/chuyen-hoa-mo-nau-ucp1-ro-ri-proton.jpg)
+![Biomedical molecular illustration for The Mitochondrial Proton Leak Paradox: Activating UCP1 in Brown Adipose Tissue to Rewire Metabolism and Extend Longevity](/images/posts/brown-fat-ucp1-mitochondrial-proton-leak.jpg)
 
 > *"Imagine the mitochondrion as a massive hydroelectric dam. The water flow (protons) spins the turbines (ATP synthase) to generate electricity (ATP). When the dam is overloaded due to excessive water influx (nutrient overload in obesity), the turbines seize up, water pressure spikes, causing structural damage and leakage (oxidative stress and ROS accumulation). Uncoupling Protein 1 (UCP1) acts as an intelligent emergency spillway. It allows water to bypass the turbine and flow safely downstream. Although it generates no electricity (ATP), this spillway relieves the immense pressure on the dam structure, preventing a catastrophic failure (cellular damage) while releasing the excess energy harmlessly as heat."*
 
@@ -27,7 +27,7 @@ For decades, clinical medicine has viewed obesity and metabolic decline through 
 ## Molecular Pathway Flowchart
 
 ```text
-[Tiếp xúc lạnh/Thụ thể ADRB3] ──► [Kích hoạt Adenylate Cyclase] ──► [Tăng cAMP & PKA] ──► [Lipolysis giải phóng Acid béo tự do] ──► [Kích hoạt trực tiếp UCP1 tại màng trong ty thể] ──► [Rò rỉ Proton H+] ──► [Tiêu hao Gradient Điện hóa & Sinh nhiệt]
+[Cold Exposure / ADRB3 Receptor] ──► [Adenylate Cyclase Activation] ──► [Elevated cAMP & PKA] ──► [Lipolysis & FFA Release] ──► [Direct UCP1 Activation in Inner Mitochondrial Membrane] ──► [Proton H+ Leak] ──► [Electrochemical Gradient Dissipation & Thermogenesis]
 ```
 
 ---

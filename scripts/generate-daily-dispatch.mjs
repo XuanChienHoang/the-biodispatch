@@ -59,7 +59,7 @@ function createDispatchMarkdown(topic, lang = 'vi', scheduledIsoDate) {
   const authorRole = isVi 
     ? 'Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức'
     : 'Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany';
-  const imgPath = `/images/posts/${topic.slugVi}.jpg`;
+  const imgPath = `/images/posts/${slug}.jpg`;
   const imgAlt = isVi ? `Đồ họa phân tử y sinh ${topic.titleVi}` : `Biomedical molecular illustration for ${topic.titleEn}`;
 
   const tagsYaml = tags.map(t => `"${sanitizeTypography(t)}"`).join(', ');
@@ -92,9 +92,10 @@ ${sanitizeTypography(lead)}
 
 `;
 
-  if (topic.flowchart) {
+  const activeFlowchart = isVi ? (topic.flowchartVi || topic.flowchart) : (topic.flowchartEn || topic.flowchart);
+  if (activeFlowchart) {
     bodyContent += `## ${isVi ? 'Sơ đồ cơ chế truyền tín hiệu phân tử' : 'Molecular Pathway Flowchart'}\n\n`;
-    bodyContent += `\`\`\`text\n${sanitizeTypography(topic.flowchart)}\n\`\`\`\n\n---\n\n`;
+    bodyContent += `\`\`\`text\n${sanitizeTypography(activeFlowchart)}\n\`\`\`\n\n---\n\n`;
   }
 
   sections.forEach((sec, idx) => {

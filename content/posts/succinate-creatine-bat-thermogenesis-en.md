@@ -12,13 +12,13 @@ featured: true
 doi: "10.1038/s41586-018-0353-2"
 gizmo: "pathway"
 lang: "en"
-image: "/images/posts/succinate-creatine-bat-thermogenesis-vi.jpg"
+image: "/images/posts/succinate-creatine-bat-thermogenesis-en.jpg"
 imageAlt: "Biomedical molecular illustration for Succinate Signaling and Creatine Futile Cycling: The Next-Generation Thermogenic Paradigm Beyond UCP1"
 ---
 
 When we step into a freezing room, our body immediately responds by shivering to generate muscular heat. Yet, deep within the brown adipose tissue deposits in our neck and supraclavicular areas, a far more sophisticated biological miracle is unfolding: non-shivering thermogenesis. For half a century, the medical community believed that Uncoupling Protein 1 (UCP1) on the inner mitochondrial membrane was the sole gatekeeper of this process, dissipating the proton gradient to release heat. This dogma led to the failure of numerous clinical trials aiming to activate UCP1 for weight loss, as the body consistently triggered compensatory mechanisms. The paradigm shifted when researchers discovered that even in the complete absence of UCP1, the body possesses a highly resilient, backup thermogenic network. This network is driven by the creatine futile cycle and extracellular succinate signaling. This discovery not only shatters old dogmas but also opens a revolutionary chapter in treating chronic metabolic diseases.
 
-![Biomedical molecular illustration for Succinate Signaling and Creatine Futile Cycling: The Next-Generation Thermogenic Paradigm Beyond UCP1](/images/posts/succinate-creatine-bat-thermogenesis-vi.jpg)
+![Biomedical molecular illustration for Succinate Signaling and Creatine Futile Cycling: The Next-Generation Thermogenic Paradigm Beyond UCP1](/images/posts/succinate-creatine-bat-thermogenesis-en.jpg)
 
 > *"Imagine the mitochondria of brown adipocytes as a massive thermal power plant. The traditional UCP1-mediated thermogenesis acts like opening a pressure-relief valve directly on the steam boiler: instead of using steam pressure to spin turbines and generate electricity (ATP), the plant deliberately vents the steam to release energy purely as heat. On the other hand, the creatine futile cycle operates like an idle, continuous water-pumping loop. Water is pumped to a high reservoir and immediately drained back down without serving any production purpose, consuming engine fuel and generating immense friction heat. Succinate accumulation acts as a molecular booster, drastically accelerating this pumping speed and forcing the cell to burn calories at an unprecedented rate."*
 
@@ -27,7 +27,7 @@ When we step into a freezing room, our body immediately responds by shivering to
 ## Molecular Pathway Flowchart
 
 ```text
-[Tiếp xúc lạnh/Kích hoạt Adrenergic] ──► [Tích tụ Succinate nội bào] ──► [Oxy hóa Succinate qua SDH (Phức hợp II)] ──► [Tăng ROS chọn lọc] ──► [Kích hoạt Chu trình Creatine vô nghĩa qua CKMT1A/1B] ──► [Thủy phân ATP liên tục] ──► [Giải phóng nhiệt lượng vượt trội]
+[Cold Exposure / Adrenergic Activation] ──► [Intracellular Succinate Accumulation] ──► [Succinate Oxidation via SDH (Complex II)] ──► [Selective ROS Burst] ──► [Creatine Futile Cycling via CKMT1A/1B] ──► [Continuous ATP Hydrolysis] ──► [Superior Thermogenic Heat Release]
 ```
 
 ---

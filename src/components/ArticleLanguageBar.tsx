@@ -7,56 +7,256 @@ import { useLanguageStore } from "@/lib/i18n";
 
 // Pairs of English <-> Vietnamese dispatches
 const PAIRS: Record<string, { slug: string; lang: "vi" | "en"; label: string }> = {
-  "metabolomic-horizon-clinical-diagnostics": {
-    slug: "metabolomic-horizon-clinical-diagnostics-vi",
-    lang: "vi",
-    label: "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)",
+  "ampk-nrf2-mtor-map": {
+    "slug": "ampk-nrf2-mtor-map-en",
+    "lang": "en",
+    "label": "English Edition (Academic Rigour)"
   },
-  "metabolomic-horizon-clinical-diagnostics-vi": {
-    slug: "metabolomic-horizon-clinical-diagnostics",
-    lang: "en",
-    label: "English Edition (Academic Rigour)",
+  "ampk-nrf2-mtor-map-en": {
+    "slug": "ampk-nrf2-mtor-map",
+    "lang": "vi",
+    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
   },
-  "curcumin-piperine-bioavailability": {
-    slug: "curcumin-piperine-sinh-kha-dung",
-    lang: "vi",
-    label: "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)",
+  "chuyen-hoa-mo-nau-ucp1-ro-ri-proton": {
+    "slug": "brown-fat-ucp1-mitochondrial-proton-leak",
+    "lang": "en",
+    "label": "English Edition (Academic Rigour)"
+  },
+  "brown-fat-ucp1-mitochondrial-proton-leak": {
+    "slug": "chuyen-hoa-mo-nau-ucp1-ro-ri-proton",
+    "lang": "vi",
+    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
+  },
+  "butyrate-scfa-epigenetics-histone-gut-barrier": {
+    "slug": "butyrate-scfa-epigenetics-histone-gut-barrier-en",
+    "lang": "en",
+    "label": "English Edition (Academic Rigour)"
+  },
+  "butyrate-scfa-epigenetics-histone-gut-barrier-en": {
+    "slug": "butyrate-scfa-epigenetics-histone-gut-barrier",
+    "lang": "vi",
+    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
+  },
+  "cancer-seed-and-soil-metabolism": {
+    "slug": "cancer-seed-and-soil-metabolism-en",
+    "lang": "en",
+    "label": "English Edition (Academic Rigour)"
+  },
+  "cancer-seed-and-soil-metabolism-en": {
+    "slug": "cancer-seed-and-soil-metabolism",
+    "lang": "vi",
+    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
+  },
+  "cholesterol-myth-vascular-inflammation": {
+    "slug": "cholesterol-myth-vascular-inflammation-en",
+    "lang": "en",
+    "label": "English Edition (Academic Rigour)"
+  },
+  "cholesterol-myth-vascular-inflammation-en": {
+    "slug": "cholesterol-myth-vascular-inflammation",
+    "lang": "vi",
+    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
   },
   "curcumin-piperine-sinh-kha-dung": {
-    slug: "curcumin-piperine-bioavailability",
-    lang: "en",
-    label: "English Edition (Academic Rigour)",
+    "slug": "curcumin-piperine-bioavailability",
+    "lang": "en",
+    "label": "English Edition (Academic Rigour)"
+  },
+  "curcumin-piperine-bioavailability": {
+    "slug": "curcumin-piperine-sinh-kha-dung",
+    "lang": "vi",
+    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
+  },
+  "forecasting-hs-crp-delta": {
+    "slug": "forecasting-hs-crp-delta-en",
+    "lang": "en",
+    "label": "English Edition (Academic Rigour)"
+  },
+  "forecasting-hs-crp-delta-en": {
+    "slug": "forecasting-hs-crp-delta",
+    "lang": "vi",
+    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
   },
   "glp1-keo-dai-tuoi-tho-nature": {
-    slug: "glp1-longevity-nature-mitochondria",
-    lang: "en",
-    label: "English Edition (Academic Rigour & Molecular Pathways)",
+    "slug": "glp1-longevity-nature-mitochondria",
+    "lang": "en",
+    "label": "English Edition (Academic Rigour)"
   },
   "glp1-longevity-nature-mitochondria": {
-    slug: "glp1-keo-dai-tuoi-tho-nature",
-    lang: "vi",
-    label: "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu & Ẩn dụ Đời thực)",
+    "slug": "glp1-keo-dai-tuoi-tho-nature",
+    "lang": "vi",
+    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
   },
-  "resistant-starch-scfa-gut-vi": {
-    slug: "resistant-starch-scfa-gut-en",
-    lang: "en",
-    label: "English Edition (Academic Rigour & Microbial Kinetics)",
+  "glymphatic-deep-sleep-brain-cleaning": {
+    "slug": "glymphatic-deep-sleep-brain-cleaning-en",
+    "lang": "en",
+    "label": "English Edition (Academic Rigour)"
   },
-  "resistant-starch-scfa-gut-en": {
-    slug: "resistant-starch-scfa-gut-vi",
-    lang: "vi",
-    label: "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu & Ẩn dụ Đời thực)",
+  "glymphatic-deep-sleep-brain-cleaning-en": {
+    "slug": "glymphatic-deep-sleep-brain-cleaning",
+    "lang": "vi",
+    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
+  },
+  "insulin-igf1-cancer-proliferation": {
+    "slug": "insulin-igf1-cancer-proliferation-en",
+    "lang": "en",
+    "label": "English Edition (Academic Rigour)"
+  },
+  "insulin-igf1-cancer-proliferation-en": {
+    "slug": "insulin-igf1-cancer-proliferation",
+    "lang": "vi",
+    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
+  },
+  "melatonin-circadian-zeitgeber": {
+    "slug": "melatonin-circadian-zeitgeber-en",
+    "lang": "en",
+    "label": "English Edition (Academic Rigour)"
+  },
+  "melatonin-circadian-zeitgeber-en": {
+    "slug": "melatonin-circadian-zeitgeber",
+    "lang": "vi",
+    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
+  },
+  "metabolomic-horizon-clinical-diagnostics-vi": {
+    "slug": "metabolomic-horizon-clinical-diagnostics",
+    "lang": "en",
+    "label": "English Edition (Academic Rigour)"
+  },
+  "metabolomic-horizon-clinical-diagnostics": {
+    "slug": "metabolomic-horizon-clinical-diagnostics-vi",
+    "lang": "vi",
+    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
   },
   "mevalonate-statin-coq10-vi": {
-    slug: "mevalonate-statin-coq10-en",
-    lang: "en",
-    label: "English Edition (Academic Rigour & Pharmacogenomics)",
+    "slug": "mevalonate-statin-coq10-en",
+    "lang": "en",
+    "label": "English Edition (Academic Rigour)"
   },
   "mevalonate-statin-coq10-en": {
-    slug: "mevalonate-statin-coq10-vi",
-    lang: "vi",
-    label: "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu & Ẩn dụ Đời thực)",
+    "slug": "mevalonate-statin-coq10-vi",
+    "lang": "vi",
+    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
   },
+  "nad-cd38-sirtuin-mitochondria-cellular-aging": {
+    "slug": "nad-cd38-sirtuin-mitochondria-cellular-aging-en",
+    "lang": "en",
+    "label": "English Edition (Academic Rigour)"
+  },
+  "nad-cd38-sirtuin-mitochondria-cellular-aging-en": {
+    "slug": "nad-cd38-sirtuin-mitochondria-cellular-aging",
+    "lang": "vi",
+    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
+  },
+  "nobel-medicine-2026-optogenetics": {
+    "slug": "nobel-medicine-2026-optogenetics-en",
+    "lang": "en",
+    "label": "English Edition (Academic Rigour)"
+  },
+  "nobel-medicine-2026-optogenetics-en": {
+    "slug": "nobel-medicine-2026-optogenetics",
+    "lang": "vi",
+    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
+  },
+  "oxldl-sdldl-atherosclerosis-mechanism": {
+    "slug": "oxldl-sdldl-atherosclerosis-mechanism-en",
+    "lang": "en",
+    "label": "English Edition (Academic Rigour)"
+  },
+  "oxldl-sdldl-atherosclerosis-mechanism-en": {
+    "slug": "oxldl-sdldl-atherosclerosis-mechanism",
+    "lang": "vi",
+    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
+  },
+  "pharmacokinetics-one-compartment": {
+    "slug": "pharmacokinetics-one-compartment-en",
+    "lang": "en",
+    "label": "English Edition (Academic Rigour)"
+  },
+  "pharmacokinetics-one-compartment-en": {
+    "slug": "pharmacokinetics-one-compartment",
+    "lang": "vi",
+    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
+  },
+  "policosanol-versus-statins": {
+    "slug": "policosanol-versus-statins-en",
+    "lang": "en",
+    "label": "English Edition (Academic Rigour)"
+  },
+  "policosanol-versus-statins-en": {
+    "slug": "policosanol-versus-statins",
+    "lang": "vi",
+    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
+  },
+  "resistant-starch-scfa-gut-vi": {
+    "slug": "resistant-starch-scfa-gut-en",
+    "lang": "en",
+    "label": "English Edition (Academic Rigour)"
+  },
+  "resistant-starch-scfa-gut-en": {
+    "slug": "resistant-starch-scfa-gut-vi",
+    "lang": "vi",
+    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
+  },
+  "succinate-creatine-bat-thermogenesis-vi": {
+    "slug": "succinate-ucp1-bat-mitochondrial-thermogenesis",
+    "lang": "en",
+    "label": "English Edition (Academic Rigour)"
+  },
+  "succinate-creatine-bat-thermogenesis-en": {
+    "slug": "succinate-ucp1-bat-sinh-nhiet-ty-the",
+    "lang": "vi",
+    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
+  },
+  "succinate-ucp1-bat-mitochondrial-thermogenesis": {
+    "slug": "succinate-ucp1-bat-sinh-nhiet-ty-the",
+    "lang": "vi",
+    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
+  },
+  "succinate-ucp1-bat-sinh-nhiet-ty-the": {
+    "slug": "succinate-ucp1-bat-mitochondrial-thermogenesis",
+    "lang": "en",
+    "label": "English Edition (Academic Rigour)"
+  },
+  "sulforaphane-nrf2-window": {
+    "slug": "sulforaphane-nrf2-window-en",
+    "lang": "en",
+    "label": "English Edition (Academic Rigour)"
+  },
+  "sulforaphane-nrf2-window-en": {
+    "slug": "sulforaphane-nrf2-window",
+    "lang": "vi",
+    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
+  },
+  "supplement-drug-interaction-matrix": {
+    "slug": "supplement-drug-interaction-matrix-en",
+    "lang": "en",
+    "label": "English Edition (Academic Rigour)"
+  },
+  "supplement-drug-interaction-matrix-en": {
+    "slug": "supplement-drug-interaction-matrix",
+    "lang": "vi",
+    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
+  },
+  "triglyceride-hdl-ratio-metabolic-health": {
+    "slug": "triglyceride-hdl-ratio-metabolic-health-en",
+    "lang": "en",
+    "label": "English Edition (Academic Rigour)"
+  },
+  "triglyceride-hdl-ratio-metabolic-health-en": {
+    "slug": "triglyceride-hdl-ratio-metabolic-health",
+    "lang": "vi",
+    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
+  },
+  "warburg-effect-cancer-metabolism": {
+    "slug": "warburg-effect-cancer-metabolism-en",
+    "lang": "en",
+    "label": "English Edition (Academic Rigour)"
+  },
+  "warburg-effect-cancer-metabolism-en": {
+    "slug": "warburg-effect-cancer-metabolism",
+    "lang": "vi",
+    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
+  }
 };
 
 // Accessible Medical Explanations / Metaphors for articles

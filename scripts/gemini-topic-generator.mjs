@@ -115,7 +115,8 @@ TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON SCHEMA VỚI CẤU TRÚC:
   "analogyEn": "Metaphorical analogy...",
   "leadVi": "Lời dẫn nhập tiếng Việt...",
   "leadEn": "Lead in English...",
-  "flowchart": "[Bước 1] ──► [Bước 2] ──► [Bước 3]",
+  "flowchartVi": "[Bước 1 bằng Tiếng Việt] ──► [Bước 2] ──► [Bước 3]",
+  "flowchartEn": "[Step 1 in English] ──► [Step 2] ──► [Step 3]",
   "sectionsVi": [
     { "heading": "1. Tiêu đề mục 1", "body": "Nội dung chi tiết mục 1..." },
     { "heading": "2. Tiêu đề mục 2 (Bao gồm bảng so sánh markdown)", "body": "Nội dung mục 2 kèm | Bảng | So sánh |..." },
