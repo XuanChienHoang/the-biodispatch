@@ -20,6 +20,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { DISPATCH_RADAR_TOPICS } from './radar-topics.mjs';
+import { verifyAndHealReferences } from './citation-verifier.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -137,7 +138,7 @@ ${sanitizeTypography(lead)}
   return { slug, content: bodyContent };
 }
 
-function updateStoreSeedRefs(topic) {
+async function updateStoreSeedRefs(topic) {
   if (!fs.existsSync(storeFile)) return;
   let storeContent = fs.readFileSync(storeFile, 'utf8');
 
@@ -148,29 +149,18 @@ function updateStoreSeedRefs(topic) {
   }
 
   // Handle multi-reference array if provided by Gemini, or construct structured references
-  let refsList = [];
+  let rawRefs = [];
   if (Array.isArray(topic.references) && topic.references.length > 0) {
-    refsList = topic.references.map((r, idx) => ({
-      ordinal: idx + 1,
-      label: (r.label || r.title || 'Landmark Research Publication').replace(/"/g, '\\"'),
-      pmid: (r.pmid || '').trim(),
-      doi: (r.doi || '').trim(),
-      design: (r.design || 'Landmark Literature Synthesis').replace(/"/g, '\\"'),
-      sampleSize: r.sampleSize || null,
-      journal: (r.journal || 'Nature').replace(/"/g, '\\"'),
-      year: r.year || 2024,
-      abstract: (r.abstract || '').replace(/"/g, '\\"')
-    }));
+    rawRefs = topic.references;
   } else {
-    const refTitle = (topic.refPaperTitle || topic.titleEn || 'Biomedical Landmark Study').replace(/"/g, '\\"');
-    const refAbstract = (topic.refAbstract || topic.excerptEn || '').replace(/"/g, '\\"');
+    const refTitle = topic.refPaperTitle || topic.titleEn || 'Biomedical Landmark Study';
+    const refAbstract = topic.refAbstract || topic.excerptEn || '';
     const refDesign = 'Landmark Literature Synthesis';
-    const refJournal = (topic.refJournal || topic.journal || 'Nature').replace(/"/g, '\\"');
+    const refJournal = topic.refJournal || topic.journal || 'Nature';
     const refYear = topic.refYear || topic.year || 2024;
-    const refDoi = (topic.refDoi || topic.doi || '').trim();
-    const refPmid = (topic.refPmid || topic.pmid || '').trim();
-    refsList = [{
-      ordinal: 1,
+    const refDoi = topic.refDoi || topic.doi || '';
+    const refPmid = topic.refPmid || topic.pmid || '';
+    rawRefs = [{
       label: refTitle,
       pmid: refPmid,
       doi: refDoi,
@@ -182,7 +172,10 @@ function updateStoreSeedRefs(topic) {
     }];
   }
 
-  const serializedItems = refsList.map(r => `    {
+  console.log(`🔬 [Citation Verifier] Đang đối soát và xác thực y văn qua NCBI PubMed E-utilities cho ${topic.slugVi}...`);
+  const healedList = await verifyAndHealReferences(rawRefs, topic.titleEn || topic.titleVi);
+
+  const serializedItems = healedList.map(r => `    {
       ordinal: ${r.ordinal},
       label: "${r.label}",
       pmid: "${r.pmid}",
@@ -211,7 +204,7 @@ ${serializedItems}
       `const SEED_REFS: Record<string, Ref[]> = {$1\n${newRefBlock}};`
     );
     fs.writeFileSync(storeFile, updated, 'utf8');
-    console.log(`✅ [Store] Đã cập nhật ${refsList.length} tài liệu y văn vào SEED_REFS cho ${topic.slugVi} & ${topic.slugEn}`);
+    console.log(`✅ [Store] Đã cập nhật ${healedList.length} tài liệu y văn chuẩn xác 100% vào SEED_REFS cho ${topic.slugVi} & ${topic.slugEn}`);
   }
 }
 
@@ -326,6 +319,16 @@ export async function runAutonomousDispatch() {
   console.log(`🚀 [Dispatch Target] Phát hiện chủ đề tiếp theo: "${nextTopic.titleVi}"`);
   console.log(`⏰ [Publish Time] Thời gian xuất bản: ${scheduledIsoDate}`);
 
+  // 0. ĐỐI SOÁT & XÁC THỰC Y VĂN TRƯỚC KHI TẠO BẢN THẢO (ZERO HALLUCINATED CITATIONS)
+  if (Array.isArray(nextTopic.references) && nextTopic.references.length > 0) {
+    console.log(`🔬 [Citation Verifier] Đang đối soát và xác thực y văn qua PubMed NCBI...`);
+    const healedRefs = await verifyAndHealReferences(nextTopic.references, nextTopic.titleEn || nextTopic.titleVi);
+    nextTopic.references = healedRefs;
+    if (healedRefs[0] && healedRefs[0].doi) {
+      nextTopic.doi = healedRefs[0].doi;
+    }
+  }
+
   // 1. Tạo bài viết tiếng Việt
   const viPost = createDispatchMarkdown(nextTopic, 'vi', scheduledIsoDate);
   const viFilePath = path.join(postsDir, `${viPost.slug}.md`);
@@ -362,9 +365,9 @@ export async function runAutonomousDispatch() {
   await createFallbackIllustration(nextTopic.slugVi, nextTopic);
 
   // 4. Cập nhật SEED_REFS trong store.ts
-  updateStoreSeedRefs(nextTopic);
+  await updateStoreSeedRefs(nextTopic);
 
-  console.log('\n✅ [Done] Hoàn tất sinh bản tin chuyên sâu song ngữ đạt chuẩn Gatekeeper!');
+  console.log('\n✅ [Done] Hoàn tất sinh bản tin chuyên sâu song ngữ đạt chuẩn Gatekeeper và Liêm chính Y văn PubMed!');
   return nextTopic;
 }
 

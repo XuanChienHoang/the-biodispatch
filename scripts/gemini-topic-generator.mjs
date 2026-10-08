@@ -174,6 +174,8 @@ NGUYÊN TẮC BIÊN TẬP CỦA TS. HOÀNG XUÂN CHIẾN:
 2. NÓI VỀ KHOA HỌC THUẦN TÚY - TUYỆT ĐỐI KHÔNG CHÍNH TRỊ: Nếu đề cập đến các vấn đề thời sự dịch bệnh (như nghi vấn dịch hạch, cúm mới...), CHỈ TẬP TRUNG 100% VÀO CƠ CHẾ SINH HỌC VI SINH, con đường lây truyền, đáp ứng miễn dịch và phương pháp điều trị y học. Tuyệt đối không bàn luận chính trị, không phân định đúng sai quốc gia hay thuyết âm mưu.
 3. CÂN BẰNG GIỮA DỄ HIỂU VÀ CHUYÊN MÔN: Phần mở đầu và ứng dụng thực tế phải thật gần gũi, ai đọc cũng hiểu được. Phần cơ chế phân tử giải thích rõ ràng, súc tích, giải nghĩa thuật ngữ, tránh viết quá nặng nề trừu tượng.
 4. ĐỊNH DẠNG SLUG BẮT BUỘC: Slug tiếng Việt BẮT BUỘC có hậu tố "-vi" (ví dụ: magie-glycinate-giac-ngu-vi, yersinia-pestis-dich-hach-vi), slug tiếng Anh BẮT BUỘC có hậu tố "-en" (ví dụ: magnesium-glycinate-sleep-en, yersinia-pestis-plague-mechanism-en) để hệ thống tự động nhận diện ngôn ngữ tuyệt đối!
+5. LIÊM CHÍNH Y VĂN & TÀI LIỆU THAM KHẢO (SCIENTIFIC CITATION INTEGRITY - ZERO HALLUCINATION):
+Mọi tài liệu trong mục "references" BẮT BUỘC là công trình nghiên cứu THỰC TẾ ĐÃ XUẤT BẢN trên các tạp chí quốc tế uy tín (Nature, Science, Cell, Lancet, NEJM, PNAS, Trends, JBC, v.v.). TUYỆT ĐỐI KHÔNG BỊA ĐẶT số PMID, DOI hoặc tên bài báo hư cấu. Tiêu đề "label" phải là tên tiếng Anh chính xác nguyên bản của bài báo khoa học. Nếu bạn không nhớ chắc chắn số PMID hoặc DOI thật 100%, hãy để trường "pmid": "" và "doi": "" để hệ thống tự động tra cứu chỉ mục PubMed (NCBI E-utilities) và CrossRef!
 
 DANH SÁCH TOÀN BỘ CÁC BÀI ĐÃ XUẤT BẢN TRONG KHO (NGHIÊM CẤM TRÙNG LẶP HOẶC TƯƠNG ĐƯƠNG VỀ Ý TƯỞNG):
 ${existingTitlesList}
@@ -197,46 +199,37 @@ TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON SCHEMA VỚI CẤU TRÚC:
   "organ": "${randomPillar.organ}",
   "tier": "Clinical Deep-Dive",
   "tagsVi": ["Tag 1", "Tag 2", "Tag 3"],
+  "tagsEn": ["Tag 1", "Tag 2", "Tag 3"],
   "references": [
     {
       "ordinal": 1,
-      "label": "Exact Paper Title as published in landmark journal",
-      "pmid": "12345678",
-      "doi": "10.1038/...",
-      "design": "Randomized Controlled Trial / Landmark Synthesis",
-      "journal": "Nature / Science / Cell / Lancet",
-      "year": 2024,
-      "abstract": "Detailed scientific abstract with molecular findings and clinical endpoints."
+      "label": "Exact authentic paper title in English as published in journal",
+      "pmid": "Official PubMed ID if 100% sure, otherwise empty string",
+      "doi": "Official DOI if 100% sure, otherwise empty string",
+      "design": "Landmark Molecular Review / Randomized Controlled Trial",
+      "journal": "Full authentic journal name (e.g. Nature, Science, Trends in Microbiology)",
+      "year": 2023,
+      "abstract": "Detailed scientific abstract with molecular findings and physiological endpoints."
     },
     {
       "ordinal": 2,
-      "label": "Second Supporting Mechanistic Study",
-      "pmid": "23456789",
-      "doi": "10.1016/...",
+      "label": "Second authentic supporting mechanistic paper title",
+      "pmid": "",
+      "doi": "",
       "design": "In-vivo Mechanistic Study / Pharmacokinetics Phase II",
       "journal": "Cell Metabolism",
-      "year": 2023,
+      "year": 2022,
       "abstract": "Supporting molecular evidence on receptors and downstream signaling."
     },
     {
       "ordinal": 3,
-      "label": "Third Clinical or Epidemiological Landmark Study",
-      "pmid": "34567890",
-      "doi": "10.1126/...",
+      "label": "Third authentic clinical or epidemiological study title",
+      "pmid": "",
+      "doi": "",
       "design": "Systematic Review & Meta-analysis",
-      "journal": "Science Translational Medicine",
-      "year": 2023,
-      "abstract": "Meta-analysis validating quantitative physiological endpoints in human cohorts."
-    },
-    {
-      "ordinal": 4,
-      "label": "Fourth Molecular Validation Landmark",
-      "pmid": "45678901",
-      "doi": "10.1056/...",
-      "design": "Cryo-EM Structural Elucidation",
-      "journal": "New England Journal of Medicine",
-      "year": 2022,
-      "abstract": "Structural crystallography and binding kinetics of active bioactives."
+      "journal": "Lancet / PNAS / Science Translational Medicine",
+      "year": 2021,
+      "abstract": "Validation of quantitative physiological endpoints in human cohorts."
     }
   ],
   "gizmo": "pathway",

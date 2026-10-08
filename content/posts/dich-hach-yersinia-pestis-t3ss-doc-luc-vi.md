@@ -9,7 +9,7 @@ organ: "Immune"
 tier: "Clinical Deep-Dive"
 readingTime: "8 phút đọc"
 featured: true
-doi: "10.1038/s41579-020-00459-w"
+doi: "10.1016/j.tim.2015.11.008"
 gizmo: "pathway"
 lang: "vi"
 image: "/images/posts/yersinia-pestis-t3ss-virulence-lab-leak.jpg"

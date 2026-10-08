@@ -27,6 +27,8 @@ export function validateDispatchContent(markdownString, lang = 'vi') {
   }
   if (!frontmatter.doi) {
     issues.push('Thiếu mã định danh y văn quốc tế DOI.');
+  } else if (!/^10\.\d{4,9}\/[-._;()/:A-Za-z0-9]+$/.test(frontmatter.doi.trim()) || frontmatter.doi.includes('...')) {
+    issues.push(`Mã DOI không hợp lệ hoặc chứa ký tự giữ chỗ: "${frontmatter.doi}". Phải là DOI chuẩn (ví dụ: 10.1038/nrm932, 10.1016/j.tim.2015.11.008).`);
   }
 
   // 2. Kiểm tra Dấu câu (Typography Rule)
