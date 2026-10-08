@@ -12,13 +12,13 @@ featured: true
 doi: "10.1038/s41586-018-0353-2"
 gizmo: "pathway"
 lang: "en"
-image: "/images/posts/succinate-ucp1-bat-sinh-nhiet-ty-the.jpg"
+image: "/images/posts/succinate-ucp1-bat-mitochondrial-thermogenesis.jpg"
 imageAlt: "Biomedical molecular illustration for The Succinate-UCP1 Axis in Brown Adipose Tissue: Unlocking Mitochondrial Uncoupling for Metabolic Longevity"
 ---
 
 For decades, modern medicine viewed adipose tissue merely as a passive energy storage depot, a redundant warehouse driving obesity and cardiovascular metabolic diseases. However, the rediscovery of active Brown Adipose Tissue (BAT) in adult humans has completely revolutionized classical physiological paradigms. Unlike White Adipose Tissue (WAT), which is specialized in storing triglycerides, brown fat is a hyperactive metabolic and endocrine organ, boasting an exceptionally high mitochondrial density and the exclusive expression of Uncoupling Protein 1 (UCP1). By dissipating energy as heat instead of synthesizing ATP, BAT acts as a biological radiator, actively burning excess glucose and lipids. Recently, pioneering studies have revealed that succinate, a classic Krebs cycle intermediate, is not just a metabolic fuel but a master signaling molecule that drives thermogenesis through selective reactive oxygen species (ROS) production at complex II of the electron transport chain. Deciphering this molecular switch opens a new era in treating obesity, type 2 diabetes, and extending metabolic lifespan by reprogramming mitochondrial bioenergetics.
 
-![Biomedical molecular illustration for The Succinate-UCP1 Axis in Brown Adipose Tissue: Unlocking Mitochondrial Uncoupling for Metabolic Longevity](/images/posts/succinate-ucp1-bat-sinh-nhiet-ty-the.jpg)
+![Biomedical molecular illustration for The Succinate-UCP1 Axis in Brown Adipose Tissue: Unlocking Mitochondrial Uncoupling for Metabolic Longevity](/images/posts/succinate-ucp1-bat-mitochondrial-thermogenesis.jpg)
 
 > *"Imagine mitochondria as busy nuclear power plants in the cell. Normally, the water flow (protons) rushes through the turbine (ATP synthase) to generate electricity (ATP) stored for the city. However, when a harsh winter strikes, the city desperately needs warmth rather than more electricity. At this moment, the UCP1 (Uncoupling Protein 1) bypass valve is opened, allowing the proton flow to rush freely through an auxiliary dam without turning the generator turbine. The entire kinetic energy of the flow is instantly converted into pure thermal energy, warming up the body. Succinate acts as a powerful chemical booster, throwing this bypass valve wide open by driving the electron transport chain to its absolute limit."*
 
@@ -27,7 +27,7 @@ For decades, modern medicine viewed adipose tissue merely as a passive energy st
 ## Molecular Pathway Flowchart
 
 ```text
-[Kích hoạt Adrenergic/Lạnh] ──► [Tăng cAMP và PKA] ──► [Tích tụ Succinate ngoại bào] ──► [Vận chuyển qua màng ty thể bởi SLC25A10] ──► [Oxy hóa nhanh bởi Phức hợp II (SDH)] ──► [Tạo dòng điện tử ngược RET về Phức hợp I] ──► [Sản sinh ROS chọn lọc tại Phức hợp I] ──► [Sulfenyl hóa Cysteine-253 trên UCP1] ──► [Mở kênh UCP1 và rò rỉ Proton] ──► [Sinh nhiệt không run và giải phóng năng lượng]
+[Cold / Adrenergic Activation] ──► [Elevated cAMP & PKA] ──► [Extracellular Succinate Influx] ──► [SLC25A10 Mitochondrial Import] ──► [Rapid Complex II (SDH) Oxidation] ──► [Reverse Electron Transport (RET) to Complex I] ──► [Selective Complex I ROS Burst] ──► [UCP1 Cysteine-253 Sulfenylation] ──► [UCP1 Channel Opening & Proton Leak] ──► [Non-Shivering Thermogenesis & Energy Dissipation]
 ```
 
 ---
