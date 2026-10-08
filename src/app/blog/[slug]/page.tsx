@@ -19,6 +19,8 @@ import { ArticleLanguageBar } from "@/components/ArticleLanguageBar";
 import { PathwayFlowchart } from "@/components/PathwayFlowchart";
 import { SocialShare } from "@/components/SocialShare";
 import { NewsletterBox } from "@/components/NewsletterBox";
+import { TableOfContents } from "@/components/TableOfContents";
+import { twinRoot } from "@/lib/home";
 
 function extractTextFromChildren(children: any): string {
   if (typeof children === "string") return children;
@@ -53,11 +55,29 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 
   const directImage = a.image ? (a.image.startsWith("http") ? a.image : `https://the-biodispatch.vercel.app${a.image}`) : ogUrl.toString();
 
+  const root = twinRoot(slug);
+  const isCurrentVi =
+    a.lang === "vi" ||
+    slug.endsWith("-vi") ||
+    slug.includes("sinh-kha-dung") ||
+    slug.includes("keo-dai-tuoi-tho") ||
+    slug.includes("mo-nau") ||
+    slug.includes("sinh-nhiet");
+
+  // Determine twin slug
+  const viSlug = isCurrentVi ? slug : `${root}-vi`;
+  const enSlug = !isCurrentVi ? slug : (root.endsWith("-en") ? root : `${root}-en`);
+
   return {
     title: `${a.title} · The BioDispatch`,
     description: a.dek,
     alternates: {
       canonical: `https://the-biodispatch.vercel.app/blog/${slug}`,
+      languages: {
+        vi: `https://the-biodispatch.vercel.app/blog/${viSlug}`,
+        en: `https://the-biodispatch.vercel.app/blog/${enSlug}`,
+        "x-default": `https://the-biodispatch.vercel.app/blog/${enSlug}`,
+      },
     },
     keywords: [
       a.organ,
@@ -129,32 +149,52 @@ export default async function BlogPage({ params }: Params) {
   const allArticles = await getArticles();
   const related = allArticles.filter((a) => a.slug !== slug).slice(0, 3);
 
-  const articleLd = {
-    "@context": "https://schema.org",
-    "@type": "TechArticle",
-    headline: article.title,
-    description: article.dek,
-    datePublished: article.date || "2026-09-23",
-    author: {
-      "@type": "Person",
-      name: article.author || "Dr. Xuan Chien Hoang",
-      jobTitle: "Doctor of Natural Sciences (Dr. rer. nat.)",
-      alumniOf: "University of Hamburg",
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "The BioDispatch",
-    },
-    citations: refs.map((r) => r.doi).filter(Boolean),
-    articleSection: article.tier,
-  };
-
   const isVi =
     article.lang === "vi" ||
     slug.endsWith("-vi") ||
     slug.includes("sinh-kha-dung") ||
     slug.includes("keo-dai-tuoi-tho") ||
+    slug.includes("mo-nau") ||
+    slug.includes("sinh-nhiet") ||
     Boolean(article.tags?.includes("Dược động học"));
+
+  const articleLd = {
+    "@context": "https://schema.org",
+    "@type": ["MedicalWebPage", "ScholarlyArticle"],
+    headline: article.title,
+    description: article.dek,
+    datePublished: article.date || "2026-09-23",
+    dateModified: article.date || "2026-09-23",
+    inLanguage: isVi ? "vi-VN" : "en-US",
+    about: {
+      "@type": "MedicalCondition",
+      name: article.organ,
+    },
+    author: {
+      "@type": "Person",
+      name: article.author || "Dr. Xuan Chien Hoang",
+      jobTitle: "Doctor of Natural Sciences (Dr. rer. nat. in Molecular Biology)",
+      alumniOf: {
+        "@type": "CollegeOrUniversity",
+        name: "University of Hamburg",
+      },
+      sameAs: [
+        "https://www.linkedin.com/in/dr-chien-xuan-hoang/",
+      ],
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "The BioDispatch",
+      url: "https://the-biodispatch.vercel.app",
+    },
+    citation: refs.map((r) => ({
+      "@type": "CreativeWork",
+      name: r.label,
+      identifier: r.doi ? `https://doi.org/${r.doi}` : (r.pmid ? `PMID:${r.pmid}` : undefined),
+    })),
+    articleSection: article.tier,
+    isAccessibleForFree: true,
+  };
 
   return (
     <main>
@@ -180,7 +220,15 @@ export default async function BlogPage({ params }: Params) {
 
           <div className="mt-7 max-w-3xl">
             <div className="mb-6">
-              <ArticleLanguageBar currentSlug={slug} />
+              <ArticleLanguageBar
+                currentSlug={slug}
+                articleMeta={{
+                  title: article.title,
+                  excerpt: article.dek,
+                  content: article.content,
+                  lang: isVi ? "vi" : "en",
+                }}
+              />
             </div>
 
             <div className="flex flex-wrap items-center gap-2">
@@ -241,10 +289,39 @@ export default async function BlogPage({ params }: Params) {
             {/* Top Area: Markdown Content + Sticky Sidebar */}
             <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_260px] lg:gap-14">
               <article className="min-w-0 max-w-[72ch] lg:max-w-[80ch] prose-editorial">
+                {/* Mobile Collapsible Table of Contents (Only renders on mobile) */}
+                <TableOfContents content={article.content} isVi={isVi} variant="mobile" />
+
                 <ReactMarkdown
                   remarkPlugins={[remarkGfm, remarkMath]}
                   rehypePlugins={[rehypeKatex]}
                   components={{
+                    h2({ children, ...props }) {
+                      const text = extractTextFromChildren(children);
+                      const id = text
+                        .toLowerCase()
+                        .replace(/[^\w\s\u00C0-\u1EF9-]/g, "")
+                        .replace(/\s+/g, "-")
+                        .substring(0, 50);
+                      return (
+                        <h2 id={id} className="scroll-mt-24 font-display font-bold" {...props}>
+                          {children}
+                        </h2>
+                      );
+                    },
+                    h3({ children, ...props }) {
+                      const text = extractTextFromChildren(children);
+                      const id = text
+                        .toLowerCase()
+                        .replace(/[^\w\s\u00C0-\u1EF9-]/g, "")
+                        .replace(/\s+/g, "-")
+                        .substring(0, 50);
+                      return (
+                        <h3 id={id} className="scroll-mt-24 font-display font-bold" {...props}>
+                          {children}
+                        </h3>
+                      );
+                    },
                     pre({ children, ...props }) {
                       const rawText = extractTextFromChildren(children);
                       if (
@@ -266,35 +343,40 @@ export default async function BlogPage({ params }: Params) {
 
               {/* Sticky Sidebar Navigation */}
               <aside className="hidden lg:block">
-                <div className="sticky top-20 rounded-sm border border-slate-hair bg-paper p-5">
-                  <span className="caps text-slate-ink block mb-3 font-semibold">
-                    {isVi ? "Thuộc tính Bài viết" : "Article Metadata"}
-                  </span>
-                  <div className="space-y-3 text-xs border-b border-slate-hair pb-4">
-                    <div>
-                      <span className="caps text-slate-ink block">
-                        {isVi ? "Hệ Cơ quan" : "Organ System"}
-                      </span>
-                      <span className="font-semibold text-indigo-deep">{article.organ}</span>
-                    </div>
-                    <div>
-                      <span className="caps text-slate-ink block">
-                        {isVi ? "Độ sâu Phân tích" : "Analytical Depth"}
-                      </span>
-                      <span className="font-semibold text-indigo-deep">{article.tier}</span>
-                    </div>
-                    <div>
-                      <span className="caps text-slate-ink block">
-                        {isVi ? "Định danh Y văn (DOI)" : "Primary DOI"}
-                      </span>
-                      <a
-                        href={`https://doi.org/${article.doi}`}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-trace-ink underline truncate block"
-                      >
-                        {article.doi}
-                      </a>
+                <div className="sticky top-20 rounded-sm border border-slate-hair bg-paper p-5 space-y-5">
+                  {/* Table of Contents for Desktop */}
+                  <TableOfContents content={article.content} isVi={isVi} variant="desktop" />
+
+                  <div className="border-t border-slate-hair pt-4">
+                    <span className="caps text-slate-ink block mb-3 font-semibold">
+                      {isVi ? "Thuộc tính Bài viết" : "Article Metadata"}
+                    </span>
+                    <div className="space-y-3 text-xs border-b border-slate-hair pb-4">
+                      <div>
+                        <span className="caps text-slate-ink block">
+                          {isVi ? "Hệ Cơ quan" : "Organ System"}
+                        </span>
+                        <span className="font-semibold text-indigo-deep">{article.organ}</span>
+                      </div>
+                      <div>
+                        <span className="caps text-slate-ink block">
+                          {isVi ? "Độ sâu Phân tích" : "Analytical Depth"}
+                        </span>
+                        <span className="font-semibold text-indigo-deep">{article.tier}</span>
+                      </div>
+                      <div>
+                        <span className="caps text-slate-ink block">
+                          {isVi ? "Định danh Y văn (DOI)" : "Primary DOI"}
+                        </span>
+                        <a
+                          href={`https://doi.org/${article.doi}`}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-trace-ink underline truncate block"
+                        >
+                          {article.doi}
+                        </a>
+                      </div>
                     </div>
                   </div>
 

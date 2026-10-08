@@ -50,20 +50,23 @@ function resolveGeminiApiKey() {
   return '';
 }
 
-export async function generateTopicWithGemini(existingSlugs = []) {
+export async function generateTopicWithGemini(existingCatalog = []) {
   const apiKey = resolveGeminiApiKey();
   if (!apiKey) {
     console.warn('⚠️ [Gemini Generator] Không tìm thấy GEMINI_API_KEY trong env.');
     return null;
   }
 
-  const existingSample = existingSlugs.slice(0, 30).join(', ');
+  // Format detailed inventory of all published titles and organs
+  const existingTitlesList = Array.isArray(existingCatalog)
+    ? existingCatalog.map(item => typeof item === 'string' ? item : `- [${item.organ || 'Topic'}] ${item.title} (slug: ${item.slug})`).join('\n')
+    : '';
 
   const systemInstruction = `Bạn là TS. Hoàng Xuân Chiến (Dr. rer. nat. - Đại học Hamburg, CHLB Đức), Giám đốc Học thuật kiêm Tổng biên tập của ấn bản y sinh "The BioDispatch" (the-biodispatch.vercel.app).
 Bạn là chuyên gia hàng đầu về Y học Chuyển hóa, Lão hóa & Trường thọ (Metabolic Longevity), Dược động học và Tín hiệu tế bào.
 
 MỤC TIÊU:
-Nghiên cứu và tạo ra 1 chủ đề bài viết chuyên khảo y sinh song ngữ MỚI HOÀN TOÀN, đột phá, mang tính thực chứng cao (Nature/Science/Cell/Lancet), chưa từng xuất hiện trong danh sách đã có.
+Nghiên cứu và tạo ra 1 chủ đề bài viết chuyên khảo y sinh song ngữ MỚI HOÀN TOÀN, đột phá, mang tính thực chứng cao (Nature/Science/Cell/Lancet), TUYỆT ĐỐI KHÔNG TRÙNG LẶP HOẶC TƯƠNG TỰ VỚI BẤT KỲ BÀI NÀO ĐÃ CÓ TRONG KHO (như Melatonin, UCP1/Mỡ nâu, Warburg/Ung thư, Berberine, Curcumin, Glymphatic...).
 
 QUY TẮC BẮT BUỘC:
 1. KHÔNG dùng bất kỳ dấu em-dash (—) hay en-dash (–) nào. Chỉ dùng dấu phẩy, hai chấm, gạch nối ngắn (-) hoặc ngoặc đơn.
@@ -116,10 +119,10 @@ QUY TẮC BẮT BUỘC:
       domain: 'Sức khỏe Não bộ, Giấc ngủ & Trục Thần kinh (Neuroscience & Circadian Biology)',
       organ: 'Brain',
       ideas: [
-        'Melatonin liều vi lượng (0.3 mg) vs liều cao (5-10 mg): Nghịch lý bão hòa thụ thể MT1/MT2 và tình trạng trơ nhịp sinh học',
-        'Hệ thống Glymphatic: Tư thế ngủ nghiêng và vai trò của kênh nước AQP4 trong việc dọn dẹp mảng bám Beta-Amyloid khi ngủ sâu',
         'L-Theanine kết hợp Caffeine: Cơ chế kích hoạt sóng não Alpha và ức chế thụ thể glutamate chống kích thích quá mức',
-        'Trục Não - Ruột (Vagus Nerve): Vi khuẩn đường ruột sản xuất chất dẫn truyền thần kinh GABA và ảnh hưởng đến trầm cảm/lo âu'
+        'Trục Não - Ruột (Vagus Nerve): Vi khuẩn đường ruột sản xuất chất dẫn truyền thần kinh GABA và ảnh hưởng đến trầm cảm/lo âu',
+        'Phosphatidylserine & DHA màng tế bào thần kinh: Cơ chế truyền dẫn synap và phục hồi suy giảm nhận thức tuổi trung niên',
+        'Liệu pháp ánh sáng đỏ 670nm: Tác động lên Cytochrome c Oxidase tại võng mạc và phục hồi năng lượng ATP tế bào que/nón'
       ]
     },
     {
@@ -129,7 +132,7 @@ QUY TẮC BẮT BUỘC:
         'Giấm táo (Acid Acetic) trước bữa ăn: Sự thật về việc làm chậm rỗng dạ dày và ức chế enzyme alpha-glucosidase giảm đột biến đường huyết',
         'Thứ tự ăn uống (Rau ──► Đạm ──► Tinh bột): Cơ chế phóng thích GLP-1 nội sinh và làm phẳng đường cong glucose sau ăn',
         'Kháng Insulin tại cơ bắp vs tại gan: Cơ chế tích tụ Diacylglycerol (DAG) nội bào và ức chế thụ thể IRS-1',
-        'Tỷ lệ Triglyceride / HDL-C: Chỉ số vàng phản ánh kích thước hạt LDL nhỏ đậm đặc (sdLDL) vượt trội so với cholesterol toàn phần'
+        'Inositol (Myo-inositol vs D-chiro-inositol): Cơ chế dẫn truyền tín hiệu insulin thứ cấp và cân bằng nội tiết buồng trứng PCOS'
       ]
     },
     {
@@ -138,7 +141,8 @@ QUY TẮC BẮT BUỘC:
       ideas: [
         'Hội chứng rò rỉ ruột (Leaky Gut): Cơ chế tổn thương protein mối nối chặt (Zonulin, Occludin) và sự tràn nội độc tố LPS vào tuần hoàn',
         'Akkermansia muciniphila: Loài vi khuẩn ăn chất nhầy niêm mạc nhưng lại làm dày lớp màng nhầy và tăng độ nhạy insulin',
-        'Tinh bột kháng (Resistant Starch) & Acid béo chuỗi ngắn (SCFA): Cơ chế Butyrate nuôi dưỡng tế bào biểu mô ruột kết và biểu sinh HDAC'
+        'Berberine và hệ vi sinh: Cơ chế điều biến tỷ lệ Firmicutes/Bacteroidetes và ức chế sản sinh TMAO của vi khuẩn',
+        'Probiotics đa chủng vs đơn chủng: Thời điểm sống sót qua acid dạ dày và cạnh tranh vị trí bám dính trên lớp biofilm'
       ]
     },
     {
@@ -146,7 +150,7 @@ QUY TẮC BẮT BUỘC:
       organ: 'Cellular Aging',
       ideas: [
         'Tự thực bào (Autophagy) qua nhịn ăn gián đoạn 16/8: Khi nào tế bào bắt đầu dọn dẹp protein biến tính và ty thể hư hỏng?',
-        'NMN vs NR vs NAD+: Sự thật về khả năng vượt qua màng tế bào của phân tử tiền chất NAD+ và vai trò enzyme CD38 khi già đi',
+        'Urolithin A từ quả lựu: Cơ chế kích hoạt Mitophagy (dọn dẹp ty thể hư tổn) độc lập với NAD+ để phục hồi sức bền cơ bắp',
         'Sulforaphane từ mầm súp lơ xanh: Chất kích hoạt con đường chống oxy hóa nội sinh Nrf2 mạnh nhất từ tự nhiên',
         'Tế bào già cỗi (Senescent Cells) và hợp chất Senolytics (Quercetin, Fisetin): Cơ chế đào thải tế bào "zombie" giải phóng phân tử viêm SASP'
       ]
@@ -171,8 +175,15 @@ NGUYÊN TẮC BIÊN TẬP CỦA TS. HOÀNG XUÂN CHIẾN:
 3. CÂN BẰNG GIỮA DỄ HIỂU VÀ CHUYÊN MÔN: Phần mở đầu và ứng dụng thực tế phải thật gần gũi, ai đọc cũng hiểu được. Phần cơ chế phân tử giải thích rõ ràng, súc tích, giải nghĩa thuật ngữ, tránh viết quá nặng nề trừu tượng.
 4. ĐỊNH DẠNG SLUG BẮT BUỘC: Slug tiếng Việt BẮT BUỘC có hậu tố "-vi" (ví dụ: magie-glycinate-giac-ngu-vi, yersinia-pestis-dich-hach-vi), slug tiếng Anh BẮT BUỘC có hậu tố "-en" (ví dụ: magnesium-glycinate-sleep-en, yersinia-pestis-plague-mechanism-en) để hệ thống tự động nhận diện ngôn ngữ tuyệt đối!
 
-Các chủ đề đã xuất bản gần đây (TRÁNH TRÙNG LẶP):
-${existingSample}
+DANH SÁCH TOÀN BỘ CÁC BÀI ĐÃ XUẤT BẢN TRONG KHO (NGHIÊM CẤM TRÙNG LẶP HOẶC TƯƠNG ĐƯƠNG VỀ Ý TƯỞNG):
+${existingTitlesList}
+
+LƯU Ý ĐẶC BIỆT:
+- KHÔNG viết về Melatonin (đã có bài phân tích liều 0.3mg vs 10mg).
+- KHÔNG viết về Ty thể Mỡ nâu / UCP1 / Succinate (đã có 3 bài chuyên sâu).
+- KHÔNG viết về Hiệu ứng Warburg / Ung thư lên men Glucose (đã có 2 bài).
+- KHÔNG viết về Hệ thống Glymphatic dọn rác não bộ khi ngủ sâu (đã có bài).
+- BẮT BUỘC chọn một chủ đề y sinh hoàn toàn mới, mang tính đột phá và ứng dụng cao!
 
 TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON SCHEMA VỚI CẤU TRÚC:
 {
@@ -186,15 +197,48 @@ TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON SCHEMA VỚI CẤU TRÚC:
   "organ": "${randomPillar.organ}",
   "tier": "Clinical Deep-Dive",
   "tagsVi": ["Tag 1", "Tag 2", "Tag 3"],
-  "tagsEn": ["Tag 1", "Tag 2", "Tag 3"],
-  "doi": "10.1038/...",
-  "pmid": "12345678",
-  "journal": "Nature / Science / Lancet / Cell",
-  "year": 2024,
-  "refPaperTitle": "Exact Title of the Landmark Research Paper as published in the Journal",
-  "refAuthors": "First Author et al.",
-  "refDesign": "Randomized Controlled Trial / Cryo-EM Structural Study / Mechanistic In-vivo Model",
-  "refAbstract": "Original academic abstract summarizing findings, molecular mechanism, and quantitative results of this specific study.",
+  "references": [
+    {
+      "ordinal": 1,
+      "label": "Exact Paper Title as published in landmark journal",
+      "pmid": "12345678",
+      "doi": "10.1038/...",
+      "design": "Randomized Controlled Trial / Landmark Synthesis",
+      "journal": "Nature / Science / Cell / Lancet",
+      "year": 2024,
+      "abstract": "Detailed scientific abstract with molecular findings and clinical endpoints."
+    },
+    {
+      "ordinal": 2,
+      "label": "Second Supporting Mechanistic Study",
+      "pmid": "23456789",
+      "doi": "10.1016/...",
+      "design": "In-vivo Mechanistic Study / Pharmacokinetics Phase II",
+      "journal": "Cell Metabolism",
+      "year": 2023,
+      "abstract": "Supporting molecular evidence on receptors and downstream signaling."
+    },
+    {
+      "ordinal": 3,
+      "label": "Third Clinical or Epidemiological Landmark Study",
+      "pmid": "34567890",
+      "doi": "10.1126/...",
+      "design": "Systematic Review & Meta-analysis",
+      "journal": "Science Translational Medicine",
+      "year": 2023,
+      "abstract": "Meta-analysis validating quantitative physiological endpoints in human cohorts."
+    },
+    {
+      "ordinal": 4,
+      "label": "Fourth Molecular Validation Landmark",
+      "pmid": "45678901",
+      "doi": "10.1056/...",
+      "design": "Cryo-EM Structural Elucidation",
+      "journal": "New England Journal of Medicine",
+      "year": 2022,
+      "abstract": "Structural crystallography and binding kinetics of active bioactives."
+    }
+  ],
   "gizmo": "pathway",
   "readingTimeVi": "8 phút đọc",
   "readingTimeEn": "8 min read",

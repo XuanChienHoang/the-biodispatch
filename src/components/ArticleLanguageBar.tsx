@@ -259,144 +259,35 @@ const PAIRS: Record<string, { slug: string; lang: "vi" | "en"; label: string }> 
   }
 };
 
-// Accessible Medical Explanations / Metaphors for articles
-const MEDICAL_ANALOGIES: Record<
-  string,
-  {
-    title: string;
-    hook: string;
-    points: { term: string; layTerm: string; analogy: string }[];
-  }
-> = {
-  "glp1-keo-dai-tuoi-tho-nature": {
-    title: "Góc Y Khoa Dễ Hiểu: 3 Mắt Xích Kéo Dài Tuổi Thọ Tế Bào",
-    hook: "Giải mã cơ chế thuốc GLP-1 và ty thể mà không cần bằng cấp y sinh:",
-    points: [
-      {
-        term: "Ty thể (Mitochondria)",
-        layTerm: "Chiếc lò sưởi / Máy phát điện mini trong mỗi tế bào",
-        analogy:
-          "Ty thể đốt đường và mỡ để tạo năng lượng ATP cho bạn sống. Khi già đi, máy phát điện bị rỉ sét và xả khói đen độc hại (ROS) làm hỏng tế bào.",
-      },
-      {
-        term: "Thực bào Ty thể (Mitophagy)",
-        layTerm: "Đội ngũ công nhân vệ sinh nội bào dọn dẹp lò sưởi hỏng",
-        analogy:
-          "Thay vì để máy phát điện rỉ sét rò rỉ khói độc, tế bào gom chúng lại tiêu hủy và thay mới bằng lò phát điện sạch nguyên bản.",
-      },
-      {
-        term: "Kích hoạt AMPK & Ức chế mTOR",
-        layTerm: "Chế độ tiết kiệm pin và kích hoạt chu trình bảo dưỡng",
-        analogy:
-          "GLP-1 đánh lừa tế bào rằng đang trong chế độ nhịn ăn lành mạnh, khiến cơ thể tạm dừng xây dựng lãng phí để tập trung bảo trì sửa chữa máy móc.",
-      },
-    ],
-  },
-  "curcumin-piperine-sinh-kha-dung": {
-    title: "Góc Y Khoa Dễ Hiểu: 3 Khái niệm Sinh Hóa Cốt Lõi",
-    hook: "Hiểu nhanh cơ chế hấp thu tinh chất nghệ và tiêu đen mà không cần bằng cấp y khoa:",
-    points: [
-      {
-        term: "Sinh khả dụng (Bioavailability)",
-        layTerm: "Tỷ lệ hoạt chất thực sự lọt vào máu",
-        analogy:
-          "Bạn uống 1000 mg nghệ nhưng gan và ruột loại bỏ tới 990 mg. Chỉ 10 mg vào được máu. 10 mg đó chính là sinh khả dụng (1%).",
-      },
-      {
-        term: "Chuyển hóa Pha 2 (Glucuronidation qua UGT1A1)",
-        layTerm: "Chiếc máy dán nhãn trục xuất tự động của lá gan",
-        analogy:
-          "Gan coi nghệ là chất lạ. Enzyme UGT1A1 gắn ngay một chiếc 'thẻ bài' (acid glucuronic) vào phân tử nghệ để cơ thể nhanh chóng bài tiết qua thận và mật.",
-      },
-      {
-        term: "Piperine (Chiết xuất hạt tiêu đen)",
-        layTerm: "Chiếc phanh sinh học kẹt tạm thời máy dán nhãn",
-        analogy:
-          "Piperine làm tạm dừng enzyme UGT1A1 trong 1–2 giờ. Trong thời gian lá gan bị 'phân tâm', nghệ tự do tràn vào mạch máu, giúp nồng độ tăng vọt gấp 20 lần.",
-      },
-    ],
-  },
-  "metabolomic-horizon-clinical-diagnostics-vi": {
-    title: "Góc Y Khoa Dễ Hiểu: Chuyển Hóa Học (Metabolomics) Là Gì?",
-    hook: "Vì sao các bác sĩ hàng đầu thế giới đang chuyển dịch từ xét nghiệm gen sang đo đạc chất chuyển hóa:",
-    points: [
-      {
-        term: "ADN (Genomics) vs Chất chuyển hóa (Metabolomics)",
-        layTerm: "Bản vẽ trên giấy vs Đồng hồ đo tốc độ thực tế",
-        analogy:
-          "Bộ gen ADN cho biết cơ thể bạn CÓ THỂ mắc bệnh gì trong tương lai (bản vẽ thiết kế). Còn chất chuyển hóa cho biết cơ thể BẠN ĐANG VẬN HÀNH THẾ NÀO ngay hôm nay (khói bụi, nhiệt độ và xăng xe thực tế).",
-      },
-      {
-        term: "TMAO (Trimethylamine N-oxide)",
-        layTerm: "Khi vi khuẩn đường ruột phát tín hiệu xấu đến tim mạch",
-        analogy:
-          "Ăn nhiều thịt đỏ → vi khuẩn ruột tạo khí TMA → gan oxy hóa thành TMAO → làm viêm và xơ vữa thành mạch máu. Đo TMAO giúp chặn đứng xơ vữa trước khi nghẽn mạch.",
-      },
-      {
-        term: "SCFA (Axit béo chuỗi ngắn: Butyrate)",
-        layTerm: "Bữa tiệc thịnh soạn cho niêm mạc ruột",
-        analogy:
-          "Khi bạn ăn nhiều rau xanh và chất xơ, vi khuẩn có lợi lên men tạo ra Butyrate — chất này giống như lớp vữa xi măng hàn gắn các vết rò rỉ ở thành ruột, dập tắt các ổ viêm trong cơ thể.",
-      },
-    ],
-  },
-  "resistant-starch-scfa-gut-vi": {
-    title: "Góc Y Khoa Dễ Hiểu: Tinh Bột Kháng & Hàng Rào Ruột",
-    hook: "Cơ chế bảo vệ niêm mạc ruột chống viêm rò rỉ qua 3 khái niệm sinh học:",
-    points: [
-      {
-        term: "Tinh bột kháng (Resistant Starch)",
-        layTerm: "Kiện hàng bọc thép đi thẳng xuống đại tràng",
-        analogy:
-          "Dạ dày và ruột non không tiêu hóa được tinh bột kháng. Nó đi nguyên vẹn xuống đại tràng để trở thành nguồn thức ăn quý giá cho hệ vi sinh đường ruột.",
-      },
-      {
-        term: "Khóa protein Claudin-1 & Occludin",
-        layTerm: "Lớp vữa xi măng gắn kết các viên gạch tế bào",
-        analogy:
-          "Các tế bào biểu mô ruột xếp sát nhau như tường thành. Claudin-1 là lớp vữa niêm phong các kẽ hở, ngăn không cho độc tố vi khuẩn tràn vào máu.",
-      },
-      {
-        term: "Axit béo Butyrate",
-        layTerm: "Nhiên liệu vàng nuôi dưỡng lính canh tế bào",
-        analogy:
-          "Tế bào đại tràng tiêu thụ tới 70% năng lượng từ Butyrate. Đủ Butyrate, tế bào ruột khỏe mạnh và lớp vữa thành ruột được gia cố vững chắc.",
-      },
-    ],
-  },
-  "mevalonate-statin-coq10-vi": {
-    title: "Góc Y Khoa Dễ Hiểu: Ngã Ba Mevalonate & Thuốc Statin",
-    hook: "Vì sao thuốc hạ mỡ máu lại gây cảm giác mỏi cơ bắp và cách khắc phục:",
-    points: [
-      {
-        term: "Enzyme HMG-CoA Reductase",
-        layTerm: "Chiếc van tổng kiểm soát ở đầu nguồn dòng chảy",
-        analogy:
-          "Thuốc Statin đóng chặt chiếc van này để giảm tổng hợp mỡ máu cholesterol, bảo vệ thành mạch vành khỏi xơ vữa.",
-      },
-      {
-        term: "Ngã ba Mevalonate",
-        layTerm: "Dòng sông rẽ đôi nhánh đi hai hướng",
-        analogy:
-          "Một nhánh nước tạo Cholesterol, nhưng nhánh còn lại tạo Coenzyme Q10 cho ty thể. Khi đóng van tổng, nhánh CoQ10 cũng vô tình bị khô cạn.",
-      },
-      {
-        term: "Coenzyme Q10 (Ubiquinol)",
-        layTerm: "Chất dẫn truyền tia lửa điện trong nhà máy ty thể",
-        analogy:
-          "Cạn kiệt CoQ10 khiến ty thể tế bào cơ bị đoản mạch năng lượng, gây đau mỏi cơ bắp. Bổ sung Ubiquinol giúp bù đắp lượng thiếu hụt này.",
-      },
-    ],
-  },
-};
+import { resolveLaymanMedicalData } from "@/lib/layman-resolver";
+import type { LaymanMedicalBoxData } from "@/lib/medical-analogies";
 
-export function ArticleLanguageBar({ currentSlug }: { currentSlug: string }) {
+export function ArticleLanguageBar({
+  currentSlug,
+  articleMeta,
+}: {
+  currentSlug: string;
+  articleMeta?: {
+    title?: string;
+    excerpt?: string;
+    content?: string;
+    lang?: "vi" | "en";
+  };
+}) {
   const { lang, setLang } = useLanguageStore();
   const [showAnalogy, setShowAnalogy] = useState(true);
 
   const alternate = PAIRS[currentSlug];
-  const isViCurrent = currentSlug.endsWith("-vi") || currentSlug.includes("sinh-kha-dung");
-  const analogyData = MEDICAL_ANALOGIES[currentSlug];
+  const isViCurrent =
+    articleMeta?.lang === "vi" ||
+    currentSlug.endsWith("-vi") ||
+    currentSlug.includes("sinh-kha-dung") ||
+    currentSlug.includes("keo-dai-tuoi-tho") ||
+    currentSlug.includes("mo-nau") ||
+    currentSlug.includes("sinh-nhiet") ||
+    !currentSlug.endsWith("-en");
+
+  const analogyData: LaymanMedicalBoxData = resolveLaymanMedicalData(currentSlug, articleMeta);
 
   return (
     <div className="space-y-4">
@@ -430,8 +321,8 @@ export function ArticleLanguageBar({ currentSlug }: { currentSlug: string }) {
         )}
       </div>
 
-      {/* Accessible Medical Analogy Callout Box */}
-      {analogyData && (
+      {/* Accessible Medical Analogy Callout Box (Rendered on EVERY article) */}
+      {analogyData && analogyData.points && analogyData.points.length > 0 && (
         <div className="rounded-sm border-2 border-emerald-500/40 bg-emerald-500/5 p-4 sm:p-5 transition-all">
           <button
             type="button"

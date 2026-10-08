@@ -954,32 +954,6 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Mitochondrial uncoupling protein 1 (UCP1) mediates proton leak in brown adipose tissue to generate heat. Here, we present the high-resolution cryo-electron microscopy structure of human UCP1 locked in the purine nucleotide-inhibited state. The purine nucleotide cross-links transmembrane helices through a network of polar and aromatic interactions, revealing the structural basis of nucleotide inhibition, pH regulation, and proton transport activation.",
     },
   ],
-  "melatonin-lieu-thap-vs-cao-vi": [
-    {
-      ordinal: 1,
-      label: "Melatonin treatment for age-related insomnia",
-      pmid: "11600532",
-      doi: "10.1210/jcem.86.10.7901",
-      design: "Randomized Controlled Trial",
-      sampleSize: null,
-      journal: "The Journal of Clinical Endocrinology & Metabolism",
-      year: 2001,
-      abstract: "We compared the efficacy of three melatonin doses (0.1, 0.3, and 3.0 mg) or placebo, administered daily for 1 week, 30 min before bedtime, to 30 elderly insomniacs. The 0.3 mg dose was the most effective in restoring sleep efficiency and elevating plasma melatonin levels to the normal physiological range. The 3.0 mg dose also improved sleep but induced hypothermia and left plasma melatonin levels elevated during the daytime. These findings suggest that physiological doses of melatonin can treat age-related insomnia without causing daytime hormone elevation.",
-    },
-  ],
-  "low-dose-vs-high-dose-melatonin-en": [
-    {
-      ordinal: 1,
-      label: "Melatonin treatment for age-related insomnia",
-      pmid: "11600532",
-      doi: "10.1210/jcem.86.10.7901",
-      design: "Randomized Controlled Trial",
-      sampleSize: null,
-      journal: "The Journal of Clinical Endocrinology & Metabolism",
-      year: 2001,
-      abstract: "We compared the efficacy of three melatonin doses (0.1, 0.3, and 3.0 mg) or placebo, administered daily for 1 week, 30 min before bedtime, to 30 elderly insomniacs. The 0.3 mg dose was the most effective in restoring sleep efficiency and elevating plasma melatonin levels to the normal physiological range. The 3.0 mg dose also improved sleep but induced hypothermia and left plasma melatonin levels elevated during the daytime. These findings suggest that physiological doses of melatonin can treat age-related insomnia without causing daytime hormone elevation.",
-    },
-  ],
 };
 
 export interface MarkdownArticleData extends Article {
