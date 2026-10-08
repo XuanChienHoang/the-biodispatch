@@ -1,6 +1,6 @@
 ---
 title: "Ngã ba Mevalonate: Khi thuốc Statin hạ mỡ máu vô tình làm cạn kiệt Coenzyme Q10 ở ty thể"
-date: "2026-10-06"
+date: "2026-06-30T09:00:00Z"
 excerpt: "Thuốc Statin ức chế enzyme HMG-CoA Reductase để hạ cholesterol, nhưng con đường Mevalonate không chỉ sinh ra cholesterol mà còn là cội nguồn của Coenzyme Q10 tại màng trong ty thể. Giải mã nguyên nhân gây đau mỏi cơ vân và giải pháp bù trừ dược lý."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

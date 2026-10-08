@@ -1,6 +1,6 @@
 ---
 title: "The Cardiovascular Code Part 3: The Golden Triglyceride to HDL Ratio: A Superior Window into Cardiometabolic Risk"
-date: "2026-10-06T11:01"
+date: "2026-06-02T09:00:00Z"
 excerpt: "Why can standard lipid panels with normal LDL-C mask lethal cardiovascular vulnerability? Discover the Triglyceride to HDL ratio: A biological barometer of systemic insulin sensitivity and lipoprotein particle architecture."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

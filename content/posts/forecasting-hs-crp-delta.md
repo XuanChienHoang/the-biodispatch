@@ -1,6 +1,6 @@
 ---
 title: "Dự báo Biến thiên Chỉ số Viêm hs-CRP: Khi khoa học thống kê phân tích gộp định hình sức khỏe tim mạch thực chứng"
-date: "2026-10-06"
+date: "2026-05-25T09:00:00Z"
 excerpt: "Chỉ số viêm nhạy cảm cao hs-CRP không chỉ phản ánh ổ viêm nhiễm cấp tính, mà là chiếc kính hiển vi đo lường tốc độ xơ vữa mạch máu và nguy cơ nhồi máu cơ tim. Cách sử dụng khoảng tin cậy 95% từ các phân tích gộp để dự báo hiệu quả can thiệp dinh dưỡng."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

@@ -1,6 +1,6 @@
 ---
 title: "Succinate Signaling and Creatine Futile Cycling: The Next-Generation Thermogenic Paradigm Beyond UCP1"
-date: "2026-10-08T09:00:00Z"
+date: "2026-10-04T09:00:00Z"
 excerpt: "For decades, classical medicine has regarded Uncoupling Protein 1 (UCP1) as the sole executioner of non-shivering thermogenesis in brown adipose tissue (BAT). However, recent pioneering studies have unveiled a profound biological paradox: UCP1-knockout mice retain a remarkable capacity to tolerate cold exposure through previously unknown metabolic pathways. The key to this adaptive mechanism lies within the creatine futile cycle and intracellular succinate accumulation, which activates the GPR91 receptor. This monograph dissects the molecular mechanisms of UCP1-independent thermogenesis, offering a paradigm shift in treating obesity and metabolic syndrome through mitochondrial reprogramming and targeted bioenergetic manipulation."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

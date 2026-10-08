@@ -1,6 +1,6 @@
 ---
 title: "Thuốc giảm cân GLP-1 kéo dài 12% tuổi thọ trên Nature: Liệu có phải 'thần dược trường thọ' mới hay chỉ là chiếc máy dọn rác ty thể?"
-date: "2026-10-06"
+date: "2026-09-08T09:00:00Z"
 excerpt: "Báo cáo chấn động mới nhất trên Nature cho thấy GLP-1 receptor agonists kéo dài tuổi thọ và đảo ngược chỉ số già hóa sinh học. Nhưng dưới góc nhìn phân tử, cơ chế không nằm ở việc giảm cân thần kỳ, mà là chiếc chìa khóa khởi động chu trình dọn dẹp nhà máy năng lượng ty thể."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

@@ -1,6 +1,6 @@
 ---
 title: "The Nrf2 Activation Window from Sulforaphane: Why Over-Boiling Broccoli Destroys Its Anticancer Potential"
-date: "2026-10-06"
+date: "2026-07-21T09:00:00Z"
 excerpt: "Sulforaphane does not pre-exist in raw broccoli; it is synthesized only when myrosinase hydrolyzes glucoraphanin upon mastication or chopping. Discover the 4-hour golden window of endogenous Nrf2 detoxification and culinary strategies to preserve maximum bioactivity."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

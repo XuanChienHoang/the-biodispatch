@@ -1,6 +1,6 @@
 ---
 title: "Policosanol, Reconsidered: Cuban Trials, the European Replication Gap, and Clinical Reality"
-date: "2026-10-06"
+date: "2026-06-23T09:00:00Z"
 excerpt: "Over two decades of Cuban research claimed policosanol (sugarcane wax extract) slashed LDL as effectively as statins. Independent European trials completely failed to reproduce the effect. A rigorous metabolomic and clinical reappraisal."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg"

@@ -1,6 +1,6 @@
 ---
 title: "The Glymphatic System and the Midnight Brain Wash: Molecular Clearance of Toxic Amyloid-Beta During Deep Slow-Wave Sleep"
-date: "2026-10-06T13:00:00Z"
+date: "2026-09-22T09:00:00Z"
 excerpt: "Have you ever wondered why pulling an all-nighter leaves your head heavy, sluggish, and wrapped in a thick mental fog? It is not merely psychological exhaustion: your brain's internal overnight street-cleaning shift was forcefully canceled."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

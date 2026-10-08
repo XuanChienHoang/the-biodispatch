@@ -1,6 +1,6 @@
 ---
 title: "Giải Nobel Y học 2026: Khi Ánh sáng trở thành Công tắc Phân tử Điều khiển Não bộ (Optogenetics)"
-date: "2026-10-06T13:00:00Z"
+date: "2026-10-06T09:00:00Z"
 excerpt: "Vinh danh 2 nhà khoa học người Đức (Peter Hegemann, Georg Nagel) và 1 nhà khoa học người Mỹ (Karl Deisseroth) với phát kiến Kênh ion cổng quang và Quang di truyền học: Từ chiếc mắt cảm quang của vi tảo lục đến cuộc cách mạng dùng tia sáng giải mã ký ức, dập tắt cơn động kinh và phục hồi thị lực."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

@@ -1,6 +1,6 @@
 ---
 title: "Mật mã Ung thư Phần 3: Trục Insulin & IGF-1: Chiếc công tắc phân tử thúc đẩy tăng sinh tế bào ác tính"
-date: "2026-10-06T10:01"
+date: "2026-08-18T09:00:00Z"
 excerpt: "Insulin không chỉ đơn thuần là hormone hạ đường huyết, nó là một trong những tín hiệu đồng hóa và phân bào mạnh nhất trong cơ thể con người. Tìm hiểu cơ chế tăng insulin máu mạn tính kích hoạt trục PI3K-Akt-mTOR và mở toang cánh cửa cho khối u bùng phát."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

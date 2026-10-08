@@ -1,6 +1,6 @@
 ---
 title: "Ma trận Tương tác Hoạt chất Tự nhiên & Thuốc Kê đơn: Khi bổ sung thảo dược sai cách trở thành mối nguy sinh tử"
-date: "2026-10-06"
+date: "2026-05-18T09:00:00Z"
 excerpt: "Đồng vận, đối kháng hay triệt tiêu lẫn nhau? Giải mã cơ chế qua hệ enzyme gan Cytochrome P450: vì sao dùng Cỏ Ban Âu làm mất tác dụng thuốc tránh thai, tinh chất bưởi làm tăng độc tính statin và gừng/nghệ có thể gây xuất huyết nếu phối hợp cùng thuốc chống đông."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

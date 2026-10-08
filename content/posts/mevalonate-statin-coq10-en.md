@@ -1,6 +1,6 @@
 ---
 title: "The Mevalonate Shunt: HMG-CoA Reductase Inhibition and Mitochondrial Coenzyme Q10 Depletion"
-date: "2026-10-06"
+date: "2026-06-30T09:00:00Z"
 excerpt: "Statins competitively block HMG-CoA reductase to attenuate atherogenic cholesterol. However, the mevalonate cascade constitutes an obligate precursor pathway for mitochondrial ubiquinone (CoQ10), illuminating the molecular etiology of statin-associated muscle symptoms."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg"

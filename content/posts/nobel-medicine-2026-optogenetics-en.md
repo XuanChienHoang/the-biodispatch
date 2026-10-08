@@ -1,6 +1,6 @@
 ---
 title: "The 2026 Nobel Prize in Medicine: When Light Became the Molecular Switch Controlling the Brain (Optogenetics)"
-date: "2026-10-06T13:00:00Z"
+date: "2026-10-06T09:00:00Z"
 excerpt: "Honoring 2 German scientists (Peter Hegemann, Georg Nagel) and 1 American scientist (Karl Deisseroth) for light-gated ion channels and optogenetics: From single-cell green algae photoreception to an optical revolution decoding memory, quelling epilepsy, and restoring sight."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

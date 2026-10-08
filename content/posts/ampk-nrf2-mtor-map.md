@@ -1,6 +1,6 @@
 ---
 title: "Bản đồ 4 Nút Tín hiệu Trẻ hóa Tế bào: AMPK, Nrf2, mTOR & NF-κB dưới góc nhìn Dược lý học Phân tử"
-date: "2026-10-06"
+date: "2026-07-28T09:00:00Z"
 excerpt: "Bốn công tắc sinh học chi phối tuổi thọ tế bào: Berberine kích hoạt AMPK, Sulforaphane mở khóa Nrf2, Quercetin điều hòa mTOR và Curcumin dập tắt cơn bão viêm NF-κB. Khám phá cách phối hợp các hoạt chất tự nhiên để đảo ngược quá trình lão hóa nội bào."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

@@ -1,6 +1,6 @@
 ---
 title: "Forecasting hs-CRP Delta: When Meta-Analytic Evidence Redefines Cardiovascular Risk Stratification"
-date: "2026-10-06"
+date: "2026-05-25T09:00:00Z"
 excerpt: "High-sensitivity C-reactive protein (hs-CRP) does not merely reflect acute infection: it serves as a high-precision molecular barometer for vascular inflammation and coronary atheroma vulnerability. Harnessing 95% confidence intervals from systematic reviews to predict therapeutic lifestyle impact."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

@@ -1,6 +1,6 @@
 ---
 title: "Nghịch Lý Rò Rỉ Proton Ty Thể: Kích Hoạt UCP1 Ở Mỡ Nâu Để Tái Cấu Trúc Chuyển Hóa Và Kéo Dài Tuổi Thọ"
-date: "2026-10-08T09:00:00Z"
+date: "2026-09-29T09:00:00Z"
 excerpt: "Mỡ nâu (BAT) từ lâu được coi là lò sưởi sinh nhiệt của cơ thể, nhưng cơ chế phân tử thực sự của nó vượt xa việc giữ ấm đơn thuần. Trung tâm của quá trình này là Protein Mất Ghép Cặp 1 (UCP1), một kênh ion ty thể phá vỡ gradient proton để giải phóng năng lượng dưới dạng nhiệt thay vì tạo ra ATP. Nhiều người lầm tưởng rằng việc làm tiêu hao ATP là có hại cho tế bào. Tuy nhiên, nghịch lý sinh học nằm ở chỗ: chính sự rò rỉ proton có kiểm soát này lại giải phóng áp lực oxy hóa lên chuỗi truyền điện tử, ngăn chặn triệt để sự hình thành các gốc tự do (ROS) độc hại, đồng thời kích hoạt một dòng thác tín hiệu nội bào giúp đảo ngược tình trạng kháng insulin và hội chứng chuyển hóa."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

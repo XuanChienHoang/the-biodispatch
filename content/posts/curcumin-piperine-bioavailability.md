@@ -1,6 +1,6 @@
 ---
 title: "Why Black Pepper Increases Curcumin Bioavailability 20-Fold: Deciphering the Hepatic Metabolic Brake"
-date: "2026-09-23"
+date: "2026-05-11T09:00:00Z"
 excerpt: "The 2000% (20-fold) bioavailability increase from pairing piperine with curcumin is clinically verified in humans. Yet the true mechanism is not enhanced intestinal permeability, but temporary inhibition of hepatic glucuronidation clearance."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

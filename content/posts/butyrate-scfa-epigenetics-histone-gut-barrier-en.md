@@ -1,6 +1,6 @@
 ---
 title: "Short-Chain Fatty Acid Butyrate: Epigenetic Master Key of Gut Barrier Integrity and Histone Deacetylase Inhibition"
-date: "2026-10-06T13:00:00Z"
+date: "2026-07-14T09:00:00Z"
 excerpt: "Beyond fueling 70% of colonic epithelial energy requirements, microbially-derived Butyrate functions as an endogenous epigenetic HDAC inhibitor, orchestrating regulatory T-cell differentiation and sealing Claudin-1 tight junction complexes."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

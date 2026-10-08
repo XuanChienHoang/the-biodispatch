@@ -1,6 +1,6 @@
 ---
 title: "Vì sao hạt tiêu đen giúp tinh chất nghệ tăng hấp thu gấp 20 lần? Giải mã 'chiếc phanh sinh học' của lá gan"
-date: "2026-09-23"
+date: "2026-05-11T09:00:00Z"
 excerpt: "Con số tăng hấp thu 2000% (gấp 20 lần) khi kết hợp tiêu đen và nghệ là hoàn toàn có thật. Nhưng cơ chế thực sự không phải là tiêu đen giúp nghệ 'thấm' qua ruột tốt hơn, mà là nó tạm thời kìm hãm lá gan đào thải nghệ quá nhanh."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

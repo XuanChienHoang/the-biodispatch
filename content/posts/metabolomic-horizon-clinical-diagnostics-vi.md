@@ -1,6 +1,6 @@
 ---
 title: "Đường chân trời Chuyển hóa học: Vì sao các phân tử nhỏ đang thay đổi hoàn toàn cách phát hiện sớm bệnh lý?"
-date: "2026-09-23"
+date: "2026-08-25T09:00:00Z"
 excerpt: "Nếu xét nghiệm gen chỉ cho biết những gì 'có thể xảy ra trong tương lai', thì xét nghiệm chất chuyển hóa (Metabolomics) cho ta biết cơ thể 'đang thực sự vận hành ra sao' ngay lúc này. Giải mã khoa học chẩn đoán sớm dưới góc nhìn y sinh thực chứng."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

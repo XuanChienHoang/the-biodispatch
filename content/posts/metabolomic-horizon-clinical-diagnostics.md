@@ -1,6 +1,6 @@
 ---
 title: "The Metabolomic Horizon: Why Small Molecules Are Redefining Early Clinical Diagnostics"
-date: "2026-09-23"
+date: "2026-08-25T09:00:00Z"
 excerpt: "While genomics maps what could happen, metabolomics reveals what is actually happening in real time. An analytical breakdown of high-resolution mass spectrometry and biomarker discovery in preventive healthcare."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Dr. rer. nat. | University of Hamburg"

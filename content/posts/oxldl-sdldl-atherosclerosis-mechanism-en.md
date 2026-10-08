@@ -1,6 +1,6 @@
 ---
 title: "The Cardiovascular Code Part 2: oxLDL & sdLDL Particles: The True Culprits Penetrating Arterial Walls"
-date: "2026-10-06T11:02"
+date: "2026-06-16T09:00:00Z"
 excerpt: "Do not evaluate cardiovascular risk solely through standard LDL-C concentrations. Particle diameter and oxidative modification determine whether circulating lipids sustain cellular life or trigger an atherogenic cascade inside coronary arteries."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

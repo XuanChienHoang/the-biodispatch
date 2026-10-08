@@ -1,6 +1,6 @@
 ---
 title: "Cửa sổ Kích hoạt Nrf2 từ Sulforaphane: Vì sao luộc súp lơ xanh quá kỹ làm mất sạch khả năng chống ung thư?"
-date: "2026-10-06"
+date: "2026-07-21T09:00:00Z"
 excerpt: "Sulforaphane không hề tồn tại sẵn trong cây súp lơ. Nó chỉ được sinh ra khi enzyme myrosinase gặp glucoraphanin trong quá trình nhai hoặc cắt nhỏ. Khám phá cửa sổ vàng 4 giờ kích hoạt hệ thống giải độc tự thân Nrf2 và bí quyết giữ trọn hoạt tính sinh học."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

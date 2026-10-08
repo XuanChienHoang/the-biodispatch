@@ -1,6 +1,6 @@
 ---
 title: "Đánh giá lại Policosanol trong Hạ mỡ máu: Dữ liệu Cuba, Khoảng trống Châu Âu và Thực tế Lâm sàng"
-date: "2026-10-06"
+date: "2026-06-23T09:00:00Z"
 excerpt: "Hơn 20 năm nghiên cứu từ Trung tâm Quốc gia Cuba từng ca ngợi Policosanol (chiết xuất sáp mía) hạ LDL tương đương Statin. Tuy nhiên, các thử nghiệm độc lập tại Đức và Châu Âu lại không thể tái lập kết quả này. Phân tích dưới góc nhìn y sinh thực chứng."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

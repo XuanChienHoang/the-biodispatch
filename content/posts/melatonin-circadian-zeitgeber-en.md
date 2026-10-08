@@ -1,6 +1,6 @@
 ---
 title: "Melatonin is a Circadian Zeitgeber, Not a Sedative Hypnotic: Deciphering the 0.3 mg vs 10 mg Paradox"
-date: "2026-10-06"
+date: "2026-09-15T09:00:00Z"
 excerpt: "Why taking 5-10 mg of melatonin frequently triggers daytime grogginess and sleep inertia, whereas physiological micro-dosing at 0.3 mg effectively re-anchors restorative deep sleep? A neuroendocrine perspective on zeitgeber kinetics."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

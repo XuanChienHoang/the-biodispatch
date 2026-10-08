@@ -1,6 +1,6 @@
 ---
 title: "The Cancer Code Part 3: The Insulin & IGF-1 Axis: The Molecular Accelerator of Tumor Proliferation"
-date: "2026-10-06T10:01"
+date: "2026-08-18T09:00:00Z"
 excerpt: "Insulin is far more than a simple blood sugar regulator; it is one of the most potent anabolic and mitogenic signals in human physiology. Discover how chronic hyperinsulinemia triggers the PI3K-Akt-mTOR cascade, driving runaway cellular proliferation."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

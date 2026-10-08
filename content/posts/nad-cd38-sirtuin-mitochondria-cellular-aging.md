@@ -1,6 +1,6 @@
 ---
 title: "Trục NAD+, Sirtuin và Kẻ Trộm Năng Lượng CD38: Cuộc Chiến Bảo Toàn Năng Lượng Ty Thể Khi Tế Bào Già Cỗi"
-date: "2026-10-06T13:00:00Z"
+date: "2026-09-01T09:00:00Z"
 excerpt: "Cơn sốt uống NMN hay NR với giá hàng triệu đồng mỗi hộp để kéo dài tuổi thọ đang lan tràn khắp nơi. Nhưng ít ai biết rằng, nếu không bịt chiếc lỗ rò mang tên CD38, bạn chỉ đang cố công đổ nước ngọt vào một chiếc xô đã bị thủng đáy."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

@@ -1,6 +1,6 @@
 ---
 title: "Mật mã Ung thư Phần 1: Hiệu ứng Warburg & Cơn nghiện Glucose của Tế bào Ác tính"
-date: "2026-10-06T10:03"
+date: "2026-08-04T09:00:00Z"
 excerpt: "Vì sao tế bào ung thư lại từ chối nhà máy năng lượng ty thể để chuyển sang lên men glucose ngay cả khi có đầy đủ oxy? Khám phá cơ sở sinh hóa đằng sau chụp quét PET-CT và chiến lược cắt đứt nguồn nhiên liệu của khối u."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

@@ -1,6 +1,6 @@
 ---
 title: "Reading a Serum Concentration-Time Curve: The 4 Numbers Defining Therapeutic Reality"
-date: "2026-10-06"
+date: "2026-05-04T09:00:00Z"
 excerpt: "Cmax, Tmax, elimination half-life t½, and area under the curve AUC: 4 mathematical coordinates that demarcate the boundary between a genuinely therapeutic dose, an inert compound, and toxic accumulation."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

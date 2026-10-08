@@ -1,6 +1,6 @@
 ---
 title: "Melatonin là 'Người chỉnh nhịp sinh học', không phải thuốc an thần gây ngủ: Giải mã nghịch lý liều 0.3 mg vs 10 mg"
-date: "2026-10-06"
+date: "2026-09-15T09:00:00Z"
 excerpt: "Vì sao uống 5-10 mg melatonin thường khiến bạn thức dậy với cảm giác uể oải, lờ đờ cả ngày, trong khi liều sinh lý chỉ 0.3 mg lại tái thiết lập chu kỳ ngủ sâu tự nhiên? Góc nhìn nội tiết học thần kinh về khái niệm Zeitgeber."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

@@ -1,6 +1,6 @@
 ---
 title: "Mật mã Tim mạch Phần 3: Tỉ số Vàng Triglyceride / HDL: Thước đo nhạy bén hơn cả xét nghiệm mỡ máu thông thường"
-date: "2026-10-06T11:01"
+date: "2026-06-02T09:00:00Z"
 excerpt: "Vì sao một bảng xét nghiệm mỡ máu với LDL-C bình thường vẫn có thể che giấu nguy cơ nhồi máu cơ tim tiềm ẩn? Khám phá tỉ số Triglyceride/HDL: Chiếc nhiệt kế sinh học đo lường độ nhạy insulin và kích thước hạt lipoprotein."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

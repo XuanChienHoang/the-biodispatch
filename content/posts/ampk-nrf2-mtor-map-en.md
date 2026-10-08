@@ -1,6 +1,6 @@
 ---
 title: "Mapping the 4 Cellular Longevity Master Nodes: AMPK, Nrf2, mTOR & NF-κB via Molecular Pharmacology"
-date: "2026-10-06"
+date: "2026-07-28T09:00:00Z"
 excerpt: "Four biochemical switches orchestrating cellular lifespan: Berberine igniting AMPK, Sulforaphane uncoupling Nrf2, Quercetin modulating mTOR, and Curcumin quelling NF-κB inflammatory cascades. Deciphering targeted bioactive synergy to counter intracellular senescence."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

@@ -1,6 +1,6 @@
 ---
 title: "The Cardiovascular Code Part 1: The Cholesterol Myth: Why Lipids Never Clog Arteries Without Inflammation"
-date: "2026-10-06T11:03"
+date: "2026-06-09T09:00:00Z"
 excerpt: "For over half a century, cholesterol was labeled the primary culprit behind myocardial infarction. Yet why do more than 50% of heart attack patients present with completely normal cholesterol? Discover the pivotal role of endothelial inflammation in coronary artery disease."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

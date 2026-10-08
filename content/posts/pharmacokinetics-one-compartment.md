@@ -1,6 +1,6 @@
 ---
 title: "Cách đọc đường cong Nồng độ Dược chất trong Máu: 4 con số quyết định một liều uống có thực sự hiệu quả hay không"
-date: "2026-10-06"
+date: "2026-05-04T09:00:00Z"
 excerpt: "Cmax, Tmax, thời gian bán thải t½ và diện tích dưới đường cong AUC: 4 tọa độ toán học phân định ranh giới giữa một liều thuốc có tác dụng điều trị thực sự với một liều uống vô thưởng vô phạt hay chạm ngưỡng độc tính."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

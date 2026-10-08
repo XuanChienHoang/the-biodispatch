@@ -1,6 +1,6 @@
 ---
 title: "Vì sao tinh bột kháng nuôi sống tế bào niêm mạc ruột? Giải mã chiếc khóa protein Claudin-1 chống rò rỉ ruột"
-date: "2026-10-06"
+date: "2026-07-07T09:00:00Z"
 excerpt: "Không phải mọi loại tinh bột đều làm tăng đường huyết. Khi tinh bột kháng đi qua dạ dày nguyên vẹn xuống đại tràng, hệ vi sinh lên men nó thành các axit béo chuỗi ngắn SCFA, đóng vai trò như vữa trát hàn gắn hàng rào niêm mạc ruột chống viêm rò rỉ."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"
