@@ -15,9 +15,9 @@ for (const rel of filesToUpdate) {
   const full = path.resolve(rel);
   if (!fs.existsSync(full)) continue;
   let content = fs.readFileSync(full, 'utf8');
-  const count = (content.match(/the-biodispatch\.vercel\.app/g) || []).length;
+  const count = (content.match(/phytocodex\.vercel\.app/g) || []).length;
   if (count > 0) {
-    content = content.replace(/the-biodispatch\.vercel\.app/g, 'phytocodex.vercel.app');
+    content = content.replace(/phytocodex\.vercel\.app/g, 'www.phyto-codex.org');
     fs.writeFileSync(full, content, 'utf8');
     console.log(`Updated ${rel}: replaced ${count} occurrences`);
   }

@@ -47,13 +47,13 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const a = await getArticle(slug);
   if (!a) return { title: "Dispatch Not Found" };
 
-  const ogUrl = new URL("https://phytocodex.vercel.app/api/og");
+  const ogUrl = new URL("https://www.phyto-codex.org/api/og");
   ogUrl.searchParams.set("title", a.title);
   ogUrl.searchParams.set("dek", a.dek);
   ogUrl.searchParams.set("organ", a.organ);
   ogUrl.searchParams.set("tier", a.tier);
 
-  const directImage = a.image ? (a.image.startsWith("http") ? a.image : `https://phytocodex.vercel.app${a.image}`) : ogUrl.toString();
+  const directImage = a.image ? (a.image.startsWith("http") ? a.image : `https://www.phyto-codex.org${a.image}`) : ogUrl.toString();
 
   const root = twinRoot(slug);
   const isCurrentVi =
@@ -72,11 +72,11 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     title: `${a.title} · Phytocodex`,
     description: a.dek,
     alternates: {
-      canonical: `https://phytocodex.vercel.app/blog/${slug}`,
+      canonical: `https://www.phyto-codex.org/blog/${slug}`,
       languages: {
-        vi: `https://phytocodex.vercel.app/blog/${viSlug}`,
-        en: `https://phytocodex.vercel.app/blog/${enSlug}`,
-        "x-default": `https://phytocodex.vercel.app/blog/${enSlug}`,
+        vi: `https://www.phyto-codex.org/blog/${viSlug}`,
+        en: `https://www.phyto-codex.org/blog/${enSlug}`,
+        "x-default": `https://www.phyto-codex.org/blog/${enSlug}`,
       },
     },
     keywords: [
@@ -91,7 +91,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     openGraph: {
       title: `${a.title} · Phytocodex`,
       description: a.dek,
-      url: `https://phytocodex.vercel.app/blog/${slug}`,
+      url: `https://www.phyto-codex.org/blog/${slug}`,
       type: "article",
       publishedTime: a.date,
       authors: [a.author || "Dr. Xuan Chien Hoang"],
@@ -185,7 +185,7 @@ export default async function BlogPage({ params }: Params) {
     publisher: {
       "@type": "Organization",
       name: "Phytocodex",
-      url: "https://phytocodex.vercel.app",
+      url: "https://www.phyto-codex.org",
     },
     citation: refs.map((r) => ({
       "@type": "CreativeWork",
@@ -497,7 +497,7 @@ export default async function BlogPage({ params }: Params) {
             <div className="mt-12 max-w-3xl">
               <SocialShare
                 title={isVi && article.titleVi ? article.titleVi : article.title}
-                url={`https://phytocodex.vercel.app/blog/${article.slug}`}
+                url={`https://www.phyto-codex.org/blog/${article.slug}`}
                 isVi={isVi}
               />
 

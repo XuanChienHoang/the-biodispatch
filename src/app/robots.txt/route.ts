@@ -6,7 +6,7 @@ Allow: /
 Disallow: /admin
 Disallow: /api/
 
-Sitemap: https://phytocodex.vercel.app/sitemap.xml
+Sitemap: https://www.phyto-codex.org/sitemap.xml
 `;
 
   return new NextResponse(robotsTxt, {

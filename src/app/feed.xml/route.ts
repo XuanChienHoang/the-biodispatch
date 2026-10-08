@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { getMarkdownPosts } from "@/lib/store";
 
-const BASE_URL = "https://phytocodex.vercel.app";
+const BASE_URL = "https://www.phyto-codex.org";
 
 function escapeXml(unsafe: string): string {
   return unsafe.replace(/[<>&'"]/g, (c) => {

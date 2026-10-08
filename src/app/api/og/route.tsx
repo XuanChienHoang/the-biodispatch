@@ -139,7 +139,7 @@ export async function GET(req: NextRequest) {
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
               <span style={{ fontSize: "15px", color: "#00F2FE", fontWeight: 600 }}>
-                phytocodex.vercel.app
+                www.phyto-codex.org
               </span>
             </div>
           </div>

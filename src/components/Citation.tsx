@@ -114,7 +114,7 @@ export function CiteModal({
   const { lang } = useLanguageStore();
   const isVi = lang === "vi";
 
-  const citation = `Hoang, X. C. (${new Date().getFullYear()}). ${title} [Interactive pharmacokinetic engine]. Phytocodex. https://phytocodex.vercel.app/gizmos (truy cập ${new Date()
+  const citation = `Hoang, X. C. (${new Date().getFullYear()}). ${title} [Interactive pharmacokinetic engine]. Phytocodex. https://www.phyto-codex.org/gizmos (truy cập ${new Date()
     .toISOString()
     .slice(0, 10)}).`;
   const [copied, setCopied] = useState(false);
