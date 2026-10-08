@@ -48,14 +48,17 @@ export function Hero({ articles = [] }: { articles?: Article[] }) {
               <button
                 type="button"
                 onClick={() => setSearchOpen(true)}
-                className="group flex items-center gap-2 rounded-full border border-slate-hair bg-paper px-3.5 py-1.5 text-xs text-slate-ink shadow-2xs transition-all hover:border-indigo-deep hover:text-indigo-deep hover:shadow-xs cursor-pointer"
+                className="group flex items-center gap-2 rounded-full border border-slate-hair bg-paper px-3 py-1.5 text-xs text-slate-ink shadow-2xs transition-all hover:border-indigo-deep hover:text-indigo-deep hover:shadow-xs cursor-pointer sm:px-3.5"
                 title={isVi ? "Tìm kiếm bài viết (Ctrl + K)" : "Search monographs (Ctrl + K)"}
               >
-                <Search size={13} className="text-slate-mute group-hover:text-trace-ink" />
-                <span className="font-medium">
-                  {isVi ? "Tìm kiếm bài viết..." : "Search corpus..."}
+                <Search size={13} className="text-slate-mute group-hover:text-trace-ink shrink-0" />
+                <span className="font-medium hidden sm:inline">
+                  {isVi ? "Tìm kiếm..." : "Search..."}
                 </span>
-                <span className="rounded bg-slate-hair/70 px-1.5 py-0.5 text-[10px] font-mono text-slate-ink font-semibold">
+                <span className="font-medium inline sm:hidden">
+                  {isVi ? "Tìm" : "Find"}
+                </span>
+                <span className="rounded bg-slate-hair/70 px-1.5 py-0.5 text-[10px] font-mono text-slate-ink font-semibold hidden md:inline">
                   ⌘K
                 </span>
               </button>
