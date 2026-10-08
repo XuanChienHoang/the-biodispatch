@@ -6,7 +6,7 @@ Allow: /
 Disallow: /admin
 Disallow: /api/
 
-Sitemap: https://the-biodispatch.vercel.app/sitemap.xml
+Sitemap: https://phytocodex.vercel.app/sitemap.xml
 `;
 
   return new NextResponse(robotsTxt, {

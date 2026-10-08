@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { getArticles } from "@/lib/store";
 import { GIZMOS } from "@/lib/content";
 
-const BASE_URL = "https://the-biodispatch.vercel.app";
+const BASE_URL = "https://phytocodex.vercel.app";
 
 export async function GET() {
   const articles = await getArticles();

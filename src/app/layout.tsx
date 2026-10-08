@@ -27,7 +27,7 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://the-biodispatch.vercel.app"),
+  metadataBase: new URL("https://phytocodex.vercel.app"),
   icons: {
     icon: "/images/phytocodex-emblem.jpg",
     shortcut: "/images/phytocodex-emblem.jpg",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     "Decoding the molecules of health — where Eastern botanicals meet European science. Evidence-based biomedical monograph by Dr. Xuan Chien Hoang (Dr. rer. nat. in Molecular Biology, Univ. of Hamburg).",
   alternates: {
     types: {
-      "application/rss+xml": "https://the-biodispatch.vercel.app/feed.xml",
+      "application/rss+xml": "https://phytocodex.vercel.app/feed.xml",
     },
   },
   openGraph: {
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "https://the-biodispatch.vercel.app/images/phytocodex-banner.jpg",
+        url: "https://phytocodex.vercel.app/images/phytocodex-banner.jpg",
         width: 1200,
         height: 675,
         alt: "Phytocodex — Decoding the Molecules of Health",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     description:
       "Decoding the molecules of health — where Eastern botanicals meet European science.",
     images: [
-      "https://the-biodispatch.vercel.app/images/phytocodex-banner.jpg",
+      "https://phytocodex.vercel.app/images/phytocodex-banner.jpg",
     ],
   },
 };
@@ -76,7 +76,7 @@ const JSONLD = {
   "@graph": [
     {
       "@type": "MedicalWebPage",
-      "@id": "https://the-biodispatch.vercel.app/#webpage",
+      "@id": "https://phytocodex.vercel.app/#webpage",
       name: "Phytocodex",
       description:
         "Decoding the molecules of health — where Eastern botanicals meet European science. Evidence-based deep dives in biotechnology, metabolomics, and East-West botanical medicine.",
