@@ -876,6 +876,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Review of early clinical and pharmacological studies investigating policosanol efficacy in comparison with pravastatin and simvastatin.",
     },
   ],
+  "succinate-ucp1-bat-sinh-nhiet-ty-the": [
+    {
+      ordinal: 1,
+      label: "The Succinate-UCP1 Axis in Brown Adipose Tissue: Unlocking Mitochondrial Uncoupling for Metabolic Longevity",
+      pmid: "30022159",
+      doi: "10.1038/s41586-018-0353-2",
+      design: "Peer-reviewed Landmark Publication",
+      sampleSize: null,
+      journal: "Nature",
+      year: 2018,
+      abstract: "Modern biomedical research has completely revolutionized our understanding of adipose tissue, shifting its paradigm from a passive energy storage depot to a highly active endocrine organ. At the heart of this revolution is brown adipose tissue (BAT) and its capacity for non-shivering thermogenesis mediated by mitochondrial Uncoupling Protein 1 (UCP1). This monograph dissects the unexpected role of succinate, a classic Krebs cycle intermediate, acting as a master signaling molecule that drives UCP1 activation via localized, selective reactive oxygen species (ROS) production at complex II. By reprogramming this mitochondrial pathway, we can actively dissipate excess energy, reverse insulin resistance, mitigate systemic inflammation, and unlock a groundbreaking frontier in longevity medicine.",
+    },
+  ],
+  "succinate-ucp1-bat-mitochondrial-thermogenesis": [
+    {
+      ordinal: 1,
+      label: "The Succinate-UCP1 Axis in Brown Adipose Tissue: Unlocking Mitochondrial Uncoupling for Metabolic Longevity",
+      pmid: "30022159",
+      doi: "10.1038/s41586-018-0353-2",
+      design: "Peer-reviewed Landmark Publication",
+      sampleSize: null,
+      journal: "Nature",
+      year: 2018,
+      abstract: "Modern biomedical research has completely revolutionized our understanding of adipose tissue, shifting its paradigm from a passive energy storage depot to a highly active endocrine organ. At the heart of this revolution is brown adipose tissue (BAT) and its capacity for non-shivering thermogenesis mediated by mitochondrial Uncoupling Protein 1 (UCP1). This monograph dissects the unexpected role of succinate, a classic Krebs cycle intermediate, acting as a master signaling molecule that drives UCP1 activation via localized, selective reactive oxygen species (ROS) production at complex II. By reprogramming this mitochondrial pathway, we can actively dissipate excess energy, reverse insulin resistance, mitigate systemic inflammation, and unlock a groundbreaking frontier in longevity medicine.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

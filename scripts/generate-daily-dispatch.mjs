@@ -189,11 +189,17 @@ export async function runAutonomousDispatch() {
   console.log(`📊 [Inventory] Đang có ${existingSlugs.size} bài viết trong content/posts/`);
 
   // Find the first radar topic not yet created
-  const nextTopic = DISPATCH_RADAR_TOPICS.find(t => !existingSlugs.has(t.slugVi));
+  let nextTopic = DISPATCH_RADAR_TOPICS.find(t => !existingSlugs.has(t.slugVi));
 
   if (!nextTopic) {
-    console.log('✨ Tất cả chủ đề trong Radar Catalog hiện tại đều đã được xuất bản.');
-    return null;
+    console.log('✨ Tất cả chủ đề trong Radar Catalog tĩnh đã xuất bản. Đang kích hoạt Gemini AI sinh chủ đề mới...');
+    const { generateTopicWithGemini } = await import('./gemini-topic-generator.mjs');
+    const existingTitles = Array.from(existingSlugs);
+    nextTopic = await generateTopicWithGemini(existingTitles);
+    if (!nextTopic) {
+      console.log('⚠️ Không thể sinh chủ đề mới qua Gemini AI trong phiên chạy này.');
+      return null;
+    }
   }
 
   // Determine publication timestamp: Today or configured slot (09:00 or 13:00)
