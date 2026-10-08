@@ -9,7 +9,7 @@ organ: "Cellular Aging"
 tier: "Clinical Deep-Dive"
 readingTime: "9 phút đọc"
 featured: true
-doi: "10.1038/nature26141"
+doi: "10.1126/sciadv.adh4251"
 gizmo: "pathway"
 lang: "vi"
 image: "/images/posts/chuyen-hoa-mo-nau-ucp1-ro-ri-proton.jpg"

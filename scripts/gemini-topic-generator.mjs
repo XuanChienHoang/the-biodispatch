@@ -77,7 +77,16 @@ QUY TẮC BẮT BUỘC:
    - Phần 2: Nghịch lý sinh học và BẮT BUỘC có 1 BẢNG SO SÁNH MARKDOWN (Markdown Table) đối chiếu các chỉ số sinh lý / trạng thái lâm sàng.
    - Phần 3: BẮT BUỘC là phần "Ứng dụng thực tế & Lời khuyên lâm sàng" (Heading phải chứa từ như "Chiến lược lâm sàng", "Ứng dụng thực tế", "Khuyến nghị an toàn", hoặc "Tối ưu hóa lối sống").
 8. Đảm bảo tổng độ dài văn bản mỗi ngôn ngữ đạt trên 800 - 1.200 từ.
-9. Cung cấp DOI thực chứng hoặc chuẩn mực của các bài báo uy tín (Science, Nature, Cell, PNAS, Lancet, JCI...) kèm PMID.`;
+9. TÀI LIỆU THAM KHẢO CHÍNH XÁC TUYỆT ĐỐI (ZERO HALLUCINATION):
+   - Cung cấp bài báo gốc có thật đã xuất bản trên các tạp chí hàng đầu (Nature, Science, Cell, Lancet, NEJM, PNAS, JCI, v.v.).
+   - "refPaperTitle": Tiêu đề NGUYÊN GỐC CỦA BÀI BÁO KHOA HỌC (chính xác từng chữ trên PubMed/CrossRef, KHÔNG lấy tiêu đề bài dispatch đặt vào đây).
+   - "refAuthors": Tác giả chính hoặc nhóm nghiên cứu (ví dụ "Jones, S.A., Kunji, E.R.S. et al.").
+   - "refJournal": Tên tạp chí khoa học (ví dụ "Nature", "Cell", "Science Advances").
+   - "refYear": Năm xuất bản chính xác.
+   - "refDoi": Mã DOI CHÍNH XÁC CỦA BÀI BÁO (bắt đầu bằng 10.xxxx/..., khi bấm vào https://doi.org/[refDoi] PHẢI mở đúng bài báo này).
+   - "refPmid": Mã PMID chính xác trên PubMed tương ứng với DOI đó.
+   - "refAbstract": Tóm tắt học thuật bằng tiếng Anh của chính nghiên cứu đó (khoảng 3-4 câu).
+   - TUYỆT ĐỐI KHÔNG gán DOI của bài báo này cho bài báo khác!`;
 
   // Đa dạng hóa chuyên đề theo 6 trụ cột y sinh thực tế & xu hướng thời sự y học
   const DOMAIN_PILLARS = [
@@ -182,6 +191,10 @@ TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON SCHEMA VỚI CẤU TRÚC:
   "pmid": "12345678",
   "journal": "Nature / Science / Lancet / Cell",
   "year": 2024,
+  "refPaperTitle": "Exact Title of the Landmark Research Paper as published in the Journal",
+  "refAuthors": "First Author et al.",
+  "refDesign": "Randomized Controlled Trial / Cryo-EM Structural Study / Mechanistic In-vivo Model",
+  "refAbstract": "Original academic abstract summarizing findings, molecular mechanism, and quantitative results of this specific study.",
   "gizmo": "pathway",
   "readingTimeVi": "8 phút đọc",
   "readingTimeEn": "8 min read",

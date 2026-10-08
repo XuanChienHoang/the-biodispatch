@@ -125,30 +125,38 @@ function updateStoreSeedRefs(topic) {
     return;
   }
 
+  const refTitle = (topic.refPaperTitle || topic.titleEn || 'Biomedical Landmark Study').replace(/"/g, '\\"');
+  const refAbstract = (topic.refAbstract || topic.excerptEn || '').replace(/"/g, '\\"');
+  const refDesign = (topic.refDesign || 'Peer-reviewed Landmark Publication').replace(/"/g, '\\"');
+  const refJournal = (topic.refJournal || topic.journal || 'Nature').replace(/"/g, '\\"');
+  const refYear = topic.refYear || topic.year || 2024;
+  const refDoi = (topic.refDoi || topic.doi || '').trim();
+  const refPmid = (topic.refPmid || topic.pmid || '').trim();
+
   const newRefBlock = `  "${topic.slugVi}": [
     {
       ordinal: 1,
-      label: "${topic.titleEn.replace(/"/g, '\\"')}",
-      pmid: "${topic.pmid || ''}",
-      doi: "${topic.doi || ''}",
-      design: "Peer-reviewed Landmark Publication",
+      label: "${refTitle}",
+      pmid: "${refPmid}",
+      doi: "${refDoi}",
+      design: "${refDesign}",
       sampleSize: null,
-      journal: "${topic.journal || 'Science'}",
-      year: ${topic.year || 2020},
-      abstract: "${topic.excerptEn.replace(/"/g, '\\"')}",
+      journal: "${refJournal}",
+      year: ${refYear},
+      abstract: "${refAbstract}",
     },
   ],
   "${topic.slugEn}": [
     {
       ordinal: 1,
-      label: "${topic.titleEn.replace(/"/g, '\\"')}",
-      pmid: "${topic.pmid || ''}",
-      doi: "${topic.doi || ''}",
-      design: "Peer-reviewed Landmark Publication",
+      label: "${refTitle}",
+      pmid: "${refPmid}",
+      doi: "${refDoi}",
+      design: "${refDesign}",
       sampleSize: null,
-      journal: "${topic.journal || 'Science'}",
-      year: ${topic.year || 2020},
-      abstract: "${topic.excerptEn.replace(/"/g, '\\"')}",
+      journal: "${refJournal}",
+      year: ${refYear},
+      abstract: "${refAbstract}",
     },
   ],
 `;

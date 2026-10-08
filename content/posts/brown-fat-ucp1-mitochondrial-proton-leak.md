@@ -9,7 +9,7 @@ organ: "Cellular Aging"
 tier: "Clinical Deep-Dive"
 readingTime: "9 min read"
 featured: true
-doi: "10.1038/nature26141"
+doi: "10.1126/sciadv.adh4251"
 gizmo: "pathway"
 lang: "en"
 image: "/images/posts/brown-fat-ucp1-mitochondrial-proton-leak.jpg"

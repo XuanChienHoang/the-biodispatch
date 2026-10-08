@@ -9,7 +9,7 @@ organ: "Longevity"
 tier: "Clinical Deep-Dive"
 readingTime: "11 min read"
 featured: true
-doi: "10.1038/s41586-018-0353-2"
+doi: "10.1016/j.cell.2015.09.035"
 gizmo: "pathway"
 lang: "en"
 image: "/images/posts/succinate-creatine-bat-thermogenesis-en.jpg"
