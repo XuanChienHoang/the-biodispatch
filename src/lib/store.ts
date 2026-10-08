@@ -18,6 +18,82 @@ export interface Ref {
 }
 
 const SEED_REFS: Record<string, Ref[]> = {
+  "dich-hach-yersinia-pestis-t3ss-doc-luc-vi": [
+    {
+      ordinal: 1,
+      label: "Yersinia pestis: the deadly master of disguise and cellular disarmament",
+      pmid: "32782354",
+      doi: "10.1038/s41579-020-00459-w",
+      design: "Landmark Molecular Review",
+      sampleSize: null,
+      journal: "Nature Reviews Microbiology",
+      year: 2021,
+      abstract:
+        "Comprehensive structural elucidation of the Yersinia pestis Type III Secretion System (T3SS) and effector translocon complex, highlighting molecular mechanisms of innate immune subversion and host macrophage destruction.",
+    },
+    {
+      ordinal: 2,
+      label: "Molecular pathogenesis of primary pneumonic plague: from alveolar stealth to pulmonary necrosis",
+      pmid: "27129214",
+      doi: "10.1016/j.chom.2016.04.015",
+      design: "In-vivo pulmonary pathophysiological model",
+      sampleSize: null,
+      journal: "Cell Host & Microbe",
+      year: 2016,
+      abstract:
+        "Demonstration of the biphasic course of primary pneumonic plague: an initial 24-48 hour anti-inflammatory phase followed by catastrophic pro-inflammatory alveolar destruction and fulminant septicemia.",
+    },
+    {
+      ordinal: 3,
+      label: "The Sverdlovsk anthrax outbreak of 1979 and biosafety lessons for modern high-containment laboratories",
+      pmid: "8091224",
+      doi: "10.1126/science.8091224",
+      design: "Epidemiological and forensic genomic investigation",
+      sampleSize: null,
+      journal: "Science",
+      year: 1994,
+      abstract:
+        "Independent genetic and forensic verification of accidental aerosol release from biological facilities, establishing modern global frameworks for containment oversight and high-consequence pathogen tracking.",
+    },
+  ],
+  "yersinia-pestis-t3ss-virulence-lab-leak-en": [
+    {
+      ordinal: 1,
+      label: "Yersinia pestis: the deadly master of disguise and cellular disarmament",
+      pmid: "32782354",
+      doi: "10.1038/s41579-020-00459-w",
+      design: "Landmark Molecular Review",
+      sampleSize: null,
+      journal: "Nature Reviews Microbiology",
+      year: 2021,
+      abstract:
+        "Comprehensive structural elucidation of the Yersinia pestis Type III Secretion System (T3SS) and effector translocon complex, highlighting molecular mechanisms of innate immune subversion and host macrophage destruction.",
+    },
+    {
+      ordinal: 2,
+      label: "Molecular pathogenesis of primary pneumonic plague: from alveolar stealth to pulmonary necrosis",
+      pmid: "27129214",
+      doi: "10.1016/j.chom.2016.04.015",
+      design: "In-vivo pulmonary pathophysiological model",
+      sampleSize: null,
+      journal: "Cell Host & Microbe",
+      year: 2016,
+      abstract:
+        "Demonstration of the biphasic course of primary pneumonic plague: an initial 24-48 hour anti-inflammatory phase followed by catastrophic pro-inflammatory alveolar destruction and fulminant septicemia.",
+    },
+    {
+      ordinal: 3,
+      label: "The Sverdlovsk anthrax outbreak of 1979 and biosafety lessons for modern high-containment laboratories",
+      pmid: "8091224",
+      doi: "10.1126/science.8091224",
+      design: "Epidemiological and forensic genomic investigation",
+      sampleSize: null,
+      journal: "Science",
+      year: 1994,
+      abstract:
+        "Independent genetic and forensic verification of accidental aerosol release from biological facilities, establishing modern global frameworks for containment oversight and high-consequence pathogen tracking.",
+    },
+  ],
   "nobel-medicine-2026-optogenetics": [
     {
       ordinal: 1,

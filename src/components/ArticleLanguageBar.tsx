@@ -256,6 +256,16 @@ const PAIRS: Record<string, { slug: string; lang: "vi" | "en"; label: string }> 
     "slug": "warburg-effect-cancer-metabolism",
     "lang": "vi",
     "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
+  },
+  "dich-hach-yersinia-pestis-t3ss-doc-luc-vi": {
+    "slug": "yersinia-pestis-t3ss-virulence-lab-leak-en",
+    "lang": "en",
+    "label": "English Edition (Academic Rigour)"
+  },
+  "yersinia-pestis-t3ss-virulence-lab-leak-en": {
+    "slug": "dich-hach-yersinia-pestis-t3ss-doc-luc-vi",
+    "lang": "vi",
+    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
   }
 };
 

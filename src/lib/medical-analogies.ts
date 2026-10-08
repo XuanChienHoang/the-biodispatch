@@ -15,6 +15,56 @@ export interface LaymanMedicalBoxData {
  * Keyed by post slug or root twin slug.
  */
 export const CURATED_MEDICAL_ANALOGIES: Record<string, LaymanMedicalBoxData> = {
+  // 0. Yersinia pestis & T3SS Virulence
+  "dich-hach-yersinia-pestis-t3ss-doc-luc-vi": {
+    title: "Góc Y Khoa Dễ Hiểu: 3 Mắt Xích Độc Lực Của Vi Khuẩn Dịch Hạch",
+    hook: "Giải mã cơ chế 'chiếc kim tiêm phân tử' T3SS hạ gục đại thực bào mà không cần bằng cấp y khoa:",
+    points: [
+      {
+        term: "Hệ thống Bơm độc T3SS (Type III Secretion System)",
+        layTerm: "Chiếc thang kim tiêm siêu vi xuyên thủng tường thành",
+        analogy:
+          "Vi khuẩn áp sát và cắm thẳng một chiếc kim rỗng vào tế bào miễn dịch để bơm độc tố vào buồng chỉ huy mà kháng thể trong máu không thể can thiệp.",
+      },
+      {
+        term: "Kho vũ khí Độc tố Yop (YopH, YopE, YopJ)",
+        layTerm: "Chất độc làm đông cứng pháo đài và cắt đứt còi báo động",
+        analogy:
+          "YopH và YopE phá hủy khung xương tế bào khiến bạch cầu bị liệt chân giả không thể thực bào; YopJ khóa van NF-κB chặn đứng còi báo động cytokine.",
+      },
+      {
+        term: "Thể Phổi Nguyên Phát (Pneumonic Plague)",
+        layTerm: "Cuộc tập kích đường thở với cửa sổ cấp cứu 24 giờ",
+        analogy:
+          "Khi hít phải qua không khí, vi khuẩn nhân đôi âm thầm trong 24 giờ đầu trước khi bùng phát cơn bão cytokine hoại tử phổi, đòi hỏi kháng sinh tức thì.",
+      },
+    ],
+  },
+  "yersinia-pestis-t3ss-virulence-lab-leak-en": {
+    title: "Layman Medical Concept: 3 Virulence Keys of Yersinia pestis",
+    hook: "Deconstructing the Type III molecular syringe and immune paralysis without technical jargon:",
+    points: [
+      {
+        term: "Type III Secretion Injectisome (T3SS)",
+        layTerm: "A nanoscale hypodermic syringe piercing leukocyte walls",
+        analogy:
+          "Y. pestis docks against immune cells and deploys a hollow needle to pump cytotoxic effectors directly into the host cytosol, bypassing circulating antibodies.",
+      },
+      {
+        term: "The Cytotoxic Yop Arsenal (YopH, YopE, YopJ)",
+        layTerm: "Molecular saboteurs freezing cellular defenses and alarms",
+        analogy:
+          "YopH/YopE depolymerize the actin cytoskeleton to paralyze phagocytosis, while YopJ silences NF-κB to prevent alarm cytokine release.",
+      },
+      {
+        term: "Primary Pneumonic Plague Aerosol",
+        layTerm: "A high-velocity respiratory strike with a 24-hour golden window",
+        analogy:
+          "Inhaled bacteria replicate silently for 24 hours before unleashing fatal alveolar hemorrhage, requiring prompt antibiotic intervention within hours.",
+      },
+    ],
+  },
+
   // 1. GLP-1 and Mitochondria Longevity
   "glp1-keo-dai-tuoi-tho-nature": {
     title: "Góc Y Khoa Dễ Hiểu: 3 Mắt Xích Kéo Dài Tuổi Thọ Tế Bào",
