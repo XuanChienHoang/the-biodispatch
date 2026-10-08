@@ -47,7 +47,13 @@ function getExistingSlugs() {
 
 function createDispatchMarkdown(topic, lang = 'vi', scheduledIsoDate) {
   const isVi = lang === 'vi';
-  const slug = isVi ? topic.slugVi : topic.slugEn;
+  // Ensure bulletproof naming convention: -vi for Vietnamese, -en for English
+  let slugVi = topic.slugVi;
+  if (!slugVi.endsWith('-vi')) slugVi += '-vi';
+  let slugEn = topic.slugEn;
+  if (!slugEn.endsWith('-en')) slugEn += '-en';
+
+  const slug = isVi ? slugVi : slugEn;
   const title = isVi ? topic.titleVi : topic.titleEn;
   const excerpt = isVi ? topic.excerptVi : topic.excerptEn;
   const tags = isVi ? topic.tagsVi : topic.tagsEn;

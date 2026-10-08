@@ -79,23 +79,21 @@ QUY TẮC BẮT BUỘC:
 8. Đảm bảo tổng độ dài văn bản mỗi ngôn ngữ đạt trên 800 - 1.200 từ.
 9. Cung cấp DOI thực chứng hoặc chuẩn mực của các bài báo uy tín (Science, Nature, Cell, PNAS, Lancet, JCI...) kèm PMID.`;
 
-  const prompt = `Hãy sáng tạo một chuyên khảo y sinh chuyên sâu song ngữ (Tiếng Việt và Tiếng Anh) cho ấn bản The BioDispatch.
+  const prompt = `Hãy sáng tạo một bài phân tích chuyên khảo y sinh song ngữ (Tiếng Việt và Tiếng Anh) cho ấn bản The BioDispatch của TS. Hoàng Xuân Chiến.
+QUAN TRỌNG VỀ ĐỊNH HƯỚNG NỘI DUNG MỚI:
+- CHỦ ĐỀ GẦN GŨI VỚI ĐỜI THỰC: Tập trung vào các loại THỰC PHẨM CHỨC NĂNG, HOẠT CHẤT HOẶC THÓI QUEN DINH DƯỠNG PHỔ BIẾN mà mọi người hay dùng hàng ngày (ví dụ: Magie L-Threonate vs Magie Glycinate cho giấc ngủ; Collagen thủy phân và sự thật về việc hấp thu vào da; Berberine và lời đồn "Ozempic tự nhiên"; Creatine cho trí não người không tập gym; Omega-3 Triglyceride vs Ethyl Ester; Ashwagandha và hạ cortisol; Vitamin D3 phối hợp K2 MK-7 chống vôi hóa mạch; Kẽm Carnosine bảo vệ niêm mạc dạ dày; v.v.).
+- BẮT ĐẦU TỪ HIỂU LẦM / SỰ THẬT ĐỜI THỰC: Khởi đầu bằng những băn khoăn, quảng cáo thổi phồng hay hiểu lầm phổ biến của cộng đồng, sau đó dùng các nghiên cứu lâm sàng mới nhất để làm rõ sự thật khách quan (được gì, mất gì, ai nên dùng, ai không nên dùng).
+- CÂN BẰNG GIỮA DỄ HIỂU VÀ CHUYÊN MÔN: Phần mở đầu và ứng dụng cực kỳ dễ hiểu, gần gũi. Phần cơ chế phân tử giải thích rõ ràng, súc tích có giải nghĩa thuật ngữ, không viết quá hàn lâm đánh đố bạn đọc thông thường.
+- Slug tiếng Việt BẮT BUỘC có hậu tố "-vi" (ví dụ: magie-glycinate-giac-ngu-vi), slug tiếng Anh BẮT BUỘC có hậu tố "-en" (ví dụ: magnesium-glycinate-sleep-en) để hệ thống tự động nhận diện ngôn ngữ tuyệt đối!
+
 Các chủ đề đã xuất bản gần đây (TRÁNH TRÙNG LẶP):
 ${existingSample}
-
-Hãy chọn 1 chủ đề mới lạ thuộc các nhóm:
-- Tự thực bào (Autophagy & Mitophagy), Protein folding, chaperone
-- Thụ thể GLP-1 / GIP / Glucagon đa mục tiêu thế hệ mới
-- Điều hòa trục HPA, cortisol và tính thấm hàng rào máu não (BBB)
-- Chuyển hóa mỡ nâu (BAT) và UCP1 thermogenesis
-- Ty thể và cơ chế rò rỉ điện tử, stress oxy hóa chọn lọc
-- Cơ chế sửa chữa ADN (PARP, ATM/ATR) và suy thoái tế bào thần kinh
 
 TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON SCHEMA VỚI CẤU TRÚC:
 {
   "topicId": "slug-id-viet-tat",
-  "slugVi": "slug-tieng-viet-khong-dau",
-  "slugEn": "slug-tieng-anh",
+  "slugVi": "slug-tieng-viet-co-hau-to-vi",
+  "slugEn": "slug-tieng-anh-co-hau-to-en",
   "titleVi": "Tiêu đề tiếng Việt",
   "titleEn": "Tiêu đề tiếng Anh",
   "excerptVi": "Tóm tắt tiếng Việt",

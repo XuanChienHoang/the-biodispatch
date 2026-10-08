@@ -29,6 +29,10 @@ export const ORGAN_ACCENT: Record<Organ, string> = {
  * Bài mới nên đặt tên <slug>-vi và <slug>-en để tự được ghép cặp.
  */
 const TWIN_ROOT: Record<string, string> = {
+  "chuyen-hoa-mo-nau-ucp1-ro-ri-proton": "brown-fat-ucp1-mitochondrial-proton-leak",
+  "brown-fat-ucp1-mitochondrial-proton-leak": "brown-fat-ucp1-mitochondrial-proton-leak",
+  "succinate-ucp1-bat-sinh-nhiet-ty-the": "succinate-ucp1-bat-mitochondrial-thermogenesis",
+  "succinate-ucp1-bat-mitochondrial-thermogenesis": "succinate-ucp1-bat-mitochondrial-thermogenesis",
   "curcumin-piperine-sinh-kha-dung": "curcumin-piperine",
   "curcumin-piperine-bioavailability": "curcumin-piperine",
   "glp1-keo-dai-tuoi-tho-nature": "glp1-longevity",
@@ -37,23 +41,27 @@ const TWIN_ROOT: Record<string, string> = {
   "metabolomic-horizon-clinical-diagnostics-vi": "metabolomic-horizon",
 };
 
-const twinRoot = (slug: string) => TWIN_ROOT[slug] ?? slug.replace(/-(vi|en)$/, "");
+export const twinRoot = (slug: string) => TWIN_ROOT[slug] ?? slug.replace(/-(vi|en)$/, "");
 
 export function isViArticle(a: Article): boolean {
   return (
     a.lang === "vi" ||
     a.slug.endsWith("-vi") ||
     a.slug.includes("sinh-kha-dung") ||
-    a.slug.includes("keo-dai-tuoi-tho")
+    a.slug.includes("keo-dai-tuoi-tho") ||
+    a.slug.includes("mo-nau") ||
+    a.slug.includes("sinh-nhiet")
   );
 }
 
 /**
- * Mỗi chủ đề chỉ hiện một phiên bản, ưu tiên đúng ngôn ngữ đang chọn.
- * Chủ đề chỉ có một ngôn ngữ vẫn được giữ nguyên. Thứ tự đầu vào (mới nhất trước) được bảo toàn.
+ * Mỗi chủ đề chỉ hiện một phiên bản, chuẩn xác theo ngôn ngữ đang chọn.
+ * Loại bỏ tuyệt đối tình trạng rò rỉ bài tiếng Việt sang tiếng Anh và ngược lại.
  */
 export function dedupeForLang(articles: Article[], lang: Lang): Article[] {
+  const targetIsVi = lang === "vi";
   const best = new Map<string, Article>();
+
   for (const a of articles) {
     const key = twinRoot(a.slug);
     const cur = best.get(key);
@@ -61,12 +69,15 @@ export function dedupeForLang(articles: Article[], lang: Lang): Article[] {
       best.set(key, a);
       continue;
     }
-    const aMatches = (lang === "vi") === isViArticle(a);
-    const curMatches = (lang === "vi") === isViArticle(cur);
+    const aMatches = targetIsVi === isViArticle(a);
+    const curMatches = targetIsVi === isViArticle(cur);
     if (aMatches && !curMatches) best.set(key, a);
   }
+
   const keep = new Set(best.values());
-  return articles.filter((a) => keep.has(a));
+  return articles
+    .filter((a) => keep.has(a))
+    .filter((a) => (targetIsVi ? isViArticle(a) : !isViArticle(a)));
 }
 
 /** Định dạng xác định (không phụ thuộc múi giờ) để tránh lệch hydration. */
