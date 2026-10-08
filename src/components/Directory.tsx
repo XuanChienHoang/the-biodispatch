@@ -4,11 +4,23 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { FlaskConical, BookOpen, LineChart } from "lucide-react";
+import {
+  FlaskConical,
+  BookOpen,
+  LineChart,
+  Layers,
+  Heart,
+  Sparkles,
+  Brain,
+  Flame,
+  ShieldCheck,
+  ChevronRight,
+  Eye,
+} from "lucide-react";
 import { ORGANS, TIERS, type Article, type Tier, type Organ } from "@/lib/content";
 import { inkOn, onPaper } from "@/lib/tones";
 import { useLanguageStore, DICT } from "@/lib/i18n";
-import { dedupeForLang, formatDate, ORGAN_ACCENT, ORGAN_VI, SPOTLIGHT_COUNT } from "@/lib/home";
+import { dedupeForLang, formatDate, ORGAN_ACCENT, ORGAN_VI } from "@/lib/home";
 
 const TIER_META: Record<Tier, { icon: typeof BookOpen; color: string; labelVi: string }> = {
   Fundamentals: { icon: BookOpen, color: "#64748B", labelVi: "Nền tảng Y sinh" },
@@ -16,158 +28,224 @@ const TIER_META: Record<Tier, { icon: typeof BookOpen; color: string; labelVi: s
   "Lab Gizmo": { icon: FlaskConical, color: "#10B981", labelVi: "Mô phỏng Dược học" },
 };
 
-function Chip({
-  active,
-  children,
-  onClick,
-  tone = "#0B192C",
-}: {
-  active: boolean;
-  children: React.ReactNode;
-  onClick: () => void;
-  tone?: string;
-}) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      aria-pressed={active}
-      className={`caps whitespace-nowrap rounded-full border px-3.5 py-2 transition-all duration-200 cursor-pointer ${
-        active
-          ? "border-transparent"
-          : "border-slate-hair bg-paper text-slate-ink hover:border-indigo-deep hover:text-indigo-deep"
-      }`}
-      style={active ? { background: tone, color: inkOn(tone) } : undefined}
-    >
-      {children}
-    </button>
-  );
+type TabKey = "All" | Organ | "GizmosOnly";
+
+interface TabItem {
+  key: TabKey;
+  labelEn: string;
+  labelVi: string;
+  icon: React.ReactNode;
 }
+
+const TABS: TabItem[] = [
+  { key: "All", labelEn: "All Dispatches", labelVi: "Toàn bộ Kho bài", icon: <Layers size={14} /> },
+  { key: "Metabolic", labelEn: "Metabolic & BAT", labelVi: "Chuyển hóa & BAT", icon: <Flame size={14} /> },
+  { key: "Heart", labelEn: "Cardiovascular", labelVi: "Tim mạch & Mỡ máu", icon: <Heart size={14} /> },
+  { key: "Cellular Aging", labelEn: "Cellular Aging & Cancer", labelVi: "Trẻ hóa & Ung thư", icon: <Sparkles size={14} /> },
+  { key: "Brain", labelEn: "Neuro & Sleep", labelVi: "Não bộ & Giấc ngủ", icon: <Brain size={14} /> },
+  { key: "Gut", labelEn: "Gut & Microbiome", labelVi: "Đường ruột & Hệ vi sinh", icon: <ShieldCheck size={14} /> },
+  { key: "Immune", labelEn: "Immunity & Bioavailability", labelVi: "Miễn dịch & Hấp thu", icon: <FlaskConical size={14} /> },
+  { key: "GizmosOnly", labelEn: "Interactive Simulators", labelVi: "Có Bộ máy Mô phỏng", icon: <FlaskConical size={14} /> },
+];
 
 export function Directory({ articles }: { articles: Article[] }) {
   const { lang } = useLanguageStore();
   const t = DICT[lang];
   const isVi = lang === "vi";
 
-  const [organ, setOrgan] = useState<Organ | "All">("All");
-  const [tier, setTier] = useState<Tier | "All">("All");
+  // Tab chuyên đề đang chọn
+  const [activeTab, setActiveTab] = useState<TabKey>("All");
+  // Lọc thêm theo độ sâu lâm sàng (tier) nếu muốn
+  const [selectedTier, setSelectedTier] = useState<Tier | "All">("All");
+  // Từ khóa tìm kiếm ngay trong Kho bài
+  const [searchQuery, setSearchQuery] = useState("");
 
-  // Mỗi chủ đề một phiên bản đúng ngôn ngữ đang chọn, mới nhất trước.
+  // Mỗi chủ đề một phiên bản đúng ngôn ngữ đang chọn
   const pool = useMemo(() => dedupeForLang(articles, lang), [articles, lang]);
 
-  const filtering = organ !== "All" || tier !== "All";
+  // Danh sách bài được lọc theo tab chuyên đề, độ sâu và từ khóa tìm kiếm
+  const filteredList = useMemo(() => {
+    return pool.filter((a) => {
+      // 1. Lọc theo tab
+      if (activeTab === "GizmosOnly") {
+        if (!a.gizmo) return false;
+      } else if (activeTab !== "All") {
+        if (a.organ !== activeTab) return false;
+      }
 
-  const list = useMemo(() => {
-    const filtered = pool.filter(
-      (a) => (organ === "All" || a.organ === organ) && (tier === "All" || a.tier === tier)
-    );
-    // Chưa lọc: bỏ các bài đã nằm ở khối tiêu điểm để không lặp lại ngay bên dưới.
-    return filtering ? filtered : filtered.slice(SPOTLIGHT_COUNT);
-  }, [pool, organ, tier, filtering]);
+      // 2. Lọc theo tier
+      if (selectedTier !== "All" && a.tier !== selectedTier) {
+        return false;
+      }
 
-  const matched = useMemo(
-    () => pool.filter((a) => (organ === "All" || a.organ === organ) && (tier === "All" || a.tier === tier)).length,
-    [pool, organ, tier]
-  );
+      // 3. Lọc theo từ khóa tìm kiếm
+      if (searchQuery.trim()) {
+        const q = searchQuery.toLowerCase();
+        const title = (isVi && a.titleVi ? a.titleVi : a.title).toLowerCase();
+        const dek = (isVi && a.dekVi ? a.dekVi : a.dek).toLowerCase();
+        const organ = (isVi ? ORGAN_VI[a.organ] : a.organ).toLowerCase();
+        if (!title.includes(q) && !dek.includes(q) && !organ.includes(q)) {
+          return false;
+        }
+      }
 
-  const reset = () => {
-    setOrgan("All");
-    setTier("All");
-  };
+      return true;
+    });
+  }, [pool, activeTab, selectedTier, searchQuery, isVi]);
 
   return (
     <section id="directory" className="mx-auto max-w-[1240px] scroll-mt-8 px-6 py-12 lg:px-10 lg:py-16">
+      {/* Header khu vực */}
       <div className="flex flex-wrap items-end justify-between gap-6 border-b-2 border-indigo-deep pb-5">
         <div>
-          <span className="caps text-slate-ink">{t.corpusTitle}</span>
+          <span className="caps text-slate-ink">
+            {isVi ? "§ 1 · Thư viện Báo cáo & Tra cứu Chuyên sâu" : "§ 1 · Article Directory & Specialized Corpus"}
+          </span>
           <h2 className="mt-3 font-display display-lg font-black leading-[0.95] tracking-[-0.035em] text-indigo-deep">
-            {t.corpusHead}
+            {isVi ? "Kho Bài viết Chuyên sâu." : "The Specialised Corpus."}
           </h2>
         </div>
-        <p className="max-w-md text-[0.95rem] leading-relaxed text-slate-ink">{t.corpusDesc}</p>
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+          <div className="relative w-full sm:w-72">
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder={isVi ? "Lọc nhanh trong kho bài..." : "Filter in corpus..."}
+              className="w-full rounded-full border border-slate-hair bg-paper-tint py-2 pl-9 pr-4 text-xs font-sans text-indigo-deep placeholder:text-slate-mute focus:border-indigo-deep focus:bg-paper focus:outline-none"
+            />
+            <span className="absolute left-3 top-2.5 text-slate-mute">🔍</span>
+            {searchQuery && (
+              <button
+                type="button"
+                onClick={() => setSearchQuery("")}
+                className="absolute right-3 top-2 text-xs text-slate-mute hover:text-indigo-deep cursor-pointer"
+              >
+                ✕
+              </button>
+            )}
+          </div>
+        </div>
       </div>
 
-      {/* filters */}
-      <div className="mt-6 space-y-3">
-        <div className="flex flex-wrap items-center gap-2">
-          <span className="caps w-24 shrink-0 text-slate-ink font-semibold">{t.organAxis}</span>
-          <Chip active={organ === "All"} onClick={() => setOrgan("All")}>
-            {t.all}
-          </Chip>
-          {ORGANS.map((o) => (
-            <Chip key={o} active={organ === o} onClick={() => setOrgan(o)}>
-              {isVi ? ORGAN_VI[o] : o}
-            </Chip>
-          ))}
+      {/* THANH TABS CHUYÊN ĐỀ NGANG */}
+      <div className="mt-8 border-b border-slate-hair">
+        <div className="no-scrollbar -mb-px flex space-x-2 overflow-x-auto pb-2 sm:space-x-3">
+          {TABS.map((tab) => {
+            const isActive = activeTab === tab.key;
+            // Đếm số bài tương ứng trong tab này
+            const count = pool.filter((a) => {
+              if (tab.key === "GizmosOnly") return !!a.gizmo;
+              if (tab.key === "All") return true;
+              return a.organ === tab.key;
+            }).length;
+
+            return (
+              <button
+                key={tab.key}
+                type="button"
+                onClick={() => {
+                  setActiveTab(tab.key);
+                }}
+                className={`group flex shrink-0 items-center gap-2 rounded-t-sm border-b-2 px-4 py-3 text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer ${
+                  isActive
+                    ? "border-indigo-deep bg-paper text-indigo-deep font-bold shadow-xs"
+                    : "border-transparent text-slate-ink hover:border-slate-300 hover:text-indigo-deep"
+                }`}
+              >
+                <span className={isActive ? "text-trace-ink" : "text-slate-mute group-hover:text-indigo-deep"}>
+                  {tab.icon}
+                </span>
+                <span>{isVi ? tab.labelVi : tab.labelEn}</span>
+                <span
+                  className={`ml-1 rounded-full px-1.5 py-0.5 text-[0.7rem] font-mono ${
+                    isActive ? "bg-indigo-deep text-white" : "bg-slate-hair text-slate-ink"
+                  }`}
+                >
+                  {count}
+                </span>
+              </button>
+            );
+          })}
         </div>
+      </div>
+
+      {/* THANH ĐIỀU KHIỂN PHỤ: Lọc theo độ sâu lâm sàng (Tier) */}
+      <div className="mt-4 flex flex-wrap items-center justify-between gap-4 border-b border-slate-hair pb-4 pt-1">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="caps w-24 shrink-0 text-slate-ink font-semibold">{t.complexityAxis}</span>
-          <Chip active={tier === "All"} onClick={() => setTier("All")}>
-            {t.all}
-          </Chip>
+          <span className="caps text-xs font-semibold text-slate-ink">
+            {isVi ? "Độ sâu phân tích:" : "Analytical Depth:"}
+          </span>
+          <button
+            type="button"
+            onClick={() => setSelectedTier("All")}
+            className={`caps rounded-full px-3 py-1 text-xs transition-colors cursor-pointer ${
+              selectedTier === "All"
+                ? "bg-indigo-deep text-white font-bold"
+                : "bg-paper-tint text-slate-ink border border-slate-hair hover:text-indigo-deep"
+            }`}
+          >
+            {isVi ? "Tất cả" : "All Tiers"}
+          </button>
           {TIERS.map((tierName) => (
-            <Chip
+            <button
               key={tierName}
-              active={tier === tierName}
-              onClick={() => setTier(tierName)}
-              tone={onPaper(TIER_META[tierName].color)}
+              type="button"
+              onClick={() => setSelectedTier(tierName)}
+              className={`caps rounded-full px-3 py-1 text-xs transition-colors cursor-pointer ${
+                selectedTier === tierName
+                  ? "bg-indigo-deep text-white font-bold"
+                  : "bg-paper-tint text-slate-ink border border-slate-hair hover:text-indigo-deep"
+              }`}
             >
               {isVi ? TIER_META[tierName].labelVi : tierName}
-            </Chip>
+            </button>
           ))}
+        </div>
+
+        <div className="caps text-xs text-slate-ink">
+          {isVi
+            ? `Hiển thị ${filteredList.length} bài phân tích`
+            : `Displaying ${filteredList.length} monographs`}
         </div>
       </div>
 
-      <div className="mt-4 flex items-baseline justify-between border-t border-slate-hair pt-3">
-        <p className="caps text-slate-ink">
-          {filtering
-            ? `${t.showingDispatches} ${matched} ${t.of} ${pool.length} ${t.dispatchesText}`
-            : isVi
-              ? `${list.length} bài trong kho lưu trữ, chưa kể ${SPOTLIGHT_COUNT} bài mới nhất ở trên`
-              : `${list.length} dispatches in the archive, excluding the ${SPOTLIGHT_COUNT} latest above`}
-        </p>
-        {filtering && (
-          <button
-            onClick={reset}
-            className="caps text-indigo-deep underline decoration-trace decoration-2 underline-offset-4 hover:text-trace-ink cursor-pointer"
-          >
-            {t.clearFilters}
-          </button>
-        )}
-      </div>
-
-      {/* ---------- visual grid ---------- */}
-      {list.length === 0 ? (
+      {/* DANH SÁCH BÀI THEO TAB ĐANG CHỌN */}
+      {filteredList.length === 0 ? (
         <div className="mt-10 rounded-sm border border-dashed border-slate-hair bg-paper-tint px-8 py-16 text-center">
-          <FlaskConical className="mx-auto text-slate-ink" size={26} />
-          <p className="mt-4 font-display text-step-1 text-indigo-deep">
-            {isVi ? "Chưa có bài viết ở phân mục này." : "No papers match this intersection."}
+          <FlaskConical className="mx-auto text-slate-ink" size={28} />
+          <p className="mt-4 font-display text-base text-indigo-deep">
+            {isVi ? "Chưa có bài viết ở chuyên đề và bộ lọc này." : "No monographs match this specialized filter."}
           </p>
           <button
-            onClick={reset}
-            className="caps mt-6 rounded-sm bg-indigo-deep px-4 py-2.5 text-paper hover:bg-indigo-mid cursor-pointer"
+            onClick={() => {
+              setActiveTab("All");
+              setSelectedTier("All");
+            }}
+            className="caps mt-5 rounded-sm bg-indigo-deep px-4 py-2 text-xs font-semibold text-paper hover:bg-indigo-mid cursor-pointer"
           >
-            {isVi ? "Đặt lại bộ lọc" : "Reset filters"}
+            {isVi ? "Đặt lại về Tất cả" : "Reset to All"}
           </button>
         </div>
       ) : (
         <motion.div layout className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           <AnimatePresence mode="popLayout">
-            {list.map((a, i) => {
+            {filteredList.map((a, i) => {
               const meta = TIER_META[a.tier];
               const Icon = meta.icon;
               const accent = ORGAN_ACCENT[a.organ];
               const displayTitle = isVi && a.titleVi ? a.titleVi : a.title;
               const displayDek = isVi && a.dekVi ? a.dekVi : a.dek;
+
               return (
                 <motion.article
                   layout
                   key={a.slug}
-                  initial={{ opacity: 0, y: 14 }}
+                  initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -8 }}
-                  transition={{ duration: 0.32, delay: Math.min(i * 0.04, 0.24), ease: [0.22, 1, 0.36, 1] }}
-                  className="group relative flex flex-col overflow-hidden rounded-sm border border-slate-hair bg-paper transition-all duration-300 hover:-translate-y-0.5 hover:border-indigo-deep hover:shadow-[0_22px_45px_-28px_rgba(11,25,44,0.75)]"
+                  transition={{ duration: 0.28, delay: Math.min(i * 0.03, 0.18), ease: [0.22, 1, 0.36, 1] }}
+                  className="group relative flex flex-col overflow-hidden rounded-sm border border-slate-hair bg-paper transition-all duration-300 hover:-translate-y-0.5 hover:border-indigo-deep hover:shadow-md"
                 >
                   <Link
                     href={`/blog/${a.slug}`}
@@ -191,13 +269,13 @@ export function Directory({ articles }: { articles: Article[] }) {
                           <div className="graticule absolute inset-0 opacity-40" />
                         </div>
                       )}
-                      <span className="caps absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-sm bg-[#050d19]/80 px-2 py-1 text-white backdrop-blur-sm">
+                      <span className="caps absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-sm bg-[#050d19]/80 px-2 py-1 text-xs text-white backdrop-blur-sm">
                         <span className="h-1.5 w-1.5 rounded-full" style={{ background: accent }} />
                         {isVi ? ORGAN_VI[a.organ] : a.organ}
                       </span>
                       {a.gizmo && (
                         <span
-                          className="absolute right-3 top-3 grid h-7 w-7 place-items-center rounded-full bg-[#050d19]/80 text-trace backdrop-blur-sm"
+                          className="absolute right-3 top-3 grid h-7 w-7 place-items-center rounded-full bg-[#050d19]/85 text-trace backdrop-blur-sm"
                           title={t.embeddedGizmo}
                         >
                           <FlaskConical size={13} />
@@ -206,18 +284,18 @@ export function Directory({ articles }: { articles: Article[] }) {
                     </div>
 
                     <div className="flex flex-1 flex-col p-5">
-                      <h3 className="font-display text-[1.14rem] font-semibold leading-[1.18] tracking-[-0.02em] text-indigo-deep line-clamp-3">
+                      <h3 className="font-display text-[1.08rem] font-semibold leading-[1.2] tracking-[-0.02em] text-indigo-deep line-clamp-3 transition-colors group-hover:text-trace-ink">
                         {displayTitle}
                       </h3>
                       <p className="mt-2.5 flex-1 text-[0.86rem] leading-relaxed text-slate-ink line-clamp-2">
                         {displayDek}
                       </p>
-                      <div className="mt-4 flex items-center justify-between gap-3 border-t border-slate-hair pt-3">
+                      <div className="mt-4 flex items-center justify-between gap-3 border-t border-slate-hair pt-3 text-xs">
                         <span
                           className="caps flex items-center gap-1.5 font-semibold"
                           style={{ color: onPaper(meta.color) }}
                         >
-                          <Icon size={13} />
+                          <Icon size={12} />
                           {isVi ? meta.labelVi : a.tier}
                         </span>
                         <span className="caps text-slate-ink">

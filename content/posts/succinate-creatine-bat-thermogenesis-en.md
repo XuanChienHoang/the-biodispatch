@@ -5,7 +5,7 @@ excerpt: "For decades, classical medicine has regarded Uncoupling Protein 1 (UCP
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"
 tags: ["Brown Adipose Tissue", "Creatine Cycling", "UCP1", "Succinate", "Metabolic Reprogramming"]
-organ: "Longevity"
+organ: "Cellular Aging"
 tier: "Clinical Deep-Dive"
 readingTime: "11 min read"
 featured: true

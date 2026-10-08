@@ -5,7 +5,7 @@ excerpt: "Trong nhiều thập kỷ, y học kinh điển luôn coi protein UCP1
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"
 tags: ["Mỡ nâu", "Chu trình Creatine", "UCP1", "Succinate", "Chuyển hóa năng lượng"]
-organ: "Longevity"
+organ: "Cellular Aging"
 tier: "Clinical Deep-Dive"
 readingTime: "11 phút đọc"
 featured: true

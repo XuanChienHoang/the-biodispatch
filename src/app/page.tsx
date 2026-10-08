@@ -1,5 +1,6 @@
 import { Hero, HeroStrip } from "@/components/Hero";
 import { HomeMagazine } from "@/components/HomeMagazine";
+import { CuratedSections } from "@/components/CuratedSections";
 import { Directory } from "@/components/Directory";
 import { getArticles } from "@/lib/store";
 import { HomeFeaturedGizmo, HomeSimulationLab } from "@/components/HomeGizmosSection";
@@ -18,19 +19,22 @@ export default async function HomePage() {
 
   return (
     <main>
-      <Hero />
+      <Hero articles={articles} />
 
-      {/* ---- Bài mới nhất: 1 bài lớn + 3 bài nhỏ, có ảnh ---- */}
+      {/* ---- Bài mới nhất: 1 bài lớn + 3 bài nhỏ (Spotlight Masthead) ---- */}
       <HomeMagazine articles={articles} />
 
-      {/* ---- Kho bài viết dạng lưới ảnh, có bộ lọc ---- */}
-      <Directory articles={articles} />
+      {/* ---- Các tuyến chuyên đề biên tập theo phong cách tạp chí khoa học cao cấp ---- */}
+      <CuratedSections articles={articles} />
 
       {/* ---- Dải thông tin tác giả & chuẩn biên tập ---- */}
       <HeroStrip />
 
       {/* ---- Dụng cụ mô phỏng tương tác ---- */}
       <HomeFeaturedGizmo />
+
+      {/* ---- Kho bài viết toàn văn dạng thư mục tìm kiếm & bộ lọc ---- */}
+      <Directory articles={articles} />
 
       {/* ---- Simulation Engines Index ---- */}
       <HomeSimulationLab />

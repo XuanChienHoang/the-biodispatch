@@ -5,6 +5,8 @@ excerpt: "While genomics maps what could happen, metabolomics reveals what is ac
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Dr. rer. nat. | University of Hamburg"
 tags: ["Metabolomics", "Biomarkers", "Clinical Diagnostics", "TechBio"]
+organ: "Metabolic"
+tier: "Clinical Deep-Dive"
 readingTime: "6 min read"
 featured: true
 doi: "10.1093/nar/gkab1062"

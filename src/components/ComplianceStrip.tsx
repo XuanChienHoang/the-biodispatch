@@ -130,33 +130,6 @@ export function ComplianceStrip() {
                     {isVi ? "Thư viện Báo cáo & Bài Phân tích" : "Article Directory & Corpus"}
                   </Link>
                 </li>
-                <li>
-                  <a
-                    className="transition-colors hover:text-trace-ink"
-                    href="https://github.com/XuanChienHoang/the-biodispatch"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {isVi ? "Kho mã nguồn GitHub (Riêng tư)" : "GitHub Workspace (Private)"}
-                  </a>
-                </li>
-                <li>
-                  <a className="transition-colors hover:text-trace-ink flex items-center gap-1.5" href="/feed.xml">
-                    <span className="h-1.5 w-1.5 rounded-full bg-orange-500 inline-block" />
-                    RSS 2.0 Feed
-                  </a>
-                </li>
-                <li>
-                  <a className="transition-colors hover:text-trace-ink" href="/sitemap.xml">
-                    Google Sitemap (XML)
-                  </a>
-                </li>
-                <li>
-                  <Link className="transition-colors hover:text-trace-ink flex items-center gap-1.5" href="/admin">
-                    <span className="h-1.5 w-1.5 rounded-full bg-cyan-500 inline-block" />
-                    {isVi ? "Editorial Studio (Quản trị)" : "Editorial Studio (CMS)"}
-                  </Link>
-                </li>
               </ul>
             </div>
             <div>

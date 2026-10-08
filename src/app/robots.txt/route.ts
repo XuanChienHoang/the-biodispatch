@@ -3,6 +3,8 @@ import { NextResponse } from "next/server";
 export async function GET() {
   const robotsTxt = `User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /api/
 
 Sitemap: https://the-biodispatch.vercel.app/sitemap.xml
 `;
