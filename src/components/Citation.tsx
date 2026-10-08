@@ -12,16 +12,18 @@ import { useLanguageStore } from "@/lib/i18n";
 export interface CitationData {
   ordinal: number;
   label: string;
+  authors?: string;
   pmid: string | null;
   doi: string | null;
-  design: string;
-  sampleSize: number | null;
-  journal: string;
-  year: number;
-  abstract: string;
+  design?: string;
+  sampleSize?: string | number | null;
+  journal?: string;
+  year?: number;
+  abstract?: string;
 }
 
-function designIcon(design: string) {
+function designIcon(design?: string) {
+  if (!design) return FileText;
   if (/meta|RCT|crossover|blind|trial/i.test(design)) return Users;
   if (/in-vitro|microsome|assay/i.test(design)) return FlaskConical;
   return FileText;

@@ -115,7 +115,8 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   };
 }
 
-function designIcon(design: string) {
+function designIcon(design?: string) {
+  if (!design) return FileText;
   if (/meta|random|crossover|blind|trial/i.test(design)) return Users;
   if (/in-vitro|microsome|assay/i.test(design)) return FlaskConical;
   return FileText;
