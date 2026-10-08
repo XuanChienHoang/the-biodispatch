@@ -902,6 +902,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Modern biomedical research has completely revolutionized our understanding of adipose tissue, shifting its paradigm from a passive energy storage depot to a highly active endocrine organ. At the heart of this revolution is brown adipose tissue (BAT) and its capacity for non-shivering thermogenesis mediated by mitochondrial Uncoupling Protein 1 (UCP1). This monograph dissects the unexpected role of succinate, a classic Krebs cycle intermediate, acting as a master signaling molecule that drives UCP1 activation via localized, selective reactive oxygen species (ROS) production at complex II. By reprogramming this mitochondrial pathway, we can actively dissipate excess energy, reverse insulin resistance, mitigate systemic inflammation, and unlock a groundbreaking frontier in longevity medicine.",
     },
   ],
+  "succinate-creatine-bat-thermogenesis-vi": [
+    {
+      ordinal: 1,
+      label: "Succinate Signaling and Creatine Futile Cycling: The Next-Generation Thermogenic Paradigm Beyond UCP1",
+      pmid: "30046111",
+      doi: "10.1038/s41586-018-0353-2",
+      design: "Peer-reviewed Landmark Publication",
+      sampleSize: null,
+      journal: "Nature",
+      year: 2018,
+      abstract: "For decades, classical medicine has regarded Uncoupling Protein 1 (UCP1) as the sole executioner of non-shivering thermogenesis in brown adipose tissue (BAT). However, recent pioneering studies have unveiled a profound biological paradox: UCP1-knockout mice retain a remarkable capacity to tolerate cold exposure through previously unknown metabolic pathways. The key to this adaptive mechanism lies within the creatine futile cycle and intracellular succinate accumulation, which activates the GPR91 receptor. This monograph dissects the molecular mechanisms of UCP1-independent thermogenesis, offering a paradigm shift in treating obesity and metabolic syndrome through mitochondrial reprogramming and targeted bioenergetic manipulation.",
+    },
+  ],
+  "succinate-creatine-bat-thermogenesis-en": [
+    {
+      ordinal: 1,
+      label: "Succinate Signaling and Creatine Futile Cycling: The Next-Generation Thermogenic Paradigm Beyond UCP1",
+      pmid: "30046111",
+      doi: "10.1038/s41586-018-0353-2",
+      design: "Peer-reviewed Landmark Publication",
+      sampleSize: null,
+      journal: "Nature",
+      year: 2018,
+      abstract: "For decades, classical medicine has regarded Uncoupling Protein 1 (UCP1) as the sole executioner of non-shivering thermogenesis in brown adipose tissue (BAT). However, recent pioneering studies have unveiled a profound biological paradox: UCP1-knockout mice retain a remarkable capacity to tolerate cold exposure through previously unknown metabolic pathways. The key to this adaptive mechanism lies within the creatine futile cycle and intracellular succinate accumulation, which activates the GPR91 receptor. This monograph dissects the molecular mechanisms of UCP1-independent thermogenesis, offering a paradigm shift in treating obesity and metabolic syndrome through mitochondrial reprogramming and targeted bioenergetic manipulation.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
