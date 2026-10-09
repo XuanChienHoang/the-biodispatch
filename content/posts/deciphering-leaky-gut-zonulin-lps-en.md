@@ -1,6 +1,6 @@
 ---
 title: "Deciphering Leaky Gut: The Zonulin-Mediated Disruption of Tight Junctions and the Threat of Metabolic Endotoxemia"
-date: "2026-10-09T09:00:00Z"
+date: "2026-08-08T09:00:00Z"
 excerpt: "A common misconception is that leaky gut is merely an alternative medicine myth with no clinical relevance. In reality, intestinal permeability is a highly regulated physiological process mediated by Zonulin (pre-haptoglobin 2). When the mucosal barrier is compromised, tight junction proteins such as Occludin and Claudins are disassembled, permitting the translocation of Lipopolysaccharide (LPS), an endotoxin from Gram-negative bacteria, into the systemic circulation. This phenomenon triggers TLR4 receptors on immune cells, initiating low-grade chronic inflammation known as metabolic endotoxemia, a primary driver of insulin resistance, obesity, and autoimmune diseases."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

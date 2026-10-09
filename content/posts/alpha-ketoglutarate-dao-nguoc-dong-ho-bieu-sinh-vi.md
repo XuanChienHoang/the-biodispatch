@@ -1,6 +1,6 @@
 ---
 title: "Nghịch lý Alpha-Ketoglutarate: Cầu nối chuyển hóa tái thiết lập đồng hồ biểu sinh và đảo ngược tuổi già sinh học"
-date: "2026-10-08T13:00:00Z"
+date: "2026-10-05T09:00:00Z"
 excerpt: "Khi thảo luận về trường thọ, chúng ta thường tập trung vào NAD+ hoặc sửa chữa ty thể mà vô tình bỏ qua một nghịch lý sinh học đáng kinh ngạc: Alpha-Ketoglutarate (AKG), một chất trung gian đơn giản trong chu trình Krebs, lại là chiếc chìa khóa vạn năng điều khiển quá trình khử methyl hóa DNA thông qua các enzyme TET. Bài viết này bóc tách cơ chế phân tử đằng sau sự sụt giảm 90% nồng độ AKG theo tuổi tác, giải mã lý do vì sao bổ sung Calcium AKG (Ca-AKG) có thể tái thiết lập đồng hồ biểu sinh, đảo ngược tuổi sinh học trung bình 8 năm trong các thử nghiệm lâm sàng, và cung cấp một chiến lược phối hợp hiệp đồng thực tế cho y học thực chứng."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

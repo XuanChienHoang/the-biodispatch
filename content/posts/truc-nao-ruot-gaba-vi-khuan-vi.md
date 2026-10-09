@@ -1,6 +1,6 @@
 ---
 title: "Giải Mã Trục Não Ruột: Cách Vi Khuẩn Đường Ruột Sản Xuất GABA Và Điều Hòa Hệ Thần Kinh Qua Dây Thần Kinh Phế Vị"
-date: "2026-10-09T09:00:00Z"
+date: "2026-09-06T09:00:00Z"
 excerpt: "Nhiều người tin rằng các vấn đề tâm lý như lo âu, trầm cảm chỉ bắt nguồn từ sự mất cân bằng hóa học trong não bộ và chỉ có thể điều trị bằng các thuốc hướng thần tác động trực tiếp qua hàng rào máu não. Tuy nhiên, đây là một hiểu lầm sinh học kinh điển bỏ qua hệ trục não ruột (Gut-Brain Axis). Thực tế, hàng rào máu não (BBB) ngăn chặn hầu hết GABA ngoại sinh đi vào trung ương thần kinh. Vậy tại sao việc bổ sung GABA đường uống hoặc tối ưu hóa lợi khuẩn đường ruột lại cải thiện rõ rệt tâm trạng? Nghịch lý này được giải mã thông qua vai trò của dây thần kinh phế vị (Vagus Nerve) và các thụ thể biểu mô ruột. Vi khuẩn đường ruột không chỉ sản xuất GABA mà còn tạo ra các axit béo chuỗi ngắn (SCFAs) kích hoạt trực tiếp các thụ thể GPR41/43, gửi tín hiệu ngược dòng lên não để dập tắt các phản ứng viêm của tế bào bọc đô (microglia), mở ra một kỷ nguyên mới trong điều trị tâm thần học chuyển hóa."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

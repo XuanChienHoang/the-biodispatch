@@ -1,6 +1,6 @@
 ---
 title: "Trục Succinate-UCP1 Tại Ty Thể Mỡ Nâu: Công Tắc Sinh Nhiệt Và Đột Phá Trong Điều Trị Chuyển Hóa, Kéo Dài Tuổi Thọ"
-date: "2026-10-02T09:00:00Z"
+date: "2026-10-01T09:00:00Z"
 excerpt: "Nghiên cứu y sinh hiện đại đã làm thay đổi hoàn toàn nhận thức về mô mỡ: từ một kho dự trữ năng lượng thụ động thành một cơ quan nội tiết hoạt động cực kỳ năng nổ. Trọng tâm của cuộc cách mạng này là mô mỡ nâu (BAT) và khả năng sinh nhiệt không run thông qua protein mở cặp UCP1 tại ty thể. Chuyên khảo này đi sâu phân tích vai trò bất ngờ của succinate, một chất trung gian của chu trình Krebs, hoạt động như một phân tử tín hiệu tối thượng kích hoạt UCP1 thông qua việc sản sinh các loài oxy phản ứng (ROS) chọn lọc tại phức hợp II. Bằng cách tái lập chương trình chuyển hóa này, chúng ta có thể chủ động đốt cháy năng lượng dư thừa, đảo ngược tình trạng kháng insulin, giảm viêm hệ thống và mở ra một hướng đi đột phá trong y học trường thọ."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

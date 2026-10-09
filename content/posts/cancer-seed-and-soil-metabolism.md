@@ -1,6 +1,6 @@
 ---
 title: "Mật mã Ung thư Phần 2: Hạt giống & Thổ nhưỡng: Vì sao Vi môi trường mô quyết định số phận Khối u?"
-date: "2026-08-11T09:00:00Z"
+date: "2026-08-12T09:00:00Z"
 excerpt: "Đột biến ADN xuất hiện mỗi ngày trong cơ thể chúng ta, nhưng tại sao phần lớn không bao giờ phát triển thành khối u? Giải mã giả thuyết kinh điển Seed and Soil của Stephen Paget dưới lăng kính miễn dịch học và sinh thái học tế bào."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

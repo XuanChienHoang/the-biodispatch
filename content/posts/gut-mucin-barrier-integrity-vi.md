@@ -1,6 +1,6 @@
 ---
 title: "Bức tường Mucin: Khi lớp nhầy ruột bị bào mòn và sự khởi đầu của bệnh lý tự miễn"
-date: "2026-10-09T09:00:00Z"
+date: "2026-08-29T09:00:00Z"
 excerpt: "Nhiều người tin rằng chỉ cần bổ sung lợi khuẩn (probiotics) là đủ để chữa lành đường ruột. Tuy nhiên, họ đã bỏ qua 'người gác cổng' quan trọng nhất: lớp màng nhầy Mucin. Bài viết này bóc tách nghịch lý sinh học về sự suy giảm lớp nhầy do chế độ ăn ít chất xơ, dẫn đến việc vi khuẩn đường ruột bắt đầu 'ăn' chính lớp niêm mạc của vật chủ, gây ra tình trạng rò rỉ ruột và kích hoạt các phản ứng viêm hệ thống mà không ai ngờ tới."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

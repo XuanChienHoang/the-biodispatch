@@ -1,6 +1,6 @@
 ---
 title: "The Alpha-Ketoglutarate Paradox: Deciphering the Metabolic-Epigenetic Link via TET Enzymes to Reverse Biological Age"
-date: "2026-10-09T09:00:00Z"
+date: "2026-10-07T09:00:00Z"
 excerpt: "Far beyond its classical role as a rate-limiting intermediate in the tricarboxylic acid (TCA) cycle for ATP production, Alpha-Ketoglutarate (AKG) serves as an obligatory co-factor for alpha-ketoglutarate-dependent dioxygenases, specifically Ten-Eleven Translocation (TET) DNA demethylases and Jumonji C domain-containing histone demethylases (KDMs). Aging is characterized by a catastrophic decline in endogenous AKG levels (up to 90% from age 20 to 80), leading to epigenetic drift, hypermethylation of tumor suppressor genes, and the onset of systemic inflammaging. This monograph dissects the molecular pathways of AKG-mediated epigenetic reprogramming, its ability to reverse the Horvath epigenetic clock, and practical clinical strategies for therapeutic translation."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

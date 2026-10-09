@@ -1,6 +1,6 @@
 ---
 title: "Giải Mã Hội Chứng Rò Rỉ Ruột: Cơ Chế Zonulin Phá Hủy Mối Nối Chặt Và Hiểm Họa Endotoxemia Chuyển Hóa"
-date: "2026-10-09T09:00:00Z"
+date: "2026-08-08T09:00:00Z"
 excerpt: "Nhiều người lầm tưởng rò rỉ ruột chỉ là một khái niệm mơ hồ của y học thay thế hoặc chỉ gây ra các triệu chứng tiêu hóa nhẹ. Trên thực tế, đây là một hiện tượng sinh lý học chính xác được trung gian bởi Zonulin (tiền chất haptoglobin 2). Khi hàng rào niêm mạc ruột bị tổn thương, các protein mối nối chặt như Occludin và Claudin bị tháo dỡ, mở đường cho Lipopolysaccharide (LPS), một nội độc tố từ vi khuẩn Gram âm, tràn vào tuần hoàn máu. Hiện tượng này kích hoạt thụ thể TLR4 trên tế bào miễn dịch, gây ra tình trạng viêm hệ thống mức độ thấp (metabolic endotoxemia), nguồn gốc ẩn giấu của kháng insulin, béo phì và các bệnh tự miễn."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

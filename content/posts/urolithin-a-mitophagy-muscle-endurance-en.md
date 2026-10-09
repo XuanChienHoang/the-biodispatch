@@ -1,6 +1,6 @@
 ---
 title: "Urolithin A from Pomegranate: Deciphering the NAD+ Independent Mitophagy Pathway for Muscle Recovery and Mitochondrial Longevity"
-date: "2026-10-08T13:00:00Z"
+date: "2026-10-03T09:00:00Z"
 excerpt: "While pomegranate is celebrated as an anti-aging superfood, drinking its juice rarely yields the therapeutic levels of its active metabolite, Urolithin A. This molecule is not directly present in pomegranates: instead, it requires specific gut microbiota to convert dietary ellagitannins into Urolithin A. Crucially, only 30 to 40 percent of humans possess the microbial profile capable of this conversion, leaving the majority as non-responders. This monograph dissects the molecular mechanism of Urolithin A as a first-in-class mitophagy activator that operates independently of the classic NAD+ pathway, bypassing cellular energy depletion to selectively clear damaged mitochondria, enhance ATP synthesis, and restore skeletal muscle function in aging populations."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

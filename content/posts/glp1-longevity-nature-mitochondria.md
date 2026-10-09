@@ -1,6 +1,6 @@
 ---
 title: "GLP-1 Receptor Agonists Extend Lifespan by 12% in Nature: Longevity Breakthrough or Cellular Housekeeping Engine?"
-date: "2026-09-08T09:00:00Z"
+date: "2026-09-10T09:00:00Z"
 excerpt: "A landmark study in Nature reveals that GLP-1 receptor agonists prolong median lifespan and decelerate epigenetic clocks. Mechanistically, this is not an artifact of weight loss, but the molecular reactivation of mitochondrial quality control and AMPK-driven mitophagy."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg"

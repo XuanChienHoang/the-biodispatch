@@ -1,6 +1,6 @@
 ---
 title: "The Kynurenine Paradox: When Tryptophan Metabolism Becomes a Neuroinflammatory Driver"
-date: "2026-10-09T09:00:00Z"
+date: "2026-10-08T09:00:00Z"
 excerpt: "Many assume Tryptophan supplementation is the sole key to mood regulation. However, under chronic inflammation and oxidative stress, Tryptophan is diverted away from the Serotonin pathway into the Kynurenine pathway. This article dissects the biological paradox where intermediates like Quinolinic acid become neurotoxic agents, driving depression and cognitive decline, independent of simple Serotonin deficiency."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

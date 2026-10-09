@@ -1,6 +1,6 @@
 ---
 title: "The NAD+-Sirtuin Axis and the CD38 Black Hole: Defending Mitochondrial Bioenergetics Against Cellular Senescence"
-date: "2026-09-01T09:00:00Z"
+date: "2026-09-02T09:00:00Z"
 excerpt: "The global frenzy surrounding expensive NMN and NR supplements promising cellular youth has reached fever pitch. Yet without addressing the enzymatic sink known as CD38, taking precursor pills is like pouring expensive water into a bucket with a gaping hole."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

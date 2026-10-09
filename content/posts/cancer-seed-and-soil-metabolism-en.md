@@ -1,6 +1,6 @@
 ---
 title: "The Cancer Code Part 2: Seed & Soil: Why the Tissue Microenvironment Dictates Tumor Fate"
-date: "2026-08-11T09:00:00Z"
+date: "2026-08-12T09:00:00Z"
 excerpt: "DNA mutations arise daily in human tissues, yet why do the overwhelming majority never progress into clinical malignancies? Demystifying Stephen Paget's classic Seed and Soil hypothesis through immunology and cellular ecology."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

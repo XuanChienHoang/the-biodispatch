@@ -1,6 +1,6 @@
 ---
 title: "The Mucin Barrier: Erosion of the Intestinal Mucus Layer and the Onset of Autoimmune Dysregulation"
-date: "2026-10-09T09:00:00Z"
+date: "2026-08-29T09:00:00Z"
 excerpt: "Many believe that probiotics alone can heal the gut. However, they overlook the most critical gatekeeper: the Mucin layer. This article deconstructs the biological paradox where fiber-deficient diets force gut bacteria to consume the host's own mucus lining, leading to leaky gut and systemic inflammation that often goes unrecognized until chronic disease manifests."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

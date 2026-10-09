@@ -1,6 +1,6 @@
 ---
 title: "Nghịch Lý Alpha-Ketoglutarate: Cầu Nối Chuyển Hóa Kích Hoạt Enzyme TET Để Đảo Ngược Tuổi Sinh Học Biểu Gen"
-date: "2026-10-09T09:00:00Z"
+date: "2026-10-07T09:00:00Z"
 excerpt: "Alpha-Ketoglutarate (AKG) không chỉ đơn thuần là một chất trung gian trong chu trình Krebs tạo năng lượng ATP, mà còn là một đồng yếu tố (co-factor) bắt buộc kiểm soát vận mệnh của bộ gene thông qua việc kích hoạt các enzyme khử methyl hóa DNA (TET) và histone (KDM). Khi chúng ta già đi, nồng độ AKG nội sinh sụt giảm nghiêm trọng (lên tới 90% từ tuổi 20 đến 80), khiến các dấu bản đồ biểu gen bị khóa cứng trong trạng thái lão hóa, thúc đẩy viêm mạn tính hệ thống (inflammaging). Bài viết bóc tách cơ chế phân tử của AKG trong việc tái lập chương trình biểu gen, đảo ngược đồng hồ sinh học Horvath và những lưu ý lâm sàng thực tế khi bổ sung hợp chất này."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

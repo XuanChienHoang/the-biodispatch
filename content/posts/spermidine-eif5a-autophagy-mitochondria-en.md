@@ -1,6 +1,6 @@
 ---
 title: "The Spermidine Paradox: Deciphering eIF5A Hypusination and TFEB-Driven Autophagy for Mitochondrial Rejuvenation"
-date: "2026-10-09T09:00:00Z"
+date: "2026-10-04T09:00:00Z"
 excerpt: "Spermidine, a natural polyamine originally discovered in semen, is revolutionizing metabolic longevity through its unique ability to induce autophagy independently of classic mTOR inhibition. This clinical deep-dive unpacks the fascinating biological paradox of Spermidine: how a molecule essential for rapid cellular proliferation can systematically extend healthy lifespan and prevent neurodegeneration. By exploring its unique molecular mechanism - the hypusination of the translation initiation factor eIF5A to unlock TFEB translation - we map out an evidence-based framework to optimize this powerful polyamine pathway safely and effectively."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

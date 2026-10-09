@@ -1,6 +1,6 @@
 ---
 title: "The Phantom of Laboratory Plague: Deconstructing Yersinia pestis Type III Secretion Nanomachinery and Virulence Dynamics"
-date: "2026-10-08T09:00:00Z"
+date: "2026-10-07T13:00:00Z"
 excerpt: "Recent biosafety containment alarms at the Irkutsk Anti-Plague Research Institute in Siberia have renewed international scrutiny on high-consequence bacterial pathogens. Yersinia pestis is not merely the historical agent of the Black Death; it harbors an exquisitely engineered Type III Secretion System (T3SS) needle that directly translocates paralyzing Yop effectors into host immune cells, disarming macrophages and transforming alveolar beds into lethal hemorrhagic battlegrounds within 48 hours."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Dr. rer. nat. | University of Hamburg"

@@ -1,6 +1,6 @@
 ---
 title: "The Calcium Paradox and the Vitamin D3 - K2 MK-7 Synergistic Axis: Deciphering Osteocalcin and Matrix Gla Protein Activation to Prevent Arterial Calcification"
-date: "2026-10-09T09:00:00Z"
+date: "2026-09-19T09:00:00Z"
 excerpt: "Many individuals supplement high-dose calcium hoping to strengthen bones, only to inadvertently accelerate arterial calcification and elevate myocardial infarction risks. This is the notorious Calcium Paradox in clinical medicine. This monograph dissects the synergistic axis of Vitamin D3 and Vitamin K2 (specifically MK-7). While Vitamin D3 stimulates the synthesis of calcium-binding proteins such as Osteocalcin and Matrix Gla Protein (MGP), they remain synthesized in an inactive state. Vitamin K2 acts as an obligate cofactor to catalyze their gamma-glutamyl carboxylation, converting these proteins into their active forms to guide calcium into the bone matrix and clear it from arterial walls."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

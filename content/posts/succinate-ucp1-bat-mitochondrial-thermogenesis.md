@@ -1,6 +1,6 @@
 ---
 title: "The Succinate-UCP1 Axis in Brown Adipose Tissue: Unlocking Mitochondrial Uncoupling for Metabolic Longevity"
-date: "2026-10-02T09:00:00Z"
+date: "2026-10-01T09:00:00Z"
 excerpt: "Modern biomedical research has completely revolutionized our understanding of adipose tissue, shifting its paradigm from a passive energy storage depot to a highly active endocrine organ. At the heart of this revolution is brown adipose tissue (BAT) and its capacity for non-shivering thermogenesis mediated by mitochondrial Uncoupling Protein 1 (UCP1). This monograph dissects the unexpected role of succinate, a classic Krebs cycle intermediate, acting as a master signaling molecule that drives UCP1 activation via localized, selective reactive oxygen species (ROS) production at complex II. By reprogramming this mitochondrial pathway, we can actively dissipate excess energy, reverse insulin resistance, mitigate systemic inflammation, and unlock a groundbreaking frontier in longevity medicine."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

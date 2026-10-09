@@ -1,6 +1,6 @@
 ---
 title: "Deconstructing the Gut-Brain Axis: How Microbiota-Derived GABA and SCFAs Modulate Neuroinflammation via the Vagus Nerve"
-date: "2026-10-09T09:00:00Z"
+date: "2026-09-06T09:00:00Z"
 excerpt: "Many believe that psychological disorders like anxiety and depression originate solely from chemical imbalances within the brain, treatable only by psychotropic drugs crossing the blood-brain barrier. However, this classic biological misconception overlooks the profound influence of the Gut-Brain Axis. In reality, the blood-brain barrier (BBB) strictly blocks peripheral GABA from entering the central nervous system. How, then, do oral GABA supplementation or gut microbiota optimization significantly alleviate anxiety? This paradox is resolved by the vagus nerve and gut epithelial receptors. Gut microbes synthesize neurotransmitters like GABA and short-chain fatty acids (SCFAs) that activate GPR41/43 receptors, transmitting retrograde signals to the brain to suppress microglial neuroinflammation. This paper deconstructs these pathways, offering a fresh paradigm in metabolic psychiatry."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

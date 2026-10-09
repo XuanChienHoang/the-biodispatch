@@ -1,6 +1,6 @@
 ---
 title: "Nghịch Lý Canxi và Trục Tương Tác Vitamin D3 - K2 MK-7: Giải Mã Cơ Chế Kích Hoạt Osteocalcin và Matrix Gla Protein Ngăn Ngừa Vôi Hóa Động Mạch"
-date: "2026-10-09T09:00:00Z"
+date: "2026-09-19T09:00:00Z"
 excerpt: "Nhiều người bổ sung Canxi liều cao với hy vọng bảo vệ xương, nhưng vô tình đẩy nhanh quá trình vôi hóa mạch máu, làm tăng nguy cơ nhồi máu cơ tim. Đây chính là Nghịch lý Canxi khét tiếng trong y khoa. Bài viết này phân tích sâu sắc vai trò của sự phối hợp bắt buộc giữa Vitamin D3 và Vitamin K2 (dưới dạng MK-7). Trong khi Vitamin D3 kích thích tổng hợp các protein vận chuyển canxi thiết yếu như Osteocalcin và Matrix Gla Protein (MGP), chúng lại tồn tại ở dạng bất hoạt nếu thiếu Vitamin K2. K2 đóng vai trò là đồng yếu tố (cofactor) kích hoạt phản ứng carboxyl hóa, chuyển các protein này sang dạng hoạt động để định hướng canxi chính xác vào xương và quét sạch canxi khỏi thành mạch."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

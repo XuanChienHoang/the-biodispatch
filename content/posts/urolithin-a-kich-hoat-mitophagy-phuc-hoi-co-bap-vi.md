@@ -1,6 +1,6 @@
 ---
 title: "Urolithin A từ Quả Lựu: Cơ chế Kích hoạt Mitophagy Dọn dẹp Ty thể Độc lập với NAD+ Giúp Phục hồi Sức bền Cơ bắp"
-date: "2026-10-08T13:00:00Z"
+date: "2026-10-03T09:00:00Z"
 excerpt: "Nhiều người tin rằng chỉ cần uống nước ép lựu là đủ để có được các lợi ích trẻ hóa tế bào của Urolithin A. Tuy nhiên, sự thật sinh học phức tạp hơn nhiều: cơ thể chúng ta không tự sản sinh ra Urolithin A. Nó là sản phẩm chuyển hóa thứ cấp của hệ vi sinh đường ruột từ ellagitannins có trong lựu, và chỉ có khoảng 30 đến 40 phần trăm dân số sở hữu hệ vi sinh phù hợp để thực hiện quá trình chuyển đổi này. Bài viết bóc tách cơ chế phân tử độc đáo của Urolithin A trong việc kích hoạt mitophagy (quá trình tự thực ty thể) thông qua con đường độc lập với NAD+, giúp dọn dẹp các ty thể già cỗi, phục hồi hiệu suất cơ bắp mà không làm cạn kiệt nguồn dự trữ năng lượng nội bào."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

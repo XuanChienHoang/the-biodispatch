@@ -1,6 +1,6 @@
 ---
 title: "Cú Sốc Phân Tử Từ Streptococcus pyogenes: Giải Mã Cơ Chế Siêu Kháng Nguyên Kích Hoạt Bão Cytokine Trong Hội Chứng STSS"
-date: "2026-10-09T09:00:00Z"
+date: "2026-10-08T13:00:00Z"
 excerpt: "Hầu hết chúng ta đều biết đến Streptococcus pyogenes (Liên cầu khuẩn nhóm A - GAS) như một tác nhân gây viêm họng lành tính hoặc nhiễm trùng da thông thường. Tuy nhiên, một nghịch lý sinh học đáng sợ đang diễn ra trên toàn cầu, đặc biệt là các đợt bùng phát Hội chứng Sốc độc tố Liên cầu khuẩn (STSS) tại Nhật Bản: một loại vi khuẩn quen thuộc đột ngột biến thành sát thủ thầm lặng, cướp đi sinh mạng bệnh nhân chỉ trong vòng 48 giờ. Chìa khóa của sự chuyển mình tàn khốc này nằm ở 'Siêu kháng nguyên' (Superantigens - SAgs). Bằng cách bỏ qua quy trình kiểm soát miễn dịch thông thường, siêu kháng nguyên tạo ra một đoản mạch phân tử, ép buộc các tế bào T và tế bào trình diện kháng nguyên (APC) liên kết vô điều kiện. Sự kích hoạt ồ ạt, bừa bãi này giải phóng một cơn bão cytokine hủy diệt, đẩy cơ thể vào trạng thái suy đa tạng trước khi hệ miễn dịch kịp nhận diện kẻ thù thực sự."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

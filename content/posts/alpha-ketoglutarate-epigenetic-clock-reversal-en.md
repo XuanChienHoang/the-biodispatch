@@ -1,6 +1,6 @@
 ---
 title: "The Alpha-Ketoglutarate Paradox: Bridging Mitochondrial Metabolism and Epigenetic Clock Reversal"
-date: "2026-10-08T13:00:00Z"
+date: "2026-10-05T09:00:00Z"
 excerpt: "While longevity research often centers on NAD+ or mitochondrial repair, a remarkable biological paradox is frequently overlooked: Alpha-Ketoglutarate (AKG), a simple Krebs cycle intermediate, acts as the master key regulating DNA demethylation via TET enzymes. This monograph dissects the molecular mechanisms behind the 90% age-related decline in systemic AKG, decodes why Calcium AKG (Ca-AKG) supplementation can reset the epigenetic clock, reversing biological age by an average of 8 years in clinical trials, and provides an evidence-based clinical strategy for synergistic optimization."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

@@ -1,6 +1,6 @@
 ---
 title: "Tín hiệu Succinate và Chu trình Creatine vô nghĩa: Kỷ nguyên sinh nhiệt mới của mỡ nâu vượt ngoài ranh giới UCP1"
-date: "2026-10-04T09:00:00Z"
+date: "2026-10-02T09:00:00Z"
 excerpt: "Trong nhiều thập kỷ, y học kinh điển luôn coi protein UCP1 (Uncoupling Protein 1) là nhân tố độc tôn chịu trách nhiệm cho quá trình sinh nhiệt không run (non-shivering thermogenesis) tại mô mỡ nâu (BAT). Tuy nhiên, các nghiên cứu đột phá gần đây đã bộc lộ một nghịch lý sinh học sâu sắc: những con chuột bị loại bỏ hoàn toàn gen UCP1 vẫn có khả năng chống chọi với cái lạnh khắc nghiệt thông qua các con đường chuyển hóa ẩn số. Chìa khóa của cơ chế thích ứng này nằm ở chu trình creatine vô nghĩa (creatine futile cycling) và sự tích tụ succinate nội bào, kích hoạt thụ thể GPR91. Bài viết này đi sâu vào phân tích cơ chế phân tử của hệ thống sinh nhiệt độc lập UCP1, mở ra hướng đi mới trong điều trị béo phì và hội chứng chuyển hóa bằng cách tái lập trình ty thể."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

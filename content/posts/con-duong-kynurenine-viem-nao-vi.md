@@ -1,6 +1,6 @@
 ---
 title: "Nghịch lý Kynurenine: Khi chuyển hóa Tryptophan trở thành 'kẻ thù' gây viêm não bộ"
-date: "2026-10-09T09:00:00Z"
+date: "2026-10-08T09:00:00Z"
 excerpt: "Nhiều người lầm tưởng bổ sung Tryptophan là chìa khóa duy nhất để cải thiện tâm trạng. Tuy nhiên, dưới áp lực của viêm mạn tính và stress oxy hóa, Tryptophan bị chuyển hướng khỏi con đường Serotonin để đi vào con đường Kynurenine. Bài viết này bóc tách nghịch lý sinh học khiến các chất chuyển hóa trung gian như Quinolinic acid trở thành tác nhân gây độc thần kinh, dẫn đến trầm cảm và suy giảm nhận thức mà không liên quan đến thiếu hụt Serotonin đơn thuần."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

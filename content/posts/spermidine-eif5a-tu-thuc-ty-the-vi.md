@@ -1,6 +1,6 @@
 ---
 title: "Nghịch lý Spermidine: Từ tinh dịch tố đến chiếc chìa khóa vàng hypusine hóa eIF5A kích hoạt dọn rác tự thực và đảo ngược lão hóa ty thể"
-date: "2026-10-09T09:00:00Z"
+date: "2026-10-04T09:00:00Z"
 excerpt: "Spermidine, một polyamine tự nhiên được phát hiện lần đầu trong tinh dịch, đang mở ra một cuộc cách mạng trong y học trường thọ nhờ khả năng kích hoạt dọn rác tự thực (autophagy) độc lập với con đường mTOR truyền thống. Bài viết này bóc tách nghịch lý sinh học của Spermidine: vì sao một chất thúc đẩy tăng sinh tế bào mạnh mẽ lại có thể kéo dài tuổi thọ khỏe mạnh và ngăn ngừa sa sút trí tuệ? Đi sâu vào cơ chế phân tử độc nhất vô nhị - quá trình hypusine hóa nhân tố khởi đầu dịch mã eIF5A để giải phóng yếu tố phiên mã TFEB, chúng tôi cung cấp một bản đồ thực chứng giúp bạn tối ưu hóa nguồn polyamine này một cách an toàn và khoa học nhất."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"
