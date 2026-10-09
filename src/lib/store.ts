@@ -1847,6 +1847,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "The authors show that dietary spermidine crosses the blood-brain barrier and triggers autophagy in Drosophila and mouse brains. This preserves synaptic plasticity and prevents age-induced memory decline. Crucially, the study links these cognitive benefits directly to the hypusination of eIF5A and the subsequent translation of synaptic and mitochondrial maintenance proteins.",
     },
   ],
+  "truc-nao-ruot-gaba-vi-khuan-vi": [
+    {
+      ordinal: 1,
+      label: "GABA-modulating bacteria of the human gut microbiota",
+      pmid: "30531975",
+      doi: "10.1038/s41564-018-0307-3",
+      design: "Landmark Molecular Review",
+      sampleSize: null,
+      journal: "Nat Microbiol",
+      year: 2019,
+      abstract: "The gut microbiota regulates brain chemistry and behavior. We identify a gut bacterium, Bacteroides fragilis, that produces GABA, and show that its abundance correlates with brain activity and depression signatures.",
+    },
+  ],
+  "gut-brain-axis-gaba-microbiota-en": [
+    {
+      ordinal: 1,
+      label: "GABA-modulating bacteria of the human gut microbiota",
+      pmid: "30531975",
+      doi: "10.1038/s41564-018-0307-3",
+      design: "Landmark Molecular Review",
+      sampleSize: null,
+      journal: "Nat Microbiol",
+      year: 2019,
+      abstract: "The gut microbiota regulates brain chemistry and behavior. We identify a gut bacterium, Bacteroides fragilis, that produces GABA, and show that its abundance correlates with brain activity and depression signatures.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
