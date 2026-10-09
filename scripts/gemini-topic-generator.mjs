@@ -15,14 +15,12 @@
 import fs from 'fs';
 import path from 'path';
 
-// Model candidates with fallback support
+// Model candidates with fallback support (stable and responsive models prioritized)
 const MODEL_CANDIDATES = [
   'gemini-3.5-flash',
-  'gemini-3.6-flash',
-  'gemini-3.7-flash',
+  'gemini-3.8-flash',
   'gemini-3.1-flash-lite',
-  'gemini-3.5-flash-lite',
-  'gemini-3.8-flash'
+  'gemini-flash-latest'
 ];
 
 function resolveGeminiApiKey() {
@@ -50,7 +48,7 @@ function resolveGeminiApiKey() {
   return '';
 }
 
-export async function generateTopicWithGemini(existingCatalog = []) {
+export async function generateTopicWithGemini(existingCatalog = [], feedback = null) {
   const apiKey = resolveGeminiApiKey();
   if (!apiKey) {
     console.warn('⚠️ [Gemini Generator] Không tìm thấy GEMINI_API_KEY trong env.');
@@ -73,13 +71,13 @@ QUY TẮC BẮT BUỘC:
 2. Tiêu đề (titleVi, titleEn): Hấp dẫn, sâu sắc, tối thiểu 20 ký tự.
 3. Tóm tắt (excerptVi, excerptEn): Tối thiểu 100 từ, nêu bật nghịch lý sinh học hoặc hiểu lầm phổ biến.
 4. Ẩn dụ (analogyVi, analogyEn): Một đoạn so sánh ví von đời thường cực kỳ tinh tế, giải thích cơ chế phân tử bằng hình ảnh thân thuộc (ví dụ ví ty thể với nhà máy điện, hệ thống làm sạch với xe rửa đường...).
-5. Dẫn nhập (leadVi, leadEn): Mở đầu bằng câu chuyện đời thực, hiện tượng quen thuộc, bóc tách hiểu lầm trước khi đi vào cơ chế khoa học. Tối thiểu 150 từ.
+5. Dẫn nhập (leadVi, leadEn): Mở đầu bằng câu chuyện đời thực, hiện tượng quen thuộc, bóc tách hiểu lầm trước khi đi vào cơ chế khoa học. Tối thiểu 160 từ.
 6. Sơ đồ Flowchart (flowchart): Chuỗi phản ứng phân tử bắt buộc dùng mũi tên "──►" và ngoặc vuông, ví dụ: [Tác nhân] ──► [Thụ thể/Enzyme] ──► [Đáp ứng tế bào]
 7. Phần nội dung (sectionsVi, sectionsEn): Phải có ĐỦ 3 phần chi tiết (Heading + Body):
-   - Phần 1: Cơ chế phân tử vi mô & các thụ thể/enzymes chủ chốt (giải nghĩa rõ từng chữ viết tắt).
-   - Phần 2: Nghịch lý sinh học và BẮT BUỘC có 1 BẢNG SO SÁNH MARKDOWN (Markdown Table) đối chiếu các chỉ số sinh lý / trạng thái lâm sàng.
-   - Phần 3: BẮT BUỘC là phần "Ứng dụng thực tế & Lời khuyên lâm sàng" (Heading phải chứa từ như "Chiến lược lâm sàng", "Ứng dụng thực tế", "Khuyến nghị an toàn", hoặc "Tối ưu hóa lối sống").
-8. Đảm bảo tổng độ dài văn bản mỗi ngôn ngữ đạt trên 800 - 1.200 từ.
+   - Phần 1: Cơ chế phân tử vi mô & các thụ thể/enzymes chủ chốt (giải nghĩa rõ từng chữ viết tắt). Tối thiểu 250 từ.
+   - Phần 2: Nghịch lý sinh học và BẮT BUỘC có 1 BẢNG SO SÁNH MARKDOWN (Markdown Table) đối chiếu các chỉ số sinh lý / trạng thái lâm sàng (với tiêu đề cột rõ ràng, ít nhất 3 dòng dữ liệu). Tối thiểu 250 từ kèm bảng.
+   - Phần 3: BẮT BUỘC là phần "Ứng dụng thực tế & Lời khuyên lâm sàng" (Heading phải chứa từ như "Chiến lược lâm sàng", "Ứng dụng thực tế", "Khuyến nghị an toàn", hoặc "Tối ưu hóa lối sống"). Tối thiểu 250 từ.
+8. Đảm bảo tổng độ dài văn bản mỗi ngôn ngữ ĐẠT TỐI THIỂU 850 - 1.200 từ. Tuyệt đối không viết tóm tắt ngắn dưới 750 từ.
 9. TÀI LIỆU THAM KHẢO CHÍNH XÁC TUYỆT ĐỐI (ZERO HALLUCINATION):
    - Cung cấp bài báo gốc có thật đã xuất bản trên các tạp chí hàng đầu (Nature, Science, Cell, Lancet, NEJM, PNAS, JCI, v.v.).
    - "refPaperTitle": Tiêu đề NGUYÊN GỐC CỦA BÀI BÁO KHOA HỌC (chính xác từng chữ trên PubMed/CrossRef, KHÔNG lấy tiêu đề bài dispatch đặt vào đây).
@@ -242,16 +240,18 @@ TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON SCHEMA VỚI CẤU TRÚC:
   "flowchartVi": "[Bước 1 bằng Tiếng Việt] ──► [Bước 2] ──► [Bước 3]",
   "flowchartEn": "[Step 1 in English] ──► [Step 2] ──► [Step 3]",
   "sectionsVi": [
-    { "heading": "1. Tiêu đề mục 1: Cơ chế phân tử vi mô", "body": "Nội dung mục 1 giải thích rõ ràng..." },
-    { "heading": "2. Tiêu đề mục 2: Phân tích sự thật & Bảng đối chiếu", "body": "Nội dung mục 2 kèm | Bảng | So sánh |..." },
-    { "heading": "3. Ứng dụng thực tế & Lời khuyên an toàn", "body": "Nội dung mục 3 hướng dẫn áp dụng thực tế..." }
+    { "heading": "1. Tiêu đề mục 1: Cơ chế phân tử vi mô", "body": "Nội dung mục 1 phân tích cơ chế thụ thể (tối thiểu 250 từ)..." },
+    { "heading": "2. Tiêu đề mục 2: Phân tích sự thật & Bảng đối chiếu lâm sàng", "body": "Nội dung mục 2 phân tích sâu sắc...\\n\\n| Trạng thái Sinh lý | Nồng độ Phân tử | Tác động Lâm sàng |\\n| :--- | :--- | :--- |\\n| Sinh lý Cơ bản (Baseline) | Mức chuẩn nội môi | Duy trì chức năng bình thường |\\n| Tổn thương / Lão hóa | Biến đổi vượt ngưỡng | Kích hoạt chuỗi viêm mạn tính |\\n| Can thiệp Tối ưu hóa | Trở về ngưỡng an toàn | Phục hồi hiệu suất tế bào |\\n\\nTiếp tục phân tích chi tiết..." },
+    { "heading": "3. Ứng dụng thực tế & Khuyến nghị an toàn", "body": "Nội dung mục 3 hướng dẫn áp dụng thực tế (tối thiểu 250 từ)..." }
   ],
   "sectionsEn": [
-    { "heading": "1. Heading 1: Molecular Mechanisms", "body": "Section 1 body..." },
-    { "heading": "2. Heading 2: Fact-Checking & Comparison Table", "body": "Section 2 body with | Markdown | Table |..." },
-    { "heading": "3. Practical Takeaways & Safety Guidelines", "body": "Section 3 actionable guidance..." }
+    { "heading": "1. Heading 1: Molecular Mechanisms", "body": "Section 1 detailed molecular analysis (min 200 words)..." },
+    { "heading": "2. Heading 2: Fact-Checking & Comparative Metrics", "body": "Section 2 in-depth discussion...\\n\\n| Physiological State | Molecular Concentration | Clinical Endpoint |\\n| :--- | :--- | :--- |\\n| Homeostatic Baseline | Normal physiological range | Optimal function |\\n| Pathological Strain | Pathological elevation | Chronic cellular stress |\\n| Optimized Intervention | Functional restoration | Resilient cellular longevity |\\n\\nFurther detailed discussion..." },
+    { "heading": "3. Practical Takeaways & Safety Guidelines", "body": "Section 3 actionable clinical protocols (min 200 words)..." }
   ]
-}`;
+};
+
+${feedback ? `\n\n🚨 PHẢN HỒI QUAN TRỌNG TỪ HỆ THỐNG BIÊN TẬP (BẮT BUỘC KHẮC PHỤC TRONG LẦN NÀY):\n${feedback}\nHãy chắc chắn bản thảo tiếng Việt đạt trên 850 từ và bản tiếng Anh đạt trên 700 từ, có đầy đủ bảng so sánh Markdown!` : ''}`;
 
   for (const model of MODEL_CANDIDATES) {
     try {
