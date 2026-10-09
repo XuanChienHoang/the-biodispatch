@@ -1,5 +1,5 @@
 ---
-title: "Axit Béo Chuỗi Ngắn Butyrate và Bức Tường Thành Niêm Mạc Ruột: Chiếc Chìa Khóa Biểu Sinh Hàn Gắn Rò Rỉ và Điều Hòa Miễn Dịch"
+title: "Axit béo chuỗi ngắn Butyrate và bức tường thành niêm mạc ruột: Chiếc chìa khóa biểu sinh hàn gắn rò rỉ và điều hòa miễn dịch"
 date: "2026-07-14T09:00:00Z"
 excerpt: "Đã bao giờ bạn tự hỏi vì sao 70% tế bào miễn dịch của cơ thể lại chọn định cư dọc theo thành ruột? Khám phá cách phân tử Butyrate 4 carbon hoạt động như một chiếc chìa khóa biểu sinh ức chế HDAC, giải cứu tế bào đại tràng khỏi nạn đói năng lượng và khóa chặt từng khe nứt rò rỉ ruột."
 author: "TS. Hoàng Xuân Chiến"

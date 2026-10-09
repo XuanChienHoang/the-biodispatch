@@ -1,5 +1,5 @@
 ---
-title: "Bóng Ma Dịch Hạch Từ Phòng Thí Nghiệm Nga: Giải Mã Cỗ Máy Tiêm Độc T3SS và Độc Lực Của Vi Khuẩn Yersinia pestis"
+title: "Bóng ma dịch hạch từ phòng thí nghiệm Nga: Giải mã cỗ máy tiêm độc T3SS và độc lực của vi khuẩn Yersinia pestis"
 date: "2026-10-07T13:00:00Z"
 excerpt: "Vụ việc rò rỉ mầm bệnh tại Viện Nghiên cứu Chống Dịch hạch Irkutsk (Nga) đặt giới y học toàn cầu vào tình trạng báo động đỏ. Yersinia pestis không chỉ là tác nhân gây nên thảm họa Cái Chết Đen trong lịch sử, mà còn sở hữu cỗ máy bơm độc lực Type III (T3SS) có khả năng tiêm thẳng protein độc tố Yop vào tế bào miễn dịch, làm tê liệt đại thực bào và biến lá phổi thành bãi chiến trường xuất huyết tử vong chỉ sau 48 giờ."
 author: "TS. Hoàng Xuân Chiến"

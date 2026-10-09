@@ -18,9 +18,25 @@ export function validateDispatchContent(markdownString, lang = 'vi') {
   const issues = [];
   const { data: frontmatter, content } = matter(markdownString);
 
-  // 1. Kiểm tra Frontmatter
+  // 1. Kiểm tra Frontmatter & Tiêu chuẩn Tiêu đề Tự nhiên (Anti-AI Title Case)
   if (!frontmatter.title || frontmatter.title.length < 15) {
     issues.push('Tiêu đề quá ngắn hoặc không đầy đủ.');
+  } else if (lang === 'vi') {
+    // Kiểm tra phong cách viết hoa tiếng Việt: CẤM viết hoa toàn bộ chữ cái đầu (Title Case kiểu máy móc / AI).
+    // Chỉ viết hoa chữ cái đầu câu, sau dấu hai chấm và các danh từ riêng / ký hiệu y học (PCOS, DNA, GABA, STSS...)
+    const words = frontmatter.title.split(/\s+/);
+    const exempt = new Set(['PCOS', 'GABA', 'NAD+', 'CD38', 'STSS', 'AKG', 'DNA', 'TET', 'IGF-1', 'UCP1', 'HDAC', 'SCFA', 'MK-7', 'D3', 'K2', 'DCI', 'MI', 'T3SS', 'SpeA', 'LPS', 'MUC2', 'TS.', 'GS.', 'GLUT4', 'FSH', 'LH', 'MGP', 'Zonulin', 'Treg', 'Foxp3', 'Claudin-1', 'Occludin', 'ZO-1', 'Nrf2', 'AMPK', 'mTOR', 'Akkermansia', 'Streptococcus', 'pyogenes', 'Yersinia', 'pestis', 'Bifidobacterium', 'Lactobacillus', 'Faecalibacterium', 'Roseburia', 'Eubacterium', 'Canxi', 'Spermidine', 'Inositol', 'Alpha-Ketoglutarate', 'Urolithin', 'Sulforaphane', 'Curcumin', 'Piperine', 'Melatonin', 'Policosanol', 'Statin', 'Coenzyme', 'Q10', 'Warburg', 'Nobel', 'Optogenetics']);
+    let capitalized = 0;
+    let evalCount = 0;
+    for (const w of words) {
+      const clean = w.replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, '');
+      if (!clean || exempt.has(clean) || /^[A-Z0-9+-]+$/.test(clean)) continue;
+      evalCount++;
+      if (/^[A-ZÀ-Ỹ]/.test(clean)) capitalized++;
+    }
+    if (evalCount >= 6 && capitalized / evalCount > 0.70) {
+      issues.push(`Tiêu đề tiếng Việt mang phong cách Title Case cơ giới hóa kiểu AI (viết hoa tất cả các từ: "${frontmatter.title}"). Bắt buộc dùng văn phong tự nhiên (Sentence case): chỉ viết hoa đầu câu, sau dấu hai chấm và các danh từ riêng/thuật ngữ.`);
+    }
   }
   if (!frontmatter.excerpt || frontmatter.excerpt.length < 60) {
     issues.push('Đoạn trích tóm tắt (excerpt) quá ngắn, chưa nêu bật nghịch lý sinh học.');

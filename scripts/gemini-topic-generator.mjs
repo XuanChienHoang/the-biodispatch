@@ -175,8 +175,11 @@ NGUYÊN TẮC BIÊN TẬP CỦA TS. HOÀNG XUÂN CHIẾN:
 1. TIẾP CẬN ĐỜI THƯỜNG & KHÁCH QUAN: Khởi đầu từ những hiện tượng đời thực, băn khoăn của cộng đồng, thói quen dùng thực phẩm chức năng hoặc tin tức y tế mới nổi.
 2. NÓI VỀ KHOA HỌC THUẦN TÚY - TUYỆT ĐỐI KHÔNG CHÍNH TRỊ: Nếu đề cập đến các vấn đề thời sự dịch bệnh (như nghi vấn dịch hạch, cúm mới...), CHỈ TẬP TRUNG 100% VÀO CƠ CHẾ SINH HỌC VI SINH, con đường lây truyền, đáp ứng miễn dịch và phương pháp điều trị y học. Tuyệt đối không bàn luận chính trị, không phân định đúng sai quốc gia hay thuyết âm mưu.
 3. CÂN BẰNG GIỮA DỄ HIỂU VÀ CHUYÊN MÔN: Phần mở đầu và ứng dụng thực tế phải thật gần gũi, ai đọc cũng hiểu được. Phần cơ chế phân tử giải thích rõ ràng, súc tích, giải nghĩa thuật ngữ, tránh viết quá nặng nề trừu tượng.
-4. ĐỊNH DẠNG SLUG BẮT BUỘC: Slug tiếng Việt BẮT BUỘC có hậu tố "-vi" (ví dụ: magie-glycinate-giac-ngu-vi, yersinia-pestis-dich-hach-vi), slug tiếng Anh BẮT BUỘC có hậu tố "-en" (ví dụ: magnesium-glycinate-sleep-en, yersinia-pestis-plague-mechanism-en) để hệ thống tự động nhận diện ngôn ngữ tuyệt đối!
-5. LIÊM CHÍNH Y VĂN & TÀI LIỆU THAM KHẢO (SCIENTIFIC CITATION INTEGRITY - ZERO HALLUCINATION):
+4. QUY CHUẨN VIẾT HOA TIÊU ĐỀ TIẾNG VIỆT (ANTI-AI TITLE CASE):
+   - CẤM TUYỆT ĐỐI viết hoa tất cả các từ trong tiêu đề tiếng Việt (ví dụ: CẤM "Nghịch Lý Buồng Trứng Và Tỷ Lệ Vàng..."). Cách viết hoa toàn bộ từ nhìn rất giả tạo và đậm chất máy dịch AI!
+   - BẮT BUỘC dùng văn phong tự nhiên (Sentence case): chỉ viết hoa chữ cái đầu tiên của tiêu đề, chữ cái sau dấu hai chấm (:), và các danh từ riêng hoặc tên viết tắt thuật ngữ y sinh (ví dụ: "Nghịch lý buồng trứng và tỷ lệ vàng 40:1 của Inositol trong điều trị đa nang buồng trứng PCOS").
+5. ĐỊNH DẠNG SLUG BẮT BUỘC: Slug tiếng Việt BẮT BUỘC có hậu tố "-vi" (ví dụ: magie-glycinate-giac-ngu-vi, yersinia-pestis-dich-hach-vi), slug tiếng Anh BẮT BUỘC có hậu tố "-en" (ví dụ: magnesium-glycinate-sleep-en, yersinia-pestis-plague-mechanism-en) để hệ thống tự động nhận diện ngôn ngữ tuyệt đối!
+6. LIÊM CHÍNH Y VĂN & TÀI LIỆU THAM KHẢO (SCIENTIFIC CITATION INTEGRITY - ZERO HALLUCINATION):
 Mọi tài liệu trong mục "references" BẮT BUỘC là công trình nghiên cứu THỰC TẾ ĐÃ XUẤT BẢN trên các tạp chí quốc tế uy tín (Nature, Science, Cell, Lancet, NEJM, PNAS, Trends, JBC, v.v.). TUYỆT ĐỐI KHÔNG BỊA ĐẶT số PMID, DOI hoặc tên bài báo hư cấu. Tiêu đề "label" phải là tên tiếng Anh chính xác nguyên bản của bài báo khoa học. Nếu bạn không nhớ chắc chắn số PMID hoặc DOI thật 100%, hãy để trường "pmid": "" và "doi": "" để hệ thống tự động tra cứu chỉ mục PubMed (NCBI E-utilities) và CrossRef!
 
 DANH SÁCH TOÀN BỘ CÁC BÀI ĐÃ XUẤT BẢN TRONG KHO (NGHIÊM CẤM TRÙNG LẶP HOẶC TƯƠNG ĐƯƠNG VỀ Ý TƯỞNG):
