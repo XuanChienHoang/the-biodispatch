@@ -67,6 +67,22 @@ export function validateDispatchContent(markdownString, lang = 'vi') {
     issues.push('Thiếu phần hướng dẫn thực hành / ứng dụng thực tế hoặc cảnh báo an toàn ở cuối bài.');
   }
 
+  // 8. KIỂM TRA ĐỒ HỌA Y SINH (Image Integrity Check)
+  if (!frontmatter.image) {
+    issues.push('Thiếu đường dẫn hình ảnh (frontmatter.image).');
+  } else {
+    const imgRel = frontmatter.image.startsWith('/') ? frontmatter.image.slice(1) : frontmatter.image;
+    const imgFullPath = path.resolve(process.cwd(), 'public', imgRel);
+    if (!fs.existsSync(imgFullPath)) {
+      issues.push(`Ảnh bài viết không tồn tại trên đĩa: public/${imgRel}`);
+    } else {
+      const stats = fs.statSync(imgFullPath);
+      if (stats.size < 120000) {
+        issues.push(`Ảnh bài viết quá nhỏ (${stats.size} bytes). Phát hiện ảnh placeholder hoặc SVG thô sơ, bắt buộc là đồ họa phân tử y sinh 3D chất lượng cao (>= 120KB).`);
+      }
+    }
+  }
+
   return {
     isValid: issues.length === 0,
     issues,
