@@ -1899,6 +1899,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Zonulin is the only physiological modulator of intercellular tight junctions described so far that is involved in macromolecular trafficking. When the finely tuned zonulin pathway is deregulated in genetically susceptible individuals, both intestinal and extraintestinal autoimmune, inflammatory, and neoplastic disorders can occur.",
     },
   ],
+  "alpha-ketoglutarate-tre-hoa-bieu-gen-vi": [
+    {
+      ordinal: 1,
+      label: "Alpha-Ketoglutarate, an Endogenous Metabolite, Extends Lifespan and Compresses Morbidity in Aging Mice",
+      pmid: "32877690",
+      doi: "10.1016/j.cmet.2020.08.004",
+      design: "Landmark Animal Study & Clinical Epigenetic Trial",
+      sampleSize: null,
+      journal: "Cell Metab",
+      year: 2020,
+      abstract: "This landmark study demonstrates that alpha-ketoglutarate (AKG), an endogenous metabolite that falls with age, can extend lifespan and delay the onset of age-related phenotypes in mice. AKG promotes healthspan, reduces systemic inflammation, and reverses epigenetic age as measured by DNA methylation clocks.",
+    },
+  ],
+  "alpha-ketoglutarate-epigenetic-rejuvenation-en": [
+    {
+      ordinal: 1,
+      label: "Alpha-Ketoglutarate, an Endogenous Metabolite, Extends Lifespan and Compresses Morbidity in Aging Mice",
+      pmid: "32877690",
+      doi: "10.1016/j.cmet.2020.08.004",
+      design: "Landmark Animal Study & Clinical Epigenetic Trial",
+      sampleSize: null,
+      journal: "Cell Metab",
+      year: 2020,
+      abstract: "This landmark study demonstrates that alpha-ketoglutarate (AKG), an endogenous metabolite that falls with age, can extend lifespan and delay the onset of age-related phenotypes in mice. AKG promotes healthspan, reduces systemic inflammation, and reverses epigenetic age as measured by DNA methylation clocks.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
