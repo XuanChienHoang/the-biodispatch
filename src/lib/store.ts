@@ -1951,6 +1951,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "This landmark study investigated whether low-dose vitamin K2 (Menaquinone-7, MK-7) supplementation could affect arterial stiffness. The results demonstrated that long-term MK-7 supplementation significantly improved arterial stiffness in postmenopausal women, particularly in those with high arterial stiffness at baseline, by promoting the carboxylation of Matrix Gla Protein.",
     },
   ],
+  "inositols-ti-le-vang-40-1-buong-trung-pcos-vi": [
+    {
+      ordinal: 1,
+      label: "The 40:1 myo-inositol/D-chiro-inositol plasma ratio is able to restore ovulation in PCOS patients: comparison with other ratios",
+      pmid: "31298405",
+      doi: "10.26355/eurrev_201906_18223",
+      design: "Randomized Controlled Trial",
+      sampleSize: null,
+      journal: "Eur Rev Med Pharmacol Sci",
+      year: 2019,
+      abstract: "This study compared different myo-inositol to D-chiro-inositol ratios in PCOS patients, demonstrating that the physiological 40:1 ratio is the most effective formulation to restore ovulation, improve metabolic parameters, and balance progesterone and LH levels.",
+    },
+  ],
+  "inositols-golden-ratio-40-1-ovarian-pcos-en": [
+    {
+      ordinal: 1,
+      label: "The 40:1 myo-inositol/D-chiro-inositol plasma ratio is able to restore ovulation in PCOS patients: comparison with other ratios",
+      pmid: "31298405",
+      doi: "10.26355/eurrev_201906_18223",
+      design: "Randomized Controlled Trial",
+      sampleSize: null,
+      journal: "Eur Rev Med Pharmacol Sci",
+      year: 2019,
+      abstract: "This study compared different myo-inositol to D-chiro-inositol ratios in PCOS patients, demonstrating that the physiological 40:1 ratio is the most effective formulation to restore ovulation, improve metabolic parameters, and balance progesterone and LH levels.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
