@@ -1873,6 +1873,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "The gut microbiota regulates brain chemistry and behavior. We identify a gut bacterium, Bacteroides fragilis, that produces GABA, and show that its abundance correlates with brain activity and depression signatures.",
     },
   ],
+  "giai-ma-hoi-chung-ro-ri-ruot-zonulin-lps-vi": [
+    {
+      ordinal: 1,
+      label: "Zonulin and its regulation of intestinal barrier function: the biological door to inflammation, autoimmunity, and cancer",
+      pmid: "21248165",
+      doi: "10.1152/physrev.00003.2008",
+      design: "Landmark Molecular Review",
+      sampleSize: null,
+      journal: "Physiol Rev",
+      year: 2011,
+      abstract: "Zonulin is the only physiological modulator of intercellular tight junctions described so far that is involved in macromolecular trafficking. When the finely tuned zonulin pathway is deregulated in genetically susceptible individuals, both intestinal and extraintestinal autoimmune, inflammatory, and neoplastic disorders can occur.",
+    },
+  ],
+  "deciphering-leaky-gut-zonulin-lps-en": [
+    {
+      ordinal: 1,
+      label: "Zonulin and its regulation of intestinal barrier function: the biological door to inflammation, autoimmunity, and cancer",
+      pmid: "21248165",
+      doi: "10.1152/physrev.00003.2008",
+      design: "Landmark Molecular Review",
+      sampleSize: null,
+      journal: "Physiol Rev",
+      year: 2011,
+      abstract: "Zonulin is the only physiological modulator of intercellular tight junctions described so far that is involved in macromolecular trafficking. When the finely tuned zonulin pathway is deregulated in genetically susceptible individuals, both intestinal and extraintestinal autoimmune, inflammatory, and neoplastic disorders can occur.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
