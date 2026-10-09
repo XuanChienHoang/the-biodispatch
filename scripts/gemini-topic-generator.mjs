@@ -55,10 +55,14 @@ export async function generateTopicWithGemini(existingCatalog = [], feedback = n
     return null;
   }
 
-  // Format detailed inventory of all published titles and organs
-  const existingTitlesList = Array.isArray(existingCatalog)
-    ? existingCatalog.map(item => typeof item === 'string' ? item : `- [${item.organ || 'Topic'}] ${item.title} (slug: ${item.slug})`).join('\n')
-    : '';
+  // Format compact inventory: chỉ lấy tối đa 20 chủ đề gần nhất và nén ngắn gọn để tiết kiệm token
+  let existingTitlesList = '';
+  if (Array.isArray(existingCatalog) && existingCatalog.length > 0) {
+    const recent = existingCatalog.slice(-20);
+    existingTitlesList = recent
+      .map(item => typeof item === 'string' ? item : `• ${item.title}`)
+      .join('\n');
+  }
 
   const systemInstruction = `Bạn là TS. Hoàng Xuân Chiến (Dr. rer. nat. - Đại học Hamburg, CHLB Đức), Giám đốc Học thuật kiêm Tổng biên tập của ấn bản y sinh "Phytocodex" (phytocodex.vercel.app).
 Bạn là chuyên gia hàng đầu về Y học Chuyển hóa, Lão hóa & Trường thọ (Metabolic Longevity), Dược động học và Tín hiệu tế bào.
@@ -204,30 +208,10 @@ TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON SCHEMA VỚI CẤU TRÚC:
       "label": "Exact authentic paper title in English as published in journal",
       "pmid": "Official PubMed ID if 100% sure, otherwise empty string",
       "doi": "Official DOI if 100% sure, otherwise empty string",
-      "design": "Landmark Molecular Review / Randomized Controlled Trial",
-      "journal": "Full authentic journal name (e.g. Nature, Science, Trends in Microbiology)",
+      "design": "Landmark Molecular Review / RCT / Meta-analysis",
+      "journal": "Nature / Science / Cell / Lancet",
       "year": 2023,
-      "abstract": "Detailed scientific abstract with molecular findings and physiological endpoints."
-    },
-    {
-      "ordinal": 2,
-      "label": "Second authentic supporting mechanistic paper title",
-      "pmid": "",
-      "doi": "",
-      "design": "In-vivo Mechanistic Study / Pharmacokinetics Phase II",
-      "journal": "Cell Metabolism",
-      "year": 2022,
-      "abstract": "Supporting molecular evidence on receptors and downstream signaling."
-    },
-    {
-      "ordinal": 3,
-      "label": "Third authentic clinical or epidemiological study title",
-      "pmid": "",
-      "doi": "",
-      "design": "Systematic Review & Meta-analysis",
-      "journal": "Lancet / PNAS / Science Translational Medicine",
-      "year": 2021,
-      "abstract": "Validation of quantitative physiological endpoints in human cohorts."
+      "abstract": "Key molecular findings (1-2 sentences)."
     }
   ],
   "gizmo": "pathway",
