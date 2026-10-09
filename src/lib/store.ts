@@ -1496,7 +1496,7 @@ const SEED_REFS: Record<string, Ref[]> = {
       journal: "Cell",
       year: 2011
     }
-  ]
+  ],
   "alpha-ketoglutarate-dao-nguoc-dong-ho-bieu-sinh-vi": [
     {
       ordinal: 1,

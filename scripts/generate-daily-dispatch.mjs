@@ -207,9 +207,13 @@ ${serializedItems}
   const targetPattern = /const SEED_REFS: Record<string, Ref\[\]> = \{([\s\S]*?)\n\};/;
   const match = storeContent.match(targetPattern);
   if (match) {
+    let prevBody = match[1].trimEnd();
+    if (prevBody && !prevBody.endsWith(',')) {
+      prevBody += ',';
+    }
     const updated = storeContent.replace(
       targetPattern,
-      `const SEED_REFS: Record<string, Ref[]> = {$1\n${newRefBlock}};`
+      `const SEED_REFS: Record<string, Ref[]> = {${prevBody}\n${newRefBlock}};`
     );
     fs.writeFileSync(storeFile, updated, 'utf8');
     console.log(`✅ [Store] Đã cập nhật ${healedList.length} tài liệu y văn chuẩn xác 100% vào SEED_REFS cho ${topic.slugVi} & ${topic.slugEn}`);
