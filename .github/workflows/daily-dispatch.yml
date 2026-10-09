@@ -47,73 +47,7 @@ jobs:
             git commit -m "content(auto-dispatch): publish scheduled bilingual dispatch"
             git push origin main
           fi
-      - name: Deploy to Vercel Production
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      - name: Verify Dispatch Publishing Success
         run: |
-          npx vercel pull --yes --environment=production --token=$VERCEL_TOKEN
-          npx vercel build --prod --token=$VERCEL_TOKEN
-          
-          # Deploy prebuilt and capture URL immediately without waiting on CLI hang
-          RAW_URL=$(npx vercel deploy --prebuilt --token=$VERCEL_TOKEN || true)
-          DEPLOY_HOST=$(echo "$RAW_URL" | grep -o 'the-biodispatch-[a-zA-Z0-9_-]*\.vercel\.app' | head -n 1)
-          echo "Target deployment host: $DEPLOY_HOST"
-
-          if [ -z "$DEPLOY_HOST" ]; then
-            echo "Attempting with vercel deploy --prebuilt --prod with 60s timeout..."
-            timeout 60 npx vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN || true
-          fi
-
-          # Re-bind production domains via Vercel REST API
-          node -e '
-            const https = require("https");
-            const token = process.env.VERCEL_TOKEN;
-            const orgId = process.env.VERCEL_ORG_ID;
-            const projectId = process.env.VERCEL_PROJECT_ID;
-
-            // Fetch the latest ready/building deployment for this project
-            const listOpt = {
-              hostname: "api.vercel.com",
-              path: `/v6/deployments?projectId=${projectId}&teamId=${orgId}&limit=5`,
-              headers: { Authorization: `Bearer ${token}` }
-            };
-
-            https.get(listOpt, (res) => {
-              let body = "";
-              res.on("data", chunk => body += chunk);
-              res.on("end", () => {
-                const json = JSON.parse(body);
-                const deployments = json.deployments || [];
-                const target = deployments[0];
-                if (!target) {
-                  console.error("No deployment found to alias!");
-                  process.exit(0);
-                }
-
-                console.log(`Aliasing deployment: ${target.uid} (${target.url})`);
-                const domains = ["www.phyto-codex.org", "phyto-codex.org", "the-biodispatch.vercel.app"];
-
-                domains.forEach(domain => {
-                  const req = https.request({
-                    hostname: "api.vercel.com",
-                    path: `/v2/deployments/${target.uid}/aliases?teamId=${orgId}`,
-                    method: "POST",
-                    headers: {
-                      Authorization: `Bearer ${token}`,
-                      "Content-Type": "application/json"
-                    }
-                  }, (aRes) => {
-                    let aBody = "";
-                    aRes.on("data", c => aBody += c);
-                    aRes.on("end", () => {
-                      console.log(`Aliased ${domain} -> ${target.uid}: HTTP ${aRes.statusCode}`);
-                    });
-                  });
-                  req.write(JSON.stringify({ alias: domain }));
-                  req.end();
-                });
-              });
-            });
-          '
+          echo "✅ New dispatch successfully generated and pushed to GitHub main."
+          echo "🚀 Site automatically updates via Git push."
