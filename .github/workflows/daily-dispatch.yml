@@ -55,4 +55,8 @@ jobs:
         run: |
           npx vercel pull --yes --environment=production --token=$VERCEL_TOKEN
           npx vercel build --prod --token=$VERCEL_TOKEN
-          npx vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
+          DEPLOY_URL=$(npx vercel deploy --prebuilt --token=$VERCEL_TOKEN)
+          echo "Deployed to: $DEPLOY_URL"
+          npx vercel alias set "$DEPLOY_URL" www.phyto-codex.org --token=$VERCEL_TOKEN
+          npx vercel alias set "$DEPLOY_URL" phyto-codex.org --token=$VERCEL_TOKEN
+          npx vercel alias set "$DEPLOY_URL" the-biodispatch.vercel.app --token=$VERCEL_TOKEN
