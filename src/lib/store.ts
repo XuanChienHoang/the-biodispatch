@@ -1925,6 +1925,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "This landmark study demonstrates that alpha-ketoglutarate (AKG), an endogenous metabolite that falls with age, can extend lifespan and delay the onset of age-related phenotypes in mice. AKG promotes healthspan, reduces systemic inflammation, and reverses epigenetic age as measured by DNA methylation clocks.",
     },
   ],
+  "vitamin-d3-k2-nghich-ly-canxi-vi": [
+    {
+      ordinal: 1,
+      label: "Menaquinone-7 supplementation improves arterial stiffness in healthy postmenopausal women. A double-blind randomised clinical trial",
+      pmid: "25694037",
+      doi: "10.1160/TH14-05-0468",
+      design: "Double-Blind Randomized Clinical Trial",
+      sampleSize: null,
+      journal: "Thromb Haemost",
+      year: 2015,
+      abstract: "This landmark study investigated whether low-dose vitamin K2 (Menaquinone-7, MK-7) supplementation could affect arterial stiffness. The results demonstrated that long-term MK-7 supplementation significantly improved arterial stiffness in postmenopausal women, particularly in those with high arterial stiffness at baseline, by promoting the carboxylation of Matrix Gla Protein.",
+    },
+  ],
+  "vitamin-d3-k2-calcium-paradox-en": [
+    {
+      ordinal: 1,
+      label: "Menaquinone-7 supplementation improves arterial stiffness in healthy postmenopausal women. A double-blind randomised clinical trial",
+      pmid: "25694037",
+      doi: "10.1160/TH14-05-0468",
+      design: "Double-Blind Randomized Clinical Trial",
+      sampleSize: null,
+      journal: "Thromb Haemost",
+      year: 2015,
+      abstract: "This landmark study investigated whether low-dose vitamin K2 (Menaquinone-7, MK-7) supplementation could affect arterial stiffness. The results demonstrated that long-term MK-7 supplementation significantly improved arterial stiffness in postmenopausal women, particularly in those with high arterial stiffness at baseline, by promoting the carboxylation of Matrix Gla Protein.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
