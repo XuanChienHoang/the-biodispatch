@@ -53,10 +53,47 @@ jobs:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
         run: |
+          echo "🧹 Checking and cancelling any stuck deployments on Vercel..."
+          node -e '
+            const https = require("https");
+            const token = process.env.VERCEL_TOKEN;
+            const projectId = process.env.VERCEL_PROJECT_ID;
+            const orgId = process.env.VERCEL_ORG_ID;
+            if (!token || !projectId) process.exit(0);
+
+            const options = {
+              hostname: "api.vercel.com",
+              path: `/v6/deployments?projectId=${projectId}&teamId=${orgId}&state=BUILDING`,
+              headers: { Authorization: `Bearer ${token}` }
+            };
+
+            https.get(options, (res) => {
+              let data = "";
+              res.on("data", chunk => data += chunk);
+              res.on("end", () => {
+                try {
+                  const json = JSON.parse(data);
+                  const stuck = json.deployments || [];
+                  console.log(`Found ${stuck.length} stuck BUILDING deployments.`);
+                  stuck.forEach(d => {
+                    console.log(`Cancelling stuck deployment: ${d.uid} (${d.url})`);
+                    const cancelReq = https.request({
+                      hostname: "api.vercel.com",
+                      path: `/v12/deployments/${d.uid}/cancel?teamId=${orgId}`,
+                      method: "PATCH",
+                      headers: { Authorization: `Bearer ${token}` }
+                    }, (cRes) => {
+                      console.log(`Cancelled ${d.uid}: HTTP ${cRes.statusCode}`);
+                    });
+                    cancelReq.end();
+                  });
+                } catch (e) {
+                  console.warn("Error parsing deployments:", e.message);
+                }
+              });
+            }).on("error", err => console.warn("API Error:", err.message));
+          '
+          sleep 5
           npx vercel pull --yes --environment=production --token=$VERCEL_TOKEN
           npx vercel build --prod --token=$VERCEL_TOKEN
-          DEPLOY_URL=$(npx vercel deploy --prebuilt --token=$VERCEL_TOKEN)
-          echo "Deployed to: $DEPLOY_URL"
-          npx vercel alias set "$DEPLOY_URL" www.phyto-codex.org --token=$VERCEL_TOKEN
-          npx vercel alias set "$DEPLOY_URL" phyto-codex.org --token=$VERCEL_TOKEN
-          npx vercel alias set "$DEPLOY_URL" the-biodispatch.vercel.app --token=$VERCEL_TOKEN
+          npx vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
