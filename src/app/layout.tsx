@@ -5,6 +5,7 @@ import "./globals.css";
 import { InstrumentRail } from "@/components/InstrumentRail";
 import { ComplianceStrip } from "@/components/ComplianceStrip";
 import { MotionProvider } from "@/components/MotionProvider";
+import { Analytics } from "@vercel/analytics/next";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -109,6 +110,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <ComplianceStrip />
           </div>
         </MotionProvider>
+        <Analytics />
       </body>
     </html>
   );
