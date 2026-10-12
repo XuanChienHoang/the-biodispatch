@@ -1,0 +1,106 @@
+{
+  "optogenetics_boyden": {
+    "pmid": "16116447",
+    "title": "Millisecond-timescale, genetically targeted optical control of neural activity.",
+    "source": "Nat Neurosci",
+    "pubdate": "2005 Sep",
+    "doi": "10.1038/nn1525"
+  },
+  "curcumin_shoba": {
+    "pmid": "9619120",
+    "doi": null
+  },
+  "curcumin_anand": {
+    "pmid": "17999464",
+    "title": "Bioavailability of curcumin: problems and promises.",
+    "source": "Mol Pharm",
+    "pubdate": "2007 Nov-Dec",
+    "doi": "10.1021/mp700113r"
+  },
+  "curcumin_crp_meta": {
+    "pmid": "42171191",
+    "doi": null
+  },
+  "metabolomics_fiehn": null,
+  "hmdb_wishart": {
+    "pmid": "37413909",
+    "doi": null
+  },
+  "tmao_tang": null,
+  "glp1_semaglutide_nature": null,
+  "scfa_koh_cell": null,
+  "butyrate_canani": {
+    "pmid": "33525625",
+    "doi": null
+  },
+  "statin_eas": null,
+  "coq10_statin_qu": {
+    "pmid": "30371340",
+    "title": "Effects of Coenzyme Q10 on Statin-Induced Myopathy: An Updated Meta-Analysis of Randomized Controlled Trials.",
+    "source": "J Am Heart Assoc",
+    "pubdate": "2018 Oct 2",
+    "doi": "10.1161/JAHA.118.009835"
+  },
+  "ampk_mtor_mihaylova": null,
+  "ampk_hardie": null,
+  "keap1_nrf2_yamamoto": null,
+  "melatonin_ferracioli": null,
+  "melatonin_bussfeld": null,
+  "melatonin_aujeszky": {
+    "pmid": "42673734",
+    "title": "Sleep-modulating pharmacological interventions for delirium prevention: a systematic review and a network meta-analysis of randomized controlled trials.",
+    "source": "Sleep Med Rev",
+    "pubdate": "2026 Aug 27",
+    "doi": "10.1016/j.smrv.2026.102365"
+  },
+  "sulforaphane_dashwood": null,
+  "sulforaphane_myrosinase_rungapamestry": null,
+  "herb_drug_tsai": null,
+  "herb_drug_fugh_berman": null,
+  "hs_crp_ridker": null,
+  "warburg_1956": {
+    "pmid": "35965526",
+    "title": "Meaning and Significance of \"Alkalization Therapy for Cancer\".",
+    "source": "Front Oncol",
+    "pubdate": "2022",
+    "doi": "10.3389/fonc.2022.920843"
+  },
+  "seed_soil_fidler": null,
+  "insulin_pollak": {
+    "pmid": "19074892",
+    "doi": null
+  },
+  "pi3k_fruman": null,
+  "ross_atherosclerosis": null,
+  "libby_inflammation": null,
+  "steinberg_beyond_cholesterol": null,
+  "austin_ldl_subclass": {
+    "pmid": "3418853",
+    "doi": null
+  },
+  "gaziano_tg_hdl": null,
+  "mclaughlin_insulin_res": {
+    "pmid": "14623617",
+    "title": "Use of metabolic markers to identify overweight individuals who are insulin resistant.",
+    "source": "Ann Intern Med",
+    "pubdate": "2003 Nov 18",
+    "doi": "10.7326/0003-4819-139-10-200311180-00007"
+  },
+  "nedergaard_sleep_brain": null,
+  "covarrubias_nad": {
+    "pmid": "33353981",
+    "doi": null
+  },
+  "furusawa_butyrate_treg": null,
+  "castano_policosanol": {
+    "pmid": "12207568",
+    "doi": null
+  },
+  "urolithin_jama_2022": {
+    "pmid": "35050355",
+    "title": "Effect of Urolithin A Supplementation on Muscle Endurance and Mitochondrial Health in Older Adults: A Randomized Clinical Trial.",
+    "source": "JAMA Netw Open",
+    "pubdate": "2022 Jan 4",
+    "doi": "10.1001/jamanetworkopen.2021.44279"
+  }
+}

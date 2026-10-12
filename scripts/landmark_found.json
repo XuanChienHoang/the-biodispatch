@@ -1,0 +1,72 @@
+{
+  "Atherosclerosis Steinberg 1989": {
+    "pmid": "2648148",
+    "doi": "10.1056/NEJM198904063201407",
+    "title": "Beyond cholesterol. Modifications of low-density lipoprotein that increase its atherogenicity",
+    "journal": "N Engl J Med",
+    "year": 1989
+  },
+  "LDL subclass Austin 1988": {
+    "pmid": "3418853",
+    "doi": null,
+    "title": "Low-density lipoprotein subclass patterns and risk of myocardial infarction",
+    "journal": "JAMA",
+    "year": 1988
+  },
+  "Warburg cancer 1956": {
+    "pmid": "35965526",
+    "doi": "10.3389/fonc.2022.920843",
+    "title": "Meaning and Significance of \"Alkalization Therapy for Cancer\"",
+    "journal": "Front Oncol",
+    "year": 2022
+  },
+  "AMPK Hardie Nat Rev Mol Cell Biol 2012": {
+    "pmid": "36316383",
+    "doi": "10.1038/s41580-022-00547-x",
+    "title": "New insights into activation and function of the AMPK",
+    "journal": "Nat Rev Mol Cell Biol",
+    "year": 2023
+  },
+  "Sulforaphane Dashwood 2012": {
+    "pmid": "31155953",
+    "doi": "10.1080/01635581.2019.1619783",
+    "title": "Sulforaphane Bioavailability and Chemopreventive Activity in Men Presenting for Biopsy of the Prostate Gland: A Randomized Controlled Trial",
+    "journal": "Nutr Cancer",
+    "year": 2020
+  },
+  "Myrosinase thermal conversion 2008": {
+    "pmid": "41606876",
+    "doi": "10.1016/j.foodres.2025.117299",
+    "title": "Thermal stability, and in vitro and in vivo metabolism of four main glucosinolates in Isatis indigotica roots",
+    "journal": "Food Res Int",
+    "year": 2025
+  },
+  "CoQ10 Statin Myopathy Qu 2018": {
+    "pmid": "42010721",
+    "doi": "10.1186/s41232-026-00413-9",
+    "title": "Reengineering statin therapy to protect skeletal muscle: nanocarrier strategies for mitigating mitochondrial dysfunction and myotoxicity",
+    "journal": "Inflamm Regen",
+    "year": 2026
+  },
+  "Resistant starch SCFA Koh 2016": {
+    "pmid": "27259147",
+    "doi": "10.1016/j.cell.2016.05.041",
+    "title": "From Dietary Fiber to Host Physiology: Short-Chain Fatty Acids as Key Bacterial Metabolites",
+    "journal": "Cell",
+    "year": 2016
+  },
+  "Insulin and IGF in neoplasia Pollak 2008": {
+    "pmid": "22337149",
+    "doi": "10.1038/nrc3215",
+    "title": "The insulin and insulin-like growth factor receptor family in neoplasia: an update",
+    "journal": "Nat Rev Cancer",
+    "year": 2012
+  },
+  "Herb drug interactions Fugh-Berman 2000": {
+    "pmid": "10675182",
+    "doi": "10.1016/S0140-6736(99)06457-0",
+    "title": "Herb-drug interactions",
+    "journal": "Lancet",
+    "year": 2000
+  }
+}

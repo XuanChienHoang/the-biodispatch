@@ -1,0 +1,91 @@
+{
+  "urolithin_andreux": {
+    "pmid": "41404767",
+    "title": "Distinct roles of urolithin A and spermidine in mitophagy and autophagy: implications for dietary supplementation.",
+    "source": "Nutr Res Rev",
+    "pubdate": "2025 Dec 17",
+    "doi": "10.1017/S0954422425100292"
+  },
+  "sulforaphane_dashwood": {
+    "pmid": "37856454",
+    "doi": null
+  },
+  "policosanol_drossard": {
+    "pmid": "17158441",
+    "title": "Policosanol is ineffective in the treatment of hypercholesterolemia: a randomized controlled trial.",
+    "source": "Am J Clin Nutr",
+    "pubdate": "2006 Dec",
+    "doi": "10.1093/ajcn/84.6.1543"
+  },
+  "sleep_nedergaard": {
+    "pmid": "42837645",
+    "doi": null
+  },
+  "nad_rajman_sinclair": {
+    "pmid": "41672305",
+    "doi": null
+  },
+  "butyrate_vinolo": {
+    "pmid": "42843795",
+    "title": "Microbiota-Brain Interactions in Dementia: Role of Diet in Neuroinflammation.",
+    "source": "Ann Geriatr Med Res",
+    "pubdate": "2026 Oct 7",
+    "doi": "10.4235/agmr.26.0122"
+  },
+  "libby_inflammation_cvd": {
+    "pmid": "42714878",
+    "title": "Designing Cardiovascular Outcomes Trials in Clonal Hematopoiesis of Indeterminate Potential.",
+    "source": "JAMA Cardiol",
+    "pubdate": "2026 Sep 9",
+    "doi": "10.1001/jamacardio.2026.3593"
+  },
+  "insulin_pollak_nrc": {
+    "pmid": "35726641",
+    "doi": null
+  },
+  "cancer_martinez_outschoorn": {
+    "pmid": "42821157",
+    "doi": null
+  },
+  "crp_ridker_asymptomatic": {
+    "pmid": "42736762",
+    "title": "The relationship between fibrinogen-to-albumin ratio and peripheral arterial disease: A cross-sectional study.",
+    "source": "Medicine (Baltimore)",
+    "pubdate": "2026 Sep 11",
+    "doi": "10.1097/MD.0000000000050650"
+  },
+  "herb_tsai": {
+    "pmid": "42699264",
+    "doi": null
+  },
+  "herb_izzo_drugs": {
+    "pmid": "22236736",
+    "doi": null
+  },
+  "nrf2_buendia": {
+    "pmid": "41901342",
+    "title": "NRF2 as a Therapeutic Target in Dermatological Disorders: Mechanisms and Molecules.",
+    "source": "Pharmaceuticals (Basel)",
+    "pubdate": "2026 Mar 17",
+    "doi": "10.3390/ph19030497"
+  },
+  "circadian_roenneberg": {
+    "pmid": "42834636",
+    "doi": null
+  },
+  "melatonin_bussfeld_meta": {
+    "pmid": "42673734",
+    "doi": null
+  },
+  "mtor_saxton_sabatini": {
+    "pmid": "28388417",
+    "doi": null
+  },
+  "food_drug_schmidt": {
+    "pmid": "33530421",
+    "title": "Human Plasma and Recombinant Hemopexins: Heme Binding Revisited.",
+    "source": "Int J Mol Sci",
+    "pubdate": "2021 Jan 26",
+    "doi": "10.3390/ijms22031199"
+  }
+}

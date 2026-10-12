@@ -1,0 +1,582 @@
+[
+  {
+    "slug": "nobel-medicine-2026-optogenetics",
+    "ordinal": 3,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1038/nn1525",
+    "actualDoi": "10.1038/nn1516",
+    "pmid": "16116456",
+    "currentLabel": "Millisecond-timescale, genetically targeted optical control of neural activity",
+    "actualTitle": "Extensive piano practicing has regionally specific effects on white matter development."
+  },
+  {
+    "slug": "nobel-medicine-2026-optogenetics-en",
+    "ordinal": 3,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1038/nn1525",
+    "actualDoi": "10.1038/nn1516",
+    "pmid": "16116456",
+    "currentLabel": "Millisecond-timescale, genetically targeted optical control of neural activity",
+    "actualTitle": "Extensive piano practicing has regionally specific effects on white matter development."
+  },
+  {
+    "slug": "curcumin-piperine-bioavailability",
+    "ordinal": 1,
+    "type": "TITLE_MISMATCH",
+    "pmid": "9618960",
+    "currentLabel": "Effect of piperine on the pharmacokinetic profile of curcumin in healthy volunteers",
+    "actualTitle": "[Epithelial changes in the cervix uteri in pregnant women and in cervical oncogenesis].",
+    "journal": "Akush Ginekol (Sofiia)",
+    "year": 1998
+  },
+  {
+    "slug": "curcumin-piperine-bioavailability",
+    "ordinal": 2,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1016/j.xphs.2005.11.012",
+    "actualDoi": "10.1016/j.jpedsurg.2005.10.012",
+    "pmid": "16410114",
+    "currentLabel": "Disposition of curcuminoids: Phase II glucuronidation as the metabolic clearance bottleneck",
+    "actualTitle": "The impact of obesity on severely injured children and adolescents."
+  },
+  {
+    "slug": "curcumin-piperine-bioavailability",
+    "ordinal": 3,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1177/0091270015610887",
+    "actualDoi": "10.1002/14651858.cd007013.pub2",
+    "pmid": "26418347",
+    "currentLabel": "Comparative pharmacokinetics of three curcumin formulations in humans",
+    "actualTitle": "Preoperative vascular access evaluation for haemodialysis patients."
+  },
+  {
+    "slug": "curcumin-piperine-bioavailability",
+    "ordinal": 4,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1080/01620930701798653",
+    "actualDoi": "10.1111/j.1537-2995.2007.01407.x",
+    "pmid": "17880611",
+    "currentLabel": "Safety assessment of piperine at 20 mg in healthy subjects",
+    "actualTitle": "Evaluation of an algorithm based on peripheral blood hematopoietic progenitor cell and CD34+ cell concentrations to optimize peripheral blood progenitor cell collection by apheresis."
+  },
+  {
+    "slug": "curcumin-piperine-bioavailability",
+    "ordinal": 5,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1002/ptr.7284",
+    "actualDoi": "10.1111/tpj.15520",
+    "pmid": "34587329",
+    "currentLabel": "Effect of curcumin on C-reactive protein as a biomarker of systemic inflammation: An updated meta-analysis of randomized controlled trials",
+    "actualTitle": "Phosphate starvation responsive GmSPX5 mediates nodule growth through interaction with GmNF-YC4 in soybean (Glycine max)."
+  },
+  {
+    "slug": "metabolomic-horizon-clinical-diagnostics",
+    "ordinal": 2,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1016/j.tplants.2006.08.007",
+    "actualDoi": "10.1016/j.tplants.2006.08.005",
+    "pmid": "16949326",
+    "currentLabel": "Plant metabolomics: towards biological function and mechanism",
+    "actualTitle": "Unequal genetic redundancies in Arabidopsis--a neglected phenomenon?"
+  },
+  {
+    "slug": "metabolomic-horizon-clinical-diagnostics-vi",
+    "ordinal": 1,
+    "type": "TITLE_MISMATCH",
+    "pmid": "34986597",
+    "currentLabel": "HMDB 5.0: Cơ sở dữ liệu Chuyển hóa Người (Human Metabolome Database 2022)",
+    "actualTitle": "HMDB 5.0: the Human Metabolome Database for 2022.",
+    "journal": "Nucleic Acids Res",
+    "year": 2022
+  },
+  {
+    "slug": "metabolomic-horizon-clinical-diagnostics-vi",
+    "ordinal": 2,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1016/j.tplants.2006.08.007",
+    "actualDoi": "10.1016/j.tplants.2006.08.005",
+    "pmid": "16949326",
+    "currentLabel": "Plant metabolomics: Chuyển hóa học hướng tới cơ chế và chức năng sinh học",
+    "actualTitle": "Unequal genetic redundancies in Arabidopsis--a neglected phenomenon?"
+  },
+  {
+    "slug": "metabolomic-horizon-clinical-diagnostics-vi",
+    "ordinal": 3,
+    "type": "TITLE_MISMATCH",
+    "pmid": "23614584",
+    "currentLabel": "Chuyển hóa Choline của Hệ vi sinh đường ruột và Nguy cơ Bệnh Tim mạch (TMAO)",
+    "actualTitle": "Intestinal microbial metabolism of phosphatidylcholine and cardiovascular risk.",
+    "journal": "N Engl J Med",
+    "year": 2013
+  },
+  {
+    "slug": "curcumin-piperine-sinh-kha-dung",
+    "ordinal": 1,
+    "type": "TITLE_MISMATCH",
+    "pmid": "9618960",
+    "currentLabel": "Ảnh hưởng của piperine lên dược động học của curcumin ở người tình nguyện khỏe mạnh",
+    "actualTitle": "[Epithelial changes in the cervix uteri in pregnant women and in cervical oncogenesis].",
+    "journal": "Akush Ginekol (Sofiia)",
+    "year": 1998
+  },
+  {
+    "slug": "curcumin-piperine-sinh-kha-dung",
+    "ordinal": 2,
+    "type": "TITLE_MISMATCH",
+    "pmid": "17999464",
+    "currentLabel": "Sinh khả dụng của Curcumin: Những thách thức và triển vọng phát triển",
+    "actualTitle": "Bioavailability of curcumin: problems and promises.",
+    "journal": "Mol Pharm",
+    "year": 2007
+  },
+  {
+    "slug": "glp1-keo-dai-tuoi-tho-nature",
+    "ordinal": 1,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1038/s41586-026-08892-x",
+    "actualDoi": "10.1038/s41598-024-72092-w",
+    "pmid": "39261541",
+    "currentLabel": "GLP-1 receptor agonist semaglutide promotes healthspan and extends lifespan in mice",
+    "actualTitle": "Demographic factors effect stoke-related healthcare utilisation among Australian stroke survivors."
+  },
+  {
+    "slug": "glp1-keo-dai-tuoi-tho-nature",
+    "ordinal": 2,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1038/s41467-026-49210-w",
+    "actualDoi": "10.1183/13993003.00242-2024",
+    "pmid": "38843912",
+    "currentLabel": "Epigenetic clock deceleration under glucagon-like peptide-1 receptor agonism in adults",
+    "actualTitle": "Missing airways, ventilation defects and conductive airway physiology in asthma."
+  },
+  {
+    "slug": "glp1-keo-dai-tuoi-tho-nature",
+    "ordinal": 3,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1016/j.cell.2016.10.043",
+    "actualDoi": "10.1016/j.cell.2016.11.052",
+    "pmid": "27984723",
+    "currentLabel": "Gut microbiota fermentation of resistant starch stimulates endogenous GLP-1 and preserves colonic epithelial barrier",
+    "actualTitle": "In Vivo Amelioration of Age-Associated Hallmarks by Partial Reprogramming."
+  },
+  {
+    "slug": "glp1-longevity-nature-mitochondria",
+    "ordinal": 1,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1038/s41586-026-08892-x",
+    "actualDoi": "10.1038/s41598-024-72092-w",
+    "pmid": "39261541",
+    "currentLabel": "GLP-1 receptor agonist semaglutide promotes healthspan and extends lifespan in mice",
+    "actualTitle": "Demographic factors effect stoke-related healthcare utilisation among Australian stroke survivors."
+  },
+  {
+    "slug": "glp1-longevity-nature-mitochondria",
+    "ordinal": 2,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1038/s41467-026-49210-w",
+    "actualDoi": "10.1183/13993003.00242-2024",
+    "pmid": "38843912",
+    "currentLabel": "Epigenetic clock deceleration under glucagon-like peptide-1 receptor agonism in adults",
+    "actualTitle": "Missing airways, ventilation defects and conductive airway physiology in asthma."
+  },
+  {
+    "slug": "glp1-longevity-nature-mitochondria",
+    "ordinal": 3,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1016/j.cell.2016.10.043",
+    "actualDoi": "10.1016/j.cell.2016.11.052",
+    "pmid": "27984723",
+    "currentLabel": "Gut microbiota fermentation of resistant starch stimulates endogenous GLP-1 and preserves colonic epithelial barrier",
+    "actualTitle": "In Vivo Amelioration of Age-Associated Hallmarks by Partial Reprogramming."
+  },
+  {
+    "slug": "resistant-starch-scfa-gut-vi",
+    "ordinal": 1,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1016/j.cell.2016.10.043",
+    "actualDoi": "10.1016/j.cell.2016.11.052",
+    "pmid": "27984723",
+    "currentLabel": "From Dietary Fiber to Host Physiology: Short-Chain Fatty Acids as Key Bacterial Metabolites",
+    "actualTitle": "In Vivo Amelioration of Age-Associated Hallmarks by Partial Reprogramming."
+  },
+  {
+    "slug": "resistant-starch-scfa-gut-vi",
+    "ordinal": 2,
+    "type": "TITLE_MISMATCH",
+    "pmid": "21448342",
+    "currentLabel": "Potential beneficial effects of butyrate in intestinal and extrapulmonary diseases",
+    "actualTitle": "\"Not Resting on our Laurels\".",
+    "journal": "Cardiopulm Phys Ther J",
+    "year": 2011
+  },
+  {
+    "slug": "resistant-starch-scfa-gut-en",
+    "ordinal": 1,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1016/j.cell.2016.10.043",
+    "actualDoi": "10.1016/j.cell.2016.11.052",
+    "pmid": "27984723",
+    "currentLabel": "From Dietary Fiber to Host Physiology: Short-Chain Fatty Acids as Key Bacterial Metabolites",
+    "actualTitle": "In Vivo Amelioration of Age-Associated Hallmarks by Partial Reprogramming."
+  },
+  {
+    "slug": "resistant-starch-scfa-gut-en",
+    "ordinal": 2,
+    "type": "TITLE_MISMATCH",
+    "pmid": "21448342",
+    "currentLabel": "Potential beneficial effects of butyrate in intestinal and extrapulmonary diseases",
+    "actualTitle": "\"Not Resting on our Laurels\".",
+    "journal": "Cardiopulm Phys Ther J",
+    "year": 2011
+  },
+  {
+    "slug": "mevalonate-statin-coq10-vi",
+    "ordinal": 1,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1093/eurheartj/ehv043",
+    "actualDoi": "10.1039/c4dt03966a",
+    "pmid": "25697241",
+    "currentLabel": "Statin-associated muscle symptoms: impact on statin therapy—European Atherosclerosis Society Consensus Panel",
+    "actualTitle": "Binuclear platinum-iridium complexes: synthesis, reactivity and luminescence."
+  },
+  {
+    "slug": "mevalonate-statin-coq10-vi",
+    "ordinal": 2,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1161/JAHA.118.009837",
+    "actualDoi": "10.1002/14651858.cd007013.pub2",
+    "pmid": "26418347",
+    "currentLabel": "Effects of Coenzyme Q10 on Statin-Induced Myopathy: A Meta-Analysis of Randomized Controlled Trials",
+    "actualTitle": "Preoperative vascular access evaluation for haemodialysis patients."
+  },
+  {
+    "slug": "mevalonate-statin-coq10-en",
+    "ordinal": 1,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1093/eurheartj/ehv043",
+    "actualDoi": "10.1039/c4dt03966a",
+    "pmid": "25697241",
+    "currentLabel": "Statin-associated muscle symptoms: impact on statin therapy—European Atherosclerosis Society Consensus Panel",
+    "actualTitle": "Binuclear platinum-iridium complexes: synthesis, reactivity and luminescence."
+  },
+  {
+    "slug": "mevalonate-statin-coq10-en",
+    "ordinal": 2,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1161/JAHA.118.009837",
+    "actualDoi": "10.1002/14651858.cd007013.pub2",
+    "pmid": "26418347",
+    "currentLabel": "Effects of Coenzyme Q10 on Statin-Induced Myopathy: A Meta-Analysis of Randomized Controlled Trials",
+    "actualTitle": "Preoperative vascular access evaluation for haemodialysis patients."
+  },
+  {
+    "slug": "pharmacokinetics-one-compartment",
+    "ordinal": 1,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1002/9780470740412",
+    "actualDoi": "10.1002/mrm.23041",
+    "pmid": "21688320",
+    "currentLabel": "Basic Pharmacokinetics and Pharmacodynamics: An Integrated Textbook and Computer Simulations",
+    "actualTitle": "Efficient sample density estimation by combining gridding and an optimized kernel."
+  },
+  {
+    "slug": "pharmacokinetics-one-compartment",
+    "ordinal": 2,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1007/s11096-009-9311-6",
+    "actualDoi": "10.1039/b911053d",
+    "pmid": "19641775",
+    "currentLabel": "Food-drug interactions: effect of food on drug absorption and bioavailability",
+    "actualTitle": "Self-assembly of 3,5-bis(ethoxycarbonyl)pyrazolate anions and ammonium cations of beta-phenylethylamine or homoveratrylamine into hetero-double-stranded helical structures."
+  },
+  {
+    "slug": "ampk-nrf2-mtor-map",
+    "ordinal": 1,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1038/nrd3757",
+    "actualDoi": "10.1038/nature11348",
+    "pmid": "22854782",
+    "currentLabel": "AMPK and mTOR in cellular energy homeostasis and longevity",
+    "actualTitle": "Lrp4 is a retrograde signal for presynaptic differentiation at neuromuscular synapses."
+  },
+  {
+    "slug": "ampk-nrf2-mtor-map",
+    "ordinal": 2,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1016/j.freeradbiomed.2016.04.013",
+    "actualDoi": "10.1007/s11356-016-6727-9",
+    "pmid": "27117151",
+    "currentLabel": "The Keap1-Nrf2 system: a crucial biological sensor for cytoprotective gene expression",
+    "actualTitle": "Dust aerosol properties and radiative forcing observed in spring during 2001-2014 over urban Beijing, China."
+  },
+  {
+    "slug": "melatonin-circadian-zeitgeber",
+    "ordinal": 1,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1210/jc.2015-2756",
+    "actualDoi": "10.1152/ajpendo.00339.2015",
+    "pmid": "26442881",
+    "currentLabel": "Circadian rhythms and melatonin: physiology and therapeutic management of phase disorders",
+    "actualTitle": "Acute ingestion of citrulline stimulates nitric oxide synthesis but does not increase blood flow in healthy young and older adults with heart failure."
+  },
+  {
+    "slug": "melatonin-circadian-zeitgeber",
+    "ordinal": 2,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1016/j.smrv.2005.04.004",
+    "actualDoi": "10.1016/s1389-9457(05)00163-2",
+    "pmid": "16139774",
+    "currentLabel": "Melatonin treatment for circadian rhythm sleep disorders: a meta-analysis",
+    "actualTitle": "Pregnancy associated with daytime sleepiness and nighttime restlessness."
+  },
+  {
+    "slug": "sulforaphane-nrf2-window",
+    "ordinal": 1,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1093/carcin/bgs275",
+    "actualDoi": "10.1158/0008-5472.can-12-1871",
+    "pmid": "22869584",
+    "currentLabel": "Dietary sulforaphane, a histone deacetylase inhibitor for cancer prevention",
+    "actualTitle": "Intravesical delivery of small activating RNA formulated into lipid nanoparticles inhibits orthotopic bladder tumor growth."
+  },
+  {
+    "slug": "sulforaphane-nrf2-window",
+    "ordinal": 2,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1021/jf800997h",
+    "actualDoi": "10.1111/j.1753-4887.2008.00049.x",
+    "pmid": "18667015",
+    "currentLabel": "Myrosinase activity and glucosinolate conversion in brassica vegetables: impact of thermal processing",
+    "actualTitle": "Zinc as an adjunct for childhood pneumonia - interpreting early results."
+  },
+  {
+    "slug": "supplement-drug-interaction-matrix",
+    "ordinal": 1,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1097/CLI.0000000000000042",
+    "actualDoi": "10.3920/bm2013.0042",
+    "pmid": "24675231",
+    "currentLabel": "Herb-drug interactions: an overview of clinical reviews and clinical trials",
+    "actualTitle": "Probiotic 'glow of health': it's more than skin deep."
+  },
+  {
+    "slug": "supplement-drug-interaction-matrix",
+    "ordinal": 2,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.2165/11636250-000000000-00000",
+    "actualDoi": "10.1007/s11934-012-0271-z",
+    "pmid": "22865207",
+    "currentLabel": "Interactions between herbal medicines and prescribed drugs: a systematic review",
+    "actualTitle": "Bladder augmentation and urinary diversion for neurogenic LUTS: current indications."
+  },
+  {
+    "slug": "forecasting-hs-crp-delta",
+    "ordinal": 2,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1001/jama.2017.18240",
+    "actualDoi": "10.1001/jamapediatrics.2017.3219",
+    "pmid": "28973124",
+    "currentLabel": "High-Sensitivity C-Reactive Protein and Risk of Cardiovascular Disease in Asymptomatic Adults",
+    "actualTitle": "Association of Acute Kidney Injury With Concomitant Vancomycin and Piperacillin/Tazobactam Treatment Among Hospitalized Children."
+  },
+  {
+    "slug": "warburg-effect-cancer-metabolism",
+    "ordinal": 2,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1126/science.123.3191.309",
+    "actualDoi": "10.1126/science.123.3202.848",
+    "pmid": "13324101",
+    "currentLabel": "On the Origin of Cancer Cells",
+    "actualTitle": "Evidence for a negative-feedback mechanism in the biosynthesis of isoleucine."
+  },
+  {
+    "slug": "cancer-seed-and-soil-metabolism",
+    "ordinal": 1,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1038/nrc1198",
+    "actualDoi": "10.1038/nm883",
+    "pmid": "12778138",
+    "currentLabel": "The pathogenesis of cancer metastasis: the 'seed and soil' hypothesis revisited",
+    "actualTitle": "A prion protein epitope selective for the pathologically misfolded conformation."
+  },
+  {
+    "slug": "insulin-igf1-cancer-proliferation",
+    "ordinal": 1,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1016/j.cmet.2008.08.011",
+    "actualDoi": "10.4049/jimmunol.181.6.3870",
+    "pmid": "18768841",
+    "currentLabel": "Insulin and insulin-like growth factor signalling in neoplasia",
+    "actualTitle": "IL-12R beta 2 promotes the development of CD4+CD25+ regulatory T cells."
+  },
+  {
+    "slug": "insulin-igf1-cancer-proliferation",
+    "ordinal": 2,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1016/j.cell.2017.07.029",
+    "actualDoi": "10.1038/nature23675",
+    "pmid": "28825708",
+    "currentLabel": "The PI3K pathway in human disease",
+    "actualTitle": "Ground-to-satellite quantum teleportation."
+  },
+  {
+    "slug": "cholesterol-myth-vascular-inflammation",
+    "ordinal": 1,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1056/NEJMra010530",
+    "actualDoi": "10.1126/science.1068597",
+    "pmid": "11988577",
+    "currentLabel": "Atherosclerosis - An Inflammatory Disease",
+    "actualTitle": "Large-scale transcriptional activity in chromosomes 21 and 22."
+  },
+  {
+    "slug": "cholesterol-myth-vascular-inflammation",
+    "ordinal": 2,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1038/nature01323",
+    "actualDoi": "10.1056/nejmicm000081",
+    "pmid": "12490684",
+    "currentLabel": "Inflammation, Atherosclerosis, and Potential Biomarkers of Cardiovascular Risk",
+    "actualTitle": "Images in clinical medicine. Mycotic aneurysms."
+  },
+  {
+    "slug": "oxldl-sdldl-atherosclerosis-mechanism",
+    "ordinal": 1,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1172/JCI114227",
+    "actualDoi": "10.1016/s0176-6724(89)80005-7",
+    "pmid": "2648710",
+    "currentLabel": "Beyond cholesterol: Modifications of low-density lipoprotein that increase its atherogenicity",
+    "actualTitle": "The significance of the ipazyme IgA and IgG antibody test in the diagnosis of urogenital chlamydial infections."
+  },
+  {
+    "slug": "oxldl-sdldl-atherosclerosis-mechanism",
+    "ordinal": 2,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1001/jama.1988.03410130125037",
+    "actualDoi": "10.1016/s0140-1971(88)80029-0",
+    "pmid": "3235721",
+    "currentLabel": "Low-density lipoprotein subclass patterns and risk of myocardial infarction",
+    "actualTitle": "The impact of cultural changes on the internal experience of the adolescent."
+  },
+  {
+    "slug": "triglyceride-hdl-ratio-metabolic-health",
+    "ordinal": 1,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1161/01.CIR.96.8.2520",
+    "actualDoi": "10.1023/a:1021968526696",
+    "pmid": "9342721",
+    "currentLabel": "Fasting triglycerides, high-density lipoprotein, and risk of myocardial infarction",
+    "actualTitle": "Ethanol-induced cell death by lipid peroxidation in PC12 cells."
+  },
+  {
+    "slug": "triglyceride-hdl-ratio-metabolic-health",
+    "ordinal": 2,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.7326/0003-4819-139-10-200311180-00007",
+    "actualDoi": "10.1113/jphysiol.2003.054064",
+    "pmid": "14634200",
+    "currentLabel": "Use of metabolic markers to identify overweight individuals who are insulin resistant",
+    "actualTitle": "In vivo temporal and spatial distribution of depolarization and repolarization and the illusive murine T wave."
+  },
+  {
+    "slug": "glymphatic-deep-sleep-brain-cleaning",
+    "ordinal": 1,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1126/science.1241224",
+    "actualDoi": "10.1126/science.1241459",
+    "pmid": "24136966",
+    "currentLabel": "The Glymphatic System and the Midnight Brain Wash: Molecular Clearance of Amyloid-Beta During Deep Slow-Wave Sleep",
+    "actualTitle": "Genomically recoded organisms expand biological functions."
+  },
+  {
+    "slug": "glymphatic-deep-sleep-brain-cleaning-en",
+    "ordinal": 1,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1126/science.1241224",
+    "actualDoi": "10.1126/science.1241459",
+    "pmid": "24136966",
+    "currentLabel": "The Glymphatic System and the Midnight Brain Wash: Molecular Clearance of Amyloid-Beta During Deep Slow-Wave Sleep",
+    "actualTitle": "Genomically recoded organisms expand biological functions."
+  },
+  {
+    "slug": "nad-cd38-sirtuin-mitochondria-cellular-aging",
+    "ordinal": 1,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1038/s41580-020-00313-x",
+    "actualDoi": "10.1038/d41586-019-03876-8",
+    "pmid": "33318698",
+    "currentLabel": "The NAD+-Sirtuin Axis and the CD38 Sink: Conserving Mitochondrial Bioenergetics Against Cellular Senescence",
+    "actualTitle": "Nature's top ten books of 2019."
+  },
+  {
+    "slug": "nad-cd38-sirtuin-mitochondria-cellular-aging-en",
+    "ordinal": 1,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1038/s41580-020-00313-x",
+    "actualDoi": "10.1038/d41586-019-03876-8",
+    "pmid": "33318698",
+    "currentLabel": "The NAD+-Sirtuin Axis and the CD38 Sink: Conserving Mitochondrial Bioenergetics Against Cellular Senescence",
+    "actualTitle": "Nature's top ten books of 2019."
+  },
+  {
+    "slug": "butyrate-scfa-epigenetics-histone-gut-barrier",
+    "ordinal": 1,
+    "type": "TITLE_MISMATCH",
+    "pmid": "24226770",
+    "currentLabel": "Short-Chain Fatty Acid Butyrate: Epigenetic Master Key of Gut Barrier Integrity and Histone Deacetylase Inhibition",
+    "actualTitle": "Commensal microbe-derived butyrate induces the differentiation of colonic regulatory T cells.",
+    "journal": "Nature",
+    "year": 2013
+  },
+  {
+    "slug": "butyrate-scfa-epigenetics-histone-gut-barrier-en",
+    "ordinal": 1,
+    "type": "TITLE_MISMATCH",
+    "pmid": "24226770",
+    "currentLabel": "Short-Chain Fatty Acid Butyrate: Epigenetic Master Key of Gut Barrier Integrity and Histone Deacetylase Inhibition",
+    "actualTitle": "Commensal microbe-derived butyrate induces the differentiation of colonic regulatory T cells.",
+    "journal": "Nature",
+    "year": 2013
+  },
+  {
+    "slug": "policosanol-versus-statins",
+    "ordinal": 2,
+    "type": "TITLE_MISMATCH",
+    "pmid": "11708574",
+    "currentLabel": "Policosanol: clinical pharmacology and therapeutic significance of a new lipid-lowering agent",
+    "actualTitle": "Effects of policosanol 20 versus 40 mg/day in the treatment of patients with type II hypercholesterolemia: a 6-month double-blind study.",
+    "journal": "Int J Clin Pharmacol Res",
+    "year": 2002
+  },
+  {
+    "slug": "policosanol-versus-statins-en",
+    "ordinal": 2,
+    "type": "TITLE_MISMATCH",
+    "pmid": "11708574",
+    "currentLabel": "Policosanol: clinical pharmacology and therapeutic significance of a new lipid-lowering agent",
+    "actualTitle": "Effects of policosanol 20 versus 40 mg/day in the treatment of patients with type II hypercholesterolemia: a 6-month double-blind study.",
+    "journal": "Int J Clin Pharmacol Res",
+    "year": 2002
+  },
+  {
+    "slug": "urolithin-a-kich-hoat-mitophagy-phuc-hoi-co-bap-vi",
+    "ordinal": 2,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1001/jamanetworkopen.2021.44221",
+    "actualDoi": "10.1001/jamaoto.2021.4092",
+    "pmid": "35050349",
+    "currentLabel": "Effect of Urolithin A on Physical Performance and Biomarkers of Mitochondrial Health in Older Adults: A Randomized Clinical Trial",
+    "actualTitle": "Ear, Nose, Throat, and Bronchial Involvements in VEXAS Syndrome: Specifying the Spectrum of Clinical Features."
+  },
+  {
+    "slug": "urolithin-a-mitophagy-muscle-endurance-en",
+    "ordinal": 2,
+    "type": "DOI_PMID_MISMATCH",
+    "currentDoi": "10.1001/jamanetworkopen.2021.44221",
+    "actualDoi": "10.1001/jamaoto.2021.4092",
+    "pmid": "35050349",
+    "currentLabel": "Effect of Urolithin A on Physical Performance and Biomarkers of Mitochondrial Health in Older Adults: A Randomized Clinical Trial",
+    "actualTitle": "Ear, Nose, Throat, and Bronchial Involvements in VEXAS Syndrome: Specifying the Spectrum of Clinical Features."
+  }
+]
