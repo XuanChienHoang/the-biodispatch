@@ -1,6 +1,6 @@
 ---
 title: "The Cellular Gatekeeper and the Zonulin Paradox: Deciphering Leaky Gut Syndrome in Metabolic Aging"
-date: "2026-10-12T09:00:00Z"
+date: "2026-10-10T09:00:00Z"
 excerpt: "Leaky gut syndrome is often misconstrued as mere physical damage to the intestinal lining. In reality, it is a complex molecular regulatory failure involving the Zonulin protein, which compromises the integrity of tight junctions. This article dissects the metabolic mechanisms that allow LPS endotoxins to enter the bloodstream, triggering systemic inflammation and accelerating cellular aging."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

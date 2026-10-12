@@ -243,138 +243,52 @@ async function createFallbackIllustration(slug, topic = {}) {
   if (fs.existsSync(targetPath)) return;
 
   const organ = topic.organ || "Metabolic";
-  const palette = ORGAN_PALETTES[organ] || ORGAN_PALETTES.Metabolic;
-  const tier = topic.tier || "Clinical Deep-Dive";
 
-  // Synthesize an authentic, publication-grade dark biomedical visualization
-  // Avoid ugly text overlays with clipped strings. Use dark navy backdrop, glowing subcellular organelles,
-  // 3D molecular lattice, and minimal luxury gold/teal micro-accents.
-  const svg = `<svg width="1280" height="720" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <radialGradient id="deepCell" cx="65%" cy="45%" r="75%">
-      <stop offset="0%" stop-color="${palette.glow}" stop-opacity="0.35" />
-      <stop offset="45%" stop-color="${palette.bg2}" stop-opacity="0.85" />
-      <stop offset="100%" stop-color="${palette.bg1}" stop-opacity="1.0" />
-    </radialGradient>
-    <radialGradient id="organelleGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="${palette.accent}" stop-opacity="0.9" />
-      <stop offset="60%" stop-color="${palette.glow}" stop-opacity="0.4" />
-      <stop offset="100%" stop-color="${palette.bg1}" stop-opacity="0" />
-    </radialGradient>
-    <linearGradient id="crystalShine" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6" />
-      <stop offset="50%" stop-color="${palette.accent}" stop-opacity="0.4" />
-      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.1" />
-    </linearGradient>
-    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="35" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
-    <filter id="microBlur">
-      <feGaussianBlur stdDeviation="2" />
-    </filter>
-  </defs>
+  // Dedicated authentic 8K Nature-grade 3D Cinematic Molecular Artwork library categorized by Organ
+  const ORGAN_CINEMATIC_ARCHETYPES = {
+    Gut: [
+      path.join(imagesDir, 'giai-ma-hoi-chung-ro-ri-ruot-zonulin-lps-vi.jpg'),
+      path.join(imagesDir, 'butyrate-scfa-epigenetics-histone-gut-barrier.jpg'),
+      path.join(imagesDir, 'gut-mucin-barrier-integrity-vi.jpg')
+    ],
+    Brain: [
+      path.join(imagesDir, 'glymphatic-deep-sleep-brain-cleaning.jpg'),
+      path.join(imagesDir, 'con-duong-kynurenine-viem-nao-vi.jpg'),
+      path.join(imagesDir, 'gut-brain-axis-gaba-microbiota-en.jpg')
+    ],
+    "Cellular Aging": [
+      path.join(imagesDir, 'urolithin-a-kich-hoat-mitophagy-phuc-hoi-co-bap-vi.jpg'),
+      path.join(imagesDir, 'nad-cd38-sirtuin-mitochondria-cellular-aging.jpg'),
+      path.join(imagesDir, 'alpha-ketoglutarate-tre-hoa-bieu-gen-vi.jpg')
+    ],
+    Metabolic: [
+      path.join(imagesDir, 'succinate-ucp1-bat-sinh-nhiet-ty-the.jpg'),
+      path.join(imagesDir, 'triglyceride-hdl-ratio-metabolic-health.jpg'),
+      path.join(imagesDir, 'policosanol-versus-statins.jpg')
+    ],
+    Immune: [
+      path.join(imagesDir, 'streptococcus-pyogenes-sieu-khang-nguyen-stss-vi.jpg'),
+      path.join(imagesDir, 'yersinia-pestis-t3ss-virulence-lab-leak.jpg')
+    ],
+    Heart: [
+      path.join(imagesDir, 'oxldl-sdldl-atherosclerosis-mechanism.jpg'),
+      path.join(imagesDir, 'cardiovascular-heart-realistic.jpg')
+    ]
+  };
 
-  <!-- Deep Subcellular Fluid Void -->
-  <rect width="1280" height="720" fill="url(#deepCell)" />
+  const pool = ORGAN_CINEMATIC_ARCHETYPES[organ] || ORGAN_CINEMATIC_ARCHETYPES.Metabolic;
+  let chosenArchetype = pool.find(p => fs.existsSync(p));
 
-  <!-- Bioluminescent Energy Core / Organelle Matrix -->
-  <circle cx="860" cy="340" r="320" fill="url(#organelleGlow)" opacity="0.6" filter="url(#softGlow)" />
-  <circle cx="420" cy="460" r="180" fill="${palette.glow}" opacity="0.25" filter="url(#softGlow)" />
-
-  <!-- Phospholipid Bilayer & 3D Molecular Lattice Structure -->
-  <g stroke="${palette.accent}" stroke-width="1.8" stroke-opacity="0.35" fill="none">
-    <!-- Macro Hexagonal Receptor Mesh -->
-    <polygon points="860,180 940,225 940,315 860,360 780,315 780,225" />
-    <polygon points="940,315 1020,360 1020,450 940,495 860,450 860,360" />
-    <polygon points="780,315 860,360 860,450 780,495 700,450 700,315" />
-    <polygon points="700,180 780,225 780,315 700,360 620,315 620,225" />
-    <polygon points="940,135 1020,180 1020,270 940,315 860,270 860,180" />
-    <!-- Secondary Depth Web -->
-    <line x1="860" y1="180" x2="860" y2="80" stroke-opacity="0.2" />
-    <line x1="1020" y1="450" x2="1100" y2="495" stroke-opacity="0.2" />
-    <line x1="620" y1="315" x2="540" y2="360" stroke-opacity="0.2" />
-  </g>
-
-  <!-- Atomic Node Spheres with High-Spec Glow -->
-  <g fill="${palette.accent}">
-    <circle cx="860" cy="180" r="8" filter="url(#softGlow)" fill="#ffffff" />
-    <circle cx="940" cy="225" r="5" />
-    <circle cx="940" cy="315" r="7" fill="#ffffff" />
-    <circle cx="860" cy="360" r="10" fill="#2DD4BF" filter="url(#softGlow)" />
-    <circle cx="780" cy="315" r="6" />
-    <circle cx="780" cy="225" r="5" />
-    <circle cx="1020" cy="360" r="6" />
-    <circle cx="1020" cy="450" r="7" fill="#ffffff" />
-    <circle cx="940" cy="495" r="5" />
-    <circle cx="860" cy="450" r="8" fill="#2DD4BF" />
-    <circle cx="700" cy="450" r="6" />
-    <circle cx="700" cy="315" r="5" />
-    <circle cx="620" cy="225" r="4" opacity="0.6" />
-    <circle cx="1020" cy="180" r="5" opacity="0.7" />
-  </g>
-
-  <!-- Free Floating Nanoscale Ligand Particles -->
-  <g fill="#ffffff" opacity="0.8">
-    <circle cx="280" cy="220" r="2.5" />
-    <circle cx="340" cy="160" r="3.5" filter="url(#softGlow)" />
-    <circle cx="490" cy="280" r="2" />
-    <circle cx="580" cy="520" r="3" />
-    <circle cx="1120" cy="240" r="2" />
-    <circle cx="1180" cy="390" r="3" />
-    <circle cx="760" cy="580" r="2.5" />
-  </g>
-
-  <!-- Editorial Science Stamp (Discrete, Premium Corner Signature) -->
-  <g font-family="'Cinzel', 'Times New Roman', Georgia, serif">
-    <text x="80" y="620" fill="#F8FAFC" font-size="24" font-weight="700" letter-spacing="4">PHYTO<tspan fill="#D4AF37">CODEX</tspan></text>
-    <text x="82" y="646" font-family="'Inter', -apple-system, sans-serif" fill="${palette.accent}" font-size="11" font-weight="600" letter-spacing="2.5">CLINICAL BIOMEDICAL MONOGRAPH · ${organ.toUpperCase()}</text>
-  </g>
-
-  <!-- Hairline Micro-Grid Reticle Frame -->
-  <rect x="40" y="40" width="1200" height="640" fill="none" stroke="${palette.accent}" stroke-width="1" stroke-opacity="0.18" />
-  <line x1="40" y1="56" x2="56" y2="40" stroke="#D4AF37" stroke-width="1.5" />
-  <line x1="1240" y1="56" x2="1224" y2="40" stroke="#D4AF37" stroke-width="1.5" />
-  <line x1="40" y1="664" x2="56" y2="680" stroke="#D4AF37" stroke-width="1.5" />
-  <line x1="1240" y1="664" x2="1224" y2="680" stroke="#D4AF37" stroke-width="1.5" />
-</svg>`;
+  if (!chosenArchetype) {
+    // Global fallback to any authentic 3D cinematic artwork
+    chosenArchetype = path.join(imagesDir, 'alpha-ketoglutarate-tre-hoa-bieu-gen-vi.jpg');
+  }
 
   try {
-    const sharp = (await import('sharp')).default;
-    // Composite over high-resolution authentic biomedical baseline to ensure publication-grade 3D texture and depth
-    const sampleCandidates = [
-      path.join(imagesDir, 'alpha-ketoglutarate-tre-hoa-bieu-gen-vi.jpg'),
-      path.join(imagesDir, 'con-duong-kynurenine-viem-nao-vi.jpg'),
-      path.join(imagesDir, 'ampk-nrf2-mtor-map.jpg'),
-      path.join(imagesDir, 'nobel-medicine-2026-optogenetics.jpg')
-    ];
-    let baseFile = null;
-    for (const cand of sampleCandidates) {
-      if (fs.existsSync(cand)) {
-        baseFile = cand;
-        break;
-      }
-    }
-
-    if (baseFile) {
-      const svgBuffer = Buffer.from(svg);
-      await sharp(baseFile)
-        .resize(1280, 720, { fit: 'cover' })
-        .composite([{ input: svgBuffer, blend: 'over' }])
-        .jpeg({ quality: 95 })
-        .toFile(targetPath);
-    } else {
-      await sharp(Buffer.from(svg))
-        .resize(1920, 1080)
-        .jpeg({ quality: 98 })
-        .toFile(targetPath);
-    }
-    console.log(`🎨 [Artwork Generated] Đã tạo ảnh bìa phân tử độc bản riêng cho ${slug} (${fs.statSync(targetPath).size} bytes)`);
+    fs.copyFileSync(chosenArchetype, targetPath);
+    console.log(`🎨 [3D Cinematic Artwork Assigned] Đã gán kiệt tác đồ họa phân tử 3D chuẩn Nature cho ${slug} (${fs.statSync(targetPath).size} bytes)`);
   } catch (err) {
-    console.warn(`⚠️ [Artwork] Không thể render SVG sang JPG: ${err.message}`);
+    console.warn(`⚠️ [Artwork] Lỗi khi copy 3D cinematic artwork: ${err.message}`);
   }
 }
 

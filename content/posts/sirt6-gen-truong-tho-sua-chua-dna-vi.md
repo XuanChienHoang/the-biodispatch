@@ -1,6 +1,6 @@
 ---
 title: "Sirt6: Người gác đền của bộ gen và chìa khóa cho sự trường thọ tế bào"
-date: "2026-10-12T09:00:00Z"
+date: "2026-10-11T09:00:00Z"
 excerpt: "Nhiều người lầm tưởng rằng lão hóa là một quá trình không thể đảo ngược do sự tích tụ sai hỏng ngẫu nhiên. Tuy nhiên, khoa học hiện đại đã xác định được một 'người gác đền' phân tử mang tên Sirt6. Bài viết này bóc tách nghịch lý sinh học: tại sao việc tăng cường enzyme này không chỉ đơn thuần là sửa chữa DNA, mà còn là công tắc điều chỉnh nhịp sinh học và chuyển hóa năng lượng, giúp tế bào duy trì sự trẻ trung bất chấp thời gian."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"
