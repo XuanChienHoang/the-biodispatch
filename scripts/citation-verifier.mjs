@@ -84,28 +84,45 @@ export async function searchPubMedByTitle(title, journalHint = '') {
   if (!title || title.length < 8) return null;
   // Clean special characters
   const cleanTitle = title.replace(/[^\w\s-]/g, ' ').replace(/\s+/g, ' ').trim();
-  // Take top 6 significant words for robust query
-  const keywords = cleanTitle.split(' ').filter(w => w.length > 3).slice(0, 6).join(' ');
-  const query = journalHint ? `${keywords} AND ${journalHint}` : keywords;
-  const searchUrl = `${NCBI_BASE}/esearch.fcgi?db=pubmed&term=${encodeURIComponent(query)}&retmax=3&retmode=json&${NCBI_PARAMS}`;
+  const stopWords = new Set(['the', 'and', 'for', 'with', 'that', 'from', 'into', 'upon', 'this', 'have', 'were', 'been', 'which', 'their', 'about']);
+  const words = cleanTitle.split(' ').filter(w => w.length > 2 && !stopWords.has(w.toLowerCase()));
   
-  await delay(350);
-  try {
-    const res = await fetchWithRetry(searchUrl);
-    if (!res || !res.ok) return null;
-    const searchData = await res.json();
-    const idList = searchData?.esearchresult?.idlist;
-    if (!Array.isArray(idList) || idList.length === 0) return null;
+  // Strategy 1: Targeted PubMed Title field search [Title]
+  const titleSearchWords = words.slice(0, 7).join(' ');
+  const strategies = [
+    `${titleSearchWords}[Title]`,
+    journalHint ? `${words.slice(0, 6).join(' ')} AND ${journalHint}` : null,
+    words.slice(0, 5).join(' ')
+  ].filter(Boolean);
 
-    const matchedPmid = idList[0];
-    const details = await verifyPubMedId(matchedPmid);
-    if (details.valid) {
-      return details;
+  for (const query of strategies) {
+    const searchUrl = `${NCBI_BASE}/esearch.fcgi?db=pubmed&term=${encodeURIComponent(query)}&retmax=5&retmode=json&${NCBI_PARAMS}`;
+    await delay(350);
+    try {
+      const res = await fetchWithRetry(searchUrl);
+      if (!res || !res.ok) continue;
+      const searchData = await res.json();
+      const idList = searchData?.esearchresult?.idlist;
+      if (!Array.isArray(idList) || idList.length === 0) continue;
+
+      for (const candidateId of idList) {
+        const details = await verifyPubMedId(candidateId);
+        if (details.valid) {
+          // Check semantic overlap between candidate title and original query
+          const targetLower = cleanTitle.toLowerCase();
+          const foundLower = details.title.toLowerCase();
+          const keyMatches = words.filter(w => foundLower.includes(w.toLowerCase()));
+          if (keyMatches.length >= Math.min(3, Math.ceil(words.length * 0.4))) {
+            return details;
+          }
+        }
+      }
+    } catch {
+      // try next strategy
     }
-    return null;
-  } catch {
-    return null;
   }
+
+  return null;
 }
 
 /**
@@ -145,6 +162,7 @@ export async function verifyAndHealReferences(rawRefs = [], topicTitle = '') {
     let design = ref.design || 'Landmark Literature Synthesis';
     let abstract = ref.abstract || '';
 
+    let actualLabel = label;
     let isPmidValid = false;
     if (pmid) {
       const pmidCheck = await verifyPubMedId(pmid);
@@ -159,9 +177,10 @@ export async function verifyAndHealReferences(rawRefs = [], topicTitle = '') {
           isPmidValid = false;
         } else {
           isPmidValid = true;
+          actualLabel = pmidCheck.title || label;
           journal = pmidCheck.journal || journal;
           year = pmidCheck.year || year;
-          if (pmidCheck.doi && !doi) doi = pmidCheck.doi;
+          if (pmidCheck.doi) doi = pmidCheck.doi;
         }
       } else {
         console.warn(`⚠️ [Citation Verifier] PMID "${pmid}" không tồn tại (${pmidCheck.error}). Đang tra cứu paper thật...`);
@@ -174,6 +193,7 @@ export async function verifyAndHealReferences(rawRefs = [], topicTitle = '') {
       if (found && found.valid) {
         console.log(`✅ [Citation Verifier] Đã tìm thấy y văn chuẩn xác: PMID ${found.pmid} ("${found.title}")`);
         pmid = found.pmid;
+        actualLabel = found.title;
         journal = found.journal || journal;
         year = found.year || year;
         if (found.doi) doi = found.doi;
@@ -183,6 +203,7 @@ export async function verifyAndHealReferences(rawRefs = [], topicTitle = '') {
         if (topicFound && topicFound.valid) {
           console.log(`✅ [Citation Verifier] Gán bài báo uy tín theo chủ đề: PMID ${topicFound.pmid} ("${topicFound.title}")`);
           pmid = topicFound.pmid;
+          actualLabel = topicFound.title;
           journal = topicFound.journal || journal;
           year = topicFound.year || year;
           if (topicFound.doi) doi = topicFound.doi;
@@ -196,7 +217,7 @@ export async function verifyAndHealReferences(rawRefs = [], topicTitle = '') {
 
     verifiedList.push({
       ordinal: idx + 1,
-      label: label.replace(/"/g, '\\"'),
+      label: actualLabel.replace(/"/g, '\\"'),
       pmid: pmid,
       doi: doi,
       design: design.replace(/"/g, '\\"'),

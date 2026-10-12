@@ -9,7 +9,7 @@ organ: "Gut"
 tier: "Clinical Deep-Dive"
 readingTime: "9 phút đọc"
 featured: true
-doi: "10.1111/j.1749-6632.2010.05838.x"
+doi: "10.1111/j.1749-6632.2012.06538.x"
 gizmo: "pathway"
 lang: "vi"
 image: "/images/posts/co-che-zonulin-va-hoi-chung-ro-ri-ruot-vi.jpg"

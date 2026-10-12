@@ -9,7 +9,7 @@ organ: "Metabolic"
 tier: "Clinical Deep-Dive"
 readingTime: "9 phút đọc"
 featured: true
-doi: "10.1186/s12974-024-03241-1"
+doi: "10.1038/nature06736"
 gizmo: "pathway"
 lang: "vi"
 image: "/images/posts/sirt6-gen-truong-tho-sua-chua-dna-vi.jpg"

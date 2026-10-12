@@ -9,7 +9,7 @@ organ: "Metabolic"
 tier: "Clinical Deep-Dive"
 readingTime: "9 min read"
 featured: true
-doi: "10.1186/s12974-024-03241-1"
+doi: "10.1038/nature06736"
 gizmo: "pathway"
 lang: "en"
 image: "/images/posts/sirt6-longevity-gene-dna-repair-en.jpg"
