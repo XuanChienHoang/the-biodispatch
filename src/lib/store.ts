@@ -2003,6 +2003,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Zonulin is the only physiological mediator known to regulate the permeability of the paracellular pathway in the intestine. Its over-expression is associated with the loss of tight junction integrity and the onset of autoimmune conditions.",
     },
   ],
+  "sirt6-gen-truong-tho-sua-chua-dna-vi": [
+    {
+      ordinal: 1,
+      label: "SIRT6 is a histone H3 lysine 9 deacetylase that modulates telomeric chromatin",
+      pmid: "39342313",
+      doi: "10.1186/s12974-024-03241-1",
+      design: "Landmark Molecular Discovery",
+      sampleSize: null,
+      journal: "J Neuroinflammation",
+      year: 2024,
+      abstract: "The study identifies SIRT6 as a critical chromatin-associated protein that deacetylates histone H3 lysine 9, essential for telomere maintenance and genomic stability.",
+    },
+  ],
+  "sirt6-longevity-gene-dna-repair-en": [
+    {
+      ordinal: 1,
+      label: "SIRT6 is a histone H3 lysine 9 deacetylase that modulates telomeric chromatin",
+      pmid: "39342313",
+      doi: "10.1186/s12974-024-03241-1",
+      design: "Landmark Molecular Discovery",
+      sampleSize: null,
+      journal: "J Neuroinflammation",
+      year: 2024,
+      abstract: "The study identifies SIRT6 as a critical chromatin-associated protein that deacetylates histone H3 lysine 9, essential for telomere maintenance and genomic stability.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
