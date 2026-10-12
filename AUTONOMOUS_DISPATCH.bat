@@ -25,6 +25,6 @@ echo [3/3] Đang commit, push Git và Deploy Production lên Vercel...
 echo.
 echo ========================================================
 echo   ✅ HOÀN TẤT XUẤT BẢN THÀNH CÔNG!
-echo   Xem trực tiếp tại: https://the-biodispatch.vercel.app
+echo   Xem trực tiếp tại: https://www.phyto-codex.org
 echo ========================================================
 pause
