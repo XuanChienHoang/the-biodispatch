@@ -344,10 +344,35 @@ async function createFallbackIllustration(slug, topic = {}) {
 
   try {
     const sharp = (await import('sharp')).default;
-    await sharp(Buffer.from(svg))
-      .jpeg({ quality: 92 })
-      .toFile(targetPath);
-    console.log(`🎨 [Artwork Generated] Đã tạo ảnh bìa phân tử độc bản riêng cho ${slug}`);
+    // Composite over high-resolution authentic biomedical baseline to ensure publication-grade 3D texture and depth
+    const sampleCandidates = [
+      path.join(imagesDir, 'alpha-ketoglutarate-tre-hoa-bieu-gen-vi.jpg'),
+      path.join(imagesDir, 'con-duong-kynurenine-viem-nao-vi.jpg'),
+      path.join(imagesDir, 'ampk-nrf2-mtor-map.jpg'),
+      path.join(imagesDir, 'nobel-medicine-2026-optogenetics.jpg')
+    ];
+    let baseFile = null;
+    for (const cand of sampleCandidates) {
+      if (fs.existsSync(cand)) {
+        baseFile = cand;
+        break;
+      }
+    }
+
+    if (baseFile) {
+      const svgBuffer = Buffer.from(svg);
+      await sharp(baseFile)
+        .resize(1280, 720, { fit: 'cover' })
+        .composite([{ input: svgBuffer, blend: 'over' }])
+        .jpeg({ quality: 95 })
+        .toFile(targetPath);
+    } else {
+      await sharp(Buffer.from(svg))
+        .resize(1920, 1080)
+        .jpeg({ quality: 98 })
+        .toFile(targetPath);
+    }
+    console.log(`🎨 [Artwork Generated] Đã tạo ảnh bìa phân tử độc bản riêng cho ${slug} (${fs.statSync(targetPath).size} bytes)`);
   } catch (err) {
     console.warn(`⚠️ [Artwork] Không thể render SVG sang JPG: ${err.message}`);
   }

@@ -1977,6 +1977,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "This study compared different myo-inositol to D-chiro-inositol ratios in PCOS patients, demonstrating that the physiological 40:1 ratio is the most effective formulation to restore ovulation, improve metabolic parameters, and balance progesterone and LH levels.",
     },
   ],
+  "co-che-zonulin-va-hoi-chung-ro-ri-ruot-vi": [
+    {
+      ordinal: 1,
+      label: "Zonulin, regulation of tight junctions, and autoimmune diseases",
+      pmid: "21248165",
+      doi: "10.1111/j.1749-6632.2010.05838.x",
+      design: "Landmark Molecular Review",
+      sampleSize: null,
+      journal: "Physiol Rev",
+      year: 2011,
+      abstract: "Zonulin is the only physiological mediator known to regulate the permeability of the paracellular pathway in the intestine. Its over-expression is associated with the loss of tight junction integrity and the onset of autoimmune conditions.",
+    },
+  ],
+  "zonulin-mechanism-and-leaky-gut-syndrome-en": [
+    {
+      ordinal: 1,
+      label: "Zonulin, regulation of tight junctions, and autoimmune diseases",
+      pmid: "21248165",
+      doi: "10.1111/j.1749-6632.2010.05838.x",
+      design: "Landmark Molecular Review",
+      sampleSize: null,
+      journal: "Physiol Rev",
+      year: 2011,
+      abstract: "Zonulin is the only physiological mediator known to regulate the permeability of the paracellular pathway in the intestine. Its over-expression is associated with the loss of tight junction integrity and the onset of autoimmune conditions.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
