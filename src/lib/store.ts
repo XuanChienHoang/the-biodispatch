@@ -2121,6 +2121,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "This review explores how low-level mitochondrial stress induces adaptive responses that improve cellular fitness and extend lifespan.",
     },
   ],
+  "nghich-ly-mitohormesis-va-suc-manh-cua-stress-oxy-hoa-co-kiem-soat-vi": [
+    {
+      ordinal: 1,
+      label: "Mitohormesis: Promoting Health and Lifespan by Increased Levels of Reactive Oxygen Species (ROS)",
+      pmid: "24910588",
+      doi: "10.2203/dose-response.13-035.Ristow",
+      design: "Landmark Molecular Review",
+      sampleSize: null,
+      journal: "Dose Response",
+      year: 2014,
+      abstract: "This review summarizes how mitochondrial stress, specifically the production of ROS, acts as a signaling mechanism to promote longevity and adaptive stress responses.",
+    },
+  ],
+  "the-mitohormesis-paradox-and-the-power-of-controlled-oxidative-stress-en": [
+    {
+      ordinal: 1,
+      label: "Mitohormesis: Promoting Health and Lifespan by Increased Levels of Reactive Oxygen Species (ROS)",
+      pmid: "24910588",
+      doi: "10.2203/dose-response.13-035.Ristow",
+      design: "Landmark Molecular Review",
+      sampleSize: null,
+      journal: "Dose Response",
+      year: 2014,
+      abstract: "This review summarizes how mitochondrial stress, specifically the production of ROS, acts as a signaling mechanism to promote longevity and adaptive stress responses.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
