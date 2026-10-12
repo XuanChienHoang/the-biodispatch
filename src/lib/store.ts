@@ -2095,6 +2095,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Overexpression of the sirtuin SIRT6 significantly extends the lifespan of male mice, dampening IGF-1/Akt signaling and restoring metabolic homeostatic control.",
     },
   ],
+  "mitohormesis-va-nghich-ly-stress-oxi-hoa-vi": [
+    {
+      ordinal: 1,
+      label: "Mitohormesis: The redox-based mechanism of longevity",
+      pmid: "",
+      doi: "10.1016/j.redox.2014.02.005",
+      design: "Landmark Molecular Review",
+      sampleSize: null,
+      journal: "Redox Biology",
+      year: 2014,
+      abstract: "This review explores how low-level mitochondrial stress induces adaptive responses that improve cellular fitness and extend lifespan.",
+    },
+  ],
+  "mitohormesis-and-the-oxidative-stress-paradox-en": [
+    {
+      ordinal: 1,
+      label: "Mitohormesis: The redox-based mechanism of longevity",
+      pmid: "",
+      doi: "10.1016/j.redox.2014.02.005",
+      design: "Landmark Molecular Review",
+      sampleSize: null,
+      journal: "Redox Biology",
+      year: 2014,
+      abstract: "This review explores how low-level mitochondrial stress induces adaptive responses that improve cellular fitness and extend lifespan.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
