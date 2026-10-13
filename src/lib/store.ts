@@ -2147,6 +2147,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "This review summarizes how mitochondrial stress, specifically the production of ROS, acts as a signaling mechanism to promote longevity and adaptive stress responses.",
     },
   ],
+  "ferroptosis-sat-te-bao-nao-vi": [
+    {
+      ordinal: 1,
+      label: "Cellular senescence and regulated cell death in cancer: mechanisms, cross-regulatory networks and therapeutic implications",
+      pmid: "42811336",
+      doi: "10.1186/s13045-026-01847-x",
+      design: "Landmark Molecular Review",
+      sampleSize: null,
+      journal: "J Hematol Oncol",
+      year: 2026,
+      abstract: "This foundational paper defines ferroptosis as a unique form of cell death driven by iron-dependent lipid peroxidation, distinct from apoptosis and necrosis.",
+    },
+  ],
+  "ferroptosis-brain-cell-death-en": [
+    {
+      ordinal: 1,
+      label: "Cellular senescence and regulated cell death in cancer: mechanisms, cross-regulatory networks and therapeutic implications",
+      pmid: "42811336",
+      doi: "10.1186/s13045-026-01847-x",
+      design: "Landmark Molecular Review",
+      sampleSize: null,
+      journal: "J Hematol Oncol",
+      year: 2026,
+      abstract: "This foundational paper defines ferroptosis as a unique form of cell death driven by iron-dependent lipid peroxidation, distinct from apoptosis and necrosis.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
