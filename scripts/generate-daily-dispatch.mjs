@@ -212,20 +212,22 @@ ${serializedItems}
   ],
 `;
 
-  // Insert before closing bracket of SEED_REFS
-  const targetPattern = /const SEED_REFS: Record<string, Ref\[\]> = \{([\s\S]*?)\n\};/;
+  // Insert before closing bracket of SEED_REFS (specifically anchored before export interface MarkdownArticleData)
+  const targetPattern = /(const SEED_REFS: Record<string, Ref\[\]> = \{[\s\S]*?)\n\};\s*\n\s*export interface MarkdownArticleData/;
   const match = storeContent.match(targetPattern);
   if (match) {
     let prevBody = match[1].trimEnd();
-    if (prevBody && !prevBody.endsWith(',')) {
+    if (!prevBody.endsWith(',')) {
       prevBody += ',';
     }
     const updated = storeContent.replace(
       targetPattern,
-      `const SEED_REFS: Record<string, Ref[]> = {${prevBody}\n${newRefBlock}};`
+      `${prevBody}\n${newRefBlock}};\n\nexport interface MarkdownArticleData`
     );
     fs.writeFileSync(storeFile, updated, 'utf8');
     console.log(`✅ [Store] Đã cập nhật ${healedList.length} tài liệu y văn chuẩn xác 100% vào SEED_REFS cho ${topic.slugVi} & ${topic.slugEn}`);
+  } else {
+    console.warn(`⚠️ [Store] Không tìm thấy khối SEED_REFS trong store.ts để cập nhật`);
   }
 }
 

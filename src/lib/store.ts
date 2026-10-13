@@ -3181,32 +3181,7 @@ const SEED_REFS: Record<string, Ref[]> = {
       year: 2021,
       abstract: "American Heart Association scientific guidance strongly recommending deep-colored fruits, particularly anthocyanin-rich berries, for long-term arterial protection.",
     },
-  ],};
-
-export interface MarkdownArticleData extends Article {
-  content?: string;
-  author?: string;
-  authorRole?: string;
-  date?: string;
-  tags?: string[];
-  readingTime?: string;
-  lang?: "vi" | "en";
-}
-
-/** /images/posts/foo.jpg -> /images/<dir>/foo.webp (sinh bởi scripts/make-thumbs.mjs). Trả undefined nếu file chưa được sinh. */
-function variantFor(image: string | undefined, dir: "thumbs" | "covers"): string | undefined {
-  if (!image) return undefined;
-  const name = path.basename(image).replace(/\.[^.]+$/, "");
-  const file = path.join(process.cwd(), "public", "images", dir, `${name}.webp`);
-  return fs.existsSync(file) ? `/images/${dir}/${name}.webp` : undefined;
-}
-const thumbFor = (image?: string) => variantFor(image, "thumbs");
-const coverFor = (image?: string) => variantFor(image, "covers");
-
-/** Bài seed (không có file .md) mượn ảnh bìa cùng chủ đề để thẻ không bị trống. */
-const SEED_IMAGE_FALLBACK: Record<string, string> = {
-  "curcumin-piperine-bioavailability": "/images/posts/curcumin-piperine-bioavailability.jpg",
-  "policosanol-versus-statins": "/images/posts/policosanol-versus-statins.jpg",
+  ],
   "magie-glycinate-vs-citrate-giac-ngu-va-lo-au-vi": [
     {
       ordinal: 1,
@@ -3233,6 +3208,32 @@ const SEED_IMAGE_FALLBACK: Record<string, string> = {
       abstract: "Not all magnesium salts exhibit identical pharmacodynamics. While magnesium citrate predominantly promotes osmotic peristalsis, bisglycinate chelates cross systemic barriers via glycine co-transport, activating GABA-A receptors and attenuating nocturnal cortisol spikes.",
     },
   ],
+};
+
+export interface MarkdownArticleData extends Article {
+  content?: string;
+  author?: string;
+  authorRole?: string;
+  date?: string;
+  tags?: string[];
+  readingTime?: string;
+  lang?: "vi" | "en";
+}
+
+/** /images/posts/foo.jpg -> /images/<dir>/foo.webp (sinh bởi scripts/make-thumbs.mjs). Trả undefined nếu file chưa được sinh. */
+function variantFor(image: string | undefined, dir: "thumbs" | "covers"): string | undefined {
+  if (!image) return undefined;
+  const name = path.basename(image).replace(/\.[^.]+$/, "");
+  const file = path.join(process.cwd(), "public", "images", dir, `${name}.webp`);
+  return fs.existsSync(file) ? `/images/${dir}/${name}.webp` : undefined;
+}
+const thumbFor = (image?: string) => variantFor(image, "thumbs");
+const coverFor = (image?: string) => variantFor(image, "covers");
+
+/** Bài seed (không có file .md) mượn ảnh bìa cùng chủ đề để thẻ không bị trống. */
+const SEED_IMAGE_FALLBACK: Record<string, string> = {
+  "curcumin-piperine-bioavailability": "/images/posts/curcumin-piperine-bioavailability.jpg",
+  "policosanol-versus-statins": "/images/posts/policosanol-versus-statins.jpg",
 };
 
 export async function getMarkdownPosts(): Promise<MarkdownArticleData[]> {
