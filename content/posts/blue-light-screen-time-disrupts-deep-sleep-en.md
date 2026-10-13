@@ -1,5 +1,5 @@
 ---
-title: "Why Scrolling Your Phone in Bed Destroys Deep Sleep: Retinal ipRGCs and the Melatonin Delay"
+title: "Screen Time Before Sleep: How Retinal ipRGCs Sabotage Deep Sleep Architecture"
 date: "2026-10-10T10:00:00Z"
 excerpt: "Narrow-band 460-480nm blue light emitted by smartphone screens tricks the suprachiasmatic nucleus into perceiving midday sunshine, delaying Melatonin onset by 90 minutes and truncating restorative slow-wave sleep."
 author: "Dr. Xuan Chien Hoang"
@@ -7,7 +7,7 @@ authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg
 tags: ["Everyday Health", "Circadian Biology", "Evidence-Based Nutrition", "Clinical Medicine"]
 organ: "Brain"
 tier: "Life Dispatch"
-readingTime: "5 min read"
+readingTime: "7 min read"
 featured: true
 doi: "10.1073/pnas.1418490112"
 gizmo: null
@@ -26,7 +26,32 @@ At the end of a grueling workday, unwinding in bed with social media feeds or vi
 
 Biological pathway reaction sequence:
 
-[Ánh sáng xanh 460-480nm xuyên qua mắt] ──► [Kích hoạt tế bào hạch võng mạc nhạy quang ipRGC] ──► [Tín hiệu truyền qua bó võng mạc-vùng dưới đồi RHT] ──► [Nhân trên chéo SCN ức chế tuyến tùng] ──► [Melatonin bị chặn đứng, ngủ chập chờn]
+```text
+┌─────────────────────────────────────────────────────────────────────────────┐
+│               THE RETINOHYPOTHALAMIC PHOTOTRANSDUCTION AXIS                 │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ NATURAL DAYLIGHT ENTRAINMENT (SOLAR EXPOSURE):                              │
+│ [Solar 480nm photons] ──► [Retinal ipRGCs containing Melanopsin pigment]     │
+│                                           │                                 │
+│                                           ▼                                 │
+│ [Retinohypothalamic tract (RHT)] ──► [Direct firing into master clock SCN]  │
+│                                           │                                 │
+│                                           ▼                                 │
+│ [Pineal Melatonin suppressed] ──► [Daytime vigilance and optimal cognitive drive]│
+├─────────────────────────────────────────────────────────────────────────────┤
+│ NOCTURNAL SCREEN EXPOSURE DISRUPTION (22:00 IN BED):                        │
+│ [High-intensity narrow-band blue photons directed at close proximity]       │
+│               │                                                             │
+│               ▼                                                             │
+│ [Melanopsin misinterprets artificial blue light as midday sun]              │
+│               │                                                             │
+│               ▼                                                             │
+│ [Nocturnal Melatonin surge blocked > 50%] ──► [Circadian phase delay 1.5h] │
+│               │                                                             │
+│               ▼                                                             │
+│ [Truncated Slow-Wave Sleep (SWS)] ──► [Impaired Glymphatic cerebral clearance]│
+└─────────────────────────────────────────────────────────────────────────────┘
+```
 
 ---
 
@@ -63,6 +88,14 @@ To reclaim deep biological sleep without pharmaceutical sedatives, the NIH and c
 1. **Establish a 60-minute digital sunset**: Disconnect from screens at least 45 to 60 minutes prior to intended sleep. Replace screen time with physical books, audiobooks, or ambient conversation.
 2. **Activate warm color temperature shift**: If critical late messaging is non-negotiable, engage continuous warm color shifting (Night Shift/f.lux) and maximize screen-to-eye distance beyond 40 cm.
 3. **Deploy warm ambient lighting (< 2700K)**: Equip bedrooms with warm amber or dim incandescent lighting; long wavelengths do not trigger ipRGC Melanopsin, allowing pineal Melatonin synthesis to proceed undisturbed.
+
+---
+
+### The Doctor's Reflection: Restoring the Bedroom as a Sanctuary
+
+In digital civilization, smartphones serve as cognitive appendages. We scroll through messages and media to decompress, unaware that high-energy photons are signaling noon to an ancestral nervous system programmed by hundreds of millennia of celestial twilight.
+
+Restorative sleep is not a digital switch; it resembles an aircraft executing a gradual, measured descent. It demands ambient dimming, thermal drop, and a pristine nocturnal melatonin curve unmarred by artificial glare. Rather than enforcing punitive screen bans that spark resentment, craft a soothing 30-minute transitional runway: warm amber incandescent lamps, tactile paper books, or calming acoustics. When darkness is welcomed rather than fended off, your nervous system readily initiates cellular repair.
 
 ---
 

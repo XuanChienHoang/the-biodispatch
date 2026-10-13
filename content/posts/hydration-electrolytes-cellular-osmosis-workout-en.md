@@ -1,5 +1,5 @@
 ---
-title: "Why Gulping Plain Water When Exhausted Makes You More Tired: Hyponatremia and Cellular Osmosis"
+title: "Hydration During Workout: The Water Intoxication Paradox and Electrolyte Balance"
 date: "2026-10-08T10:00:00Z"
 excerpt: "Chugging pure distilled water after profuse sweating dilutes extracellular Sodium, triggering cellular swelling via osmosis and inducing exercise-associated hyponatremia."
 author: "Dr. Xuan Chien Hoang"
@@ -7,7 +7,7 @@ authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg
 tags: ["Everyday Health", "Circadian Biology", "Evidence-Based Nutrition", "Clinical Medicine"]
 organ: "Heart"
 tier: "Life Dispatch"
-readingTime: "5 min read"
+readingTime: "7 min read"
 featured: true
 doi: "10.1136/bjsports-2015-095004"
 gizmo: null
@@ -26,7 +26,32 @@ Following an intense outdoor run or strenuous physical labor under the summer su
 
 Biological pathway reaction sequence:
 
-[Vận động mạnh đổ nhiều mồ hôi mất nước & Natri] ──► [Uống ồ ạt nước lọc không khoáng] ──► [Hạ nồng độ Natri huyết tương < 135 mEq/L] ──► [Áp suất thẩm thấu đẩy nước tràn vào tế bào não và cơ] ──► [Chuột rút, đau đầu, mệt mỏi uể oải]
+```text
+┌─────────────────────────────────────────────────────────────────────────────┐
+│           CELLULAR OSMOREGULATION & EXERCISE SODIUM KINETICS                │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ HAZARDOUS PLAIN WATER HYPER-HYDRATION UNDER PROFUSE SWEAT:                  │
+│ [Prolonged exertion: 1-2g Sodium lost per liter of perspiration]            │
+│                                           │                                 │
+│                                           ▼                                 │
+│ [Copious pure water intake] ──► [Dilution of extracellular fluid sodium]    │
+│                                           │                                 │
+│                                           ▼                                 │
+│ [Extracellular osmolarity plunges] ──► [Water flows intracellularly]        │
+│                                           │                                 │
+│                                           ▼                                 │
+│ [EXERCISE-ASSOCIATED HYPONATREMIA (EAH): Cephalea, cerebral edema, collapse]│
+├─────────────────────────────────────────────────────────────────────────────┤
+│ PHYSIOLOGICAL ELECTROLYTE REPLACEMENT PROTOCOL:                             │
+│ [Hypotonic/Isotonic matrix: 500-700 mg/L Sodium + traces of glucose]        │
+│               │                                                             │
+│               ▼                                                             │
+│ [SGLT1 co-transporters in enterocytes] ──► [Rapid osmotic fluid assimilation]│
+│               │                                                             │
+│               ▼                                                             │
+│ [Plasma volume preservation] ──► [Cardiac output maintained, cramps avoided] │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
 
 ---
 
@@ -65,6 +90,14 @@ The American College of Sports Medicine (ACSM) and the Wilderness Medical Societ
 1. **Sip rhythmically rather than chugging**: Consume 150 to 200 ml every 15 to 20 minutes during prolonged exertion. Slow ingestion optimizes intestinal transport without overwhelming renal diluting capacity.
 2. **Simple artisanal electrolyte formulation**: In the absence of clinical oral rehydration salts (ORS), dissolve 1/4 teaspoon of natural sea salt and a squeeze of fresh lemon into 500 ml of water with a dash of raw honey. This creates an optimal sodium-glucose cotransport solution.
 3. **Monitor urine coloration**: Pale straw-colored urine indicates pristine hydration equilibrium. Completely clear, colorless urine is a clinical red flag of over-hydration and mineral wash-out.
+
+---
+
+### The Doctor's Reflection: Trusting Thirst Over Dogmatic Volume Targets
+
+The ubiquitous recommendation to consume massive arbitrary fluid quotas often leads to mechanical overhydration. In sports medicine and emergency wards, life-threatening complications during marathons routinely arise not from dehydration, but from acute hyponatremia driven by aggressive plain water intake.
+
+Human physiology possesses a remarkably calibrated osmoregulatory center in the hypothalamus. Drink primarily to quench physiological thirst rather than rigid schedules. Remember that internal fluids reflect a saline biological ocean; when heavy perspiration strips minerals, pairing fluid with modest sodium ensures cellular hydration, protecting cardiac output and neurological integrity.
 
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "Why Strict Salt Restriction Still Fails Blood Pressure: The Sodium-to-Potassium Ratio"
+title: "Salt and Blood Pressure: Unraveling the Sodium-to-Potassium Ratio Paradox"
 date: "2026-10-06T10:00:00Z"
 excerpt: "Drastic sodium restriction can paradoxically trigger compensatory RAAS vasoconstriction; clinical cardiovascular science reveals the Sodium-to-Potassium ratio governs vascular tension far more than salt alone."
 author: "Dr. Xuan Chien Hoang"
@@ -7,7 +7,7 @@ authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg
 tags: ["Everyday Health", "Circadian Biology", "Evidence-Based Nutrition", "Clinical Medicine"]
 organ: "Heart"
 tier: "Life Dispatch"
-readingTime: "5 min read"
+readingTime: "7 min read"
 featured: true
 doi: "10.1056/NEJMoa2105675"
 gizmo: null
@@ -26,7 +26,32 @@ Millions of hypertensive individuals are instructed to eliminate dietary salt so
 
 Biological pathway reaction sequence:
 
-[Khẩu phần ăn thiếu rau củ giàu Kali] ──► [Tỉ số Na+/K+ trong máu tăng cao] ──► [Ứ đọng nước trong thành nội mạc mao mạch] ──► [Co thắt tế bào cơ trơn mạch máu] ──► [Huyết áp tâm thu và tâm trương tăng vọt]
+```text
+┌─────────────────────────────────────────────────────────────────────────────┐
+│           CELLULAR NA+/K+-ATPASE & VASCULAR RESISTANCE MODULATION           │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ HYPOKALEMIC STATE (SALT RESTRICTION WITHOUT POTASSIUM-RICH GREENS):         │
+│ [Low extracellular Potassium] ──► [Impaired Na+/K+-ATPase pump cycling]     │
+│                                           │                                 │
+│                                           ▼                                 │
+│ [Intracellular Sodium & Calcium accumulation] ──► [Arterial smooth spasm]   │
+│                                           │                                 │
+│                                           ▼                                 │
+│ [Elevated systemic vascular resistance] ──► [PERSISTENT ARTERIAL HYPERTENSION]│
+├─────────────────────────────────────────────────────────────────────────────┤
+│ OPTIMIZED SODIUM-POTASSIUM EQUILIBRIUM:                                     │
+│ [Dietary Potassium intake: Leafy greens, tubers, 25% KCl mineral salt]      │
+│               │                                                             │
+│               ▼                                                             │
+│ [Enhanced renal natriuresis] ──► [Kidneys actively excrete excess sodium]   │
+│               │                                                             │
+│               ▼                                                             │
+│ [Upregulation of Endothelial Nitric Oxide] ──► [Supple arterial compliance] │
+│               │                                                             │
+│               ▼                                                             │
+│ [14% reduction in stroke & mortality] ──► [Long-term cardiovascular stability]│
+└─────────────────────────────────────────────────────────────────────────────┘
+```
 
 ---
 
@@ -66,6 +91,14 @@ To establish long-term cardiovascular resilience while maintaining vibrant meal 
 1. **Prioritize whole-food potassium sources**: Incorporate avocados, baked sweet potatoes, spinach, mushrooms, and legumes. Aiming for 3,500 to 4,700 mg of dietary potassium daily effortlessly counterbalances sodium intake.
 2. **Adopt potassium-enriched salt substitutes**: The landmark SSaSS trial in *NEJM* demonstrated that substituting 25% of regular cooking salt with potassium chloride reduced all-cause stroke and cardiovascular mortality by 14%.
 3. **Eliminate ultra-processed foods rather than culinary salt**: Over 75% of harmful sodium intake stems from industrial ultra-processed meats, instant noodles, and packaged snacks, rather than the pinch of natural sea salt added to fresh home-cooked vegetables.
+
+---
+
+### The Doctor's Reflection: Shifting From Fearful Restriction to Abundant Nourishment
+
+In cardiovascular clinics, patients frequently arrive terrified of culinary salt. They endure joyless, unseasoned meals, stripping away dining pleasure, only to find their blood pressure readings stubbornly elevated. Their underlying deficit is rarely excessive sodium alone, but profound cellular potassium depletion.
+
+Rather than fixating on punitive deprivation, redirect your focus toward dietary abundance: load your plate with leafy greens, legumes, and potassium-rich whole foods. A robust intake of potassium equips your kidneys to eliminate excess sodium effortlessly, allowing you to enjoy flavorful, seasoned meals while keeping your vascular tree resilient.
 
 ---
 
