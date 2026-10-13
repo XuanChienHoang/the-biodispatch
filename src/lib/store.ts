@@ -2262,6 +2262,7 @@ export async function getMarkdownPosts(): Promise<MarkdownArticleData[]> {
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const { data, content } = matter(fileContents);
 
+    const organ: Organ = (data.organ as Organ) || "Metabolic";
     let tier: Tier = "Clinical Deep-Dive";
     if (data.tier === "life" || data.tier === "Life Dispatch") {
       tier = "Life Dispatch";
