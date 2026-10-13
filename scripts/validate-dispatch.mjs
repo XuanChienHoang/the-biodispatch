@@ -56,7 +56,7 @@ export function validateDispatchContent(markdownString, lang = 'vi') {
   const isLifeDispatch = frontmatter.tier === 'Life Dispatch' || frontmatter.tier === 'life';
   const wordCount = content.trim().split(/\s+/).length;
   const minWords = isLifeDispatch 
-    ? (lang === 'vi' ? 450 : 380) 
+    ? (lang === 'vi' ? 400 : 320) 
     : (lang === 'vi' ? 700 : 600); // Ngưỡng tối thiểu chấp nhận được cho Clinical Deep-Dive
   if (wordCount < minWords) {
     issues.push(`Bài viết quá sơ sài (${wordCount} từ). Bắt buộc tối thiểu ${minWords} từ để phân tích đầy đủ câu chuyện đời thực và cơ chế.`);

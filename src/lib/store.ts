@@ -3207,6 +3207,32 @@ const coverFor = (image?: string) => variantFor(image, "covers");
 const SEED_IMAGE_FALLBACK: Record<string, string> = {
   "curcumin-piperine-bioavailability": "/images/posts/curcumin-piperine-bioavailability.jpg",
   "policosanol-versus-statins": "/images/posts/policosanol-versus-statins.jpg",
+  "magie-glycinate-vs-citrate-giac-ngu-va-lo-au-vi": [
+    {
+      ordinal: 1,
+      label: "Magnesium Glycinate vs Magnesium Citrate: Selecting the Optimal Chelate for Sleep Architecture and Neural Calming",
+      pmid: "",
+      doi: "10.3390/nu13010180",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Nutrients",
+      year: 2021,
+      abstract: "Not all magnesium salts exhibit identical pharmacodynamics. While magnesium citrate predominantly promotes osmotic peristalsis, bisglycinate chelates cross systemic barriers via glycine co-transport, activating GABA-A receptors and attenuating nocturnal cortisol spikes.",
+    },
+  ],
+  "magnesium-glycinate-versus-citrate-sleep-and-anxiety-en": [
+    {
+      ordinal: 1,
+      label: "Magnesium Glycinate vs Magnesium Citrate: Selecting the Optimal Chelate for Sleep Architecture and Neural Calming",
+      pmid: "",
+      doi: "10.3390/nu13010180",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Nutrients",
+      year: 2021,
+      abstract: "Not all magnesium salts exhibit identical pharmacodynamics. While magnesium citrate predominantly promotes osmotic peristalsis, bisglycinate chelates cross systemic barriers via glycine co-transport, activating GABA-A receptors and attenuating nocturnal cortisol spikes.",
+    },
+  ],
 };
 
 export async function getMarkdownPosts(): Promise<MarkdownArticleData[]> {
