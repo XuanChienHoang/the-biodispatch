@@ -71,5 +71,5 @@ To establish long-term cardiovascular resilience while maintaining vibrant meal 
 
 ### Official Scientific Guidelines & Peer-Reviewed References
 
-1. **Effect of Salt Substitution on Cardiovascular Events and Death**: [DOI: 10.1056/NEJMoa2105675](https://doi.org/10.1056/NEJMoa2105675). Among persons with prior stroke or high blood pressure, the rates of stroke, major cardiovascular events, and death were significantly lower with the potassium-enriched salt substitute.
-2. **2024 ESC Guidelines for the management of elevated blood pressure and hypertension**: European Society of Cardiology guidelines recommending potassium-rich dietary patterns alongside moderate sodium intake for optimal vascular protection. [DOI: 10.1093/eurheartj/ehae178](https://doi.org/10.1093/eurheartj/ehae178).
+1. **Effect of Salt Substitution on Cardiovascular Events and Death**: [DOI: 10.1056/NEJMoa2105675](https://doi.org/10.1056/NEJMoa2105675) · PMID: 34459569. In a 5-year landmark trial, replacing regular salt with potassium-enriched salt substitute (75% NaCl, 25% KCl) significantly lowered stroke risk by 14%, major cardiovascular events by 13%, and all-cause mortality by 12%.
+2. **2024 ESC Guidelines for the management of elevated blood pressure and hypertension**: [DOI: 10.1093/eurheartj/ehae178](https://doi.org/10.1093/eurheartj/ehae178) · PMID: 39210715. Official clinical guidelines from the European Society of Cardiology strongly advocating increased dietary potassium intake and optimized sodium-to-potassium ratios for cardiovascular protection.

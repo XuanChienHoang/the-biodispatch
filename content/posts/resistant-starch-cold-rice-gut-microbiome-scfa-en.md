@@ -9,7 +9,7 @@ organ: "Gut"
 tier: "Life Dispatch"
 readingTime: "5 min read"
 featured: true
-doi: "10.1038/s41392-024-01740-x"
+doi: "10.1016/j.cmet.2023.08.002"
 gizmo: null
 lang: "en"
 image: "/images/posts/resistant-starch-cold-rice-gut-microbiome-scfa-en.jpg"
@@ -71,5 +71,5 @@ To extract maximal prebiotic resistant starch safely without foodborne microbial
 
 ### Official Scientific Guidelines & Peer-Reviewed References
 
-1. **Resistant starch decreases intrahepatic triglycerides in patients with nonalcoholic fatty liver disease via gut microbiome alterations**: [DOI: 10.1038/s41392-024-01740-x](https://doi.org/10.1038/s41392-024-01740-x). Resistant starch supplementation reshapes the gut microbiota, elevates beneficial short-chain fatty acids, and significantly reduces hepatic steatosis and inflammatory biomarkers.
-2. **Effect of cooling of cooked white rice on resistant starch content and glycemic response**: Cooling cooked rice at 4°C for 24 hours followed by reheating significantly increases resistant starch content and reduces postprandial blood glucose excursions in humans. [DOI: 10.1007/s13197-015-1794-0](https://doi.org/10.1007/s13197-015-1794-0).
+1. **Resistant starch decreases intrahepatic triglycerides in patients with nonalcoholic fatty liver disease via gut microbiome alterations**: [DOI: 10.1016/j.cmet.2023.08.002](https://doi.org/10.1016/j.cmet.2023.08.002) · PMID: 37673036. Resistant starch supplementation reshapes the human gut microbiota, significantly enriches Bifidobacterium, elevates circulating short-chain fatty acids, and markedly reduces intrahepatic fat accumulation.
+2. **Hypoglycemic effect of recrystallized resistant starch on high-fat and high-fructose diet-induced type 2 diabetes mice**: [DOI: 10.1016/j.ijbiomac.2024.129812](https://doi.org/10.1016/j.ijbiomac.2024.129812) · PMID: 38302033. Demonstrates the molecular structural basis of retrograded amylose (RS3) crystal formation upon cooling and its potent blunting of starch digestion enzymes.

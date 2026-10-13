@@ -68,5 +68,5 @@ Sóng não Alpha chính là dải tần số đặc trưng khi não bộ ở tr�
 
 ### Tài liệu tham khảo và Hướng dẫn Chuyên ngành (Official Guidelines)
 
-1. **The combined effects of L-theanine and caffeine on cognitive performance and mood**: [DOI: 10.1093/jn/138.8.1572S](https://doi.org/10.1093/jn/138.8.1572S). The combination of L-theanine and caffeine improves cognitive speed, accuracy, and reduces susceptibility to distractions compared to caffeine alone.
-2. **L-theanine, a natural constituent in tea, and its effect on mental state**: Demonstrates significant increases in alpha brainwave activity indicating relaxation without drowsiness following L-theanine ingestion. [DOI: 10.1007/s00421-007-0669-0](https://doi.org/10.1007/s00421-007-0669-0).
+1. **L-theanine and caffeine in combination affect human cognition as evidenced by oscillatory alpha-band activity and attention task performance**: [DOI: 10.1093/jn/138.8.1572S](https://doi.org/10.1093/jn/138.8.1572S) · PMID: 18641209. The combination of L-theanine and caffeine improves cognitive speed, increases parietal alpha-band oscillatory power, and reduces susceptibility to distractions compared to caffeine alone.
+2. **L-Theanine reduces psychological and physiological stress responses**: [DOI: 10.1016/j.biopsycho.2006.06.006](https://doi.org/10.1016/j.biopsycho.2006.06.006) · PMID: 16930802. Oral intake of L-theanine causes an anti-stress response by inhibiting cortical neuron excitation and blunting sympathetic nervous system reactivity.

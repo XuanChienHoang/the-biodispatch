@@ -70,5 +70,5 @@ To integrate this sequence seamlessly into daily dining without sacrificing gast
 
 ### Official Scientific Guidelines & Peer-Reviewed References
 
-1. **Food Order Has a Significant Impact on Postprandial Glucose and Insulin Levels in Type 2 Diabetes**: [DOI: 10.2337/dc15-0429](https://doi.org/10.2337/dc15-0429). Consuming vegetables and protein prior to carbohydrates significantly dampens postprandial glucose excursions and insulin secretion in humans.
-2. **Scientific Opinion on Dietary Reference Values for Fats, Including Saturated, Monounsaturated, and Polyunsaturated Fatty Acids**: European Food Safety Authority scientific guidance on carbohydrate and dietary fiber metabolism regarding postprandial glycaemic control. [DOI: 10.2903/j.efsa.2010.1461](https://doi.org/10.2903/j.efsa.2010.1461).
+1. **Food Order Has a Significant Impact on Postprandial Glucose and Insulin Levels in Type 2 Diabetes**: [DOI: 10.2337/dc15-0429](https://doi.org/10.2337/dc15-0429) · PMID: 26106234. Consuming vegetables and protein prior to carbohydrates significantly dampens postprandial glucose excursions by up to 37% and reduces insulin secretion in humans.
+2. **Scientific Opinion on Dietary Reference Values for Fats, Including Saturated, Monounsaturated, and Polyunsaturated Fatty Acids**: [DOI: 10.2903/j.efsa.2010.1461](https://doi.org/10.2903/j.efsa.2010.1461) · PMID: N/A. European Food Safety Authority scientific guidance on dietary fiber viscosity and macronutrient pacing for metabolic stabilization.

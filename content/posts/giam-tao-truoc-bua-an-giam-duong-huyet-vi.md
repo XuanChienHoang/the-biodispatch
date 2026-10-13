@@ -70,5 +70,5 @@ Dù mang lại lợi ích thực chứng, giấm là một dung dịch acid mạ
 
 ### Tài liệu tham khảo và Hướng dẫn Chuyên ngành (Official Guidelines)
 
-1. **Vinegar Improves Insulin Sensitivity to a High-Carbohydrate Meal in Subjects With Insulin Resistance or Type 2 Diabetes**: [DOI: 10.2337/diacare.27.1.281](https://doi.org/10.2337/diacare.27.1.281). Vinegar significantly improves postprandial insulin sensitivity in insulin-resistant subjects following a high-glycemic carbohydrate meal.
-2. **Acetic acid improves postprandial glycaemia and insulin sensitivity by suppressing starch digestion and upregulating GLUT4**: Comprehensive analysis of acetic acid on disaccharidase enzymatic inhibition and muscle glucose disposal. [DOI: 10.1007/s00394-016-1344-7](https://doi.org/10.1007/s00394-016-1344-7).
+1. **Vinegar Improves Insulin Sensitivity to a High-Carbohydrate Meal in Subjects With Insulin Resistance or Type 2 Diabetes**: [DOI: 10.2337/diacare.27.1.281](https://doi.org/10.2337/diacare.27.1.281) · PMID: 14694010. Vinegar significantly improves postprandial insulin sensitivity by 34% in insulin-resistant subjects following a high-glycemic carbohydrate meal.
+2. **Vinegar dressing and cold storage of potatoes lowers postprandial glycaemic and insulinaemic responses in healthy subjects**: [DOI: 10.1038/sj.ejcn.1602238](https://doi.org/10.1038/sj.ejcn.1602238) · PMID: 16034360. Addition of vinegar reduces postprandial blood glucose and insulin levels by slowing gastric emptying and transiently inhibiting disaccharidase enzymes.

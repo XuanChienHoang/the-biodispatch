@@ -68,5 +68,5 @@ Nghiên cứu kinh điển tại Trường Y Harvard công bố trên *PNAS* đ�
 
 ### Tài liệu tham khảo và Hướng dẫn Chuyên ngành (Official Guidelines)
 
-1. **Evening use of light-emitting eReaders negatively affects sleep, circadian timing, and next-morning alertness**: [DOI: 10.1073/pnas.1418490112](https://doi.org/10.1073/pnas.1418490112). Light-emitting devices in the evening prolong sleep latency, delay the circadian clock, suppress melatonin, and impair next-morning cognitive alertness.
-2. **Melanopsin-expressing ciliated and rhabdomeric photoreceptors and circadian photoentrainment**: Foundational review on retinal ipRGCs and the neuroanatomy of circadian phototransduction. [DOI: 10.1038/nrn2380](https://doi.org/10.1038/nrn2380).
+1. **Evening use of light-emitting eReaders negatively affects sleep, circadian timing, and next-morning alertness**: [DOI: 10.1073/pnas.1418490112](https://doi.org/10.1073/pnas.1418490112) · PMID: 25535358. Light-emitting devices in the evening prolong sleep latency, delay the circadian clock, suppress melatonin secretion by over 50%, and impair next-morning cognitive alertness.
+2. **Phototransduction by retinal ganglion cells that set the circadian clock**: [DOI: 10.1126/science.1067262](https://doi.org/10.1126/science.1067262) · PMID: 11834835. Discovery of melanopsin-expressing intrinsically photosensitive retinal ganglion cells (ipRGCs) that project directly to the suprachiasmatic nucleus to synchronize the central circadian pacemaker.

@@ -70,5 +70,5 @@ Thứ ba, các gene thúc đẩy tạo mỡ (Adipogenesis) trong mô mỡ nội 
 
 ### Tài liệu tham khảo và Hướng dẫn Chuyên ngành (Official Guidelines)
 
-1. **Late isocaloric eating increases hunger, decreases energy expenditure, and alters adipose tissue gene expression in humans**: [DOI: 10.1016/j.cmet.2022.09.007](https://doi.org/10.1016/j.cmet.2022.09.007). Rigorous investigation demonstrating that late meal timing alters 24-hour appetite hormones, lowers core body temperature thermogenesis, and promotes adipogenesis.
-2. **Circadian Clocks, Rhythms, and the Pathophysiology of Type 2 Diabetes**: Review of pancreatic islet circadian rhythms and melatonin receptor signaling in metabolic homeostasis. [DOI: 10.1016/j.cmet.2020.02.008](https://doi.org/10.1016/j.cmet.2020.02.008).
+1. **Late isocaloric eating increases hunger, decreases energy expenditure, and alters adipose tissue gene expression in humans**: [DOI: 10.1016/j.cmet.2022.09.007](https://doi.org/10.1016/j.cmet.2022.09.007) · PMID: 36198293. Eating 4 hours later while maintaining identical caloric intake increases wake-time hunger, decreases core body temperature and 24h energy expenditure, and shifts adipose tissue gene expression toward lipid storage (adipogenesis).
+2. **When Rhythms Meet the Blues: Circadian Interactions with the Microbiota-Gut-Brain Axis**: [DOI: 10.1016/j.cmet.2020.02.008](https://doi.org/10.1016/j.cmet.2020.02.008) · PMID: 32130879. Circadian misalignment from late-night nutrient intake impairs metabolic rhythms, desynchronizes peripheral clocks, and increases visceral adiposity.

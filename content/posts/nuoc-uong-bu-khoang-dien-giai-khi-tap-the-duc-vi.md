@@ -9,7 +9,7 @@ organ: "Heart"
 tier: "Life Dispatch"
 readingTime: "5 phút"
 featured: true
-doi: "10.1136/bjsports-2015-095333"
+doi: "10.1136/bjsports-2015-095004"
 gizmo: null
 lang: "vi"
 image: "/images/posts/nuoc-uong-bu-khoang-dien-giai-khi-tap-the-duc-vi.jpg"
@@ -70,5 +70,5 @@ Hiệp hội Y học Thể thao Quốc tế (AMSSM) và Đại học Y khoa Th�
 
 ### Tài liệu tham khảo và Hướng dẫn Chuyên ngành (Official Guidelines)
 
-1. **Statement of the 3rd International Exercise-Associated Hyponatremia Consensus Development Conference, Carlsbad, California, 2015**: [DOI: 10.1136/bjsports-2015-095333](https://doi.org/10.1136/bjsports-2015-095333). Definitive clinical guidelines on the pathophysiology, prevention, and management of exercise-associated hyponatremia driven by overdrinking.
-2. **Exercise and Fluid Replacement**: American College of Sports Medicine position stand on electrolyte replenishment and fluid balance during human exertion. [DOI: 10.1249/mss.0b013e31802ca597](https://doi.org/10.1249/mss.0b013e31802ca597).
+1. **Statement of the 3rd International Exercise-Associated Hyponatremia Consensus Development Conference, Carlsbad, California, 2015**: [DOI: 10.1136/bjsports-2015-095004](https://doi.org/10.1136/bjsports-2015-095004) · PMID: 26227507. Definitive clinical guidelines establishing that overdrinking hypotonic fluids without sodium during prolonged endurance exercise carries the risk of life-threatening Exercise-Associated Hyponatremia (EAH).
+2. **American College of Sports Medicine position stand. Exercise and fluid replacement**: [DOI: 10.1249/mss.0b013e31802ca597](https://doi.org/10.1249/mss.0b013e31802ca597) · PMID: 17277604. ACSM official clinical guidelines recommending 0.5-0.7 g/L sodium and carbohydrate-electrolyte replacement solutions during prolonged exertion exceeding 1 hour.

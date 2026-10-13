@@ -71,5 +71,5 @@ Một phân tích gộp quy mô lớn đăng tải trên tạp chí *Sleep Medic
 
 ### Tài liệu tham khảo và Hướng dẫn Chuyên ngành (Official Guidelines)
 
-1. **Before-bed wash: Systematic review and meta-analysis of passive body heating to improve sleep**: [DOI: 10.1016/j.smrv.2019.04.008](https://doi.org/10.1016/j.smrv.2019.04.008). Water-based passive body heating of 40-42°C for 10 minutes scheduled 1-2 hours before bedtime significantly improves sleep onset latency and sleep efficiency.
-2. **Circadian rhythm of core body temperature and the timing of human sleep**: Review of the coupling between human distal vasodilation, core body cooling, and sleep propensity. [DOI: 10.1016/S0031-9384(02)00790-2](https://doi.org/10.1016/S0031-9384(02)00790-2).
+1. **Before-bedtime passive body heating by warm shower or bath to improve sleep: A systematic review and meta-analysis**: [DOI: 10.1016/j.smrv.2019.04.008](https://doi.org/10.1016/j.smrv.2019.04.008) · PMID: 31102877. Water-based passive body heating of 40-42.5°C for as little as 10 minutes scheduled 1-2 hours before bedtime significantly improves sleep onset latency and deep slow-wave sleep by triggering peripheral vasodilation.
+2. **Warm feet promote the rapid onset of sleep**: [DOI: 10.1038/43366](https://doi.org/10.1038/43366) · PMID: 10485703. Distal skin vasodilation and warming of the feet promote rapid redistribution of heat to the periphery, steepening the nocturnal drop in core body temperature and facilitating sleep onset.
