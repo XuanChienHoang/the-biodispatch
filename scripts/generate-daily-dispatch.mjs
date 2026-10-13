@@ -318,27 +318,28 @@ export async function runAutonomousDispatch() {
   }
   const scheduledIsoDate = `${year}-${month}-${day}T${timeSlot}`;
 
-  // Kiểm tra lịch sử gần nhất để thực thi tỷ lệ 4 bài đời sống : 1 bài chuyên sâu (4:1 ratio)
+  // Kiểm tra lịch sử gần nhất để thực thi tỷ lệ 4 bài đời sống : 1 bài chuyên sâu (4:1 ratio theo từng chủ đề song ngữ)
   const files = fs.readdirSync(postsDir).filter(f => f.endsWith('.md'));
-  const recentPosts = [];
+  const uniqueTopicsMap = new Map();
   for (const f of files) {
     try {
       const content = fs.readFileSync(path.join(postsDir, f), 'utf8');
       const dateMatch = content.match(/^date:\s*["']?([^"'\n]+)["']?/m);
       const tierMatch = content.match(/^tier:\s*["']?([^"'\n]+)["']?/m);
-      if (dateMatch && tierMatch) {
-        recentPosts.push({ date: dateMatch[1], tier: tierMatch[1] });
+      const topicKey = f.replace(/-(?:vi|en)\.md$/, '').replace(/\.md$/, '');
+      if (dateMatch && tierMatch && !uniqueTopicsMap.has(topicKey)) {
+        uniqueTopicsMap.set(topicKey, { date: dateMatch[1], tier: tierMatch[1] });
       }
     } catch {
       // ignore
     }
   }
-  recentPosts.sort((a, b) => (a.date > b.date ? 1 : -1));
-  const lastFive = recentPosts.slice(-5);
-  const recentClinicalCount = lastFive.filter(p => p.tier === 'Clinical Deep-Dive').length;
-  // Nếu trong 5 bài gần nhất chưa có bài chuyên sâu, chuyển sang chuyên sâu; ngược lại duy trì đời sống
+  const sortedTopics = Array.from(uniqueTopicsMap.values()).sort((a, b) => (a.date > b.date ? 1 : -1));
+  const lastFiveTopics = sortedTopics.slice(-5);
+  const recentClinicalCount = lastFiveTopics.filter(p => p.tier === 'Clinical Deep-Dive').length;
+  // Nếu trong 5 chủ đề gần nhất chưa có bài chuyên sâu, chuyển sang chuyên sâu; ngược lại duy trì đời sống
   const targetTier = (recentClinicalCount === 0) ? 'Clinical Deep-Dive' : 'Life Dispatch';
-  console.log(`🎯 [Editorial Policy] Tỷ lệ 4:1 -> Mục tiêu kỳ này: ${targetTier}`);
+  console.log(`🎯 [Editorial Policy] Tỷ lệ 4:1 -> 5 chủ đề gần nhất có ${recentClinicalCount} bài chuyên sâu -> Mục tiêu kỳ này: ${targetTier}`);
 
   const { validateDispatchContent } = await import('./validate-dispatch.mjs');
   // Ưu tiên topic từ radar nếu trùng targetTier, ngược lại dùng Gemini sinh mới
