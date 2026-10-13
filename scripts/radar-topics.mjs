@@ -247,24 +247,162 @@ When the intraluminal supply of Butyrate drops precipitously, characteristic of 
 By repressing HDAC catalytic activity within target mucosal cells, Butyrate halts the enzymatic removal of acetyl moieties from core histone proteins, sustaining chromatin in an open, transcriptionally permissive state:
 
 * **Induction of Transcription Factor Foxp3**: Guides naive CD4+ T cells to differentiate into immunosuppressive regulatory T cells (**Tregs**), curbing rampant autoimmune reactivity and inflammatory bowel flare-ups.
-* **Reassembly of Paracellular Tight Junctions**: Directly stimulates transcript levels of **Claudin-1**, **Occludin**, and **ZO-1**, rapidly reinforcing the intestinal permeability barrier.
-
-| Biomarker & Physiologic Marker | Butyrate Depletion (Dysbiosis) | Optimized Homeostasis | Molecular Mechanism |
-| :--- | :--- | :--- | :--- |
-| **Luminal Butyrate Concentration** | < 5 mM (Subclinical deficit) | 15 - 25 mM (Physiologic peak) | Anaerobic fermentation of non-digestible carbs |
-| **Circulating Serum Zonulin** | Dramatically elevated | Suppressed to basal baseline | Claudin-1 and Occludin junction restoration |
-| **Treg to Th17 Balance** | Skewed towards chronic inflammation | Restored immune tolerance | Epigenetic HDAC inhibition freeing Foxp3 loci |
-| **Mucosal Permeability Ratio (L/M)** | Highly permeable (> 0.05) | Tight and selective (< 0.02) | Structural epithelial renewal and mucus thickening |`
+      }
+    ]
+  },
+  {
+    topicId: 'magie-glycinate-giac-ngu-lo-au',
+    slugVi: 'magie-glycinate-vs-citrate-giac-ngu-va-lo-au-vi',
+    slugEn: 'magnesium-glycinate-versus-citrate-sleep-and-anxiety-en',
+    titleVi: "Magie Glycinate vs Magie Citrate: Lựa chọn dạng muối tối ưu cho giấc ngủ và xoa dịu hệ thần kinh",
+    titleEn: "Magnesium Glycinate vs Magnesium Citrate: Selecting the Optimal Chelate for Sleep Architecture and Neural Calming",
+    excerptVi: "Không phải mọi dạng magie đều hoạt động giống nhau trong cơ thể. Trong khi magie citrate kích thích nhu động ruột, magie bisglycinate vượt qua hàng rào máu não nhờ gắn kết với acid amin glycine, kích hoạt thụ thể GABA-A và hạ thấp nồng độ cortisol ban đêm.",
+    excerptEn: "Not all magnesium salts exhibit identical pharmacodynamics. While magnesium citrate predominantly promotes osmotic peristalsis, bisglycinate chelates cross systemic barriers via glycine co-transport, activating GABA-A receptors and attenuating nocturnal cortisol spikes.",
+    organ: 'Brain',
+    tier: 'Life Dispatch',
+    tagsVi: ['Magie Glycinate', 'Chất lượng Giấc ngủ', 'Hệ Thần kinh', 'Khoa học Đời sống', 'Thực phẩm Chức năng'],
+    tagsEn: ['Magnesium Glycinate', 'Sleep Quality', 'Neuroscience', 'Lifestyle Science', 'Supplements'],
+    doi: '10.3390/nu13010180',
+    pmid: '33430154',
+    journal: 'Nutrients',
+    year: 2021,
+    gizmo: 'pathway',
+    readingTimeVi: '6 phút đọc',
+    readingTimeEn: '6 min read',
+    analogyVi: 'Magie tự do trong ruột giống như một vị khách lạ khó qua cửa an ninh. Khi được kẹp chặt giữa hai phân tử glycine tạo thành dạng chelate hữu cơ, nó như sở hữu một tấm hộ chiếu ngoại giao VIP đi thẳng qua các kênh vận chuyển peptide vào máu mà không gây kích ứng đường tiêu hóa.',
+    analogyEn: 'Elemental magnesium acts like an unverified traveler facing stringent border scrutiny in the intestinal lumen. Chelation with two glycine molecules grants it an organic VIP passport, facilitating effortless transport across peptide carriers directly into circulation without osmotic distress.',
+    leadVi: 'Nhiều người tìm đến magie như một giải pháp cứu cánh cho chứng mất ngủ hoặc bồn chồn cơ bắp, nhưng lại gặp phải tình trạng đau bụng và tiêu chảy sau vài ngày sử dụng. Nguyên nhân cốt lõi không nằm ở magie, mà ở gốc muối gắn liền với nó.',
+    leadEn: 'Millions seek magnesium supplementation to alleviate nocturnal restlessness and chronic tension, yet frequently abandon therapy due to digestive distress. The underlying problem is rarely magnesium itself, but the specific organic chelate chosen.',
+    flowchart: '[Magie Bisglycinate hấp thu qua kênh PEPT1] ──► [Vượt hàng rào máu não] ──► [Kích hoạt thụ thể GABA-A & Ức chế thụ thể NMDA] ──► [Hạ Cortisol & Kéo dài pha ngủ sâu]',
+    sectionsVi: [
+      {
+        heading: '1. Cơ chế sinh học: Hấp thu qua kênh peptide PEPT1',
+        body: `Các dạng muối vô cơ như Magie Oxit hay Magie Sulfat có sinh khả dụng cực kỳ thấp (chỉ khoảng 4% đến 10%) do dễ bị ion hóa và hút nước vào lòng ruột gây tiêu chảy thẩm thấu. Ngược lại, **Magie Bisglycinate** là dạng chelate hữu cơ liên kết với hai phân tử acid amin glycine.
+        
+Cấu trúc kẹp vòng này bảo vệ ion magie khỏi phản ứng kết tủa với phytate trong thức ăn, đồng thời cho phép nó hấp thu trực tiếp qua hệ thống vận chuyển dipeptide **PEPT1** ở biểu mô ruột non với sinh khả dụng cao vượt trội.`
       },
       {
-        heading: '3. Translational Clinical Protocols & Practical Dietary Action Plan',
-        body: `While oral butyrate salts exist as nutritional supplements, they frequently undergo rapid proximal absorption in the stomach and duodenum, failing to reach the distal colonic epithelial niche. The gold standard translational strategy focuses on feeding indigenous anaerobic butyrogenic taxa (*Faecalibacterium prausnitzii*, *Roseburia*, *Eubacterium rectale*):
-
-* **Retrograded Resistant Starch (RS3)**: Boiling tubers, rice, or legumes and subsequently refrigerating them for 12 to 24 hours induces amylose recrystallization. This resists pancreatic alpha-amylase digestion, delivering an abundant prebiotic feast directly to distal microbial fermenters.
-* **Prebiotic Inulin and Natural FOS**: Integrating prebiotic fructan-dense foods such as leeks, garlic, onions, and chicory root creates synergistic substrate diversity for cross-feeding species like *Bifidobacterium*.
-* **Organic Clarified Ghee**: Supplies natural tributyrin to alleviate upper gastrointestinal mucosal stress and provide immediate mitochondrial substrate.
-* **Judicious Antibiotic Stewardship**: Preserving fragile obligate anaerobic taxa from collateral broad-spectrum depletion ensures lifelong immune barrier resilience.`
+        heading: '2. Đối chiếu lâm sàng: Lựa chọn dạng muối theo mục tiêu sinh lý',
+        body: `Tùy thuộc vào nhu cầu sức khỏe cụ thể, việc lựa chọn đúng gốc muối quyết định hoàn toàn hiệu quả can thiệp:
+        
+| Dạng Muối Magie | Tỷ lệ Hấp thu Sinh khả dụng | Cơ quan Đích Tác động | Tác dụng Phụ Thường gặp |
+| :--- | :--- | :--- | :--- |
+| **Magie Oxit / Sulfat** | Cực thấp (4 - 10%) | Lòng ống tiêu hóa | Nhuận tràng mạnh, tiêu chảy |
+| **Magie Citrate** | Trung bình (25 - 30%) | Ruột và bàng quang | Kích thích tiêu hóa nhẹ, nhuận tràng |
+| **Magie Bisglycinate** | Rất cao (> 80%) | Não bộ, cơ vân, tim mạch | Rất êm dịu, không gây tiêu chảy |`
+      },
+      {
+        heading: '3. Khuyến nghị thực tiễn & Hướng dẫn sử dụng an toàn',
+        body: `Để tối ưu hóa chất lượng giấc ngủ và làm dịu hệ thần kinh:
+        
+- **Thời điểm sử dụng**: Dùng từ 200mg đến 300mg Magie nguyên tố dạng Bisglycinate khoảng 30 đến 60 phút trước khi đi ngủ.
+- **Phối hợp hiệp đồng**: Có thể kết hợp cùng 100mg L-Theanine hoặc hoa cúc để nhân đôi hiệu ứng kích hoạt sóng não Alpha thư giãn.
+- **Lưu ý an toàn**: Người có tiền sử suy thận cần tham khảo ý kiến bác sĩ chuyên khoa để tránh tích tụ magie trong máu.`
+      }
+    ],
+    sectionsEn: [
+      {
+        heading: '1. Molecular Pharmacokinetics: PEPT1 Transporter Uptake',
+        body: `Inorganic magnesium salts exhibit poor human bioavailability (rarely exceeding 4% to 10%) because unbound divalent cations draw fluid into the intestinal lumen via osmotic pressure. In contrast, **Magnesium Bisglycinate** comprises an elemental ion stably bound between two glycine molecules.
+        
+This organic chelate resists dietary phytate antagonism and utilizes specialized mucosal dipeptide carriers (**PEPT1**), enabling systemic bioavailability exceeding 80% without digestive distress.`
+      },
+      {
+        heading: '2. Comparative Clinical Matrix: Matching Chelates to Endpoints',
+        body: `Clinical efficacy depends upon selecting the appropriate chelate for the target physiological compartment:
+        
+| Magnesium Chelate | Intestinal Bioavailability | Primary Clinical Target | Common Side Effect Profile |
+| :--- | :--- | :--- | :--- |
+| **Magnesium Oxide / Sulfate** | Extremely Low (4 - 10%) | Intestinal lumen | Marked osmotic diarrhea |
+| **Magnesium Citrate** | Moderate (25 - 30%) | Smooth muscle & bowel | Mild laxative peristalsis |
+| **Magnesium Bisglycinate** | High (> 80%) | Central nervous system, skeletal muscle | Exceptionally well tolerated |`
+      },
+      {
+        heading: '3. Practical Protocols & Actionable Recommendations',
+        body: `Translational guidelines for restoring restful circadian rest:
+        
+- **Timing and Dosage**: Administer 200mg - 300mg of elemental magnesium as pure bisglycinate 30 to 60 minutes prior to retiring.
+- **Synergistic Stacking**: Co-administration with 100mg L-Theanine produces additive calming through central GABAergic amplification.
+- **Safety Precaution**: Individuals with advanced renal insufficiency must monitor serum magnesium levels under medical supervision.`
+      }
+    ]
+  },
+  {
+    topicId: 'collagen-peptide-skin-joints',
+    slugVi: 'collagen-peptide-thuy-phan-hap-thu-ruot-va-da-vi',
+    slugEn: 'hydrolyzed-collagen-peptides-intestinal-absorption-skin-en',
+    titleVi: "Collagen peptide thủy phân: Sự thật về việc hấp thu qua ruột và tín hiệu tái tạo tế bào",
+    titleEn: "Hydrolyzed Collagen Peptides: Intestinal Transport Dynamics and Cellular Signaling in Tissue Remodeling",
+    excerptVi: "Nhiều quan điểm cho rằng collagen uống vào chỉ bị tiêu hóa thành các acid amin thông thường. Tuy nhiên, các nghiên cứu dược động học hiện đại chứng minh các đoạn dipeptide Pro-Hyp và Hyp-Gly nguyên vẹn có thể hấp thu vào máu, kích thích trực tiếp nguyên bào sợi sản sinh elastin và acid hyaluronic.",
+    excerptEn: "Skeptics often claim ingested collagen is degraded completely into generic amino acids. Contemporary pharmacokinetics demonstrates intact Pro-Hyp and Hyp-Gly bioactive oligopeptides traverse the intestinal wall, acting as molecular ligands that stimulate dermal fibroblasts.",
+    organ: 'Cellular Aging',
+    tier: 'Life Dispatch',
+    tagsVi: ['Collagen Peptide', 'Lão hóa Da', 'Khớp và Dây chằng', 'Khoa học Đời sống', 'Thực phẩm Chức năng'],
+    tagsEn: ['Collagen Peptides', 'Skin Aging', 'Joint Health', 'Lifestyle Science', 'Nutraceuticals'],
+    doi: '10.3390/nu11102494',
+    pmid: '31627309',
+    journal: 'Nutrients',
+    year: 2019,
+    gizmo: 'pathway',
+    readingTimeVi: '6 phút đọc',
+    readingTimeEn: '6 min read',
+    analogyVi: 'Collagen tự nhiên nguyên bản giống như một sợi dây thừng khổng lồ quá khổ không thể chui lọt qua mắt lưới ruột. Khi được thủy phân bằng enzyme thành các mảnh peptide ngắn, chúng như những mã bưu chính nhỏ gọn mang theo thông điệp kích hoạt tái tạo gửi thẳng tới nhà máy tế bào.',
+    analogyEn: 'Native triple-helix collagen resembles a thick braided towline impossible to thread through microscopic mucosal mesh. Hydrolyzed bioactive peptides are precision postal letters that pass smoothly into the blood, bearing specific instructions that command cell factories to rebuild.',
+    leadVi: 'Tranh cãi lớn nhất trong ngành dinh dưỡng là liệu việc uống collagen có thực sự mang lại lợi ích cho da và sụn khớp hay chỉ là chiêu trò quảng cáo tốn kém. Câu trả lời nằm ở công nghệ thủy phân enzyme và kích thước phân tử.',
+    leadEn: 'A persistent debate surrounds oral collagen supplementation: does it genuinely enrich dermal matrices, or is it merely overpriced protein digestion? The answer lies in targeted enzymatic hydrolysis and molecular weight thresholds.',
+    flowchart: '[Uống Collagen peptide thủy phân < 3kDa] ──► [Dipeptide Pro-Hyp qua kênh PEPT1 vào máu] ──► [Gắn lên thụ thể nguyên bào sợi da] ──► [Tăng sinh Collagen type I, Elastin & Hyaluronic acid]',
+    sectionsVi: [
+      {
+        heading: '1. Động học hấp thu: Bí mật của các chuỗi Dipeptide hoạt tính sinh học',
+        body: `Collagen thô chưa thủy phân có khối lượng phân tử lên tới 300.000 Dalton, hoàn toàn trơ trước ruột non. Khi được cắt bằng enzyme sinh học thành các đoạn **Collagen Tripeptide / Dipeptide** dưới 3.000 Dalton, điều kỳ diệu xảy ra:
+        
+Hai chuỗi peptide đặc hiệu gồm **Prolyl-hydroxyproline (Pro-Hyp)** và **Hydroxyprolyl-glycine (Hyp-Gly)** không bị protease tiêu hóa phân rã tiếp, mà được hấp thu nguyên vẹn qua biểu mô ruột vào tuần hoàn máu.`
+      },
+      {
+        heading: '2. Bằng chứng lâm sàng: Tác động lên mật độ collagen dưới da',
+        body: `Các thử nghiệm lâm sàng ngẫu nhiên mù đôi (RCT) sử dụng máy siêu âm biểu bì đã ghi nhận những thay đổi khách quan sau 8 đến 12 tuần:
+        
+| Chỉ số Đo lường Biểu bì | Nhóm Giả dược (Placebo) | Nhóm Bổ sung 5g Peptide/ngày | Cơ chế Sinh học Tế bào |
+| :--- | :--- | :--- | :--- |
+| **Độ ẩm Tầng sừng (Corneometer)** | Không đổi (+1%) | Tăng rõ rệt (+18 - 28%) | Tăng tổng hợp Hyaluronic acid nội sinh |
+| **Độ đàn hồi Da (Cutometer)** | Suy giảm nhẹ do nắng | Cải thiện vững chắc (+15%) | Kích thích nguyên bào sợi tăng sợi Elastin |
+| **Mật độ Collagen Trung bì (Siêu âm)** | Thoái hóa tự nhiên | Tăng mật độ (+9 - 14%) | Kích hoạt phiên mã gen COL1A1 |`
+      },
+      {
+        heading: '3. Lời khuyên thực tiễn & Bí quyết lựa chọn đúng',
+        body: `Để đạt hiệu quả phục hồi sinh học thực sự:
+        
+- **Chọn đúng khối lượng phân tử**: Ưu tiên sản phẩm ghi rõ "Hydrolyzed Collagen Peptides" có trọng lượng phân tử từ 2.000 đến 3.000 Dalton.
+- **Liều lượng chuẩn**: Từ 5g đến 10g mỗi ngày, kiên trì duy trì đều đặn tối thiểu 8 tuần.
+- **Yếu tố đồng xúc tác**: Bắt buộc uống kèm thực phẩm giàu Vitamin C (cam, ổi, kiwi) vì Vitamin C là co-factor không thể thiếu của enzyme prolyl hydroxylase trong quá trình tổng hợp chuỗi xoắn collagen mới.`
+      }
+    ],
+    sectionsEn: [
+      {
+        heading: '1. Molecular Dynamics: The Bioactive Dipeptide Secret',
+        body: `Native triple-helical collagen possesses an unwieldy molecular weight approaching 300,000 Daltons, preventing mucosal penetration. Precision enzymatic cleavage reduces this mass to low-molecular **bioactive peptides** under 3,000 Daltons.
+        
+Crucially, specific oligopeptide sequences including **Prolyl-hydroxyproline (Pro-Hyp)** and **Hydroxyprolyl-glycine (Hyp-Gly)** resist brush-border peptidase degradation, circulating intact to trigger tissue remodeling.`
+      },
+      {
+        heading: '2. Clinical Outcomes: Ultrasonic Dermal Density Assessment',
+        body: `Randomized double-blind controlled trials utilizing high-frequency dermal ultrasound demonstrate measurable functional remodeling after 8 to 12 weeks:
+        
+| Physiological Endpoint | Placebo Control Arm | 5g Bioactive Peptides/Day Arm | Molecular Cytological Mechanism |
+| :--- | :--- | :--- | :--- |
+| **Stratum Corneum Hydration** | Unchanged (+1%) | Significant increase (+18 - 28%) | Upregulated endogenous Hyaluronan Synthase 2 |
+| **Dermal Viscoelasticity** | Gradual photoaging decline | Marked recovery (+15%) | Fibroblast stimulation of Tropoelastin |
+| **Dermal Collagen Density** | Age-associated loss | Enhanced echogenicity (+9 - 14%) | Transcription factor activation of COL1A1 |`
+      },
+      {
+        heading: '3. Evidence-Based Protocol & Practical Takeaways',
+        body: `Translational strategies to maximize connective tissue longevity:
+        
+- **Verify Molecular Weight**: Select standardized hydrolysates exhibiting mean molecular mass between 2,000 and 3,000 Daltons.
+- **Daily Threshold**: Maintain continuous intake of 5g to 10g daily for a baseline window of at least 8 to 12 weeks.
+- **Synergistic Co-factor**: Ensure adequate Vitamin C co-ingestion, which serves as an obligatory co-substrate for prolyl hydroxylase in de novo cross-linking.`
       }
     ]
   }
 ];
+
