@@ -1,6 +1,6 @@
 /* Editorial corpus — seeded into Postgres, mirrored here as a build-safe fallback. */
 
-export type Tier = "Fundamentals" | "Clinical Deep-Dive" | "Lab Gizmo";
+export type Tier = "Fundamentals" | "Clinical Deep-Dive" | "Lab Gizmo" | "Life Dispatch";
 export type Organ = "Brain" | "Heart" | "Gut" | "Cellular Aging" | "Immune" | "Metabolic";
 
 export interface Article {
@@ -27,7 +27,7 @@ export interface Article {
 }
 
 export const ORGANS: Organ[] = ["Brain", "Heart", "Gut", "Cellular Aging", "Immune", "Metabolic"];
-export const TIERS: Tier[] = ["Fundamentals", "Clinical Deep-Dive", "Lab Gizmo"];
+export const TIERS: Tier[] = ["Fundamentals", "Clinical Deep-Dive", "Lab Gizmo", "Life Dispatch"];
 
 export const ARTICLES: Article[] = [
   {

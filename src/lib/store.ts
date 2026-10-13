@@ -2262,8 +2262,16 @@ export async function getMarkdownPosts(): Promise<MarkdownArticleData[]> {
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const { data, content } = matter(fileContents);
 
-    const organ: Organ = (data.organ as Organ) || "Metabolic";
-    const tier: Tier = (data.tier as Tier) || "Clinical Deep-Dive";
+    let tier: Tier = "Clinical Deep-Dive";
+    if (data.tier === "life" || data.tier === "Life Dispatch") {
+      tier = "Life Dispatch";
+    } else if (data.tier === "Fundamentals") {
+      tier = "Fundamentals";
+    } else if (data.tier === "Lab Gizmo") {
+      tier = "Lab Gizmo";
+    } else if (data.tier === "Clinical Deep-Dive") {
+      tier = "Clinical Deep-Dive";
+    }
 
     posts.push({
       slug,

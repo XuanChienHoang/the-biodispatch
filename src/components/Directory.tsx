@@ -16,16 +16,18 @@ import {
   ShieldCheck,
   ChevronRight,
   Eye,
+  Coffee,
 } from "lucide-react";
 import { ORGANS, TIERS, type Article, type Tier, type Organ } from "@/lib/content";
 import { inkOn, onPaper } from "@/lib/tones";
 import { useLanguageStore, DICT } from "@/lib/i18n";
 import { dedupeForLang, formatDate, ORGAN_ACCENT, ORGAN_VI } from "@/lib/home";
 
-const TIER_META: Record<Tier, { icon: typeof BookOpen; color: string; labelVi: string }> = {
+const TIER_META: Record<string, { icon: typeof BookOpen; color: string; labelVi: string }> = {
   Fundamentals: { icon: BookOpen, color: "#64748B", labelVi: "Nền tảng Y sinh" },
   "Clinical Deep-Dive": { icon: LineChart, color: "#00F2FE", labelVi: "Phân tích Lâm sàng" },
   "Lab Gizmo": { icon: FlaskConical, color: "#10B981", labelVi: "Mô phỏng Dược học" },
+  "Life Dispatch": { icon: Coffee, color: "#F59E0B", labelVi: "Khoa học Đời sống" },
 };
 
 type TabKey = "All" | Organ | "GizmosOnly";
@@ -231,7 +233,7 @@ export function Directory({ articles }: { articles: Article[] }) {
         <motion.div layout className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           <AnimatePresence mode="popLayout">
             {filteredList.map((a, i) => {
-              const meta = TIER_META[a.tier];
+              const meta = TIER_META[a.tier] || TIER_META["Fundamentals"] || { icon: BookOpen, color: "#64748B", labelVi: a.tier };
               const Icon = meta.icon;
               const accent = ORGAN_ACCENT[a.organ];
               const displayTitle = isVi && a.titleVi ? a.titleVi : a.title;
