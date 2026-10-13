@@ -3208,6 +3208,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Not all magnesium salts exhibit identical pharmacodynamics. While magnesium citrate predominantly promotes osmotic peristalsis, bisglycinate chelates cross systemic barriers via glycine co-transport, activating GABA-A receptors and attenuating nocturnal cortisol spikes.",
     },
   ],
+  "collagen-peptide-thuy-phan-hap-thu-ruot-va-da-vi": [
+    {
+      ordinal: 1,
+      label: "A Collagen Supplement Improves Skin Hydration, Elasticity, Roughness, and Density: Results of a Randomized, Placebo-Controlled, Blind Study",
+      pmid: "31627309",
+      doi: "10.3390/nu11102494",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Nutrients",
+      year: 2019,
+      abstract: "Skeptics often claim ingested collagen is degraded completely into generic amino acids. Contemporary pharmacokinetics demonstrates intact Pro-Hyp and Hyp-Gly bioactive oligopeptides traverse the intestinal wall, acting as molecular ligands that stimulate dermal fibroblasts.",
+    },
+  ],
+  "hydrolyzed-collagen-peptides-intestinal-absorption-skin-en": [
+    {
+      ordinal: 1,
+      label: "A Collagen Supplement Improves Skin Hydration, Elasticity, Roughness, and Density: Results of a Randomized, Placebo-Controlled, Blind Study",
+      pmid: "31627309",
+      doi: "10.3390/nu11102494",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Nutrients",
+      year: 2019,
+      abstract: "Skeptics often claim ingested collagen is degraded completely into generic amino acids. Contemporary pharmacokinetics demonstrates intact Pro-Hyp and Hyp-Gly bioactive oligopeptides traverse the intestinal wall, acting as molecular ligands that stimulate dermal fibroblasts.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
