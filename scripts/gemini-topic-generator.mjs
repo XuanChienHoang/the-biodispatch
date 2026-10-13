@@ -141,7 +141,30 @@ QUY TẮC BẮT BUỘC:
     {
       domain: 'Đường ruột, Vi sinh vật & Tính thấm Niêm mạc (Gut Microbiome & Intestinal Barrier)',
       organ: 'Gut',
-      id  const isLifeDispatch = targetTier === 'Life Dispatch';
+      ideas: [
+        'Hội chứng rò rỉ ruột (Leaky Gut): Cơ chế tổn thương protein mối nối chặt (Zonulin, Occludin) và sự tràn nội độc tố LPS vào tuần hoàn',
+        'Akkermansia muciniphila: Loài vi khuẩn ăn chất nhầy niêm mạc nhưng lại làm dày lớp màng nhầy và tăng độ nhạy insulin',
+        'Berberine và hệ vi sinh: Cơ chế điều biến tỷ lệ Firmicutes/Bacteroidetes và ức chế sản sinh TMAO của vi khuẩn',
+        'Probiotics đa chủng vs đơn chủng: Thời điểm sống sót qua acid dạ dày và cạnh tranh vị trí bám dính trên lớp biofilm'
+      ]
+    },
+    {
+      domain: 'Lão hóa Tế bào, Ty thể & Trường thọ (Cellular Aging & Mitochondrial Health)',
+      organ: 'Cellular Aging',
+      ideas: [
+        'Tự thực bào (Autophagy) qua nhịn ăn gián đoạn 16/8: Khi nào tế bào bắt đầu dọn dẹp protein biến tính và ty thể hư hỏng?',
+        'Urolithin A từ quả lựu: Cơ chế kích hoạt Mitophagy (dọn dẹp ty thể hư tổn) độc lập với NAD+ để phục hồi sức bền cơ bắp',
+        'Sulforaphane từ mầm súp lơ xanh: Chất kích hoạt con đường chống oxy hóa nội sinh Nrf2 mạnh nhất từ tự nhiên',
+        'Tế bào già cỗi (Senescent Cells) và hợp chất Senolytics (Quercetin, Fisetin): Cơ chế đào thải tế bào "zombie" giải phóng phân tử viêm SASP'
+      ]
+    }
+  ];
+
+  // Lựa chọn ngẫu nhiên một trụ cột để tạo sự phong phú tự nhiên mỗi ngày
+  const randomPillar = DOMAIN_PILLARS[Math.floor(Math.random() * DOMAIN_PILLARS.length)];
+  const randomIdea = randomPillar.ideas[Math.floor(Math.random() * randomPillar.ideas.length)];
+
+  const isLifeDispatch = targetTier === 'Life Dispatch';
 
   const prompt = isLifeDispatch
     ? `Hãy sáng tạo một bài viết đời sống y khoa thường thức dễ hiểu, gần gũi nhưng chuẩn xác khoa học (Tier: "Life Dispatch") song ngữ (Tiếng Việt và Tiếng Anh) cho ấn bản Phytocodex của TS. Hoàng Xuân Chiến.
