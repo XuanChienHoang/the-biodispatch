@@ -1,6 +1,6 @@
 ---
 title: "Ăn tối muộn sau 20 giờ: Chiếc bẫy sinh học khiến mỡ bụng tích tụ nhanh"
-date: "2026-10-12T10:00:00Z"
+date: "2026-05-25T07:19:21Z"
 excerpt: "Cùng một bát mì hay chiếc bánh mì kẹp, nhưng ăn lúc 12 giờ trưa sẽ biến thành năng lượng hoạt động, còn ăn lúc 21 giờ tối lại bị khóa chặt vào tế bào mỡ nội tạng do sự xung đột giữa hai hormone đối nghịch."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

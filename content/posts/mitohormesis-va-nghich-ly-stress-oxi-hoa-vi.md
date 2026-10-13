@@ -1,6 +1,6 @@
 ---
 title: "Mitohormesis và nghịch lý stress oxy hóa: Tại sao 'độc tố' lại là chìa khóa của trường thọ"
-date: "2026-10-12T13:00:00Z"
+date: "2026-10-03T02:50:19Z"
 excerpt: "Chúng ta thường nghe rằng stress oxy hóa là kẻ thù của lão hóa, nhưng khoa học hiện đại lại chỉ ra một nghịch lý: việc triệt tiêu hoàn toàn các gốc tự do thông qua thực phẩm chức năng liều cao lại có thể làm tê liệt cơ chế tự sửa chữa của cơ thể. Bài viết này bóc tách khái niệm Mitohormesis, nơi những cú sốc năng lượng nhẹ nhàng kích hoạt hệ thống phòng thủ nội sinh, giúp tế bào đạt trạng thái bền bỉ hơn thay vì bị tiêu diệt bởi sự oxy hóa."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

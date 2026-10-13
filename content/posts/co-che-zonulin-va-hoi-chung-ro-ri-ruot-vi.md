@@ -1,6 +1,6 @@
 ---
 title: "Cánh cửa tế bào và nghịch lý Zonulin: Giải mã hội chứng rò rỉ ruột trong lão hóa chuyển hóa"
-date: "2026-10-10T09:00:00Z"
+date: "2026-09-25T06:28:03Z"
 excerpt: "Hội chứng rò rỉ ruột thường bị hiểu lầm là sự tổn thương vật lý đơn thuần của niêm mạc. Thực tế, đây là một quá trình điều hòa phân tử phức tạp liên quan đến protein Zonulin, làm mất khả năng kiểm soát của các mối nối chặt (tight junctions). Bài viết bóc tách cơ chế chuyển hóa khiến nội độc tố LPS tràn vào tuần hoàn, kích hoạt phản ứng viêm hệ thống và đẩy nhanh quá trình lão hóa tế bào."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

@@ -1,6 +1,6 @@
 ---
 title: "The Natural Bioactives & Prescription Drug Interaction Matrix: When Botanical Supplements Turn Lethal"
-date: "2026-05-18T09:00:00Z"
+date: "2026-05-12T05:22:15Z"
 excerpt: "Synergistic, antagonistic, or silent? Deciphering hepatic Cytochrome P450 mechanics: why St. John's Wort compromises oral contraceptives, grapefruit compounds amplify statin toxicity, and ginger or curcumin can precipitate major bleeding when combined with anticoagulants."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

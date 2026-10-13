@@ -301,17 +301,52 @@ export async function runAutonomousDispatch() {
   const existingSlugs = getExistingSlugs();
   console.log(`📊 [Inventory] Đang có ${existingSlugs.size} bài viết trong content/posts/`);
 
-  // Determine publication timestamp: Today or configured slot (09:00 or 13:00)
+  // Determine publication timestamp: 4 configured slots per day (Giờ Đức CEST: 07:00, 11:00, 15:00, 19:00 -> UTC: 05:00, 09:00, 13:00, 17:00)
   const now = new Date();
   const year = now.getFullYear();
   const month = String(now.getMonth() + 1).padStart(2, '0');
   const day = String(now.getDate()).padStart(2, '0');
-  const hours = now.getHours();
-  const timeSlot = hours < 11 ? '09:00:00Z' : '13:00:00Z';
+  const utcHours = now.getUTCHours();
+  
+  let timeSlot = '05:00:00Z';
+  if (utcHours >= 7 && utcHours < 11) {
+    timeSlot = '09:00:00Z';
+  } else if (utcHours >= 11 && utcHours < 15) {
+    timeSlot = '13:00:00Z';
+  } else if (utcHours >= 15) {
+    timeSlot = '17:00:00Z';
+  }
   const scheduledIsoDate = `${year}-${month}-${day}T${timeSlot}`;
 
+  // Kiểm tra lịch sử gần nhất để thực thi tỷ lệ 4 bài đời sống : 1 bài chuyên sâu (4:1 ratio)
+  const files = fs.readdirSync(postsDir).filter(f => f.endsWith('.md'));
+  const recentPosts = [];
+  for (const f of files) {
+    try {
+      const content = fs.readFileSync(path.join(postsDir, f), 'utf8');
+      const dateMatch = content.match(/^date:\s*["']?([^"'\n]+)["']?/m);
+      const tierMatch = content.match(/^tier:\s*["']?([^"'\n]+)["']?/m);
+      if (dateMatch && tierMatch) {
+        recentPosts.push({ date: dateMatch[1], tier: tierMatch[1] });
+      }
+    } catch {
+      // ignore
+    }
+  }
+  recentPosts.sort((a, b) => (a.date > b.date ? 1 : -1));
+  const lastFive = recentPosts.slice(-5);
+  const recentClinicalCount = lastFive.filter(p => p.tier === 'Clinical Deep-Dive').length;
+  // Nếu trong 5 bài gần nhất chưa có bài chuyên sâu, chuyển sang chuyên sâu; ngược lại duy trì đời sống
+  const targetTier = (recentClinicalCount === 0) ? 'Clinical Deep-Dive' : 'Life Dispatch';
+  console.log(`🎯 [Editorial Policy] Tỷ lệ 4:1 -> Mục tiêu kỳ này: ${targetTier}`);
+
   const { validateDispatchContent } = await import('./validate-dispatch.mjs');
-  const staticTopic = DISPATCH_RADAR_TOPICS.find(t => !existingSlugs.has(t.slugVi) && !existingSlugs.has(`${t.slugVi}-vi`));
+  // Ưu tiên topic từ radar nếu trùng targetTier, ngược lại dùng Gemini sinh mới
+  const staticTopic = DISPATCH_RADAR_TOPICS.find(t => 
+    !existingSlugs.has(t.slugVi) && 
+    !existingSlugs.has(`${t.slugVi}-vi`) && 
+    (t.tier === targetTier || (!t.tier && targetTier === 'Clinical Deep-Dive'))
+  );
 
   const MAX_ATTEMPTS = 2;
   let attempt = 0;
@@ -325,10 +360,10 @@ export async function runAutonomousDispatch() {
     if (staticTopic && attempt === 1) {
       nextTopic = staticTopic;
     } else {
-      console.log(`✨ Đang kích hoạt Gemini AI sinh chủ đề mới (Lượt thử ${attempt}/${MAX_ATTEMPTS})...`);
+      console.log(`✨ Đang kích hoạt Gemini AI sinh chủ đề ${targetTier} (Lượt thử ${attempt}/${MAX_ATTEMPTS})...`);
       const { generateTopicWithGemini } = await import('./gemini-topic-generator.mjs');
       const existingCatalog = getExistingDispatchesCatalog();
-      nextTopic = await generateTopicWithGemini(existingCatalog, feedback);
+      nextTopic = await generateTopicWithGemini(existingCatalog, feedback, targetTier);
       if (!nextTopic) {
         console.warn(`⚠️ [Gemini Generator] Không thể sinh chủ đề trong lượt thử ${attempt}.`);
         continue;

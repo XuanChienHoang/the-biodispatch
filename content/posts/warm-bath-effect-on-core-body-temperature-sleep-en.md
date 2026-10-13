@@ -1,6 +1,6 @@
 ---
 title: "Taking a Warm Bath Before Sleep: The Core Cooling Paradox for Restful Slumber"
-date: "2026-10-07T10:00:00Z"
+date: "2026-06-10T00:03:52Z"
 excerpt: "Taking a warm bath at 40-42°C 90 minutes before bedtime triggers peripheral vasodilation, dumping core metabolic heat through hands and feet to induce natural circadian sleepiness."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

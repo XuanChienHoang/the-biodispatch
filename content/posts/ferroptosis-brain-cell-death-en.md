@@ -1,6 +1,6 @@
 ---
 title: "Ferroptosis: The Silent Assassin in Neurodegeneration and Cellular Defense Mechanisms"
-date: "2026-10-13T13:00:00Z"
+date: "2026-10-10T23:12:34Z"
 excerpt: "While apoptosis is widely recognized, ferroptosis (iron-dependent cell death) represents a distinct, lethal mechanism driving neurodegeneration. This article deconstructs the paradox of iron: an essential element for life that transforms into a destructive force when cellular glutathione defense systems are compromised."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

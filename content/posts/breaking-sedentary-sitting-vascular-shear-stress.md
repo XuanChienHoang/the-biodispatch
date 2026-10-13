@@ -1,6 +1,6 @@
 ---
 title: "Interrupting Sedentary Time: Hemodynamic Shear Stress and Vascular Endothelial Protection"
-date: "2026-10-13T12:00:00Z"
+date: "2026-10-13T14:00:00Z"
 excerpt: "In contemporary office environments, ergonomic desk chairs have become more intimately intertwined with daily existence than our beds. The average knowledge wor..."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Dr. rer. nat. | University of Hamburg, Germany"
@@ -59,9 +59,9 @@ Biological Reaction Pathway Map:
 
 | Study & Design | Cohort & Setting | Experimental Protocol | Quantitative Biomarkers & p-value | Preventive Medical Takeaway |
 | :--- | :--- | :--- | :--- | :--- |
-| **Stamatakis et al. (JACC 2019)**<br>Prospective Cohort Investigation | 149,077 participants followed for 8.9 years | Sitting > 8 h/day vs < 4 h/day stratified across activity | +52% cardiovascular mortality hazard in high-sitting, low-activity group (*p* < 0.001) | Replacing sitting time with light physical breaks mitigates all-cause mortality. |
-| **WHO 2020 Guidelines**<br>Global Sedentary Policy | Global public health evidence synthesis | Structured interruption of continuous sedentary behavior | Significant decline in type 2 diabetes incidence and stroke | Official global guidance advising continuous sedentary bouts be broken up at all ages. |
-| **Thosar et al. (MSSE 2015)**<br>Vascular Ultrasound Trial | Healthy volunteers subjected to 3h sitting | 5-min light walking break every hour vs continuous sitting | Completely prevented the drop in Flow-Mediated Dilation (FMD) (*p* < 0.01) | Periodic movement preserves baseline femoral artery endothelial compliance. |
+| **Stamatakis et al. (JACC 2019)** - Prospective Cohort Investigation | 149,077 participants followed for 8.9 years | Sitting > 8 h/day vs < 4 h/day stratified across activity | +52% cardiovascular mortality hazard in high-sitting, low-activity group (*p* < 0.001) | Replacing sitting time with light physical breaks mitigates all-cause mortality. |
+| **WHO 2020 Guidelines** - Global Sedentary Policy | Global public health evidence synthesis | Structured interruption of continuous sedentary behavior | Significant decline in type 2 diabetes incidence and stroke | Official global guidance advising continuous sedentary bouts be broken up at all ages. |
+| **Thosar et al. (MSSE 2015)** - Vascular Ultrasound Trial | Healthy volunteers subjected to 3h sitting | 5-min light walking break every hour vs continuous sitting | Completely prevented the drop in Flow-Mediated Dilation (FMD) (*p* < 0.01) | Periodic movement preserves baseline femoral artery endothelial compliance. |
 
 ---
 
@@ -104,7 +104,7 @@ Seamlessly safeguard your cardiovascular tree during demanding office days with 
 
 ### Physician's Perspective: The Human Frame Was Sculpted for Motion, Not Calcification
 
-Evolution laboured across millions of generations to sculpt our magnificent musculoskeletal architecture and vascular endothelium—a living biological masterpiece engineered for locomotion, exploring terrain, and dynamic physical engagement. Forcing this extraordinary kinetic machinery into unbroken seated stasis for twelve hours daily violates the fundamental physical conditions of human biology.
+Evolution laboured across millions of generations to sculpt our magnificent musculoskeletal architecture and vascular endothelium - a living biological masterpiece engineered for locomotion, exploring terrain, and dynamic physical engagement. Forcing this extraordinary kinetic machinery into unbroken seated stasis for twelve hours daily violates the fundamental physical conditions of human biology.
 
 Rising every 45 minutes is not an inconvenient interruption to your intellectual workflow; it is an act of deep reverence for the arterial stream nourishing your heart and brain. Regard every gentle stride through the office corridor as a biological declaration: your body is alive, pulsing, and meant to flow. Enduring cardiovascular resilience begins with the simplest steps you take today.
 

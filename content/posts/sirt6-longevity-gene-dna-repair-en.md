@@ -1,6 +1,6 @@
 ---
 title: "Sirt6: The Guardian of the Genome and the Key to Cellular Longevity"
-date: "2026-10-11T09:00:00Z"
+date: "2026-09-30T12:02:54Z"
 excerpt: "Many assume aging is an irreversible process caused by random damage accumulation. However, modern science has identified a molecular guardian named Sirt6. This article dissects the biological paradox: why enhancing this enzyme is not merely about DNA repair, but also a master switch for circadian rhythms and metabolic flux, enabling cells to maintain youthful function despite the passage of time."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

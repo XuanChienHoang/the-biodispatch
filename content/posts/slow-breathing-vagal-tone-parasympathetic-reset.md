@@ -1,6 +1,6 @@
 ---
 title: "Slow-Paced Breathing and Vagal Tone: Baroreceptor Reset, Heart Rate Variability, and Autonomic Resilience"
-date: "2026-10-13T12:00:00Z"
+date: "2026-09-12T04:30:58Z"
 excerpt: "Across virtually all vital somatic domains, the autonomic nervous system operates strictly beyond the reach of conscious volitional control. You cannot consciou..."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Dr. rer. nat. | University of Hamburg, Germany"
@@ -62,9 +62,9 @@ Biological Reaction Pathway Map:
 
 | Study & Design | Cohort & Setting | Experimental Protocol | Quantitative Biomarkers & p-value | Preventive Medical Takeaway |
 | :--- | :--- | :--- | :--- | :--- |
-| **Zaccaro et al. (Front Hum Neurosci 2018)**<br>Systematic Neurophysiological Review | 15 human controlled clinical trials | Slow-paced breathing (~6 breaths/min) with extended exhalation | High-Frequency HRV (HF power) surges significantly (*p* < 0.001); EEG alpha waves | Potentiates arterial baroreflex sensitivity and quiets amygdalar threat processing. |
-| **Laborde et al. (Front Neurosci 2018)**<br>Vagal Tank Theoretical Framework | Comprehensive autonomic cardiology synthesis | Assessment of resting, reactive, and recovery cardiac vagal tone (RMSSD) | Expands physiological reserve for autonomic self-regulation and emotional control | Establishes voluntary breath pacing as the foremost non-pharmacological vagal tone enhancer. |
-| **Ma et al. (Front Psychol)**<br>Randomized Biomarker Trial | 40 chronically stressed adults | 8-week structured diaphragmatic slow breathing | Salivary cortisol declined by 24.3% (*p* < 0.01); marked anxiety attenuation | Dampens chronic systemic neuroinflammation driven by unrelenting sympathetic hyperarousal. |
+| **Zaccaro et al. (Front Hum Neurosci 2018)** - Systematic Neurophysiological Review | 15 human controlled clinical trials | Slow-paced breathing (~6 breaths/min) with extended exhalation | High-Frequency HRV (HF power) surges significantly (*p* < 0.001); EEG alpha waves | Potentiates arterial baroreflex sensitivity and quiets amygdalar threat processing. |
+| **Laborde et al. (Front Neurosci 2018)** - Vagal Tank Theoretical Framework | Comprehensive autonomic cardiology synthesis | Assessment of resting, reactive, and recovery cardiac vagal tone (RMSSD) | Expands physiological reserve for autonomic self-regulation and emotional control | Establishes voluntary breath pacing as the foremost non-pharmacological vagal tone enhancer. |
+| **Ma et al. (Front Psychol)** - Randomized Biomarker Trial | 40 chronically stressed adults | 8-week structured diaphragmatic slow breathing | Salivary cortisol declined by 24.3% (*p* < 0.01); marked anxiety attenuation | Dampens chronic systemic neuroinflammation driven by unrelenting sympathetic hyperarousal. |
 
 ---
 
@@ -120,4 +120,4 @@ Whenever modern pressures seem overwhelming and your pulse begins to race, remem
 ### References and Official Clinical Guidelines
 
 1. **How Breath-Control Can Change Your Life: A Systematic Review on the Neurophysiological Correlates of Slow Breathing**: [DOI: 10.3389/fnhum.2018.00353](https://doi.org/10.3389/fnhum.2018.00353) · PMID: 30245619. Systematic synthesis of 15 controlled clinical trials demonstrating that slow breathing (~6 breaths/min) enhances High-Frequency HRV, activates arterial baroreflex sensitivity, and quiets psychological distress.
-2. **Vagal Tank Theory: The Three Rs of Cardiac Vagal Control Functioning – Resting, Reactivity, and Recovery**: [DOI: 10.3389/fnins.2018.00458](https://doi.org/10.3389/fnins.2018.00458) · PMID: 30042653. Seminal theoretical framework by Laborde and colleagues defining cardiac vagal tone across resting, reactivity, and recovery phases as the physical substrate of human self-regulation.
+2. **Vagal Tank Theory: The Three Rs of Cardiac Vagal Control Functioning - Resting, Reactivity, and Recovery**: [DOI: 10.3389/fnins.2018.00458](https://doi.org/10.3389/fnins.2018.00458) · PMID: 30042653. Seminal theoretical framework by Laborde and colleagues defining cardiac vagal tone across resting, reactivity, and recovery phases as the physical substrate of human self-regulation.

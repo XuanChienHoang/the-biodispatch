@@ -1,6 +1,6 @@
 ---
 title: "Tắm nước ấm trước khi ngủ: Nghịch lý hạ nhiệt độ cơ thể và giấc ngủ ngon"
-date: "2026-10-07T10:00:00Z"
+date: "2026-06-10T00:03:52Z"
 excerpt: "Ngâm mình trong nước ấm 40-42°C khoảng 90 phút trước khi ngủ kích hoạt hiện tượng giãn mạch ngoại vi, giải phóng nhiệt lượng từ lõi cơ thể ra bàn tay bàn chân, giúp nhiệt độ lõi hạ sâu kích hoạt cơn buồn ngủ tự nhiên."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

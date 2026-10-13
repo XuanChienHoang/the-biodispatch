@@ -1,6 +1,6 @@
 ---
 title: "Screen Time Before Sleep: How Retinal ipRGCs Sabotage Deep Sleep Architecture"
-date: "2026-10-10T10:00:00Z"
+date: "2026-06-17T20:26:07Z"
 excerpt: "Narrow-band 460-480nm blue light emitted by smartphone screens tricks the suprachiasmatic nucleus into perceiving midday sunshine, delaying Melatonin onset by 90 minutes and truncating restorative slow-wave sleep."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

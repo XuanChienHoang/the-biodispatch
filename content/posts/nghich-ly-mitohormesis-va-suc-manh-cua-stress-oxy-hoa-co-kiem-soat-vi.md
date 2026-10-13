@@ -1,6 +1,6 @@
 ---
 title: "Nghịch lý Mitohormesis: Khi stress oxy hóa có kiểm soát trở thành chìa khóa trường thọ"
-date: "2026-10-12T13:00:00Z"
+date: "2026-10-08T08:25:09Z"
 excerpt: "Nhiều người lầm tưởng rằng mọi dạng stress oxy hóa đều độc hại và cần bị triệt tiêu bằng các chất chống oxy hóa liều cao. Tuy nhiên, khoa học hiện đại chứng minh rằng một lượng nhỏ tín hiệu ROS (Reactive Oxygen Species) là chất xúc tác thiết yếu để kích hoạt hệ thống phòng thủ nội sinh thông qua cơ chế Mitohormesis. Bài viết này bóc tách sự hiểu lầm về việc lạm dụng chất chống oxy hóa và cách tối ưu hóa phản ứng thích nghi của tế bào."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

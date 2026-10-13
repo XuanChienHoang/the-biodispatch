@@ -1,6 +1,6 @@
 ---
 title: "Uống trà xanh tỉnh táo êm dịu: Sức mạnh sóng não Alpha từ L-Theanine"
-date: "2026-10-09T10:00:00Z"
+date: "2026-06-02T03:41:36Z"
 excerpt: "Cùng chứa hoạt chất kích thích caffeine, nhưng trà xanh mang lại sự tập trung điềm tĩnh suốt 4-6 giờ nhờ acid amin L-Theanine vượt qua hàng rào máu não để kích hoạt sóng não Alpha và làm dịu thụ thể Glutamate."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"
@@ -93,7 +93,7 @@ Sóng não Alpha chính là dải tần số đặc trưng khi não bộ ở tr�
 
 Nhiều người trong chúng ta tìm đến chất kích thích thần kinh như một chiếc đòn bẩy để vắt kiệt giọt năng lượng cuối cùng cho công việc. Khi mệt mỏi, phản xạ tự nhiên là tìm một ly cà phê thật đậm, để rồi nhận lại cảm giác tim đập thình thịch, ruột gan bồn chồn và cú 'sập nguồn' não bộ vào giữa buổi chiều.
 
-Trà xanh và nghi thức uống trà là một triết lý chữa lành độc đáo: nó dạy chúng ta cách tỉnh thức nhưng không vội vã. L-theanine và caffeine giống như hai người bạn đồng hành – một người giục giã bước chân về phía trước, một người giữ cho tâm trí không bị vấp ngã. Khi bạn chọn một tách trà ấm, hãy cho phép mình hít thở sâu, cảm nhận hương thơm thoang thoảng và tận hưởng trạng thái tập trung sâu lắng, an nhiên suốt cả ngày dài.
+Trà xanh và nghi thức uống trà là một triết lý chữa lành độc đáo: nó dạy chúng ta cách tỉnh thức nhưng không vội vã. L-theanine và caffeine giống như hai người bạn đồng hành - một người giục giã bước chân về phía trước, một người giữ cho tâm trí không bị vấp ngã. Khi bạn chọn một tách trà ấm, hãy cho phép mình hít thở sâu, cảm nhận hương thơm thoang thoảng và tận hưởng trạng thái tập trung sâu lắng, an nhiên suốt cả ngày dài.
 
 ---
 

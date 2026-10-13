@@ -1,6 +1,6 @@
 ---
 title: "Mitohormesis and the Oxidative Stress Paradox: Why Controlled Cellular Stress is the Key to Longevity"
-date: "2026-10-12T13:00:00Z"
+date: "2026-10-03T02:50:19Z"
 excerpt: "Common wisdom labels oxidative stress as the enemy of aging, yet modern science reveals a paradox: the complete suppression of free radicals via high-dose supplementation can paralyze the body's innate repair mechanisms. This article dissects the concept of Mitohormesis, where mild energetic stressors trigger endogenous defense systems, rendering cells more resilient rather than succumbing to oxidative damage."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

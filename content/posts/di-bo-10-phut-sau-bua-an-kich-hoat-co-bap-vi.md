@@ -1,6 +1,6 @@
 ---
 title: "Đi bộ 10 phút sau bữa ăn: Kích hoạt cơ bắp tiêu thụ đường không cần Insulin"
-date: "2026-10-12T10:00:00Z"
+date: "2026-07-19T05:55:09Z"
 excerpt: "Đi dạo nhẹ nhàng 10-15 phút ngay sau bữa ăn kích hoạt các cơn co cơ giải phóng thụ thể GLUT4 hút sạch đường dư thừa trong máu vào cơ bắp mà không phụ thuộc vào hormone Insulin."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

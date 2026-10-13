@@ -49,7 +49,7 @@ function resolveGeminiApiKey() {
   return '';
 }
 
-export async function generateTopicWithGemini(existingCatalog = [], feedback = null) {
+export async function generateTopicWithGemini(existingCatalog = [], feedback = null, targetTier = 'Life Dispatch') {
   const apiKey = resolveGeminiApiKey();
   if (!apiKey) {
     console.warn('⚠️ [Gemini Generator] Không tìm thấy GEMINI_API_KEY trong env.');
@@ -141,57 +141,48 @@ QUY TẮC BẮT BUỘC:
     {
       domain: 'Đường ruột, Vi sinh vật & Tính thấm Niêm mạc (Gut Microbiome & Intestinal Barrier)',
       organ: 'Gut',
-      ideas: [
-        'Hội chứng rò rỉ ruột (Leaky Gut): Cơ chế tổn thương protein mối nối chặt (Zonulin, Occludin) và sự tràn nội độc tố LPS vào tuần hoàn',
-        'Akkermansia muciniphila: Loài vi khuẩn ăn chất nhầy niêm mạc nhưng lại làm dày lớp màng nhầy và tăng độ nhạy insulin',
-        'Berberine và hệ vi sinh: Cơ chế điều biến tỷ lệ Firmicutes/Bacteroidetes và ức chế sản sinh TMAO của vi khuẩn',
-        'Probiotics đa chủng vs đơn chủng: Thời điểm sống sót qua acid dạ dày và cạnh tranh vị trí bám dính trên lớp biofilm'
-      ]
-    },
-    {
-      domain: 'Lão hóa Tế bào, Ty thể & Trường thọ (Cellular Aging & Mitochondrial Health)',
-      organ: 'Cellular Aging',
-      ideas: [
-        'Tự thực bào (Autophagy) qua nhịn ăn gián đoạn 16/8: Khi nào tế bào bắt đầu dọn dẹp protein biến tính và ty thể hư hỏng?',
-        'Urolithin A từ quả lựu: Cơ chế kích hoạt Mitophagy (dọn dẹp ty thể hư tổn) độc lập với NAD+ để phục hồi sức bền cơ bắp',
-        'Sulforaphane từ mầm súp lơ xanh: Chất kích hoạt con đường chống oxy hóa nội sinh Nrf2 mạnh nhất từ tự nhiên',
-        'Tế bào già cỗi (Senescent Cells) và hợp chất Senolytics (Quercetin, Fisetin): Cơ chế đào thải tế bào "zombie" giải phóng phân tử viêm SASP'
-      ]
-    }
-  ];
+      id  const isLifeDispatch = targetTier === 'Life Dispatch';
 
-  // Lựa chọn ngẫu nhiên một trụ cột để tạo sự phong phú tự nhiên mỗi ngày
-  const randomPillar = DOMAIN_PILLARS[Math.floor(Math.random() * DOMAIN_PILLARS.length)];
-  const randomIdea = randomPillar.ideas[Math.floor(Math.random() * randomPillar.ideas.length)];
+  const prompt = isLifeDispatch
+    ? `Hãy sáng tạo một bài viết đời sống y khoa thường thức dễ hiểu, gần gũi nhưng chuẩn xác khoa học (Tier: "Life Dispatch") song ngữ (Tiếng Việt và Tiếng Anh) cho ấn bản Phytocodex của TS. Hoàng Xuân Chiến.
 
-  const prompt = `Hãy sáng tạo một bài phân tích chuyên khảo y sinh song ngữ (Tiếng Việt và Tiếng Anh) cho ấn bản Phytocodex của TS. Hoàng Xuân Chiến.
+GỢI Ý CHỦ ĐỀ ĐỜI THƯỜNG / THÓI QUEN SỐNG:
+- Lĩnh vực: Thói quen ăn uống, giấc ngủ, đi bộ, vận động nhẹ, căng thẳng, vi chất dinh dưỡng, mẹo vặt cơ thể dựa trên sinh học.
+- Phân loại cơ quan: "${randomPillar.organ}"
+- Gợi ý chủ đề tham khảo: "${randomIdea}"
+(Hoặc các chủ đề đời sống tương tự như: Uống nước ấm buổi sáng, Tư thế ngồi làm việc chống mỏi cơ, Nhai kỹ no lâu, Đi bộ sau ăn, Tắm nước ấm, Ăn chậm, v.v.).
+
+NGUYÊN TẮC BIÊN TẬP CỦA TS. HOÀNG XUÂN CHIẾN (LIFE DISPATCH):
+1. TIẾP CẬN ĐỜI THƯỜNG & DỄ HIỂU: Văn phong ấm áp, gần gũi, bóc tách các thói quen hàng ngày, giúp độc giả đại chúng đọc là hiểu ngay và áp dụng được liền.
+2. KHÔNG LẠM DỤNG TỪ NGỮ QUÁ HÀN LÂM: Cơ chế phân tử giải thích mộc mạc, có ẩn dụ sinh động.
+3. TIÊU ĐỀ HẤP DẪN, DỄ HIỂU: Tiêu đề tiếng Việt viết theo văn phong tự nhiên (Sentence case), hấp dẫn nhưng KHÔNG giật gân, phản ánh đúng lợi ích sức khỏe thực tế.
+4. ĐỊNH DẠNG SLUG: Tiếng Việt có hậu tố "-vi", tiếng Anh có hậu tố "-en".
+5. LIÊM CHÍNH Y VĂN: Cung cấp 1-2 tài liệu tham khảo thực tế có thật trên PubMed/CrossRef.`
+    : `Hãy sáng tạo một bài phân tích chuyên khảo y sinh chuyên sâu (Tier: "Clinical Deep-Dive") song ngữ (Tiếng Việt và Tiếng Anh) cho ấn bản Phytocodex của TS. Hoàng Xuân Chiến.
 
 GỢI Ý LĨNH VỰC CHO KỲ NÀY:
 - Lĩnh vực: ${randomPillar.domain}
 - Phân loại cơ quan: "${randomPillar.organ}"
 - Gợi ý chủ đề tham khảo: "${randomIdea}"
-(Hoặc bạn có thể tự do chọn 1 chủ đề khác đang là xu hướng khoa học, thời sự y tế mới nổi hoặc thực phẩm chức năng phổ biến tương đương).
+(Hoặc một chủ đề y sinh đột phá, dược lý phân tử, trường thọ hoặc vi sinh vật học tương đương).
 
-NGUYÊN TẮC BIÊN TẬP CỦA TS. HOÀNG XUÂN CHIẾN:
-1. TIẾP CẬN ĐỜI THƯỜNG & KHÁCH QUAN: Khởi đầu từ những hiện tượng đời thực, băn khoăn của cộng đồng, thói quen dùng thực phẩm chức năng hoặc tin tức y tế mới nổi.
-2. NÓI VỀ KHOA HỌC THUẦN TÚY - TUYỆT ĐỐI KHÔNG CHÍNH TRỊ: Nếu đề cập đến các vấn đề thời sự dịch bệnh (như nghi vấn dịch hạch, cúm mới...), CHỈ TẬP TRUNG 100% VÀO CƠ CHẾ SINH HỌC VI SINH, con đường lây truyền, đáp ứng miễn dịch và phương pháp điều trị y học. Tuyệt đối không bàn luận chính trị, không phân định đúng sai quốc gia hay thuyết âm mưu.
-3. CÂN BẰNG GIỮA DỄ HIỂU VÀ CHUYÊN MÔN: Phần mở đầu và ứng dụng thực tế phải thật gần gũi, ai đọc cũng hiểu được. Phần cơ chế phân tử giải thích rõ ràng, súc tích, giải nghĩa thuật ngữ, tránh viết quá nặng nề trừu tượng.
-4. QUY CHUẨN VIẾT HOA TIÊU ĐỀ TIẾNG VIỆT (ANTI-AI TITLE CASE):
-   - CẤM TUYỆT ĐỐI viết hoa tất cả các từ trong tiêu đề tiếng Việt (ví dụ: CẤM "Nghịch Lý Buồng Trứng Và Tỷ Lệ Vàng..."). Cách viết hoa toàn bộ từ nhìn rất giả tạo và đậm chất máy dịch AI!
-   - BẮT BUỘC dùng văn phong tự nhiên (Sentence case): chỉ viết hoa chữ cái đầu tiên của tiêu đề, chữ cái sau dấu hai chấm (:), và các danh từ riêng hoặc tên viết tắt thuật ngữ y sinh (ví dụ: "Nghịch lý buồng trứng và tỷ lệ vàng 40:1 của Inositol trong điều trị đa nang buồng trứng PCOS").
-5. ĐỊNH DẠNG SLUG BẮT BUỘC: Slug tiếng Việt BẮT BUỘC có hậu tố "-vi" (ví dụ: magie-glycinate-giac-ngu-vi, yersinia-pestis-dich-hach-vi), slug tiếng Anh BẮT BUỘC có hậu tố "-en" (ví dụ: magnesium-glycinate-sleep-en, yersinia-pestis-plague-mechanism-en) để hệ thống tự động nhận diện ngôn ngữ tuyệt đối!
-6. LIÊM CHÍNH Y VĂN & TÀI LIỆU THAM KHẢO (SCIENTIFIC CITATION INTEGRITY - ZERO HALLUCINATION):
-Mọi tài liệu trong mục "references" BẮT BUỘC là công trình nghiên cứu THỰC TẾ ĐÃ XUẤT BẢN trên các tạp chí quốc tế uy tín (Nature, Science, Cell, Lancet, NEJM, PNAS, Trends, JBC, v.v.). TUYỆT ĐỐI KHÔNG BỊA ĐẶT số PMID, DOI hoặc tên bài báo hư cấu. Tiêu đề "label" phải là tên tiếng Anh chính xác nguyên bản của bài báo khoa học. Nếu bạn không nhớ chắc chắn số PMID hoặc DOI thật 100%, hãy để trường "pmid": "" và "doi": "" để hệ thống tự động tra cứu chỉ mục PubMed (NCBI E-utilities) và CrossRef!
+NGUYÊN TẮC BIÊN TẬP CỦA TS. HOÀNG XUÂN CHIẾN (CLINICAL DEEP-DIVE):
+1. TIẾP CẬN CHUYÊN SÂU & THỰC CHỨNG: Đi sâu vào con đường tín hiệu phân tử, enzym, thụ thể, cơ chế dược động học.
+2. CÓ BẢNG SO SÁNH ĐỐI CHIẾU LÂM SÀNG CHI TIẾT.
+3. TIÊU ĐỀ CHUẨN MỰC KHOA HỌC: Sentence case, không viết hoa toàn bộ từ tiếng Việt.
+4. ĐỊNH DẠNG SLUG: Tiếng Việt có hậu tố "-vi", tiếng Anh có hậu tố "-en".
+5. LIÊM CHÍNH Y VĂN: Trích dẫn bài báo gốc trên Nature, Science, Cell, Lancet, v.v.`;
 
-DANH SÁCH TOÀN BỘ CÁC BÀI ĐÃ XUẤT BẢN TRONG KHO (NGHIÊM CẤM TRÙNG LẶP HOẶC TƯƠNG ĐƯƠNG VỀ Ý TƯỞNG):
+  const commonGuidelines = `
+NGUYÊN TẮC BIÊN TẬP BẮT BUỘC:
+1. KHÔNG DÙNG DẤU GẠCH NGANG DÀI (EM-DASH "—" HOẶC EN-DASH "–"). Chỉ dùng dấu phẩy, hai chấm, gạch nối ngắn (-) hoặc ngoặc đơn.
+2. NÓI VỀ KHOA HỌC THUẦN TÚY - TUYỆT ĐỐI KHÔNG CHÍNH TRỊ.
+3. QUY CHUẨN VIẾT HOA TIÊU ĐỀ TIẾNG VIỆT (Sentence case): Chỉ viết hoa chữ cái đầu tiên và danh từ riêng/thuật ngữ.
+4. ĐỊNH DẠNG SLUG BẮT BUỘC: slugVi kết thúc bằng "-vi", slugEn kết thúc bằng "-en".
+5. LIÊM CHÍNH Y VĂN: Tiêu đề "label" phải là tên tiếng Anh chính xác nguyên bản của bài báo khoa học đã xuất bản.
+
+DANH SÁCH BÀI ĐÃ XUẤT BẢN TRONG KHO (KHÔNG ĐƯỢC TRÙNG LẶP):
 ${existingTitlesList}
-
-LƯU Ý ĐẶC BIỆT:
-- KHÔNG viết về Melatonin (đã có bài phân tích liều 0.3mg vs 10mg).
-- KHÔNG viết về Ty thể Mỡ nâu / UCP1 / Succinate (đã có 3 bài chuyên sâu).
-- KHÔNG viết về Hiệu ứng Warburg / Ung thư lên men Glucose (đã có 2 bài).
-- KHÔNG viết về Hệ thống Glymphatic dọn rác não bộ khi ngủ sâu (đã có bài).
-- BẮT BUỘC chọn một chủ đề y sinh hoàn toàn mới, mang tính đột phá và ứng dụng cao!
 
 TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON SCHEMA VỚI CẤU TRÚC:
 {
@@ -200,10 +191,10 @@ TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON SCHEMA VỚI CẤU TRÚC:
   "slugEn": "slug-tieng-anh-co-hau-to-en",
   "titleVi": "Tiêu đề tiếng Việt hấp dẫn, gần gũi",
   "titleEn": "Tiêu đề tiếng Anh chuẩn mực",
-  "excerptVi": "Tóm tắt tiếng Việt (nêu bật góc nhìn thực chứng & thực tế)",
+  "excerptVi": "Tóm tắt tiếng Việt",
   "excerptEn": "Tóm tắt tiếng Anh",
   "organ": "${randomPillar.organ}",
-  "tier": "Clinical Deep-Dive",
+  "tier": "${targetTier}",
   "tagsVi": ["Tag 1", "Tag 2", "Tag 3"],
   "tagsEn": ["Tag 1", "Tag 2", "Tag 3"],
   "references": [
@@ -212,7 +203,7 @@ TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON SCHEMA VỚI CẤU TRÚC:
       "label": "Exact authentic paper title in English as published in journal",
       "pmid": "Official PubMed ID if 100% sure, otherwise empty string",
       "doi": "Official DOI if 100% sure, otherwise empty string",
-      "design": "Landmark Molecular Review / RCT / Meta-analysis",
+      "design": "Landmark Review / RCT / Meta-analysis",
       "journal": "Nature / Science / Cell / Lancet",
       "year": 2023,
       "abstract": "Key molecular findings (1-2 sentences)."

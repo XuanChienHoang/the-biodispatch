@@ -1,6 +1,6 @@
 ---
 title: "Hệ thống Glymphatic và cơn 'rửa xe' não bộ lúc nửa đêm: Cơ chế dọn dẹp mảnh rác Amyloid-Beta khi ngủ sâu"
-date: "2026-09-23T09:00:00Z"
+date: "2026-08-06T13:27:05Z"
 excerpt: "Đã bao giờ bạn tự hỏi vì sao chỉ sau một đêm thức trắng, đầu óc bạn lại nặng trĩu và mờ mịt như bị phủ một lớp sương mù đặc quánh? Đó không chỉ là sự mệt mỏi tâm lý thông thường, mà là vì hệ thống rửa xe ban đêm của bộ não đã bị hủy bỏ ca trực."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

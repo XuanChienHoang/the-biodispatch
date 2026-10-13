@@ -1,6 +1,6 @@
 ---
 title: "Thìa giấm táo trước bữa ăn: Sự thật khoa học hay trào lưu phóng đại? Giải mã Acid Acetic"
-date: "2026-10-11T10:00:00Z"
+date: "2026-07-11T09:32:54Z"
 excerpt: "Uống 1-2 thìa giấm pha loãng trước bữa ăn nhiều tinh bột có thể giảm tới 20-30% đường huyết sau ăn thông qua việc tạm khóa enzyme tiêu hóa tinh bột và kích hoạt cơ bắp hút đường."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

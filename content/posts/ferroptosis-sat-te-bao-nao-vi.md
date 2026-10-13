@@ -1,6 +1,6 @@
 ---
 title: "Ferroptosis: Kẻ sát nhân thầm lặng trong thoái hóa thần kinh và cơ chế tự bảo vệ của tế bào"
-date: "2026-10-13T13:00:00Z"
+date: "2026-10-10T23:12:34Z"
 excerpt: "Chúng ta thường nghe về apoptosis (chết tế bào theo chương trình) như một cơ chế tự nhiên, nhưng ferroptosis - cái chết tế bào phụ thuộc vào sắt - mới là tác nhân thực sự đứng sau sự thoái hóa thần kinh. Bài viết này bóc tách nghịch lý về vai trò của sắt: nguyên tố thiết yếu cho sự sống nhưng lại trở thành vũ khí hủy diệt khi hệ thống phòng thủ glutathione bị suy yếu."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

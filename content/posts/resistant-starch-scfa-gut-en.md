@@ -1,6 +1,6 @@
 ---
 title: "Resistant Starch and Colonic Integrity: Microbial SCFA Synthesis and Tight Junction Assembly"
-date: "2026-07-07T09:00:00Z"
+date: "2026-06-07T09:16:27Z"
 excerpt: "Resistant starch bypasses upper intestinal digestion to undergo anaerobic colonic fermentation. Microbial generation of butyrate suppresses HDAC activity, downregulates mucosal inflammation, and upregulates Claudin-1 tight junction proteins against endotoxin translocation."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg"

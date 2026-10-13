@@ -1,6 +1,6 @@
 ---
 title: "Nghịch lý buồng trứng và tỷ lệ vàng 40:1 của Inositol trong điều trị đa nang buồng trứng PCOS"
-date: "2026-10-09T09:00:00Z"
+date: "2026-09-22T15:40:38Z"
 excerpt: "Hội chứng Buồng trứng Đa nang (PCOS) thường đi kèm với tình trạng kháng insulin hệ thống. Để giải quyết vấn đề này, nhiều người đã tìm đến các chế phẩm bổ sung Inositol. Tuy nhiên, một hiểu lầm phổ biến là bổ sung D-chiro-inositol (DCI) liều cao đơn độc để tăng độ nhạy insulin. Thực tế, y học thực chứng đã chỉ ra một nghịch lý sinh học: trong khi cơ xương bị kháng insulin, buồng trứng lại cực kỳ nhạy cảm với hormone này. Việc thừa insulin kích hoạt quá mức enzyme epimerase tại buồng trứng, chuyển hóa hầu hết Myo-inositol (MI) thành DCI, gây thiếu hụt MI nghiêm trọng tại nang noãn và làm suy yếu tín hiệu FSH. Bài viết này phân tích sâu cơ chế truyền tin thứ cấp của hai đồng phân này và lý do tại sao tỷ lệ vàng 40:1 (MI:DCI) là chìa khóa cốt lõi để khôi phục chức năng sinh sản."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

@@ -2,10 +2,11 @@ name: Automated Dual-Dispatch Publishing Pipeline
 
 on:
   schedule:
-    # 09:00 CEST (Giờ Đức)
-    - cron: '0 7 * * *'
-    # 13:00 CEST (Giờ Đức)
-    - cron: '0 11 * * *'
+    # 4 bài mỗi ngày (Giờ Đức CEST: 07:00, 11:00, 15:00, 19:00 -> UTC: 05:00, 09:00, 13:00, 17:00)
+    - cron: '0 5 * * *'
+    - cron: '0 9 * * *'
+    - cron: '0 13 * * *'
+    - cron: '0 17 * * *'
   workflow_dispatch: # Nút bấm chạy thử thủ công
 
 jobs:

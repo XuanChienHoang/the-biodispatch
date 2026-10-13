@@ -1,12 +1,12 @@
 ---
 title: "Why does that 7 AM morning coffee trigger a sudden energy crash at 10 AM?"
-date: "2026-10-13T13:30:00Z"
+date: "2026-05-09T14:34:50Z"
 excerpt: "Reaching for an espresso the minute your eyes open feels essential, but it directly disrupts your circadian biology, setting off gut discomfort and a steep mid-morning slump."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"
 tags: ["Coffee", "Sleep and Alertness", "Circadian Biology", "Everyday Health", "Clinical Advice"]
 organ: "Brain"
-tier: "life"
+tier: "Life Dispatch"
 readingTime: "5 min read"
 featured: true
 doi: "10.2903/j.efsa.2015.4102"

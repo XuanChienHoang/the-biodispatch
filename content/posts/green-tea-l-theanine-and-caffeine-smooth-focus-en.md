@@ -1,6 +1,6 @@
 ---
 title: "Green Tea for Calm Focus: How L-Theanine and Caffeine Harmonize Alpha Brainwaves"
-date: "2026-10-09T10:00:00Z"
+date: "2026-06-02T03:41:36Z"
 excerpt: "While both contain stimulant caffeine, green tea generates sustained, steady cognitive alertness via L-Theanine crossing the blood-brain barrier to amplify Alpha brainwaves and buffer glutamate excitation."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"
@@ -69,7 +69,7 @@ Simultaneously, L-Theanine elevates central levels of **GABA** (the chief inhibi
 Electroencephalography (EEG) data from randomized controlled trials reveal an unmistakable signature:
 The synergistic ratio of roughly 2:1 (L-Theanine to Caffeine) robustly amplifies **Alpha Brainwave activity (8 to 12 Hz)** across parietal and occipital cortical regions.
 
-Alpha oscillations represent a relaxed yet acutely alert mental state—the precise neurological substrate experienced by seasoned meditators and creative professionals in deep "flow state".
+Alpha oscillations represent a relaxed yet acutely alert mental state - the precise neurological substrate experienced by seasoned meditators and creative professionals in deep "flow state".
 
 | Neurocognitive Parameter | Pure High-Dose Caffeine | Green Tea Synergy (L-Theanine + Caffeine) | Clinical Impact |
 | :--- | :--- | :--- | :--- |
@@ -93,7 +93,7 @@ To harvest optimal L-Theanine without excessive bitter astringency from over-ext
 
 In high-performance professional culture, stimulants are frequently leveraged like blunt instruments to extract every lingering ounce of cognitive endurance. When exhaustion strikes, reaching for concentrated espresso is standard, often culminating in palpitations, gastrointestinal tension, and mid-afternoon burnout.
 
-Green tea offers an instructive pharmacological lesson: alertness does not necessitate agitated hyperactivity. L-theanine and caffeine represent nature’s exquisite balancing act—one elevating executive processing while the other anchors autonomic calm. Incorporating loose-leaf green tea or matcha into your morning routine invites sustained, tranquil cognitive flow that protects rather than exhausts your adrenals.
+Green tea offers an instructive pharmacological lesson: alertness does not necessitate agitated hyperactivity. L-theanine and caffeine represent nature’s exquisite balancing act - one elevating executive processing while the other anchors autonomic calm. Incorporating loose-leaf green tea or matcha into your morning routine invites sustained, tranquil cognitive flow that protects rather than exhausts your adrenals.
 
 ---
 

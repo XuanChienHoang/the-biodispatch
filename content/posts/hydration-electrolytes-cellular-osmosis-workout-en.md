@@ -1,6 +1,6 @@
 ---
 title: "Hydration During Workout: The Water Intoxication Paradox and Electrolyte Balance"
-date: "2026-10-08T10:00:00Z"
+date: "2026-06-25T16:48:23Z"
 excerpt: "Chugging pure distilled water after profuse sweating dilutes extracellular Sodium, triggering cellular swelling via osmosis and inducing exercise-associated hyponatremia."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

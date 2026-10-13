@@ -1,6 +1,6 @@
 ---
 title: "Eating Dinner After 8 PM: Why Circadian Desynchrony Accelerates Visceral Fat Storage"
-date: "2026-10-12T10:00:00Z"
+date: "2026-05-25T07:19:21Z"
 excerpt: "The exact same meal metabolized efficiently at noon gets funneled into stubborn visceral fat deposits at 9 PM due to a fundamental molecular conflict between Melatonin and Insulin."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"
@@ -92,7 +92,7 @@ To reclaim metabolic leanness and safeguard cardiovascular health without extrem
 
 In modern metropolitan life, late dinner is frequently the sole window for decompression, social connection, and intimacy after demanding work hours. Clinicians understand that demanding everyone consistently consume dinner before 7 PM is unrealistic and disconnected from human reality.
 
-The clinical objective is not self-flagellation or obsessive rigidity. View your internal physiology with compassion: after 8 PM, your gastrointestinal organs, liver, and pancreatic beta-cells are transitioning into restorative maintenance mode. If your schedule forces a late intake, pivot toward gentle nourishment—a bowl of warm broth, light steamed protein, or crisp vegetables rather than dense carbohydrate loads. Granting your metabolic machinery room to cool before bedtime ensures you awaken with vitality rather than visceral heaviness.
+The clinical objective is not self-flagellation or obsessive rigidity. View your internal physiology with compassion: after 8 PM, your gastrointestinal organs, liver, and pancreatic beta-cells are transitioning into restorative maintenance mode. If your schedule forces a late intake, pivot toward gentle nourishment - a bowl of warm broth, light steamed protein, or crisp vegetables rather than dense carbohydrate loads. Granting your metabolic machinery room to cool before bedtime ensures you awaken with vitality rather than visceral heaviness.
 
 ---
 

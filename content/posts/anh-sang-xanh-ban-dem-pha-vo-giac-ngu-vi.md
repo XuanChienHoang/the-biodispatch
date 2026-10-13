@@ -1,6 +1,6 @@
 ---
 title: "Lướt điện thoại ban đêm: Tế bào võng mạc ipRGC và bí mật giấc ngủ sâu"
-date: "2026-10-10T10:00:00Z"
+date: "2026-06-17T20:26:07Z"
 excerpt: "Ánh sáng xanh bước sóng 460-480nm từ màn hình điện thoại đánh lừa não bộ rằng trời vẫn đang là buổi trưa, làm trì hoãn bài tiết hormone giấc ngủ Melatonin tới 90 phút và triệt tiêu pha ngủ sâu phục hồi não bộ."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

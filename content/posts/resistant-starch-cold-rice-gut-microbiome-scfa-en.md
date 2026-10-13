@@ -1,6 +1,6 @@
 ---
 title: "Cold Rice for Gut Health: How Resistant Starch Nourishes the Microbiome"
-date: "2026-10-13T10:00:00Z"
+date: "2026-07-27T02:17:25Z"
 excerpt: "Cooling cooked starch overnight at 4°C retrogrades amylose into crystalline Resistant Starch Type 3, evading small intestinal digestion to nourish colon bacteria with protective Butyrate."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

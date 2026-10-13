@@ -1,6 +1,6 @@
 ---
 title: "Salt and Blood Pressure: Unraveling the Sodium-to-Potassium Ratio Paradox"
-date: "2026-10-06T10:00:00Z"
+date: "2026-07-03T13:10:38Z"
 excerpt: "Drastic sodium restriction can paradoxically trigger compensatory RAAS vasoconstriction; clinical cardiovascular science reveals the Sodium-to-Potassium ratio governs vascular tension far more than salt alone."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

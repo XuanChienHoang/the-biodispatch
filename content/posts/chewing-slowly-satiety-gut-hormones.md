@@ -1,6 +1,6 @@
 ---
 title: "Mindful Chewing and Satiety: How Mastication Velocity Governs Gut Hormones PYY and GLP-1"
-date: "2026-10-13T12:00:00Z"
+date: "2026-08-03T22:39:40Z"
 excerpt: "In the frantic cadence of contemporary urban life, meals are frequently degraded into hasty logistical obligations dispatched within ten to fifteen minutes. Swa..."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Dr. rer. nat. | University of Hamburg, Germany"
@@ -59,9 +59,9 @@ Biological Reaction Pathway Map:
 
 | Study & Design | Cohort & Setting | Experimental Protocol | Quantitative Biomarkers & p-value | Preventive Medical Takeaway |
 | :--- | :--- | :--- | :--- | :--- |
-| **Li et al. (AJCN 2011)**<br>Randomized Crossover Trial | 30 adult males<br>(14 obese, 16 lean) | 40 chews/bite vs 15 chews/bite on identical test meal | -11.9% total caloric intake (*p* < 0.001); elevated postprandial GLP-1 (*p* < 0.05); suppressed Ghrelin | Prolonged mastication blunts acute caloric overconsumption across BMI phenotypes. |
-| **Kokkinos et al. (JCEM 2010)**<br>Controlled Clinical Study | 17 healthy volunteers | Identical 300 mL meal consumed over 30 min vs 5 min | Peak PYY increased by 34% (*p* < 0.001); GLP-1 AUC expanded by 28% (*p* < 0.01) | Meal duration directly regulates the release latency of anorexigenic gut peptides. |
-| **Endocrine Society Synthesis**<br>Systematic Review | Broad metabolic cohorts | Masticatory mechanoreceptor stimulation & bolus consistency | Attenuates postprandial glycemic surge by 18-22% | Protects pancreatic beta-cell reserve by eliminating sharp postprandial insulin spikes. |
+| **Li et al. (AJCN 2011)** - Randomized Crossover Trial | 30 adult males - (14 obese, 16 lean) | 40 chews/bite vs 15 chews/bite on identical test meal | -11.9% total caloric intake (*p* < 0.001); elevated postprandial GLP-1 (*p* < 0.05); suppressed Ghrelin | Prolonged mastication blunts acute caloric overconsumption across BMI phenotypes. |
+| **Kokkinos et al. (JCEM 2010)** - Controlled Clinical Study | 17 healthy volunteers | Identical 300 mL meal consumed over 30 min vs 5 min | Peak PYY increased by 34% (*p* < 0.001); GLP-1 AUC expanded by 28% (*p* < 0.01) | Meal duration directly regulates the release latency of anorexigenic gut peptides. |
+| **Endocrine Society Synthesis** - Systematic Review | Broad metabolic cohorts | Masticatory mechanoreceptor stimulation & bolus consistency | Attenuates postprandial glycemic surge by 18-22% | Protects pancreatic beta-cell reserve by eliminating sharp postprandial insulin spikes. |
 
 ---
 
@@ -91,7 +91,7 @@ This central signal coordinates the cephalic phase digestive response, triggerin
 ### 3. Glycemic Absorption Kinetics and Colonic Microbiome Preservation
 
 When alimentary boluses are meticulously liquefied, gastric emptying proceeds in continuous, microscopic micro-spurts rather than abrupt, erratic dumps of unyielding macro-particulates into the duodenum. This physiological pacing yields two decisive metabolic advantages:
-1. **Flattened Postprandial Glucose Profiles**: Gradual presentation of carbohydrates to brush-border enzymes enables steady, controlled absorption of monosaccharides. The endocrine pancreas is spared from acute compensatory hyperinsulinemia. Consequently, subjects completely bypass the dreaded postprandial reactive hypoglycemia—the underlying biochemical driver of mid-afternoon lethargy, cognitive fog, and intense sugar cravings.
+1. **Flattened Postprandial Glucose Profiles**: Gradual presentation of carbohydrates to brush-border enzymes enables steady, controlled absorption of monosaccharides. The endocrine pancreas is spared from acute compensatory hyperinsulinemia. Consequently, subjects completely bypass the dreaded postprandial reactive hypoglycemia - the underlying biochemical driver of mid-afternoon lethargy, cognitive fog, and intense sugar cravings.
 2. **Mitigation of Putrefactive Colonic Dysbiosis**: When large fragments of undigested proteins and complex carbohydrates escape small-intestinal enzymatic breakdown, they enter the cecum as substrates for opportunistic proteolytic fermentation. Colonic anaerobes convert these unhydrolyzed proteins into toxic metabolites, including biogenic amines, p-cresol, indole, and hydrogen sulfide (H2S), driving low-grade mucosal inflammation and dysbiosis. Thorough chewing ensures >95% bioavailability within the proximal jejunum.
 
 ---
@@ -108,7 +108,7 @@ Translating autonomic physiology into effortless daily practice does not require
 
 ### Physician's Perspective: Reclaiming the Restorative Intimacy of Eating
 
-Modern society expends billions of dollars annually on injectable GLP-1 receptor agonists, appetite suppressants, and extreme dietary protocols. Yet evolution has already embedded a peerlessly sophisticated metabolic regulatory apparatus directly within the human oral cavity—entirely free of charge and devoid of pharmacological adverse effects.
+Modern society expends billions of dollars annually on injectable GLP-1 receptor agonists, appetite suppressants, and extreme dietary protocols. Yet evolution has already embedded a peerlessly sophisticated metabolic regulatory apparatus directly within the human oral cavity - entirely free of charge and devoid of pharmacological adverse effects.
 
 Prolonging your chewing velocity is never an exercise in punitive deprivation; it is a sacred reclamation of calm within a culture addicted to urgency. When you chew thoroughly, you finally taste the delicate intrinsic sweetness of unadulterated grains, the earthy minerality of fresh greens, and the tactile beauty of wholesome food. Your physiology is in constant communion with your conscious choices. When you honor the mechanical requirements of your teeth and the endocrine latency of your gut, your body returns the favor with effortless satiety, digestive serenity, and enduring metabolic vitality.
 

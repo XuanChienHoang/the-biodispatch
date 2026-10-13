@@ -1,6 +1,6 @@
 ---
 title: "Ăn rau trước cơm giúp kiểm soát đường huyết: Bí mật chiếc lưới lọc chất xơ"
-date: "2026-10-13T10:00:00Z"
+date: "2026-05-17T10:57:05Z"
 excerpt: "Chỉ cần thay đổi thứ tự gắp đũa trong bữa ăn hàng ngày, bạn có thể giảm đỉnh đường huyết sau ăn tới 30-40% mà không cần cắt giảm khẩu phần tinh bột yêu thích."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

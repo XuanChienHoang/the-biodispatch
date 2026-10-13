@@ -1,7 +1,7 @@
 ---
 title: "Berries and Anthocyanins: Vascular Endothelial Protection, Arterial Compliance, and Polyphenol Defense"
-date: "2026-10-13T12:00:00Z"
-excerpt: "Across the botanical spectrum of temperate and boreal fruits, small berries—predominantly blueberries, strawberries, blackberries, and raspberries—are frequentl..."
+date: "2026-09-27T21:15:29Z"
+excerpt: "Across the botanical spectrum of temperate and boreal fruits, small berries - predominantly blueberries, strawberries, blackberries, and raspberries - are frequentl..."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Dr. rer. nat. | University of Hamburg, Germany"
 tags: ['Life Science', 'Evidence Nutrition', 'Cardiovascular', 'Phytochemistry']
@@ -16,7 +16,7 @@ image: "/images/posts/berries-anthocyanins-vascular-protection-antioxidant-shiel
 imageAlt: "Rustic bowl overflowing with fresh blueberries and strawberries on dark wooden surface"
 ---
 
-Across the botanical spectrum of temperate and boreal fruits, small berries—predominantly blueberries, strawberries, blackberries, and raspberries—are frequently trivialized as decorative culinary garnishes. Yet in the precision discipline of plant secondary metabolomics, the deep violet, indigo, and crimson pigments saturating berry skins represent an extraordinary evolutionary defense complex: **Anthocyanins**. Landmark prospective investigations from the Harvard T.H. Chan School of Public Health published in *Circulation*, alongside official American Heart Association (AHA) dietary guidelines, establish that habitual consumption of anthocyanin-dense berries dramatically halts arterial stiffening and slashes myocardial infarction incidence by 32%.
+Across the botanical spectrum of temperate and boreal fruits, small berries - predominantly blueberries, strawberries, blackberries, and raspberries - are frequently trivialized as decorative culinary garnishes. Yet in the precision discipline of plant secondary metabolomics, the deep violet, indigo, and crimson pigments saturating berry skins represent an extraordinary evolutionary defense complex: **Anthocyanins**. Landmark prospective investigations from the Harvard T.H. Chan School of Public Health published in *Circulation*, alongside official American Heart Association (AHA) dietary guidelines, establish that habitual consumption of anthocyanin-dense berries dramatically halts arterial stiffening and slashes myocardial infarction incidence by 32%.
 
 ![Rustic bowl overflowing with fresh blueberries and strawberries on dark wooden surface](/images/posts/berries-anthocyanins-vascular-protection-antioxidant-shield.jpg)
 
@@ -59,9 +59,9 @@ Biological Reaction Pathway Map:
 
 | Study & Design | Cohort & Setting | Experimental Protocol | Quantitative Biomarkers & p-value | Preventive Medical Takeaway |
 | :--- | :--- | :--- | :--- | :--- |
-| **Cassidy et al. (Circulation 2013)**<br>Nurses' Health Study II Cohort | 93,600 young and middle-aged women tracked over 18 years | >= 3 servings/week of blueberries and strawberries vs rare intake | 32% reduced risk of myocardial infarction (HR = 0.68; 95% CI 0.49-0.96; *p* = 0.047) | Proves high dietary anthocyanin intake protects coronary arteries in early adulthood. |
-| **AHA 2021 Dietary Guidance**<br>Official AHA Scientific Statement | Global cardiovascular disease prevention cohorts | Prioritization of deeply pigmented, whole intact fruits | Systolic BP reduction of 4.1 mmHg; reduced central arterial stiffness | Elevates berries to the foremost tier of evidence-based heart-healthy dietary patterns. |
-| **Curtis et al. (AJCN 2019)**<br>Double-Blind Randomized Trial | 138 metabolic syndrome adults | 1 cup (150g) freeze-dried blueberries daily for 6 months | Sustained +1.45% improvement in FMD (*p* = 0.003); augmented arterial elasticity | Daily blueberry intake yields clinically meaningful improvements in systemic vascular tone. |
+| **Cassidy et al. (Circulation 2013)** - Nurses' Health Study II Cohort | 93,600 young and middle-aged women tracked over 18 years | >= 3 servings/week of blueberries and strawberries vs rare intake | 32% reduced risk of myocardial infarction (HR = 0.68; 95% CI 0.49-0.96; *p* = 0.047) | Proves high dietary anthocyanin intake protects coronary arteries in early adulthood. |
+| **AHA 2021 Dietary Guidance** - Official AHA Scientific Statement | Global cardiovascular disease prevention cohorts | Prioritization of deeply pigmented, whole intact fruits | Systolic BP reduction of 4.1 mmHg; reduced central arterial stiffness | Elevates berries to the foremost tier of evidence-based heart-healthy dietary patterns. |
+| **Curtis et al. (AJCN 2019)** - Double-Blind Randomized Trial | 138 metabolic syndrome adults | 1 cup (150g) freeze-dried blueberries daily for 6 months | Sustained +1.45% improvement in FMD (*p* = 0.003); augmented arterial elasticity | Daily blueberry intake yields clinically meaningful improvements in systemic vascular tone. |
 
 ---
 
@@ -85,7 +85,7 @@ Among the most ominous indicators of accelerated biological vascular aging is pr
 
 The landmark epidemiological discovery published in *Circulation* by Dr. Aedin Cassidy and Harvard colleagues tracked 93,600 young and middle-aged female registered nurses aged 25 to 42 across 18 rigorous years of prospective follow-up:
 - The investigators revealed that participants ingesting **three or more weekly servings of blueberries and strawberries** experienced a **32% reduction in incident myocardial infarction** (hazard ratio 0.68; 95% CI 0.49 to 0.96) compared to those consuming berries once monthly or less.
-- Crucially, this immense cardioprotective dividend materialized in pre- and peri-menopausal cohorts—a demographic where primary cardiovascular pathology silently matures. This finding establishes that protecting the coronary endothelium with plant anthocyanins must begin early in adulthood, long before calcified, irreversible atheromas take root.
+- Crucially, this immense cardioprotective dividend materialized in pre- and peri-menopausal cohorts - a demographic where primary cardiovascular pathology silently matures. This finding establishes that protecting the coronary endothelium with plant anthocyanins must begin early in adulthood, long before calcified, irreversible atheromas take root.
 
 ---
 

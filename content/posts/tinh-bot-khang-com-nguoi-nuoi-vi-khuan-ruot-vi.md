@@ -1,6 +1,6 @@
 ---
 title: "Cơm nguội để tủ lạnh tốt cho đường ruột: Bí mật cấu trúc Tinh bột Kháng"
-date: "2026-10-13T10:00:00Z"
+date: "2026-07-27T02:17:25Z"
 excerpt: "Khi cơm trắng được nấu chín và làm lạnh qua đêm ở 4°C, chuỗi phân tử tinh bột sẽ tái kết tinh thành Tinh bột Kháng (Resistant Starch) biến thành siêu thức ăn nuôi sống lợi khuẩn ruột sinh ra Butyrate bảo vệ đại tràng."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"
@@ -95,7 +95,7 @@ Nhiều người e ngại ăn cơm lạnh sẽ đau bụng hoặc lo sợ vi khu
 
 Trong văn hóa phương Đông, hạt gạo là biểu tượng của sự sống và nguồn nuôi dưỡng ngàn đời. Nhưng trong làn sóng ăn kiêng hiện đại, tinh bột gạo thường bị gán mác là 'thủ phạm' gây béo phì và tiểu đường. Khoa học hóa sinh hiện đại đã giúp chúng ta minh oan cho hạt cơm: chỉ cần một chút tinh chỉnh về nhiệt độ và cách chuẩn bị, chúng ta có thể biến một phần tinh bột tiêu hóa nhanh thành nguồn thức ăn tuyệt vời cho hàng nghìn tỷ vi khuẩn có lợi trong đường ruột.
 
-Bạn không cần phải ăn cơm lạnh ngắt đến khó nuốt. Sau khi cơm được làm lạnh trong tủ để tạo cấu trúc tinh bột kháng RS3, bạn hoàn toàn có thể hâm nóng lại ăn kèm món nóng sốt yêu thích – cấu trúc tinh thể bền vững này sẽ không bị phá hủy. Hãy thưởng thức bát cơm gia đình với sự biết ơn và an tâm, khi biết rằng bạn đang nuôi dưỡng cả cơ thể mình lẫn hệ sinh thái vi sinh vật trung thành bên trong.
+Bạn không cần phải ăn cơm lạnh ngắt đến khó nuốt. Sau khi cơm được làm lạnh trong tủ để tạo cấu trúc tinh bột kháng RS3, bạn hoàn toàn có thể hâm nóng lại ăn kèm món nóng sốt yêu thích - cấu trúc tinh thể bền vững này sẽ không bị phá hủy. Hãy thưởng thức bát cơm gia đình với sự biết ơn và an tâm, khi biết rằng bạn đang nuôi dưỡng cả cơ thể mình lẫn hệ sinh thái vi sinh vật trung thành bên trong.
 
 ---
 

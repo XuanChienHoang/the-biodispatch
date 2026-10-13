@@ -1,6 +1,6 @@
 ---
 title: "Mật mã Tim mạch Phần 1: Huyền thoại Cholesterol: Vì sao Mỡ máu không làm nghẽn mạch nếu thiếu Viêm?"
-date: "2026-06-09T09:00:00Z"
+date: "2026-05-22T16:31:56Z"
 excerpt: "Trong hơn nửa thế kỷ, cholesterol bị coi là thủ phạm số một gây nhồi máu cơ tim. Thế nhưng, tại sao hơn 50% bệnh nhân đột quỵ tim lại có mức cholesterol hoàn toàn bình thường? Khám phá vai trò thực sự của phản ứng viêm nội mạc trong bệnh sinh mạch vành."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

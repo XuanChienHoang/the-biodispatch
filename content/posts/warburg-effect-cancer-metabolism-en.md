@@ -1,6 +1,6 @@
 ---
 title: "The Cancer Code Part 1: The Warburg Effect & Malignant Glucose Addiction"
-date: "2026-08-04T09:00:00Z"
+date: "2026-06-23T02:00:58Z"
 excerpt: "Why do cancer cells bypass mitochondrial respiration to ferment glucose even in the presence of abundant oxygen? Explore the biochemical rationale behind PET-CT scanning and metabolic fuel-starvation strategies."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

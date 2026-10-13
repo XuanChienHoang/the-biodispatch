@@ -1,6 +1,6 @@
 ---
 title: "Short-Chain Fatty Acid Butyrate: Epigenetic Master Key of Gut Barrier Integrity and Histone Deacetylase Inhibition"
-date: "2026-07-14T09:00:00Z"
+date: "2026-06-12T14:51:17Z"
 excerpt: "Beyond fueling 70% of colonic epithelial energy requirements, microbially-derived Butyrate functions as an endogenous epigenetic HDAC inhibitor, orchestrating regulatory T-cell differentiation and sealing Claudin-1 tight junction complexes."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"
@@ -47,7 +47,7 @@ Conventional biochemistry textbooks teach us that glucose is the universal cellu
 Yet the epithelial colonocytes lining the large intestine represent one of the most remarkable bioenergetic anomalies in mammalian physiology. They largely ignore blood glucose, evolving instead to derive **more than 70% of their total metabolic ATP demands** directly from the luminal beta-oxidation of short-chain fatty acid Butyrate.
 
 ### The Starvation Crisis of Modern Dysbiosis
-Under the modern ultra-processed Western diet—saturated with refined sucrose, seed oils, and devoid of fermentable plant fiber—obligate anaerobic commensals are starved of fermentable substrates. Luminal Butyrate concentrations plunge precipitously.
+Under the modern ultra-processed Western diet - saturated with refined sucrose, seed oils, and devoid of fermentable plant fiber - obligate anaerobic commensals are starved of fermentable substrates. Luminal Butyrate concentrations plunge precipitously.
 
 This bioenergetic deficit initiates a silent pathophysiological domino effect:
 * **Cellular Bioenergetic Collapse (Energy Starvation)**: Deprived of Butyrate fuel, colonocyte mitochondria malfunction, stalling ATP-dependent active transport pumps and triggering localized metabolic exhaustion.
@@ -86,7 +86,7 @@ Inside the mammalian nucleus, DNA double helices wrap tightly around octameric h
 Encountering the clinical literature on Butyrate, patients and biohackers frequently purchase oral sodium or calcium butyrate capsules. From a pharmacokinetic perspective, this unformulated approach yields deeply disappointing results:
 
 * **Premature Proximal Absorption**: Free butyrate is a small, water-soluble carboxylic acid. It is almost completely absorbed across gastric and duodenal enterocytes directly into the hepatic portal vein.
-* **Failure to Reach Distal Target Sites**: The actual anatomical arena where Butyrate is needed—**the cecum and colon**—receives virtually none of the oral dose.
+* **Failure to Reach Distal Target Sites**: The actual anatomical arena where Butyrate is needed - **the cecum and colon** - receives virtually none of the oral dose.
 * **Pungent Palatability**: Free butyric acid carries an intensely unpleasant rancid-butter aroma that causes gastric reflux unless packaged in specialized enteric-coated microcapsules.
 
 ---

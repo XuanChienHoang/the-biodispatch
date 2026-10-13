@@ -1,12 +1,12 @@
 ---
 title: "Vì sao cốc cà phê lúc 7 giờ sáng lại khiến bạn sập nguồn vào lúc 10 giờ?"
-date: "2026-10-13T13:30:00Z"
+date: "2026-05-09T14:34:50Z"
 excerpt: "Thói quen bật dậy và tìm ngay một tách cà phê khi vừa mở mắt tưởng chừng giúp bạn tỉnh táo, nhưng thực chất đang đánh lừa nhịp sinh học tự nhiên, dẫn đến cơn cồn cào và cú sụt năng lượng đột ngột giữa buổi sáng."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"
 tags: ["Cà phê", "Giấc ngủ và Tỉnh táo", "Nhịp sinh học", "Khoa học đời sống", "Lời khuyên sức khỏe"]
 organ: "Brain"
-tier: "life"
+tier: "Life Dispatch"
 readingTime: "5 phút"
 featured: true
 doi: "10.2903/j.efsa.2015.4102"

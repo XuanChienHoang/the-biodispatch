@@ -1,6 +1,6 @@
 ---
 title: "Eating Vegetables Before Carbs Flattens Glucose Spikes: The Dietary Fiber Matrix"
-date: "2026-10-13T10:00:00Z"
+date: "2026-05-17T10:57:05Z"
 excerpt: "Simply rearranging the order of your fork at dinner can reduce postprandial glucose surges by 30 to 40% without slashing your favorite carbohydrates."
 author: "Dr. Xuan Chien Hoang"
 authorRole: "Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany"

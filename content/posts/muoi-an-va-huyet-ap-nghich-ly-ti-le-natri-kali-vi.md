@@ -1,6 +1,6 @@
 ---
 title: "Kiêng muối vẫn tăng huyết áp: Khám phá nghịch lý tỷ lệ Natri và Kali"
-date: "2026-10-06T10:00:00Z"
+date: "2026-07-03T13:10:38Z"
 excerpt: "Cắt giảm muối ăn xuống mức cực đoan có thể kích hoạt hệ thống hormone RAAS gây co thắt mạch máu bù trừ; chìa khóa đích thực của huyết áp lý tưởng là nâng cao lượng Kali từ thực vật thay vì chỉ chăm chăm kiêng mặn."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"

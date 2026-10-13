@@ -1,6 +1,6 @@
 ---
 title: "Uống nước khi tập thể thao: Nghịch lý ngộ độc nước và vai trò của chất điện giải"
-date: "2026-10-08T10:00:00Z"
+date: "2026-06-25T16:48:23Z"
 excerpt: "Khi bạn đổ mồ hôi nhiều sau vận động, uống ừng ực một lượng lớn nước lọc tinh khiết không có khoáng chất sẽ làm loãng nồng độ Natri trong máu, khiến nước tràn vào tế bào gây phù nề và mệt mỏi rã rời."
 author: "TS. Hoàng Xuân Chiến"
 authorRole: "Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức"
