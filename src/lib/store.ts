@@ -2701,7 +2701,7 @@ const SEED_REFS: Record<string, Ref[]> = {
       year: 2012,
       abstract: "Brief bouts of light walking activity after meals stimulate contraction-mediated GLUT4 translocation, dramatically reducing postprandial glucose and insulin requirements.",
     },
-  ],,
+  ],
   "nhai-ky-no-lau-giam-calo": [
     {
       ordinal: 1,
