@@ -246,7 +246,7 @@ When the intraluminal supply of Butyrate drops precipitously, characteristic of 
 
 By repressing HDAC catalytic activity within target mucosal cells, Butyrate halts the enzymatic removal of acetyl moieties from core histone proteins, sustaining chromatin in an open, transcriptionally permissive state:
 
-* **Induction of Transcription Factor Foxp3**: Guides naive CD4+ T cells to differentiate into immunosuppressive regulatory T cells (**Tregs**), curbing rampant autoimmune reactivity and inflammatory bowel flare-ups.
+* **Induction of Transcription Factor Foxp3**: Guides naive CD4+ T cells to differentiate into immunosuppressive regulatory T cells (**Tregs**), curbing rampant autoimmune reactivity and inflammatory bowel flare-ups.`
       }
     ]
   },
