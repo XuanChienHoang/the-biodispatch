@@ -389,30 +389,44 @@ export async function runAutonomousDispatch() {
     !existingSlugs.has(t.slugVi) && !existingSlugs.has(`${t.slugVi}-vi`)
   ).sort((a, b) => (a.tier === targetTier ? -1 : 0) - (b.tier === targetTier ? -1 : 0));
 
-  const MAX_ATTEMPTS = 3;
+  const MAX_ATTEMPTS = 6; // 1: radar đúng tier | 2-5: Gemini (4-5 đổi tier) | 6: radar bất kỳ
   let attempt = 0;
   let feedback = null;
   let publishedTopic = null;
   const triedRadar = new Set();
+  const altTier = targetTier === 'Clinical Deep-Dive' ? 'Life Dispatch' : 'Clinical Deep-Dive';
 
   while (attempt < MAX_ATTEMPTS) {
     attempt++;
     let nextTopic = null;
    try {
 
-    if (staticTopic && attempt === 1) {
+    if (attempt === 1) {
+      if (!staticTopic) continue;
       nextTopic = staticTopic;
     } else if (attempt === MAX_ATTEMPTS) {
       nextTopic = unusedRadar.find(t => !triedRadar.has(t.slugVi)) || null;
       if (nextTopic) console.log(`🛟 [Fallback] Dùng chủ đề radar dự phòng: "${nextTopic.titleVi}"`);
     } else {
-      console.log(`✨ Đang kích hoạt Gemini AI sinh chủ đề ${targetTier} (Lượt thử ${attempt}/${MAX_ATTEMPTS})...`);
+      const tierNow = attempt >= 4 ? altTier : targetTier;
+      if (attempt > 2) await new Promise(r => setTimeout(r, 15000)); // nghỉ tránh 503/429
+      console.log(`✨ Đang kích hoạt Gemini AI sinh chủ đề ${tierNow} (Lượt thử ${attempt}/${MAX_ATTEMPTS})...`);
       const { generateTopicWithGemini } = await import('./gemini-topic-generator.mjs');
       const existingCatalog = getExistingDispatchesCatalog();
-      nextTopic = await generateTopicWithGemini(existingCatalog, feedback, targetTier);
+      nextTopic = await generateTopicWithGemini(existingCatalog, feedback, tierNow);
+      if (nextTopic && !nextTopic.tier) nextTopic.tier = tierNow;
     }
     if (nextTopic) triedRadar.add(nextTopic.slugVi);
     nextTopic = normalizeTopic(nextTopic, targetTier);
+    if (nextTopic) {
+      const sv = nextTopic.slugVi.endsWith('-vi') ? nextTopic.slugVi : `${nextTopic.slugVi}-vi`;
+      const se = nextTopic.slugEn.endsWith('-en') ? nextTopic.slugEn : `${nextTopic.slugEn}-en`;
+      if (existingSlugs.has(sv) || existingSlugs.has(se) || existingSlugs.has(nextTopic.slugVi)) {
+        console.warn(`⚠️ [Dedupe] Slug đã tồn tại (${sv}) -> bỏ để không ghi đè bài cũ.`);
+        feedback = `Chủ đề "${nextTopic.titleVi}" đã có trên site. Hãy chọn chủ đề hoàn toàn khác.`;
+        continue;
+      }
+    }
     if (!nextTopic) {
       console.warn(`⚠️ [Generator] Không có chủ đề hợp lệ trong lượt thử ${attempt}.`);
       feedback = 'JSON thiếu trường bắt buộc: titleVi, titleEn, slugVi, slugEn, tagsVi, tagsEn, sectionsVi[], sectionsEn[] (mỗi section có heading và body).';

@@ -51,7 +51,17 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          node scripts/generate-daily-dispatch.mjs
+          for i in 1 2 3; do
+            echo "=== Engine run $i/3 ==="
+            node scripts/generate-daily-dispatch.mjs || echo "Engine lỗi ở lượt $i, thử lại..."
+            if [ -n "$(git status --porcelain -- content/posts/)" ]; then
+              echo "✅ Đã có bài mới."
+              break
+            fi
+            git checkout -- public/images src/lib/store.ts 2>/dev/null || true
+            git clean -fdq public/images 2>/dev/null || true
+            if [ "$i" -lt 3 ]; then sleep 60; fi
+          done
           node scripts/make-thumbs.mjs
 
       - name: Commit and Push New Dispatches to Main
