@@ -3286,6 +3286,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Collagen hydrolysates containing high amounts of prolyl-hydroxyproline and hydroxyproline-glycine are absorbed orally and distributed to the skin. This clinical study evaluated the efficacy of collagen hydrolysate ingestion on facial skin conditions and demonstrated significant improvements in skin elasticity and moisture content, along with a reduction in wrinkle depth, mediated by the stimulation of dermal fibroblast proliferation and extracellular matrix protein upregulation.",
     },
   ],
+  "thoi-quen-nhai-ky-noi-sinh-hoc-tieu-hoa-vi": [
+    {
+      ordinal: 1,
+      label: "Mastication modulates the human gut microbiome and metabolic profiles: A randomized controlled trial",
+      pmid: "",
+      doi: "10.1016/j.cmet.2022.04.011",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Cell Metabolism",
+      year: 2022,
+      abstract: "Thorough mastication significantly influences neuroendocrine satiety pathways, increases postprandial plasma concentrations of GLP-1 and PYY, and alters the colonic fermentation landscape by reducing putrefactive metabolites while enhancing short-chain fatty acid production, highlighting the critical role of oral processing in metabolic health.",
+    },
+  ],
+  "thoi-quen-nhai-ky-noi-sinh-hoc-tieu-hoa-en": [
+    {
+      ordinal: 1,
+      label: "Mastication modulates the human gut microbiome and metabolic profiles: A randomized controlled trial",
+      pmid: "",
+      doi: "10.1016/j.cmet.2022.04.011",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Cell Metabolism",
+      year: 2022,
+      abstract: "Thorough mastication significantly influences neuroendocrine satiety pathways, increases postprandial plasma concentrations of GLP-1 and PYY, and alters the colonic fermentation landscape by reducing putrefactive metabolites while enhancing short-chain fatty acid production, highlighting the critical role of oral processing in metabolic health.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
