@@ -3260,6 +3260,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Rationale: L-theanine and caffeine are both naturally present in tea and have been shown individually to affect cognition and mood. Objectives: The present study investigated the combined effect of L-theanine and caffeine on cognitive performance and mood. Methods: Twenty-seven subjects participated in a double-blind, placebo-controlled, balanced cross-over study. Treatments were L-theanine (97 mg), caffeine (40 mg), L-theanine and caffeine combined, and placebo. Results: The L-theanine and caffeine combination significantly improved performance on attention-switching tasks and reduced susceptibility to distracting information in a memory task. Conclusions: These results replicate previous findings on the cognitive enhancement properties of L-theanine and caffeine, demonstrating that their combination improves both speed and accuracy in task performance while reducing anxiety and enhancing alertness.",
     },
   ],
+  "collagen-peptide-thuy-phan-su-that-sinh-hoc-vi-mo-vi": [
+    {
+      ordinal: 1,
+      label: "Ingestion of bioactive collagen hydrolysates enhance facial skin moisture and elasticity and reduce facial ageing signs in a randomised double-blind placebo-controlled clinical study",
+      pmid: "26840887",
+      doi: "10.1002/jsfa.7606",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "J Sci Food Agric",
+      year: 2016,
+      abstract: "Collagen hydrolysates containing high amounts of prolyl-hydroxyproline and hydroxyproline-glycine are absorbed orally and distributed to the skin. This clinical study evaluated the efficacy of collagen hydrolysate ingestion on facial skin conditions and demonstrated significant improvements in skin elasticity and moisture content, along with a reduction in wrinkle depth, mediated by the stimulation of dermal fibroblast proliferation and extracellular matrix protein upregulation.",
+    },
+  ],
+  "hydrolyzed-collagen-peptides-molecular-reality-en": [
+    {
+      ordinal: 1,
+      label: "Ingestion of bioactive collagen hydrolysates enhance facial skin moisture and elasticity and reduce facial ageing signs in a randomised double-blind placebo-controlled clinical study",
+      pmid: "26840887",
+      doi: "10.1002/jsfa.7606",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "J Sci Food Agric",
+      year: 2016,
+      abstract: "Collagen hydrolysates containing high amounts of prolyl-hydroxyproline and hydroxyproline-glycine are absorbed orally and distributed to the skin. This clinical study evaluated the efficacy of collagen hydrolysate ingestion on facial skin conditions and demonstrated significant improvements in skin elasticity and moisture content, along with a reduction in wrinkle depth, mediated by the stimulation of dermal fibroblast proliferation and extracellular matrix protein upregulation.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
