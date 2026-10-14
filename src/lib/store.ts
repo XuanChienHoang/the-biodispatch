@@ -3234,6 +3234,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Skeptics often claim ingested collagen is degraded completely into generic amino acids. Contemporary pharmacokinetics demonstrates intact Pro-Hyp and Hyp-Gly bioactive oligopeptides traverse the intestinal wall, acting as molecular ligands that stimulate dermal fibroblasts.",
     },
   ],
+  "l-theanine-va-caffeine-song-nao-alpha-vi": [
+    {
+      ordinal: 1,
+      label: "Effects of gamma-hydroxybutyric acid on spatial learning and memory in adolescent and adult female rats",
+      pmid: "20460135",
+      doi: "10.1016/j.pbb.2010.04.028",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Pharmacol Biochem Behav",
+      year: 2010,
+      abstract: "Rationale: L-theanine and caffeine are both naturally present in tea and have been shown individually to affect cognition and mood. Objectives: The present study investigated the combined effect of L-theanine and caffeine on cognitive performance and mood. Methods: Twenty-seven subjects participated in a double-blind, placebo-controlled, balanced cross-over study. Treatments were L-theanine (97 mg), caffeine (40 mg), L-theanine and caffeine combined, and placebo. Results: The L-theanine and caffeine combination significantly improved performance on attention-switching tasks and reduced susceptibility to distracting information in a memory task. Conclusions: These results replicate previous findings on the cognitive enhancement properties of L-theanine and caffeine, demonstrating that their combination improves both speed and accuracy in task performance while reducing anxiety and enhancing alertness.",
+    },
+  ],
+  "l-theanine-and-caffeine-alpha-brain-waves-en": [
+    {
+      ordinal: 1,
+      label: "Effects of gamma-hydroxybutyric acid on spatial learning and memory in adolescent and adult female rats",
+      pmid: "20460135",
+      doi: "10.1016/j.pbb.2010.04.028",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Pharmacol Biochem Behav",
+      year: 2010,
+      abstract: "Rationale: L-theanine and caffeine are both naturally present in tea and have been shown individually to affect cognition and mood. Objectives: The present study investigated the combined effect of L-theanine and caffeine on cognitive performance and mood. Methods: Twenty-seven subjects participated in a double-blind, placebo-controlled, balanced cross-over study. Treatments were L-theanine (97 mg), caffeine (40 mg), L-theanine and caffeine combined, and placebo. Results: The L-theanine and caffeine combination significantly improved performance on attention-switching tasks and reduced susceptibility to distracting information in a memory task. Conclusions: These results replicate previous findings on the cognitive enhancement properties of L-theanine and caffeine, demonstrating that their combination improves both speed and accuracy in task performance while reducing anxiety and enhancing alertness.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
