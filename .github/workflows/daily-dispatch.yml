@@ -2,12 +2,16 @@ name: Automated Dual-Dispatch Publishing Pipeline
 
 on:
   schedule:
-    # 4 bài mỗi ngày (Giờ Đức CEST: 07:00, 11:00, 15:00, 19:00 -> UTC: 05:00, 09:00, 13:00, 17:00)
-    - cron: '0 5 * * *'
-    - cron: '0 9 * * *'
-    - cron: '0 13 * * *'
-    - cron: '0 17 * * *'
+    # GitHub hay trễ/bỏ lịch chạy đúng phút :00 -> dùng phút lẻ + slot dự phòng.
+    # Giới hạn cứng 4 bài/ngày ở bước "Daily quota guard".
+    # Slot chính (CEST): ~07:17, 11:17, 15:17, 19:17 | Dự phòng: ~09:47, 13:47, 17:47, 21:47
+    - cron: '17 5,9,13,17 * * *'
+    - cron: '47 7,11,15,19 * * *'
   workflow_dispatch: # Nút bấm chạy thử thủ công
+
+concurrency:
+  group: daily-dispatch
+  cancel-in-progress: false
 
 jobs:
   publish-and-deploy:
@@ -28,9 +32,22 @@ jobs:
           node-version: '22'
           cache: 'npm'
 
+      - name: Daily quota guard (max 4/day)
+        id: quota
+        run: |
+          N=$(git log origin/main --since="$(date -u +%Y-%m-%d)T00:00:00Z" --grep="content(auto-dispatch)" --oneline | wc -l)
+          echo "Auto-dispatch hôm nay: $N"
+          if [ "$N" -ge 4 ] && [ "${{ github.event_name }}" = "schedule" ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Install Project Dependencies
+        if: steps.quota.outputs.skip != 'true'
         run: npm ci
       - name: Run Autonomous Dispatch Engine
+        if: steps.quota.outputs.skip != 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
@@ -38,6 +55,7 @@ jobs:
           node scripts/make-thumbs.mjs
 
       - name: Commit and Push New Dispatches to Main
+        if: steps.quota.outputs.skip != 'true'
         run: |
           git config --global user.name "Xuan Chien Hoang"
           git config --global user.email "hoangxuanchien86@gmail.com"
@@ -46,6 +64,7 @@ jobs:
             echo "No new dispatches to commit."
           else
             git commit -m "content(auto-dispatch): publish scheduled bilingual dispatch"
+            git pull --rebase origin main
             git push origin main
           fi
       - name: Verify Dispatch Publishing Success

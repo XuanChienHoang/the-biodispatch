@@ -68,6 +68,39 @@ function getExistingDispatchesCatalog() {
   return catalog;
 }
 
+/** Chuẩn hóa topic do Gemini trả về (thiếu trường -> giá trị an toàn). Trả null nếu thiếu phần lõi không thể bù. */
+function normalizeTopic(topic, targetTier) {
+  if (!topic || typeof topic !== 'object') return null;
+  const arr = v => (Array.isArray(v) ? v.filter(Boolean) : (typeof v === 'string' && v.trim() ? v.split(',').map(s => s.trim()).filter(Boolean) : []));
+  const secs = v => arr(v).filter(s => s && typeof s === 'object' && s.heading && s.body);
+  const slugify = s => String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 80);
+  const t = { ...topic };
+  t.tier = t.tier || targetTier || 'Clinical Deep-Dive';
+  t.organ = t.organ || 'Metabolic';
+  t.slugVi = t.slugVi || slugify(t.titleVi);
+  t.slugEn = t.slugEn || slugify(t.titleEn);
+  t.tagsVi = arr(t.tagsVi).length ? arr(t.tagsVi) : arr(t.tags);
+  t.tagsEn = arr(t.tagsEn).length ? arr(t.tagsEn) : arr(t.tags);
+  if (!t.tagsVi.length) t.tagsVi = [t.organ];
+  if (!t.tagsEn.length) t.tagsEn = [t.organ];
+  t.sectionsVi = secs(t.sectionsVi);
+  t.sectionsEn = secs(t.sectionsEn);
+  t.excerptVi = t.excerptVi || '';
+  t.excerptEn = t.excerptEn || '';
+  t.leadVi = t.leadVi || t.excerptVi;
+  t.leadEn = t.leadEn || t.excerptEn;
+  t.analogyVi = t.analogyVi || t.excerptVi;
+  t.analogyEn = t.analogyEn || t.excerptEn;
+  t.readingTimeVi = t.readingTimeVi || '8 phút đọc';
+  t.readingTimeEn = t.readingTimeEn || '8 min read';
+  t.doi = t.doi || '';
+  if (!t.titleVi || !t.titleEn || !t.slugVi || !t.slugEn || t.sectionsVi.length < 2 || t.sectionsEn.length < 2) {
+    console.warn(`⚠️ [Normalize] Topic thiếu trường lõi (title/slug/sections) -> loại bỏ.`);
+    return null;
+  }
+  return t;
+}
+
 function createDispatchMarkdown(topic, lang = 'vi', scheduledIsoDate) {
   const isVi = lang === 'vi';
   // Ensure bulletproof naming convention: -vi for Vietnamese, -en for English
@@ -351,26 +384,39 @@ export async function runAutonomousDispatch() {
     (t.tier === targetTier || (!t.tier && targetTier === 'Clinical Deep-Dive'))
   );
 
-  const MAX_ATTEMPTS = 2;
+  // Radar dự phòng cuối cùng: bất kỳ topic chưa dùng nào (ưu tiên đúng tier)
+  const unusedRadar = DISPATCH_RADAR_TOPICS.filter(t =>
+    !existingSlugs.has(t.slugVi) && !existingSlugs.has(`${t.slugVi}-vi`)
+  ).sort((a, b) => (a.tier === targetTier ? -1 : 0) - (b.tier === targetTier ? -1 : 0));
+
+  const MAX_ATTEMPTS = 3;
   let attempt = 0;
   let feedback = null;
   let publishedTopic = null;
+  const triedRadar = new Set();
 
   while (attempt < MAX_ATTEMPTS) {
     attempt++;
     let nextTopic = null;
+   try {
 
     if (staticTopic && attempt === 1) {
       nextTopic = staticTopic;
+    } else if (attempt === MAX_ATTEMPTS) {
+      nextTopic = unusedRadar.find(t => !triedRadar.has(t.slugVi)) || null;
+      if (nextTopic) console.log(`🛟 [Fallback] Dùng chủ đề radar dự phòng: "${nextTopic.titleVi}"`);
     } else {
       console.log(`✨ Đang kích hoạt Gemini AI sinh chủ đề ${targetTier} (Lượt thử ${attempt}/${MAX_ATTEMPTS})...`);
       const { generateTopicWithGemini } = await import('./gemini-topic-generator.mjs');
       const existingCatalog = getExistingDispatchesCatalog();
       nextTopic = await generateTopicWithGemini(existingCatalog, feedback, targetTier);
-      if (!nextTopic) {
-        console.warn(`⚠️ [Gemini Generator] Không thể sinh chủ đề trong lượt thử ${attempt}.`);
-        continue;
-      }
+    }
+    if (nextTopic) triedRadar.add(nextTopic.slugVi);
+    nextTopic = normalizeTopic(nextTopic, targetTier);
+    if (!nextTopic) {
+      console.warn(`⚠️ [Generator] Không có chủ đề hợp lệ trong lượt thử ${attempt}.`);
+      feedback = 'JSON thiếu trường bắt buộc: titleVi, titleEn, slugVi, slugEn, tagsVi, tagsEn, sectionsVi[], sectionsEn[] (mỗi section có heading và body).';
+      continue;
     }
 
     console.log(`🚀 [Dispatch Target] Đề tài lượt ${attempt}: "${nextTopic.titleVi}"`);
@@ -429,6 +475,10 @@ export async function runAutonomousDispatch() {
     console.log('\n✅ [Done] Hoàn tất sinh bản tin chuyên sâu song ngữ đạt chuẩn Gatekeeper và Liêm chính Y văn PubMed!');
     publishedTopic = nextTopic;
     break;
+   } catch (err) {
+    console.warn(`⚠️ [Attempt ${attempt}] Lỗi xử lý chủ đề, chuyển lượt tiếp theo: ${err.message}`);
+    feedback = `Lỗi cấu trúc dữ liệu: ${err.message}`;
+   }
   }
 
   if (!publishedTopic) {
