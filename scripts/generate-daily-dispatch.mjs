@@ -423,13 +423,23 @@ export async function runAutonomousDispatch() {
     console.log(`⏰ [Publish Time] Thời gian xuất bản: ${scheduledIsoDate}`);
 
     // 0. ĐỐI SOÁT & XÁC THỰC Y VĂN TRƯỚC KHI TẠO BẢN THẢO (ZERO HALLUCINATED CITATIONS)
-    if (Array.isArray(nextTopic.references) && nextTopic.references.length > 0) {
+    if (!Array.isArray(nextTopic.references) || nextTopic.references.length === 0) {
+      // Gemini thường bỏ trống references -> dựng từ refPaperTitle / tiêu đề EN rồi tra PubMed thật
+      nextTopic.references = [{
+        label: nextTopic.refPaperTitle || nextTopic.titleEn,
+        pmid: nextTopic.refPmid || nextTopic.pmid || '',
+        doi: nextTopic.refDoi || nextTopic.doi || '',
+        journal: nextTopic.refJournal || nextTopic.journal,
+        year: nextTopic.refYear || nextTopic.year,
+        abstract: nextTopic.refAbstract || nextTopic.excerptEn || '',
+      }];
+    }
+    {
       console.log(`🔬 [Citation Verifier] Đang đối soát và xác thực y văn qua PubMed NCBI...`);
       const healedRefs = await verifyAndHealReferences(nextTopic.references, nextTopic.titleEn || nextTopic.titleVi);
       nextTopic.references = healedRefs;
-      if (healedRefs[0] && healedRefs[0].doi) {
-        nextTopic.doi = healedRefs[0].doi;
-      }
+      const withDoi = healedRefs.find(r => r && r.doi);
+      if (withDoi) nextTopic.doi = withDoi.doi;
     }
 
     // 1. Đảm bảo ảnh bìa phân tử 3D chuẩn mực đã có sẵn trước khi kiểm duyệt xuất bản
