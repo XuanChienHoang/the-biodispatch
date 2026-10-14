@@ -27,10 +27,10 @@ const TIER_META: Record<string, { icon: typeof BookOpen; color: string; labelVi:
   Fundamentals: { icon: BookOpen, color: "#64748B", labelVi: "Nền tảng Y sinh" },
   "Clinical Deep-Dive": { icon: LineChart, color: "#00F2FE", labelVi: "Phân tích Lâm sàng" },
   "Lab Gizmo": { icon: FlaskConical, color: "#10B981", labelVi: "Mô phỏng Dược học" },
-  "Life Dispatch": { icon: Coffee, color: "#F59E0B", labelVi: "Khoa học Đời sống" },
+  "Life Dispatch": { icon: Coffee, color: "#059669", labelVi: "🌿 Khoa học Đời sống (Dễ hiểu)" },
 };
 
-type TabKey = "All" | Organ | "GizmosOnly";
+type TabKey = "All" | "LifeDispatch" | Organ | "GizmosOnly";
 
 interface TabItem {
   key: TabKey;
@@ -41,11 +41,12 @@ interface TabItem {
 
 const TABS: TabItem[] = [
   { key: "All", labelEn: "All Dispatches", labelVi: "Toàn bộ Kho bài", icon: <Layers size={14} /> },
-  { key: "Metabolic", labelEn: "Metabolic & BAT", labelVi: "Chuyển hóa & BAT", icon: <Flame size={14} /> },
+  { key: "LifeDispatch", labelEn: "🌿 Living Science & Habits", labelVi: "🌿 Khoa học Đời sống (Dễ hiểu)", icon: <Coffee size={14} /> },
+  { key: "Metabolic", labelEn: "Metabolic & BAT", labelVi: "Chuyển hóa & Dinh dưỡng", icon: <Flame size={14} /> },
   { key: "Heart", labelEn: "Cardiovascular", labelVi: "Tim mạch & Mỡ máu", icon: <Heart size={14} /> },
-  { key: "Cellular Aging", labelEn: "Cellular Aging & Cancer", labelVi: "Trẻ hóa & Ung thư", icon: <Sparkles size={14} /> },
   { key: "Brain", labelEn: "Neuro & Sleep", labelVi: "Não bộ & Giấc ngủ", icon: <Brain size={14} /> },
   { key: "Gut", labelEn: "Gut & Microbiome", labelVi: "Đường ruột & Hệ vi sinh", icon: <ShieldCheck size={14} /> },
+  { key: "Cellular Aging", labelEn: "Cellular Aging & Cancer", labelVi: "Trẻ hóa & Ung thư", icon: <Sparkles size={14} /> },
   { key: "Immune", labelEn: "Immunity & Bioavailability", labelVi: "Miễn dịch & Hấp thu", icon: <FlaskConical size={14} /> },
   { key: "GizmosOnly", labelEn: "Interactive Simulators", labelVi: "Có Bộ máy Mô phỏng", icon: <FlaskConical size={14} /> },
 ];
@@ -55,7 +56,7 @@ export function Directory({ articles }: { articles: Article[] }) {
   const t = DICT[lang];
   const isVi = lang === "vi";
 
-  // Tab chuyên đề đang chọn
+  // Tab chuyên đề đang chọn (mặc định All, nhưng người đọc có thể bấm nhanh sang LifeDispatch)
   const [activeTab, setActiveTab] = useState<TabKey>("All");
   // Lọc thêm theo độ sâu lâm sàng (tier) nếu muốn
   const [selectedTier, setSelectedTier] = useState<Tier | "All">("All");
@@ -69,7 +70,9 @@ export function Directory({ articles }: { articles: Article[] }) {
   const filteredList = useMemo(() => {
     return pool.filter((a) => {
       // 1. Lọc theo tab
-      if (activeTab === "GizmosOnly") {
+      if (activeTab === "LifeDispatch") {
+        if (a.tier !== "Life Dispatch") return false;
+      } else if (activeTab === "GizmosOnly") {
         if (!a.gizmo) return false;
       } else if (activeTab !== "All") {
         if (a.organ !== activeTab) return false;
@@ -101,11 +104,16 @@ export function Directory({ articles }: { articles: Article[] }) {
       <div className="flex flex-wrap items-end justify-between gap-6 border-b-2 border-indigo-deep pb-5">
         <div>
           <span className="caps text-slate-ink">
-            {isVi ? "§ 1 · Thư viện Báo cáo & Tra cứu Chuyên sâu" : "§ 1 · Article Directory & Specialized Corpus"}
+            {isVi ? "§ 1 · Thư viện Báo cáo & Tra cứu Toàn văn" : "§ 1 · Complete Article Directory & Corpus"}
           </span>
           <h2 className="mt-3 font-display display-lg font-black leading-[0.95] tracking-[-0.035em] text-indigo-deep">
-            {isVi ? "Kho Bài viết Chuyên sâu." : "The Specialised Corpus."}
+            {isVi ? "Kho Bài viết Y sinh & Đời sống." : "The Complete Corpus."}
           </h2>
+          <p className="mt-2 text-sm text-slate-ink max-w-xl">
+            {isVi
+              ? "Tra cứu toàn diện các bài viết phân tích từ khoa học thường thức ứng dụng hàng ngày đến các chuyên khảo dược học và mô phỏng tương tác."
+              : "Search and filter through all dispatches — from accessible daily preventive habits to advanced molecular monographs."}
+          </p>
         </div>
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
           <div className="relative w-full sm:w-72">
@@ -113,7 +121,7 @@ export function Directory({ articles }: { articles: Article[] }) {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder={isVi ? "Lọc nhanh trong kho bài..." : "Filter in corpus..."}
+              placeholder={isVi ? "Tìm theo tiêu đề, chủ đề..." : "Search in corpus..."}
               className="w-full rounded-full border border-slate-hair bg-paper-tint py-2 pl-9 pr-4 text-xs font-sans text-indigo-deep placeholder:text-slate-mute focus:border-indigo-deep focus:bg-paper focus:outline-none"
             />
             <span className="absolute left-3 top-2.5 text-slate-mute">🔍</span>
@@ -135,12 +143,14 @@ export function Directory({ articles }: { articles: Article[] }) {
         <div className="no-scrollbar -mb-px flex space-x-2 overflow-x-auto pb-2 sm:space-x-3">
           {TABS.map((tab) => {
             const isActive = activeTab === tab.key;
-            // Đếm số bài tương ứng trong tab này
             const count = pool.filter((a) => {
+              if (tab.key === "LifeDispatch") return a.tier === "Life Dispatch";
               if (tab.key === "GizmosOnly") return !!a.gizmo;
               if (tab.key === "All") return true;
               return a.organ === tab.key;
             }).length;
+
+            const isLifeTab = tab.key === "LifeDispatch";
 
             return (
               <button
@@ -151,17 +161,35 @@ export function Directory({ articles }: { articles: Article[] }) {
                 }}
                 className={`group flex shrink-0 items-center gap-2 rounded-t-sm border-b-2 px-4 py-3 text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer ${
                   isActive
-                    ? "border-indigo-deep bg-paper text-indigo-deep font-bold shadow-xs"
+                    ? isLifeTab
+                      ? "border-emerald-700 bg-emerald-50/40 text-emerald-800 font-bold shadow-xs"
+                      : "border-indigo-deep bg-paper text-indigo-deep font-bold shadow-xs"
+                    : isLifeTab
+                    ? "border-transparent text-emerald-700 hover:border-emerald-300 hover:text-emerald-800"
                     : "border-transparent text-slate-ink hover:border-slate-300 hover:text-indigo-deep"
                 }`}
               >
-                <span className={isActive ? "text-trace-ink" : "text-slate-mute group-hover:text-indigo-deep"}>
+                <span
+                  className={
+                    isActive
+                      ? isLifeTab
+                        ? "text-emerald-700"
+                        : "text-trace-ink"
+                      : isLifeTab
+                      ? "text-emerald-600"
+                      : "text-slate-mute group-hover:text-indigo-deep"
+                  }
+                >
                   {tab.icon}
                 </span>
                 <span>{isVi ? tab.labelVi : tab.labelEn}</span>
                 <span
                   className={`ml-1 rounded-full px-1.5 py-0.5 text-[0.7rem] font-mono ${
-                    isActive ? "bg-indigo-deep text-white" : "bg-slate-hair text-slate-ink"
+                    isActive
+                      ? isLifeTab
+                        ? "bg-emerald-700 text-white"
+                        : "bg-indigo-deep text-white"
+                      : "bg-slate-hair text-slate-ink"
                   }`}
                 >
                   {count}
@@ -172,11 +200,11 @@ export function Directory({ articles }: { articles: Article[] }) {
         </div>
       </div>
 
-      {/* THANH ĐIỀU KHIỂN PHỤ: Lọc theo độ sâu lâm sàng (Tier) */}
+      {/* THANH ĐIỀU KHIỂN PHỤ: Lọc theo độ sâu phân tích (Tier) */}
       <div className="mt-4 flex flex-wrap items-center justify-between gap-4 border-b border-slate-hair pb-4 pt-1">
         <div className="flex flex-wrap items-center gap-2">
           <span className="caps text-xs font-semibold text-slate-ink">
-            {isVi ? "Độ sâu phân tích:" : "Analytical Depth:"}
+            {isVi ? "Phân loại bài đọc:" : "Article Tier:"}
           </span>
           <button
             type="button"
@@ -196,19 +224,21 @@ export function Directory({ articles }: { articles: Article[] }) {
               onClick={() => setSelectedTier(tierName)}
               className={`caps rounded-full px-3 py-1 text-xs transition-colors cursor-pointer ${
                 selectedTier === tierName
-                  ? "bg-indigo-deep text-white font-bold"
+                  ? tierName === "Life Dispatch"
+                    ? "bg-emerald-700 text-white font-bold"
+                    : "bg-indigo-deep text-white font-bold"
                   : "bg-paper-tint text-slate-ink border border-slate-hair hover:text-indigo-deep"
               }`}
             >
-              {isVi ? TIER_META[tierName].labelVi : tierName}
+              {isVi ? TIER_META[tierName]?.labelVi || tierName : tierName}
             </button>
           ))}
         </div>
 
         <div className="caps text-xs text-slate-ink">
           {isVi
-            ? `Hiển thị ${filteredList.length} bài phân tích`
-            : `Displaying ${filteredList.length} monographs`}
+            ? `Hiển thị ${filteredList.length} bài viết`
+            : `Displaying ${filteredList.length} dispatches`}
         </div>
       </div>
 
@@ -220,24 +250,27 @@ export function Directory({ articles }: { articles: Article[] }) {
             {isVi ? "Chưa có bài viết ở chuyên đề và bộ lọc này." : "No monographs match this specialized filter."}
           </p>
           <button
+            type="button"
             onClick={() => {
               setActiveTab("All");
               setSelectedTier("All");
+              setSearchQuery("");
             }}
-            className="caps mt-5 rounded-sm bg-indigo-deep px-4 py-2 text-xs font-semibold text-paper hover:bg-indigo-mid cursor-pointer"
+            className="caps mt-3 inline-block text-xs font-bold text-trace-ink hover:underline cursor-pointer"
           >
-            {isVi ? "Đặt lại về Tất cả" : "Reset to All"}
+            {isVi ? "Đặt lại toàn bộ bộ lọc" : "Reset all filters"}
           </button>
         </div>
       ) : (
-        <motion.div layout className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <motion.div layout className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <AnimatePresence mode="popLayout">
             {filteredList.map((a, i) => {
-              const meta = TIER_META[a.tier] || TIER_META["Fundamentals"] || { icon: BookOpen, color: "#64748B", labelVi: a.tier };
+              const meta = TIER_META[a.tier] || TIER_META["Clinical Deep-Dive"];
               const Icon = meta.icon;
               const accent = ORGAN_ACCENT[a.organ];
               const displayTitle = isVi && a.titleVi ? a.titleVi : a.title;
               const displayDek = isVi && a.dekVi ? a.dekVi : a.dek;
+              const isLife = a.tier === "Life Dispatch";
 
               return (
                 <motion.article
@@ -247,7 +280,11 @@ export function Directory({ articles }: { articles: Article[] }) {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -8 }}
                   transition={{ duration: 0.28, delay: Math.min(i * 0.03, 0.18), ease: [0.22, 1, 0.36, 1] }}
-                  className="group relative flex flex-col overflow-hidden rounded-sm border border-slate-hair bg-paper transition-all duration-300 hover:-translate-y-0.5 hover:border-indigo-deep hover:shadow-md"
+                  className={`group relative flex flex-col overflow-hidden rounded-sm border bg-paper transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md ${
+                    isLife
+                      ? "border-emerald-900/25 hover:border-emerald-700"
+                      : "border-slate-hair hover:border-indigo-deep"
+                  }`}
                 >
                   <Link
                     href={`/blog/${a.slug}`}
@@ -271,10 +308,20 @@ export function Directory({ articles }: { articles: Article[] }) {
                           <div className="graticule absolute inset-0 opacity-40" />
                         </div>
                       )}
-                      <span className="caps absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-sm bg-[#050d19]/80 px-2 py-1 text-xs text-white backdrop-blur-sm">
-                        <span className="h-1.5 w-1.5 rounded-full" style={{ background: accent }} />
-                        {isVi ? ORGAN_VI[a.organ] : a.organ}
-                      </span>
+
+                      {/* Huy hiệu hệ cơ quan & Phổ thông */}
+                      <div className="absolute left-3 top-3 flex items-center gap-1.5">
+                        {isLife ? (
+                          <span className="caps inline-flex items-center gap-1 rounded-sm bg-emerald-800/90 px-2 py-0.8 text-[11px] font-bold text-white backdrop-blur-sm shadow-xs">
+                            🌿 {isVi ? "Đời sống" : "Life"}
+                          </span>
+                        ) : null}
+                        <span className="caps inline-flex items-center gap-1.5 rounded-sm bg-[#050d19]/80 px-2 py-1 text-xs text-white backdrop-blur-sm">
+                          <span className="h-1.5 w-1.5 rounded-full" style={{ background: accent }} />
+                          {isVi ? ORGAN_VI[a.organ] : a.organ}
+                        </span>
+                      </div>
+
                       {a.gizmo && (
                         <span
                           className="absolute right-3 top-3 grid h-7 w-7 place-items-center rounded-full bg-[#050d19]/85 text-trace backdrop-blur-sm"
@@ -286,7 +333,7 @@ export function Directory({ articles }: { articles: Article[] }) {
                     </div>
 
                     <div className="flex flex-1 flex-col p-5">
-                      <h3 className="font-display text-[1.08rem] font-semibold leading-[1.2] tracking-[-0.02em] text-indigo-deep line-clamp-3 transition-colors group-hover:text-trace-ink">
+                      <h3 className="font-display text-[1.06rem] font-semibold leading-[1.25] tracking-[-0.02em] text-indigo-deep line-clamp-3 transition-colors group-hover:text-trace-ink">
                         {displayTitle}
                       </h3>
                       <p className="mt-2.5 flex-1 text-[0.86rem] leading-relaxed text-slate-ink line-clamp-2">
@@ -294,11 +341,13 @@ export function Directory({ articles }: { articles: Article[] }) {
                       </p>
                       <div className="mt-4 flex items-center justify-between gap-3 border-t border-slate-hair pt-3 text-xs">
                         <span
-                          className="caps flex items-center gap-1.5 font-semibold"
-                          style={{ color: onPaper(meta.color) }}
+                          className={`caps flex items-center gap-1.5 font-semibold ${
+                            isLife ? "text-emerald-700 font-bold" : ""
+                          }`}
+                          style={isLife ? undefined : { color: onPaper(meta.color) }}
                         >
                           <Icon size={12} />
-                          {isVi ? meta.labelVi : a.tier}
+                          {isVi ? (isLife ? "Khoa học Đời sống" : meta.labelVi) : a.tier}
                         </span>
                         <span className="caps text-slate-ink">
                           {formatDate(a.date, lang)} · {a.minutes} {t.minRead}

@@ -126,6 +126,13 @@ export function Hero({ articles = [] }: { articles?: Article[] }) {
               {/* Nút hành động chính */}
               <div className="mt-6 flex flex-wrap items-center gap-3">
                 <a
+                  href="#life-science"
+                  className="caps inline-flex items-center gap-2 rounded-sm bg-emerald-700 px-5 py-3 text-xs font-semibold text-white shadow-xs transition-all duration-200 hover:bg-emerald-800 hover:shadow-md"
+                >
+                  <span>{isVi ? "🌿 Khoa học Đời sống (Dễ hiểu)" : "🌿 Living Science & Habits"}</span>
+                  <span className="text-emerald-200">↓</span>
+                </a>
+                <a
                   href="#directory"
                   className="caps inline-flex items-center gap-2 rounded-sm bg-indigo-deep px-5 py-3 text-xs font-semibold text-white shadow-xs transition-all duration-200 hover:bg-[#101f34] hover:shadow-md"
                 >
