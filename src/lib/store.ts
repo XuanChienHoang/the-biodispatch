@@ -3312,6 +3312,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Thorough mastication significantly influences neuroendocrine satiety pathways, increases postprandial plasma concentrations of GLP-1 and PYY, and alters the colonic fermentation landscape by reducing putrefactive metabolites while enhancing short-chain fatty acid production, highlighting the critical role of oral processing in metabolic health.",
     },
   ],
+  "anh-sang-do-670nm-sac-pin-ty-the-vong-mac-vi": [
+    {
+      ordinal: 1,
+      label: "Weeklong improved colour contrasts sensitivity after single 670 nm exposures associated with enhanced mitochondrial function",
+      pmid: "34819619",
+      doi: "10.1038/s41598-021-02311-1",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Sci Rep",
+      year: 2021,
+      abstract: "Mitochondrial decline occurs with aging, driven partly by reduced adenosine triphosphate (ATP) production. Retinal photoreceptors have high energy demands and age rapidly. Exposure to 670 nm deep red light is absorbed by Cytochrome c Oxidase, improving mitochondrial membrane potential and ATP synthesis. A single 3-minute exposure to 670 nm light at 8 AM improved tritan color contrast threshold sensitivity for up to a week in older subjects, demonstrating a practical non-invasive therapeutic window.",
+    },
+  ],
+  "670nm-red-light-recharging-retinal-mitochondria-en": [
+    {
+      ordinal: 1,
+      label: "Weeklong improved colour contrasts sensitivity after single 670 nm exposures associated with enhanced mitochondrial function",
+      pmid: "34819619",
+      doi: "10.1038/s41598-021-02311-1",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Sci Rep",
+      year: 2021,
+      abstract: "Mitochondrial decline occurs with aging, driven partly by reduced adenosine triphosphate (ATP) production. Retinal photoreceptors have high energy demands and age rapidly. Exposure to 670 nm deep red light is absorbed by Cytochrome c Oxidase, improving mitochondrial membrane potential and ATP synthesis. A single 3-minute exposure to 670 nm light at 8 AM improved tritan color contrast threshold sensitivity for up to a week in older subjects, demonstrating a practical non-invasive therapeutic window.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
