@@ -3338,6 +3338,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Mitochondrial decline occurs with aging, driven partly by reduced adenosine triphosphate (ATP) production. Retinal photoreceptors have high energy demands and age rapidly. Exposure to 670 nm deep red light is absorbed by Cytochrome c Oxidase, improving mitochondrial membrane potential and ATP synthesis. A single 3-minute exposure to 670 nm light at 8 AM improved tritan color contrast threshold sensitivity for up to a week in older subjects, demonstrating a practical non-invasive therapeutic window.",
     },
   ],
+  "senolytics-fisetin-te-bao-gia-sasp-vi": [
+    {
+      ordinal: 1,
+      label: "Fisetin is a senotherapeutic that extends health and lifespan",
+      pmid: "30279143",
+      doi: "10.1016/j.ebiom.2018.09.015",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "EBioMedicine",
+      year: 2018,
+      abstract: "Senescent cells accumulate with age and contribute to tissue dysfunction and multiple age-related chronic diseases. We screened a panel of flavonoid polyphenols and identified fisetin as a potent senolytic agent. Treatment of progeroid and aged wild-type mice with fisetin reduced senescent markers, suppressed the senescence-associated secretory phenotype (SASP), alleviated age-related tissue pathologies, and restored tissue homeostasis, substantially extending healthspan and lifespan even when administered late in life.",
+    },
+  ],
+  "senolytics-fisetin-cellular-senescence-sasp-en": [
+    {
+      ordinal: 1,
+      label: "Fisetin is a senotherapeutic that extends health and lifespan",
+      pmid: "30279143",
+      doi: "10.1016/j.ebiom.2018.09.015",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "EBioMedicine",
+      year: 2018,
+      abstract: "Senescent cells accumulate with age and contribute to tissue dysfunction and multiple age-related chronic diseases. We screened a panel of flavonoid polyphenols and identified fisetin as a potent senolytic agent. Treatment of progeroid and aged wild-type mice with fisetin reduced senescent markers, suppressed the senescence-associated secretory phenotype (SASP), alleviated age-related tissue pathologies, and restored tissue homeostasis, substantially extending healthspan and lifespan even when administered late in life.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
