@@ -3390,6 +3390,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "High-affinity cross-reactivity between Epstein-Barr virus nuclear antigen 1 (EBNA1) and the central nervous system protein GlialCAM plays a critical role in the pathogenesis of multiple sclerosis. Antibodies from individuals with multiple sclerosis bind to EBNA1 and GlialCAM, providing a molecular mechanism for EBV-induced autoimmune pathology.",
     },
   ],
+  "thoi-quen-nhai-ky-no-lau-vi-sinh-duong-ruot-vi": [
+    {
+      ordinal: 1,
+      label: "Mastication and the gut brain axis: Physiological effects on satiety, digestion and microbiota",
+      pmid: "",
+      doi: "10.3177/jnsv.67.315",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Journal of Nutritional Science and Vitaminology",
+      year: 2021,
+      abstract: "Chewing is the initial and fundamental step of digestion that profoundly influences overall metabolic health. Prolonged mastication enhances the secretion of digestive enzymes, modulates neuroendocrine responses including gut hormones like PYY and GLP-1, and regulates energy homeostasis through the gut brain axis. Furthermore, optimal mechanical breakdown of food alters substrate availability for colonic fermentation, thereby shaping the composition and metabolic activity of the gut microbiota.",
+    },
+  ],
+  "thoi-quen-nhai-ky-no-lau-vi-sinh-duong-ruot-en": [
+    {
+      ordinal: 1,
+      label: "Mastication and the gut brain axis: Physiological effects on satiety, digestion and microbiota",
+      pmid: "",
+      doi: "10.3177/jnsv.67.315",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Journal of Nutritional Science and Vitaminology",
+      year: 2021,
+      abstract: "Chewing is the initial and fundamental step of digestion that profoundly influences overall metabolic health. Prolonged mastication enhances the secretion of digestive enzymes, modulates neuroendocrine responses including gut hormones like PYY and GLP-1, and regulates energy homeostasis through the gut brain axis. Furthermore, optimal mechanical breakdown of food alters substrate availability for colonic fermentation, thereby shaping the composition and metabolic activity of the gut microbiota.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
