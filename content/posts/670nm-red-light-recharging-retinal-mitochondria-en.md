@@ -13,12 +13,12 @@ doi: "10.1038/s41598-021-02311-1"
 gizmo: null
 lang: "en"
 image: "/images/posts/670nm-red-light-recharging-retinal-mitochondria-en.jpg"
-imageAlt: "Biomedical molecular illustration for 670nm Red Light Therapy: Recharging Retinal Mitochondria and Reversing Visual Fatigue"
+imageAlt: "Peaceful morning routine with soothing 670nm deep red ambient light supporting retinal mitochondrial vitality"
 ---
 
 After a long day staring at computer monitors and smartphone screens, do you notice your vision getting blurrier, your eyes feeling dry, and colors appearing washed out? Most people label this as digital eye strain and assume that a few lubricating eye drops or a short nap will fix it. However, the underlying biological reality is far more profound. The human retina, particularly the cone and rod photoreceptor cells, possesses the highest density of mitochondria in the entire body. These cells consume oxygen and energy at a rate significantly higher than even the heart or brain. Past the age of 40, the ATP energy output of these retinal mitochondria drops by up to 30 percent, plunging the eyes into a state of chronic cellular energy crisis. Groundbreaking research from University College London (UCL) has demonstrated that exposure to deep red light at a wavelength of 670nm for just a few minutes in the morning can rapidly recharge these cellular batteries, restoring color contrast sensitivity and significantly alleviating visual fatigue.
 
-![Biomedical molecular illustration for 670nm Red Light Therapy: Recharging Retinal Mitochondria and Reversing Visual Fatigue](/images/posts/670nm-red-light-recharging-retinal-mitochondria-en.jpg)
+![Peaceful morning routine with soothing 670nm deep red ambient light supporting retinal mitochondrial vitality](/images/posts/670nm-red-light-recharging-retinal-mitochondria-en.jpg)
 
 > *"Imagine the mitochondria in your retinal cells as microscopic hydroelectric turbines. As we age or strain our eyes under harsh blue digital light, the nanoscopic water layer around these turbines becomes viscous like thick syrup, drastically slowing down ATP energy production. A specific 670nm red light acts as a tuned optical heater that thins out this viscous water layer and strips away molecular debris, allowing the energy turbines to spin at full speed again after just a few minutes of exposure."*
 

@@ -13,12 +13,12 @@ doi: "10.1016/j.cmet.2022.04.011"
 gizmo: null
 lang: "vi"
 image: "/images/posts/thoi-quen-nhai-ky-noi-sinh-hoc-tieu-hoa-vi.jpg"
-imageAlt: "Đồ họa phân tử y sinh Bí mật của việc nhai kỹ: Đánh thức tín hiệu no đủ và bảo vệ hệ vi sinh đường ruột"
+imageAlt: "Bữa ăn lành mạnh với rau xanh tươi mát, thưởng thức chậm rãi và nhai kỹ giúp tối ưu hóa tiêu hóa"
 ---
 
 Trong guồng quay bận rộn của cuộc sống hiện đại, bữa ăn đôi khi chỉ còn là một thủ tục nhanh chóng để nạp nhiên liệu giữa các cuộc họp hoặc màn hình máy tính. Chúng ta có thói quen nuốt vội vàng, đếm từng phút cho bữa trưa và hiếm khi để ý xem mình đã nhai bao nhiêu lần trước khi nuốt. Hiểu lầm phổ biến nhất là nhiều người nghĩ rằng dạ dày có axit mạnh thì việc nhai thế nào không quan trọng, miễn là thức ăn đi xuống được bên dưới. Tuy nhiên, sinh lý học hiện đại đã chứng minh rằng dạ dày không có răng, và việc bỏ qua công đoạn nhai kỹ chính là nguyên nhân gốc rễ gây ra hàng loạt rối loạn chuyển hóa từ chứng đầy hơi, kháng insulin cho đến việc mất kiểm soát cảm giác thèm ăn. Quá trình tiêu hóa không hề bắt đầu từ dạ dày, mà khởi nguồn từ chính sự chuyển động nhịp nhàng của hàm răng và những giọt nước bọt đầu tiên trong khoang miệng. Khi ta chậm lại, từng nhát nhai không chỉ đơn thuần là xé nhỏ thức ăn, mà còn là một bản giao hưởng tín hiệu thần kinh nội tiết vô cùng tinh vi, đánh thức các hormone báo no, chuẩn bị sẵn sàng dịch vị và bảo vệ hệ vi sinh vật đường ruột khỏi những tổn thương mạn tính.
 
-![Đồ họa phân tử y sinh Bí mật của việc nhai kỹ: Đánh thức tín hiệu no đủ và bảo vệ hệ vi sinh đường ruột](/images/posts/thoi-quen-nhai-ky-noi-sinh-hoc-tieu-hoa-vi.jpg)
+![Bữa ăn lành mạnh với rau xanh tươi mát, thưởng thức chậm rãi và nhai kỹ giúp tối ưu hóa tiêu hóa](/images/posts/thoi-quen-nhai-ky-noi-sinh-hoc-tieu-hoa-vi.jpg)
 
 > *"Hãy tưởng tượng hệ tiêu hóa của bạn giống như một hệ thống xử lý rác thải đô thị quy mô lớn. Khoang miệng và tuyến nước bọt chính là trạm phân loại và nghiền nát đầu nguồn. Nếu bạn ném những khối vật liệu khổng lồ, nguyên vẹn trực tiếp xuống nhà máy xử lý ở phía dưới là dạ dày và ruột non, các cỗ máy sẽ phải làm việc quá tải, nghiền nát đến kiệt sức và dễ sinh ra rác thải ùn ứ gây ô nhiễm. Ngược lại, khi bạn nhai kỹ, giống như việc đưa qua trạm tiền xử lý tinh vi, mọi thứ được cắt nhỏ, tẩm ướp enzym tiêu hóa và phân loại rõ ràng, giúp dòng chảy đi đến đâu là chuyển hóa sạch sẽ và sinh năng lượng tới đó mà không gây nghẽn mạch hay quá tải hệ thống."*
 

@@ -122,7 +122,10 @@ function createDispatchMarkdown(topic, lang = 'vi', scheduledIsoDate) {
     ? 'Tiến sĩ Khoa học Tự nhiên (Dr. rer. nat.) · Đại học Hamburg, CHLB Đức'
     : 'Doctor of Natural Sciences (Dr. rer. nat.) · University of Hamburg, Germany';
   const imgPath = `/images/posts/${slug}.jpg`;
-  const imgAlt = isVi ? `Đồ họa phân tử y sinh ${topic.titleVi}` : `Biomedical molecular illustration for ${topic.titleEn}`;
+  const isLifeTier = (topic.tier === 'Life Dispatch' || topic.tier === 'life');
+  const imgAlt = isVi 
+    ? (isLifeTier ? `Hình ảnh đời sống khoa học thường thức: ${topic.titleVi}` : `Đồ họa phân tử y sinh ${topic.titleVi}`)
+    : (isLifeTier ? `Lifestyle science photography for ${topic.titleEn}` : `Biomedical molecular illustration for ${topic.titleEn}`);
 
   const tagsYaml = tags.map(t => `"${sanitizeTypography(t)}"`).join(', ');
 
@@ -277,7 +280,46 @@ async function createFallbackIllustration(slug, topic = {}) {
   const targetPath = path.join(imagesDir, `${slug}.jpg`);
   if (fs.existsSync(targetPath)) return;
 
+  const isLifeDispatch = (topic.tier === "Life Dispatch" || topic.tier === "life" || !topic.tier);
   const organ = topic.organ || "Metabolic";
+
+  // Thư viện ảnh đời sống / khoa học thường thức gần gũi (ánh sáng tự nhiên, thói quen ăn uống, giấc ngủ, vận động)
+  const LIFE_DISPATCH_ARCHETYPES = {
+    Gut: [
+      path.join(imagesDir, 'an-rau-truoc-com-kiem-soat-duong-huyet-vi.jpg'),
+      path.join(imagesDir, 'tinh-bot-khang-com-nguoi-nuoi-vi-khuan-ruot-vi.jpg'),
+      path.join(imagesDir, 'thoi-quen-nhai-ky-noi-sinh-hoc-tieu-hoa-vi.jpg'),
+      path.join(imagesDir, 'chewing-slowly-satiety-gut-hormones.jpg')
+    ],
+    Brain: [
+      path.join(imagesDir, 'green-tea-l-theanine-and-caffeine-smooth-focus-en.jpg'),
+      path.join(imagesDir, 'anh-sang-xanh-ban-dem-pha-vo-giac-ngu-vi.jpg'),
+      path.join(imagesDir, 'morning-sunlight-circadian-clock-metabolism.jpg'),
+      path.join(imagesDir, 'nhip-tho-cham-4-7-8-kich-hoat-day-than-kinh-phe-vi.jpg')
+    ],
+    "Cellular Aging": [
+      path.join(imagesDir, 'anh-sang-do-670nm-sac-pin-ty-the-vong-mac-vi.jpg'),
+      path.join(imagesDir, 'nature-pill-twenty-minutes-cortisol-reduction.jpg'),
+      path.join(imagesDir, 'sauna-bathing-cardiovascular-longevity-heat-shock-proteins.jpg')
+    ],
+    Metabolic: [
+      path.join(imagesDir, 'an-rau-truoc-com-kiem-soat-duong-huyet-vi.jpg'),
+      path.join(imagesDir, 'di-bo-10-phut-sau-bua-an-kich-hoat-co-bap-vi.jpg'),
+      path.join(imagesDir, 'vi-sao-ca-phe-sang-gay-sup-nguon-10h-vi.jpg'),
+      path.join(imagesDir, 'apple-cider-vinegar-before-meals-glucose-blunting-en.jpg')
+    ],
+    Immune: [
+      path.join(imagesDir, 'green-tea-l-theanine-and-caffeine-smooth-focus-en.jpg'),
+      path.join(imagesDir, 'berries-anthocyanins-vascular-protection-antioxidant-shield.jpg'),
+      path.join(imagesDir, 'dark-chocolate-flavanols-nitric-oxide-endothelial-function.jpg')
+    ],
+    Heart: [
+      path.join(imagesDir, 'di-bo-10-phut-sau-bua-an-kich-hoat-co-bap-vi.jpg'),
+      path.join(imagesDir, 'breaking-sedentary-sitting-vascular-shear-stress.jpg'),
+      path.join(imagesDir, 'ngu-trua-20-phut-phuc-hoi-tim-mach.jpg'),
+      path.join(imagesDir, 'tam-nuoc-nong-hay-nuoc-lanh-truoc-khi-ngu-vi.jpg')
+    ]
+  };
 
   // Dedicated authentic 8K Nature-grade 3D Cinematic Molecular Artwork library categorized by Organ
   const ORGAN_CINEMATIC_ARCHETYPES = {
@@ -311,21 +353,26 @@ async function createFallbackIllustration(slug, topic = {}) {
     ]
   };
 
-  const pool = ORGAN_CINEMATIC_ARCHETYPES[organ] || ORGAN_CINEMATIC_ARCHETYPES.Metabolic;
+  const pool = isLifeDispatch
+    ? (LIFE_DISPATCH_ARCHETYPES[organ] || LIFE_DISPATCH_ARCHETYPES.Metabolic)
+    : (ORGAN_CINEMATIC_ARCHETYPES[organ] || ORGAN_CINEMATIC_ARCHETYPES.Metabolic);
+
   let chosenArchetype = pool.find(p => fs.existsSync(p));
 
   if (!chosenArchetype) {
-    // Global fallback to any authentic 3D cinematic artwork
-    chosenArchetype = path.join(imagesDir, 'alpha-ketoglutarate-tre-hoa-bieu-gen-vi.jpg');
+    chosenArchetype = isLifeDispatch
+      ? path.join(imagesDir, 'an-rau-truoc-com-kiem-soat-duong-huyet-vi.jpg')
+      : path.join(imagesDir, 'alpha-ketoglutarate-tre-hoa-bieu-gen-vi.jpg');
   }
 
   try {
     fs.copyFileSync(chosenArchetype, targetPath);
-    console.log(`🎨 [3D Cinematic Artwork Assigned] Đã gán kiệt tác đồ họa phân tử 3D chuẩn Nature cho ${slug} (${fs.statSync(targetPath).size} bytes)`);
+    console.log(`🎨 [Artwork Assigned] Đã gán ảnh bìa (${isLifeDispatch ? 'Khoa học Thường thức / Lifestyle' : 'Mô phỏng Phân tử 3D'}) cho ${slug} (${fs.statSync(targetPath).size} bytes)`);
   } catch (err) {
-    console.warn(`⚠️ [Artwork] Lỗi khi copy 3D cinematic artwork: ${err.message}`);
+    console.warn(`⚠️ [Artwork] Lỗi khi copy artwork: ${err.message}`);
   }
 }
+
 
 export async function runAutonomousDispatch() {
   console.log('================================================================');

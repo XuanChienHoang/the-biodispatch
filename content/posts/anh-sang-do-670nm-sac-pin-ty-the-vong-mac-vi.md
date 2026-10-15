@@ -13,12 +13,12 @@ doi: "10.1038/s41598-021-02311-1"
 gizmo: null
 lang: "vi"
 image: "/images/posts/anh-sang-do-670nm-sac-pin-ty-the-vong-mac-vi.jpg"
-imageAlt: "Đồ họa phân tử y sinh Liệu pháp ánh sáng đỏ 670nm: Bí quyết sạc pin ty thể võng mạc và xua tan mỏi mắt"
+imageAlt: "Không gian buổi sáng thư thái tiếp xúc ánh sáng đỏ 670nm giúp phục hồi năng lượng và bảo vệ thị lực"
 ---
 
 Sau cả ngày dài làm việc liên tục trước màn hình máy tính hay điện thoại, bạn có cảm thấy mắt mình trở nên mờ nhòe, khô rát và màu sắc xung quanh như bị nhạt đi? Hầu hết mọi người đều gán cho hiện tượng này cái tên mỏi mắt kỹ thuật số và tin rằng chỉ cần nhỏ vài giọt nước mắt nhân tạo hay nhắm mắt nghỉ ngơi là đủ. Nhưng sự thật sinh học lại phức tạp và sâu xa hơn nhiều. Võng mạc mắt người, đặc biệt là các tế bào thụ cảm ánh sáng như tế bào nón và tế bào que, chứa mật độ ty thể cao nhất trong toàn bộ cơ thể. Chúng tiêu thụ năng lượng oxy với tốc độ khủng khiếp, gấp nhiều lần cả cơ tim hay não bộ. Từ sau tuổi 40, hiệu suất sản xuất năng lượng ATP của các ty thể này giảm đến 30 phần trăm, khiến mắt rơi vào trạng thái khủng hoảng năng lượng mạn tính. Đột phá từ Đại học College London (UCL) đã chứng minh rằng việc tiếp xúc với ánh sáng đỏ sâu bước sóng 670nm trong vòng vài phút vào buổi sáng có thể nhanh chóng sạc lại nguồn pin tế bào này, khôi phục khả năng phân biệt màu sắc và giảm tình trạng mỏi mắt rõ rệt.
 
-![Đồ họa phân tử y sinh Liệu pháp ánh sáng đỏ 670nm: Bí quyết sạc pin ty thể võng mạc và xua tan mỏi mắt](/images/posts/anh-sang-do-670nm-sac-pin-ty-the-vong-mac-vi.jpg)
+![Không gian buổi sáng thư thái tiếp xúc ánh sáng đỏ 670nm giúp phục hồi năng lượng và bảo vệ thị lực](/images/posts/anh-sang-do-670nm-sac-pin-ty-the-vong-mac-vi.jpg)
 
 > *"Hãy hình dung ty thể trong tế bào võng mạc như những chiếc động cơ thủy điện siêu nhỏ. Khi tuổi tác tăng lên hoặc khi làm việc quá sức dưới ánh sáng xanh, nước xung quanh chong chóng động cơ bị đặc lại giống như hồ đặc si-rô, khiến các tuốc-bin sinh năng lượng ATP quay vô cùng chậm chạp. Ánh sáng đỏ 670nm đóng vai trò như một nguồn nhiệt lượng quang học đặc hiệu, làm loãng lớp nước này và thổi bay các phân tử rác bám trên động cơ, giúp các tuốc-bin năng lượng quay trở lại với tốc độ tối đa chỉ sau vài phút chiếu sáng."*
 

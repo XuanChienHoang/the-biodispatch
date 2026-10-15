@@ -13,12 +13,12 @@ doi: "10.1016/j.cmet.2022.04.011"
 gizmo: null
 lang: "en"
 image: "/images/posts/thoi-quen-nhai-ky-noi-sinh-hoc-tieu-hoa-en.jpg"
-imageAlt: "Biomedical molecular illustration for The secret of thorough mastication: Awakening satiety signals and protecting the gut microbiome"
+imageAlt: "Wholesome, mindful dining with colorful fresh vegetables, demonstrating thorough mastication for optimal gut health"
 ---
 
 Amidst the fast-paced rhythm of modern life, meals often devolve into a hurried procedure simply to refuel between meetings or computer screens. We have developed the habit of swallowing quickly, counting minutes during lunch, and rarely noticing how many times we chew before swallowing. A common misconception is assuming that the stomach possesses strong acid, rendering the manner of chewing irrelevant as long as food goes down. However, modern physiology proves that the stomach has no teeth, and bypassing thorough mastication serves as a root cause for numerous metabolic disorders ranging from bloating and insulin resistance to uncontrolled appetite. Digestion does not begin in the stomach; it originates from the rhythmic movement of the jaw and the initial drops of saliva in the oral cavity. When we slow down, each chew is not merely shredding food, but conducting a sophisticated neuroendocrine signaling symphony that awakens satiety hormones, pre-conditions gastric juices, and protects the gut microbiome from chronic damage.
 
-![Biomedical molecular illustration for The secret of thorough mastication: Awakening satiety signals and protecting the gut microbiome](/images/posts/thoi-quen-nhai-ky-noi-sinh-hoc-tieu-hoa-en.jpg)
+![Wholesome, mindful dining with colorful fresh vegetables, demonstrating thorough mastication for optimal gut health](/images/posts/thoi-quen-nhai-ky-noi-sinh-hoc-tieu-hoa-en.jpg)
 
 > *"Imagine your digestive system as a large-scale municipal waste treatment facility. The oral cavity and salivary glands serve as the frontline sorting and crushing station. If you toss massive, intact blocks of material directly down to the processing plants below, namely the stomach and small intestine, the machinery will become overworked, exhausted, and prone to generating stagnant pollution. Conversely, thorough chewing acts like a sophisticated pre-treatment station where everything is diced, infused with digestive enzymes, and neatly sorted, ensuring a clean, energy-yielding flow throughout the system without causing bottlenecks or overload."*
 
