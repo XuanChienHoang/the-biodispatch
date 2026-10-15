@@ -3364,6 +3364,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Senescent cells accumulate with age and contribute to tissue dysfunction and multiple age-related chronic diseases. We screened a panel of flavonoid polyphenols and identified fisetin as a potent senolytic agent. Treatment of progeroid and aged wild-type mice with fisetin reduced senescent markers, suppressed the senescence-associated secretory phenotype (SASP), alleviated age-related tissue pathologies, and restored tissue homeostasis, substantially extending healthspan and lifespan even when administered late in life.",
     },
   ],
+  "virus-epstein-barr-va-da-xo-cung-bat-chuoc-phan-tu-vi": [
+    {
+      ordinal: 1,
+      label: "Enhanced and cross-reactive in vitro memory B cell response against Epstein-Barr virus nuclear antigen 1 in multiple sclerosis",
+      pmid: "39257578",
+      doi: "10.3389/fimmu.2024.1334720",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Front Immunol",
+      year: 2024,
+      abstract: "High-affinity cross-reactivity between Epstein-Barr virus nuclear antigen 1 (EBNA1) and the central nervous system protein GlialCAM plays a critical role in the pathogenesis of multiple sclerosis. Antibodies from individuals with multiple sclerosis bind to EBNA1 and GlialCAM, providing a molecular mechanism for EBV-induced autoimmune pathology.",
+    },
+  ],
+  "epstein-barr-virus-multiple-sclerosis-molecular-mimicry-en": [
+    {
+      ordinal: 1,
+      label: "Enhanced and cross-reactive in vitro memory B cell response against Epstein-Barr virus nuclear antigen 1 in multiple sclerosis",
+      pmid: "39257578",
+      doi: "10.3389/fimmu.2024.1334720",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Front Immunol",
+      year: 2024,
+      abstract: "High-affinity cross-reactivity between Epstein-Barr virus nuclear antigen 1 (EBNA1) and the central nervous system protein GlialCAM plays a critical role in the pathogenesis of multiple sclerosis. Antibodies from individuals with multiple sclerosis bind to EBNA1 and GlialCAM, providing a molecular mechanism for EBV-induced autoimmune pathology.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
