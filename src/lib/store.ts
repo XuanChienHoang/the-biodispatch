@@ -3416,6 +3416,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Chewing is the initial and fundamental step of digestion that profoundly influences overall metabolic health. Prolonged mastication enhances the secretion of digestive enzymes, modulates neuroendocrine responses including gut hormones like PYY and GLP-1, and regulates energy homeostasis through the gut brain axis. Furthermore, optimal mechanical breakdown of food alters substrate availability for colonic fermentation, thereby shaping the composition and metabolic activity of the gut microbiota.",
     },
   ],
+  "giu-am-mui-va-mien-dich-ngoai-bao-vi": [
+    {
+      ordinal: 1,
+      label: "Cold exposure impairs extracellular vesicle swarm-mediated nasal antiviral immunity",
+      pmid: "36494212",
+      doi: "10.1016/j.jaci.2022.09.037",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "J Allergy Clin Immunol",
+      year: 2023,
+      abstract: "Nasal epithelial cells release an extracellular vesicle (EV) swarm in response to Toll-like receptor 3 (TLR3) stimulation that acts as an antiviral defense mechanism by binding and neutralizing respiratory viruses through decoy receptors and microRNAs. Exposure of human nasal tissue to cold temperature reduces the tissue temperature by 5°C, which significantly impairs TLR3-stimulated EV secretion by 41.9%, diminishes EV-packaged microRNA expression, and reduces EV surface ICAM-1 decoy receptors, providing a biological mechanism for the seasonality of upper respiratory tract infections.",
+    },
+  ],
+  "keep-nose-warm-nasal-vesicle-immunity-en": [
+    {
+      ordinal: 1,
+      label: "Cold exposure impairs extracellular vesicle swarm-mediated nasal antiviral immunity",
+      pmid: "36494212",
+      doi: "10.1016/j.jaci.2022.09.037",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "J Allergy Clin Immunol",
+      year: 2023,
+      abstract: "Nasal epithelial cells release an extracellular vesicle (EV) swarm in response to Toll-like receptor 3 (TLR3) stimulation that acts as an antiviral defense mechanism by binding and neutralizing respiratory viruses through decoy receptors and microRNAs. Exposure of human nasal tissue to cold temperature reduces the tissue temperature by 5°C, which significantly impairs TLR3-stimulated EV secretion by 41.9%, diminishes EV-packaged microRNA expression, and reduces EV surface ICAM-1 decoy receptors, providing a biological mechanism for the seasonality of upper respiratory tract infections.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
