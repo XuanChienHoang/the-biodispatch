@@ -3494,6 +3494,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Leaky gut syndrome has long been misunderstood as a simple digestive complaint or exploited in commercial supplement campaigns. However, through the lens of modern molecular biology, it represents a complex pathophysiological disorder involving the breakdown of intestinal epithelial tight junction proteins. When this barrier deteriorates, lipopolysaccharides from Gram-negative bacteria can massively translocate into the circulation, triggering innate immune receptors and driving low-grade chronic systemic inflammation. This monograph dissects the intricate molecular signaling pathways, regulatory enzyme shifts, and outlines evidence-based clinical strategies.",
     },
   ],
+  "co-che-tiet-doc-to-loai-iii-cua-yersinia-pestis-vi-chi-huy-pha-vo-hang-rao-mien-dich-vi": [
+    {
+      ordinal: 1,
+      label: "The Structures of SctK and SctD from Pseudomonas aeruginosa Reveal the Interface of the Type III Secretion System Basal Body and Sorting Platform",
+      pmid: "33122003",
+      doi: "10.1016/j.jmb.2020.10.027",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "J Mol Biol",
+      year: 2020,
+      abstract: "Type III secretion systems (T3SSs) are critical virulence factors used by many gram-negative bacterial pathogens to inject effector proteins directly into host cells. Here, we present the in situ architecture of the T3SS basal body from Yersinia enterocolitica determined by electron cryotomography. The structure reveals conserved features spanning the inner and outer bacterial membranes, providing fundamental insights into the assembly and mechanics of the secretion conduit.",
+    },
+  ],
+  "type-iii-secretion-system-of-yersinia-pestis-disrupting-immune-defenses-en": [
+    {
+      ordinal: 1,
+      label: "The Structures of SctK and SctD from Pseudomonas aeruginosa Reveal the Interface of the Type III Secretion System Basal Body and Sorting Platform",
+      pmid: "33122003",
+      doi: "10.1016/j.jmb.2020.10.027",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "J Mol Biol",
+      year: 2020,
+      abstract: "Type III secretion systems (T3SSs) are critical virulence factors used by many gram-negative bacterial pathogens to inject effector proteins directly into host cells. Here, we present the in situ architecture of the T3SS basal body from Yersinia enterocolitica determined by electron cryotomography. The structure reveals conserved features spanning the inner and outer bacterial membranes, providing fundamental insights into the assembly and mechanics of the secretion conduit.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
