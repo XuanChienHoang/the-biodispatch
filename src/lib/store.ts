@@ -3468,6 +3468,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Alterations in the composition of the gut microbiota have been linked to psychiatric disorders such as major depressive disorder. Here, we demonstrate that transplantation of microbiota from depressed patients into germ-free mice induces behavioral and physiological features of depression in the recipient animals, including reduced locomotor activity and anhedonia-like behavior. These findings provide causal evidence that gut microbiota alterations contribute to the pathogenesis of depression, highlighting the critical role of the microbiome-gut-brain axis in mental health and metabolic regulation.",
     },
   ],
+  "co-che-ro-ri-ruot-va-xu-huong-viêm-he-thong-vi": [
+    {
+      ordinal: 1,
+      label: "High-fructose diet-induced gut dysbiosis as a mechanistic driver of chronic inflammation and accelerated biological aging: a comprehensive review",
+      pmid: "42662784",
+      doi: "10.3389/fmicb.2026.1865281",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Front Microbiol",
+      year: 2026,
+      abstract: "Leaky gut syndrome has long been misunderstood as a simple digestive complaint or exploited in commercial supplement campaigns. However, through the lens of modern molecular biology, it represents a complex pathophysiological disorder involving the breakdown of intestinal epithelial tight junction proteins. When this barrier deteriorates, lipopolysaccharides from Gram-negative bacteria can massively translocate into the circulation, triggering innate immune receptors and driving low-grade chronic systemic inflammation. This monograph dissects the intricate molecular signaling pathways, regulatory enzyme shifts, and outlines evidence-based clinical strategies.",
+    },
+  ],
+  "leaky-gut-syndrome-and-systemic-inflammation-en": [
+    {
+      ordinal: 1,
+      label: "High-fructose diet-induced gut dysbiosis as a mechanistic driver of chronic inflammation and accelerated biological aging: a comprehensive review",
+      pmid: "42662784",
+      doi: "10.3389/fmicb.2026.1865281",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Front Microbiol",
+      year: 2026,
+      abstract: "Leaky gut syndrome has long been misunderstood as a simple digestive complaint or exploited in commercial supplement campaigns. However, through the lens of modern molecular biology, it represents a complex pathophysiological disorder involving the breakdown of intestinal epithelial tight junction proteins. When this barrier deteriorates, lipopolysaccharides from Gram-negative bacteria can massively translocate into the circulation, triggering innate immune receptors and driving low-grade chronic systemic inflammation. This monograph dissects the intricate molecular signaling pathways, regulatory enzyme shifts, and outlines evidence-based clinical strategies.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
