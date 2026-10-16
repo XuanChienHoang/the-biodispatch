@@ -3442,6 +3442,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Nasal epithelial cells release an extracellular vesicle (EV) swarm in response to Toll-like receptor 3 (TLR3) stimulation that acts as an antiviral defense mechanism by binding and neutralizing respiratory viruses through decoy receptors and microRNAs. Exposure of human nasal tissue to cold temperature reduces the tissue temperature by 5°C, which significantly impairs TLR3-stimulated EV secretion by 41.9%, diminishes EV-packaged microRNA expression, and reduces EV surface ICAM-1 decoy receptors, providing a biological mechanism for the seasonality of upper respiratory tract infections.",
     },
   ],
+  "truc-nao-ruot-va-con-duong-phe-vi-vi-khuan-gaba-vi": [
+    {
+      ordinal: 1,
+      label: "Dynamic alterations of depressive-like behaviors, gut microbiome, and fecal metabolome in social defeat stress mice",
+      pmid: "40169555",
+      doi: "10.1038/s41398-025-03326-2",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Transl Psychiatry",
+      year: 2025,
+      abstract: "Alterations in the composition of the gut microbiota have been linked to psychiatric disorders such as major depressive disorder. Here, we demonstrate that transplantation of microbiota from depressed patients into germ-free mice induces behavioral and physiological features of depression in the recipient animals, including reduced locomotor activity and anhedonia-like behavior. These findings provide causal evidence that gut microbiota alterations contribute to the pathogenesis of depression, highlighting the critical role of the microbiome-gut-brain axis in mental health and metabolic regulation.",
+    },
+  ],
+  "gut-brain-axis-vagal-gaba-pathway-en": [
+    {
+      ordinal: 1,
+      label: "Dynamic alterations of depressive-like behaviors, gut microbiome, and fecal metabolome in social defeat stress mice",
+      pmid: "40169555",
+      doi: "10.1038/s41398-025-03326-2",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Transl Psychiatry",
+      year: 2025,
+      abstract: "Alterations in the composition of the gut microbiota have been linked to psychiatric disorders such as major depressive disorder. Here, we demonstrate that transplantation of microbiota from depressed patients into germ-free mice induces behavioral and physiological features of depression in the recipient animals, including reduced locomotor activity and anhedonia-like behavior. These findings provide causal evidence that gut microbiota alterations contribute to the pathogenesis of depression, highlighting the critical role of the microbiome-gut-brain axis in mental health and metabolic regulation.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
