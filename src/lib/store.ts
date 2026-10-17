@@ -3520,6 +3520,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Type III secretion systems (T3SSs) are critical virulence factors used by many gram-negative bacterial pathogens to inject effector proteins directly into host cells. Here, we present the in situ architecture of the T3SS basal body from Yersinia enterocolitica determined by electron cryotomography. The structure reveals conserved features spanning the inner and outer bacterial membranes, providing fundamental insights into the assembly and mechanics of the secretion conduit.",
     },
   ],
+  "thu-tu-an-uong-glp1-duong-huyet-vi": [
+    {
+      ordinal: 1,
+      label: "Eating Vegetables First Regardless of Eating Speed Has a Significant Reducing Effect on Postprandial Blood Glucose and Insulin in Young Healthy Women: Randomized Controlled Cross-Over Study",
+      pmid: "36904173",
+      doi: "10.3390/nu15051174",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Nutrients",
+      year: 2023,
+      abstract: "This study evaluated the effect of meal sequence on postprandial glucose and insulin levels in individuals with type 2 diabetes. Eating vegetables and protein before carbohydrates led to significantly lower postprandial glucose and insulin spikes compared to eating carbohydrates first, highlighting food order as a simple behavioral intervention for metabolic health.",
+    },
+  ],
+  "meal-sequencing-glp1-glucose-en": [
+    {
+      ordinal: 1,
+      label: "Eating Vegetables First Regardless of Eating Speed Has a Significant Reducing Effect on Postprandial Blood Glucose and Insulin in Young Healthy Women: Randomized Controlled Cross-Over Study",
+      pmid: "36904173",
+      doi: "10.3390/nu15051174",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Nutrients",
+      year: 2023,
+      abstract: "This study evaluated the effect of meal sequence on postprandial glucose and insulin levels in individuals with type 2 diabetes. Eating vegetables and protein before carbohydrates led to significantly lower postprandial glucose and insulin spikes compared to eating carbohydrates first, highlighting food order as a simple behavioral intervention for metabolic health.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
