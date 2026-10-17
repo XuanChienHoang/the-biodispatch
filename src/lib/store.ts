@@ -3598,6 +3598,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Highly pathogenic avian H5N1 influenza A viruses occasionally transmit to humans, causing severe pneumonia with high mortality, yet they do not spread efficiently from person to person. Here we show that avian virus hemagglutinins preferentially recognize alpha-2,3-linked sialic acid receptors, which are abundant in human lower respiratory tract tissues such as alveolar pneumocytes, but rare in the upper respiratory tract where alpha-2,6-linked sialic acid receptors dominate. This anatomic distribution explains why human infections cause deep lung damage rather than easily transmissible nasal shedding.",
     },
   ],
+  "vitamin-d3-k2-mk7-chong-voi-hoa-dong-mach-vi": [
+    {
+      ordinal: 1,
+      label: "The Synergistic Interplay between Vitamins D and K for Bone and Cardiovascular Health: A Narrative Review",
+      pmid: "29138634",
+      doi: "10.1155/2017/7454376",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Int J Endocrinol",
+      year: 2017,
+      abstract: "Vitamins D and K are fat-soluble vitamins that play crucial roles in calcium homeostasis and bone metabolism. While vitamin D promotes intestinal calcium absorption, vitamin K acts as an essential cofactor for the carboxylation of vitamin K-dependent proteins such as osteocalcin and matrix Gla protein (MGP), which govern bone mineralization and inhibit arterial calcification, respectively. Emerging clinical evidence highlights that combined supplementation of vitamins D and K synergistically improves bone mineral density while mitigating the progression of vascular calcification and arterial stiffness, offering a novel paradigm in metabolic longevity and preventive cardiovascular care.",
+    },
+  ],
+  "vitamin-d3-k2-mk7-arterial-calcification-en": [
+    {
+      ordinal: 1,
+      label: "The Synergistic Interplay between Vitamins D and K for Bone and Cardiovascular Health: A Narrative Review",
+      pmid: "29138634",
+      doi: "10.1155/2017/7454376",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Int J Endocrinol",
+      year: 2017,
+      abstract: "Vitamins D and K are fat-soluble vitamins that play crucial roles in calcium homeostasis and bone metabolism. While vitamin D promotes intestinal calcium absorption, vitamin K acts as an essential cofactor for the carboxylation of vitamin K-dependent proteins such as osteocalcin and matrix Gla protein (MGP), which govern bone mineralization and inhibit arterial calcification, respectively. Emerging clinical evidence highlights that combined supplementation of vitamins D and K synergistically improves bone mineral density while mitigating the progression of vascular calcification and arterial stiffness, offering a novel paradigm in metabolic longevity and preventive cardiovascular care.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
