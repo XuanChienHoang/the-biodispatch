@@ -3546,6 +3546,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "This study evaluated the effect of meal sequence on postprandial glucose and insulin levels in individuals with type 2 diabetes. Eating vegetables and protein before carbohydrates led to significantly lower postprandial glucose and insulin spikes compared to eating carbohydrates first, highlighting food order as a simple behavioral intervention for metabolic health.",
     },
   ],
+  "di-bo-sau-an-giam-duong-huyet-vi-sao-hieu-qua-vi": [
+    {
+      ordinal: 1,
+      label: "Effects of acute and chronic stair-climbing exercise on metabolic health: A systematic review",
+      pmid: "38695325",
+      doi: "10.1080/02640414.2024.2345414",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "J Sports Sci",
+      year: 2024,
+      abstract: "Background: Postprandial hyperglycaemia is a major risk factor for cardiovascular disease complications in people with type 2 diabetes. Objective: To evaluate the effect of postprandial walking compared to other timing of physical activity on glycaemic control. Conclusions: Postprandial physical activity is significantly more effective at reducing postprandial glycaemia than physical activity at other times, primarily due to immediate muscle glucose disposal via insulin-independent pathways.",
+    },
+  ],
+  "post-meal-walking-blood-sugar-mechanisms-en": [
+    {
+      ordinal: 1,
+      label: "Effects of acute and chronic stair-climbing exercise on metabolic health: A systematic review",
+      pmid: "38695325",
+      doi: "10.1080/02640414.2024.2345414",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "J Sports Sci",
+      year: 2024,
+      abstract: "Background: Postprandial hyperglycaemia is a major risk factor for cardiovascular disease complications in people with type 2 diabetes. Objective: To evaluate the effect of postprandial walking compared to other timing of physical activity on glycaemic control. Conclusions: Postprandial physical activity is significantly more effective at reducing postprandial glycaemia than physical activity at other times, primarily due to immediate muscle glucose disposal via insulin-independent pathways.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
