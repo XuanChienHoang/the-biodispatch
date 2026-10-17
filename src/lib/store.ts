@@ -3572,6 +3572,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Background: Postprandial hyperglycaemia is a major risk factor for cardiovascular disease complications in people with type 2 diabetes. Objective: To evaluate the effect of postprandial walking compared to other timing of physical activity on glycaemic control. Conclusions: Postprandial physical activity is significantly more effective at reducing postprandial glycaemia than physical activity at other times, primarily due to immediate muscle glucose disposal via insulin-independent pathways.",
     },
   ],
+  "cum-gia-cam-h5n1-thu-the-acid-sialic-vi": [
+    {
+      ordinal: 1,
+      label: "Avian flu: influenza virus receptors in the human airway",
+      pmid: "16554799",
+      doi: "10.1038/440435a",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Nature",
+      year: 2006,
+      abstract: "Highly pathogenic avian H5N1 influenza A viruses occasionally transmit to humans, causing severe pneumonia with high mortality, yet they do not spread efficiently from person to person. Here we show that avian virus hemagglutinins preferentially recognize alpha-2,3-linked sialic acid receptors, which are abundant in human lower respiratory tract tissues such as alveolar pneumocytes, but rare in the upper respiratory tract where alpha-2,6-linked sialic acid receptors dominate. This anatomic distribution explains why human infections cause deep lung damage rather than easily transmissible nasal shedding.",
+    },
+  ],
+  "avian-flu-h5n1-sialic-acid-receptors-en": [
+    {
+      ordinal: 1,
+      label: "Avian flu: influenza virus receptors in the human airway",
+      pmid: "16554799",
+      doi: "10.1038/440435a",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Nature",
+      year: 2006,
+      abstract: "Highly pathogenic avian H5N1 influenza A viruses occasionally transmit to humans, causing severe pneumonia with high mortality, yet they do not spread efficiently from person to person. Here we show that avian virus hemagglutinins preferentially recognize alpha-2,3-linked sialic acid receptors, which are abundant in human lower respiratory tract tissues such as alveolar pneumocytes, but rare in the upper respiratory tract where alpha-2,6-linked sialic acid receptors dominate. This anatomic distribution explains why human infections cause deep lung damage rather than easily transmissible nasal shedding.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
