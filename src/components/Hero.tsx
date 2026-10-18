@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Search, Sparkles, BookOpen, FlaskConical, Award } from "lucide-react";
+import { ArrowUpRight, Search, Sparkles, BookOpen, FlaskConical, Award, ShieldCheck, Scale, CheckCircle2 } from "lucide-react";
 import { Wordmark } from "@/components/InstrumentRail";
 import { useLanguageStore, DICT } from "@/lib/i18n";
 import { SearchModal } from "@/components/SearchModal";
@@ -156,73 +156,89 @@ export function Hero({ articles = [] }: { articles?: Article[] }) {
               </div>
             </div>
 
-            {/* Cột Phải (5/12): Card giới thiệu Tác giả & 3 Trụ cột Khoa học */}
+            {/* Cột Phải (5/12): Card Tiêu chuẩn Liêm chính Học thuật & Minh bạch Y văn */}
             <div className="lg:col-span-5">
               <div className="rounded-sm border border-slate-hair bg-paper-tint/80 p-5 sm:p-6 shadow-xs">
                 <div className="flex items-start justify-between border-b border-slate-hair pb-3.5">
                   <div>
                     <span className="caps text-[11px] font-bold text-trace-ink">
-                      {isVi ? "CHỦ BIÊN TÒA SOẠN" : "CURATOR & LEAD INVESTIGATOR"}
+                      {isVi ? "NGUYÊN TẮC BIÊN TẬP" : "EDITORIAL MANIFESTO"}
                     </span>
                     <h3 className="font-display text-lg font-bold text-indigo-deep mt-0.5">
-                      {isVi ? "TS. Hoàng Xuân Chiến" : "Dr. Xuan Chien Hoang"}
+                      {isVi ? "Chuẩn mực Liêm chính Y sinh" : "Biomedical Integrity Standards"}
                     </h3>
                     <p className="text-xs text-slate-ink mt-0.5">
                       {isVi
-                        ? "Tiến sĩ Sinh học Phân tử (Dr. rer. nat.) · ĐH Hamburg, CHLB Đức"
-                        : "Dr. rer. nat. in Molecular Biology · University of Hamburg"}
+                        ? "Cam kết minh bạch nguồn dẫn và loại bỏ xung đột lợi ích"
+                        : "Transparent citation trails & zero commercial bias"}
                     </p>
                   </div>
-                  <span className="rounded bg-indigo-deep px-2 py-1 text-[10px] font-mono font-bold text-trace">
-                    EBM Verified
+                  <span className="rounded bg-teal-800 px-2 py-1 text-[10px] font-mono font-bold text-white tracking-wide">
+                    100% Peer-Reviewed
                   </span>
                 </div>
 
-                <div className="mt-4 space-y-3 text-xs">
+                <div className="mt-4 space-y-3.5 text-xs">
                   <div className="flex items-start gap-2.5">
-                    <div className="mt-0.5 rounded p-1 bg-amber-50 text-amber-600 shrink-0">
-                      <Sparkles size={13} />
+                    <div className="mt-0.5 rounded p-1 bg-teal-50 text-teal-700 shrink-0">
+                      <ShieldCheck size={14} />
                     </div>
                     <div>
                       <span className="font-semibold text-indigo-deep">
-                        {isVi ? "Dược lý học Tự nhiên Á - Âu: " : "East-West Ethnobotanicals: "}
+                        {isVi ? "100% Y văn Thực chứng: " : "100% Evidence-Based: "}
                       </span>
                       <span className="text-slate-ink">
                         {isVi
-                          ? "Chuẩn hóa hoạt chất, tối ưu hấp thu (sinh khả dụng)."
-                          : "Standardized active phytochemicals & bioavailability."}
+                          ? "Mọi phát hiện đều đối soát trực tiếp qua mã định danh quốc tế PubMed PMID và DOI thử nghiệm lâm sàng."
+                          : "Every mechanistic claim is anchored to verified PubMed PMIDs and clinical trial DOIs."}
                       </span>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-2.5">
-                    <div className="mt-0.5 rounded p-1 bg-teal-50 text-teal-600 shrink-0">
-                      <BookOpen size={13} />
+                    <div className="mt-0.5 rounded p-1 bg-amber-50 text-amber-700 shrink-0">
+                      <BookOpen size={14} />
                     </div>
                     <div>
                       <span className="font-semibold text-indigo-deep">
-                        {isVi ? "100% Y học Thực chứng: " : "Evidence-Based Medicine: "}
+                        {isVi ? "Ẩn dụ Sinh học Dễ hiểu: " : "Intuitive Biological Analogies: "}
                       </span>
                       <span className="text-slate-ink">
                         {isVi
-                          ? "Đối soát trực tiếp mã PubMed PMID và DOI thử nghiệm lâm sàng."
-                          : "Strictly backed by primary PubMed PMIDs and clinical DOIs."}
+                          ? "Chuyển hóa cơ chế phân tử phức tạp thành câu chuyện đời sống trực quan, triệt tiêu cấu trúc AI sáo rỗng."
+                          : "Deconstructing intricate pathways into vivid real-world mental models without generic AI fluff."}
                       </span>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-2.5">
-                    <div className="mt-0.5 rounded p-1 bg-cyan-50 text-cyan-600 shrink-0">
-                      <FlaskConical size={13} />
+                    <div className="mt-0.5 rounded p-1 bg-rose-50 text-rose-700 shrink-0">
+                      <Scale size={14} />
                     </div>
                     <div>
                       <span className="font-semibold text-indigo-deep">
-                        {isVi ? "Mô phỏng Dược động học: " : "Simulation Engines: "}
+                        {isVi ? "Độc lập & Minh bạch Tuyệt đối: " : "Independent & Commercial-Free: "}
                       </span>
                       <span className="text-slate-ink">
                         {isVi
-                          ? "Các công cụ tính toán nồng độ thuốc, hiệp đồng và chỉ số."
-                          : "Interactive local calculators for PK curves and biomarkers."}
+                          ? "Không nhận quảng cáo thương mại từ nhãn hàng TPCN; phân định nghiêm ngặt In Vivo (người) vs In Vitro."
+                          : "Zero brand sponsorships; strictly discerning human In Vivo clinical data from In Vitro cell assays."}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-2.5">
+                    <div className="mt-0.5 rounded p-1 bg-cyan-50 text-cyan-700 shrink-0">
+                      <FlaskConical size={14} />
+                    </div>
+                    <div>
+                      <span className="font-semibold text-indigo-deep">
+                        {isVi ? "Mô phỏng Dược động học Tương tác: " : "Interactive Simulation Tools: "}
+                      </span>
+                      <span className="text-slate-ink">
+                        {isVi
+                          ? "Trang bị các công cụ tính toán nồng độ thuốc, tương tác hoạt chất và sơ đồ con đường chuyển hóa độc quyền."
+                          : "Providing open-access mathematical calculators for PK clearance curves and synergistic interactions."}
                       </span>
                     </div>
                   </div>
