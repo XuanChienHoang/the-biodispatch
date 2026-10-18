@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   outputFileTracingRoot: path.join(__dirname),
   transpilePackages: ["framer-motion"],
+  serverExternalPackages: ["msedge-tts", "ws"],
   images: {
     unoptimized: true,
   },

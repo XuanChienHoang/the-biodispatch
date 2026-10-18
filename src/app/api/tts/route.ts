@@ -1,7 +1,47 @@
 import { NextRequest, NextResponse } from "next/server";
+import { MsEdgeTTS, OUTPUT_FORMAT } from "msedge-tts";
 
 export const runtime = "nodejs";
 
+const VI_VOICES = {
+  female: "vi-VN-HoaiMyNeural",
+  male: "vi-VN-NamMinhNeural",
+};
+
+const EN_VOICES = {
+  female: "en-US-EmmaNeural",
+  male: "en-US-AndrewNeural",
+};
+
+/**
+ * Tổng hợp giọng đọc Neural đời mới chất lượng cao với ngữ điệu tự nhiên, nhấn nhá như người thật.
+ * Sử dụng Microsoft Azure Neural Voice (vi-VN-HoaiMyNeural và vi-VN-NamMinhNeural).
+ * Tự động dự phòng sang Google TTS nếu có gián đoạn kết nối.
+ */
+async function synthesizeWithEdge(text: string, voice: string): Promise<Buffer> {
+  const tts = new MsEdgeTTS();
+  await tts.setMetadata(voice, OUTPUT_FORMAT.AUDIO_24KHZ_48KBITRATE_MONO_MP3);
+
+  return new Promise((resolve, reject) => {
+    const timeout = setTimeout(() => {
+      reject(new Error("Edge Neural TTS timeout after 15s"));
+    }, 15000);
+
+    const { audioStream } = tts.toStream(text);
+    const chunks: Buffer[] = [];
+    audioStream.on("data", (chunk: Buffer) => chunks.push(chunk));
+    audioStream.on("end", () => {
+      clearTimeout(timeout);
+      resolve(Buffer.concat(chunks));
+    });
+    audioStream.on("error", (err) => {
+      clearTimeout(timeout);
+      reject(err);
+    });
+  });
+}
+
+// Fallback Google Translate TTS nếu xảy ra lỗi kết nối
 function splitTextIntoChunks(text: string, maxLength = 140): string[] {
   const clean = text.replace(/\s+/g, " ").trim();
   if (clean.length <= maxLength) return [clean];
@@ -36,7 +76,7 @@ function splitTextIntoChunks(text: string, maxLength = 140): string[] {
   return chunks;
 }
 
-async function fetchChunk(chunk: string, lang: string): Promise<Buffer> {
+async function fetchGoogleChunk(chunk: string, lang: string): Promise<Buffer> {
   const ttsUrl = `https://translate.google.com/translate_tts?ie=UTF-8&tl=${encodeURIComponent(lang)}&client=tw-ob&q=${encodeURIComponent(chunk)}`;
   const res = await fetch(ttsUrl, {
     headers: {
@@ -45,43 +85,64 @@ async function fetchChunk(chunk: string, lang: string): Promise<Buffer> {
       Referer: "https://translate.google.com/",
     },
   });
-  if (!res.ok) {
-    throw new Error(`TTS fetch failed with status ${res.status}`);
-  }
+  if (!res.ok) throw new Error(`Google TTS status ${res.status}`);
   const arrayBuf = await res.arrayBuffer();
   return Buffer.from(arrayBuf);
 }
 
-/**
- * Proxy stream âm thanh tiếng Việt chuẩn tự nhiên qua Google Neural TTS với cơ chế tự động chia đoạn và ghép MP3 buffer.
- * Giúp mọi thiết bị (kể cả Windows/iOS/Android không cài gói giọng đọc) đều nghe được giọng tiếng Việt tự nhiên 100%.
- */
+async function synthesizeWithGoogle(text: string, lang: string): Promise<Buffer> {
+  const chunks = splitTextIntoChunks(text, 140);
+  const buffers = await Promise.all(chunks.map((c) => fetchGoogleChunk(c, lang)));
+  return Buffer.concat(buffers);
+}
+
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const text = searchParams.get("text") || "";
   const lang = searchParams.get("lang") || "vi";
+  const gender = searchParams.get("gender") || "female"; // 'female' | 'male'
 
   if (!text.trim()) {
     return new NextResponse("Text required", { status: 400 });
   }
 
-  // Giới hạn an toàn 1500 ký tự cho một bản tóm tắt âm thanh
-  const safeText = text.slice(0, 1500);
-  const chunks = splitTextIntoChunks(safeText, 140);
+  const safeText = text.slice(0, 2000).trim();
+
+  // Xác định giọng đọc Neural đời mới nhất
+  const isVi = lang === "vi";
+  const voice = isVi
+    ? gender === "male"
+      ? VI_VOICES.male
+      : VI_VOICES.female
+    : gender === "male"
+    ? EN_VOICES.male
+    : EN_VOICES.female;
 
   try {
-    const buffers = await Promise.all(chunks.map((c) => fetchChunk(c, lang)));
-    const merged = Buffer.concat(buffers);
-
-    return new NextResponse(merged, {
+    // 1. Giọng Neural AI đời mới nhất (Azure Neural Model)
+    const audioBuffer = await synthesizeWithEdge(safeText, voice);
+    return new NextResponse(new Uint8Array(audioBuffer), {
       headers: {
         "Content-Type": "audio/mpeg",
-        "Content-Length": merged.length.toString(),
+        "Content-Length": audioBuffer.length.toString(),
         "Cache-Control": "public, max-age=86400, s-maxage=86400",
+        "X-TTS-Engine": "Azure-Neural",
       },
     });
   } catch (err: any) {
-    console.error("TTS Route Error:", err);
-    return new NextResponse(`Error: ${err.message}`, { status: 500 });
+    console.warn("Edge Neural TTS failed, fallback to Google TTS:", err.message);
+    try {
+      const fallbackBuffer = await synthesizeWithGoogle(safeText, lang);
+      return new NextResponse(new Uint8Array(fallbackBuffer), {
+        headers: {
+          "Content-Type": "audio/mpeg",
+          "Content-Length": fallbackBuffer.length.toString(),
+          "Cache-Control": "public, max-age=86400, s-maxage=86400",
+          "X-TTS-Engine": "Google-Fallback",
+        },
+      });
+    } catch (fallbackErr: any) {
+      return new NextResponse(`Error: ${fallbackErr.message}`, { status: 500 });
+    }
   }
 }

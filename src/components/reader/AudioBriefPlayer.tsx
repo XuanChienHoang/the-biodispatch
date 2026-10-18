@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Play, Pause, RotateCcw, Headphones, Loader2, Volume2 } from "lucide-react";
+import { Play, Pause, RotateCcw, Headphones, Loader2, UserCheck, Sparkles } from "lucide-react";
 
 interface AudioBriefPlayerProps {
   title: string;
@@ -11,13 +11,14 @@ interface AudioBriefPlayerProps {
 
 /**
  * Widget trình phát bản tin tóm tắt âm thanh (Audio Brief Player).
- * Sử dụng luồng âm thanh tiếng Việt chuẩn tự nhiên qua /api/tts (Google Neural TTS),
- * khắc phục triệt để lỗi giọng đọc tiếng Anh mặc định trên hệ điều hành Windows/iOS.
+ * Sử dụng mô hình Neural AI thế hệ mới (Microsoft Azure Neural TTS: vi-VN-HoaiMy & vi-VN-NamMinh),
+ * mang lại giọng đọc tự nhiên, có ngắt nghỉ, biểu cảm và nhấn nhá nhịp nhàng như biên tập viên chuyên nghiệp.
  */
 export function AudioBriefPlayer({ title, summaryText, isVi }: AudioBriefPlayerProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [speed, setSpeed] = useState<1 | 1.25 | 1.5>(1);
+  const [voiceGender, setVoiceGender] = useState<"female" | "male">("female");
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
@@ -38,11 +39,11 @@ export function AudioBriefPlayer({ title, summaryText, isVi }: AudioBriefPlayerP
     };
   }, []);
 
-  const initAudio = () => {
+  const initAudio = (selectedGender = voiceGender) => {
     if (audioRef.current) return audioRef.current;
 
     const lang = isVi ? "vi" : "en";
-    const src = `/api/tts?text=${encodeURIComponent(textToRead)}&lang=${lang}`;
+    const src = `/api/tts?text=${encodeURIComponent(textToRead)}&lang=${lang}&gender=${selectedGender}`;
     const audio = new Audio(src);
     audio.playbackRate = speed;
 
@@ -123,6 +124,30 @@ export function AudioBriefPlayer({ title, summaryText, isVi }: AudioBriefPlayerP
     }
   };
 
+  const handleToggleGender = () => {
+    const nextGender = voiceGender === "female" ? "male" : "female";
+    setVoiceGender(nextGender);
+    
+    // Reset audio instance to switch voice stream
+    const wasPlaying = isPlaying;
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.src = "";
+      audioRef.current = null;
+    }
+    setIsPlaying(false);
+    setProgress(0);
+    setCurrentTime(0);
+
+    if (wasPlaying) {
+      setTimeout(() => {
+        const audio = initAudio(nextGender);
+        setIsLoading(true);
+        audio.play().then(() => setIsPlaying(true)).catch(() => setIsLoading(false));
+      }, 80);
+    }
+  };
+
   const handleReset = () => {
     if (audioRef.current) {
       audioRef.current.pause();
@@ -165,12 +190,13 @@ export function AudioBriefPlayer({ title, summaryText, isVi }: AudioBriefPlayerP
             <Headphones size={16} />
           </div>
           <div>
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-1.5 flex-wrap">
               <span className="caps text-[10px] font-bold text-teal-800 tracking-wide">
                 AUDIO BRIEF
               </span>
-              <span className="rounded bg-teal-100 px-1.5 py-0.2 text-[9px] font-mono text-teal-800 font-semibold">
-                {isVi ? "Giọng Tiếng Việt chuẩn" : "Natural Voice"}
+              <span className="inline-flex items-center gap-1 rounded bg-teal-100 px-1.5 py-0.2 text-[9px] font-mono text-teal-800 font-semibold">
+                <Sparkles size={9} />
+                {isVi ? "Neural AI · Nhấn nhá tự nhiên" : "Neural AI · Natural Prosody"}
               </span>
             </div>
             <h4 className="font-display text-xs sm:text-sm font-bold text-indigo-deep">
@@ -180,13 +206,32 @@ export function AudioBriefPlayer({ title, summaryText, isVi }: AudioBriefPlayerP
         </div>
 
         {/* Player Controls */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-wrap">
           {/* Time display */}
           {duration > 0 && (
             <span className="font-mono text-[11px] text-slate-ink mr-1">
               {formatTime(currentTime)} / {formatTime(duration)}
             </span>
           )}
+
+          {/* Voice Gender Switcher */}
+          <button
+            type="button"
+            onClick={handleToggleGender}
+            title={isVi ? "Đổi giọng đọc Nam / Nữ" : "Switch Male / Female voice"}
+            className="flex items-center gap-1 rounded border border-slate-hair bg-paper px-2 py-1 text-[11px] font-medium text-slate-ink hover:text-indigo-deep hover:border-indigo-deep cursor-pointer transition-colors"
+          >
+            <UserCheck size={11} className="text-teal-700" />
+            <span>
+              {isVi
+                ? voiceGender === "female"
+                  ? "Hoài My (Nữ)"
+                  : "Nam Minh (Nam)"
+                : voiceGender === "female"
+                ? "Emma (F)"
+                : "Andrew (M)"}
+            </span>
+          </button>
 
           {/* Speed Toggle */}
           <button
