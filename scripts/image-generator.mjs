@@ -245,6 +245,41 @@ async function fetchFromWikimediaCommons(keyword) {
 }
 
 /**
+ * 5. Tải ảnh nhiếp ảnh mở chất lượng cao từ Openverse (WordPress Foundation - Hoàn toàn không cần Key)
+ */
+async function fetchFromOpenverse(keyword) {
+  try {
+    const url = `https://api.openverse.org/v1/images/?q=${encodeURIComponent(keyword)}&page_size=5`;
+    const res = await fetch(url, {
+      headers: { 'User-Agent': 'Phytocodex-Engine/2.0 (contact: info@phytocodex.com)' }
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    const results = data.results || [];
+
+    for (const item of results) {
+      if (item.url && !item.url.endsWith('.svg')) {
+        try {
+          const imgRes = await fetch(item.url, {
+            headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }
+          });
+          if (imgRes.ok) {
+            const arrayBuffer = await imgRes.arrayBuffer();
+            const buf = Buffer.from(arrayBuffer);
+            if (buf.length > 25000) return buf;
+          }
+        } catch (e) {
+          // ignore single item fetch failure
+        }
+      }
+    }
+  } catch (err) {
+    console.warn(`[Openverse Warning]: ${err.message}`);
+  }
+  return null;
+}
+
+/**
  * Chuẩn hóa ảnh về tỷ lệ vàng 16:9 (1280x720) và tự động sinh thumbnail WebP song song
  */
 async function processAndSaveImage(rawBuffer, slug) {
@@ -321,7 +356,16 @@ export async function generateDispatchImage(slug, topic = {}) {
     }
   }
 
-  // TẦNG 4: Wikimedia Commons (Kho ảnh tiêu bản khoa học mở, không cần Key)
+  // TẦNG 4: Openverse (WordPress Foundation - Hơn 700 triệu ảnh CC chất lượng cao, không cần Key)
+  console.log(`🌐 [Image Engine] Tìm kiếm ảnh nhiếp ảnh thực tế qua Openverse (Keyless)...`);
+  const openverseBuffer = await fetchFromOpenverse(keyword);
+  if (openverseBuffer && openverseBuffer.length > 20000) {
+    await processAndSaveImage(openverseBuffer, slug);
+    console.log(`✅ [Image Engine] Đã lấy và chuẩn hóa ảnh Openverse -> ${slug}.jpg`);
+    return targetPath;
+  }
+
+  // TẦNG 5: Wikimedia Commons (Kho ảnh tiêu bản khoa học mở, không cần Key)
   console.log(`🔬 [Image Engine] Tìm kiếm kho tư liệu ảnh khoa học thực tế mở (Wikimedia Commons)...`);
   const wikiBuffer = await fetchFromWikimediaCommons(keyword);
   if (wikiBuffer && wikiBuffer.length > 20000) {
