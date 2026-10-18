@@ -3651,6 +3651,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "This systematic review and meta-analysis investigated the acute effects of breaking up uninterrupted prolonged sitting with intermittent bouts of light-intensity walking versus standing on postprandial cardiometabolic biomarkers. Seven randomized crossover studies met inclusion criteria, revealing that interrupting sedentary sitting with brief, light-intensity walking significantly blunted postprandial glucose and insulin area under the curve compared with continuous sitting. The meta-analytic findings confirm that light physical movement shortly after meals serves as an efficacious, non-pharmacological strategy for improving postprandial glycemic control in adults.",
     },
   ],
+  "tam-trang-bat-an-bat-nguon-tu-duong-ruot-vagus-nerve-gaba-vi": [
+    {
+      ordinal: 1,
+      label: "Ingestion of Lactobacillus strain regulates emotional behavior and central GABA receptor expression in a mouse via the vagus nerve",
+      pmid: "21876150",
+      doi: "10.1073/pnas.1102999108",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Proc Natl Acad Sci U S A",
+      year: 2011,
+      abstract: "There is an increasing association between gut microbiota and central nervous system function. Here, we show that chronic treatment with Lactobacillus rhamnosus (JB-1) induced region-dependent alterations in GABA-B1b and GABA-A alpha-2 mRNA expression in the brain. Importantly, L. rhamnosus reduced stress-induced corticosterone and anxiety- and depression-related behaviors. The neurochemical and behavioral effects were absent in vagotomized mice, identifying the vagus nerve as a major modulatory constitutive communication pathway between gut bacteria and the brain.",
+    },
+  ],
+  "how-gut-microbes-talk-to-the-brain-vagus-nerve-gaba-en": [
+    {
+      ordinal: 1,
+      label: "Ingestion of Lactobacillus strain regulates emotional behavior and central GABA receptor expression in a mouse via the vagus nerve",
+      pmid: "21876150",
+      doi: "10.1073/pnas.1102999108",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Proc Natl Acad Sci U S A",
+      year: 2011,
+      abstract: "There is an increasing association between gut microbiota and central nervous system function. Here, we show that chronic treatment with Lactobacillus rhamnosus (JB-1) induced region-dependent alterations in GABA-B1b and GABA-A alpha-2 mRNA expression in the brain. Importantly, L. rhamnosus reduced stress-induced corticosterone and anxiety- and depression-related behaviors. The neurochemical and behavioral effects were absent in vagotomized mice, identifying the vagus nerve as a major modulatory constitutive communication pathway between gut bacteria and the brain.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
