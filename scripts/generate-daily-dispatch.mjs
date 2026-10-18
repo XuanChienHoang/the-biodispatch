@@ -130,6 +130,43 @@ function createDispatchMarkdown(topic, lang = 'vi', scheduledIsoDate) {
 
   const tagsYaml = tags.map(t => `"${sanitizeTypography(t)}"`).join(', ');
 
+  // v2: Extract or synthesize brief & practical data for modern reader experience
+  const rawBrief = isVi ? (topic.briefVi || topic.brief) : (topic.briefEn || topic.brief);
+  const rawPractical = isVi ? (topic.practicalVi || topic.practical) : (topic.practicalEn || topic.practical);
+
+  let briefYaml = '';
+  if (rawBrief && (rawBrief.bottomLine || (Array.isArray(rawBrief.takeaways) && rawBrief.takeaways.length > 0))) {
+    const bottomLineStr = rawBrief.bottomLine ? `brief:\n  bottomLine: "${sanitizeTypography(rawBrief.bottomLine)}"\n` : 'brief:\n';
+    const evidenceStr = rawBrief.evidence ? `  evidence: "${rawBrief.evidence}"\n` : '';
+    const takeawaysList = Array.isArray(rawBrief.takeaways) && rawBrief.takeaways.length > 0
+      ? `  takeaways:\n` + rawBrief.takeaways.map(t => `    - "${sanitizeTypography(t)}"`).join('\n') + '\n'
+      : '';
+    briefYaml = `${bottomLineStr}${evidenceStr}${takeawaysList}`;
+  } else {
+    // Tự động suy luận tóm tắt nếu model chưa sinh
+    const fallbackBottomLine = excerpt.split('.')[0] || title;
+    const fallbackTakeaways = sections.slice(0, 3).map(s => s.heading.replace(/^\d+[\.\s]*/, '')).filter(Boolean);
+    briefYaml = `brief:\n  bottomLine: "${sanitizeTypography(fallbackBottomLine)}"\n  evidence: "human-observational"\n  takeaways:\n` +
+      fallbackTakeaways.map(t => `    - "${sanitizeTypography(t)}"`).join('\n') + '\n';
+  }
+
+  let practicalYaml = '';
+  if (rawPractical) {
+    const steps = Array.isArray(rawPractical.steps) && rawPractical.steps.length > 0
+      ? `  steps:\n` + rawPractical.steps.map(s => `    - "${sanitizeTypography(s)}"`).join('\n') + '\n'
+      : '';
+    const avoidIf = Array.isArray(rawPractical.avoidIf) && rawPractical.avoidIf.length > 0
+      ? `  avoidIf:\n` + rawPractical.avoidIf.map(s => `    - "${sanitizeTypography(s)}"`).join('\n') + '\n'
+      : '';
+    const interactions = Array.isArray(rawPractical.interactions) && rawPractical.interactions.length > 0
+      ? `  interactions:\n` + rawPractical.interactions.map(s => `    - "${sanitizeTypography(s)}"`).join('\n') + '\n'
+      : '';
+    const seeDoctor = rawPractical.seeDoctor ? `  seeDoctor: "${sanitizeTypography(rawPractical.seeDoctor)}"\n` : '';
+    if (steps || avoidIf || interactions || seeDoctor) {
+      practicalYaml = `practical:\n${steps}${avoidIf}${interactions}${seeDoctor}`;
+    }
+  }
+
   let bodyContent = `---
 title: "${sanitizeTypography(title)}"
 date: "${scheduledIsoDate}"
@@ -146,7 +183,7 @@ gizmo: ${topic.gizmo ? `"${topic.gizmo}"` : 'null'}
 lang: "${lang}"
 image: "${imgPath}"
 imageAlt: "${sanitizeTypography(imgAlt)}"
----
+${briefYaml}${practicalYaml}---
 
 ${sanitizeTypography(lead)}
 

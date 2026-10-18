@@ -253,7 +253,37 @@ TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON SCHEMA VỚI CẤU TRÚC:
     { "heading": "1. Heading 1: Molecular Mechanisms", "body": "Section 1 detailed molecular analysis (min 200 words)..." },
     { "heading": "2. Heading 2: Fact-Checking & Comparative Metrics", "body": "Section 2 in-depth discussion...\\n\\n| Physiological State | Molecular Concentration | Clinical Endpoint |\\n| :--- | :--- | :--- |\\n| Homeostatic Baseline | Normal physiological range | Optimal function |\\n| Pathological Strain | Pathological elevation | Chronic cellular stress |\\n| Optimized Intervention | Functional restoration | Resilient cellular longevity |\\n\\nFurther detailed discussion..." },
     { "heading": "3. Practical Takeaways & Safety Guidelines", "body": "Section 3 actionable clinical protocols (min 200 words)..." }
-  ]
+  ],
+  "briefVi": {
+    "bottomLine": "Một câu kết luận súc tích, đắt giá, dễ hiểu cho người bình thường",
+    "evidence": "human-rct",
+    "takeaways": [
+      "Ý chính 1 (1 câu ngắn)",
+      "Ý chính 2 (1 câu ngắn)",
+      "Ý chính 3 (1 câu ngắn)"
+    ]
+  },
+  "briefEn": {
+    "bottomLine": "One clear bottom-line practical insight",
+    "evidence": "human-rct",
+    "takeaways": [
+      "Key takeaway 1",
+      "Key takeaway 2",
+      "Key takeaway 3"
+    ]
+  },
+  "practicalVi": {
+    "steps": ["Việc nên làm 1", "Việc nên làm 2"],
+    "avoidIf": ["Những ai cần thận trọng hoặc không nên áp dụng"],
+    "interactions": ["Tương tác thuốc hoặc thực phẩm đáng chú ý"],
+    "seeDoctor": "Khi nào cần đi khám hoặc tham vấn bác sĩ"
+  },
+  "practicalEn": {
+    "steps": ["Actionable step 1", "Actionable step 2"],
+    "avoidIf": ["Cautions or contraindications"],
+    "interactions": ["Known drug or nutrient interactions"],
+    "seeDoctor": "When to consult a healthcare provider"
+  }
 };
 
 ${feedback ? `\n\n🚨 PHẢN HỒI QUAN TRỌNG TỪ HỆ THỐNG BIÊN TẬP (BẮT BUỘC KHẮC PHỤC TRONG LẦN NÀY):\n${feedback}\nHãy chắc chắn bản thảo tiếng Việt đạt trên 850 từ và bản tiếng Anh đạt trên 700 từ, có đầy đủ bảng so sánh Markdown!` : ''}`;
