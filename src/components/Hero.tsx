@@ -165,7 +165,7 @@ export function Hero({ articles = [] }: { articles?: Article[] }) {
                       {isVi ? "NGUYÊN TẮC BIÊN TẬP" : "EDITORIAL MANIFESTO"}
                     </span>
                     <h3 className="font-display text-lg font-bold text-indigo-deep mt-0.5">
-                      {isVi ? "Chuẩn mực Liêm chính Y sinh" : "Biomedical Integrity Standards"}
+                      {isVi ? "Tiêu Chuẩn Học Thuật & Minh Bạch" : "Academic Standards & Transparency"}
                     </h3>
                     <p className="text-xs text-slate-ink mt-0.5">
                       {isVi
@@ -201,12 +201,12 @@ export function Hero({ articles = [] }: { articles?: Article[] }) {
                     </div>
                     <div>
                       <span className="font-semibold text-indigo-deep">
-                        {isVi ? "Ẩn dụ Sinh học Dễ hiểu: " : "Intuitive Biological Analogies: "}
+                        {isVi ? "Ẩn dụ Sinh học Trực quan: " : "Intuitive Biological Analogies: "}
                       </span>
                       <span className="text-slate-ink">
                         {isVi
-                          ? "Chuyển hóa cơ chế phân tử phức tạp thành câu chuyện đời sống trực quan, triệt tiêu cấu trúc AI sáo rỗng."
-                          : "Deconstructing intricate pathways into vivid real-world mental models without generic AI fluff."}
+                          ? "Chuyển hóa cơ chế phân tử phức tạp thành câu chuyện đời sống gần gũi, chuẩn xác và dễ tiếp cận."
+                          : "Deconstructing intricate pathways into vivid, accessible real-world mental models."}
                       </span>
                     </div>
                   </div>
