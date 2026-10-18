@@ -14,7 +14,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-export function validateDispatchContent(markdownString, lang = 'vi') {
+export function validateDispatchContent(markdownString, lang = 'vi', options = {}) {
   const issues = [];
   const { data: frontmatter, content } = matter(markdownString);
 
@@ -98,6 +98,33 @@ export function validateDispatchContent(markdownString, lang = 'vi') {
       const stats = fs.statSync(imgFullPath);
       if (stats.size < 30000) {
         issues.push(`Ảnh bài viết quá nhỏ (${stats.size} bytes). Phát hiện ảnh placeholder hoặc SVG thô sơ, bắt buộc là đồ họa y sinh chất lượng cao (>= 30KB).`);
+      }
+    }
+  }
+
+  // 9. KIỂM ĐỊNH V2 READER BRIEF (Key Takeaways & Bottom Line)
+  if (options.isStrictV2 || frontmatter.brief) {
+    if (!frontmatter.brief || typeof frontmatter.brief !== 'object') {
+      issues.push('Thiếu cấu trúc v2 brief trong frontmatter (cần bottomLine và takeaways).');
+    } else {
+      if (!frontmatter.brief.bottomLine || frontmatter.brief.bottomLine.length < 15) {
+        issues.push('Trường brief.bottomLine quá ngắn hoặc không có nội dung kết luận thực tiễn.');
+      }
+      if (!Array.isArray(frontmatter.brief.takeaways) || frontmatter.brief.takeaways.length < 2) {
+        issues.push('Trường brief.takeaways phải có tối thiểu 2 điểm mấu chốt.');
+      }
+    }
+  }
+
+  // 10. KIỂM ĐỊNH V2 PRACTICAL GUIDE (An toàn & Hướng dẫn thực hành)
+  if (options.isStrictV2 || frontmatter.practical) {
+    if (!frontmatter.practical || typeof frontmatter.practical !== 'object') {
+      issues.push('Thiếu cấu trúc v2 practical trong frontmatter (cần steps hoặc avoidIf).');
+    } else {
+      const hasSteps = Array.isArray(frontmatter.practical.steps) && frontmatter.practical.steps.length > 0;
+      const hasAvoid = Array.isArray(frontmatter.practical.avoidIf) && frontmatter.practical.avoidIf.length > 0;
+      if (!hasSteps && !hasAvoid) {
+        issues.push('Trường practical phải có ít nhất steps hoặc avoidIf.');
       }
     }
   }

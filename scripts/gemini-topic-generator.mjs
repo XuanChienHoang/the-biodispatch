@@ -95,7 +95,20 @@ QUY TẮC BẮT BUỘC:
    - "refDoi": Mã DOI CHÍNH XÁC CỦA BÀI BÁO (bắt đầu bằng 10.xxxx/..., khi bấm vào https://doi.org/[refDoi] PHẢI mở đúng bài báo này).
    - "refPmid": Mã PMID chính xác trên PubMed tương ứng với DOI đó.
    - "refAbstract": Tóm tắt học thuật bằng tiếng Anh của chính nghiên cứu đó (khoảng 3-4 câu).
-   - TUYỆT ĐỐI KHÔNG gán DOI của bài báo này cho bài báo khác!`;
+   - TUYỆT ĐỐI KHÔNG gán DOI của bài báo này cho bài báo khác!
+10. CẤU TRÚC ĐOẠN VĂN THOÁNG ĐÃNG (CHỐNG BỨC TƯỜNG CHỮ):
+   - Mỗi đoạn văn (paragraph) chỉ dài 2-4 câu (khoảng 80-120 từ/đoạn). Thường xuyên xuống dòng tạo khoảng trắng, giúp độc giả trên điện thoại đọc êm mắt, tiếp thu trọn vẹn.
+11. BỘ TÓM TẮT & HƯỚNG DẪN THỰC HÀNH V2 (BRIEF & PRACTICAL GUIDE):
+   - Bắt buộc điền đầy đủ "briefVi", "briefEn", "practicalVi", "practicalEn":
+   - "bottomLine": 1 câu đắt giá nhất giải thích độc giả được lợi gì trong cuộc sống thực tế.
+   - "evidence": Chọn chuẩn xác mức bằng chứng ('human-rct', 'human-observational', 'mixed', 'review', 'animal', 'in-vitro').
+   - "takeaways": Đúng 3 gạch đầu dòng then chốt, mỗi gạch 1 câu súc tích.
+   - "steps": 2-3 hành động thực tiễn (thời điểm, liều dùng, mẹo áp dụng).
+   - "avoidIf": Cảnh báo thận trọng / chống chỉ định.
+   - "interactions": Tương tác thuốc hoặc thực phẩm.
+   - "seeDoctor": Triệu chứng báo động cần đi khám bác sĩ.
+12. HỆ THỐNG TAGS THEO TRIỆU CHỨNG (HEALTH GOALS TAXONOMY):
+   - tagsVi và tagsEn bắt buộc chứa từ khóa tìm kiếm theo triệu chứng gần gũi (như: giac-ngu, duong-huyet, mo-mau, ruot, chong-lao-hoa, nang-luong, stress) để hệ thống tự động phân loại vào các mục sức khỏe trên trang chủ.`;
 
   // Đa dạng hóa chuyên đề theo 6 trụ cột y sinh thực tế & xu hướng thời sự y học
   const DOMAIN_PILLARS = [

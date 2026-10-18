@@ -95,6 +95,10 @@ function normalizeTopic(topic, targetTier) {
   t.readingTimeVi = t.readingTimeVi || '8 phút đọc';
   t.readingTimeEn = t.readingTimeEn || '8 min read';
   t.doi = t.doi || '';
+  t.briefVi = (topic.briefVi && typeof topic.briefVi === 'object') ? topic.briefVi : (topic.brief || null);
+  t.briefEn = (topic.briefEn && typeof topic.briefEn === 'object') ? topic.briefEn : (topic.brief || null);
+  t.practicalVi = (topic.practicalVi && typeof topic.practicalVi === 'object') ? topic.practicalVi : (topic.practical || null);
+  t.practicalEn = (topic.practicalEn && typeof topic.practicalEn === 'object') ? topic.practicalEn : (topic.practical || null);
   if (!t.titleVi || !t.titleEn || !t.slugVi || !t.slugEn || t.sectionsVi.length < 2 || t.sectionsEn.length < 2) {
     console.warn(`⚠️ [Normalize] Topic thiếu trường lõi (title/slug/sections) -> loại bỏ.`);
     return null;
@@ -554,28 +558,28 @@ export async function runAutonomousDispatch() {
     await createFallbackIllustration(targetSlugVi, nextTopic);
     await createFallbackIllustration(targetSlugEn, nextTopic);
 
-    // 2. Tạo bài viết tiếng Việt & Kiểm định chất lượng toàn diện (Nội dung + Y văn + Hình ảnh)
+    // 2. Tạo bài viết tiếng Việt & Kiểm định chất lượng toàn diện (Nội dung + Y văn + Hình ảnh + V2 Reader Brief)
     const viPost = createDispatchMarkdown(nextTopic, 'vi', scheduledIsoDate);
-    const viValidation = validateDispatchContent(viPost.content, 'vi');
+    const viValidation = validateDispatchContent(viPost.content, 'vi', { isStrictV2: true });
     if (!viValidation.isValid) {
       console.warn(`⚠️ [Gatekeeper REJECT Lượt ${attempt}] Bài tiếng Việt chưa đạt chuẩn biên tập của TS. Hoàng Xuân Chiến:`);
       viValidation.issues.forEach(issue => console.warn(`   - ${issue}`));
-      feedback = `Bản thảo tiếng Việt chưa đạt chuẩn biên tập: ${viValidation.issues.join('; ')}. Bắt buộc viết sâu sắc trên 850 từ, ảnh phân giải cao >=120KB và có bảng Markdown so sánh!`;
+      feedback = `Bản thảo tiếng Việt chưa đạt chuẩn biên tập: ${viValidation.issues.join('; ')}. Bắt buộc viết sâu sắc trên 850 từ, ảnh phân giải cao >=120KB, có bảng Markdown so sánh và bộ tóm tắt brief/practical V2!`;
       if (staticTopic && attempt === 1) continue;
       continue;
     }
 
     // 3. Tạo bài viết tiếng Anh & Kiểm định chất lượng toàn diện
     const enPost = createDispatchMarkdown(nextTopic, 'en', scheduledIsoDate);
-    const enValidation = validateDispatchContent(enPost.content, 'en');
+    const enValidation = validateDispatchContent(enPost.content, 'en', { isStrictV2: true });
     if (!enValidation.isValid) {
       console.warn(`⚠️ [Gatekeeper REJECT Lượt ${attempt}] Bài tiếng Anh chưa đạt chuẩn biên tập:`);
       enValidation.issues.forEach(issue => console.warn(`   - ${issue}`));
-      feedback = `Bản thảo tiếng Anh chưa đạt chuẩn biên tập: ${enValidation.issues.join('; ')}. Bắt buộc viết trên 700 từ, ảnh phân giải cao >=120KB và có bảng Markdown so sánh!`;
+      feedback = `Bản thảo tiếng Anh chưa đạt chuẩn biên tập: ${enValidation.issues.join('; ')}. Bắt buộc viết trên 700 từ, ảnh phân giải cao >=120KB, có bảng Markdown so sánh và bộ tóm tắt brief/practical V2!`;
       continue;
     }
 
-    console.log(`🛡️ [Gatekeeper PASSED] Cả hai bản tiếng Việt (${viValidation.wordCount} từ) và tiếng Anh (${enValidation.wordCount} từ) cùng HỆ THỐNG HÌNH ẢNH & Y VĂN ĐỐI SOÁT vượt qua toàn bộ 8 tiêu chuẩn kiểm định!`);
+    console.log(`🛡️ [Gatekeeper PASSED] Cả hai bản tiếng Việt (${viValidation.wordCount} từ) và tiếng Anh (${enValidation.wordCount} từ) cùng HỆ THỐNG HÌNH ẢNH, Y VĂN & V2 BRIEFS vượt qua toàn bộ 10 tiêu chuẩn kiểm định!`);
 
     // Ghi file bài viết
     const viFilePath = path.join(postsDir, `${viPost.slug}.md`);
