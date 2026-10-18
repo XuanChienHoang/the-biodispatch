@@ -21,6 +21,12 @@ import { SocialShare } from "@/components/SocialShare";
 import { NewsletterBox } from "@/components/NewsletterBox";
 import { TableOfContents } from "@/components/TableOfContents";
 import { twinRoot } from "@/lib/home";
+import { ReaderBrief } from "@/components/reader/ReaderBrief";
+import { PracticalSafetyBox } from "@/components/reader/PracticalSafetyBox";
+import { PlainGlossary } from "@/components/reader/PlainGlossary";
+import { ArticleProgressPill } from "@/components/reader/ArticleProgressPill";
+import { AudioBriefPlayer } from "@/components/reader/AudioBriefPlayer";
+import { chunkParagraph } from "@/lib/reader-brief";
 
 function extractTextFromChildren(children: any): string {
   if (typeof children === "string") return children;
@@ -293,10 +299,45 @@ export default async function BlogPage({ params }: Params) {
                 {/* Mobile Collapsible Table of Contents (Only renders on mobile) */}
                 <TableOfContents content={article.content} isVi={isVi} variant="mobile" />
 
+                {/* v2: Audio Brief Player (Nghe bản tin tóm tắt âm thanh 2 phút) */}
+                <AudioBriefPlayer
+                  title={isVi && article.titleVi ? article.titleVi : article.title}
+                  summaryText={
+                    article.brief?.takeaways && article.brief.takeaways.length > 0
+                      ? `${article.brief.takeaways.join(". ")}. ${article.brief.bottomLine || ""}`.trim()
+                      : article.brief?.bottomLine || (isVi && article.dekVi ? article.dekVi : article.dek)
+                  }
+                  isVi={isVi}
+                />
+
+                {/* v2: Hộp "Đọc nhanh 60 giây" (Key Takeaways) */}
+                {article.brief && (
+                  <ReaderBrief brief={article.brief} isVi={isVi} />
+                )}
+
+                {/* v2: Hộp "Giải nghĩa thuật ngữ" (Curated Analogies cho bài viết) */}
+                <PlainGlossary slug={slug} isVi={isVi} />
+
                 <ReactMarkdown
                   remarkPlugins={[remarkGfm, remarkMath]}
                   rehypePlugins={[rehypeKatex]}
                   components={{
+                    p({ children, ...props }) {
+                      // Nếu đoạn văn chỉ chứa text thuần và quá dài (wall-of-text), tự động tách thành các đoạn đọc thoáng đãng
+                      if (typeof children === "string") {
+                        const chunks = chunkParagraph(children);
+                        if (chunks.length > 1) {
+                          return (
+                            <>
+                              {chunks.map((c, i) => (
+                                <p key={i} {...props}>{c}</p>
+                              ))}
+                            </>
+                          );
+                        }
+                      }
+                      return <p {...props}>{children}</p>;
+                    },
                     h2({ children, ...props }) {
                       const text = extractTextFromChildren(children);
                       const id = text
@@ -336,10 +377,24 @@ export default async function BlogPage({ params }: Params) {
                       }
                       return <pre {...props}>{children}</pre>;
                     },
+                    table({ children, ...props }) {
+                      return (
+                        <div className="my-8 overflow-x-auto rounded-sm border border-slate-hair">
+                          <table className="w-full text-left" {...props}>
+                            {children}
+                          </table>
+                        </div>
+                      );
+                    },
                   }}
                 >
                   {article.content}
                 </ReactMarkdown>
+
+                {/* v2: Hộp "Áp dụng thực tế & An toàn" (Practical Protocol & Drug Interactions) */}
+                {article.practical && (
+                  <PracticalSafetyBox guide={article.practical} isVi={isVi} />
+                )}
               </article>
 
               {/* Sticky Sidebar Navigation */}
@@ -500,6 +555,10 @@ export default async function BlogPage({ params }: Params) {
                 title={isVi && article.titleVi ? article.titleVi : article.title}
                 url={`https://www.phyto-codex.org/blog/${article.slug}`}
                 isVi={isVi}
+                quote={article.brief?.bottomLine || article.dek}
+                authorName={isVi ? "TS. Hoàng Xuân Chiến" : (article.author || "Dr. Xuan Chien Hoang")}
+                authorRole={isVi ? "Tiến sĩ Sinh học Phân tử · ĐH Hamburg, CHLB Đức" : (article.authorRole || "Dr. rer. nat. · Univ. of Hamburg")}
+                doi={article.doi}
               />
 
               {/* Author bio card */}
@@ -622,6 +681,15 @@ export default async function BlogPage({ params }: Params) {
           </div>
         </section>
       </div>
+
+      {/* v2: Floating Navigation Pill cho Mobile (Tiến trình đọc % và nút nhảy nhanh) */}
+      <ArticleProgressPill
+        isVi={isVi}
+        hasBrief={Boolean(article.brief)}
+        hasPractical={Boolean(article.practical)}
+        hasRefs={refs.length > 0}
+        title={isVi && article.titleVi ? article.titleVi : article.title}
+      />
     </main>
   );
 }

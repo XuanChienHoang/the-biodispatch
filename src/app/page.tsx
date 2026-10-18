@@ -13,7 +13,11 @@ export default async function HomePage() {
 
   // Trang chủ chỉ cần metadata. Bỏ toàn văn markdown để không gửi cả bài xuống trình duyệt.
   const articles: Article[] = all.map((a) => {
-    const { content: _content, ...meta } = a as Article & { content?: string };
+    const { content: _content, brief: _brief, practical: _practical, ...meta } = a as Article & {
+      content?: string;
+      brief?: unknown;
+      practical?: unknown;
+    };
     return meta;
   });
 

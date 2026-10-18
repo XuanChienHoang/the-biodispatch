@@ -22,6 +22,7 @@ import { ORGANS, TIERS, type Article, type Tier, type Organ } from "@/lib/conten
 import { inkOn, onPaper } from "@/lib/tones";
 import { useLanguageStore, DICT } from "@/lib/i18n";
 import { dedupeForLang, formatDate, ORGAN_ACCENT, ORGAN_VI } from "@/lib/home";
+import { HEALTH_GOALS, matchesHealthGoal } from "@/lib/health-goals";
 
 const TIER_META: Record<string, { icon: typeof BookOpen; color: string; labelVi: string }> = {
   Fundamentals: { icon: BookOpen, color: "#64748B", labelVi: "Nền tảng Y sinh" },
@@ -60,16 +61,25 @@ export function Directory({ articles }: { articles: Article[] }) {
   const [activeTab, setActiveTab] = useState<TabKey>("All");
   // Lọc thêm theo độ sâu lâm sàng (tier) nếu muốn
   const [selectedTier, setSelectedTier] = useState<Tier | "All">("All");
+  // Lọc theo Nhu cầu Sức khỏe / Triệu chứng thực tế (v2)
+  const [selectedGoal, setSelectedGoal] = useState<string>("all");
   // Từ khóa tìm kiếm ngay trong Kho bài
   const [searchQuery, setSearchQuery] = useState("");
+  // v2: Tinh gọn trang chủ — Mặc định hiển thị 12 bài, có nút "Xem thêm bài viết"
+  const [visibleCount, setVisibleCount] = useState(12);
 
   // Mỗi chủ đề một phiên bản đúng ngôn ngữ đang chọn
   const pool = useMemo(() => dedupeForLang(articles, lang), [articles, lang]);
 
-  // Danh sách bài được lọc theo tab chuyên đề, độ sâu và từ khóa tìm kiếm
+  // Danh sách bài được lọc theo nhu cầu sức khỏe, tab chuyên đề, độ sâu và từ khóa tìm kiếm
   const filteredList = useMemo(() => {
     return pool.filter((a) => {
-      // 1. Lọc theo tab
+      // 1. Lọc theo Nhu cầu sức khỏe / Triệu chứng thực tế (Health Goal)
+      if (selectedGoal !== "all" && !matchesHealthGoal(a, selectedGoal)) {
+        return false;
+      }
+
+      // 2. Lọc theo tab cơ quan
       if (activeTab === "LifeDispatch") {
         if (a.tier !== "Life Dispatch") return false;
       } else if (activeTab === "GizmosOnly") {
@@ -78,12 +88,12 @@ export function Directory({ articles }: { articles: Article[] }) {
         if (a.organ !== activeTab) return false;
       }
 
-      // 2. Lọc theo tier
+      // 3. Lọc theo tier
       if (selectedTier !== "All" && a.tier !== selectedTier) {
         return false;
       }
 
-      // 3. Lọc theo từ khóa tìm kiếm
+      // 4. Lọc theo từ khóa tìm kiếm
       if (searchQuery.trim()) {
         const q = searchQuery.toLowerCase();
         const title = (isVi && a.titleVi ? a.titleVi : a.title).toLowerCase();
@@ -96,7 +106,7 @@ export function Directory({ articles }: { articles: Article[] }) {
 
       return true;
     });
-  }, [pool, activeTab, selectedTier, searchQuery, isVi]);
+  }, [pool, selectedGoal, activeTab, selectedTier, searchQuery, isVi]);
 
   return (
     <section id="directory" className="mx-auto max-w-[1240px] scroll-mt-8 px-6 py-12 lg:px-10 lg:py-16">
@@ -135,6 +145,66 @@ export function Directory({ articles }: { articles: Article[] }) {
               </button>
             )}
           </div>
+        </div>
+      </div>
+
+      {/* BỘ LỌC NHU CẦU & TRIỆU CHỨNG THỰC TẾ (v2: Health Goal & Symptom Pills) */}
+      <div className="mt-7 rounded-sm border border-indigo-deep/15 bg-paper-tint/70 p-4 sm:p-5">
+        <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+          <span className="caps text-xs font-bold text-indigo-deep flex items-center gap-1.5">
+            <span>🎯</span>
+            {isVi ? "Tra cứu theo Nhu cầu Sức khỏe & Triệu chứng thực tế:" : "Filter by Health Goal & Real-world Symptom:"}
+          </span>
+          {selectedGoal !== "all" && (
+            <button
+              type="button"
+              onClick={() => setSelectedGoal("all")}
+              className="text-xs font-mono text-trace-ink hover:underline cursor-pointer"
+            >
+              {isVi ? "✕ Đặt lại tất cả" : "✕ Reset filter"}
+            </button>
+          )}
+        </div>
+        <div className="flex flex-wrap gap-2">
+          <button
+            type="button"
+            onClick={() => setSelectedGoal("all")}
+            className={`flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-medium transition-all cursor-pointer ${
+              selectedGoal === "all"
+                ? "bg-indigo-deep text-white font-bold shadow-xs"
+                : "border border-slate-hair bg-paper text-slate-ink hover:border-indigo-deep hover:text-indigo-deep"
+            }`}
+          >
+            <span>✨</span>
+            <span>{isVi ? "Tất cả nhu cầu" : "All Health Goals"}</span>
+          </button>
+          {HEALTH_GOALS.map((goal) => {
+            const isSelected = selectedGoal === goal.id;
+            const count = pool.filter((a) => matchesHealthGoal(a, goal.id)).length;
+            return (
+              <button
+                key={goal.id}
+                type="button"
+                onClick={() => setSelectedGoal(isSelected ? "all" : goal.id)}
+                title={isVi ? goal.descriptionVi : goal.descriptionEn}
+                className={`flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-medium transition-all cursor-pointer ${
+                  isSelected
+                    ? "bg-teal-700 text-white font-bold shadow-xs ring-2 ring-teal-700/30"
+                    : "border border-slate-hair bg-paper text-slate-ink hover:border-teal-600 hover:text-indigo-deep"
+                }`}
+              >
+                <span>{goal.icon}</span>
+                <span>{isVi ? goal.labelVi : goal.labelEn}</span>
+                <span
+                  className={`ml-1 rounded-full px-1.5 py-0.2 text-[10px] font-mono ${
+                    isSelected ? "bg-white/25 text-white" : "bg-slate-hair text-slate-ink"
+                  }`}
+                >
+                  {count}
+                </span>
+              </button>
+            );
+          })}
         </div>
       </div>
 
@@ -264,7 +334,7 @@ export function Directory({ articles }: { articles: Article[] }) {
       ) : (
         <motion.div layout className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <AnimatePresence mode="popLayout">
-            {filteredList.map((a, i) => {
+            {filteredList.slice(0, visibleCount).map((a, i) => {
               const meta = TIER_META[a.tier] || TIER_META["Clinical Deep-Dive"];
               const Icon = meta.icon;
               const accent = ORGAN_ACCENT[a.organ];
@@ -360,6 +430,35 @@ export function Directory({ articles }: { articles: Article[] }) {
             })}
           </AnimatePresence>
         </motion.div>
+      )}
+
+      {/* Nút Xem Thêm / Thu Gọn để trang chủ không bị dài vô tận */}
+      {filteredList.length > 12 && (
+        <div className="mt-10 flex items-center justify-center gap-3">
+          {visibleCount < filteredList.length ? (
+            <button
+              type="button"
+              onClick={() => setVisibleCount((prev) => Math.min(prev + 12, filteredList.length))}
+              className="caps inline-flex items-center gap-2 rounded-sm bg-indigo-deep px-6 py-3.5 text-xs font-semibold text-white shadow-xs transition-all duration-200 hover:bg-[#101f34] hover:shadow-md cursor-pointer"
+            >
+              <span>
+                {isVi
+                  ? `Xem thêm 12 bài viết (Còn ${filteredList.length - visibleCount} bài)`
+                  : `Load 12 more dispatches (${filteredList.length - visibleCount} remaining)`}
+              </span>
+              <span className="text-trace">↓</span>
+            </button>
+          ) : (
+            <button
+              type="button"
+              onClick={() => setVisibleCount(12)}
+              className="caps inline-flex items-center gap-2 rounded-sm border border-slate-hair bg-paper px-6 py-3.5 text-xs font-semibold text-slate-ink hover:border-indigo-deep hover:text-indigo-deep cursor-pointer"
+            >
+              <span>{isVi ? "Thu gọn về 12 bài tiêu biểu" : "Collapse to 12 dispatches"}</span>
+              <span>↑</span>
+            </button>
+          )}
+        </div>
       )}
     </section>
   );

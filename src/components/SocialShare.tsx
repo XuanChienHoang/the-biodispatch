@@ -1,16 +1,30 @@
 "use client";
 
 import { useState } from "react";
-import { Share2, Link2, Check } from "lucide-react";
+import { Share2, Link2, Check, Sparkles } from "lucide-react";
+import { QuoteCardModal } from "@/components/reader/QuoteCardModal";
 
 interface SocialShareProps {
   title: string;
   url: string;
   isVi?: boolean;
+  quote?: string;
+  authorName?: string;
+  authorRole?: string;
+  doi?: string;
 }
 
-export function SocialShare({ title, url, isVi = true }: SocialShareProps) {
+export function SocialShare({
+  title,
+  url,
+  isVi = true,
+  quote,
+  authorName = "TS. Hoàng Xuân Chiến",
+  authorRole = "Tiến sĩ Sinh học Phân tử · ĐH Hamburg, CHLB Đức",
+  doi,
+}: SocialShareProps) {
   const [copied, setCopied] = useState(false);
+  const [showQuoteModal, setShowQuoteModal] = useState(false);
 
   const encodedUrl = encodeURIComponent(url);
   const encodedTitle = encodeURIComponent(title);
@@ -78,6 +92,19 @@ export function SocialShare({ title, url, isVi = true }: SocialShareProps) {
             <span className="hidden sm:inline font-mono text-[0.7rem]">X</span>
           </a>
 
+          {/* Generate Quote Card Button (v2: Viral Social Growth) */}
+          <button
+            type="button"
+            onClick={() => setShowQuoteModal(true)}
+            title={isVi ? "Tạo ảnh trích dẫn đăng MXH" : "Generate shareable quote card"}
+            className="flex h-8 items-center gap-1.5 rounded-sm border border-teal-600/40 bg-teal-50 px-2.5 text-xs text-teal-800 transition-all duration-200 hover:bg-teal-100 hover:border-teal-700 cursor-pointer shadow-2xs font-semibold"
+          >
+            <Sparkles size={13} className="text-teal-600" />
+            <span className="font-mono text-[0.7rem]">
+              {isVi ? "Tạo ảnh trích dẫn" : "Quote Card"}
+            </span>
+          </button>
+
           {/* Copy Link */}
           <button
             type="button"
@@ -103,6 +130,18 @@ export function SocialShare({ title, url, isVi = true }: SocialShareProps) {
           </button>
         </div>
       </div>
+
+      {/* Quote Card Modal */}
+      <QuoteCardModal
+        isOpen={showQuoteModal}
+        onClose={() => setShowQuoteModal(false)}
+        quote={quote || title}
+        articleTitle={title}
+        authorName={authorName}
+        authorRole={authorRole}
+        isVi={isVi}
+        doi={doi}
+      />
     </div>
   );
 }

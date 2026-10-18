@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { ARTICLES, type Article, type Organ, type Tier } from "./content";
+import { parseReaderBrief, parsePracticalGuide, type ReaderBrief, type PracticalGuide } from "./reader-brief";
 
 const postsDirectory = path.join(process.cwd(), "content/posts");
 
@@ -3634,6 +3635,10 @@ export interface MarkdownArticleData extends Article {
   tags?: string[];
   readingTime?: string;
   lang?: "vi" | "en";
+  /** v2: hộp "Đọc nhanh 60 giây" */
+  brief?: ReaderBrief;
+  /** v2: hộp "Áp dụng thực tế & An toàn" */
+  practical?: PracticalGuide;
 }
 
 /** /images/posts/foo.jpg -> /images/<dir>/foo.webp (sinh bởi scripts/make-thumbs.mjs). Trả undefined nếu file chưa được sinh. */
@@ -3697,6 +3702,8 @@ export async function getMarkdownPosts(): Promise<MarkdownArticleData[]> {
       tags: data.tags || ["Metabolomics", "Biomarkers"],
       readingTime: data.readingTime || "6 min read",
       lang: (data.lang as "vi" | "en") || (slug.endsWith("-vi") ? "vi" : "en"),
+      brief: parseReaderBrief(data.brief),
+      practical: parsePracticalGuide(data.practical),
     });
   }
 

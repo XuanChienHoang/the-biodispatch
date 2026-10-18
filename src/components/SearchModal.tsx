@@ -110,19 +110,44 @@ export function SearchModal({
               <p className="text-sm font-medium">
                 {isVi ? "Nhập từ khóa để tra cứu kho dữ liệu y sinh" : "Enter keywords to query biomedical corpus"}
               </p>
-              <div className="mt-4 flex flex-wrap justify-center gap-2">
-                {["UCP1", "Curcumin", "Mỡ nâu", "Statin", "NAD+", "Glymphatic", "hs-CRP"].map((k) => (
-                  <button
-                    key={k}
-                    type="button"
-                    onClick={() => setQuery(k)}
-                    className="caps rounded-full border border-slate-hair bg-paper-tint px-2.5 py-1 text-xs text-slate-ink hover:border-indigo-deep hover:text-indigo-deep cursor-pointer"
-                  >
-                    {k}
-                  </button>
-                ))}
+                <div className="text-xs font-semibold text-slate-ink mb-2">
+                  {isVi ? "💡 Tra cứu nhanh theo Nhu cầu & Triệu chứng phổ biến:" : "💡 Popular Health Goals & Symptoms:"}
+                </div>
+                <div className="flex flex-wrap justify-center gap-2">
+                  {[
+                    { label: isVi ? "😴 Khó ngủ / Giấc ngủ" : "😴 Sleep & Melatonin", query: isVi ? "giấc ngủ" : "sleep" },
+                    { label: isVi ? "🩸 Đường huyết & Mỡ bụng" : "🩸 Blood Sugar & Fat", query: isVi ? "đường huyết" : "glucose" },
+                    { label: isVi ? "🫀 Canxi hóa & Mỡ máu" : "🫀 Calcification & Statin", query: isVi ? "canxi" : "calcification" },
+                    { label: isVi ? "🛡️ Rò rỉ ruột & Vi sinh" : "🛡️ Leaky Gut & Mucin", query: isVi ? "rò rỉ ruột" : "leaky gut" },
+                    { label: isVi ? "🧬 Trẻ hóa & Fisetin" : "🧬 Senolytics & Aging", query: isVi ? "trẻ hóa" : "senolytics" },
+                    { label: isVi ? "⚡ Sập nguồn sáng & Cà phê" : "⚡ 10 AM Crash & Coffee", query: isVi ? "cà phê" : "coffee" },
+                  ].map((item) => (
+                    <button
+                      key={item.label}
+                      type="button"
+                      onClick={() => setQuery(item.query)}
+                      className="rounded-full border border-teal-600/30 bg-teal-50/50 px-3 py-1 text-xs font-medium text-teal-800 hover:bg-teal-100 hover:border-teal-700 cursor-pointer transition-colors"
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </div>
+                <div className="mt-4 flex flex-wrap justify-center gap-1.5 pt-2 border-t border-slate-hair/60">
+                  <span className="text-[11px] text-slate-mute self-center mr-1">
+                    {isVi ? "Hoạt chất:" : "Molecules:"}
+                  </span>
+                  {["UCP1", "Curcumin", "Mỡ nâu", "Statin", "NAD+", "Glymphatic", "hs-CRP", "Fisetin", "D3 K2"].map((k) => (
+                    <button
+                      key={k}
+                      type="button"
+                      onClick={() => setQuery(k)}
+                      className="caps rounded-full border border-slate-hair bg-paper px-2 py-0.5 text-[10px] text-slate-ink hover:border-indigo-deep hover:text-indigo-deep cursor-pointer"
+                    >
+                      {k}
+                    </button>
+                  ))}
+                </div>
               </div>
-            </div>
           ) : results.length === 0 ? (
             <div className="py-12 text-center text-slate-ink">
               <p className="text-base font-medium">

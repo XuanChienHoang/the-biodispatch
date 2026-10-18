@@ -8,20 +8,20 @@ import { MotionProvider } from "@/components/MotionProvider";
 import { Analytics } from "@vercel/analytics/react";
 
 const fraunces = Fraunces({
-  subsets: ["latin"],
+  subsets: ["latin", "vietnamese"],
   axes: ["SOFT", "WONK", "opsz"],
   variable: "--font-fraunces",
   display: "swap",
 });
 
 const archivo = Archivo({
-  subsets: ["latin"],
+  subsets: ["latin", "vietnamese"],
   variable: "--font-archivo",
   display: "swap",
 });
 
 const jetbrains = JetBrains_Mono({
-  subsets: ["latin"],
+  subsets: ["latin", "vietnamese"],
   variable: "--font-jetbrains",
   display: "swap",
 });
