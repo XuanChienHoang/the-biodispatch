@@ -77,6 +77,13 @@ jobs:
             git pull --rebase origin main
             git push origin main
           fi
+      - name: Auto-Prune Old Deployments (Keep max 3)
+        if: steps.quota.outputs.skip != 'true' && env.VERCEL_TOKEN != ''
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          node scripts/auto-prune-deployments.mjs || echo "Bỏ qua dọn dẹp nếu chưa cấu hình VERCEL_TOKEN"
+
       - name: Verify Dispatch Publishing Success
         run: |
           echo "✅ New dispatch successfully generated and pushed to GitHub main."
