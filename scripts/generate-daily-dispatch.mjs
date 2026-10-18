@@ -21,6 +21,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { DISPATCH_RADAR_TOPICS } from './radar-topics.mjs';
 import { verifyAndHealReferences } from './citation-verifier.mjs';
+import { generateDispatchImage } from './image-generator.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -280,6 +281,13 @@ async function createFallbackIllustration(slug, topic = {}) {
   const targetPath = path.join(imagesDir, `${slug}.jpg`);
   if (fs.existsSync(targetPath)) return;
 
+  // 1. Thử sinh ảnh AI độc bản mới qua Google Image API trước
+  const aiGenerated = await generateDispatchImage(slug, topic);
+  if (aiGenerated && fs.existsSync(targetPath)) {
+    return;
+  }
+
+  // 2. Nếu API không khả dụng hoặc vượt hạn mức, dùng ảnh mẫu chủ đề (Curated Archetype)
   const isLifeDispatch = (topic.tier === "Life Dispatch" || topic.tier === "life" || !topic.tier);
   const organ = topic.organ || "Metabolic";
 
