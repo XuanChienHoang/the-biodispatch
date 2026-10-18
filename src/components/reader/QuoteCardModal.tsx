@@ -12,11 +12,72 @@ interface QuoteCardModalProps {
   authorRole: string;
   isVi: boolean;
   doi?: string;
+  articleImage?: string;
+}
+
+function loadImg(src: string): Promise<HTMLImageElement> {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.crossOrigin = "anonymous";
+    img.onload = () => resolve(img);
+    img.onerror = (e) => reject(e);
+    img.src = src;
+  });
+}
+
+function drawRoundedRect(
+  ctx: CanvasRenderingContext2D,
+  x: number,
+  y: number,
+  w: number,
+  h: number,
+  r: number
+) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.lineTo(x + w - r, y);
+  ctx.arcTo(x + w, y, x + w, y + r, r);
+  ctx.lineTo(x + w, y + h - r);
+  ctx.arcTo(x + w, y + h, x + w - r, y + h, r);
+  ctx.lineTo(x + r, y + h);
+  ctx.arcTo(x, y + h, x, y + h - r, r);
+  ctx.lineTo(x, y + r);
+  ctx.arcTo(x, y, x + r, y, r);
+  ctx.closePath();
+}
+
+function drawImageCover(
+  ctx: CanvasRenderingContext2D,
+  img: HTMLImageElement,
+  x: number,
+  y: number,
+  w: number,
+  h: number
+) {
+  const imgRatio = img.width / img.height;
+  const targetRatio = w / h;
+  let sx = 0;
+  let sy = 0;
+  let sw = img.width;
+  let sh = img.height;
+
+  if (imgRatio > targetRatio) {
+    sw = img.height * targetRatio;
+    sx = (img.width - sw) / 2;
+  } else {
+    sh = img.width / targetRatio;
+    sy = (img.height - sh) / 2;
+  }
+
+  ctx.drawImage(img, sx, sy, sw, sh, x, y, w, h);
 }
 
 /**
- * Modal tạo Card ảnh vuông (1080x1080) trích dẫn khoa học chuẩn cao cấp để chia sẻ lên Facebook, LinkedIn, Zalo.
- * Hỗ trợ 100% tiếng Việt chuẩn Unicode, không bị lỗi font hay mất dấu tiếng Việt trên mọi hệ điều hành.
+ * Modal tạo Card ảnh vuông (1080x1080) trích dẫn khoa học chuẩn cao cấp:
+ * - Chèn Logo chuẩn Phyto-Codex (Ginkgo vàng & phân tử)
+ * - Chèn Hình ảnh minh họa chính của bài viết (Artwork Cover)
+ * - Typography Unicode tiếng Việt hoàn hảo không lỗi dấu
+ * - Tối ưu cho Facebook, LinkedIn, Instagram Stories, X
  */
 export function QuoteCardModal({
   isOpen,
@@ -27,13 +88,14 @@ export function QuoteCardModal({
   authorRole,
   isVi,
   doi,
+  articleImage,
 }: QuoteCardModalProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [copied, setCopied] = useState(false);
   const [downloading, setDownloading] = useState(false);
   const [fontStyle, setFontStyle] = useState<"editorial" | "modern">("editorial");
 
-  const renderCard = useCallback(() => {
+  const renderCard = useCallback(async () => {
     if (!canvasRef.current) return;
 
     const canvas = canvasRef.current;
@@ -45,13 +107,18 @@ export function QuoteCardModal({
     canvas.width = width;
     canvas.height = height;
 
+    // Tải đồng thời logo Phytocodex và hình ảnh bài viết
+    const [emblemImg, articleImg] = await Promise.all([
+      loadImg("/images/phytocodex-emblem.jpg").catch(() => null),
+      articleImage ? loadImg(articleImage).catch(() => null) : Promise.resolve(null),
+    ]);
+
     // Lấy biến font từ hệ thống nếu có
     const rootStyle = typeof window !== "undefined" ? window.getComputedStyle(document.documentElement) : null;
     const frauncesVar = rootStyle?.getPropertyValue("--font-fraunces")?.trim();
     const archivoVar = rootStyle?.getPropertyValue("--font-archivo")?.trim();
     const jetbrainsVar = rootStyle?.getPropertyValue("--font-jetbrains")?.trim();
 
-    // Font stack chuẩn tiếng Việt không bao giờ lỗi dấu trên Windows, Mac, iOS, Android
     const serifStack = frauncesVar
       ? `${frauncesVar}, "Segoe UI", "Times New Roman", serif`
       : '"Segoe UI", "Times New Roman", serif';
@@ -64,12 +131,15 @@ export function QuoteCardModal({
       ? `${jetbrainsVar}, "JetBrains Mono", Consolas, "Courier New", monospace`
       : '"JetBrains Mono", Consolas, "Courier New", monospace';
 
-    // 1. Nền Deep Indigo sang trọng
-    ctx.fillStyle = "#0B192C";
+    // 1. Nền Deep Laboratory Indigo sang trọng
+    const bgGrad = ctx.createLinearGradient(0, 0, width, height);
+    bgGrad.addColorStop(0, "#070E1A");
+    bgGrad.addColorStop(1, "#0B192C");
+    ctx.fillStyle = bgGrad;
     ctx.fillRect(0, 0, width, height);
 
-    // 2. Lưới Graticule tinh tế (phong cách tạp chí khoa học Thụy Sĩ)
-    ctx.strokeStyle = "rgba(148, 163, 184, 0.08)";
+    // 2. Lưới Graticule tinh tế (Engineering Grid)
+    ctx.strokeStyle = "rgba(148, 163, 184, 0.05)";
     ctx.lineWidth = 1;
     const gridSize = 45;
     for (let x = 0; x < width; x += gridSize) {
@@ -85,46 +155,120 @@ export function QuoteCardModal({
       ctx.stroke();
     }
 
-    // 3. Vòng tròn sáng mờ nghệ thuật (Radial Gradient Accent)
-    const radGrad = ctx.createRadialGradient(width - 180, 180, 40, width - 180, 180, 480);
-    radGrad.addColorStop(0, "rgba(0, 242, 254, 0.20)");
-    radGrad.addColorStop(1, "rgba(11, 25, 44, 0)");
-    ctx.fillStyle = radGrad;
-    ctx.fillRect(0, 0, width, height);
-
-    // 4. Khung viền tinh xảo
-    ctx.strokeStyle = "rgba(226, 232, 240, 0.16)";
+    // 3. Khung viền tinh xảo bo góc
+    ctx.save();
+    ctx.strokeStyle = "rgba(226, 232, 240, 0.12)";
     ctx.lineWidth = 2;
-    ctx.strokeRect(54, 54, width - 108, height - 108);
+    drawRoundedRect(ctx, 36, 36, width - 72, height - 72, 16);
+    ctx.stroke();
+    ctx.restore();
 
-    // 5. Header: Logo Phyto-Codex & Badge
+    // 4. Header: Logo Phyto-Codex (Ginkgo Emblem) + Brand Typography
+    const emblemX = 86;
+    const emblemY = 88;
+    const emblemRadius = 26;
+
+    if (emblemImg) {
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(emblemX, emblemY, emblemRadius, 0, Math.PI * 2);
+      ctx.clip();
+      ctx.drawImage(emblemImg, emblemX - emblemRadius, emblemY - emblemRadius, emblemRadius * 2, emblemRadius * 2);
+      ctx.restore();
+
+      // Viền vàng kim tinh tế cho logo
+      ctx.strokeStyle = "#D4AF37";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.arc(emblemX, emblemY, emblemRadius, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+
+    // Brand Name & Subtitle
     ctx.fillStyle = "#00F2FE";
-    ctx.font = `bold 24px ${monoStack}`;
-    ctx.fillText("PHYTO-CODEX.ORG", 95, 120);
+    ctx.font = `bold 21px ${monoStack}`;
+    ctx.fillText("PHYTO-CODEX.ORG", 130, 84);
 
     ctx.fillStyle = "rgba(226, 232, 240, 0.65)";
-    ctx.font = `600 15px ${monoStack}`;
+    ctx.font = `600 12px ${monoStack}`;
     ctx.fillText(
       isVi ? "CHUYÊN KHẢO DƯỢC LIỆU & Y SINH HỌC PHÂN TỬ" : "EVIDENCE-BASED BIOMEDICAL DISPATCH",
-      95,
-      152
+      130,
+      104
     );
 
-    // Dấu ngoặc kép trích dẫn lớn mờ
-    ctx.fillStyle = "rgba(0, 242, 254, 0.18)";
-    ctx.font = `bold 140px ${serifStack}`;
-    ctx.fillText("“", 90, 260);
+    // Header Right Badge: PEER-REVIEWED
+    ctx.fillStyle = "rgba(0, 242, 254, 0.08)";
+    ctx.strokeStyle = "rgba(0, 242, 254, 0.3)";
+    ctx.lineWidth = 1;
+    const badgeW = isVi ? 155 : 170;
+    const badgeH = 28;
+    const badgeX = width - 68 - badgeW;
+    const badgeY = 72;
+    drawRoundedRect(ctx, badgeX, badgeY, badgeW, badgeH, 14);
+    ctx.fill();
+    ctx.stroke();
 
-    // 6. Tính toán kích thước font linh hoạt theo độ dài quote để không bao giờ bị cắt chữ
+    ctx.fillStyle = "#00F2FE";
+    ctx.font = `600 11px ${monoStack}`;
+    ctx.fillText(isVi ? "Y HỌC THỰC CHỨNG" : "EVIDENCE ARCHIVE", badgeX + 16, badgeY + 18);
+
+    // 5. Artwork Hero Banner (Hình ảnh minh họa bài viết)
+    const artX = 64;
+    const artY = 138;
+    const artW = width - 128;
+    const artH = 340;
+    const artR = 12;
+
+    ctx.save();
+    drawRoundedRect(ctx, artX, artY, artW, artH, artR);
+    ctx.clip();
+
+    if (articleImg) {
+      drawImageCover(ctx, articleImg, artX, artY, artW, artH);
+
+      // Gradient chuyển tiếp mờ dần xuống phía dưới để tôn vinh chữ
+      const artFade = ctx.createLinearGradient(0, artY + artH * 0.45, 0, artY + artH);
+      artFade.addColorStop(0, "rgba(11, 25, 44, 0)");
+      artFade.addColorStop(1, "rgba(11, 25, 44, 0.95)");
+      ctx.fillStyle = artFade;
+      ctx.fillRect(artX, artY, artW, artH);
+    } else {
+      // Fallback: Lưới đồ họa phân tử
+      const fallbackGrad = ctx.createLinearGradient(artX, artY, artX + artW, artY + artH);
+      fallbackGrad.addColorStop(0, "#0D223A");
+      fallbackGrad.addColorStop(1, "#07111D");
+      ctx.fillStyle = fallbackGrad;
+      ctx.fillRect(artX, artY, artW, artH);
+
+      ctx.fillStyle = "rgba(0, 242, 254, 0.2)";
+      ctx.font = `italic 16px ${sansStack}`;
+      ctx.fillText(articleTitle, artX + 24, artY + artH - 24);
+    }
+
+    ctx.restore();
+
+    // Viền nhẹ cho ảnh bài viết
+    ctx.strokeStyle = "rgba(226, 232, 240, 0.18)";
+    ctx.lineWidth = 1.5;
+    drawRoundedRect(ctx, artX, artY, artW, artH, artR);
+    ctx.stroke();
+
+    // 6. Quote Section (Đoạn trích dẫn đắt giá)
+    // Dấu ngoặc trích dẫn nghệ thuật
+    ctx.fillStyle = "rgba(0, 242, 254, 0.25)";
+    ctx.font = `bold 80px ${serifStack}`;
+    ctx.fillText("“", 62, 535);
+
     const quoteLength = quote.length;
-    let quoteFontSize = 34;
-    let lineHeight = 52;
+    let quoteFontSize = 28;
+    let lineHeight = 42;
     if (quoteLength > 240) {
-      quoteFontSize = 26;
-      lineHeight = 40;
-    } else if (quoteLength > 150) {
-      quoteFontSize = 30;
-      lineHeight = 46;
+      quoteFontSize = 21;
+      lineHeight = 33;
+    } else if (quoteLength > 140) {
+      quoteFontSize = 24;
+      lineHeight = 38;
     }
 
     ctx.fillStyle = "#FFFFFF";
@@ -134,11 +278,11 @@ export function QuoteCardModal({
       ctx.font = `600 ${quoteFontSize}px ${sansStack}`;
     }
 
-    const maxWidth = width - 190;
+    const maxWidth = width - 136;
     const words = quote.split(" ");
     let line = "";
-    let y = 300;
-    const maxLines = quoteLength > 240 ? 10 : 8;
+    let y = 560;
+    const maxLines = quoteLength > 240 ? 8 : 6;
     let lineCount = 0;
 
     for (let n = 0; n < words.length; n++) {
@@ -146,7 +290,7 @@ export function QuoteCardModal({
       const metrics = ctx.measureText(testLine);
       const testWidth = metrics.width;
       if (testWidth > maxWidth && n > 0) {
-        ctx.fillText(line.trim(), 95, y);
+        ctx.fillText(line.trim(), 68, y);
         line = words[n] + " ";
         y += lineHeight;
         lineCount++;
@@ -158,44 +302,43 @@ export function QuoteCardModal({
         line = testLine;
       }
     }
-    ctx.fillText(line.trim(), 95, y);
+    ctx.fillText(line.trim(), 68, y);
 
-    // 7. Divider Line
-    ctx.strokeStyle = "rgba(0, 242, 254, 0.5)";
+    // 7. Footer Divider Line (Cyan Accent)
+    ctx.strokeStyle = "rgba(0, 242, 254, 0.55)";
     ctx.lineWidth = 2.5;
     ctx.beginPath();
-    ctx.moveTo(95, 805);
-    ctx.lineTo(260, 805);
+    ctx.moveTo(68, 875);
+    ctx.lineTo(240, 875);
     ctx.stroke();
 
     // 8. Tác giả & Chức danh
     ctx.fillStyle = "#00F2FE";
-    ctx.font = `bold 30px ${sansStack}`;
-    ctx.fillText(authorName, 95, 855);
+    ctx.font = `bold 24px ${sansStack}`;
+    ctx.fillText(authorName, 68, 915);
 
     ctx.fillStyle = "#CBD5E1";
-    ctx.font = `500 21px ${sansStack}`;
-    ctx.fillText(authorRole, 95, 892);
+    ctx.font = `500 17px ${sansStack}`;
+    ctx.fillText(authorRole, 68, 945);
 
-    // 9. Tiêu đề bài viết tham chiếu
+    // 9. Tiêu đề bài viết tham chiếu & DOI
     ctx.fillStyle = "rgba(148, 163, 184, 0.9)";
-    ctx.font = `italic 400 18px ${sansStack}`;
+    ctx.font = `italic 400 15px ${sansStack}`;
     const refPrefix = isVi ? "Trích từ chuyên khảo: " : "From dispatch: ";
     const refText = refPrefix + articleTitle;
-    const truncatedRef = refText.length > 72 ? refText.slice(0, 70) + "..." : refText;
-    ctx.fillText(truncatedRef, 95, 948);
+    const truncatedRef = refText.length > 70 ? refText.slice(0, 68) + "..." : refText;
+    ctx.fillText(truncatedRef, 68, 990);
 
     if (doi) {
-      ctx.fillStyle = "rgba(0, 242, 254, 0.7)";
-      ctx.font = `500 15px ${monoStack}`;
-      ctx.fillText(`DOI: ${doi}`, 95, 980);
+      ctx.fillStyle = "rgba(0, 242, 254, 0.75)";
+      ctx.font = `500 13px ${monoStack}`;
+      ctx.fillText(`DOI: ${doi}`, 68, 1016);
     }
-  }, [quote, articleTitle, authorName, authorRole, isVi, doi, fontStyle]);
+  }, [quote, articleTitle, authorName, authorRole, isVi, doi, articleImage, fontStyle]);
 
   useEffect(() => {
     if (!isOpen) return;
 
-    // Chờ web fonts sẵn sàng để vẽ chuẩn xác 100%
     if (typeof document !== "undefined" && "fonts" in document) {
       document.fonts.ready.then(() => {
         renderCard();
@@ -292,8 +435,8 @@ export function QuoteCardModal({
           />
           <p className="mt-3 text-[11px] text-slate-ink text-center">
             {isVi
-              ? "Ảnh vuông chuẩn 1080x1080px · Sắc nét cho Facebook, LinkedIn, Instagram Stories, Zalo"
-              : "High-resolution 1080x1080px · Optimized for LinkedIn, Facebook, Instagram & X"}
+              ? "Ảnh vuông chuẩn 1080x1080px · Logo Phytocodex & Artwork bài viết sắc nét"
+              : "High-resolution 1080x1080px · Embedded Phytocodex Emblem & Article Artwork"}
           </p>
         </div>
 

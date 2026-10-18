@@ -12,6 +12,7 @@ interface SocialShareProps {
   authorName?: string;
   authorRole?: string;
   doi?: string;
+  articleImage?: string;
 }
 
 export function SocialShare({
@@ -22,6 +23,7 @@ export function SocialShare({
   authorName = "TS. Hoàng Xuân Chiến",
   authorRole = "Tiến sĩ Sinh học Phân tử · ĐH Hamburg, CHLB Đức",
   doi,
+  articleImage,
 }: SocialShareProps) {
   const [copied, setCopied] = useState(false);
   const [showQuoteModal, setShowQuoteModal] = useState(false);
@@ -141,6 +143,7 @@ export function SocialShare({
         authorRole={authorRole}
         isVi={isVi}
         doi={doi}
+        articleImage={articleImage}
       />
     </div>
   );

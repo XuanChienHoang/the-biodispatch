@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { Play, Pause, RotateCcw, Headphones, Loader2, UserCheck, Sparkles } from "lucide-react";
 
 interface AudioBriefPlayerProps {
@@ -11,8 +11,11 @@ interface AudioBriefPlayerProps {
 
 /**
  * Widget trình phát bản tin tóm tắt âm thanh (Audio Brief Player).
- * Sử dụng mô hình Neural AI thế hệ mới (Microsoft Azure Neural TTS: vi-VN-HoaiMy & vi-VN-NamMinh),
- * mang lại giọng đọc tự nhiên, có ngắt nghỉ, biểu cảm và nhấn nhá nhịp nhàng như biên tập viên chuyên nghiệp.
+ * Sử dụng thuần túy mô hình Neural AI thế hệ mới (Microsoft Azure Neural TTS):
+ * - Tiếng Việt: vi-VN-HoaiMyNeural (Nữ) & vi-VN-NamMinhNeural (Nam)
+ * - Tiếng Anh: en-US-JennyNeural (Female) & en-US-GuyNeural (Male)
+ *
+ * Tuyệt đối không dùng Web Speech API hay Google TTS cũ, loại bỏ 100% tình trạng chồng tiếng.
  */
 export function AudioBriefPlayer({ title, summaryText, isVi }: AudioBriefPlayerProps) {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -28,19 +31,29 @@ export function AudioBriefPlayer({ title, summaryText, isVi }: AudioBriefPlayerP
 
   const textToRead = `${title}. ${summaryText}`.trim();
 
+  const stopCurrentAudio = useCallback(() => {
+    if (audioRef.current) {
+      audioRef.current.onwaiting = null;
+      audioRef.current.oncanplay = null;
+      audioRef.current.onplaying = null;
+      audioRef.current.ontimeupdate = null;
+      audioRef.current.onended = null;
+      audioRef.current.onerror = null;
+      audioRef.current.pause();
+      audioRef.current.src = "";
+      audioRef.current = null;
+    }
+  }, []);
+
   // Dọn dẹp audio khi component unmount
   useEffect(() => {
     return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current.src = "";
-        audioRef.current = null;
-      }
+      stopCurrentAudio();
     };
-  }, []);
+  }, [stopCurrentAudio]);
 
   const initAudio = (selectedGender = voiceGender) => {
-    if (audioRef.current) return audioRef.current;
+    stopCurrentAudio();
 
     const lang = isVi ? "vi" : "en";
     const src = `/api/tts?text=${encodeURIComponent(textToRead)}&lang=${lang}&gender=${selectedGender}`;
@@ -76,42 +89,30 @@ export function AudioBriefPlayer({ title, summaryText, isVi }: AudioBriefPlayerP
     audio.onerror = () => {
       setIsLoading(false);
       setIsPlaying(false);
-      console.warn("API TTS playback issue, falling back to Web Speech API");
-      fallbackWebSpeech();
+      console.error("Audio playback error on Neural stream");
     };
 
     audioRef.current = audio;
     return audio;
   };
 
-  const fallbackWebSpeech = () => {
-    if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
-    window.speechSynthesis.cancel();
-    const utterance = new SpeechSynthesisUtterance(textToRead);
-    utterance.lang = isVi ? "vi-VN" : "en-US";
-    utterance.rate = speed;
-    utterance.onend = () => setIsPlaying(false);
-    utterance.onerror = () => setIsPlaying(false);
-    window.speechSynthesis.speak(utterance);
-    setIsPlaying(true);
-  };
-
   const handleTogglePlay = async () => {
-    const audio = initAudio();
-
     if (isPlaying) {
-      audio.pause();
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
       setIsPlaying(false);
     } else {
       try {
         setIsLoading(true);
+        const audio = audioRef.current || initAudio();
         audio.playbackRate = speed;
         await audio.play();
         setIsPlaying(true);
       } catch (err) {
-        console.warn("Play error, trying fallback:", err);
+        console.warn("Play error:", err);
         setIsLoading(false);
-        fallbackWebSpeech();
+        setIsPlaying(false);
       }
     }
   };
@@ -124,38 +125,30 @@ export function AudioBriefPlayer({ title, summaryText, isVi }: AudioBriefPlayerP
     }
   };
 
-  const handleToggleGender = () => {
+  const handleToggleGender = async () => {
     const nextGender = voiceGender === "female" ? "male" : "female";
     setVoiceGender(nextGender);
-    
-    // Reset audio instance to switch voice stream
+
     const wasPlaying = isPlaying;
-    if (audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current.src = "";
-      audioRef.current = null;
-    }
+    stopCurrentAudio();
     setIsPlaying(false);
     setProgress(0);
     setCurrentTime(0);
 
     if (wasPlaying) {
-      setTimeout(() => {
-        const audio = initAudio(nextGender);
+      try {
         setIsLoading(true);
-        audio.play().then(() => setIsPlaying(true)).catch(() => setIsLoading(false));
-      }, 80);
+        const audio = initAudio(nextGender);
+        await audio.play();
+        setIsPlaying(true);
+      } catch {
+        setIsLoading(false);
+      }
     }
   };
 
   const handleReset = () => {
-    if (audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current.currentTime = 0;
-    }
-    if (typeof window !== "undefined" && "speechSynthesis" in window) {
-      window.speechSynthesis.cancel();
-    }
+    stopCurrentAudio();
     setIsPlaying(false);
     setProgress(0);
     setCurrentTime(0);
@@ -196,7 +189,7 @@ export function AudioBriefPlayer({ title, summaryText, isVi }: AudioBriefPlayerP
               </span>
               <span className="inline-flex items-center gap-1 rounded bg-teal-100 px-1.5 py-0.2 text-[9px] font-mono text-teal-800 font-semibold">
                 <Sparkles size={9} />
-                {isVi ? "Neural AI · Nhấn nhá tự nhiên" : "Neural AI · Natural Prosody"}
+                {isVi ? "Azure Neural AI · Tự nhiên" : "Azure Neural AI · Natural"}
               </span>
             </div>
             <h4 className="font-display text-xs sm:text-sm font-bold text-indigo-deep">
@@ -228,8 +221,8 @@ export function AudioBriefPlayer({ title, summaryText, isVi }: AudioBriefPlayerP
                   ? "Hoài My (Nữ)"
                   : "Nam Minh (Nam)"
                 : voiceGender === "female"
-                ? "Emma (F)"
-                : "Andrew (M)"}
+                ? "Jenny (Female)"
+                : "Guy (Male)"}
             </span>
           </button>
 

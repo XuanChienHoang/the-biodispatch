@@ -559,6 +559,7 @@ export default async function BlogPage({ params }: Params) {
                 authorName={isVi ? "TS. Hoàng Xuân Chiến" : (article.author || "Dr. Xuan Chien Hoang")}
                 authorRole={isVi ? "Tiến sĩ Sinh học Phân tử · ĐH Hamburg, CHLB Đức" : (article.authorRole || "Dr. rer. nat. · Univ. of Hamburg")}
                 doi={article.doi}
+                articleImage={article.image}
               />
 
               {/* Author bio card */}
