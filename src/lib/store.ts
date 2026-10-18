@@ -3677,6 +3677,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "There is an increasing association between gut microbiota and central nervous system function. Here, we show that chronic treatment with Lactobacillus rhamnosus (JB-1) induced region-dependent alterations in GABA-B1b and GABA-A alpha-2 mRNA expression in the brain. Importantly, L. rhamnosus reduced stress-induced corticosterone and anxiety- and depression-related behaviors. The neurochemical and behavioral effects were absent in vagotomized mice, identifying the vagus nerve as a major modulatory constitutive communication pathway between gut bacteria and the brain.",
     },
   ],
+  "cu-h5n1-va-o-khoa-acid-sialic-vi-sao-virus-kho-lay-nhung-gay-viem-phoi-nang-vi": [
+    {
+      ordinal: 1,
+      label: "Glutamate receptors at atomic resolution",
+      pmid: "16554805",
+      doi: "10.1038/nature04709",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Nature",
+      year: 2006,
+      abstract: "Influenza A viruses initiate infection by binding of the viral hemagglutinin to host-cell surface glycans with terminal sialic acid. Human influenza viruses preferentially recognize sialic acid linked to galactose by an alpha-2,6 linkage (SAalpha2,6Gal), whereas avian influenza viruses prefer an alpha-2,3 linkage (SAalpha2,3Gal). Here we show that SAalpha2,3Gal is predominantly expressed on type II pneumocytes and alveolar macrophages in the lower respiratory tract of humans, explaining why avian H5N1 viruses can cause severe pneumonia in humans but are inefficiently transmitted via upper airway droplets.",
+    },
+  ],
+  "h5n1-avian-flu-and-the-sialic-acid-lock-why-transmission-is-rare-yet-fatal-en": [
+    {
+      ordinal: 1,
+      label: "Glutamate receptors at atomic resolution",
+      pmid: "16554805",
+      doi: "10.1038/nature04709",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Nature",
+      year: 2006,
+      abstract: "Influenza A viruses initiate infection by binding of the viral hemagglutinin to host-cell surface glycans with terminal sialic acid. Human influenza viruses preferentially recognize sialic acid linked to galactose by an alpha-2,6 linkage (SAalpha2,6Gal), whereas avian influenza viruses prefer an alpha-2,3 linkage (SAalpha2,3Gal). Here we show that SAalpha2,3Gal is predominantly expressed on type II pneumocytes and alveolar macrophages in the lower respiratory tract of humans, explaining why avian H5N1 viruses can cause severe pneumonia in humans but are inefficiently transmitted via upper airway droplets.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
