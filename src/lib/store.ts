@@ -3703,6 +3703,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Influenza A viruses initiate infection by binding of the viral hemagglutinin to host-cell surface glycans with terminal sialic acid. Human influenza viruses preferentially recognize sialic acid linked to galactose by an alpha-2,6 linkage (SAalpha2,6Gal), whereas avian influenza viruses prefer an alpha-2,3 linkage (SAalpha2,3Gal). Here we show that SAalpha2,3Gal is predominantly expressed on type II pneumocytes and alveolar macrophages in the lower respiratory tract of humans, explaining why avian H5N1 viruses can cause severe pneumonia in humans but are inefficiently transmitted via upper airway droplets.",
     },
   ],
+  "phosphatidylserine-dha-mang-te-bao-than-kinh-vi": [
+    {
+      ordinal: 1,
+      label: "Phosphatidylserine in the brain: metabolism and function",
+      pmid: "24992464",
+      doi: "10.1016/j.plipres.2014.06.002",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Prog Lipid Res",
+      year: 2014,
+      abstract: "Phosphatidylserine (PS) is an essential acidic phospholipid synthesized in the endoplasmic reticulum and concentrated in the inner leaflet of plasma membranes, particularly in neural tissue. PS supports neuronal survival, membrane fluidity, and synaptic transmission by regulating key signaling proteins, including protein kinase C and Akt, through calcium-dependent electrostatic interactions. The enrichment of docosahexaenoic acid (DHA) in PS species is crucial for maintaining membrane physical properties and neurodevelopmental signaling pathways, offering therapeutic avenues for age-associated neurocognitive decline.",
+    },
+  ],
+  "phosphatidylserine-dha-neuronal-membrane-en": [
+    {
+      ordinal: 1,
+      label: "Phosphatidylserine in the brain: metabolism and function",
+      pmid: "24992464",
+      doi: "10.1016/j.plipres.2014.06.002",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Prog Lipid Res",
+      year: 2014,
+      abstract: "Phosphatidylserine (PS) is an essential acidic phospholipid synthesized in the endoplasmic reticulum and concentrated in the inner leaflet of plasma membranes, particularly in neural tissue. PS supports neuronal survival, membrane fluidity, and synaptic transmission by regulating key signaling proteins, including protein kinase C and Akt, through calcium-dependent electrostatic interactions. The enrichment of docosahexaenoic acid (DHA) in PS species is crucial for maintaining membrane physical properties and neurodevelopmental signaling pathways, offering therapeutic avenues for age-associated neurocognitive decline.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
