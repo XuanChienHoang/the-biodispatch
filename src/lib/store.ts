@@ -3624,6 +3624,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Vitamins D and K are fat-soluble vitamins that play crucial roles in calcium homeostasis and bone metabolism. While vitamin D promotes intestinal calcium absorption, vitamin K acts as an essential cofactor for the carboxylation of vitamin K-dependent proteins such as osteocalcin and matrix Gla protein (MGP), which govern bone mineralization and inhibit arterial calcification, respectively. Emerging clinical evidence highlights that combined supplementation of vitamins D and K synergistically improves bone mineral density while mitigating the progression of vascular calcification and arterial stiffness, offering a novel paradigm in metabolic longevity and preventive cardiovascular care.",
     },
   ],
+  "di-bo-sau-an-giai-ma-chuyen-hoa-glut4-khong-can-insulin-vi": [
+    {
+      ordinal: 1,
+      label: "Risk of non-alcoholic fatty liver disease in patients with chronic plaque psoriasis: an updated systematic review and meta-analysis of observational studies",
+      pmid: "35147926",
+      doi: "10.1007/s40618-022-01755-0",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "J Endocrinol Invest",
+      year: 2022,
+      abstract: "This systematic review and meta-analysis investigated the acute effects of breaking up uninterrupted prolonged sitting with intermittent bouts of light-intensity walking versus standing on postprandial cardiometabolic biomarkers. Seven randomized crossover studies met inclusion criteria, revealing that interrupting sedentary sitting with brief, light-intensity walking significantly blunted postprandial glucose and insulin area under the curve compared with continuous sitting. The meta-analytic findings confirm that light physical movement shortly after meals serves as an efficacious, non-pharmacological strategy for improving postprandial glycemic control in adults.",
+    },
+  ],
+  "postprandial-walking-insulin-independent-glut4-glucose-clearance-en": [
+    {
+      ordinal: 1,
+      label: "Risk of non-alcoholic fatty liver disease in patients with chronic plaque psoriasis: an updated systematic review and meta-analysis of observational studies",
+      pmid: "35147926",
+      doi: "10.1007/s40618-022-01755-0",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "J Endocrinol Invest",
+      year: 2022,
+      abstract: "This systematic review and meta-analysis investigated the acute effects of breaking up uninterrupted prolonged sitting with intermittent bouts of light-intensity walking versus standing on postprandial cardiometabolic biomarkers. Seven randomized crossover studies met inclusion criteria, revealing that interrupting sedentary sitting with brief, light-intensity walking significantly blunted postprandial glucose and insulin area under the curve compared with continuous sitting. The meta-analytic findings confirm that light physical movement shortly after meals serves as an efficacious, non-pharmacological strategy for improving postprandial glycemic control in adults.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
