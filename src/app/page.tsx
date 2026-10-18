@@ -6,7 +6,10 @@ import { getArticles } from "@/lib/store";
 import { HomeFeaturedGizmo, HomeSimulationLab } from "@/components/HomeGizmosSection";
 import type { Article } from "@/lib/content";
 
-export const dynamic = "force-dynamic";
+// Tối ưu hóa tài nguyên Vercel: Dùng ISR (Incremental Static Regeneration) 1 giờ.
+// Trang chủ sẽ được phục vụ siêu tốc từ Vercel Edge Cache (0 invocation, 0 CPU).
+// Khi có bài mới được sinh và deploy, Vercel tự động build lại trang tĩnh.
+export const revalidate = 3600;
 
 export default async function HomePage() {
   const all = await getArticles();
