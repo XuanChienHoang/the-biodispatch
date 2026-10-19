@@ -222,7 +222,8 @@ async function generateFromHuggingFaceFlux(prompt, hfToken) {
  */
 async function fetchFromWikimediaCommons(keyword) {
   try {
-    const url = `https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrnamespace=6&gsrsearch=${encodeURIComponent(keyword + ' jpg')}&prop=imageinfo&iiprop=url|size&format=json&gsrlimit=5`;
+    const cleanQuery = `${keyword} -schema -diagram -clipart -drawing -icon`;
+    const url = `https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrnamespace=6&gsrsearch=${encodeURIComponent(cleanQuery)}&prop=imageinfo&iiprop=url|size&format=json&gsrlimit=10`;
     const res = await fetch(url, {
       headers: { 'User-Agent': 'Phytocodex-Bot/2.0 (contact: info@phytocodex.com)' }
     });
@@ -231,14 +232,19 @@ async function fetchFromWikimediaCommons(keyword) {
     const pages = Object.values(data.query?.pages || {});
 
     for (const p of pages) {
+      const title = (p.title || '').toLowerCase();
+      // Loại bỏ tranh vẽ sơ đồ, biểu đồ thô sơ
+      if (/schema|diagram|drawing|clipart|icon|vector|symbol/i.test(title)) continue;
+
       const info = p.imageinfo?.[0];
-      if (info && info.width >= 1000 && !info.url.endsWith('.svg')) {
+      if (info && info.width >= 800 && !info.url.endsWith('.svg') && !info.url.endsWith('.gif')) {
         const imgRes = await fetch(info.url, {
-          headers: { 'User-Agent': 'Phytocodex-Bot/2.0' }
+          headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }
         });
         if (imgRes.ok) {
           const arrayBuffer = await imgRes.arrayBuffer();
-          return Buffer.from(arrayBuffer);
+          const buf = Buffer.from(arrayBuffer);
+          if (buf.length > 30000) return buf;
         }
       }
     }
@@ -262,7 +268,10 @@ async function fetchFromOpenverse(keyword) {
     const results = data.results || [];
 
     for (const item of results) {
-      if (item.url && !item.url.endsWith('.svg')) {
+      const title = (item.title || '').toLowerCase();
+      if (/schema|diagram|drawing|clipart|icon|vector|symbol/i.test(title)) continue;
+
+      if (item.url && !item.url.endsWith('.svg') && !item.url.endsWith('.gif')) {
         try {
           const imgRes = await fetch(item.url, {
             headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }
