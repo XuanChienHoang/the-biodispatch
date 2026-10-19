@@ -3755,6 +3755,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Mitochondrial decline is a key hallmark of aging, leading to reduced cellular ATP and sensory functional loss. The retina exhibits the highest metabolic rate in the body, with photoreceptor cones suffering significant energy deficits over time. Here we show that a single 3-minute exposure to 670 nm red light at 40 mW/cm2, which is absorbed by mitochondrial Cytochrome c Oxidase, significantly improves tritan color contrast sensitivity in humans over 38 years of age. Crucially, this improvement is circadian dependent, occurring only when exposure is delivered in the morning, and the bioenergetic benefit persists for up to one week following a single treatment.",
     },
   ],
+  "phosphatidylserine-va-dha-mang-te-bao-than-kinh-vi": [
+    {
+      ordinal: 1,
+      label: "Phosphatidylserine in the brain: metabolism and function",
+      pmid: "24992464",
+      doi: "10.1016/j.plipres.2014.06.002",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Prog Lipid Res",
+      year: 2014,
+      abstract: "Phosphatidylserine (PS) is the most abundant acidic phospholipid in the brain and plays critical roles in maintaining neuronal membrane integrity, regulating activity of membrane-bound enzymes such as protein kinase C, and modulating neurotransmitter release. Disruptions in brain PS metabolism are implicated in age-related cognitive decline and neurodegenerative disorders. This review summarizes the enzymatic pathways governing brain PS homeostasis and its functional interactions with docosahexaenoic acid (DHA) to support synaptic plasticity and cognitive performance.",
+    },
+  ],
+  "phosphatidylserine-and-dha-neuronal-membrane-en": [
+    {
+      ordinal: 1,
+      label: "Phosphatidylserine in the brain: metabolism and function",
+      pmid: "24992464",
+      doi: "10.1016/j.plipres.2014.06.002",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Prog Lipid Res",
+      year: 2014,
+      abstract: "Phosphatidylserine (PS) is the most abundant acidic phospholipid in the brain and plays critical roles in maintaining neuronal membrane integrity, regulating activity of membrane-bound enzymes such as protein kinase C, and modulating neurotransmitter release. Disruptions in brain PS metabolism are implicated in age-related cognitive decline and neurodegenerative disorders. This review summarizes the enzymatic pathways governing brain PS homeostasis and its functional interactions with docosahexaenoic acid (DHA) to support synaptic plasticity and cognitive performance.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
