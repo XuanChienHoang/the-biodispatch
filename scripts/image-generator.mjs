@@ -83,37 +83,41 @@ export function extractSmartImageKeywords(topic = {}) {
     { pattern: /sulforaphane|bông cải xanh|broccoli/i, query: 'Broccoli sprouts Brassica oleracea sulforaphane' },
     { pattern: /quercetin/i, query: 'Flavonoid antioxidant botanical plants quercetin' },
     { pattern: /milk thistle|kế sữa|silymarin/i, query: 'Silybum marianum milk thistle botanical' },
-    { pattern: /garlic|tỏi|allicin/i, query: 'Allium sativum fresh garlic botanical' },
-    { pattern: /ginger|gừng/i, query: 'Zingiber officinale fresh ginger root' },
-    { pattern: /cinnamon|quế/i, query: 'Cinnamomum verum true cinnamon bark' },
-    { pattern: /rosemary|hương thảo/i, query: 'Rosmarinus officinalis fresh rosemary herb' }
+    { pattern: /garlic|tỏi|allicin/i, query: 'Allium sativum garlic' },
+    { pattern: /ginger|gừng/i, query: 'Zingiber officinale ginger' },
+    { pattern: /cinnamon|quế/i, query: 'Cinnamomum cinnamon bark' },
+    { pattern: /rosemary|hương thảo/i, query: 'Rosmarinus officinalis rosemary' },
+    { pattern: /phosphatidylserine|dha|omega-3|omega 3|phospholipid/i, query: 'neuron synapse brain cell' },
+    { pattern: /h5n1|influenza|cúm|avian flu|virus|respiratory/i, query: 'influenza virus transmission' },
+    { pattern: /yersinia|pestis|t3ss|kháng sinh|vi khuẩn|bacteria/i, query: 'bacteria cellular microbiology' },
+    { pattern: /glut4|glucose|insulin|đường huyết|tiểu đường/i, query: 'blood glucose metabolism cell' }
   ];
 
   for (const h of HERB_KEYWORDS) {
     if (h.pattern.test(text)) return h.query;
   }
 
-  // Lifestyle keywords
-  if (/walk|đi bộ|exercise|tập luyện|hiit/i.test(text)) return 'morning outdoor walking healthy vitality sunlight';
-  if (/sleep|giấc ngủ|circadian|nhịp sinh học|melatonin/i.test(text)) return 'peaceful natural sleep bedroom darkness circadian';
-  if (/nhai|ăn rau|cơm nguội|tinh bột kháng|microbiome|gut|ruột/i.test(text)) return 'fresh organic plant rich food healthy microbiome';
-  if (/thở|vagus|thiền|breath/i.test(text)) return 'calm meditation breathing fresh morning air';
-  if (/cold|nước lạnh|sauna|nhiệt/i.test(text)) return 'cold plunge hydrotherapy wellness recovery';
-  if (/ánh sáng xanh|blue light/i.test(text)) return 'circadian night screen evening ambient lighting';
+  // Lifestyle keywords (Ngắn gọn để Openverse & Pexels tìm chính xác 100%)
+  if (/walk|đi bộ|exercise|tập luyện|hiit/i.test(text)) return 'outdoor morning walking sunlight';
+  if (/sleep|giấc ngủ|circadian|nhịp sinh học|melatonin/i.test(text)) return 'peaceful sleeping bedroom night';
+  if (/nhai|ăn rau|cơm nguội|tinh bột kháng|microbiome|gut|ruột/i.test(text)) return 'healthy organic vegetables salad';
+  if (/thở|vagus|thiền|breath/i.test(text)) return 'calm meditation breathing nature';
+  if (/cold|nước lạnh|sauna|nhiệt/i.test(text)) return 'cold plunge wellness water';
+  if (/ánh sáng xanh|blue light/i.test(text)) return 'screen evening lighting';
 
-  // Organ fallbacks
+  // Organ fallbacks (Tối đa 2-3 từ khóa chuẩn xác cao)
   const organ = topic.organ || 'Metabolic';
   const ORGAN_QUERIES = {
-    Cardiovascular: 'cardiovascular healthy circulation clinical science',
-    Brain: 'human brain neuroscience cognitive synaptic vitality',
-    Gut: 'healthy intestinal microbiome plant based biology',
-    Metabolic: 'cellular energy metabolic mitochondrial vitality',
-    'Cellular Aging': 'cellular longevity mitochondria laboratory science',
-    Immunity: 'cellular immunity leukocyte defense laboratory science',
-    Liver: 'healthy hepatic metabolism clean nutrition vitality'
+    Cardiovascular: 'heart vascular circulation',
+    Brain: 'human brain neuron',
+    Gut: 'healthy intestinal microbiome',
+    Metabolic: 'cellular metabolism mitochondria',
+    'Cellular Aging': 'cell mitochondria longevity',
+    Immunity: 'immune cell microbiology',
+    Liver: 'liver metabolism health'
   };
 
-  return ORGAN_QUERIES[organ] || 'medicinal botany laboratory scientific vitality';
+  return ORGAN_QUERIES[organ] || 'medicinal botany laboratory';
 }
 
 /**

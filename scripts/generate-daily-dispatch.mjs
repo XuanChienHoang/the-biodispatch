@@ -406,12 +406,20 @@ async function createFallbackIllustration(slug, topic = {}) {
     ? (LIFE_DISPATCH_ARCHETYPES[organ] || LIFE_DISPATCH_ARCHETYPES.Metabolic)
     : (ORGAN_CINEMATIC_ARCHETYPES[organ] || ORGAN_CINEMATIC_ARCHETYPES.Metabolic);
 
-  let chosenArchetype = pool.find(p => fs.existsSync(p));
+  const existingInPool = pool.filter(p => fs.existsSync(p));
+  let chosenArchetype = existingInPool.length > 0
+    ? existingInPool[Math.floor(Math.random() * existingInPool.length)]
+    : null;
 
   if (!chosenArchetype) {
-    chosenArchetype = isLifeDispatch
-      ? path.join(imagesDir, 'an-rau-truoc-com-kiem-soat-duong-huyet-vi.jpg')
-      : path.join(imagesDir, 'alpha-ketoglutarate-tre-hoa-bieu-gen-vi.jpg');
+    const allFallbackCandidates = [
+      path.join(imagesDir, 'di-bo-10-phut-sau-bua-an-kich-hoat-co-bap-vi.jpg'),
+      path.join(imagesDir, 'morning-sunlight-circadian-clock-metabolism.jpg'),
+      path.join(imagesDir, 'green-tea-l-theanine-and-caffeine-smooth-focus-en.jpg'),
+      path.join(imagesDir, 'an-rau-truoc-com-kiem-soat-duong-huyet-vi.jpg')
+    ].filter(p => fs.existsSync(p));
+
+    chosenArchetype = allFallbackCandidates[Math.floor(Math.random() * allFallbackCandidates.length)] || path.join(imagesDir, 'an-rau-truoc-com-kiem-soat-duong-huyet-vi.jpg');
   }
 
   try {
