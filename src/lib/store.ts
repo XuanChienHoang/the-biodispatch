@@ -3781,6 +3781,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Phosphatidylserine (PS) is the most abundant acidic phospholipid in the brain and plays critical roles in maintaining neuronal membrane integrity, regulating activity of membrane-bound enzymes such as protein kinase C, and modulating neurotransmitter release. Disruptions in brain PS metabolism are implicated in age-related cognitive decline and neurodegenerative disorders. This review summarizes the enzymatic pathways governing brain PS homeostasis and its functional interactions with docosahexaenoic acid (DHA) to support synaptic plasticity and cognitive performance.",
     },
   ],
+  "thanh-loc-te-bao-zombie-senolytics-va-tuoi-tho-vi-mo-vi": [
+    {
+      ordinal: 1,
+      label: "Fisetin is a senotherapeutic that extends health and lifespan",
+      pmid: "30279143",
+      doi: "10.1016/j.ebiom.2018.09.015",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "EBioMedicine",
+      year: 2018,
+      abstract: "Senescent cells accumulate with aging and contribute to age-related pathologies. We tested a panel of flavonoids for senolytic activity and identified fisetin as a potent agent. Administration of fisetin to aging mice restored tissue homeostasis, reduced senescence markers, and significantly extended healthspan and lifespan.",
+    },
+  ],
+  "clearing-zombie-cells-senolytics-and-microscopic-longevity-en": [
+    {
+      ordinal: 1,
+      label: "Fisetin is a senotherapeutic that extends health and lifespan",
+      pmid: "30279143",
+      doi: "10.1016/j.ebiom.2018.09.015",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "EBioMedicine",
+      year: 2018,
+      abstract: "Senescent cells accumulate with aging and contribute to age-related pathologies. We tested a panel of flavonoids for senolytic activity and identified fisetin as a potent agent. Administration of fisetin to aging mice restored tissue homeostasis, reduced senescence markers, and significantly extended healthspan and lifespan.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
