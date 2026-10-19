@@ -3729,6 +3729,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Phosphatidylserine (PS) is an essential acidic phospholipid synthesized in the endoplasmic reticulum and concentrated in the inner leaflet of plasma membranes, particularly in neural tissue. PS supports neuronal survival, membrane fluidity, and synaptic transmission by regulating key signaling proteins, including protein kinase C and Akt, through calcium-dependent electrostatic interactions. The enrichment of docosahexaenoic acid (DHA) in PS species is crucial for maintaining membrane physical properties and neurodevelopmental signaling pathways, offering therapeutic avenues for age-associated neurocognitive decline.",
     },
   ],
+  "quang-sinh-hoc-670nm-phuc-hoi-ty-the-vong-mac-vi": [
+    {
+      ordinal: 1,
+      label: "Weeklong improved colour contrasts sensitivity after single 670 nm exposures associated with enhanced mitochondrial function",
+      pmid: "34819619",
+      doi: "10.1038/s41598-021-02311-1",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Sci Rep",
+      year: 2021,
+      abstract: "Mitochondrial decline is a key hallmark of aging, leading to reduced cellular ATP and sensory functional loss. The retina exhibits the highest metabolic rate in the body, with photoreceptor cones suffering significant energy deficits over time. Here we show that a single 3-minute exposure to 670 nm red light at 40 mW/cm2, which is absorbed by mitochondrial Cytochrome c Oxidase, significantly improves tritan color contrast sensitivity in humans over 38 years of age. Crucially, this improvement is circadian dependent, occurring only when exposure is delivered in the morning, and the bioenergetic benefit persists for up to one week following a single treatment.",
+    },
+  ],
+  "photobiomodulation-670nm-retinal-mitochondria-en": [
+    {
+      ordinal: 1,
+      label: "Weeklong improved colour contrasts sensitivity after single 670 nm exposures associated with enhanced mitochondrial function",
+      pmid: "34819619",
+      doi: "10.1038/s41598-021-02311-1",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Sci Rep",
+      year: 2021,
+      abstract: "Mitochondrial decline is a key hallmark of aging, leading to reduced cellular ATP and sensory functional loss. The retina exhibits the highest metabolic rate in the body, with photoreceptor cones suffering significant energy deficits over time. Here we show that a single 3-minute exposure to 670 nm red light at 40 mW/cm2, which is absorbed by mitochondrial Cytochrome c Oxidase, significantly improves tritan color contrast sensitivity in humans over 38 years of age. Crucially, this improvement is circadian dependent, occurring only when exposure is delivered in the morning, and the bioenergetic benefit persists for up to one week following a single treatment.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
