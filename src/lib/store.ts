@@ -3833,6 +3833,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Sulforaphane [1-isothiocyanato-4-(methylsulfinyl)butane] was isolated from broccoli as the principal inducer of phase 2 detoxifying enzymes. It is a potent inducer of quinone reductase and glutathione S-transferases in murine hepatoma cells and protects tissues against xenobiotics and oxidative damage through the activation of endogenous genomic defense pathways.",
     },
   ],
+  "di-bo-sau-an-giam-duong-huyet-vi": [
+    {
+      ordinal: 1,
+      label: "The Role of G Protein-Coupled Receptors in Aging and the Modulatory Impact of Physical Activity: A Systematic Review",
+      pmid: "41693249",
+      doi: "10.1002/cph4.70113",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Compr Physiol",
+      year: 2026,
+      abstract: "Physical inactivity is a primary underlying cause of numerous chronic conditions, whereas regular muscle contraction profoundly enhances insulin sensitivity, glucose uptake via GLUT4 translocation, and overall metabolic health across diverse populations.",
+    },
+  ],
+  "post-meal-walking-glycemic-control-en": [
+    {
+      ordinal: 1,
+      label: "The Role of G Protein-Coupled Receptors in Aging and the Modulatory Impact of Physical Activity: A Systematic Review",
+      pmid: "41693249",
+      doi: "10.1002/cph4.70113",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Compr Physiol",
+      year: 2026,
+      abstract: "Physical inactivity is a primary underlying cause of numerous chronic conditions, whereas regular muscle contraction profoundly enhances insulin sensitivity, glucose uptake via GLUT4 translocation, and overall metabolic health across diverse populations.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
