@@ -3807,6 +3807,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Senescent cells accumulate with aging and contribute to age-related pathologies. We tested a panel of flavonoids for senolytic activity and identified fisetin as a potent agent. Administration of fisetin to aging mice restored tissue homeostasis, reduced senescence markers, and significantly extended healthspan and lifespan.",
     },
   ],
+  "sulforaphane-nrf2-keap1-longevity-vi": [
+    {
+      ordinal: 1,
+      label: "A major inducer of anticarcinogenic protective enzymes from broccoli: isolation and elucidation of structure",
+      pmid: "1549603",
+      doi: "10.1073/pnas.89.6.2399",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Proc Natl Acad Sci U S A",
+      year: 1992,
+      abstract: "Sulforaphane [1-isothiocyanato-4-(methylsulfinyl)butane] was isolated from broccoli as the principal inducer of phase 2 detoxifying enzymes. It is a potent inducer of quinone reductase and glutathione S-transferases in murine hepatoma cells and protects tissues against xenobiotics and oxidative damage through the activation of endogenous genomic defense pathways.",
+    },
+  ],
+  "sulforaphane-nrf2-keap1-longevity-en": [
+    {
+      ordinal: 1,
+      label: "A major inducer of anticarcinogenic protective enzymes from broccoli: isolation and elucidation of structure",
+      pmid: "1549603",
+      doi: "10.1073/pnas.89.6.2399",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Proc Natl Acad Sci U S A",
+      year: 1992,
+      abstract: "Sulforaphane [1-isothiocyanato-4-(methylsulfinyl)butane] was isolated from broccoli as the principal inducer of phase 2 detoxifying enzymes. It is a potent inducer of quinone reductase and glutathione S-transferases in murine hepatoma cells and protects tissues against xenobiotics and oxidative damage through the activation of endogenous genomic defense pathways.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
