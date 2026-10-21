@@ -3859,6 +3859,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Physical inactivity is a primary underlying cause of numerous chronic conditions, whereas regular muscle contraction profoundly enhances insulin sensitivity, glucose uptake via GLUT4 translocation, and overall metabolic health across diverse populations.",
     },
   ],
+  "omega-3-triglyceride-va-ethyl-ester-sinh-kha-dung-vi-tim-mach-vi": [
+    {
+      ordinal: 1,
+      label: "Omega-3 Fatty Acids for the Management of Hypertriglyceridemia: A Science Advisory From the American Heart Association",
+      pmid: "31422671",
+      doi: "10.1161/CIR.0000000000000709",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Circulation",
+      year: 2019,
+      abstract: "Hypertriglyceridemia is an important risk factor for cardiovascular disease and acute pancreatitis. Prescription omega-3 fatty acid formulations are effective and safe options for reducing triglyceride levels, though differences in chemical formulations such as ethyl esters versus triglycerides can influence bioavailability and clinical outcomes in patient populations.",
+    },
+  ],
+  "omega-3-triglyceride-vs-ethyl-ester-cardiovascular-pharmacokinetics-en": [
+    {
+      ordinal: 1,
+      label: "Omega-3 Fatty Acids for the Management of Hypertriglyceridemia: A Science Advisory From the American Heart Association",
+      pmid: "31422671",
+      doi: "10.1161/CIR.0000000000000709",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Circulation",
+      year: 2019,
+      abstract: "Hypertriglyceridemia is an important risk factor for cardiovascular disease and acute pancreatitis. Prescription omega-3 fatty acid formulations are effective and safe options for reducing triglyceride levels, though differences in chemical formulations such as ethyl esters versus triglycerides can influence bioavailability and clinical outcomes in patient populations.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
