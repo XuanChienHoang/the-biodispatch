@@ -69,7 +69,7 @@ jobs:
         run: |
           git config --global user.name "Xuan Chien Hoang"
           git config --global user.email "hoangxuanchien86@gmail.com"
-          git add content/posts/ public/images/ src/lib/store.ts
+          git add content/ public/images/ src/lib/store.ts
           if git diff --staged --quiet -- content/posts/; then
             echo "No new dispatches to commit."
           else

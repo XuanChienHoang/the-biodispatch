@@ -7,3 +7,6 @@ out/
 
 .vercel
 .env*
+_backups/
+scripts/cluster_quality.json
+scripts/duplicate_report.json

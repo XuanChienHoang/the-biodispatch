@@ -22,6 +22,8 @@ import { fileURLToPath } from 'url';
 import { DISPATCH_RADAR_TOPICS } from './radar-topics.mjs';
 import { verifyAndHealReferences } from './citation-verifier.mjs';
 import { generateDispatchImage } from './image-generator.mjs';
+import { checkTopicCollision } from './topic-dedup-guard.mjs';
+import { buildTopicRegistry } from './topic-registry.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -474,31 +476,31 @@ export async function runAutonomousDispatch() {
     }
   }
   const sortedTopics = Array.from(uniqueTopicsMap.values()).sort((a, b) => (a.date > b.date ? 1 : -1));
-  const lastFiveTopics = sortedTopics.slice(-5);
-  const recentClinicalCount = lastFiveTopics.filter(p => p.tier === 'Clinical Deep-Dive').length;
-  // Nếu trong 5 chủ đề gần nhất chưa có bài chuyên sâu, chuyển sang chuyên sâu; ngược lại duy trì đời sống
-  const targetTier = (recentClinicalCount === 0) ? 'Clinical Deep-Dive' : 'Life Dispatch';
-  console.log(`🎯 [Editorial Policy] Tỷ lệ 4:1 -> 5 chủ đề gần nhất có ${recentClinicalCount} bài chuyên sâu -> Mục tiêu kỳ này: ${targetTier}`);
+  const lastNineTopics = sortedTopics.slice(-8);
+  const recentClinicalCount = lastNineTopics.filter(p => p.tier === 'Clinical Deep-Dive').length;
+  // Ưu tiên độc giả phổ thông: duy trì tỷ lệ 8:1 (chỉ 1 bài chuyên sâu sau mỗi 8 bài đời sống thường thức)
+  const targetTier = (recentClinicalCount === 0 && lastNineTopics.length >= 8) ? 'Clinical Deep-Dive' : 'Life Dispatch';
+  console.log(`🎯 [Editorial Policy] Hướng tới độc giả phổ thông (tỷ lệ 8:1) -> 8 chủ đề gần nhất có ${recentClinicalCount} bài chuyên sâu -> Mục tiêu kỳ này: ${targetTier}`);
 
   const { validateDispatchContent } = await import('./validate-dispatch.mjs');
-  // Ưu tiên topic từ radar nếu trùng targetTier, ngược lại dùng Gemini sinh mới
+  // Ưu tiên topic từ radar nếu vượt qua kiểm định Dedup Guard và đúng targetTier
   const staticTopic = DISPATCH_RADAR_TOPICS.find(t => 
-    !existingSlugs.has(t.slugVi) && 
-    !existingSlugs.has(`${t.slugVi}-vi`) && 
+    !checkTopicCollision(t).isDuplicate && 
     (t.tier === targetTier || (!t.tier && targetTier === 'Clinical Deep-Dive'))
   );
 
-  // Radar dự phòng cuối cùng: bất kỳ topic chưa dùng nào (ưu tiên đúng tier)
+  // Radar dự phòng cuối cùng: bất kỳ topic chưa dùng nào (được lọc qua Dedup Guard)
   const unusedRadar = DISPATCH_RADAR_TOPICS.filter(t =>
-    !existingSlugs.has(t.slugVi) && !existingSlugs.has(`${t.slugVi}-vi`)
+    !checkTopicCollision(t).isDuplicate
   ).sort((a, b) => (a.tier === targetTier ? -1 : 0) - (b.tier === targetTier ? -1 : 0));
 
-  const MAX_ATTEMPTS = 6; // 1: radar đúng tier | 2-5: Gemini (4-5 đổi tier) | 6: radar bất kỳ
+  const MAX_ATTEMPTS = 6; // 1: radar đúng tier | 2-5: Gemini (duy trì Life Dispatch) | 6: radar bất kỳ
   let attempt = 0;
   let feedback = null;
   let publishedTopic = null;
   const triedRadar = new Set();
-  const altTier = targetTier === 'Clinical Deep-Dive' ? 'Life Dispatch' : 'Clinical Deep-Dive';
+  // Ưu tiên độc giả phổ thông: không tự động nhảy sang Clinical Deep-Dive khi thử lại
+  const altTier = targetTier === 'Clinical Deep-Dive' ? 'Life Dispatch' : 'Life Dispatch';
 
   while (attempt < MAX_ATTEMPTS) {
     attempt++;
@@ -523,11 +525,11 @@ export async function runAutonomousDispatch() {
     if (nextTopic) triedRadar.add(nextTopic.slugVi);
     nextTopic = normalizeTopic(nextTopic, targetTier);
     if (nextTopic) {
-      const sv = nextTopic.slugVi.endsWith('-vi') ? nextTopic.slugVi : `${nextTopic.slugVi}-vi`;
-      const se = nextTopic.slugEn.endsWith('-en') ? nextTopic.slugEn : `${nextTopic.slugEn}-en`;
-      if (existingSlugs.has(sv) || existingSlugs.has(se) || existingSlugs.has(nextTopic.slugVi)) {
-        console.warn(`⚠️ [Dedupe] Slug đã tồn tại (${sv}) -> bỏ để không ghi đè bài cũ.`);
-        feedback = `Chủ đề "${nextTopic.titleVi}" đã có trên site. Hãy chọn chủ đề hoàn toàn khác.`;
+      // Deterministic Zero-Token Anti-Duplication Guard (Kiểm định toàn diện: slug, DOI, cụm thực thể, mức độ tương đồng tiêu đề)
+      const collision = checkTopicCollision(nextTopic);
+      if (collision.isDuplicate) {
+        console.warn(`🛑 [Topic Dedup Guard BỊ CHẶN] ${collision.reason}`);
+        feedback = `Chủ đề "${nextTopic.titleVi}" bị từ chối do trùng lặp: ${collision.reason}. Bắt buộc chọn một đề tài HOÀN TOÀN MỚI chưa từng có trong kho!`;
         continue;
       }
     }
@@ -599,6 +601,14 @@ export async function runAutonomousDispatch() {
 
     // 4. Cập nhật SEED_REFS trong store.ts
     await updateStoreSeedRefs(nextTopic);
+
+    // 5. Tự động đồng bộ và cập nhật Topic Registry độc quyền
+    try {
+      buildTopicRegistry();
+      console.log(`📚 [Topic Registry] Đã tự động cập nhật topic-registry.json với bài viết mới.`);
+    } catch (e) {
+      console.warn(`⚠️ [Topic Registry] Lỗi đồng bộ registry: ${e.message}`);
+    }
 
     console.log('\n✅ [Done] Hoàn tất sinh bản tin chuyên sâu song ngữ đạt chuẩn Gatekeeper và Liêm chính Y văn PubMed!');
     publishedTopic = nextTopic;

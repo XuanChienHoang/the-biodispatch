@@ -39,6 +39,26 @@ const TWIN_ROOT: Record<string, string> = {
   "glp1-longevity-nature-mitochondria": "glp1-longevity",
   "metabolomic-horizon-clinical-diagnostics": "metabolomic-horizon",
   "metabolomic-horizon-clinical-diagnostics-vi": "metabolomic-horizon",
+  "nhai-ky-no-lau-giam-calo": "chewing-slowly-satiety-gut-hormones",
+  "chewing-slowly-satiety-gut-hormones": "chewing-slowly-satiety-gut-hormones",
+  "anh-nang-ban-mai-khoi-dong-dong-ho-sinh-hoc": "morning-sunlight-circadian-clock-metabolism",
+  "morning-sunlight-circadian-clock-metabolism": "morning-sunlight-circadian-clock-metabolism",
+  "qua-mong-anthocyanin-la-chan-chong-lao-hoa-mach-mau": "berries-anthocyanins-vascular-protection-antioxidant-shield",
+  "berries-anthocyanins-vascular-protection-antioxidant-shield": "berries-anthocyanins-vascular-protection-antioxidant-shield",
+  "ngat-quang-ngoi-lau-danh-thuc-mach-mau": "breaking-sedentary-sitting-vascular-shear-stress",
+  "breaking-sedentary-sitting-vascular-shear-stress": "breaking-sedentary-sitting-vascular-shear-stress",
+  "so-co-la-den-flavanol-gian-mach-ha-huyet-ap": "dark-chocolate-flavanols-nitric-oxide-endothelial-function",
+  "dark-chocolate-flavanols-nitric-oxide-endothelial-function": "dark-chocolate-flavanols-nitric-oxide-endothelial-function",
+  "uong-ly-nuoc-truoc-bua-an-khoi-dong-da-day": "drinking-water-before-meals-gastric-distension-metabolism",
+  "drinking-water-before-meals-gastric-distension-metabolism": "drinking-water-before-meals-gastric-distension-metabolism",
+  "tam-rung-20-phut-ha-hormone-cang-thang-cortisol": "nature-pill-twenty-minutes-cortisol-reduction",
+  "nature-pill-twenty-minutes-cortisol-reduction": "nature-pill-twenty-minutes-cortisol-reduction",
+  "ngu-trua-20-phut-phuc-hoi-tim-mach": "power-nap-cardiovascular-health-blood-pressure",
+  "power-nap-cardiovascular-health-blood-pressure": "power-nap-cardiovascular-health-blood-pressure",
+  "xong-hoi-sauna-nhip-tim-va-tang-tuan-hoan-mau": "sauna-bathing-cardiovascular-longevity-heat-shock-proteins",
+  "sauna-bathing-cardiovascular-longevity-heat-shock-proteins": "sauna-bathing-cardiovascular-longevity-heat-shock-proteins",
+  "nhip-tho-cham-4-7-8-kich-hoat-day-than-kinh-phe-vi": "slow-breathing-vagal-tone-parasympathetic-reset",
+  "slow-breathing-vagal-tone-parasympathetic-reset": "slow-breathing-vagal-tone-parasympathetic-reset",
 };
 
 export const twinRoot = (slug: string) => TWIN_ROOT[slug] ?? slug.replace(/-(vi|en)$/, "");
@@ -50,7 +70,8 @@ export function isViArticle(a: Article): boolean {
     a.slug.includes("sinh-kha-dung") ||
     a.slug.includes("keo-dai-tuoi-tho") ||
     a.slug.includes("mo-nau") ||
-    a.slug.includes("sinh-nhiet")
+    a.slug.includes("sinh-nhiet") ||
+    /^(anh-nang|qua-mong|ngat-quang|nhai-ky|so-co-la|uong-ly|tam-rung|ngu-trua|xong-hoi|nhip-tho)/.test(a.slug)
   );
 }
 
