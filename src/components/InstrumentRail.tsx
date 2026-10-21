@@ -1,9 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useLanguageStore } from "@/lib/i18n";
+import { resolveTwin } from "@/lib/twin-catalog";
 
 export function Wordmark({ size = 28 }: { size?: number }) {
   return (
@@ -18,8 +20,6 @@ export function Wordmark({ size = 28 }: { size?: number }) {
   );
 }
 
-import { useLanguageStore } from "@/lib/i18n";
-
 const NAV = [
   { href: "/", label: "Front", labelVi: "Trang chủ" },
   { href: "/#directory", label: "Corpus", labelVi: "Kho bài" },
@@ -29,7 +29,25 @@ const NAV = [
 
 export function InstrumentRail() {
   const path = usePathname();
-  const { lang, toggleLang } = useLanguageStore();
+  const router = useRouter();
+  const { lang, setLang } = useLanguageStore();
+
+  const handleLanguageSwitch = (targetLang?: "vi" | "en") => {
+    const nextLang = targetLang || (lang === "vi" ? "en" : "vi");
+    setLang(nextLang);
+
+    // If currently inside an article, immediately navigate to its twin translation
+    if (path && path.startsWith("/blog/")) {
+      const currentSlug = path.replace(/^\/blog\//, "").split("/")[0].split("?")[0].split("#")[0];
+      if (currentSlug) {
+        const twin = resolveTwin(currentSlug);
+        if (twin && twin.slug && twin.slug !== currentSlug) {
+          router.push(`/blog/${twin.slug}`);
+          return;
+        }
+      }
+    }
+  };
 
   return (
     <>
@@ -51,14 +69,34 @@ export function InstrumentRail() {
               {lang === "vi" ? "Tác giả" : "Author"}
             </Link>
           </nav>
-          <button
-            type="button"
-            onClick={toggleLang}
-            aria-label="Toggle language"
-            className="rounded-full border border-slate-hair bg-paper-tint px-2.5 py-1 text-xs font-mono font-bold text-indigo-deep shadow-2xs hover:border-indigo-deep cursor-pointer"
-          >
-            {lang === "vi" ? "🇻🇳 VI" : "🇬🇧 EN"}
-          </button>
+          
+          {/* Mobile Dual Language Switcher */}
+          <div className="inline-flex items-center rounded-full border border-slate-hair bg-paper-tint p-0.5 text-xs font-mono font-bold shadow-2xs">
+            <button
+              type="button"
+              onClick={() => handleLanguageSwitch("vi")}
+              aria-label="Tiếng Việt"
+              className={`rounded-full px-2 py-0.5 transition-all cursor-pointer ${
+                lang === "vi"
+                  ? "bg-indigo-deep text-white shadow-xs"
+                  : "text-slate-ink hover:text-indigo-deep"
+              }`}
+            >
+              VI
+            </button>
+            <button
+              type="button"
+              onClick={() => handleLanguageSwitch("en")}
+              aria-label="English"
+              className={`rounded-full px-2 py-0.5 transition-all cursor-pointer ${
+                lang === "en"
+                  ? "bg-indigo-deep text-white shadow-xs"
+                  : "text-slate-ink hover:text-indigo-deep"
+              }`}
+            >
+              EN
+            </button>
+          </div>
         </div>
       </header>
 
@@ -72,15 +110,33 @@ export function InstrumentRail() {
             <Wordmark size={36} />
           </Link>
 
-          {/* Rail Language Toggle Button */}
-          <button
-            type="button"
-            onClick={toggleLang}
-            title={lang === "vi" ? "Chuyển sang English" : "Chuyển sang Tiếng Việt"}
-            className="group relative flex h-8 w-8 items-center justify-center rounded-full border border-slate-hair bg-paper-tint text-[11px] font-mono font-bold text-indigo-deep shadow-2xs transition-all hover:scale-105 hover:border-indigo-deep hover:bg-indigo-deep hover:text-trace cursor-pointer"
-          >
-            {lang === "vi" ? "VI" : "EN"}
-          </button>
+          {/* Desktop Dual Language Switcher */}
+          <div className="flex flex-col items-center rounded-full border border-slate-hair bg-paper-tint p-1 text-[11px] font-mono font-bold shadow-2xs gap-1">
+            <button
+              type="button"
+              onClick={() => handleLanguageSwitch("vi")}
+              title="Phiên bản Tiếng Việt"
+              className={`h-7 w-7 rounded-full flex items-center justify-center transition-all cursor-pointer ${
+                lang === "vi"
+                  ? "bg-indigo-deep text-white shadow-xs font-black"
+                  : "text-slate-ink hover:text-indigo-deep hover:bg-slate-hair/50"
+              }`}
+            >
+              VI
+            </button>
+            <button
+              type="button"
+              onClick={() => handleLanguageSwitch("en")}
+              title="English Edition"
+              className={`h-7 w-7 rounded-full flex items-center justify-center transition-all cursor-pointer ${
+                lang === "en"
+                  ? "bg-indigo-deep text-white shadow-xs font-black"
+                  : "text-slate-ink hover:text-indigo-deep hover:bg-slate-hair/50"
+              }`}
+            >
+              EN
+            </button>
+          </div>
 
           <nav className="flex flex-col items-center gap-6 mt-2">
             {NAV.map((n) => {

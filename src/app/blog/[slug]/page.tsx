@@ -21,6 +21,7 @@ import { SocialShare } from "@/components/SocialShare";
 import { NewsletterBox } from "@/components/NewsletterBox";
 import { TableOfContents } from "@/components/TableOfContents";
 import { twinRoot } from "@/lib/home";
+import { resolveTwin } from "@/lib/twin-catalog";
 import { ReaderBrief } from "@/components/reader/ReaderBrief";
 import { PracticalSafetyBox } from "@/components/reader/PracticalSafetyBox";
 import { PlainGlossary } from "@/components/reader/PlainGlossary";
@@ -62,17 +63,19 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const directImage = a.image ? (a.image.startsWith("http") ? a.image : `https://www.phyto-codex.org${a.image}`) : ogUrl.toString();
 
   const root = twinRoot(slug);
+  const twin = resolveTwin(slug);
   const isCurrentVi =
-    a.lang === "vi" ||
+    twin ? twin.lang === "en" :
+    (a.lang === "vi" ||
     slug.endsWith("-vi") ||
     slug.includes("sinh-kha-dung") ||
     slug.includes("keo-dai-tuoi-tho") ||
     slug.includes("mo-nau") ||
-    slug.includes("sinh-nhiet");
+    slug.includes("sinh-nhiet"));
 
   // Determine twin slug
-  const viSlug = isCurrentVi ? slug : `${root}-vi`;
-  const enSlug = !isCurrentVi ? slug : (root.endsWith("-en") ? root : `${root}-en`);
+  const viSlug = isCurrentVi ? slug : (twin?.slug || `${root}-vi`);
+  const enSlug = !isCurrentVi ? slug : (twin?.slug || (root.endsWith("-en") ? root : `${root}-en`));
 
   return {
     title: `${a.title} · Phytocodex`,
@@ -153,17 +156,21 @@ export default async function BlogPage({ params }: Params) {
 
   const refs = await getReferences(slug);
   const data: CitationData[] = refs.map((r) => ({ ...r }));
-  const allArticles = await getArticles();
-  const related = allArticles.filter((a) => a.slug !== slug).slice(0, 3);
-
+  const twin = resolveTwin(slug);
   const isVi =
-    article.lang === "vi" ||
+    twin ? twin.lang === "en" :
+    (article.lang === "vi" ||
     slug.endsWith("-vi") ||
     slug.includes("sinh-kha-dung") ||
     slug.includes("keo-dai-tuoi-tho") ||
     slug.includes("mo-nau") ||
     slug.includes("sinh-nhiet") ||
-    Boolean(article.tags?.includes("Dược động học"));
+    Boolean(article.tags?.includes("Dược động học")));
+
+  const allArticles = await getArticles();
+  const related = allArticles
+    .filter((a) => a.slug !== slug && (isVi ? (a.lang === "vi" || a.slug.endsWith("-vi")) : (a.lang === "en" || !a.slug.endsWith("-vi"))))
+    .slice(0, 3);
 
   const articleLd = {
     "@context": "https://schema.org",

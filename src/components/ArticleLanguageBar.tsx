@@ -1,274 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Sparkles, HelpCircle, ChevronDown, ChevronUp, BookOpen, ExternalLink } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { Sparkles, ChevronDown, ChevronUp, BookOpen, ArrowRight, Languages } from "lucide-react";
 import { useLanguageStore } from "@/lib/i18n";
-
-// Pairs of English <-> Vietnamese dispatches
-const PAIRS: Record<string, { slug: string; lang: "vi" | "en"; label: string }> = {
-  "ampk-nrf2-mtor-map": {
-    "slug": "ampk-nrf2-mtor-map-en",
-    "lang": "en",
-    "label": "English Edition (Academic Rigour)"
-  },
-  "ampk-nrf2-mtor-map-en": {
-    "slug": "ampk-nrf2-mtor-map",
-    "lang": "vi",
-    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
-  },
-  "chuyen-hoa-mo-nau-ucp1-ro-ri-proton": {
-    "slug": "brown-fat-ucp1-mitochondrial-proton-leak",
-    "lang": "en",
-    "label": "English Edition (Academic Rigour)"
-  },
-  "brown-fat-ucp1-mitochondrial-proton-leak": {
-    "slug": "chuyen-hoa-mo-nau-ucp1-ro-ri-proton",
-    "lang": "vi",
-    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
-  },
-  "butyrate-scfa-epigenetics-histone-gut-barrier": {
-    "slug": "butyrate-scfa-epigenetics-histone-gut-barrier-en",
-    "lang": "en",
-    "label": "English Edition (Academic Rigour)"
-  },
-  "butyrate-scfa-epigenetics-histone-gut-barrier-en": {
-    "slug": "butyrate-scfa-epigenetics-histone-gut-barrier",
-    "lang": "vi",
-    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
-  },
-  "cancer-seed-and-soil-metabolism": {
-    "slug": "cancer-seed-and-soil-metabolism-en",
-    "lang": "en",
-    "label": "English Edition (Academic Rigour)"
-  },
-  "cancer-seed-and-soil-metabolism-en": {
-    "slug": "cancer-seed-and-soil-metabolism",
-    "lang": "vi",
-    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
-  },
-  "cholesterol-myth-vascular-inflammation": {
-    "slug": "cholesterol-myth-vascular-inflammation-en",
-    "lang": "en",
-    "label": "English Edition (Academic Rigour)"
-  },
-  "cholesterol-myth-vascular-inflammation-en": {
-    "slug": "cholesterol-myth-vascular-inflammation",
-    "lang": "vi",
-    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
-  },
-  "curcumin-piperine-sinh-kha-dung": {
-    "slug": "curcumin-piperine-bioavailability",
-    "lang": "en",
-    "label": "English Edition (Academic Rigour)"
-  },
-  "curcumin-piperine-bioavailability": {
-    "slug": "curcumin-piperine-sinh-kha-dung",
-    "lang": "vi",
-    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
-  },
-  "forecasting-hs-crp-delta": {
-    "slug": "forecasting-hs-crp-delta-en",
-    "lang": "en",
-    "label": "English Edition (Academic Rigour)"
-  },
-  "forecasting-hs-crp-delta-en": {
-    "slug": "forecasting-hs-crp-delta",
-    "lang": "vi",
-    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
-  },
-  "glp1-keo-dai-tuoi-tho-nature": {
-    "slug": "glp1-longevity-nature-mitochondria",
-    "lang": "en",
-    "label": "English Edition (Academic Rigour)"
-  },
-  "glp1-longevity-nature-mitochondria": {
-    "slug": "glp1-keo-dai-tuoi-tho-nature",
-    "lang": "vi",
-    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
-  },
-  "glymphatic-deep-sleep-brain-cleaning": {
-    "slug": "glymphatic-deep-sleep-brain-cleaning-en",
-    "lang": "en",
-    "label": "English Edition (Academic Rigour)"
-  },
-  "glymphatic-deep-sleep-brain-cleaning-en": {
-    "slug": "glymphatic-deep-sleep-brain-cleaning",
-    "lang": "vi",
-    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
-  },
-  "insulin-igf1-cancer-proliferation": {
-    "slug": "insulin-igf1-cancer-proliferation-en",
-    "lang": "en",
-    "label": "English Edition (Academic Rigour)"
-  },
-  "insulin-igf1-cancer-proliferation-en": {
-    "slug": "insulin-igf1-cancer-proliferation",
-    "lang": "vi",
-    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
-  },
-  "melatonin-circadian-zeitgeber": {
-    "slug": "melatonin-circadian-zeitgeber-en",
-    "lang": "en",
-    "label": "English Edition (Academic Rigour)"
-  },
-  "melatonin-circadian-zeitgeber-en": {
-    "slug": "melatonin-circadian-zeitgeber",
-    "lang": "vi",
-    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
-  },
-  "metabolomic-horizon-clinical-diagnostics-vi": {
-    "slug": "metabolomic-horizon-clinical-diagnostics",
-    "lang": "en",
-    "label": "English Edition (Academic Rigour)"
-  },
-  "metabolomic-horizon-clinical-diagnostics": {
-    "slug": "metabolomic-horizon-clinical-diagnostics-vi",
-    "lang": "vi",
-    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
-  },
-  "mevalonate-statin-coq10-vi": {
-    "slug": "mevalonate-statin-coq10-en",
-    "lang": "en",
-    "label": "English Edition (Academic Rigour)"
-  },
-  "mevalonate-statin-coq10-en": {
-    "slug": "mevalonate-statin-coq10-vi",
-    "lang": "vi",
-    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
-  },
-  "nad-cd38-sirtuin-mitochondria-cellular-aging": {
-    "slug": "nad-cd38-sirtuin-mitochondria-cellular-aging-en",
-    "lang": "en",
-    "label": "English Edition (Academic Rigour)"
-  },
-  "nad-cd38-sirtuin-mitochondria-cellular-aging-en": {
-    "slug": "nad-cd38-sirtuin-mitochondria-cellular-aging",
-    "lang": "vi",
-    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
-  },
-  "nobel-medicine-2026-optogenetics": {
-    "slug": "nobel-medicine-2026-optogenetics-en",
-    "lang": "en",
-    "label": "English Edition (Academic Rigour)"
-  },
-  "nobel-medicine-2026-optogenetics-en": {
-    "slug": "nobel-medicine-2026-optogenetics",
-    "lang": "vi",
-    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
-  },
-  "oxldl-sdldl-atherosclerosis-mechanism": {
-    "slug": "oxldl-sdldl-atherosclerosis-mechanism-en",
-    "lang": "en",
-    "label": "English Edition (Academic Rigour)"
-  },
-  "oxldl-sdldl-atherosclerosis-mechanism-en": {
-    "slug": "oxldl-sdldl-atherosclerosis-mechanism",
-    "lang": "vi",
-    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
-  },
-  "pharmacokinetics-one-compartment": {
-    "slug": "pharmacokinetics-one-compartment-en",
-    "lang": "en",
-    "label": "English Edition (Academic Rigour)"
-  },
-  "pharmacokinetics-one-compartment-en": {
-    "slug": "pharmacokinetics-one-compartment",
-    "lang": "vi",
-    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
-  },
-  "policosanol-versus-statins": {
-    "slug": "policosanol-versus-statins-en",
-    "lang": "en",
-    "label": "English Edition (Academic Rigour)"
-  },
-  "policosanol-versus-statins-en": {
-    "slug": "policosanol-versus-statins",
-    "lang": "vi",
-    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
-  },
-  "resistant-starch-scfa-gut-vi": {
-    "slug": "resistant-starch-scfa-gut-en",
-    "lang": "en",
-    "label": "English Edition (Academic Rigour)"
-  },
-  "resistant-starch-scfa-gut-en": {
-    "slug": "resistant-starch-scfa-gut-vi",
-    "lang": "vi",
-    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
-  },
-  "succinate-creatine-bat-thermogenesis-vi": {
-    "slug": "succinate-ucp1-bat-mitochondrial-thermogenesis",
-    "lang": "en",
-    "label": "English Edition (Academic Rigour)"
-  },
-  "succinate-creatine-bat-thermogenesis-en": {
-    "slug": "succinate-ucp1-bat-sinh-nhiet-ty-the",
-    "lang": "vi",
-    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
-  },
-  "succinate-ucp1-bat-mitochondrial-thermogenesis": {
-    "slug": "succinate-ucp1-bat-sinh-nhiet-ty-the",
-    "lang": "vi",
-    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
-  },
-  "succinate-ucp1-bat-sinh-nhiet-ty-the": {
-    "slug": "succinate-ucp1-bat-mitochondrial-thermogenesis",
-    "lang": "en",
-    "label": "English Edition (Academic Rigour)"
-  },
-  "sulforaphane-nrf2-window": {
-    "slug": "sulforaphane-nrf2-window-en",
-    "lang": "en",
-    "label": "English Edition (Academic Rigour)"
-  },
-  "sulforaphane-nrf2-window-en": {
-    "slug": "sulforaphane-nrf2-window",
-    "lang": "vi",
-    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
-  },
-  "supplement-drug-interaction-matrix": {
-    "slug": "supplement-drug-interaction-matrix-en",
-    "lang": "en",
-    "label": "English Edition (Academic Rigour)"
-  },
-  "supplement-drug-interaction-matrix-en": {
-    "slug": "supplement-drug-interaction-matrix",
-    "lang": "vi",
-    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
-  },
-  "triglyceride-hdl-ratio-metabolic-health": {
-    "slug": "triglyceride-hdl-ratio-metabolic-health-en",
-    "lang": "en",
-    "label": "English Edition (Academic Rigour)"
-  },
-  "triglyceride-hdl-ratio-metabolic-health-en": {
-    "slug": "triglyceride-hdl-ratio-metabolic-health",
-    "lang": "vi",
-    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
-  },
-  "warburg-effect-cancer-metabolism": {
-    "slug": "warburg-effect-cancer-metabolism-en",
-    "lang": "en",
-    "label": "English Edition (Academic Rigour)"
-  },
-  "warburg-effect-cancer-metabolism-en": {
-    "slug": "warburg-effect-cancer-metabolism",
-    "lang": "vi",
-    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
-  },
-  "dich-hach-yersinia-pestis-t3ss-doc-luc-vi": {
-    "slug": "yersinia-pestis-t3ss-virulence-lab-leak-en",
-    "lang": "en",
-    "label": "English Edition (Academic Rigour)"
-  },
-  "yersinia-pestis-t3ss-virulence-lab-leak-en": {
-    "slug": "dich-hach-yersinia-pestis-t3ss-doc-luc-vi",
-    "lang": "vi",
-    "label": "Bản Tiếng Việt (Ngôn ngữ Y khoa Dễ hiểu)"
-  }
-};
-
+import { resolveTwin } from "@/lib/twin-catalog";
 import { resolveLaymanMedicalData } from "@/lib/layman-resolver";
 import type { LaymanMedicalBoxData } from "@/lib/medical-analogies";
 
@@ -284,50 +21,119 @@ export function ArticleLanguageBar({
     lang?: "vi" | "en";
   };
 }) {
+  const router = useRouter();
   const { lang, setLang } = useLanguageStore();
   const [showAnalogy, setShowAnalogy] = useState(true);
 
-  const alternate = PAIRS[currentSlug];
+  const twin = resolveTwin(currentSlug);
+
+  // Determine current language accurately
   const isViCurrent =
-    articleMeta?.lang === "vi" ||
+    twin ? twin.lang === "en" :
+    (articleMeta?.lang === "vi" ||
     currentSlug.endsWith("-vi") ||
     currentSlug.includes("sinh-kha-dung") ||
     currentSlug.includes("keo-dai-tuoi-tho") ||
     currentSlug.includes("mo-nau") ||
     currentSlug.includes("sinh-nhiet") ||
-    !currentSlug.endsWith("-en");
+    !currentSlug.endsWith("-en"));
+
+  // Sync store with current article language on mount or slug change
+  useEffect(() => {
+    const expectedLang = isViCurrent ? "vi" : "en";
+    if (lang !== expectedLang) {
+      setLang(expectedLang);
+    }
+  }, [isViCurrent, lang, setLang]);
 
   const analogyData: LaymanMedicalBoxData = resolveLaymanMedicalData(currentSlug, articleMeta);
 
+  const handleSwitchLanguage = (targetLang: "vi" | "en") => {
+    if ((targetLang === "vi" && isViCurrent) || (targetLang === "en" && !isViCurrent)) {
+      return;
+    }
+    setLang(targetLang);
+    if (twin?.slug) {
+      router.push(`/blog/${twin.slug}`);
+    }
+  };
+
   return (
     <div className="space-y-4">
-      {/* Language Switcher Bar */}
-      <div className="flex flex-wrap items-center justify-between gap-3 rounded-sm border border-indigo-deep/20 bg-paper-tint px-4 py-2.5 text-xs">
+      {/* Interactive Bilingual Language Bar */}
+      <div className="flex flex-wrap items-center justify-between gap-3 rounded-md border border-indigo-deep/20 bg-paper-tint/90 px-3.5 py-2.5 text-xs shadow-2xs backdrop-blur-xs">
+        {/* Left: Dual Language Segmented Tabs */}
         <div className="flex items-center gap-2">
-          <span className="font-mono font-bold text-indigo-deep">
-            {isViCurrent ? "🇻🇳 Phiên bản Tiếng Việt" : "🇬🇧 English Edition"}
+          <span className="hidden sm:inline-flex items-center gap-1.5 text-slate-ink font-mono text-[11px] font-semibold">
+            <Languages size={13} className="text-indigo-deep" />
+            <span>{isViCurrent ? "Bản dịch song sinh:" : "Bilingual Edition:"}</span>
           </span>
-          <span className="text-slate-hair">|</span>
-          <span className="text-slate-ink">
-            {isViCurrent
-              ? "Diễn giải y sinh thực chứng · Dễ hiểu"
-              : "Scientific Literature Synthesis"}
-          </span>
+
+          <div className="inline-flex items-center rounded-sm border border-slate-hair bg-paper p-0.5 shadow-2xs font-mono">
+            {/* Tiếng Việt Tab */}
+            {isViCurrent ? (
+              <span className="inline-flex items-center gap-1 rounded-xs bg-indigo-deep px-2.5 py-1 text-[11px] font-bold text-trace shadow-xs">
+                🇻🇳 Tiếng Việt
+              </span>
+            ) : twin?.slug ? (
+              <Link
+                href={`/blog/${twin.slug}`}
+                onClick={() => setLang("vi")}
+                className="inline-flex items-center gap-1 rounded-xs px-2.5 py-1 text-[11px] font-medium text-slate-ink hover:text-indigo-deep hover:bg-slate-hair/40 transition-all cursor-pointer"
+                title="Chuyển ngay sang bản Tiếng Việt"
+              >
+                🇻🇳 Tiếng Việt
+              </Link>
+            ) : (
+              <button
+                type="button"
+                onClick={() => handleSwitchLanguage("vi")}
+                className="inline-flex items-center gap-1 rounded-xs px-2.5 py-1 text-[11px] font-medium text-slate-ink hover:text-indigo-deep hover:bg-slate-hair/40 transition-all cursor-pointer"
+              >
+                🇻🇳 Tiếng Việt
+              </button>
+            )}
+
+            {/* English Tab */}
+            {!isViCurrent ? (
+              <span className="inline-flex items-center gap-1 rounded-xs bg-indigo-deep px-2.5 py-1 text-[11px] font-bold text-trace shadow-xs">
+                🇬🇧 English
+              </span>
+            ) : twin?.slug ? (
+              <Link
+                href={`/blog/${twin.slug}`}
+                onClick={() => setLang("en")}
+                className="inline-flex items-center gap-1 rounded-xs px-2.5 py-1 text-[11px] font-medium text-slate-ink hover:text-indigo-deep hover:bg-slate-hair/40 transition-all cursor-pointer"
+                title="Switch immediately to English Edition"
+              >
+                🇬🇧 English
+              </Link>
+            ) : (
+              <button
+                type="button"
+                onClick={() => handleSwitchLanguage("en")}
+                className="inline-flex items-center gap-1 rounded-xs px-2.5 py-1 text-[11px] font-medium text-slate-ink hover:text-indigo-deep hover:bg-slate-hair/40 transition-all cursor-pointer"
+              >
+                🇬🇧 English
+              </button>
+            )}
+          </div>
         </div>
 
-        {alternate && (
-          <div className="flex items-center gap-2">
-            <span className="caps text-slate-ink hidden sm:inline">
-              {isViCurrent ? "Chuyển ngôn ngữ:" : "Alternate version:"}
+        {/* Right: Direct Twin Dispatch Link */}
+        {twin?.slug && (
+          <Link
+            href={`/blog/${twin.slug}`}
+            onClick={() => setLang(twin.lang)}
+            className="caps group inline-flex items-center gap-1.5 rounded-sm bg-indigo-deep/5 px-3 py-1 font-semibold text-indigo-deep border border-indigo-deep/20 transition-all hover:bg-indigo-deep hover:text-trace cursor-pointer"
+            title={twin.title}
+          >
+            <Sparkles size={12} className="text-amber-500 group-hover:text-trace" />
+            <span className="max-w-[200px] sm:max-w-[320px] truncate text-[11px]">
+              {isViCurrent ? "Đọc bản Tiếng Anh (Academic Edition)" : "Đọc bản Tiếng Việt (Y sinh Dễ hiểu)"}
             </span>
-            <Link
-              href={`/blog/${alternate.slug}`}
-              className="caps inline-flex items-center gap-1.5 rounded-sm bg-indigo-deep px-3 py-1 font-semibold text-trace transition-all hover:bg-indigo-mid"
-            >
-              <Sparkles size={12} />
-              {alternate.label} →
-            </Link>
-          </div>
+            <ArrowRight size={11} className="transition-transform group-hover:translate-x-0.5" />
+          </Link>
         )}
       </div>
 
