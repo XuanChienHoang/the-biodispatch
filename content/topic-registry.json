@@ -1,8 +1,100 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-10-21T18:34:06.064Z",
-  "totalTopics": 129,
+  "lastUpdated": "2026-10-21T22:49:35.745Z",
+  "totalTopics": 131,
   "topics": [
+    {
+      "id": "apple-pectin-and-gut-barrier-protection",
+      "slugs": [
+        "apple-pectin-and-gut-barrier-protection-en"
+      ],
+      "titleVi": "An Apple a Day: How Pectin Forms a Bio-Gel Shield to Protect the Gut Barrier and Nourish Akkermansia",
+      "titleEn": "An Apple a Day: How Pectin Forms a Bio-Gel Shield to Protect the Gut Barrier and Nourish Akkermansia",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1186/s40168-024-01975-x",
+      "date": "2026-10-21T17:00:00Z",
+      "tags": [
+        "gut",
+        "digestion",
+        "mucosa",
+        "blood-sugar",
+        "aging"
+      ],
+      "keywords": [
+        "apple",
+        "day",
+        "pectin",
+        "forms",
+        "bio",
+        "gel",
+        "shield",
+        "protect",
+        "gut",
+        "barrier",
+        "nourish",
+        "akkermansia",
+        "digestion",
+        "mucosa",
+        "blood",
+        "sugar",
+        "aging",
+        "many",
+        "have",
+        "heard",
+        "age",
+        "old",
+        "proverb",
+        "advocating",
+        "keep"
+      ]
+    },
+    {
+      "id": "chat-xo-pectin-tu-tao-tam-ao-giap-gel-bao-ve-niem-mac-ruot",
+      "slugs": [
+        "chat-xo-pectin-tu-tao-tam-ao-giap-gel-bao-ve-niem-mac-ruot-vi"
+      ],
+      "titleVi": "Ăn một quả táo mỗi ngày: Cơ chế pectin tạo màng gel sinh học bảo vệ niêm mạc ruột và nuôi dưỡng Akkermansia",
+      "titleEn": "Ăn một quả táo mỗi ngày: Cơ chế pectin tạo màng gel sinh học bảo vệ niêm mạc ruột và nuôi dưỡng Akkermansia",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1186/s40168-024-01975-x",
+      "date": "2026-10-21T17:00:00Z",
+      "tags": [
+        "ruot",
+        "tieu-hoa",
+        "niem-mac",
+        "duong-huyet",
+        "lao-hoa"
+      ],
+      "keywords": [
+        "qua",
+        "tao",
+        "moi",
+        "ngay",
+        "pectin",
+        "mang",
+        "gel",
+        "sinh",
+        "hoc",
+        "bao",
+        "niem",
+        "mac",
+        "ruot",
+        "nuoi",
+        "duong",
+        "akkermansia",
+        "tieu",
+        "hoa",
+        "huyet",
+        "lao",
+        "nhieu",
+        "nguoi",
+        "chung",
+        "tung",
+        "nghe"
+      ]
+    },
     {
       "id": "urolithin-a-mitophagy-don-dep-ty-the-phuc-hoi-suc-ben",
       "slugs": [

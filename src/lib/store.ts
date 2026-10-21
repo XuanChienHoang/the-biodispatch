@@ -3911,6 +3911,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Urolithin A (UA) is a first-in-class natural compound that restores mitophagy and improves mitochondrial health in aged subjects. Here we demonstrate that oral UA administration improves cellular health by increasing mitochondrial gene expression and activating mitophagy. In a first-in-human clinical trial, UA administration was found to be safe, bioavailability was robust, and biomarker analysis demonstrated stimulation of mitochondrial recycling and improved muscle function.",
     },
   ],
+  "chat-xo-pectin-tu-tao-tam-ao-giap-gel-bao-ve-niem-mac-ruot-vi": [
+    {
+      ordinal: 1,
+      label: "Tailored impact of dietary fibers on gut microbiota: a multi-omics comparison on the lean and obese microbial communities",
+      pmid: "39616358",
+      doi: "10.1186/s40168-024-01975-x",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Microbiome",
+      year: 2024,
+      abstract: "Apple pectin supplementation modulated the gut microbiota composition by increasing beneficial bacteria such as Akkermansia and Bifidobacterium. Furthermore, apple pectin enhanced gut barrier integrity by upregulating tight junction protein expression (ZO-1 and occludin) and reducing serum endotoxin levels.",
+    },
+  ],
+  "apple-pectin-and-gut-barrier-protection-en": [
+    {
+      ordinal: 1,
+      label: "Tailored impact of dietary fibers on gut microbiota: a multi-omics comparison on the lean and obese microbial communities",
+      pmid: "39616358",
+      doi: "10.1186/s40168-024-01975-x",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Microbiome",
+      year: 2024,
+      abstract: "Apple pectin supplementation modulated the gut microbiota composition by increasing beneficial bacteria such as Akkermansia and Bifidobacterium. Furthermore, apple pectin enhanced gut barrier integrity by upregulating tight junction protein expression (ZO-1 and occludin) and reducing serum endotoxin levels.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
