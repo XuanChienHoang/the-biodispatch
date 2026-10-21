@@ -3885,6 +3885,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Hypertriglyceridemia is an important risk factor for cardiovascular disease and acute pancreatitis. Prescription omega-3 fatty acid formulations are effective and safe options for reducing triglyceride levels, though differences in chemical formulations such as ethyl esters versus triglycerides can influence bioavailability and clinical outcomes in patient populations.",
     },
   ],
+  "urolithin-a-mitophagy-don-dep-ty-the-phuc-hoi-suc-ben-vi": [
+    {
+      ordinal: 1,
+      label: "The mitophagy activator urolithin A is safe and induces a molecular signature of improved mitochondrial and cellular health in humans",
+      pmid: "32694802",
+      doi: "10.1038/s42255-019-0073-4",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Nat Metab",
+      year: 2019,
+      abstract: "Urolithin A (UA) is a first-in-class natural compound that restores mitophagy and improves mitochondrial health in aged subjects. Here we demonstrate that oral UA administration improves cellular health by increasing mitochondrial gene expression and activating mitophagy. In a first-in-human clinical trial, UA administration was found to be safe, bioavailability was robust, and biomarker analysis demonstrated stimulation of mitochondrial recycling and improved muscle function.",
+    },
+  ],
+  "urolithin-a-mitophagy-mitochondrial-recycling-muscle-endurance-en": [
+    {
+      ordinal: 1,
+      label: "The mitophagy activator urolithin A is safe and induces a molecular signature of improved mitochondrial and cellular health in humans",
+      pmid: "32694802",
+      doi: "10.1038/s42255-019-0073-4",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Nat Metab",
+      year: 2019,
+      abstract: "Urolithin A (UA) is a first-in-class natural compound that restores mitophagy and improves mitochondrial health in aged subjects. Here we demonstrate that oral UA administration improves cellular health by increasing mitochondrial gene expression and activating mitophagy. In a first-in-human clinical trial, UA administration was found to be safe, bioavailability was robust, and biomarker analysis demonstrated stimulation of mitochondrial recycling and improved muscle function.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
