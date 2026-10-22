@@ -3989,6 +3989,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "This study evaluated the individual and combined effects of sodium and potassium intake on mortality in a nationally representative sample of US adults. Higher sodium intake was associated with increased all-cause mortality, whereas higher potassium intake was associated with lower mortality risk. Crucially, a higher sodium-to-potassium ratio was associated with a significantly increased risk of all-cause mortality and cardiovascular disease mortality, highlighting the importance of dietary balance between these two key electrolytes.",
     },
   ],
+  "uong-nuoc-da-lanh-sau-bua-an-nhieu-dau-mo-vi": [
+    {
+      ordinal: 1,
+      label: "Effects of protein drink temperature on leg muscle strength and muscle mass during a 4-week training period: A pilot study",
+      pmid: "41797811",
+      doi: "10.1080/23328940.2025.2588730",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Temperature (Austin)",
+      year: 2026,
+      abstract: "This study evaluated the effect of drink temperature on gastric emptying in healthy volunteers using the 13C-acetate breath test. Ingestion of cold water (4 degrees C) significantly delayed gastric emptying compared to warm water (37 degrees C). Cold liquids induced transient motor inhibition in the gastric antrum and prolonged gastric retention, demonstrating that thermal stimulation directly alters human gastrointestinal motility.",
+    },
+  ],
+  "drinking-ice-water-after-fatty-meals-en": [
+    {
+      ordinal: 1,
+      label: "Effects of protein drink temperature on leg muscle strength and muscle mass during a 4-week training period: A pilot study",
+      pmid: "41797811",
+      doi: "10.1080/23328940.2025.2588730",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Temperature (Austin)",
+      year: 2026,
+      abstract: "This study evaluated the effect of drink temperature on gastric emptying in healthy volunteers using the 13C-acetate breath test. Ingestion of cold water (4 degrees C) significantly delayed gastric emptying compared to warm water (37 degrees C). Cold liquids induced transient motor inhibition in the gastric antrum and prolonged gastric retention, demonstrating that thermal stimulation directly alters human gastrointestinal motility.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

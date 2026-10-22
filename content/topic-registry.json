@@ -1,8 +1,55 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-10-22T18:01:46.520Z",
-  "totalTopics": 135,
+  "lastUpdated": "2026-10-22T19:38:51.383Z",
+  "totalTopics": 137,
   "topics": [
+    {
+      "id": "drinking-ice-water-after-fatty-meals",
+      "slugs": [
+        "drinking-ice-water-after-fatty-meals-en"
+      ],
+      "titleVi": "Drinking Ice Water After Fatty Meals: Clarifying Fat Solidification Myths and Gastric Impact",
+      "titleEn": "Drinking Ice Water After Fatty Meals: Clarifying Fat Solidification Myths and Gastric Impact",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1080/23328940.2025.2588730",
+      "date": "2026-10-22T17:00:00Z",
+      "tags": [
+        "gut-health",
+        "digestion",
+        "bloating",
+        "acid-reflux",
+        "gastric-emptying",
+        "lifestyle-habits"
+      ],
+      "keywords": [
+        "drinking",
+        "ice",
+        "water",
+        "fatty",
+        "meals",
+        "clarifying",
+        "fat",
+        "solidification",
+        "myths",
+        "gastric",
+        "impact",
+        "gut",
+        "health",
+        "digestion",
+        "bloating",
+        "acid",
+        "reflux",
+        "emptying",
+        "lifestyle",
+        "habits",
+        "many",
+        "people",
+        "enjoy",
+        "glass",
+        "cold"
+      ]
+    },
     {
       "id": "sodium-potassium-ratio-vascular-health",
       "slugs": [
@@ -97,6 +144,54 @@
         "viec",
         "gat",
         "muoi"
+      ]
+    },
+    {
+      "id": "uong-nuoc-da-lanh-sau-bua-an-nhieu-dau-mo",
+      "slugs": [
+        "uong-nuoc-da-lanh-sau-bua-an-nhieu-dau-mo-vi"
+      ],
+      "titleVi": "Uống nước đá lạnh sau bữa ăn nhiều dầu mỡ: Thực hư chuyện đông đặc mỡ và gánh nặng cho dạ dày",
+      "titleEn": "Uống nước đá lạnh sau bữa ăn nhiều dầu mỡ: Thực hư chuyện đông đặc mỡ và gánh nặng cho dạ dày",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1080/23328940.2025.2588730",
+      "date": "2026-10-22T17:00:00Z",
+      "tags": [
+        "duong-ruot",
+        "tieu-hoa",
+        "day-hoi",
+        "lanh-bung",
+        "trao-nguoc",
+        "da-day",
+        "thoi-quen-song"
+      ],
+      "keywords": [
+        "uong",
+        "nuoc",
+        "lanh",
+        "sau",
+        "bua",
+        "nhieu",
+        "dau",
+        "thuc",
+        "chuyen",
+        "dong",
+        "dac",
+        "ganh",
+        "nang",
+        "day",
+        "duong",
+        "ruot",
+        "tieu",
+        "hoa",
+        "hoi",
+        "bung",
+        "trao",
+        "nguoc",
+        "thoi",
+        "quen",
+        "song"
       ]
     },
     {
