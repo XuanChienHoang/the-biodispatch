@@ -1,8 +1,100 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-10-21T22:49:35.745Z",
-  "totalTopics": 131,
+  "lastUpdated": "2026-10-22T10:18:43.714Z",
+  "totalTopics": 133,
   "topics": [
+    {
+      "id": "khi-duong-lam-gion-lan-da-co-che-maillard-va-bi-quyet-bao-ve-collagen",
+      "slugs": [
+        "khi-duong-lam-gion-lan-da-co-che-maillard-va-bi-quyet-bao-ve-collagen-vi"
+      ],
+      "titleVi": "Khi đường làm giòn làn da: Cơ chế Maillard và bí quyết giữ gìn sự đàn hồi cho collagen",
+      "titleEn": "Khi đường làm giòn làn da: Cơ chế Maillard và bí quyết giữ gìn sự đàn hồi cho collagen",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1016/j.clindermatol.2010.03.018",
+      "date": "2026-10-22T09:00:00Z",
+      "tags": [
+        "mat-da",
+        "lao-hoa",
+        "duong-huyet",
+        "dinh-duong",
+        "collagen"
+      ],
+      "keywords": [
+        "duong",
+        "lam",
+        "gion",
+        "lan",
+        "maillard",
+        "quyet",
+        "giu",
+        "gin",
+        "dan",
+        "hoi",
+        "collagen",
+        "mat",
+        "lao",
+        "hoa",
+        "huyet",
+        "dinh",
+        "nhieu",
+        "nguoi",
+        "chung",
+        "dau",
+        "rat",
+        "tien",
+        "vao",
+        "dong",
+        "kem"
+      ]
+    },
+    {
+      "id": "when-sugar-makes-skin-brittle-glycation-and-collagen-protection",
+      "slugs": [
+        "when-sugar-makes-skin-brittle-glycation-and-collagen-protection-en"
+      ],
+      "titleVi": "When Sugar Makes Skin Brittle: The Maillard Mechanism and Strategies to Preserve Collagen Elasticity",
+      "titleEn": "When Sugar Makes Skin Brittle: The Maillard Mechanism and Strategies to Preserve Collagen Elasticity",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1016/j.clindermatol.2010.03.018",
+      "date": "2026-10-22T09:00:00Z",
+      "tags": [
+        "skin-health",
+        "cellular-aging",
+        "blood-sugar",
+        "nutrition",
+        "collagen"
+      ],
+      "keywords": [
+        "when",
+        "sugar",
+        "makes",
+        "skin",
+        "brittle",
+        "maillard",
+        "strategies",
+        "preserve",
+        "collagen",
+        "elasticity",
+        "health",
+        "cellular",
+        "aging",
+        "blood",
+        "nutrition",
+        "many",
+        "invest",
+        "heavily",
+        "expensive",
+        "skincare",
+        "products",
+        "while",
+        "unwittingly",
+        "allowing",
+        "daily"
+      ]
+    },
     {
       "id": "apple-pectin-and-gut-barrier-protection",
       "slugs": [

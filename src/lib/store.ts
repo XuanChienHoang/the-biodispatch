@@ -3937,6 +3937,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Apple pectin supplementation modulated the gut microbiota composition by increasing beneficial bacteria such as Akkermansia and Bifidobacterium. Furthermore, apple pectin enhanced gut barrier integrity by upregulating tight junction protein expression (ZO-1 and occludin) and reducing serum endotoxin levels.",
     },
   ],
+  "khi-duong-lam-gion-lan-da-co-che-maillard-va-bi-quyet-bao-ve-collagen-vi": [
+    {
+      ordinal: 1,
+      label: "Nutrition and aging skin: sugar and glycation",
+      pmid: "20620757",
+      doi: "10.1016/j.clindermatol.2010.03.018",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Clin Dermatol",
+      year: 2010,
+      abstract: "Glycation is the nonenzymatic attachment of circulating sugars to tissue proteins, creating advanced glycation end-products (AGEs). Skin collagen fibers cross-link under the influence of AGEs, resulting in loss of elasticity, increased stiffness, and accelerated skin aging. Dietary changes that limit glucose spikes and exogenous AGE ingestion play an essential role in preserving skin structural integrity.",
+    },
+  ],
+  "when-sugar-makes-skin-brittle-glycation-and-collagen-protection-en": [
+    {
+      ordinal: 1,
+      label: "Nutrition and aging skin: sugar and glycation",
+      pmid: "20620757",
+      doi: "10.1016/j.clindermatol.2010.03.018",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Clin Dermatol",
+      year: 2010,
+      abstract: "Glycation is the nonenzymatic attachment of circulating sugars to tissue proteins, creating advanced glycation end-products (AGEs). Skin collagen fibers cross-link under the influence of AGEs, resulting in loss of elasticity, increased stiffness, and accelerated skin aging. Dietary changes that limit glucose spikes and exogenous AGE ingestion play an essential role in preserving skin structural integrity.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
