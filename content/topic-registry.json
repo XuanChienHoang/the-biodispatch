@@ -1,8 +1,104 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-10-22T10:18:43.714Z",
-  "totalTopics": 133,
+  "lastUpdated": "2026-10-22T18:01:46.520Z",
+  "totalTopics": 135,
   "topics": [
+    {
+      "id": "sodium-potassium-ratio-vascular-health",
+      "slugs": [
+        "sodium-potassium-ratio-vascular-health-en"
+      ],
+      "titleVi": "The Sodium-Potassium Ratio: Unlocking Vascular Relaxation from the Dinner Table",
+      "titleEn": "The Sodium-Potassium Ratio: Unlocking Vascular Relaxation from the Dinner Table",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1001/archinternmed.2011.283",
+      "date": "2026-10-22T17:00:00Z",
+      "tags": [
+        "blood-pressure",
+        "cardiovascular",
+        "blood-vessels",
+        "nutrition",
+        "potassium",
+        "sodium",
+        "family-health"
+      ],
+      "keywords": [
+        "sodium",
+        "potassium",
+        "ratio",
+        "unlocking",
+        "vascular",
+        "relaxation",
+        "dinner",
+        "table",
+        "blood",
+        "pressure",
+        "cardiovascular",
+        "vessels",
+        "nutrition",
+        "family",
+        "health",
+        "many",
+        "obsessively",
+        "strip",
+        "salt",
+        "our",
+        "dining",
+        "tables",
+        "protect",
+        "however",
+        "modern"
+      ]
+    },
+    {
+      "id": "ty-le-kali-natri-chia-khoa-thu-gian-mach-mau",
+      "slugs": [
+        "ty-le-kali-natri-chia-khoa-thu-gian-mach-mau-vi"
+      ],
+      "titleVi": "Tỷ lệ Kali và Natri: Chìa khóa thu giãn mạch máu từ mâm cơm gia đình",
+      "titleEn": "Tỷ lệ Kali và Natri: Chìa khóa thu giãn mạch máu từ mâm cơm gia đình",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1001/archinternmed.2011.283",
+      "date": "2026-10-22T17:00:00Z",
+      "tags": [
+        "huyet-ap",
+        "tim-mach",
+        "mach-mau",
+        "dinh-duong",
+        "kali",
+        "natri",
+        "suc-khoe-gia-dinh"
+      ],
+      "keywords": [
+        "kali",
+        "natri",
+        "chia",
+        "khoa",
+        "thu",
+        "gian",
+        "mach",
+        "mau",
+        "mam",
+        "com",
+        "gia",
+        "dinh",
+        "huyet",
+        "tim",
+        "duong",
+        "suc",
+        "khoe",
+        "nhieu",
+        "nguoi",
+        "chung",
+        "thuong",
+        "anh",
+        "viec",
+        "gat",
+        "muoi"
+      ]
+    },
     {
       "id": "khi-duong-lam-gion-lan-da-co-che-maillard-va-bi-quyet-bao-ve-collagen",
       "slugs": [

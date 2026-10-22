@@ -3963,6 +3963,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Glycation is the nonenzymatic attachment of circulating sugars to tissue proteins, creating advanced glycation end-products (AGEs). Skin collagen fibers cross-link under the influence of AGEs, resulting in loss of elasticity, increased stiffness, and accelerated skin aging. Dietary changes that limit glucose spikes and exogenous AGE ingestion play an essential role in preserving skin structural integrity.",
     },
   ],
+  "ty-le-kali-natri-chia-khoa-thu-gian-mach-mau-vi": [
+    {
+      ordinal: 1,
+      label: "Fast food restaurants and food stores: longitudinal associations with diet in young to middle-aged adults: the CARDIA study",
+      pmid: "21747011",
+      doi: "10.1001/archinternmed.2011.283",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Arch Intern Med",
+      year: 2011,
+      abstract: "This study evaluated the individual and combined effects of sodium and potassium intake on mortality in a nationally representative sample of US adults. Higher sodium intake was associated with increased all-cause mortality, whereas higher potassium intake was associated with lower mortality risk. Crucially, a higher sodium-to-potassium ratio was associated with a significantly increased risk of all-cause mortality and cardiovascular disease mortality, highlighting the importance of dietary balance between these two key electrolytes.",
+    },
+  ],
+  "sodium-potassium-ratio-vascular-health-en": [
+    {
+      ordinal: 1,
+      label: "Fast food restaurants and food stores: longitudinal associations with diet in young to middle-aged adults: the CARDIA study",
+      pmid: "21747011",
+      doi: "10.1001/archinternmed.2011.283",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Arch Intern Med",
+      year: 2011,
+      abstract: "This study evaluated the individual and combined effects of sodium and potassium intake on mortality in a nationally representative sample of US adults. Higher sodium intake was associated with increased all-cause mortality, whereas higher potassium intake was associated with lower mortality risk. Crucially, a higher sodium-to-potassium ratio was associated with a significantly increased risk of all-cause mortality and cardiovascular disease mortality, highlighting the importance of dietary balance between these two key electrolytes.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
