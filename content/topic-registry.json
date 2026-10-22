@@ -1,8 +1,56 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-10-22T19:38:51.383Z",
-  "totalTopics": 137,
+  "lastUpdated": "2026-10-22T22:49:48.994Z",
+  "totalTopics": 139,
   "topics": [
+    {
+      "id": "ceramide-thuc-vat-tu-cam-gao-tai-lap-hang-rao-da",
+      "slugs": [
+        "ceramide-thuc-vat-tu-cam-gao-tai-lap-hang-rao-da-vi"
+      ],
+      "titleVi": "Ceramide thực vật từ cám gạo và nghệ thuật vá lớp vữa khóa nước cho làn da khô nhạy cảm",
+      "titleEn": "Ceramide thực vật từ cám gạo và nghệ thuật vá lớp vữa khóa nước cho làn da khô nhạy cảm",
+      "organ": "Metabolic",
+      "tier": "Clinical Deep-Dive",
+      "doi": "10.3390/ijms24010083",
+      "date": "2026-10-22T17:00:00Z",
+      "tags": [
+        "lao-hoa",
+        "mat-da",
+        "chong-lao-hoa",
+        "ceramide-cam-gao",
+        "phytoceramide",
+        "da-kho-nhay-cam",
+        "tewl"
+      ],
+      "keywords": [
+        "ceramide",
+        "thuc",
+        "vat",
+        "cam",
+        "gao",
+        "nghe",
+        "thuat",
+        "lop",
+        "vua",
+        "khoa",
+        "nuoc",
+        "lan",
+        "kho",
+        "nhay",
+        "lao",
+        "hoa",
+        "mat",
+        "chong",
+        "phytoceramide",
+        "tewl",
+        "rap",
+        "bong",
+        "troc",
+        "man",
+        "vao"
+      ]
+    },
     {
       "id": "drinking-ice-water-after-fatty-meals",
       "slugs": [
@@ -48,6 +96,53 @@
         "enjoy",
         "glass",
         "cold"
+      ]
+    },
+    {
+      "id": "oral-rice-phytoceramides-skin-barrier-tewl",
+      "slugs": [
+        "oral-rice-phytoceramides-skin-barrier-tewl-en"
+      ],
+      "titleVi": "Oral rice phytoceramides and the art of restoring the moisture brick-and-mortar barrier in dry sensitive skin",
+      "titleEn": "Oral rice phytoceramides and the art of restoring the moisture brick-and-mortar barrier in dry sensitive skin",
+      "organ": "Metabolic",
+      "tier": "Clinical Deep-Dive",
+      "doi": "10.3390/ijms24010083",
+      "date": "2026-10-22T17:00:00Z",
+      "tags": [
+        "cellular-aging",
+        "skin-health",
+        "phytoceramides",
+        "tewl",
+        "rice-bran",
+        "dry-skin"
+      ],
+      "keywords": [
+        "oral",
+        "rice",
+        "phytoceramides",
+        "art",
+        "restoring",
+        "moisture",
+        "brick",
+        "mortar",
+        "barrier",
+        "dry",
+        "sensitive",
+        "skin",
+        "cellular",
+        "aging",
+        "health",
+        "tewl",
+        "bran",
+        "flaking",
+        "cold",
+        "weather",
+        "air",
+        "conditioned",
+        "environments",
+        "not",
+        "merely"
       ]
     },
     {
