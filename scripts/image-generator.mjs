@@ -121,11 +121,16 @@ export function extractSmartImageKeywords(topic = {}) {
 }
 
 /**
- * Xây dựng prompt FLUX 3D cho các cơ chế phân tử vi thể
+ * Xây dựng prompt FLUX 3D cho các cơ chế phân tử vi thể và khoa học thường thức
  */
 function buildFluxPrompt(topic = {}) {
   const organ = topic.organ || 'Metabolic';
   const title = topic.titleEn || topic.titleVi || 'Biomedical Discovery';
+  const isLifeDispatch = (topic.tier === 'Life Dispatch' || topic.tier === 'life');
+
+  if (isLifeDispatch) {
+    return `Nature-grade cinematic scientific visualization: ${title}. High-end biomedical and physiological concept, depicting human ${organ} health, vibrant natural lighting, elegant laboratory or anatomical atmosphere, volumetric depth of field, photorealistic, 8k resolution, cinematic composition, absolutely no text, no labels, no watermarks, 16:9 aspect ratio.`;
+  }
 
   return `Nature-grade 3D scientific visualization: Molecular mechanism of ${title}. High-end biomedical rendering of ${organ} physiological pathways, subtle bioluminescent glow, volumetric depth of field, electron microscopy precision, cellular structures, ultra-fine detailing, scientific accuracy, cinematic lighting, 8k render, absolutely no text, no watermarks, 16:9 aspect ratio.`;
 }
@@ -188,33 +193,66 @@ async function fetchFromPixabay(keyword, apiKey) {
 }
 
 /**
- * 3. Sinh ảnh phân tử 3D vi thể qua Hugging Face FLUX.1-schnell (Serverless miễn phí)
+ * 3. Sinh ảnh phân tử 3D vi thể qua FLUX.1 (Hỗ trợ cả HF Token và Serverless FLUX.1 mở chất lượng cao)
  */
-async function generateFromHuggingFaceFlux(prompt, hfToken) {
-  if (!hfToken) return null;
+async function generateFromFluxServerless(prompt, hfToken = '') {
+  // 1. Thử qua Hugging Face FLUX.1-schnell nếu có Token
+  if (hfToken) {
+    try {
+      const url = 'https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-schnell';
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 60000);
+
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${hfToken}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ inputs: prompt }),
+        signal: controller.signal
+      });
+      clearTimeout(timeout);
+
+      if (res.ok) {
+        const arrayBuffer = await res.arrayBuffer();
+        const buf = Buffer.from(arrayBuffer);
+        if (buf.length > 25000) return buf;
+      }
+    } catch (err) {
+      console.warn(`[Hugging Face FLUX Warning]: ${err.message}`);
+    }
+  }
+
+  // 2. Tầng FLUX.1 Serverless Mở (Zero-Key, Black Forest Labs FLUX architecture, 1280x720 16:9, không logo)
   try {
-    const url = 'https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-schnell';
+    const seed = Math.floor(Math.random() * 1000000);
+    const cleanPrompt = encodeURIComponent(prompt.slice(0, 450));
+    const url = `https://image.pollinations.ai/prompt/${cleanPrompt}?width=1280&height=720&model=flux&nologo=true&seed=${seed}`;
+    
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 60000); // 60s timeout
+    const timeout = setTimeout(() => controller.abort(), 70000); // 70s timeout cho FLUX render
 
     const res = await fetch(url, {
-      method: 'POST',
       headers: {
-        Authorization: `Bearer ${hfToken}`,
-        'Content-Type': 'application/json'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Phytocodex-Engine/2.0'
       },
-      body: JSON.stringify({ inputs: prompt }),
       signal: controller.signal
     });
     clearTimeout(timeout);
 
-    if (!res.ok) return null;
-    const arrayBuffer = await res.arrayBuffer();
-    return Buffer.from(arrayBuffer);
+    if (res.ok) {
+      const arrayBuffer = await res.arrayBuffer();
+      const buf = Buffer.from(arrayBuffer);
+      if (buf.length > 25000) {
+        return buf;
+      }
+    }
   } catch (err) {
-    console.warn(`[Hugging Face FLUX Warning]: ${err.message}`);
-    return null;
+    console.warn(`[FLUX.1 Open Endpoint Warning]: ${err.message}`);
   }
+
+  return null;
 }
 
 /**
@@ -335,16 +373,14 @@ export async function generateDispatchImage(slug, topic = {}) {
 
   console.log(`📸 [Image Engine] Khởi chạy tìm kiếm ảnh chất lượng cao cho "${slug}" (Keyword: "${keyword}")...`);
 
-  // TẦNG 1: Nếu là cơ chế phân tử sâu và có HF_TOKEN -> Dùng FLUX.1 3D
-  if (isMolecularMechanism && HF_TOKEN) {
-    console.log(`🧬 [Image Engine] Chủ đề cơ chế vi thể -> Kích hoạt FLUX.1-schnell 3D qua Hugging Face...`);
-    const prompt = buildFluxPrompt(topic);
-    const fluxBuffer = await generateFromHuggingFaceFlux(prompt, HF_TOKEN);
-    if (fluxBuffer && fluxBuffer.length > 20000) {
-      await processAndSaveImage(fluxBuffer, slug);
-      console.log(`✅ [Image Engine] Đã tạo thành công ảnh 3D phân tử FLUX.1 -> ${slug}.jpg`);
-      return targetPath;
-    }
+  // TẦNG 1: Sinh ảnh 3D phân tử / y sinh cao cấp qua FLUX.1 Serverless (Tự động độc bản 100%)
+  console.log(`🧬 [Image Engine] Kích hoạt FLUX.1 3D Biomedical Visualization cho "${slug}"...`);
+  const fluxPrompt = buildFluxPrompt(topic);
+  const fluxBuffer = await generateFromFluxServerless(fluxPrompt, HF_TOKEN);
+  if (fluxBuffer && fluxBuffer.length > 20000) {
+    await processAndSaveImage(fluxBuffer, slug);
+    console.log(`✅ [Image Engine] Đã tạo thành công ảnh 3D y sinh độc bản FLUX.1 -> ${slug}.jpg`);
+    return targetPath;
   }
 
   // TẦNG 2: Pexels API (Nhiếp ảnh thực tế 4K không mùi AI)
