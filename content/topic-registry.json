@@ -1,8 +1,98 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-10-22T22:49:48.994Z",
-  "totalTopics": 139,
+  "lastUpdated": "2026-10-23T12:54:11.430Z",
+  "totalTopics": 141,
   "topics": [
+    {
+      "id": "moi-mat-vet-chan-chim-man-hinh-astaxanthin",
+      "slugs": [
+        "moi-mat-vet-chan-chim-man-hinh-astaxanthin-vi"
+      ],
+      "titleVi": "Mỏi mắt và vết chân chim do màn hình: Giải mã cơ chế ánh sáng xanh bào mòn điểm vàng và sức mạnh phục hồi của Astaxanthin",
+      "titleEn": "Mỏi mắt và vết chân chim do màn hình: Giải mã cơ chế ánh sáng xanh bào mòn điểm vàng và sức mạnh phục hồi của Astaxanthin",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1080/10715762.2023.2277144",
+      "date": "2026-10-23T13:00:00Z",
+      "tags": [
+        "giac-ngu",
+        "mat-da",
+        "lao-hoa",
+        "nang-luong"
+      ],
+      "keywords": [
+        "moi",
+        "mat",
+        "vet",
+        "chan",
+        "chim",
+        "man",
+        "hinh",
+        "anh",
+        "sang",
+        "xanh",
+        "bao",
+        "mon",
+        "diem",
+        "vang",
+        "suc",
+        "manh",
+        "phuc",
+        "hoi",
+        "astaxanthin",
+        "giac",
+        "ngu",
+        "lao",
+        "hoa",
+        "nang",
+        "luong"
+      ]
+    },
+    {
+      "id": "screen-eye-strain-crows-feet-astaxanthin",
+      "slugs": [
+        "screen-eye-strain-crows-feet-astaxanthin-en"
+      ],
+      "titleVi": "Screen-Induced Eye Strain and Crow's Feet: How Blue Light Depletes the Macula and How Astaxanthin Restores Cellular Defense",
+      "titleEn": "Screen-Induced Eye Strain and Crow's Feet: How Blue Light Depletes the Macula and How Astaxanthin Restores Cellular Defense",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1080/10715762.2023.2277144",
+      "date": "2026-10-23T13:00:00Z",
+      "tags": [
+        "sleep",
+        "eyes-skin",
+        "cellular-aging",
+        "energy"
+      ],
+      "keywords": [
+        "screen",
+        "induced",
+        "eye",
+        "strain",
+        "crow",
+        "feet",
+        "blue",
+        "light",
+        "depletes",
+        "macula",
+        "astaxanthin",
+        "restores",
+        "cellular",
+        "defense",
+        "sleep",
+        "eyes",
+        "skin",
+        "aging",
+        "energy",
+        "prolonged",
+        "work",
+        "late",
+        "night",
+        "smartphone",
+        "scrolling"
+      ]
+    },
     {
       "id": "ceramide-thuc-vat-tu-cam-gao-tai-lap-hang-rao-da",
       "slugs": [

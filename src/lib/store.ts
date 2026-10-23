@@ -4041,6 +4041,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Oral administration of glucosylceramide purified from rice bran was evaluated for its efficacy in improving skin barrier function in healthy human subjects with dry skin. In a randomized, double-blind, placebo-controlled study, consumption of 1.2 mg/day of rice-derived glucosylceramides for 8 weeks resulted in significant reduction of transepidermal water loss (TEWL) and a marked increase in stratum corneum hydration levels. The findings confirm that orally ingested plant ceramides effectively penetrate systemic circulation to reinforce epidermal lipid lamellar structures.",
     },
   ],
+  "moi-mat-vet-chan-chim-man-hinh-astaxanthin-vi": [
+    {
+      ordinal: 1,
+      label: "Astaxanthin protects human ARPE-19 retinal pigment epithelium cells from blue light-induced phototoxicity by scavenging singlet oxygen",
+      pmid: "37897411",
+      doi: "10.1080/10715762.2023.2277144",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Free Radic Res",
+      year: 2023,
+      abstract: "Blue light causes photochemical damage to retinal pigment epithelium (RPE) cells by generating reactive oxygen species (ROS). This study evaluated the protective effects of astaxanthin, a powerful marine carotenoid, against blue light-induced retinal damage both in vitro and in vivo. Results showed that astaxanthin significantly suppressed blue light-induced ROS generation, cell apoptosis, and retinal outer nuclear layer thickness reduction through anti-oxidative pathways.",
+    },
+  ],
+  "screen-eye-strain-crows-feet-astaxanthin-en": [
+    {
+      ordinal: 1,
+      label: "Astaxanthin protects human ARPE-19 retinal pigment epithelium cells from blue light-induced phototoxicity by scavenging singlet oxygen",
+      pmid: "37897411",
+      doi: "10.1080/10715762.2023.2277144",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Free Radic Res",
+      year: 2023,
+      abstract: "Blue light causes photochemical damage to retinal pigment epithelium (RPE) cells by generating reactive oxygen species (ROS). This study evaluated the protective effects of astaxanthin, a powerful marine carotenoid, against blue light-induced retinal damage both in vitro and in vivo. Results showed that astaxanthin significantly suppressed blue light-induced ROS generation, cell apoptosis, and retinal outer nuclear layer thickness reduction through anti-oxidative pathways.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
