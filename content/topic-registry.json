@@ -1,8 +1,102 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-10-23T12:54:11.430Z",
-  "totalTopics": 141,
+  "lastUpdated": "2026-10-24T09:46:40.650Z",
+  "totalTopics": 143,
   "topics": [
+    {
+      "id": "su-that-tra-thai-doc-gan-phase-1-phase-2",
+      "slugs": [
+        "su-that-tra-thai-doc-gan-phase-1-phase-2-vi"
+      ],
+      "titleVi": "Sự thật về trà thải độc gan cấp tốc và các vi chất thực sự cần thiết cho hai pha giải độc",
+      "titleEn": "Sự thật về trà thải độc gan cấp tốc và các vi chất thực sự cần thiết cho hai pha giải độc",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1155/2015/760689",
+      "date": "2026-10-24T09:00:00Z",
+      "tags": [
+        "gan",
+        "giai-doc",
+        "duong-huyet",
+        "lao-hoa",
+        "noi-tiet",
+        "dinh-duong"
+      ],
+      "keywords": [
+        "tra",
+        "thai",
+        "doc",
+        "gan",
+        "cap",
+        "toc",
+        "chat",
+        "thuc",
+        "can",
+        "thiet",
+        "hai",
+        "pha",
+        "duong",
+        "huyet",
+        "lao",
+        "hoa",
+        "noi",
+        "tiet",
+        "dinh",
+        "nhieu",
+        "nguoi",
+        "tim",
+        "den",
+        "loai",
+        "vong"
+      ]
+    },
+    {
+      "id": "the-truth-about-liver-detox-teas-phase-1-and-2",
+      "slugs": [
+        "the-truth-about-liver-detox-teas-phase-1-and-2-en"
+      ],
+      "titleVi": "The Truth About Rapid Liver Detox Teas and the Micronutrients Truly Needed for Phase 1 and Phase 2 Detoxification",
+      "titleEn": "The Truth About Rapid Liver Detox Teas and the Micronutrients Truly Needed for Phase 1 and Phase 2 Detoxification",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1155/2015/760689",
+      "date": "2026-10-24T09:00:00Z",
+      "tags": [
+        "liver",
+        "detox",
+        "blood-sugar",
+        "aging",
+        "endocrine",
+        "nutrition"
+      ],
+      "keywords": [
+        "truth",
+        "about",
+        "rapid",
+        "liver",
+        "detox",
+        "teas",
+        "micronutrients",
+        "truly",
+        "needed",
+        "phase",
+        "detoxification",
+        "blood",
+        "sugar",
+        "aging",
+        "endocrine",
+        "nutrition",
+        "many",
+        "individuals",
+        "turn",
+        "hoping",
+        "cleanse",
+        "their",
+        "bodies",
+        "periods",
+        "indulgence"
+      ]
+    },
     {
       "id": "moi-mat-vet-chan-chim-man-hinh-astaxanthin",
       "slugs": [

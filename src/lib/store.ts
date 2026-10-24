@@ -4067,6 +4067,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Blue light causes photochemical damage to retinal pigment epithelium (RPE) cells by generating reactive oxygen species (ROS). This study evaluated the protective effects of astaxanthin, a powerful marine carotenoid, against blue light-induced retinal damage both in vitro and in vivo. Results showed that astaxanthin significantly suppressed blue light-induced ROS generation, cell apoptosis, and retinal outer nuclear layer thickness reduction through anti-oxidative pathways.",
     },
   ],
+  "su-that-tra-thai-doc-gan-phase-1-phase-2-vi": [
+    {
+      ordinal: 1,
+      label: "Modulation of Metabolic Detoxification Pathways Using Foods and Food-Derived Components: A Scientific Review with Clinical Application",
+      pmid: "26167297",
+      doi: "10.1155/2015/760689",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "J Nutr Metab",
+      year: 2015,
+      abstract: "Targeted nutrition can modulate hepatic detoxification pathways. Phase I cytochrome P450 enzymes transform lipophilic toxins into reactive intermediates, which must be efficiently conjugated by Phase II enzymes (such as glutathione S-transferase, UDP-glucuronosyltransferase, and sulfotransferase) before excretion. Imbalances between Phase I and Phase II can lead to oxidative stress and cellular damage. Dietary phytonutrients and specific micronutrients play essential roles in supporting both phases.",
+    },
+  ],
+  "the-truth-about-liver-detox-teas-phase-1-and-2-en": [
+    {
+      ordinal: 1,
+      label: "Modulation of Metabolic Detoxification Pathways Using Foods and Food-Derived Components: A Scientific Review with Clinical Application",
+      pmid: "26167297",
+      doi: "10.1155/2015/760689",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "J Nutr Metab",
+      year: 2015,
+      abstract: "Targeted nutrition can modulate hepatic detoxification pathways. Phase I cytochrome P450 enzymes transform lipophilic toxins into reactive intermediates, which must be efficiently conjugated by Phase II enzymes (such as glutathione S-transferase, UDP-glucuronosyltransferase, and sulfotransferase) before excretion. Imbalances between Phase I and Phase II can lead to oxidative stress and cellular damage. Dietary phytonutrients and specific micronutrients play essential roles in supporting both phases.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
