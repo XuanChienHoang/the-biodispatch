@@ -1,8 +1,100 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-10-24T09:46:40.650Z",
-  "totalTopics": 143,
+  "lastUpdated": "2026-10-24T22:00:49.535Z",
+  "totalTopics": 145,
   "topics": [
+    {
+      "id": "qua-anh-dao-chua-va-axit-uric",
+      "slugs": [
+        "qua-anh-dao-chua-va-axit-uric-vi"
+      ],
+      "titleVi": "Quả anh đào chua và thói quen uống nước: Giải pháp tự nhiên giúp hạ axit uric và ngăn ngừa cơn gút cấp",
+      "titleEn": "Quả anh đào chua và thói quen uống nước: Giải pháp tự nhiên giúp hạ axit uric và ngăn ngừa cơn gút cấp",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1002/art.34677",
+      "date": "2026-10-24T17:00:00Z",
+      "tags": [
+        "axit-uric",
+        "gut",
+        "than",
+        "chong-vien",
+        "chuyen-hoa"
+      ],
+      "keywords": [
+        "qua",
+        "anh",
+        "dao",
+        "chua",
+        "thoi",
+        "quen",
+        "uong",
+        "nuoc",
+        "phap",
+        "nhien",
+        "giup",
+        "axit",
+        "uric",
+        "ngan",
+        "ngua",
+        "con",
+        "gut",
+        "cap",
+        "than",
+        "chong",
+        "vien",
+        "chuyen",
+        "hoa",
+        "nhieu",
+        "nguoi"
+      ]
+    },
+    {
+      "id": "tart-cherry-hydration-uric-acid",
+      "slugs": [
+        "tart-cherry-hydration-uric-acid-en"
+      ],
+      "titleVi": "Tart Cherries and Hydration: A Natural Strategy to Lower Uric Acid and Prevent Gout Flares",
+      "titleEn": "Tart Cherries and Hydration: A Natural Strategy to Lower Uric Acid and Prevent Gout Flares",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1002/art.34677",
+      "date": "2026-10-24T17:00:00Z",
+      "tags": [
+        "uric-acid",
+        "gout",
+        "kidney",
+        "anti-inflammatory",
+        "metabolism"
+      ],
+      "keywords": [
+        "tart",
+        "cherries",
+        "hydration",
+        "natural",
+        "strategy",
+        "lower",
+        "uric",
+        "acid",
+        "prevent",
+        "gout",
+        "flares",
+        "kidney",
+        "anti",
+        "inflammatory",
+        "metabolism",
+        "many",
+        "individuals",
+        "shudder",
+        "memory",
+        "sudden",
+        "attack",
+        "middle",
+        "night",
+        "describing",
+        "thousands"
+      ]
+    },
     {
       "id": "su-that-tra-thai-doc-gan-phase-1-phase-2",
       "slugs": [

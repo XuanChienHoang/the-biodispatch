@@ -4093,6 +4093,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Targeted nutrition can modulate hepatic detoxification pathways. Phase I cytochrome P450 enzymes transform lipophilic toxins into reactive intermediates, which must be efficiently conjugated by Phase II enzymes (such as glutathione S-transferase, UDP-glucuronosyltransferase, and sulfotransferase) before excretion. Imbalances between Phase I and Phase II can lead to oxidative stress and cellular damage. Dietary phytonutrients and specific micronutrients play essential roles in supporting both phases.",
     },
   ],
+  "qua-anh-dao-chua-va-axit-uric-vi": [
+    {
+      ordinal: 1,
+      label: "Cherry consumption and decreased risk of recurrent gout attacks",
+      pmid: "23023818",
+      doi: "10.1002/art.34677",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Arthritis Rheum",
+      year: 2012,
+      abstract: "In a prospective study of 633 gout patients, cherry intake over a 2-day period was associated with a 35% lower risk of gout attacks compared with no intake. When cherry intake was combined with allopurinol use, the risk of gout attacks was 75% lower than during periods without either exposure. These findings suggest that cherry consumption is associated with a lower risk of recurrent gout attacks.",
+    },
+  ],
+  "tart-cherry-hydration-uric-acid-en": [
+    {
+      ordinal: 1,
+      label: "Cherry consumption and decreased risk of recurrent gout attacks",
+      pmid: "23023818",
+      doi: "10.1002/art.34677",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Arthritis Rheum",
+      year: 2012,
+      abstract: "In a prospective study of 633 gout patients, cherry intake over a 2-day period was associated with a 35% lower risk of gout attacks compared with no intake. When cherry intake was combined with allopurinol use, the risk of gout attacks was 75% lower than during periods without either exposure. These findings suggest that cherry consumption is associated with a lower risk of recurrent gout attacks.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
