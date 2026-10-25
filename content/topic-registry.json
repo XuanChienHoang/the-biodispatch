@@ -1,7 +1,7 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-10-25T17:18:21.281Z",
-  "totalTopics": 149,
+  "lastUpdated": "2026-10-25T18:44:07.968Z",
+  "totalTopics": 151,
   "topics": [
     {
       "id": "hien-thuong-cortisol-steal-khi-stress-triet-tieu-hormone-sinh-luc",
@@ -48,6 +48,98 @@
         "ngu",
         "kham",
         "pha"
+      ]
+    },
+    {
+      "id": "morning-sunlight-scd-circadian-reset",
+      "slugs": [
+        "morning-sunlight-scd-circadian-reset-en"
+      ],
+      "titleVi": "Ten minutes of morning sunlight: Resetting the suprachiasmatic nucleus for daytime alertness and deep nocturnal sleep",
+      "titleEn": "Ten minutes of morning sunlight: Resetting the suprachiasmatic nucleus for daytime alertness and deep nocturnal sleep",
+      "organ": "Metabolic",
+      "tier": "Clinical Deep-Dive",
+      "doi": "10.1016/j.jsmc.2015.08.001",
+      "date": "2026-10-25T17:00:00Z",
+      "tags": [
+        "sleep",
+        "energy",
+        "aging",
+        "endocrine",
+        "metabolic"
+      ],
+      "keywords": [
+        "ten",
+        "minutes",
+        "morning",
+        "sunlight",
+        "resetting",
+        "suprachiasmatic",
+        "nucleus",
+        "daytime",
+        "alertness",
+        "deep",
+        "nocturnal",
+        "sleep",
+        "energy",
+        "aging",
+        "endocrine",
+        "metabolic",
+        "many",
+        "people",
+        "struggle",
+        "grogginess",
+        "insomnia",
+        "despite",
+        "getting",
+        "eight",
+        "hours"
+      ]
+    },
+    {
+      "id": "tam-anh-nang-som-dieu-hoa-nhan-tren-cheo",
+      "slugs": [
+        "tam-anh-nang-som-dieu-hoa-nhan-tren-cheo-vi"
+      ],
+      "titleVi": "Tắm ánh nắng tự nhiên mười phút đầu ngày: Đặt lại đồng hồ sinh học tại nhân trên chéo để tỉnh táo ban ngày và ngủ sâu ban đêm",
+      "titleEn": "Tắm ánh nắng tự nhiên mười phút đầu ngày: Đặt lại đồng hồ sinh học tại nhân trên chéo để tỉnh táo ban ngày và ngủ sâu ban đêm",
+      "organ": "Metabolic",
+      "tier": "Clinical Deep-Dive",
+      "doi": "10.1016/j.jsmc.2015.08.001",
+      "date": "2026-10-25T17:00:00Z",
+      "tags": [
+        "giac-ngu",
+        "nang-luong",
+        "lao-hoa",
+        "noi-tiet",
+        "metabolic"
+      ],
+      "keywords": [
+        "tam",
+        "anh",
+        "nang",
+        "nhien",
+        "muoi",
+        "phut",
+        "dau",
+        "ngay",
+        "dat",
+        "lai",
+        "dong",
+        "sinh",
+        "hoc",
+        "nhan",
+        "tren",
+        "cheo",
+        "tinh",
+        "tao",
+        "ban",
+        "ngu",
+        "sau",
+        "dem",
+        "giac",
+        "luong",
+        "lao"
       ]
     },
     {

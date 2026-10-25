@@ -4171,6 +4171,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Glucocorticoids are primary stress hormones essential for adapting to physiological and psychological stressors. However, chronic activation of the HPA axis leads to sustained glucocorticoid exposure, which inhibits the Hypothalamic-Pituitary-Gonadal (HPG) axis at multiple biochemical levels. This review outlines how glucocorticoids alter steroidogenesis, suppress sex hormone production, and impact reproductive tissues and cellular function.",
     },
   ],
+  "tam-anh-nang-som-dieu-hoa-nhan-tren-cheo-vi": [
+    {
+      ordinal: 1,
+      label: "Effect of Light and Melatonin and Other Melatonin Receptor Agonists on Human Circadian Physiology",
+      pmid: "26568121",
+      doi: "10.1016/j.jsmc.2015.08.001",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Sleep Med Clin",
+      year: 2015,
+      abstract: "The human circadian timing system is coordinated by the suprachiasmatic nucleus of the hypothalamus, which is synchronized to the 24-hour solar day primarily by the daily light-dark cycle acting via the retinohypothalamic tract. Environmental light exposure patterns profoundly influence circadian phase, alertness, performance, and nocturnal melatonin secretion.",
+    },
+  ],
+  "morning-sunlight-scd-circadian-reset-en": [
+    {
+      ordinal: 1,
+      label: "Effect of Light and Melatonin and Other Melatonin Receptor Agonists on Human Circadian Physiology",
+      pmid: "26568121",
+      doi: "10.1016/j.jsmc.2015.08.001",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Sleep Med Clin",
+      year: 2015,
+      abstract: "The human circadian timing system is coordinated by the suprachiasmatic nucleus of the hypothalamus, which is synchronized to the 24-hour solar day primarily by the daily light-dark cycle acting via the retinohypothalamic tract. Environmental light exposure patterns profoundly influence circadian phase, alertness, performance, and nocturnal melatonin secretion.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
