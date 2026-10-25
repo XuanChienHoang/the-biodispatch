@@ -4197,6 +4197,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "The human circadian timing system is coordinated by the suprachiasmatic nucleus of the hypothalamus, which is synchronized to the 24-hour solar day primarily by the daily light-dark cycle acting via the retinohypothalamic tract. Environmental light exposure patterns profoundly influence circadian phase, alertness, performance, and nocturnal melatonin secretion.",
     },
   ],
+  "dem-che-do-night-shift-va-kinh-loc-anh-sang-xanh-melatonin-vi": [
+    {
+      ordinal: 1,
+      label: "Light level and duration of exposure determine the impact of self-luminous tablets on melatonin suppression",
+      pmid: "22850476",
+      doi: "10.1016/j.apergo.2012.07.008",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Appl Ergon",
+      year: 2013,
+      abstract: "Self-luminous tablet computers and portable electronic devices emit optical radiation at short wavelengths that can suppress the nocturnal release of melatonin. This controlled laboratory study measured melatonin suppression after 1-hour and 2-hour exposures to self-luminous tablets. Results showed that light level and duration of exposure significantly influenced melatonin suppression. A 2-hour exposure to self-luminous devices significantly suppressed melatonin levels, demonstrating that photon density and exposure duration are critical variables alongside spectral power distribution.",
+    },
+  ],
+  "night-shift-mode-blue-blocking-glasses-melatonin-en": [
+    {
+      ordinal: 1,
+      label: "Light level and duration of exposure determine the impact of self-luminous tablets on melatonin suppression",
+      pmid: "22850476",
+      doi: "10.1016/j.apergo.2012.07.008",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Appl Ergon",
+      year: 2013,
+      abstract: "Self-luminous tablet computers and portable electronic devices emit optical radiation at short wavelengths that can suppress the nocturnal release of melatonin. This controlled laboratory study measured melatonin suppression after 1-hour and 2-hour exposures to self-luminous tablets. Results showed that light level and duration of exposure significantly influenced melatonin suppression. A 2-hour exposure to self-luminous devices significantly suppressed melatonin levels, demonstrating that photon density and exposure duration are critical variables alongside spectral power distribution.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

@@ -1,8 +1,53 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-10-25T18:44:07.968Z",
-  "totalTopics": 151,
+  "lastUpdated": "2026-10-25T19:43:39.388Z",
+  "totalTopics": 153,
   "topics": [
+    {
+      "id": "dem-che-do-night-shift-va-kinh-loc-anh-sang-xanh-melatonin",
+      "slugs": [
+        "dem-che-do-night-shift-va-kinh-loc-anh-sang-xanh-melatonin-vi"
+      ],
+      "titleVi": "Chế độ Night Shift và kính lọc ánh sáng xanh: Vì sao đổi màu màn hình vẫn chưa đủ để cứu vãn giấc ngủ?",
+      "titleEn": "Chế độ Night Shift và kính lọc ánh sáng xanh: Vì sao đổi màu màn hình vẫn chưa đủ để cứu vãn giấc ngủ?",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1016/j.apergo.2012.07.008",
+      "date": "2026-10-25T17:00:00Z",
+      "tags": [
+        "giac-ngu",
+        "bo-nao",
+        "mat-da",
+        "nang-luong"
+      ],
+      "keywords": [
+        "night",
+        "shift",
+        "kinh",
+        "loc",
+        "anh",
+        "sang",
+        "xanh",
+        "doi",
+        "mau",
+        "man",
+        "hinh",
+        "van",
+        "chua",
+        "cuu",
+        "giac",
+        "ngu",
+        "nao",
+        "mat",
+        "nang",
+        "luong",
+        "nhieu",
+        "nguoi",
+        "chung",
+        "tin",
+        "rang"
+      ]
+    },
     {
       "id": "hien-thuong-cortisol-steal-khi-stress-triet-tieu-hormone-sinh-luc",
       "slugs": [
@@ -94,6 +139,51 @@
         "getting",
         "eight",
         "hours"
+      ]
+    },
+    {
+      "id": "night-shift-mode-blue-blocking-glasses-melatonin",
+      "slugs": [
+        "night-shift-mode-blue-blocking-glasses-melatonin-en"
+      ],
+      "titleVi": "Night Shift Mode and Blue-Blocking Glasses: Why Changing Screen Color Alone Cannot Save Your Nighttime Melatonin",
+      "titleEn": "Night Shift Mode and Blue-Blocking Glasses: Why Changing Screen Color Alone Cannot Save Your Nighttime Melatonin",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1016/j.apergo.2012.07.008",
+      "date": "2026-10-25T17:00:00Z",
+      "tags": [
+        "sleep",
+        "brain",
+        "eye-health",
+        "energy"
+      ],
+      "keywords": [
+        "night",
+        "shift",
+        "mode",
+        "blue",
+        "blocking",
+        "glasses",
+        "changing",
+        "screen",
+        "color",
+        "alone",
+        "cannot",
+        "save",
+        "your",
+        "nighttime",
+        "melatonin",
+        "sleep",
+        "brain",
+        "eye",
+        "health",
+        "energy",
+        "many",
+        "believe",
+        "toggling",
+        "warm",
+        "orange"
       ]
     },
     {
