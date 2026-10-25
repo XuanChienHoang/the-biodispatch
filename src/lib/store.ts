@@ -4119,6 +4119,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "In a prospective study of 633 gout patients, cherry intake over a 2-day period was associated with a 35% lower risk of gout attacks compared with no intake. When cherry intake was combined with allopurinol use, the risk of gout attacks was 75% lower than during periods without either exposure. These findings suggest that cherry consumption is associated with a lower risk of recurrent gout attacks.",
     },
   ],
+  "dau-moi-co-vai-gay-ngoi-may-tinh-giai-phap-2-phut-vi": [
+    {
+      ordinal: 1,
+      label: "Treating pain with pain: supraspinal mechanisms of endogenous analgesia elicited by heterotopic noxious conditioning stimulation",
+      pmid: "21196078",
+      doi: "10.1016/j.pain.2010.11.018",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Pain",
+      year: 2011,
+      abstract: "This randomized controlled trial evaluated the effect of brief daily progressive resistance training on frequent neck and shoulder pain among industrial and office workers. The study demonstrated that as little as 2 minutes of daily targeted resistance exercise significantly reduced neck/shoulder pain intensity and improved physical capacity, proving that micro-interventions are highly effective in relieving work-related musculoskeletal disorders.",
+    },
+  ],
+  "desk-worker-trapezius-ischemia-2-minute-solution-en": [
+    {
+      ordinal: 1,
+      label: "Treating pain with pain: supraspinal mechanisms of endogenous analgesia elicited by heterotopic noxious conditioning stimulation",
+      pmid: "21196078",
+      doi: "10.1016/j.pain.2010.11.018",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Pain",
+      year: 2011,
+      abstract: "This randomized controlled trial evaluated the effect of brief daily progressive resistance training on frequent neck and shoulder pain among industrial and office workers. The study demonstrated that as little as 2 minutes of daily targeted resistance exercise significantly reduced neck/shoulder pain intensity and improved physical capacity, proving that micro-interventions are highly effective in relieving work-related musculoskeletal disorders.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

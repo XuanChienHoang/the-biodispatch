@@ -1,8 +1,100 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-10-24T22:00:49.535Z",
-  "totalTopics": 145,
+  "lastUpdated": "2026-10-25T12:55:05.482Z",
+  "totalTopics": 147,
   "topics": [
+    {
+      "id": "dau-moi-co-vai-gay-ngoi-may-tinh-giai-phap-2-phut",
+      "slugs": [
+        "dau-moi-co-vai-gay-ngoi-may-tinh-giai-phap-2-phut-vi"
+      ],
+      "titleVi": "Giải mã cơn đau mỏi cổ vai gáy ở dân văn phòng: Từ cơ chế thiếu máu cục bộ cơ thang đến bài tập 2 phút",
+      "titleEn": "Giải mã cơn đau mỏi cổ vai gáy ở dân văn phòng: Từ cơ chế thiếu máu cục bộ cơ thang đến bài tập 2 phút",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1016/j.pain.2010.11.018",
+      "date": "2026-10-25T13:00:00Z",
+      "tags": [
+        "dau-vai-gay",
+        "co-xung-khop",
+        "dan-van-phong",
+        "thieu-mau-cuc-bo",
+        "lao-hoa-te-bao"
+      ],
+      "keywords": [
+        "con",
+        "dau",
+        "moi",
+        "vai",
+        "gay",
+        "dan",
+        "van",
+        "phong",
+        "thieu",
+        "mau",
+        "cuc",
+        "thang",
+        "den",
+        "tap",
+        "phut",
+        "xung",
+        "khop",
+        "lao",
+        "hoa",
+        "bao",
+        "sau",
+        "nhieu",
+        "gio",
+        "ngoi",
+        "may"
+      ]
+    },
+    {
+      "id": "desk-worker-trapezius-ischemia-2-minute-solution",
+      "slugs": [
+        "desk-worker-trapezius-ischemia-2-minute-solution-en"
+      ],
+      "titleVi": "Understanding Desk Worker Neck and Shoulder Pain: From Trapezius Ischemia to the 2-Minute Micro-Break Solution",
+      "titleEn": "Understanding Desk Worker Neck and Shoulder Pain: From Trapezius Ischemia to the 2-Minute Micro-Break Solution",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1016/j.pain.2010.11.018",
+      "date": "2026-10-25T13:00:00Z",
+      "tags": [
+        "neck-shoulder-pain",
+        "trapezius-ischemia",
+        "desk-worker-health",
+        "micro-circulation",
+        "cellular-longevity"
+      ],
+      "keywords": [
+        "understanding",
+        "desk",
+        "worker",
+        "neck",
+        "shoulder",
+        "pain",
+        "trapezius",
+        "ischemia",
+        "minute",
+        "micro",
+        "break",
+        "solution",
+        "health",
+        "circulation",
+        "cellular",
+        "longevity",
+        "chronic",
+        "tightness",
+        "workers",
+        "not",
+        "merely",
+        "simple",
+        "muscle",
+        "fatigue",
+        "but"
+      ]
+    },
     {
       "id": "qua-anh-dao-chua-va-axit-uric",
       "slugs": [
