@@ -86,7 +86,9 @@ export function extractSmartImageKeywords(topic = {}) {
     { pattern: /garlic|tỏi|allicin/i, query: 'Allium sativum garlic' },
     { pattern: /ginger|gừng/i, query: 'Zingiber officinale ginger' },
     { pattern: /cinnamon|quế/i, query: 'Cinnamomum cinnamon bark' },
-    { pattern: /rosemary|hương thảo/i, query: 'Rosmarinus officinalis rosemary' },
+    { pattern: /cherry|anh đào|tart cherry|uric acid|gout/i, query: 'fresh red cherries fruit' },
+    { pattern: /detox tea|trà thải độc|liver tea|thảo mộc gan/i, query: 'herbal tea cup organic herbs' },
+    { pattern: /astaxanthin|mỏi mắt|vết chân chim|retina|eye strain/i, query: 'fresh microalgae haematococcus pluvialis' },
     { pattern: /phosphatidylserine|dha|omega-3|omega 3|phospholipid/i, query: 'neuron synapse brain cell' },
     { pattern: /h5n1|influenza|cúm|avian flu|virus|respiratory/i, query: 'influenza virus transmission' },
     { pattern: /yersinia|pestis|t3ss|kháng sinh|vi khuẩn|bacteria/i, query: 'bacteria cellular microbiology' },
@@ -98,6 +100,9 @@ export function extractSmartImageKeywords(topic = {}) {
   }
 
   // Lifestyle keywords (Ngắn gọn để Openverse & Pexels tìm chính xác 100%)
+  if (/cổ vai gáy|trapezius|đau mỏi|posture|ergonomic|desk worker/i.test(text)) return 'desk office worker posture ergonomic stretching';
+  if (/cortisol|stress|adrenal|kiệt sức|căng thẳng/i.test(text)) return 'peaceful mindfulness relaxation deep breathing nature';
+  if (/sunlight|ánh nắng|morning sun|bình minh/i.test(text)) return 'morning golden sunlight outdoor nature sunrise';
   if (/walk|đi bộ|exercise|tập luyện|hiit/i.test(text)) return 'outdoor morning walking sunlight';
   if (/sleep|giấc ngủ|circadian|nhịp sinh học|melatonin/i.test(text)) return 'peaceful sleeping bedroom night';
   if (/nhai|ăn rau|cơm nguội|tinh bột kháng|microbiome|gut|ruột/i.test(text)) return 'healthy organic vegetables salad';
@@ -193,50 +198,22 @@ async function fetchFromPixabay(keyword, apiKey) {
 }
 
 /**
- * 3. Sinh ảnh phân tử 3D vi thể qua FLUX.1 (Hỗ trợ cả HF Token và Serverless FLUX.1 mở chất lượng cao)
+ * Sinh ảnh phân tử 3D vi thể qua Hugging Face FLUX.1 (Chỉ chạy khi có HF_TOKEN hợp lệ)
  */
-async function generateFromFluxServerless(prompt, hfToken = '') {
-  // 1. Thử qua Hugging Face FLUX.1-schnell nếu có Token
-  if (hfToken) {
-    try {
-      const url = 'https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-schnell';
-      const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 60000);
-
-      const res = await fetch(url, {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${hfToken}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ inputs: prompt }),
-        signal: controller.signal
-      });
-      clearTimeout(timeout);
-
-      if (res.ok) {
-        const arrayBuffer = await res.arrayBuffer();
-        const buf = Buffer.from(arrayBuffer);
-        if (buf.length > 25000) return buf;
-      }
-    } catch (err) {
-      console.warn(`[Hugging Face FLUX Warning]: ${err.message}`);
-    }
-  }
-
-  // 2. Tầng FLUX.1 Serverless Mở (Zero-Key, Black Forest Labs FLUX architecture, 1280x720 16:9, không logo)
+async function generateFromHuggingFaceFlux(prompt, hfToken = '') {
+  if (!hfToken) return null;
   try {
-    const seed = Math.floor(Math.random() * 1000000);
-    const cleanPrompt = encodeURIComponent(prompt.slice(0, 450));
-    const url = `https://image.pollinations.ai/prompt/${cleanPrompt}?width=1280&height=720&model=flux&nologo=true&seed=${seed}`;
-    
+    const url = 'https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-schnell';
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 70000); // 70s timeout cho FLUX render
+    const timeout = setTimeout(() => controller.abort(), 60000);
 
     const res = await fetch(url, {
+      method: 'POST',
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Phytocodex-Engine/2.0'
+        Authorization: `Bearer ${hfToken}`,
+        'Content-Type': 'application/json'
       },
+      body: JSON.stringify({ inputs: prompt }),
       signal: controller.signal
     });
     clearTimeout(timeout);
@@ -244,14 +221,11 @@ async function generateFromFluxServerless(prompt, hfToken = '') {
     if (res.ok) {
       const arrayBuffer = await res.arrayBuffer();
       const buf = Buffer.from(arrayBuffer);
-      if (buf.length > 25000) {
-        return buf;
-      }
+      if (buf.length > 25000) return buf;
     }
   } catch (err) {
-    console.warn(`[FLUX.1 Open Endpoint Warning]: ${err.message}`);
+    console.warn(`[Hugging Face FLUX Warning]: ${err.message}`);
   }
-
   return null;
 }
 
@@ -373,17 +347,7 @@ export async function generateDispatchImage(slug, topic = {}) {
 
   console.log(`📸 [Image Engine] Khởi chạy tìm kiếm ảnh chất lượng cao cho "${slug}" (Keyword: "${keyword}")...`);
 
-  // TẦNG 1: Sinh ảnh 3D phân tử / y sinh cao cấp qua FLUX.1 Serverless (Tự động độc bản 100%)
-  console.log(`🧬 [Image Engine] Kích hoạt FLUX.1 3D Biomedical Visualization cho "${slug}"...`);
-  const fluxPrompt = buildFluxPrompt(topic);
-  const fluxBuffer = await generateFromFluxServerless(fluxPrompt, HF_TOKEN);
-  if (fluxBuffer && fluxBuffer.length > 20000) {
-    await processAndSaveImage(fluxBuffer, slug);
-    console.log(`✅ [Image Engine] Đã tạo thành công ảnh 3D y sinh độc bản FLUX.1 -> ${slug}.jpg`);
-    return targetPath;
-  }
-
-  // TẦNG 2: Pexels API (Nhiếp ảnh thực tế 4K không mùi AI)
+  // TẦNG 1: Pexels API (Nhiếp ảnh thực tế 4K không mùi AI)
   if (PEXELS_API_KEY) {
     console.log(`🌿 [Image Engine] Đang tìm kiếm ảnh nhiếp ảnh thực tế 4K qua Pexels API...`);
     const pexelsBuffer = await fetchFromPexels(keyword, PEXELS_API_KEY);
@@ -394,7 +358,7 @@ export async function generateDispatchImage(slug, topic = {}) {
     }
   }
 
-  // TẦNG 3: Pixabay API (Nhiếp ảnh y sinh & dược liệu thực tế)
+  // TẦNG 2: Pixabay API (Nhiếp ảnh y sinh & dược liệu thực tế)
   if (PIXABAY_API_KEY) {
     console.log(`🌱 [Image Engine] Đang tìm kiếm ảnh dược liệu / y sinh qua Pixabay API...`);
     const pixabayBuffer = await fetchFromPixabay(keyword, PIXABAY_API_KEY);
@@ -405,7 +369,7 @@ export async function generateDispatchImage(slug, topic = {}) {
     }
   }
 
-  // TẦNG 4: Openverse (WordPress Foundation - Hơn 700 triệu ảnh CC chất lượng cao, không cần Key)
+  // TẦNG 3: Openverse (WordPress Foundation - Hơn 700 triệu ảnh CC chất lượng cao, không cần Key)
   console.log(`🌐 [Image Engine] Tìm kiếm ảnh nhiếp ảnh thực tế qua Openverse (Keyless)...`);
   const openverseBuffer = await fetchFromOpenverse(keyword);
   if (openverseBuffer && openverseBuffer.length > 20000) {
@@ -414,7 +378,7 @@ export async function generateDispatchImage(slug, topic = {}) {
     return targetPath;
   }
 
-  // TẦNG 5: Wikimedia Commons (Kho ảnh tiêu bản khoa học mở, không cần Key)
+  // TẦNG 4: Wikimedia Commons (Kho ảnh tiêu bản khoa học mở, không cần Key)
   console.log(`🔬 [Image Engine] Tìm kiếm kho tư liệu ảnh khoa học thực tế mở (Wikimedia Commons)...`);
   const wikiBuffer = await fetchFromWikimediaCommons(keyword);
   if (wikiBuffer && wikiBuffer.length > 20000) {
@@ -423,7 +387,19 @@ export async function generateDispatchImage(slug, topic = {}) {
     return targetPath;
   }
 
-  // TẦNG 5: Curated Archetype Fallback (Nếu mạng timeout hoặc offline hoàn toàn)
+  // TẦNG 5: Hugging Face FLUX.1 (Chỉ kích hoạt cho cơ chế phân tử sâu khi có Token chuyên dụng)
+  if (isMolecularMechanism && HF_TOKEN) {
+    console.log(`🧬 [Image Engine] Chủ đề cơ chế vi thể -> Kích hoạt FLUX.1 3D qua Hugging Face...`);
+    const fluxPrompt = buildFluxPrompt(topic);
+    const fluxBuffer = await generateFromHuggingFaceFlux(fluxPrompt, HF_TOKEN);
+    if (fluxBuffer && fluxBuffer.length > 20000) {
+      await processAndSaveImage(fluxBuffer, slug);
+      console.log(`✅ [Image Engine] Đã tạo thành công ảnh 3D y sinh độc bản FLUX.1 -> ${slug}.jpg`);
+      return targetPath;
+    }
+  }
+
+  // TẦNG 6: Curated Archetype Fallback (Nếu mạng timeout hoặc offline hoàn toàn)
   console.warn(`⚠️ [Image Engine] Không tải được ảnh ngoài. Chuyển sang ảnh mẫu Archetype.`);
   return null;
 }
