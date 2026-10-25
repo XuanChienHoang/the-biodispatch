@@ -1,8 +1,102 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-10-25T12:55:05.482Z",
-  "totalTopics": 147,
+  "lastUpdated": "2026-10-25T17:18:21.281Z",
+  "totalTopics": 149,
   "topics": [
+    {
+      "id": "hien-thuong-cortisol-steal-khi-stress-triet-tieu-hormone-sinh-luc",
+      "slugs": [
+        "hien-thuong-cortisol-steal-khi-stress-triet-tieu-hormone-sinh-luc-vi"
+      ],
+      "titleVi": "Hiện tượng Cortisol Steal: Khi căng thẳng kéo dài âm thầm cướp đi sinh lực và mái tóc của bạn",
+      "titleEn": "Hiện tượng Cortisol Steal: Khi căng thẳng kéo dài âm thầm cướp đi sinh lực và mái tóc của bạn",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1016/j.psj.2025.105661",
+      "date": "2026-10-25T17:00:00Z",
+      "tags": [
+        "noi-tiet",
+        "stress",
+        "rung-toc",
+        "nang-luong",
+        "mat-ngu",
+        "kham-pha"
+      ],
+      "keywords": [
+        "hien",
+        "tuong",
+        "cortisol",
+        "steal",
+        "cang",
+        "thang",
+        "keo",
+        "dai",
+        "tham",
+        "cuop",
+        "sinh",
+        "luc",
+        "mai",
+        "toc",
+        "ban",
+        "noi",
+        "tiet",
+        "stress",
+        "rung",
+        "nang",
+        "luong",
+        "mat",
+        "ngu",
+        "kham",
+        "pha"
+      ]
+    },
+    {
+      "id": "the-cortisol-steal-phenomenon-how-stress-hijacks-vitality-hormones",
+      "slugs": [
+        "the-cortisol-steal-phenomenon-how-stress-hijacks-vitality-hormones-en"
+      ],
+      "titleVi": "The Cortisol Steal Phenomenon: How Chronic Stress Quietly Hijacks Your Vitality and Hair",
+      "titleEn": "The Cortisol Steal Phenomenon: How Chronic Stress Quietly Hijacks Your Vitality and Hair",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1016/j.psj.2025.105661",
+      "date": "2026-10-25T17:00:00Z",
+      "tags": [
+        "hormones",
+        "stress",
+        "hair-loss",
+        "energy",
+        "sleep",
+        "longevity"
+      ],
+      "keywords": [
+        "cortisol",
+        "steal",
+        "phenomenon",
+        "chronic",
+        "stress",
+        "quietly",
+        "hijacks",
+        "your",
+        "vitality",
+        "hair",
+        "hormones",
+        "loss",
+        "energy",
+        "sleep",
+        "longevity",
+        "many",
+        "blame",
+        "aging",
+        "when",
+        "experiencing",
+        "sudden",
+        "thinning",
+        "persistent",
+        "fatigue",
+        "plummeting"
+      ]
+    },
     {
       "id": "dau-moi-co-vai-gay-ngoi-may-tinh-giai-phap-2-phut",
       "slugs": [

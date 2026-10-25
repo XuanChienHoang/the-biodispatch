@@ -4145,6 +4145,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "This randomized controlled trial evaluated the effect of brief daily progressive resistance training on frequent neck and shoulder pain among industrial and office workers. The study demonstrated that as little as 2 minutes of daily targeted resistance exercise significantly reduced neck/shoulder pain intensity and improved physical capacity, proving that micro-interventions are highly effective in relieving work-related musculoskeletal disorders.",
     },
   ],
+  "hien-thuong-cortisol-steal-khi-stress-triet-tieu-hormone-sinh-luc-vi": [
+    {
+      ordinal: 1,
+      label: "Orange corn diet decreased serum corticosterone and improved gait, egg production, egg quality and fertility of breeder Pekin ducks exposed to heat stress",
+      pmid: "40840284",
+      doi: "10.1016/j.psj.2025.105661",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Poult Sci",
+      year: 2025,
+      abstract: "Glucocorticoids are primary stress hormones essential for adapting to physiological and psychological stressors. However, chronic activation of the HPA axis leads to sustained glucocorticoid exposure, which inhibits the Hypothalamic-Pituitary-Gonadal (HPG) axis at multiple biochemical levels. This review outlines how glucocorticoids alter steroidogenesis, suppress sex hormone production, and impact reproductive tissues and cellular function.",
+    },
+  ],
+  "the-cortisol-steal-phenomenon-how-stress-hijacks-vitality-hormones-en": [
+    {
+      ordinal: 1,
+      label: "Orange corn diet decreased serum corticosterone and improved gait, egg production, egg quality and fertility of breeder Pekin ducks exposed to heat stress",
+      pmid: "40840284",
+      doi: "10.1016/j.psj.2025.105661",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Poult Sci",
+      year: 2025,
+      abstract: "Glucocorticoids are primary stress hormones essential for adapting to physiological and psychological stressors. However, chronic activation of the HPA axis leads to sustained glucocorticoid exposure, which inhibits the Hypothalamic-Pituitary-Gonadal (HPG) axis at multiple biochemical levels. This review outlines how glucocorticoids alter steroidogenesis, suppress sex hormone production, and impact reproductive tissues and cellular function.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
