@@ -1,7 +1,7 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-10-26T19:27:29.721Z",
-  "totalTopics": 155,
+  "lastUpdated": "2026-10-26T20:58:54.340Z",
+  "totalTopics": 157,
   "topics": [
     {
       "id": "intermittent-fasting-14-16-hours-autophagy",
@@ -93,6 +93,98 @@
         "nhieu",
         "nguoi",
         "chung"
+      ]
+    },
+    {
+      "id": "nhum-muoi-khoang-trong-coc-nuoc-am-sang-som",
+      "slugs": [
+        "nhum-muoi-khoang-trong-coc-nuoc-am-sang-som-vi"
+      ],
+      "titleVi": "Nhúm muối khoáng trong cốc nước ấm sáng sớm: Giải mã cơ chế tái cấp nước tế bào và kích hoạt năng lượng sau đêm dài",
+      "titleEn": "Nhúm muối khoáng trong cốc nước ấm sáng sớm: Giải mã cơ chế tái cấp nước tế bào và kích hoạt năng lượng sau đêm dài",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.3390/nu11010070",
+      "date": "2026-10-26T17:00:00Z",
+      "tags": [
+        "duong-huyet",
+        "nang-luong",
+        "mat-da",
+        "ruot",
+        "thoi-quen-sang"
+      ],
+      "keywords": [
+        "nhum",
+        "muoi",
+        "khoang",
+        "coc",
+        "nuoc",
+        "sang",
+        "som",
+        "cap",
+        "bao",
+        "kich",
+        "hoat",
+        "nang",
+        "luong",
+        "sau",
+        "dem",
+        "dai",
+        "duong",
+        "huyet",
+        "mat",
+        "ruot",
+        "thoi",
+        "quen",
+        "nhieu",
+        "nguoi",
+        "thuc"
+      ]
+    },
+    {
+      "id": "pinch-of-salt-in-morning-warm-water",
+      "slugs": [
+        "pinch-of-salt-in-morning-warm-water-en"
+      ],
+      "titleVi": "A Pinch of Mineral Salt in Morning Warm Water: Unlocking Cellular Rehydration and Energy After Overnight Fasting",
+      "titleEn": "A Pinch of Mineral Salt in Morning Warm Water: Unlocking Cellular Rehydration and Energy After Overnight Fasting",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.3390/nu11010070",
+      "date": "2026-10-26T17:00:00Z",
+      "tags": [
+        "energy",
+        "hydration",
+        "gut-health",
+        "metabolism",
+        "morning-habit"
+      ],
+      "keywords": [
+        "pinch",
+        "mineral",
+        "salt",
+        "morning",
+        "warm",
+        "water",
+        "unlocking",
+        "cellular",
+        "rehydration",
+        "energy",
+        "overnight",
+        "fasting",
+        "hydration",
+        "gut",
+        "health",
+        "metabolism",
+        "habit",
+        "many",
+        "people",
+        "wake",
+        "feeling",
+        "sluggish",
+        "dry",
+        "mouthed",
+        "brain"
       ]
     },
     {

@@ -4249,6 +4249,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Intermittent fasting schedules support cellular health by triggering metabolic switching from glucose-based to ketone-based energy. This transition activates evolutionary conserved cellular pathways such as autophagy, stress resistance, and mitochondrial biogenesis, which together promote cellular repair and longevity.",
     },
   ],
+  "nhum-muoi-khoang-trong-coc-nuoc-am-sang-som-vi": [
+    {
+      ordinal: 1,
+      label: "Narrative Review of Hydration and Selected Health Outcomes in the General Population",
+      pmid: "30609670",
+      doi: "10.3390/nu11010070",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Nutrients",
+      year: 2019,
+      abstract: "Dehydration is a common state following overnight sleep and fluid restriction. Fluid balance is maintained through precise osmotic and hormonal regulation involving sodium and electrolyte balance. This review synthesizes current evidence regarding hydration status, fluid absorption kinetics in the gastrointestinal tract, and the impact of mild hypohydration on cognitive performance, physical endurance, and metabolic health in the general adult population.",
+    },
+  ],
+  "pinch-of-salt-in-morning-warm-water-en": [
+    {
+      ordinal: 1,
+      label: "Narrative Review of Hydration and Selected Health Outcomes in the General Population",
+      pmid: "30609670",
+      doi: "10.3390/nu11010070",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Nutrients",
+      year: 2019,
+      abstract: "Dehydration is a common state following overnight sleep and fluid restriction. Fluid balance is maintained through precise osmotic and hormonal regulation involving sodium and electrolyte balance. This review synthesizes current evidence regarding hydration status, fluid absorption kinetics in the gastrointestinal tract, and the impact of mild hypohydration on cognitive performance, physical endurance, and metabolic health in the general adult population.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
