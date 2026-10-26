@@ -1,8 +1,100 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-10-25T19:43:39.388Z",
-  "totalTopics": 153,
+  "lastUpdated": "2026-10-26T19:27:29.721Z",
+  "totalTopics": 155,
   "topics": [
+    {
+      "id": "intermittent-fasting-14-16-hours-autophagy",
+      "slugs": [
+        "intermittent-fasting-14-16-hours-autophagy-en"
+      ],
+      "titleVi": "Intermittent Fasting 14-16 Hours: The Golden Window to Trigger Cellular Garbage Clearance Through Autophagy",
+      "titleEn": "Intermittent Fasting 14-16 Hours: The Golden Window to Trigger Cellular Garbage Clearance Through Autophagy",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1056/NEJMra1905136",
+      "date": "2026-10-26T17:00:00Z",
+      "tags": [
+        "cellular-aging",
+        "energy",
+        "blood-sugar",
+        "rejuvenation",
+        "gut-health"
+      ],
+      "keywords": [
+        "intermittent",
+        "fasting",
+        "hours",
+        "golden",
+        "window",
+        "trigger",
+        "cellular",
+        "garbage",
+        "clearance",
+        "autophagy",
+        "aging",
+        "energy",
+        "blood",
+        "sugar",
+        "rejuvenation",
+        "gut",
+        "health",
+        "many",
+        "wake",
+        "feeling",
+        "sluggish",
+        "brain",
+        "fogged",
+        "despite",
+        "getting"
+      ]
+    },
+    {
+      "id": "nhin-an-gian-doat-14-16-gio-kich-hoat-autophagy",
+      "slugs": [
+        "nhin-an-gian-doat-14-16-gio-kich-hoat-autophagy-vi"
+      ],
+      "titleVi": "Nhịn ăn gián đoạn 14-16 giờ: Khung giờ vàng kích hoạt xe rác tự thực bào dọn dẹp tế bào",
+      "titleEn": "Nhịn ăn gián đoạn 14-16 giờ: Khung giờ vàng kích hoạt xe rác tự thực bào dọn dẹp tế bào",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1056/NEJMra1905136",
+      "date": "2026-10-26T17:00:00Z",
+      "tags": [
+        "lao-hoa",
+        "nang-luong",
+        "duong-huyet",
+        "nam-tre",
+        "ruot"
+      ],
+      "keywords": [
+        "nhin",
+        "gian",
+        "doan",
+        "gio",
+        "khung",
+        "vang",
+        "kich",
+        "hoat",
+        "rac",
+        "thuc",
+        "bao",
+        "don",
+        "dep",
+        "lao",
+        "hoa",
+        "nang",
+        "luong",
+        "duong",
+        "huyet",
+        "nam",
+        "tre",
+        "ruot",
+        "nhieu",
+        "nguoi",
+        "chung"
+      ]
+    },
     {
       "id": "dem-che-do-night-shift-va-kinh-loc-anh-sang-xanh-melatonin",
       "slugs": [

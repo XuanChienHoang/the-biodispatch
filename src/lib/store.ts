@@ -4223,6 +4223,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Self-luminous tablet computers and portable electronic devices emit optical radiation at short wavelengths that can suppress the nocturnal release of melatonin. This controlled laboratory study measured melatonin suppression after 1-hour and 2-hour exposures to self-luminous tablets. Results showed that light level and duration of exposure significantly influenced melatonin suppression. A 2-hour exposure to self-luminous devices significantly suppressed melatonin levels, demonstrating that photon density and exposure duration are critical variables alongside spectral power distribution.",
     },
   ],
+  "nhin-an-gian-doat-14-16-gio-kich-hoat-autophagy-vi": [
+    {
+      ordinal: 1,
+      label: "Effects of Intermittent Fasting on Health, Aging, and Disease",
+      pmid: "31881139",
+      doi: "10.1056/NEJMra1905136",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "N Engl J Med",
+      year: 2019,
+      abstract: "Intermittent fasting schedules support cellular health by triggering metabolic switching from glucose-based to ketone-based energy. This transition activates evolutionary conserved cellular pathways such as autophagy, stress resistance, and mitochondrial biogenesis, which together promote cellular repair and longevity.",
+    },
+  ],
+  "intermittent-fasting-14-16-hours-autophagy-en": [
+    {
+      ordinal: 1,
+      label: "Effects of Intermittent Fasting on Health, Aging, and Disease",
+      pmid: "31881139",
+      doi: "10.1056/NEJMra1905136",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "N Engl J Med",
+      year: 2019,
+      abstract: "Intermittent fasting schedules support cellular health by triggering metabolic switching from glucose-based to ketone-based energy. This transition activates evolutionary conserved cellular pathways such as autophagy, stress resistance, and mitochondrial biogenesis, which together promote cellular repair and longevity.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
