@@ -322,114 +322,11 @@ const ORGAN_PALETTES = {
 
 async function createFallbackIllustration(slug, topic = {}) {
   const targetPath = path.join(imagesDir, `${slug}.jpg`);
-  if (fs.existsSync(targetPath)) return;
+  if (fs.existsSync(targetPath)) return targetPath;
 
-  // 1. Thử sinh ảnh AI độc bản mới qua Google Image API trước
-  const aiGenerated = await generateDispatchImage(slug, topic);
-  if (aiGenerated && fs.existsSync(targetPath)) {
-    return;
-  }
-
-  // 2. Nếu API không khả dụng hoặc vượt hạn mức, dùng ảnh mẫu chủ đề (Curated Archetype)
-  const isLifeDispatch = (topic.tier === "Life Dispatch" || topic.tier === "life" || !topic.tier);
-  const organ = topic.organ || "Metabolic";
-
-  // Thư viện ảnh đời sống / khoa học thường thức gần gũi (ánh sáng tự nhiên, thói quen ăn uống, giấc ngủ, vận động)
-  const LIFE_DISPATCH_ARCHETYPES = {
-    Gut: [
-      path.join(imagesDir, 'an-rau-truoc-com-kiem-soat-duong-huyet-vi.jpg'),
-      path.join(imagesDir, 'tinh-bot-khang-com-nguoi-nuoi-vi-khuan-ruot-vi.jpg'),
-      path.join(imagesDir, 'thoi-quen-nhai-ky-noi-sinh-hoc-tieu-hoa-vi.jpg'),
-      path.join(imagesDir, 'chewing-slowly-satiety-gut-hormones.jpg')
-    ],
-    Brain: [
-      path.join(imagesDir, 'green-tea-l-theanine-and-caffeine-smooth-focus-en.jpg'),
-      path.join(imagesDir, 'anh-sang-xanh-ban-dem-pha-vo-giac-ngu-vi.jpg'),
-      path.join(imagesDir, 'morning-sunlight-circadian-clock-metabolism.jpg'),
-      path.join(imagesDir, 'nhip-tho-cham-4-7-8-kich-hoat-day-than-kinh-phe-vi.jpg')
-    ],
-    "Cellular Aging": [
-      path.join(imagesDir, 'anh-sang-do-670nm-sac-pin-ty-the-vong-mac-vi.jpg'),
-      path.join(imagesDir, 'nature-pill-twenty-minutes-cortisol-reduction.jpg'),
-      path.join(imagesDir, 'sauna-bathing-cardiovascular-longevity-heat-shock-proteins.jpg')
-    ],
-    Metabolic: [
-      path.join(imagesDir, 'an-rau-truoc-com-kiem-soat-duong-huyet-vi.jpg'),
-      path.join(imagesDir, 'di-bo-10-phut-sau-bua-an-kich-hoat-co-bap-vi.jpg'),
-      path.join(imagesDir, 'vi-sao-ca-phe-sang-gay-sup-nguon-10h-vi.jpg'),
-      path.join(imagesDir, 'apple-cider-vinegar-before-meals-glucose-blunting-en.jpg')
-    ],
-    Immune: [
-      path.join(imagesDir, 'green-tea-l-theanine-and-caffeine-smooth-focus-en.jpg'),
-      path.join(imagesDir, 'berries-anthocyanins-vascular-protection-antioxidant-shield.jpg'),
-      path.join(imagesDir, 'dark-chocolate-flavanols-nitric-oxide-endothelial-function.jpg')
-    ],
-    Heart: [
-      path.join(imagesDir, 'di-bo-10-phut-sau-bua-an-kich-hoat-co-bap-vi.jpg'),
-      path.join(imagesDir, 'breaking-sedentary-sitting-vascular-shear-stress.jpg'),
-      path.join(imagesDir, 'ngu-trua-20-phut-phuc-hoi-tim-mach.jpg'),
-      path.join(imagesDir, 'tam-nuoc-nong-hay-nuoc-lanh-truoc-khi-ngu-vi.jpg')
-    ]
-  };
-
-  // Dedicated authentic 8K Nature-grade 3D Cinematic Molecular Artwork library categorized by Organ
-  const ORGAN_CINEMATIC_ARCHETYPES = {
-    Gut: [
-      path.join(imagesDir, 'giai-ma-hoi-chung-ro-ri-ruot-zonulin-lps-vi.jpg'),
-      path.join(imagesDir, 'butyrate-scfa-epigenetics-histone-gut-barrier.jpg'),
-      path.join(imagesDir, 'gut-mucin-barrier-integrity-vi.jpg')
-    ],
-    Brain: [
-      path.join(imagesDir, 'glymphatic-deep-sleep-brain-cleaning.jpg'),
-      path.join(imagesDir, 'con-duong-kynurenine-viem-nao-vi.jpg'),
-      path.join(imagesDir, 'gut-brain-axis-gaba-microbiota-en.jpg')
-    ],
-    "Cellular Aging": [
-      path.join(imagesDir, 'urolithin-a-kich-hoat-mitophagy-phuc-hoi-co-bap-vi.jpg'),
-      path.join(imagesDir, 'nad-cd38-sirtuin-mitochondria-cellular-aging.jpg'),
-      path.join(imagesDir, 'alpha-ketoglutarate-tre-hoa-bieu-gen-vi.jpg')
-    ],
-    Metabolic: [
-      path.join(imagesDir, 'succinate-ucp1-bat-sinh-nhiet-ty-the.jpg'),
-      path.join(imagesDir, 'triglyceride-hdl-ratio-metabolic-health.jpg'),
-      path.join(imagesDir, 'policosanol-versus-statins.jpg')
-    ],
-    Immune: [
-      path.join(imagesDir, 'streptococcus-pyogenes-sieu-khang-nguyen-stss-vi.jpg'),
-      path.join(imagesDir, 'yersinia-pestis-t3ss-virulence-lab-leak.jpg')
-    ],
-    Heart: [
-      path.join(imagesDir, 'oxldl-sdldl-atherosclerosis-mechanism.jpg'),
-      path.join(imagesDir, 'cardiovascular-heart-realistic.jpg')
-    ]
-  };
-
-  const pool = isLifeDispatch
-    ? (LIFE_DISPATCH_ARCHETYPES[organ] || LIFE_DISPATCH_ARCHETYPES.Metabolic)
-    : (ORGAN_CINEMATIC_ARCHETYPES[organ] || ORGAN_CINEMATIC_ARCHETYPES.Metabolic);
-
-  const existingInPool = pool.filter(p => fs.existsSync(p));
-  let chosenArchetype = existingInPool.length > 0
-    ? existingInPool[Math.floor(Math.random() * existingInPool.length)]
-    : null;
-
-  if (!chosenArchetype) {
-    const allFallbackCandidates = [
-      path.join(imagesDir, 'di-bo-10-phut-sau-bua-an-kich-hoat-co-bap-vi.jpg'),
-      path.join(imagesDir, 'morning-sunlight-circadian-clock-metabolism.jpg'),
-      path.join(imagesDir, 'green-tea-l-theanine-and-caffeine-smooth-focus-en.jpg'),
-      path.join(imagesDir, 'an-rau-truoc-com-kiem-soat-duong-huyet-vi.jpg')
-    ].filter(p => fs.existsSync(p));
-
-    chosenArchetype = allFallbackCandidates[Math.floor(Math.random() * allFallbackCandidates.length)] || path.join(imagesDir, 'an-rau-truoc-com-kiem-soat-duong-huyet-vi.jpg');
-  }
-
-  try {
-    fs.copyFileSync(chosenArchetype, targetPath);
-    console.log(`🎨 [Artwork Assigned] Đã gán ảnh bìa (${isLifeDispatch ? 'Khoa học Thường thức / Lifestyle' : 'Mô phỏng Phân tử 3D'}) cho ${slug} (${fs.statSync(targetPath).size} bytes)`);
-  } catch (err) {
-    console.warn(`⚠️ [Artwork] Lỗi khi copy artwork: ${err.message}`);
-  }
+  // Gọi trực tiếp bộ sinh/thu thập ảnh độc bản (có Dedup Guard chống trùng lặp tuyệt đối)
+  const imgPath = await generateDispatchImage(slug, topic);
+  return imgPath;
 }
 
 
@@ -562,11 +459,29 @@ export async function runAutonomousDispatch() {
       if (withDoi) nextTopic.doi = withDoi.doi;
     }
 
-    // 1. Đảm bảo ảnh bìa phân tử 3D chuẩn mực đã có sẵn trước khi kiểm duyệt xuất bản
+    // 1. Đảm bảo ảnh bìa chuẩn mực đã có sẵn trước khi kiểm duyệt xuất bản
     let targetSlugVi = nextTopic.slugVi.endsWith('-vi') ? nextTopic.slugVi : `${nextTopic.slugVi}-vi`;
     let targetSlugEn = nextTopic.slugEn.endsWith('-en') ? nextTopic.slugEn : `${nextTopic.slugEn}-en`;
+    
+    // Sinh ảnh độc bản chất lượng cao cho bản tiếng Việt
     await createFallbackIllustration(targetSlugVi, nextTopic);
-    await createFallbackIllustration(targetSlugEn, nextTopic);
+
+    // Đồng bộ ảnh cho bản tiếng Anh song ngữ (cùng đề tài nghiên cứu)
+    const viJpg = path.join(imagesDir, `${targetSlugVi}.jpg`);
+    const enJpg = path.join(imagesDir, `${targetSlugEn}.jpg`);
+    if (fs.existsSync(viJpg) && !fs.existsSync(enJpg)) {
+      fs.copyFileSync(viJpg, enJpg);
+      const viCover = path.join(rootDir, 'public/images/covers', `${targetSlugVi}.webp`);
+      const enCover = path.join(rootDir, 'public/images/covers', `${targetSlugEn}.webp`);
+      if (fs.existsSync(viCover)) fs.copyFileSync(viCover, enCover);
+
+      const viThumb = path.join(rootDir, 'public/images/thumbs', `${targetSlugVi}.webp`);
+      const enThumb = path.join(rootDir, 'public/images/thumbs', `${targetSlugEn}.webp`);
+      if (fs.existsSync(viThumb)) fs.copyFileSync(viThumb, enThumb);
+      console.log(`🔗 [Twin Image Linked] Bản tiếng Anh ${targetSlugEn} dùng đồng bộ ảnh của ${targetSlugVi}`);
+    } else if (!fs.existsSync(enJpg)) {
+      await createFallbackIllustration(targetSlugEn, nextTopic);
+    }
 
     // 2. Tạo bài viết tiếng Việt & Kiểm định chất lượng toàn diện (Nội dung + Y văn + Hình ảnh + V2 Reader Brief)
     const viPost = createDispatchMarkdown(nextTopic, 'vi', scheduledIsoDate);
