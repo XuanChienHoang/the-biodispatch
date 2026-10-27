@@ -234,30 +234,51 @@ async function generateFromHuggingFaceFlux(prompt, hfToken = '') {
  */
 async function fetchFromWikimediaCommons(keyword) {
   try {
-    const cleanQuery = `${keyword} -schema -diagram -clipart -drawing -icon`;
-    const url = `https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrnamespace=6&gsrsearch=${encodeURIComponent(cleanQuery)}&prop=imageinfo&iiprop=url|size&format=json&gsrlimit=10`;
+    const cleanQuery = `${keyword} filetype:bitmap -pdf -djvu -diagram -schema -clipart -drawing -icon`;
+    const url = `https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrnamespace=6&gsrsearch=${encodeURIComponent(cleanQuery)}&prop=imageinfo&iiprop=url|size|mime&format=json&gsrlimit=10`;
+    
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 12000);
     const res = await fetch(url, {
-      headers: { 'User-Agent': 'Phytocodex-Bot/2.0 (contact: info@phytocodex.com)' }
+      headers: { 'User-Agent': 'Phytocodex-Engine/2.0 (contact: hoangxuanchien86@gmail.com)' },
+      signal: controller.signal
     });
+    clearTimeout(timeout);
     if (!res.ok) return null;
     const data = await res.json();
     const pages = Object.values(data.query?.pages || {});
 
     for (const p of pages) {
       const title = (p.title || '').toLowerCase();
-      // Loại bỏ tranh vẽ sơ đồ, biểu đồ thô sơ
-      if (/schema|diagram|drawing|clipart|icon|vector|symbol/i.test(title)) continue;
+      if (/schema|diagram|drawing|clipart|icon|vector|symbol|\.pdf$|\.djvu$|\.svg$|\.gif$/i.test(title)) continue;
 
       const info = p.imageinfo?.[0];
-      if (info && info.width >= 800 && !info.url.endsWith('.svg') && !info.url.endsWith('.gif')) {
-        const imgRes = await fetch(info.url, {
-          headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }
+      if (!info || info.width < 800) continue;
+      const fileUrl = info.url || '';
+      if (fileUrl.match(/\.(pdf|djvu|svg|gif|webm|ogg|tif|tiff)$/i)) continue;
+
+      try {
+        const fetchCtrl = new AbortController();
+        const fetchTimeout = setTimeout(() => fetchCtrl.abort(), 15000);
+        const imgRes = await fetch(fileUrl, {
+          headers: { 'User-Agent': 'Phytocodex-Engine/2.0 (contact: hoangxuanchien86@gmail.com)' },
+          signal: fetchCtrl.signal
         });
+        clearTimeout(fetchTimeout);
+
         if (imgRes.ok) {
           const arrayBuffer = await imgRes.arrayBuffer();
           const buf = Buffer.from(arrayBuffer);
-          if (buf.length > 30000) return buf;
+          if (buf.length > 25000) {
+            // Xác thực hợp lệ qua Sharp trước khi trả về
+            const meta = await sharp(buf).metadata();
+            if (meta && (meta.format === 'jpeg' || meta.format === 'png' || meta.format === 'webp')) {
+              return buf;
+            }
+          }
         }
+      } catch (itemErr) {
+        // bỏ qua lỗi tải từng ảnh
       }
     }
   } catch (err) {
@@ -272,9 +293,13 @@ async function fetchFromWikimediaCommons(keyword) {
 async function fetchFromOpenverse(keyword) {
   try {
     const url = `https://api.openverse.org/v1/images/?q=${encodeURIComponent(keyword)}&page_size=5`;
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 8000);
     const res = await fetch(url, {
-      headers: { 'User-Agent': 'Phytocodex-Engine/2.0 (contact: info@phytocodex.com)' }
+      headers: { 'User-Agent': 'Phytocodex-Engine/2.0 (contact: hoangxuanchien86@gmail.com)' },
+      signal: controller.signal
     });
+    clearTimeout(timeout);
     if (!res.ok) return null;
     const data = await res.json();
     const results = data.results || [];
@@ -283,15 +308,25 @@ async function fetchFromOpenverse(keyword) {
       const title = (item.title || '').toLowerCase();
       if (/schema|diagram|drawing|clipart|icon|vector|symbol/i.test(title)) continue;
 
-      if (item.url && !item.url.endsWith('.svg') && !item.url.endsWith('.gif')) {
+      if (item.url && !item.url.endsWith('.svg') && !item.url.endsWith('.gif') && !item.url.endsWith('.pdf')) {
         try {
+          const fetchCtrl = new AbortController();
+          const fetchTimeout = setTimeout(() => fetchCtrl.abort(), 8000);
           const imgRes = await fetch(item.url, {
-            headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }
+            headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' },
+            signal: fetchCtrl.signal
           });
+          clearTimeout(fetchTimeout);
+
           if (imgRes.ok) {
             const arrayBuffer = await imgRes.arrayBuffer();
             const buf = Buffer.from(arrayBuffer);
-            if (buf.length > 25000) return buf;
+            if (buf.length > 25000) {
+              const meta = await sharp(buf).metadata();
+              if (meta && (meta.format === 'jpeg' || meta.format === 'png' || meta.format === 'webp')) {
+                return buf;
+              }
+            }
           }
         } catch (e) {
           // ignore single item fetch failure
