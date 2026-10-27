@@ -4275,6 +4275,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Dehydration is a common state following overnight sleep and fluid restriction. Fluid balance is maintained through precise osmotic and hormonal regulation involving sodium and electrolyte balance. This review synthesizes current evidence regarding hydration status, fluid absorption kinetics in the gastrointestinal tract, and the impact of mild hypohydration on cognitive performance, physical endurance, and metabolic health in the general adult population.",
     },
   ],
+  "do-nuong-chay-xem-phan-ung-glycation-ages-lao-hoa-da-va-mach-mau-vi": [
+    {
+      ordinal: 1,
+      label: "Advanced glycation end products in foods and a practical guide to their reduction in the diet",
+      pmid: "20497781",
+      doi: "10.1016/j.jada.2010.03.018",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "J Am Diet Assoc",
+      year: 2010,
+      abstract: "Advanced glycation end products (AGEs) are pathogenic compounds produced during thermal processing of foods via non-enzymatic glycation. This study quantified AGE content across 549 common foods using ELISA. Results revealed that dry heat (grilling, roasting, frying) significantly accelerates dAGE formation compared to moist heat (boiling, steaming). Dietary AGE reduction markedly lowers circulating AGE levels and inflammatory markers in clinical trials.",
+    },
+  ],
+  "charred-food-glycation-ages-skin-wrinkles-arterial-stiffness-en": [
+    {
+      ordinal: 1,
+      label: "Advanced glycation end products in foods and a practical guide to their reduction in the diet",
+      pmid: "20497781",
+      doi: "10.1016/j.jada.2010.03.018",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "J Am Diet Assoc",
+      year: 2010,
+      abstract: "Advanced glycation end products (AGEs) are pathogenic compounds produced during thermal processing of foods via non-enzymatic glycation. This study quantified AGE content across 549 common foods using ELISA. Results revealed that dry heat (grilling, roasting, frying) significantly accelerates dAGE formation compared to moist heat (boiling, steaming). Dietary AGE reduction markedly lowers circulating AGE levels and inflammatory markers in clinical trials.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

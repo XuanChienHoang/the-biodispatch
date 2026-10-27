@@ -1,8 +1,102 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-10-26T20:58:54.340Z",
-  "totalTopics": 157,
+  "lastUpdated": "2026-10-27T10:40:22.093Z",
+  "totalTopics": 159,
   "topics": [
+    {
+      "id": "charred-food-glycation-ages-skin-wrinkles-arterial-stiffness",
+      "slugs": [
+        "charred-food-glycation-ages-skin-wrinkles-arterial-stiffness-en"
+      ],
+      "titleVi": "Charred food and advanced glycation end-products: How sugar cross-linking stiffens arteries and accelerates wrinkles",
+      "titleEn": "Charred food and advanced glycation end-products: How sugar cross-linking stiffens arteries and accelerates wrinkles",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1016/j.jada.2010.03.018",
+      "date": "2026-10-27T09:00:00Z",
+      "tags": [
+        "cellular-aging",
+        "skin-health",
+        "blood-sugar",
+        "cardiovascular",
+        "vascular-health",
+        "nutrition"
+      ],
+      "keywords": [
+        "charred",
+        "food",
+        "advanced",
+        "glycation",
+        "end",
+        "products",
+        "sugar",
+        "cross",
+        "linking",
+        "stiffens",
+        "arteries",
+        "accelerates",
+        "wrinkles",
+        "cellular",
+        "aging",
+        "skin",
+        "health",
+        "blood",
+        "cardiovascular",
+        "vascular",
+        "nutrition",
+        "golden",
+        "brown",
+        "crust",
+        "grilled"
+      ]
+    },
+    {
+      "id": "do-nuong-chay-xem-phan-ung-glycation-ages-lao-hoa-da-va-mach-mau",
+      "slugs": [
+        "do-nuong-chay-xem-phan-ung-glycation-ages-lao-hoa-da-va-mach-mau-vi"
+      ],
+      "titleVi": "Đồ nướng cháy xém và phản ứng đường hóa: Khi phân tử đường làm giòn mạch máu và tăng nếp nhăn",
+      "titleEn": "Đồ nướng cháy xém và phản ứng đường hóa: Khi phân tử đường làm giòn mạch máu và tăng nếp nhăn",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1016/j.jada.2010.03.018",
+      "date": "2026-10-27T09:00:00Z",
+      "tags": [
+        "lao-hoa",
+        "mat-da",
+        "duong-huyet",
+        "tim-mach",
+        "mach-mau",
+        "dinh-duong"
+      ],
+      "keywords": [
+        "nuong",
+        "chay",
+        "xem",
+        "phan",
+        "ung",
+        "duong",
+        "hoa",
+        "lam",
+        "gion",
+        "mach",
+        "mau",
+        "tang",
+        "nep",
+        "nhan",
+        "lao",
+        "mat",
+        "huyet",
+        "tim",
+        "dinh",
+        "lop",
+        "thit",
+        "rum",
+        "vang",
+        "sam",
+        "mang"
+      ]
+    },
     {
       "id": "intermittent-fasting-14-16-hours-autophagy",
       "slugs": [
