@@ -21,50 +21,50 @@ export function Hero({ articles = [] }: { articles?: Article[] }) {
   return (
     <>
       <header className="relative overflow-hidden border-b border-slate-hair bg-paper">
-        {/* 1. TOP MASTHEAD BAR: Đầy đủ tên ấn phẩm, tác giả, khung tìm kiếm nhanh và chuyển ngữ */}
+        {/* 1. TOP MASTHEAD BAR: Đầy đủ tên ấn phẩm, tác giả, khung tìm kiếm nhanh và chuyển ngữ (Ẩn bớt thành phần trùng lặp trên mobile) */}
         <div className="border-b border-slate-hair/80 bg-paper-tint/60">
-          <div className="mx-auto flex max-w-[1240px] flex-wrap items-center justify-between gap-y-3 px-6 py-3 lg:px-10">
-            {/* Cụm định danh bên trái */}
-            <div className="flex items-center gap-3">
-              <span className="flex items-center gap-2 text-indigo-deep md:hidden">
-                <Wordmark size={22} />
+          <div className="mx-auto flex max-w-[1240px] items-center justify-between gap-3 px-4 py-2.5 sm:px-6 sm:py-3 lg:px-10">
+            {/* Cụm định danh bên trái: Chỉ hiển thị đầy đủ từ tablet/desktop trở lên, trên mobile hiển thị tóm tắt tác giả thanh lịch */}
+            <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+              <span className="hidden items-center gap-2 text-indigo-deep md:flex">
+                <Wordmark size={24} />
               </span>
-              <span className="font-display font-black text-sm tracking-tight text-indigo-deep">
+              <span className="font-display font-black text-sm tracking-tight text-indigo-deep hidden md:inline">
                 Phytocodex
               </span>
-              <span className="hidden h-3.5 w-px bg-slate-hair sm:block" />
-              <span className="caps hidden text-xs font-semibold text-slate-ink sm:inline">
+              <span className="hidden h-3.5 w-px bg-slate-hair md:block" />
+              <span className="caps text-xs font-semibold text-slate-ink truncate">
                 {isVi ? "TS. Hoàng Xuân Chiến · ĐH Hamburg" : "Dr. Xuan Chien Hoang · Univ. of Hamburg"}
               </span>
-              <span className="hidden h-3.5 w-px bg-slate-hair md:block" />
-              <span className="caps hidden text-[11px] text-slate-mute md:inline">
+              <span className="hidden h-3.5 w-px bg-slate-hair lg:block" />
+              <span className="caps hidden text-[11px] text-slate-mute lg:inline">
                 {isVi ? "Tòa soạn Y sinh Thực chứng" : "Evidence-Based Intelligence"}
               </span>
             </div>
 
-            {/* Cụm bên phải: Nút Search góc & Bộ chọn Ngôn ngữ */}
-            <div className="flex items-center gap-3 ml-auto">
+            {/* Cụm bên phải: Nút Search góc & Bộ chọn Ngôn ngữ (language switcher đã có ở fixed header trên mobile) */}
+            <div className="flex items-center gap-2 sm:gap-3 shrink-0 ml-auto">
               {/* Nút Tìm kiếm nhanh ở góc (Quick Search trigger) */}
               <button
                 type="button"
                 onClick={() => setSearchOpen(true)}
-                className="group flex items-center gap-2 rounded-full border border-slate-hair bg-paper px-3 py-1.5 text-xs text-slate-ink shadow-2xs transition-all hover:border-indigo-deep hover:text-indigo-deep hover:shadow-xs cursor-pointer sm:px-3.5"
+                className="group flex items-center gap-1.5 sm:gap-2 rounded-full border border-slate-hair bg-paper px-2.5 py-1 sm:px-3.5 sm:py-1.5 text-xs text-slate-ink shadow-2xs transition-all hover:border-indigo-deep hover:text-indigo-deep hover:shadow-xs cursor-pointer"
                 title={isVi ? "Tìm kiếm bài viết (Ctrl + K)" : "Search monographs (Ctrl + K)"}
               >
                 <Search size={13} className="text-slate-mute group-hover:text-trace-ink shrink-0" />
                 <span className="font-medium hidden sm:inline">
-                  {isVi ? "Tìm kiếm..." : "Search..."}
+                  {isVi ? "Tìm kiếm bài viết..." : "Search monographs..."}
                 </span>
-                <span className="font-medium inline sm:hidden">
-                  {isVi ? "Tìm" : "Find"}
+                <span className="font-medium inline sm:hidden text-[11px]">
+                  {isVi ? "Tìm kiếm" : "Search"}
                 </span>
                 <span className="rounded bg-slate-hair/70 px-1.5 py-0.5 text-[10px] font-mono text-slate-ink font-semibold hidden md:inline">
                   ⌘K
                 </span>
               </button>
 
-              {/* Language Switcher Badge */}
-              <div className="inline-flex rounded-full border border-slate-hair bg-paper p-0.5 text-xs font-mono shadow-2xs">
+              {/* Language Switcher Badge: Chỉ hiện từ md trở lên để không trùng lặp với fixed header trên mobile */}
+              <div className="hidden md:inline-flex rounded-full border border-slate-hair bg-paper p-0.5 text-xs font-mono shadow-2xs">
                 <button
                   type="button"
                   onClick={() => setLang("vi")}

@@ -52,31 +52,34 @@ export function InstrumentRail() {
   return (
     <>
       {/* Mobile Top Navigation Header */}
-      <header className="fixed left-0 right-0 top-0 z-50 flex h-14 items-center justify-between border-b border-slate-hair bg-paper/95 px-4 backdrop-blur md:hidden">
-        <Link href="/" aria-label="Phytocodex home" className="flex items-center gap-2 text-indigo-deep font-display font-bold">
-          <Wordmark size={26} />
-          <span className="text-base font-black tracking-tight font-display text-indigo-deep">Phytocodex</span>
+      <header className="fixed left-0 right-0 top-0 z-50 flex h-14 items-center justify-between border-b border-slate-hair bg-paper/95 px-3 sm:px-4 backdrop-blur md:hidden">
+        {/* Brand / Logo: shrink-0 ensures it is NEVER compressed or overlapped */}
+        <Link href="/" aria-label="Phytocodex home" className="flex items-center gap-2 text-indigo-deep font-display font-bold shrink-0">
+          <Wordmark size={24} />
+          <span className="text-[15px] sm:text-base font-black tracking-tight font-display text-indigo-deep">Phytocodex</span>
         </Link>
-        <div className="flex items-center gap-3">
-          <nav className="flex items-center gap-3 text-xs caps">
-            <Link href="/#directory" className="text-slate-ink hover:text-indigo-deep">
+
+        {/* Right Controls: Navigation links + Compact Language Switcher */}
+        <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
+          <nav className="flex items-center gap-1.5 sm:gap-2.5 text-[11px] sm:text-xs caps font-medium">
+            <Link href="/#directory" className="px-1 py-1 text-slate-ink hover:text-indigo-deep whitespace-nowrap">
               {lang === "vi" ? "Kho bài" : "Corpus"}
             </Link>
-            <Link href="/gizmos" className="text-slate-ink hover:text-indigo-deep">
+            <Link href="/gizmos" className="px-1 py-1 text-slate-ink hover:text-indigo-deep whitespace-nowrap">
               {lang === "vi" ? "Mô phỏng" : "Gizmos"}
             </Link>
-            <Link href="/about" className="text-slate-ink hover:text-indigo-deep">
+            <Link href="/about" className="px-1 py-1 text-slate-ink hover:text-indigo-deep whitespace-nowrap">
               {lang === "vi" ? "Tác giả" : "Author"}
             </Link>
           </nav>
           
           {/* Mobile Dual Language Switcher */}
-          <div className="inline-flex items-center rounded-full border border-slate-hair bg-paper-tint p-0.5 text-xs font-mono font-bold shadow-2xs">
+          <div className="inline-flex items-center rounded-full border border-slate-hair bg-paper-tint p-0.5 text-[10px] sm:text-xs font-mono font-bold shadow-2xs ml-0.5">
             <button
               type="button"
               onClick={() => handleLanguageSwitch("vi")}
               aria-label="Tiếng Việt"
-              className={`rounded-full px-2 py-0.5 transition-all cursor-pointer ${
+              className={`rounded-full px-1.5 sm:px-2 py-0.5 transition-all cursor-pointer ${
                 lang === "vi"
                   ? "bg-indigo-deep text-white shadow-xs"
                   : "text-slate-ink hover:text-indigo-deep"
@@ -88,7 +91,7 @@ export function InstrumentRail() {
               type="button"
               onClick={() => handleLanguageSwitch("en")}
               aria-label="English"
-              className={`rounded-full px-2 py-0.5 transition-all cursor-pointer ${
+              className={`rounded-full px-1.5 sm:px-2 py-0.5 transition-all cursor-pointer ${
                 lang === "en"
                   ? "bg-indigo-deep text-white shadow-xs"
                   : "text-slate-ink hover:text-indigo-deep"
