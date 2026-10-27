@@ -1,8 +1,102 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-10-27T10:40:22.093Z",
-  "totalTopics": 159,
+  "lastUpdated": "2026-10-27T20:17:22.330Z",
+  "totalTopics": 161,
   "topics": [
+    {
+      "id": "dark-chocolate-nitric-oxide-blood-pressure",
+      "slugs": [
+        "dark-chocolate-nitric-oxide-blood-pressure-en"
+      ],
+      "titleVi": "High-cocoa dark chocolate and blood pressure: The Nitric Oxide pathway for natural arterial relaxation",
+      "titleEn": "High-cocoa dark chocolate and blood pressure: The Nitric Oxide pathway for natural arterial relaxation",
+      "organ": "Metabolic",
+      "tier": "Clinical Deep-Dive",
+      "doi": "10.1093/ajcn/81.3.611",
+      "date": "2026-10-27T17:00:00Z",
+      "tags": [
+        "blood-pressure",
+        "heart-health",
+        "vascular-system",
+        "nitric-oxide",
+        "longevity",
+        "cocoa-flavanols"
+      ],
+      "keywords": [
+        "high",
+        "cocoa",
+        "dark",
+        "chocolate",
+        "blood",
+        "pressure",
+        "nitric",
+        "oxide",
+        "pathway",
+        "natural",
+        "arterial",
+        "relaxation",
+        "heart",
+        "health",
+        "vascular",
+        "system",
+        "longevity",
+        "flavanols",
+        "containing",
+        "cacao",
+        "often",
+        "misunderstood",
+        "sugary",
+        "indulgence",
+        "harms"
+      ]
+    },
+    {
+      "id": "socola-den-oxit-nitric-huyet-ap",
+      "slugs": [
+        "socola-den-oxit-nitric-huyet-ap-vi"
+      ],
+      "titleVi": "Socola đen đậm đặc và huyết áp: Cơ chế kích hoạt Oxit Nitric giúp thư giãn thành mạch tự nhiên",
+      "titleEn": "Socola đen đậm đặc và huyết áp: Cơ chế kích hoạt Oxit Nitric giúp thư giãn thành mạch tự nhiên",
+      "organ": "Metabolic",
+      "tier": "Clinical Deep-Dive",
+      "doi": "10.1093/ajcn/81.3.611",
+      "date": "2026-10-27T17:00:00Z",
+      "tags": [
+        "huyet-ap",
+        "tim-mach",
+        "mach-mau",
+        "oxit-nitric",
+        "lao-hoa",
+        "dinh-duong"
+      ],
+      "keywords": [
+        "socola",
+        "den",
+        "dam",
+        "dac",
+        "huyet",
+        "kich",
+        "hoat",
+        "oxit",
+        "nitric",
+        "giup",
+        "thu",
+        "gian",
+        "thanh",
+        "mach",
+        "nhien",
+        "tim",
+        "mau",
+        "lao",
+        "hoa",
+        "dinh",
+        "duong",
+        "nhieu",
+        "nguoi",
+        "thuong",
+        "nghi"
+      ]
+    },
     {
       "id": "charred-food-glycation-ages-skin-wrinkles-arterial-stiffness",
       "slugs": [

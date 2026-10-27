@@ -4301,6 +4301,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Advanced glycation end products (AGEs) are pathogenic compounds produced during thermal processing of foods via non-enzymatic glycation. This study quantified AGE content across 549 common foods using ELISA. Results revealed that dry heat (grilling, roasting, frying) significantly accelerates dAGE formation compared to moist heat (boiling, steaming). Dietary AGE reduction markedly lowers circulating AGE levels and inflammatory markers in clinical trials.",
     },
   ],
+  "socola-den-oxit-nitric-huyet-ap-vi": [
+    {
+      ordinal: 1,
+      label: "Short-term administration of dark chocolate is followed by a significant increase in insulin sensitivity and a decrease in blood pressure in healthy persons",
+      pmid: "15755830",
+      doi: "10.1093/ajcn/81.3.611",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Am J Clin Nutr",
+      year: 2005,
+      abstract: "Healthy subjects consumed either 100g dark chocolate (containing 500mg polyphenols) or 100g white chocolate daily for 15 days in a randomized crossover design. Dark chocolate consumption significantly decreased systolic blood pressure (-4.8 mmHg) and serum fasting glucose, while improving flow-mediated dilation and insulin sensitivity. These effects were attributed to cocoa flavanols enhancing endothelial nitric oxide bioavailability.",
+    },
+  ],
+  "dark-chocolate-nitric-oxide-blood-pressure-en": [
+    {
+      ordinal: 1,
+      label: "Short-term administration of dark chocolate is followed by a significant increase in insulin sensitivity and a decrease in blood pressure in healthy persons",
+      pmid: "15755830",
+      doi: "10.1093/ajcn/81.3.611",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Am J Clin Nutr",
+      year: 2005,
+      abstract: "Healthy subjects consumed either 100g dark chocolate (containing 500mg polyphenols) or 100g white chocolate daily for 15 days in a randomized crossover design. Dark chocolate consumption significantly decreased systolic blood pressure (-4.8 mmHg) and serum fasting glucose, while improving flow-mediated dilation and insulin sensitivity. These effects were attributed to cocoa flavanols enhancing endothelial nitric oxide bioavailability.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
