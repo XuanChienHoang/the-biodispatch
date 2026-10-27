@@ -34,11 +34,27 @@ export const metadata: Metadata = {
     apple: "/images/phytocodex-emblem.jpg",
   },
   title: {
-    default: "Phytocodex · Dr. Xuan Chien Hoang",
+    default: "Phytocodex · DECODING THE MOLECULES OF HEALTH",
     template: "%s · Phytocodex",
   },
   description:
-    "Decoding the molecules of health — where Eastern botanicals meet European science. Evidence-based biomedical monograph by Dr. Xuan Chien Hoang (Dr. rer. nat. in Molecular Biology, Univ. of Hamburg).",
+    "DECODING THE MOLECULES OF HEALTH — Evidence-based biomedical intelligence where Eastern botanicals meet European molecular pharmacology, metabolomics, and circadian science.",
+  keywords: [
+    "Phytocodex",
+    "Decoding the Molecules of Health",
+    "Evidence-Based Phytotherapy",
+    "Molecular Pharmacology",
+    "Botanical Medicine",
+    "Metabolomics",
+    "Circadian Biology",
+    "Nutritional Biochemistry",
+    "Bioavailability Optimization",
+    "Phytochemical Intelligence",
+    "Translational Medicine",
+    "Natural Compounds Synergy",
+    "Dr. Xuan Chien Hoang",
+    "TS. Hoàng Xuân Chiến"
+  ],
   alternates: {
     types: {
       "application/rss+xml": "https://www.phyto-codex.org/feed.xml",
@@ -47,24 +63,24 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "Phytocodex",
-    title: "Phytocodex · Dr. Xuan Chien Hoang",
+    title: "Phytocodex · DECODING THE MOLECULES OF HEALTH",
     description:
-      "Decoding the molecules of health — where Eastern botanicals meet European science. Evidence-based molecular pharmacology and pharmacokinetic simulation engines.",
+      "Decoding the molecules of health — where Eastern botanicals meet European molecular pharmacology, metabolomics, and evidence-based science.",
     locale: "en_US",
     images: [
       {
         url: "https://www.phyto-codex.org/images/phytocodex-banner.jpg",
         width: 1200,
         height: 675,
-        alt: "Phytocodex — Decoding the Molecules of Health",
+        alt: "Phytocodex — DECODING THE MOLECULES OF HEALTH",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Phytocodex · Dr. Xuan Chien Hoang",
+    title: "Phytocodex · DECODING THE MOLECULES OF HEALTH",
     description:
-      "Decoding the molecules of health — where Eastern botanicals meet European science.",
+      "DECODING THE MOLECULES OF HEALTH — Evidence-based botanical medicine, molecular pharmacology, and clinical metabolomics.",
     images: [
       "https://www.phyto-codex.org/images/phytocodex-banner.jpg",
     ],
