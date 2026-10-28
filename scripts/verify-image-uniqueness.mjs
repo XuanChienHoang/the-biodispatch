@@ -10,6 +10,8 @@ import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
 import { fileURLToPath } from 'url';
+import { loadTopicRegistry } from './topic-registry.mjs';
+import { DISPATCH_RADAR_TOPICS } from './radar-topics.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -20,6 +22,25 @@ export function verifyImageUniqueness() {
   if (!fs.existsSync(imagesDir)) {
     console.log('✅ [Image Guard] Thư mục ảnh chưa tồn tại.');
     return true;
+  }
+
+  // Xây dựng bản đồ ánh xạ slug -> topicId để nhận diện các cặp bài song ngữ (VI - EN)
+  const slugToTopicId = new Map();
+  try {
+    const reg = loadTopicRegistry();
+    for (const t of (reg.topics || [])) {
+      for (const s of (t.slugs || [])) {
+        slugToTopicId.set(s, t.id);
+      }
+    }
+  } catch {
+    // ignore
+  }
+
+  // Bổ sung các slug từ radar topics
+  for (const r of DISPATCH_RADAR_TOPICS) {
+    if (r.slugVi) slugToTopicId.set(r.slugVi, r.topicId);
+    if (r.slugEn) slugToTopicId.set(r.slugEn, r.topicId);
   }
 
   const files = fs.readdirSync(imagesDir).filter(f => f.endsWith('.jpg'));
@@ -39,9 +60,14 @@ export function verifyImageUniqueness() {
 
   const crossTopicDupes = [];
   for (const [hash, group] of hashes.entries()) {
-    const baseNames = new Set(group.map(f => f.replace(/-(vi|en)\.jpg$/, '')));
-    if (baseNames.size > 1) {
-      crossTopicDupes.push({ hash, count: group.length, topics: baseNames.size, files: group });
+    const topicIds = new Set();
+    for (const f of group) {
+      const slug = f.replace(/\.jpg$/, '');
+      const tid = slugToTopicId.get(slug) || slug.replace(/-(vi|en)$/, '');
+      topicIds.add(tid);
+    }
+    if (topicIds.size > 1) {
+      crossTopicDupes.push({ hash, count: group.length, topics: topicIds.size, topicList: Array.from(topicIds), files: group });
     }
   }
 
@@ -49,7 +75,7 @@ export function verifyImageUniqueness() {
   console.log(`   Số hash độc bản: ${hashes.size} | Số nhóm trùng chéo chủ đề: ${crossTopicDupes.length}`);
 
   if (crossTopicDupes.length > 0) {
-    console.warn(`⚠️ [Image Guard Warning] Phát hiện ${crossTopicDupes.length} nhóm ảnh dùng chung giữa các bài khác nhau:`);
+    console.warn(`⚠️ [Image Guard Warning] Phát hiện ${crossTopicDupes.length} nhóm ảnh dùng chung giữa các chủ đề khác nhau:`);
     for (const d of crossTopicDupes.slice(0, 5)) {
       console.warn(`   - Hash ${d.hash.slice(0, 8)} (${d.count} bài): ${d.files.slice(0, 3).join(', ')}...`);
     }

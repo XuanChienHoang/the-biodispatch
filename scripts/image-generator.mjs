@@ -123,6 +123,28 @@ export function extractSmartImageKeywords(topic = {}) {
   if (/đậu nành|soy|flaxseed|hạt lanh|phytoestrogen/i.test(text)) queries.push('soybeans in bowl', 'flaxseed seeds healthy');
   if (/táo|apple|pectin|akkermansia/i.test(text)) queries.push('fresh red apple fruit', 'apples on tree');
 
+  // 1b. Nhóm Vaccine, Miễn dịch học & Kháng thể (Immunology & Vaccines)
+  if (/vaccin|vac-xin|tiêm|tiem|immuniz|mrna|kháng thể|antibody|antigen|miễn dịch|immunology/i.test(text)) {
+    queries.push(
+      'medical vaccine vial laboratory',
+      'immunology laboratory researcher',
+      'vaccination syringe medical',
+      'biomedical research pipette laboratory',
+      'microscopic antibody immune cell'
+    );
+  }
+
+  // 1c. Nhóm Ung thư, Khối u & Y học thực chứng (Oncology & Cancer Biology)
+  if (/ung thư|ung-thu|cancer|oncology|tumor|khối u|hóa trị|chemotherapy|xạ trị|radiation therapy|di căn|metastasis|bài thuốc chữa ung thư/i.test(text)) {
+    queries.push(
+      'cancer research laboratory microscope',
+      'oncology cell biology microscopy',
+      'medical laboratory scientist researching',
+      'biological cell culture petri dish',
+      'biomedical laboratory glassware'
+    );
+  }
+
   // 2. Nhóm Đời sống / Thói quen ăn uống / Sinh lý học
   if (/nướng|cháy|chay-xem|barbecue|bbq|charred|grill|glycation|maillard|ages/i.test(text)) {
     queries.push('barbecue grill meat', 'charred meat', 'grilled food', 'bbq charcoal');
@@ -169,6 +191,9 @@ export function extractSmartImageKeywords(topic = {}) {
     'Cellular Aging': ['cell biology microscopy', 'cellular longevity laboratory', 'plant cell microscope'],
     Immunity: ['immune cell microbiology', 'white blood cells microscopy', 'botanical medicinal herbs'],
     Immune: ['immune cell microbiology', 'white blood cells microscopy', 'botanical medicinal herbs'],
+    Immunity: ['immune cell microbiology', 'white blood cells microscopy', 'botanical medicinal herbs'],
+    Oncology: ['cancer cell biology research', 'oncology laboratory microscope', 'medical biomedical research'],
+    Cancer: ['cancer cell biology research', 'oncology laboratory microscope', 'medical biomedical research'],
     Liver: ['liver metabolism health', 'botanical herbs laboratory', 'healthy nutrition liver']
   };
 

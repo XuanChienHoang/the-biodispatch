@@ -403,6 +403,134 @@ Crucially, specific oligopeptide sequences including **Prolyl-hydroxyproline (Pr
 - **Synergistic Co-factor**: Ensure adequate Vitamin C co-ingestion, which serves as an obligatory co-substrate for prolyl hydroxylase in de novo cross-linking.`
       }
     ]
+  },
+  {
+    topicId: 'vaccine-science-misconceptions-debunked',
+    slugVi: 'giai-ma-khoa-hoc-vaccine-va-cac-hieu-lam-vi',
+    slugEn: 'demystifying-vaccine-science-and-misconceptions-en',
+    titleVi: 'Giải mã khoa học vaccine: Cơ chế phân tử các nền tảng miễn dịch hiện đại và thống kê thực chứng phản bác các hiểu lầm phổ biến',
+    titleEn: 'Demystifying Vaccine Science: Molecular Mechanisms of Modern Platforms and Clinical Statistics Debunking Common Misconceptions',
+    excerptVi: 'Vaccine huấn luyện hệ miễn dịch nhận diện mầm bệnh mà không cần trải qua nguy cơ tàn phá của bệnh thật. Nền tảng mRNA chỉ tồn tại tạm thời trong tế bào chất 48-72 giờ, hoàn toàn không xâm nhập nhân tế bào và không thể thay đổi bộ gen người.',
+    excerptEn: 'Vaccines safely train adaptive immunity against virulent pathogens without exposing patients to the deadly hazards of natural infection. The mRNA platform remains strictly within the cytoplasm for 48-72 hours, cannot enter the nucleus, and has zero physical capability to alter human DNA.',
+    organ: 'Immunity',
+    tier: 'Clinical Deep-Dive',
+    tagsVi: ['Vaccine', 'Miễn dịch học', 'mRNA', 'Kháng thể', 'An toàn sinh học', 'Y học thực chứng'],
+    tagsEn: ['Vaccine', 'Immunology', 'mRNA', 'Antibody', 'Biosafety', 'Evidence-Based Medicine'],
+    doi: '10.1056/NEJMoa2034577',
+    pmid: '33301246',
+    journal: 'New England Journal of Medicine',
+    year: 2020,
+    gizmo: 'pathway',
+    readingTimeVi: '12 phút đọc',
+    readingTimeEn: '11 min read',
+    analogyVi: 'Vaccine chính là một buổi tập trận giả hoàn hảo: các huấn luyện viên mang đến cho lực lượng cảnh vệ một bức ảnh chân dung rõ nét hoặc một bộ trang phục mẫu của toán cướp mà không hề mang theo vũ khí. Nhờ đó, cảnh vệ ghi nhớ chính xác đặc điểm nhận dạng, chuẩn bị sẵn lưới bắt và vũ khí đối phó mà không gây tổn hại cho thành phố.',
+    analogyEn: 'A modern vaccine acts as a controlled tactical briefing: instructors deliver high-resolution photographs or disassembled uniforms of the infiltrators with zero live munitions. The security personnel memorize every distinctive insignia, readying precision countermeasures before real pathogens invade.',
+    leadVi: 'Trong kỷ nguyên bùng nổ thông tin mạng xã hội, vaccine thường xuyên trở thành tâm điểm của những thuyết âm mưu và các luận điểm phi khoa học. Tuy nhiên, dưới lăng kính sinh học phân tử và dữ liệu dịch tễ học thực chứng trên hàng tỷ liều tiêm toàn cầu, vaccine là một trong những thành tựu y học vĩ đại nhất bảo vệ tính mạng con người.',
+    leadEn: 'In an era of viral social media misinformation, vaccines frequently find themselves at the epicenter of fear-driven conspiracy theories. Through the lens of molecular biology and real-world epidemiological data covering billions of global doses, vaccines represent one of humanity\'s greatest lifesaving milestones.',
+    flowchart: '[Hạt LNP chứa mRNA N1mΨ] ──► [Dịch mã tại Ribosome Tế bào chất] ──► [Protein Gai Prefusion] ──► [Trình diện MHC-I & MHC-II] ──► [Tế bào B sinh Kháng thể & Tế bào T nhớ]',
+    sectionsVi: [
+      {
+        heading: '1. Động học phân tử: Vì sao mRNA không thể đi vào nhân hoặc biến đổi DNA',
+        body: `Phân tử mRNA tổng hợp hoàn toàn không mang tín hiệu định vị nhân (NLS). Tế bào người bình thường không chứa enzym phiên mã ngược (Reverse Transcriptase) hay enzym tích hợp (Integrase). 
+        
+Sau khi hoàn thành nhiệm vụ làm khuôn mẫu để ribosome dịch mã vài nghìn bản sao protein gai, sợi mRNA bị các enzym ribonuclease nội bào cắt nhỏ thành các nucleotide tự nhiên (A, U, C, G) và tái chế hoàn toàn trong vòng 48 đến 72 giờ.`
+      },
+      {
+        heading: '2. Thống kê dịch tễ học thực chứng triệu người trên Nature Medicine và NEJM',
+        body: `| Biến cố Lâm sàng | Tỷ lệ ở Nhóm Tiêm Vaccine | Tỷ lệ ở Nhóm Nhiễm Trùng Tự Nhiên | Ý nghĩa Y khoa Thực chứng |
+| :--- | :--- | :--- | :--- |
+| **Viêm cơ tim (Myocarditis)** | **10 - 20 ca / 1.000.000 liều** (thể nhẹ, hồi phục hoàn toàn sau 2-4 ngày) | **1.000 - 4.000 ca / 1.000.000 ca nhiễm** (cao gấp 50-100 lần, kèm hoại tử cơ tim và suy tim) | Nghiên cứu 38.6 triệu người tại Oxford (Nature Medicine 2022) |
+| **Hội chứng tự kỷ (Autism)** | **RR = 0.93** (hoàn toàn không có liên hệ thống kê) | Sởi gây viêm não cấp tính ở 1/1.000 trẻ và tử vong muộn do SSPE | Nghiên cứu 657.461 trẻ em Đan Mạch (Annals of Internal Medicine 2019) |
+| **Sảy thai & Dị tật thai nhi** | **12.8%** (tương đồng với tỷ lệ sảy thai tự nhiên chung 11-16%) | Nhiễm virus làm tăng gấp 5 lần nguy cơ nhập ICU và tăng 22 lần nguy cơ tử vong ở sản phụ | Nghiên cứu 35.691 phụ nữ mang thai (NEJM 2021) |`
+      },
+      {
+        heading: '3. Phản bác gian lận học thuật của Andrew Wakefield',
+        body: `Hiểu lầm về vaccine MMR và tự kỷ bắt nguồn từ bài báo bịa đặt số liệu năm 1998 của Andrew Wakefield trên tạp chí The Lancet. Sau khi Hội đồng Y khoa Anh phát hiện ông ta nhận hối lộ từ các luật sư kiện tụng, bài báo đã bị rút lại vĩnh viễn và Wakefield bị tước giấy phép hành nghề y.`
+      }
+    ],
+    sectionsEn: [
+      {
+        heading: '1. Molecular Dynamics: Why mRNA Cannot Enter the Nucleus or Alter DNA',
+        body: `Vaccine mRNA possesses no Nuclear Localization Signal (NLS) to traverse the nuclear envelope. Crucially, human somatic cells possess zero Reverse Transcriptase (RT) and zero Integrase activity.
+        
+After ribosomes synthesize prefusion spike glycoproteins, endogenous ribonucleases hydrolyze the synthetic transcript into endogenous nucleotides within 48 to 72 hours.`
+      },
+      {
+        heading: '2. Multi-Million-Patient Real-World Safety Datasets',
+        body: `| Clinical Endpoint | Post-Vaccination Incidence | Natural Wild Infection Incidence | Peer-Reviewed Evidence |
+| :--- | :--- | :--- | :--- |
+| **Myocarditis & Pericarditis** | **10 - 20 per 1,000,000 doses** (transient, mild, self-limiting with NSAIDs) | **1,000 - 4,000 per 1,000,000 infections** (50 to 100-fold higher risk with necrosis) | 38.6-million-person Oxford cohort (Nature Medicine 2022) |
+| **Autism Association** | **RR = 0.93** (conclusive absence of correlation) | Wild measles induces acute encephalitis in 1/1,000 and 100% lethal SSPE | 657,461 Danish children cohort (Annals of Internal Medicine 2019) |
+| **Gestational Safety** | **12.8%** spontaneous abortion (identical to 11-16% baseline) | Wild infection causes 5x ICU admission and 22x maternal mortality | 35,691 pregnant individuals registry (NEJM 2021) |`
+      },
+      {
+        heading: '3. The Retraction and Debunking of Wakefield\'s 1998 Fraud',
+        body: `The fraudulent MMR-autism claim was thoroughly investigated by the UK General Medical Council. Wakefield was proven to have falsified medical records for financial kickbacks from trial lawyers, leading to the complete retraction of the manuscript by The Lancet and permanent revocation of his medical license.`
+      }
+    ]
+  },
+  {
+    topicId: 'cancer-myths-and-fake-miracle-cures-debunked',
+    slugVi: 'su-that-ve-cac-bai-thuoc-chua-khoi-ung-thu-vi',
+    slugEn: 'truth-about-viral-miracle-cancer-cures-en',
+    titleVi: 'Sự thật về các bài thuốc thần kỳ chữa khỏi ung thư trên mạng: Giải mã sinh học khối u và cái giá đắt của việc từ bỏ y học thực chứng',
+    titleEn: 'The Truth Behind Viral Miracle Cancer Cures: Tumor Biology Decoded and the Fatal Cost of Abandoning Evidence-Based Oncology',
+    excerptVi: 'Không có bất kỳ chế độ ăn kiềm hóa, bài thuốc dân gian truyền miệng hay phương pháp nhịn ăn nào có thể chữa khỏi ung thư. Việc từ bỏ y học chuẩn mực để theo đuổi liệu pháp thay thế làm tăng nguy cơ tử vong lên gấp 2.5 đến 5.7 lần theo nghiên cứu của Đại học Yale.',
+    excerptEn: 'No alkaline diet, extreme fasting protocol, or viral herbal concoction can cure malignant neoplasms. Abandoning guideline-directed oncology in favor of unverified alternative medicine increases overall mortality risk by 2.5 to 5.7-fold according to Yale University research.',
+    organ: 'Oncology',
+    tier: 'Clinical Deep-Dive',
+    tagsVi: ['Ung thư', 'Oncology', 'Khối u', 'Hóa trị', 'Y học thực chứng', 'Chuyển hóa u'],
+    tagsEn: ['Cancer', 'Oncology', 'Tumor Biology', 'Chemotherapy', 'Evidence-Based Medicine', 'Metabolism'],
+    doi: '10.1093/jnci/djx145',
+    pmid: '28922780',
+    journal: 'Journal of the National Cancer Institute (JNCI)',
+    year: 2018,
+    gizmo: 'pathway',
+    readingTimeVi: '13 phút đọc',
+    readingTimeEn: '12 min read',
+    analogyVi: 'Hãy hình dung khối u ác tính giống như một đám cháy rừng dữ dội đang lan nhanh do gió bão. Y học thực chứng chính thống cung cấp trực thăng cứu hỏa chuyên dụng phun hóa chất dập lửa. Trong khi đó, các bài thuốc chữa ung thư trên mạng giống như một người khuyên bạn hãy rút lui toàn bộ lính cứu hỏa, và chỉ ngồi thổi một chiếc quạt tay nhỏ với hy vọng ngọn lửa tự tàn lụi.',
+    analogyEn: 'Imagine an aggressive malignant tumor as a raging wildfire. Evidence-based oncology acts as an organized firefighting battalion deploying aerial chemical retardants and high-pressure hose crews. In contrast, viral natural cure claims are akin to demanding all firefighters withdraw while waving a handheld fan, allowing the inferno to consume the entire forest.',
+    leadVi: 'Mạng xã hội tràn ngập những lời hứa hẹn kỳ diệu: từ chế độ ăn kiềm hóa, nhịn ăn bỏ đói khối u, hạt hạnh nhân đắng chứa Vitamin B17, đến sừng tê giác và thuốc tẩy giun Fenbendazole. Dưới góc nhìn sinh học phân tử, những phương pháp này không chỉ hoàn toàn phản khoa học mà còn tước đoạt cơ hội sống duy nhất của người bệnh.',
+    leadEn: 'Social media feeds are flooded with miraculous promises: from systemic alkalization diets and juice starvation regimes to bitter apricot seeds containing Vitamin B17, rhino horn, and veterinary dewormers like Fenbendazole. Molecular oncology reveals that these regimens rob patients of their critical therapeutic window.',
+    flowchart: '[Bỏ đói Cơ thể / Liệu pháp Thay thế] ──► [Khối U thích nghi Glutaminolysis] ──► [Tiết Cytokine gây Teo cơ Cachexia] ──► [Tế bào Miễn dịch T & NK Sụp đổ] ──► [U Di căn Lan tỏa Giai đoạn Cuối]',
+    sectionsVi: [
+      {
+        heading: '1. Ảo tưởng Kiềm hóa Cơ thể và Sự thật về Hiệu ứng Warburg',
+        body: `Môi trường vi mô khối u có tính axit nhẹ (pH 6.5 - 6.9) là hậu quả của quá trình đường phân kỵ khí (Warburg effect), không phải nguyên nhân. Máu người được đệm nghiêm ngặt ở pH 7.35 - 7.45. Việc uống nước kiềm hay baking soda bị trung hòa ngay bởi axit dạ dày HCl; nếu dùng quá liều sẽ gây nhiễm kiềm chuyển hóa cấp tính, loạn nhịp tim và suy thận.`
+      },
+      {
+        heading: '2. Nghiên cứu 560.000 bệnh nhân của Đại học Yale trên tạp chí JNCI',
+        body: `| Loại Ung Thư | Tỷ lệ Tử vong Tăng thêm ở Nhóm Dùng Thuốc Thay thế | Tỷ lệ Sống 5 năm: Y học Chuẩn mực | Tỷ lệ Sống 5 năm: Dùng Thuốc Thay thế |
+| :--- | :--- | :--- | :--- |
+| **Ung thư Vú** | **Tăng gấp 5.68 lần (HR = 5.68)** | **86.6%** | **58.1%** (gần một nửa tử vong) |
+| **Ung thư Đại trực tràng** | **Tăng gấp 4.57 lần (HR = 4.57)** | **68.3%** | **32.7%** (tử vong tăng vọt) |
+| **Ung thư Phổi** | **Tăng gấp 2.17 lần (HR = 2.17)** | **41.3%** | **19.9%** |
+| **Tổng thể mọi loại ung thư** | **Tăng gấp 2.50 lần (HR = 2.50)** | Kiểm soát u tối ưu | Giảm mạnh tuổi thọ |`
+      },
+      {
+        heading: '3. Ranh giới chuẩn mực của Ung thư học Tích hợp (Integrative Oncology)',
+        body: `Dược liệu tự nhiên và dinh dưỡng chỉ đóng vai trò hỗ trợ giảm tác dụng phụ (buồn nôn, bảo vệ gan, duy trì khối cơ nạc), tuyệt đối không bao giờ được thay thế phẫu thuật, hóa xạ trị hay liệu pháp miễn dịch đích.`
+      }
+    ],
+    sectionsEn: [
+      {
+        heading: '1. The Alkalization Fallacy and the Warburg Reality',
+        body: `Tumor extracellular acidity (pH 6.5 - 6.9) is a metabolic waste byproduct of aerobic glycolysis (Warburg effect), not its cause. Systemic blood pH is tightly buffered between 7.35 and 7.45. Ingested alkaline water is instantly neutralized by gastric HCl; excessive sodium bicarbonate causes acute metabolic alkalosis, hypokalemia, and cardiac arrhythmias.`
+      },
+      {
+        heading: '2. The 560,000-Patient Yale University Investigation in JNCI',
+        body: `| Cancer Type | Mortality Hazard Ratio (HR) for Alternative Medicine | 5-Year Survival: Conventional Care | 5-Year Survival: Alternative Medicine |
+| :--- | :--- | :--- | :--- |
+| **Breast Cancer** | **5.68-fold higher hazard (HR = 5.68)** | **86.6%** | **58.1%** |
+| **Colorectal Cancer** | **4.57-fold higher hazard (HR = 4.57)** | **68.3%** | **32.7%** |
+| **Lung Cancer** | **2.17-fold higher hazard (HR = 2.17)** | **41.3%** | **19.9%** |
+| **Aggregate All Cancers** | **2.50-fold higher hazard (HR = 2.50)** | Optimal survival benchmark | Rapid survival collapse |`
+      },
+      {
+        heading: '3. The Rigorous Boundary of Modern Integrative Oncology',
+        body: `Evidence-based botanical compounds and clinical nutrition function exclusively as supportive adjuncts (mitigating nausea, preserving lean muscle mass, mitigating liver stress), never as substitutes for surgical resection, systemic chemotherapy, radiotherapy, or targeted immunotherapy.`
+      }
+    ]
   }
 ];
 
