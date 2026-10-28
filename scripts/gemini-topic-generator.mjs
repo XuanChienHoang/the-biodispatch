@@ -117,13 +117,23 @@ QUY TẮC BẮT BUỘC:
   // ƯU TIÊN HÀNG ĐẦU THEO CHỈ ĐẠO CỦA TS. HOÀNG XUÂN CHIẾN: Nhóm bài phổ thông về Ung thư & Phòng ngừa
   const DOMAIN_PILLARS = [
     {
-      domain: 'Phòng ngừa Ung thư, Dinh dưỡng Khoa học & Miễn dịch Tự nhiên (Cancer Prevention & Oncology Wellness)',
+      domain: 'Phòng ngừa Ung thư, Hợp chất Thực vật & Dinh dưỡng Miễn dịch (Cancer Prevention & Chemopreventive Phytochemicals)',
       organ: 'Oncology',
       goalId: 'cancer-prevention',
       ideas: [
+        // Nhánh 1: Hợp chất thực vật & Thực phẩm bổ trợ phòng ngừa ung thư (Chemopreventive Foods & Phytochemicals)
+        'Cà chua nấu chín, dầu ô liu và Lycopene: Vì sao nhiệt độ và chất béo mở khóa hoạt chất dập tắt gốc tự do bảo vệ tế bào tuyến tiền liệt?',
+        'Tỏi tươi đập dập và Allicin: Quy tắc 10 phút vàng để enzyme Alliinase kích hoạt vũ khí tự nhiên thúc đẩy tế bào đột biến tự tiêu hủy (Apoptosis)',
+        'Mầm súp lơ xanh và Sulforaphane: Cơ chế kích hoạt enzym Phase 2 qua con đường Nrf2 quét sạch chất sinh ung thư trước khi chúng làm hỏng DNA',
+        'Trà xanh thượng hạng và EGCG: Phân tử ức chế yếu tố hình thành mạch máu nuôi khối u (VEGF) và mẹo thêm một lát chanh để tăng hấp thu',
+        'Nấm hương, nấm Maitake và Beta-Glucan: Cơ chế đánh thức thụ thể Dectin-1 trên đại thực bào để tăng cường tuần tra tế bào lạ',
+        'Nghệ vàng và Curcumin kết hợp hạt tiêu đen: Cơ chế ức chế ngòi nổ viêm mạn tính NF-kB và tăng sinh khả dụng 2000% nhờ Piperine',
+        'Quả mọng việt quất, dâu tây và Axit Ellagic: Cơ chế bảo vệ đầu mút telomere và ngăn ngừa đứt gãy sợi đôi DNA',
+        'Đậu nành nguyên bản và Isoflavone (Genistein): Sự thật về thụ thể ER-beta bảo vệ và phá tan nỗi sợ vô căn cứ về đậu nành',
+        'Chất xơ hòa tan trong yến mạch, đậu ván và Axit Butyrate: Nguồn thức ăn nuôi tế bào biểu mô đại tràng và củng cố hàng rào miễn dịch niêm mạc',
+        // Nhánh 2: Thói quen đời sống & Cảnh báo tác nhân nguy cơ (Lifestyle & Risk Mitigations)
         'Thịt đỏ chế biến sẵn và ung thư đại trực tràng: Hợp chất Nitrosamine, sắt Heme và cách trung hòa bằng rau xanh giàu diệp lục',
         'Thói quen ăn canh sôi, uống trà nóng trên 65°C: Tổn thương nhiệt vi mô niêm mạc thực quản và quy tắc 5 phút để nguội',
-        'Mầm súp lơ xanh và Sulforaphane: Cơ chế kích hoạt enzym Phase 2 quét sạch chất sinh ung thư trước khi chúng làm hỏng DNA',
         'Vận động thể chất và tế bào NK: Cơ chế cơ bắp tiết Myokine huy động bạch cầu tuần tra và tiêu diệt tế bào tiền ung thư',
         'Đỏ mặt khi uống rượu bia: Thiếu hụt enzym ALDH2 làm tích tụ độc tố Acetaldehyde gây đột biến gen TP53 ở người châu Á',
         'Thực phẩm mốc và độc tố Aflatoxin: Đột biến gen ức chế khối u ở gan và quy tắc bảo quản ngũ cốc an toàn tuyệt đối',
@@ -282,6 +292,7 @@ GỢI Ý CHỦ ĐỀ ĐỜI THƯỜNG / THÓI QUEN SỐNG (BẮT BUỘC MỚI L�
 
 NGUYÊN TẮC BIÊN TẬP CỦA TS. HOÀNG XUÂN CHIẾN (LIFE DISPATCH):
 1. TIẾP CẬN ĐỜI THƯỜNG & DỄ HIỂU: Văn phong ấm áp, gần gũi, bóc tách các thói quen hàng ngày, giúp độc giả đại chúng đọc là hiểu ngay và áp dụng được liền.
+2. ĐỀ TÀI UNG THƯ PHẢI CÂN BẰNG GIỮA CẢNH BÁO NGUY CƠ VÀ CÁC HỢP CHẤT/THỨC ĂN BỔ TRỢ PHÒNG NGỪA: Không chỉ đưa cảnh báo rủi ro mà phải chú trọng các hoạt chất sinh học tự nhiên (Lycopene, Allicin, Sulforaphane, EGCG, Curcumin, Beta-Glucan...) và hướng dẫn cách chế biến, kết hợp thực phẩm trong căn bếp để tối ưu hóa hiệu quả phòng ngừa ung thư.
 2. KHÔNG LẠM DỤNG TỪ NGỮ QUÁ HÀN LÂM: Cơ chế phân tử giải thích mộc mạc, có ẩn dụ sinh động.
 3. TIÊU ĐỀ HẤP DẪN, DỄ HIỂU: Tiêu đề tiếng Việt viết theo văn phong tự nhiên (Sentence case), hấp dẫn nhưng KHÔNG giật gân, phản ánh đúng lợi ích sức khỏe thực tế.
 4. ĐỊNH DẠNG SLUG: Tiếng Việt có hậu tố "-vi", tiếng Anh có hậu tố "-en".

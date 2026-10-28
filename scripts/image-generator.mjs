@@ -167,6 +167,15 @@ export function extractSmartImageKeywords(topic = {}) {
   }
 
   // 1d. Nhóm Dinh dưỡng Phòng ngừa Ung thư Phổ thông (Popular Cancer Prevention Foods)
+  if (/cà chua|ca-chua|tomato|lycopene|dầu ô liu|olive oil/i.test(text)) {
+    queries.push('ripe tomatoes', 'tomatoes on vine', 'fresh tomatoes', 'tomato sauce cooking');
+  }
+  if (/tỏi|toi-|garlic|allicin/i.test(text)) {
+    queries.push('garlic cloves', 'fresh garlic', 'crushed garlic', 'garlic culinary');
+  }
+  if (/nấm|shiitake|maitake|mushroom|beta-glucan/i.test(text)) {
+    queries.push('shiitake mushrooms', 'fresh edible mushrooms', 'mushrooms forest culinary');
+  }
   if (/thịt đỏ|thit-do|thịt xông khói|xúc xích|processed meat|bacon|sausage/i.test(text)) {
     queries.push('fresh raw steak meat culinary', 'charcuterie board artisan ham', 'butcher meat preparation');
   }
@@ -334,7 +343,7 @@ async function fetchFromWikimediaCommons(keyword, currentSlug) {
         const fetchCtrl = new AbortController();
         const fetchTimeout = setTimeout(() => fetchCtrl.abort(), 12000);
         const imgRes = await fetch(fileUrl, {
-          headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Phytocodex/2.0' },
+          headers: { 'User-Agent': 'PhytocodexBot/1.0 (https://phyto-codex.org; info@phyto-codex.org)' },
           signal: fetchCtrl.signal
         });
         clearTimeout(fetchTimeout);

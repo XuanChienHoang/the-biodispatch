@@ -90,6 +90,16 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "lang": "vi",
     "title": "Axit béo chuỗi ngắn Butyrate và bức tường thành niêm mạc ruột: Chiếc chìa khóa biểu sinh hàn gắn rò rỉ và điều hòa miễn dịch"
   },
+  "ca-chua-nau-chin-lycopene-dau-o-liu-phong-ngua-ung-thu-vi": {
+    "slug": "cooked-tomatoes-olive-oil-lycopene-cancer-prevention-en",
+    "lang": "en",
+    "title": "Cooked Tomatoes, Olive Oil, and Lycopene: Why Heat and Lipids Unlock Potent Cellular Protection"
+  },
+  "cooked-tomatoes-olive-oil-lycopene-cancer-prevention-en": {
+    "slug": "ca-chua-nau-chin-lycopene-dau-o-liu-phong-ngua-ung-thu-vi",
+    "lang": "vi",
+    "title": "Cà chua nấu chín, dầu ô liu và Lycopene: Vì sao nhiệt độ và chất béo mở khóa hoạt chất dập tắt gốc tự do bảo vệ tế bào?"
+  },
   "cancer-seed-and-soil-metabolism": {
     "slug": "cancer-seed-and-soil-metabolism-en",
     "lang": "en",
