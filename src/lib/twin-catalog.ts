@@ -40,6 +40,16 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "lang": "vi",
     "title": "Ăn rau trước cơm giúp kiểm soát đường huyết: Bí mật chiếc lưới lọc chất xơ"
   },
+  "an-uong-qua-nong-tren-65-do-ung-thu-thuc-quan-vi": {
+    "slug": "scalding-hot-beverages-esophageal-cancer-risk-en",
+    "lang": "en",
+    "title": "Scalding Beverages Above 65°C: Thermal Mucosal Micro-Trauma, Esophageal Cancer Risk, and the 5-Minute Cooling Rule"
+  },
+  "scalding-hot-beverages-esophageal-cancer-risk-en": {
+    "slug": "an-uong-qua-nong-tren-65-do-ung-thu-thuc-quan-vi",
+    "lang": "vi",
+    "title": "Ăn canh sôi, uống trà nóng trên 65°C: Cơ chế tổn thương nhiệt vi mô dẫn đến ung thư thực quản và quy tắc 5 phút"
+  },
   "anh-nang-ban-mai-khoi-dong-dong-ho-sinh-hoc": {
     "slug": "morning-sunlight-circadian-clock-metabolism",
     "lang": "en",
@@ -450,6 +460,16 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "lang": "vi",
     "title": "Nghịch lý Mitohormesis: Khi stress oxy hóa có kiểm soát trở thành chìa khóa trường thọ"
   },
+  "ngoi-nhieu-te-liet-enzyme-lpl-khi-mau-u-trung-chan-vi": {
+    "slug": "sitting-paralyzes-lpl-enzyme-venous-stasis-en",
+    "lang": "en",
+    "title": "Sitting continuously for over 2 hours shuts down LPL enzyme: Simple micro-movements to restore vascular flow"
+  },
+  "sitting-paralyzes-lpl-enzyme-venous-stasis-en": {
+    "slug": "ngoi-nhieu-te-liet-enzyme-lpl-khi-mau-u-trung-chan-vi",
+    "lang": "vi",
+    "title": "Ngồi làm việc liên tục trên 2 giờ làm tắt ngấm enzyme LPL: Thói quen nhấp nhổm đơn giản giải thoát mạch máu chân"
+  },
   "ngu-trua-20-phut-phuc-hoi-tim-mach": {
     "slug": "power-nap-cardiovascular-health-blood-pressure",
     "lang": "en",
@@ -784,6 +804,16 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "slug": "clearing-zombie-cells-senolytics-and-microscopic-longevity-en",
     "lang": "en",
     "title": "Clearing zombie cells: Senolytics compounds and the mechanism of cellular rejuvenation"
+  },
+  "thit-do-che-bien-san-nitrit-ung-thu-dai-truc-trang-vi": {
+    "slug": "processed-meat-nitrites-colorectal-cancer-risk-en",
+    "lang": "en",
+    "title": "Processed Red Meat and Colorectal Cancer: Nitrosamines, Heme Iron Catalysis, and Safe Dietary Strategies"
+  },
+  "processed-meat-nitrites-colorectal-cancer-risk-en": {
+    "slug": "thit-do-che-bien-san-nitrit-ung-thu-dai-truc-trang-vi",
+    "lang": "vi",
+    "title": "Thịt đỏ chế biến sẵn và ung thư đại trực tràng: Cơ chế Nitrosamine, sắt Heme và giải pháp dinh dưỡng an toàn"
   },
   "thu-tu-an-uong-glp1-duong-huyet-vi": {
     "slug": "meal-sequencing-glp1-glucose-en",

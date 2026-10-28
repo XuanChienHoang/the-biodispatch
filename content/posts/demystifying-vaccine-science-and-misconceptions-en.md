@@ -147,3 +147,4 @@ First, personalize immunization according to your verified medical history. If y
 Second, understand normal reactogenicity. Low-grade fever, localized deltoid tenderness, and transient fatigue within 24 to 48 hours post-injection represent normal physiological biomarkers that your innate immune sensors are actively synthesizing interferon and mobilizing antigen-presenting cells. Hydrate and use over-the-counter paracetamol as needed.
 
 Third, maintain rigorous scientific skepticism toward online medical claims. When encountering alarming health assertions on social platforms, verify the primary source: Is it indexed in peer-reviewed medical databases (PubMed, NEJM, Lancet)? Was there a randomized, double-blind control group? Or does it rely on an unverified anecdote? True preventative health begins with protecting our discernment from predatory misinformation.
+

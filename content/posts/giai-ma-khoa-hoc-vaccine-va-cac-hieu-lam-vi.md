@@ -147,3 +147,4 @@ Thứ nhất, hãy cá nhân hóa việc tiêm phòng dựa trên tiền sử s�
 Thứ hai, hiểu đúng về các phản ứng phụ thông thường. Cảm giác đau tại chỗ tiêm, sốt nhẹ, ớn lạnh và mệt mỏi trong 24 đến 48 giờ sau tiêm là dấu hiệu bình thường cho thấy hệ miễn dịch bẩm sinh của bạn đang hoạt động tích cực, sản sinh interferon và tuyển mộ các tế bào bạch cầu để học hỏi kháng nguyên. Bạn có thể sử dụng paracetamol để hạ sốt và uống nhiều nước, không cần quá lo lắng.
 
 Thứ ba, xây dựng tư duy phản biện khoa học trước các thông tin mạng xã hội. Khi đọc một bài viết gây hoang mang về vaccine, hãy luôn tự đặt câu hỏi: Tác giả là ai? Thông tin này có được đăng trên tạp chí y khoa có bình duyệt độc lập (Peer-reviewed Journal) không? Cỡ mẫu nghiên cứu là bao nhiêu người? Có nhóm đối chứng giả dược hay không? Hay đó chỉ là lời kể giai thoại của một cá nhân vô danh? Bảo vệ sức khỏe của bản thân và gia đình bắt đầu từ việc bảo vệ nhận thức của chúng ta trước những làn sóng thông tin sai lệch.
+

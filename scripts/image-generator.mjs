@@ -72,9 +72,19 @@ function resolveApiKeys() {
  * Kiểm tra xem buffer ảnh có bị trùng lặp MD5 với bài viết khác hay không.
  * Cho phép trùng nếu là phiên bản song ngữ (-vi và -en của cùng một slug gốc).
  */
-export function checkIfImageAlreadyUsed(rawBuffer, currentSlug = '') {
+export async function checkIfImageAlreadyUsed(rawBuffer, currentSlug = '') {
   const currentBase = currentSlug.replace(/-(vi|en)$/, '');
-  const md5 = crypto.createHash('md5').update(rawBuffer).digest('hex');
+
+  let normalizedBuf;
+  try {
+    normalizedBuf = await sharp(rawBuffer)
+      .resize(1280, 720, { fit: 'cover', position: 'centre' })
+      .jpeg({ quality: 86 })
+      .toBuffer();
+  } catch {
+    normalizedBuf = rawBuffer;
+  }
+  const md5 = crypto.createHash('md5').update(normalizedBuf).digest('hex');
 
   if (!fs.existsSync(imagesDir)) return false;
   const files = fs.readdirSync(imagesDir).filter(f => f.endsWith('.jpg'));
@@ -134,7 +144,18 @@ export function extractSmartImageKeywords(topic = {}) {
     );
   }
 
-  // 1c. Nhóm Ung thư, Khối u & Y học thực chứng (Oncology & Cancer Biology)
+  // 1c. Nhóm Dinh dưỡng Phòng ngừa Ung thư Phổ thông (Popular Cancer Prevention Foods - Đặt trước để ưu tiên ảnh ẩm thực thực tế)
+  if (/thịt đỏ|thit-do|thịt xông khói|xúc xích|processed meat|bacon|sausage/i.test(text)) {
+    queries.push('fresh raw steak meat culinary', 'charcuterie board artisan ham', 'butcher meat preparation');
+  }
+  if (/trà nóng|tra-nong|canh sôi|nước nóng|hot tea|scalding|hot beverage|soup/i.test(text)) {
+    queries.push('steaming hot cup of green tea', 'hot tea ceramic cup steam', 'steaming bowl of vegetable soup');
+  }
+  if (/mầm súp lơ|broccoli sprout|sulforaphane/i.test(text)) {
+    queries.push('fresh green broccoli sprouts microgreens', 'broccoli sprouts glass jar', 'fresh organic broccoli heads');
+  }
+
+  // 1d. Nhóm Ung thư, Khối u & Y học thực chứng (Oncology & Cancer Biology)
   if (/ung thư|ung-thu|cancer|oncology|tumor|khối u|hóa trị|chemotherapy|xạ trị|radiation therapy|di căn|metastasis|bài thuốc chữa ung thư/i.test(text)) {
     queries.push(
       'cancer research laboratory microscope',
@@ -143,6 +164,17 @@ export function extractSmartImageKeywords(topic = {}) {
       'biological cell culture petri dish',
       'biomedical laboratory glassware'
     );
+  }
+
+  // 1d. Nhóm Dinh dưỡng Phòng ngừa Ung thư Phổ thông (Popular Cancer Prevention Foods)
+  if (/thịt đỏ|thit-do|thịt xông khói|xúc xích|processed meat|bacon|sausage/i.test(text)) {
+    queries.push('fresh raw steak meat culinary', 'charcuterie board artisan ham', 'butcher meat preparation');
+  }
+  if (/trà nóng|tra-nong|canh sôi|nước nóng|hot tea|scalding|hot beverage|soup/i.test(text)) {
+    queries.push('steaming hot cup of green tea', 'hot tea ceramic cup steam', 'steaming bowl of vegetable soup');
+  }
+  if (/mầm súp lơ|broccoli sprout|sulforaphane/i.test(text)) {
+    queries.push('fresh green broccoli sprouts microgreens', 'broccoli sprouts glass jar', 'fresh organic broccoli heads');
   }
 
   // 2. Nhóm Đời sống / Thói quen ăn uống / Sinh lý học
@@ -227,7 +259,7 @@ async function fetchFromPexels(keyword, apiKey, currentSlug) {
       const arrayBuffer = await imgRes.arrayBuffer();
       const buf = Buffer.from(arrayBuffer);
 
-      if (buf.length > 25000 && !checkIfImageAlreadyUsed(buf, currentSlug)) {
+      if (buf.length > 25000 && !await checkIfImageAlreadyUsed(buf, currentSlug)) {
         return buf;
       }
     }
@@ -259,7 +291,7 @@ async function fetchFromPixabay(keyword, apiKey, currentSlug) {
       const arrayBuffer = await imgRes.arrayBuffer();
       const buf = Buffer.from(arrayBuffer);
 
-      if (buf.length > 25000 && !checkIfImageAlreadyUsed(buf, currentSlug)) {
+      if (buf.length > 25000 && !await checkIfImageAlreadyUsed(buf, currentSlug)) {
         return buf;
       }
     }
@@ -314,7 +346,7 @@ async function fetchFromWikimediaCommons(keyword, currentSlug) {
             const meta = await sharp(buf).metadata();
             if (meta && (meta.format === 'jpeg' || meta.format === 'png' || meta.format === 'webp')) {
               // Kiểm tra tính độc bản chống trùng lặp với bất kỳ bài nào khác
-              if (!checkIfImageAlreadyUsed(buf, currentSlug)) {
+              if (!await checkIfImageAlreadyUsed(buf, currentSlug)) {
                 return buf;
               }
             }
@@ -367,7 +399,7 @@ async function fetchFromOpenverse(keyword, currentSlug) {
             if (buf.length > 25000) {
               const meta = await sharp(buf).metadata();
               if (meta && (meta.format === 'jpeg' || meta.format === 'png' || meta.format === 'webp')) {
-                if (!checkIfImageAlreadyUsed(buf, currentSlug)) {
+                if (!await checkIfImageAlreadyUsed(buf, currentSlug)) {
                   return buf;
                 }
               }

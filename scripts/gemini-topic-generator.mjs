@@ -113,8 +113,26 @@ QUY TẮC BẮT BUỘC:
 12. HỆ THỐNG TAGS THEO TRIỆU CHỨNG (HEALTH GOALS TAXONOMY):
    - tagsVi và tagsEn bắt buộc chứa từ khóa tìm kiếm theo triệu chứng gần gũi (như: giac-ngu, duong-huyet, tim-mach, ruot, nang-luong, lao-hoa, noi-tiet, khop, gan, mat-da) để hệ thống tự động phân loại vào các mục sức khỏe trên trang chủ.`;
 
-  // Ngân hàng 10 trụ cột đề tài bám sát 10 Nhu cầu Sức khỏe Đời sống của độc giả đại chúng
+    // Ngân hàng các trụ cột đề tài bám sát Nhu cầu Sức khỏe Đời sống của độc giả đại chúng
+  // ƯU TIÊN HÀNG ĐẦU THEO CHỈ ĐẠO CỦA TS. HOÀNG XUÂN CHIẾN: Nhóm bài phổ thông về Ung thư & Phòng ngừa
   const DOMAIN_PILLARS = [
+    {
+      domain: 'Phòng ngừa Ung thư, Dinh dưỡng Khoa học & Miễn dịch Tự nhiên (Cancer Prevention & Oncology Wellness)',
+      organ: 'Oncology',
+      goalId: 'cancer-prevention',
+      ideas: [
+        'Thịt đỏ chế biến sẵn và ung thư đại trực tràng: Hợp chất Nitrosamine, sắt Heme và cách trung hòa bằng rau xanh giàu diệp lục',
+        'Thói quen ăn canh sôi, uống trà nóng trên 65°C: Tổn thương nhiệt vi mô niêm mạc thực quản và quy tắc 5 phút để nguội',
+        'Mầm súp lơ xanh và Sulforaphane: Cơ chế kích hoạt enzym Phase 2 quét sạch chất sinh ung thư trước khi chúng làm hỏng DNA',
+        'Vận động thể chất và tế bào NK: Cơ chế cơ bắp tiết Myokine huy động bạch cầu tuần tra và tiêu diệt tế bào tiền ung thư',
+        'Đỏ mặt khi uống rượu bia: Thiếu hụt enzym ALDH2 làm tích tụ độc tố Acetaldehyde gây đột biến gen TP53 ở người châu Á',
+        'Thực phẩm mốc và độc tố Aflatoxin: Đột biến gen ức chế khối u ở gan và quy tắc bảo quản ngũ cốc an toàn tuyệt đối',
+        'Nhiễm vi khuẩn HP (Helicobacter pylori) và ung thư dạ dày: Cơ chế độc tố CagA gây viêm teo niêm mạc và thời điểm vàng cần điều trị',
+        'Virus HPV và ung thư cổ tử cung: Cơ chế protein E6/E7 vô hiệu hóa gen p53 và hiệu quả bảo vệ lên đến 90% của vaccine HPV',
+        'Giấc ngủ ngắt quãng và tác nhân sinh ung Nhóm 2A: Khi sự suy giảm Melatonin về đêm tước đoạt cơ chế sửa chữa đứt gãy DNA',
+        'Dinh dưỡng chuẩn y khoa cho bệnh nhân ung thư: Đập tan hiểu lầm kiêng thịt bỏ đói khối u và cách bảo tồn khối cơ nạc'
+      ]
+    },
     {
       domain: 'Giấc ngủ, Nhịp sinh học & Giảm căng thẳng thần kinh (Sleep & Stress Management)',
       organ: 'Brain',
@@ -234,14 +252,22 @@ QUY TẮC BẮT BUỘC:
   ];
 
   // Lựa chọn ngẫu nhiên một trụ cột và chủ đề chưa từng xuất hiện trên website
-  const randomPillar = DOMAIN_PILLARS[Math.floor(Math.random() * DOMAIN_PILLARS.length)];
-  const availableIdeas = randomPillar.ideas.filter(idea => {
+  // ƯU TIÊN HÀNG ĐẦU THEO CHỈ ĐẠO CỦA TS. HOÀNG XUÂN CHIẾN: Tần suất 45% cho nhóm bài Ung thư & Phòng ngừa
+  let chosenPillar;
+  const isCancerTurn = Math.random() < 0.45;
+  if (isCancerTurn) {
+    chosenPillar = DOMAIN_PILLARS.find(p => p.goalId === 'cancer-prevention') || DOMAIN_PILLARS[0];
+  } else {
+    const otherPillars = DOMAIN_PILLARS.filter(p => p.goalId !== 'cancer-prevention');
+    chosenPillar = otherPillars[Math.floor(Math.random() * otherPillars.length)];
+  }
+  const availableIdeas = chosenPillar.ideas.filter(idea => {
     const col = checkTopicCollision({ titleVi: idea });
     return !col.isDuplicate;
   });
   const randomIdea = availableIdeas.length > 0
     ? availableIdeas[Math.floor(Math.random() * availableIdeas.length)]
-    : randomPillar.ideas[0];
+    : chosenPillar.ideas[0];
 
   const isLifeDispatch = targetTier === 'Life Dispatch';
 
@@ -249,8 +275,8 @@ QUY TẮC BẮT BUỘC:
     ? `Hãy sáng tạo một bài viết đời sống y khoa thường thức dễ hiểu, gần gũi nhưng chuẩn xác khoa học (Tier: "Life Dispatch") song ngữ (Tiếng Việt và Tiếng Anh) cho ấn bản Phytocodex của TS. Hoàng Xuân Chiến.
 
 GỢI Ý CHỦ ĐỀ ĐỜI THƯỜNG / THÓI QUEN SỐNG (BẮT BUỘC MỚI LẠ, CHƯA CÓ TRONG KHO):
-- Lĩnh vực: ${randomPillar.domain}
-- Phân loại cơ quan: "${randomPillar.organ}"
+- Lĩnh vực: ${chosenPillar.domain}
+- Phân loại cơ quan: "${chosenPillar.organ}"
 - Gợi ý chủ đề tham khảo: "${randomIdea}"
 (TUYỆT ĐỐI KHÔNG lặp lại các chủ đề cũ đã có trong danh mục loại trừ ở trên).
 
@@ -263,8 +289,8 @@ NGUYÊN TẮC BIÊN TẬP CỦA TS. HOÀNG XUÂN CHIẾN (LIFE DISPATCH):
     : `Hãy sáng tạo một bài phân tích chuyên khảo y sinh chuyên sâu (Tier: "Clinical Deep-Dive") song ngữ (Tiếng Việt và Tiếng Anh) cho ấn bản Phytocodex của TS. Hoàng Xuân Chiến.
 
 GỢI Ý LĨNH VỰC CHO KỲ NÀY:
-- Lĩnh vực: ${randomPillar.domain}
-- Phân loại cơ quan: "${randomPillar.organ}"
+- Lĩnh vực: ${chosenPillar.domain}
+- Phân loại cơ quan: "${chosenPillar.organ}"
 - Gợi ý chủ đề tham khảo: "${randomIdea}"
 (TUYỆT ĐỐI KHÔNG lặp lại các chủ đề cũ đã có trong danh mục loại trừ ở trên).
 
@@ -292,7 +318,7 @@ TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON SCHEMA VỚI CẤU TRÚC:
   "titleEn": "Tiêu đề tiếng Anh chuẩn mực",
   "excerptVi": "Tóm tắt tiếng Việt",
   "excerptEn": "Tóm tắt tiếng Anh",
-  "organ": "${randomPillar.organ}",
+  "organ": "${chosenPillar.organ}",
   "tier": "${targetTier}",
   "tagsVi": ["Tag 1", "Tag 2", "Tag 3"],
   "tagsEn": ["Tag 1", "Tag 2", "Tag 3"],

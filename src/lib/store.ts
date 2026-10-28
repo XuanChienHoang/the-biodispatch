@@ -4479,7 +4479,7 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Defines cancer cachexia as a multifactorial syndrome characterized by ongoing loss of skeletal muscle mass that cannot be fully reversed by conventional nutritional support and leads to progressive functional impairment. Explains why metabolic starvation exacerbates cachectic mortality.",
     },
   ],
-  "ngoi-nhieu-te-liet-enzyme-lpl-khi-mau-u-trung-chan-vi": [
+"ngoi-nhieu-te-liet-enzyme-lpl-khi-mau-u-trung-chan-vi": [
     {
       ordinal: 1,
       label: "Suppression of skeletal muscle lipoprotein lipase activity during physical inactivity: a molecular reason to maintain daily low-intensity activity",
@@ -4503,6 +4503,60 @@ const SEED_REFS: Record<string, Ref[]> = {
       journal: "J Physiol",
       year: 2003,
       abstract: "Physical inactivity suppresses skeletal muscle lipoprotein lipase (LPL) activity, leading to impaired triglyceride clearance and reduced high-density lipoprotein cholesterol levels. This study demonstrates that muscle unloading dramatically downregulates LPL activity locally in red oxidative muscle fibers, independent of whole-body energy balance.",
+  "thit-do-che-bien-san-nitrit-ung-thu-dai-truc-trang-vi": [
+    {
+      ordinal: 1,
+      label: "Carcinogenicity of consumption of red and processed meat",
+      authors: "Bouvard V, Loomis D, Guyton KZ, et al.",
+      pmid: "26514947",
+      doi: "10.1016/S1470-2045(15)00444-1",
+      design: "International Agency for Research on Cancer (IARC) Monograph Working Group Evaluation",
+      sampleSize: null,
+      journal: "The Lancet Oncology",
+      year: 2015,
+      abstract: "Comprehensive evaluation of the carcinogenicity of red meat and processed meat by 22 scientists from 10 countries. Classified consumption of processed meat as carcinogenic to humans (Group 1) based on sufficient evidence in humans for colorectal cancer, identifying an 18% increased risk per 50g consumed daily.",
+    },
+  ],
+  "processed-meat-nitrites-colorectal-cancer-risk-en": [
+    {
+      ordinal: 1,
+      label: "Carcinogenicity of consumption of red and processed meat",
+      authors: "Bouvard V, Loomis D, Guyton KZ, et al.",
+      pmid: "26514947",
+      doi: "10.1016/S1470-2045(15)00444-1",
+      design: "International Agency for Research on Cancer (IARC) Monograph Working Group Evaluation",
+      sampleSize: null,
+      journal: "The Lancet Oncology",
+      year: 2015,
+      abstract: "Comprehensive evaluation of the carcinogenicity of red meat and processed meat by 22 scientists from 10 countries. Classified consumption of processed meat as carcinogenic to humans (Group 1) based on sufficient evidence in humans for colorectal cancer, identifying an 18% increased risk per 50g consumed daily.",
+    },
+  ],
+  "an-uong-qua-nong-tren-65-do-ung-thu-thuc-quan-vi": [
+    {
+      ordinal: 1,
+      label: "A prospective study of tea drinking temperature and risk of esophageal squamous cell carcinoma",
+      authors: "Islami F, Poustchi H, Pourshams A, et al.",
+      pmid: "30900227",
+      doi: "10.1002/ijc.32220",
+      design: "Prospective Cohort Study (50,045 Participants Followed for >10 Years)",
+      sampleSize: 50045,
+      journal: "International Journal of Cancer",
+      year: 2020,
+      abstract: "Prospective cohort study of 50,045 individuals followed for a median of 10.1 years with measured tea temperature. Drinking tea at 60°C or hotter with consumption of >=700 ml/day was associated with a 90% increased risk of esophageal squamous cell carcinoma compared with drinking tea cooler than 60°C.",
+    },
+  ],
+  "scalding-hot-beverages-esophageal-cancer-risk-en": [
+    {
+      ordinal: 1,
+      label: "A prospective study of tea drinking temperature and risk of esophageal squamous cell carcinoma",
+      authors: "Islami F, Poustchi H, Pourshams A, et al.",
+      pmid: "30900227",
+      doi: "10.1002/ijc.32220",
+      design: "Prospective Cohort Study (50,045 Participants Followed for >10 Years)",
+      sampleSize: 50045,
+      journal: "International Journal of Cancer",
+      year: 2020,
+      abstract: "Prospective cohort study of 50,045 individuals followed for a median of 10.1 years with measured tea temperature. Drinking tea at 60°C or hotter with consumption of >=700 ml/day was associated with a 90% increased risk of esophageal squamous cell carcinoma compared with drinking tea cooler than 60°C.",
     },
   ],
 };
