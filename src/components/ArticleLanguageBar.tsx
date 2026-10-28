@@ -19,6 +19,10 @@ export function ArticleLanguageBar({
     excerpt?: string;
     content?: string;
     lang?: "vi" | "en";
+    brief?: {
+      takeaways?: string[];
+      bottomLine?: string;
+    };
   };
 }) {
   const router = useRouter();

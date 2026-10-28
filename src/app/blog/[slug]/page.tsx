@@ -211,7 +211,7 @@ export default async function BlogPage({ params }: Params) {
   };
 
   return (
-    <main>
+    <main className="w-full max-w-[100vw] overflow-x-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }}
@@ -219,7 +219,7 @@ export default async function BlogPage({ params }: Params) {
 
       {/* ------------- Journal Masthead Header ------------- */}
       <header className="relative overflow-hidden border-b border-slate-hair bg-paper">
-        <div className="relative mx-auto max-w-[1240px] px-6 py-12 lg:px-10 lg:py-20">
+        <div className="relative mx-auto max-w-[1240px] px-4 py-10 sm:px-6 sm:py-12 lg:px-10 lg:py-20">
           <nav className="caps flex flex-wrap items-center gap-2 text-slate-ink">
             <Link href="/" className="hover:text-indigo-deep">
               {isVi ? "Trang chủ" : "Front"}
@@ -241,6 +241,7 @@ export default async function BlogPage({ params }: Params) {
                   excerpt: article.dek,
                   content: article.content,
                   lang: isVi ? "vi" : "en",
+                  brief: article.brief,
                 }}
               />
             </div>
@@ -253,27 +254,27 @@ export default async function BlogPage({ params }: Params) {
                 {article.organ}
               </span>
               <span className="caps flex items-center gap-1.5 rounded-sm border border-indigo-deep/25 px-2.5 py-1.5 text-indigo-deep">
-                <BadgeCheck size={13} className="text-syn-ink" /> {isVi ? "Đối soát Y văn (PubMed / DOI)" : "Literature-Synthesized & EBM-Verified"}
+                <BadgeCheck size={13} className="text-syn-ink shrink-0" /> {isVi ? "Đối soát Y văn (PubMed / DOI)" : "Literature-Synthesized & EBM-Verified"}
               </span>
               <span className="caps flex items-center gap-1.5 rounded-sm border border-indigo-deep/25 px-2.5 py-1.5 text-indigo-deep">
-                <Timer size={13} /> {article.minutes} {isVi ? "phút đọc" : "min read"}
+                <Timer size={13} className="shrink-0" /> {article.minutes} {isVi ? "phút đọc" : "min read"}
               </span>
             </div>
 
-            <h1 className="mt-6 font-display display-lg font-black leading-[0.94] tracking-[-0.04em] text-indigo-deep">
+            <h1 className="mt-6 font-display display-lg font-black leading-[0.94] tracking-[-0.04em] text-indigo-deep break-words">
               {article.title}
             </h1>
 
-            <p className="mt-5 max-w-2xl text-[1.15rem] leading-[1.65] text-indigo-soft">
+            <p className="mt-5 max-w-2xl text-[1.15rem] leading-[1.65] text-indigo-soft break-words">
               {article.dek}
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-indigo-deep/15 pt-5">
               <div className="flex items-center gap-3">
-                <div className="h-8 w-8 rounded-full bg-indigo-deep text-trace font-mono font-bold flex items-center justify-center text-xs">
+                <div className="h-8 w-8 shrink-0 rounded-full bg-indigo-deep text-trace font-mono font-bold flex items-center justify-center text-xs">
                   CH
                 </div>
-                <div>
+                <div className="min-w-0">
                   <span className="caps font-semibold text-indigo-deep block">
                     {isVi ? "TS. Hoàng Xuân Chiến" : (article.author || "Dr. Xuan Chien Hoang")}
                   </span>
@@ -285,10 +286,10 @@ export default async function BlogPage({ params }: Params) {
                 </div>
               </div>
               <span className="caps text-slate-ink">{article.date || "2026-09-23"}</span>
-              <span className="num text-[0.74rem] text-slate-ink">DOI: {article.doi}</span>
+              <span className="num text-[0.74rem] text-slate-ink break-all">DOI: {article.doi}</span>
               {refs.length > 0 && (
-                <span className="caps ml-auto flex items-center gap-1.5 text-indigo-deep">
-                  <Quote size={12} className="text-trace-ink" /> {refs.length} {isVi ? "Tài liệu Y văn Tham chiếu" : "Referenced Literature"}
+                <span className="caps sm:ml-auto flex items-center gap-1.5 text-indigo-deep">
+                  <Quote size={12} className="text-trace-ink shrink-0" /> {refs.length} {isVi ? "Tài liệu Y văn Tham chiếu" : "Referenced Literature"}
                 </span>
               )}
             </div>
@@ -297,12 +298,12 @@ export default async function BlogPage({ params }: Params) {
       </header>
 
       {/* ------------- Article Body ------------- */}
-      <div className="mx-auto max-w-[1240px] px-6 py-14 lg:px-10 lg:py-20">
+      <div className="mx-auto max-w-[1240px] px-4 py-10 sm:px-6 sm:py-14 lg:px-10 lg:py-20 overflow-x-hidden">
         {article.content ? (
-          <div>
+          <div className="max-w-full overflow-x-hidden">
             {/* Top Area: Markdown Content + Sticky Sidebar */}
-            <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_260px] lg:gap-14">
-              <article className="min-w-0 max-w-[72ch] lg:max-w-[80ch] prose-editorial">
+            <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_260px] lg:gap-14">
+              <article className="min-w-0 w-full max-w-full sm:max-w-[72ch] lg:max-w-[80ch] prose-editorial overflow-x-hidden">
                 {/* Mobile Collapsible Table of Contents (Only renders on mobile) */}
                 <TableOfContents content={article.content} isVi={isVi} variant="mobile" />
 
@@ -353,7 +354,7 @@ export default async function BlogPage({ params }: Params) {
                         .replace(/\s+/g, "-")
                         .substring(0, 50);
                       return (
-                        <h2 id={id} className="scroll-mt-24 font-display font-bold" {...props}>
+                        <h2 id={id} className="scroll-mt-24 font-display font-bold break-words" {...props}>
                           {children}
                         </h2>
                       );
@@ -366,7 +367,7 @@ export default async function BlogPage({ params }: Params) {
                         .replace(/\s+/g, "-")
                         .substring(0, 50);
                       return (
-                        <h3 id={id} className="scroll-mt-24 font-display font-bold" {...props}>
+                        <h3 id={id} className="scroll-mt-24 font-display font-bold break-words" {...props}>
                           {children}
                         </h3>
                       );
@@ -386,10 +387,17 @@ export default async function BlogPage({ params }: Params) {
                     },
                     table({ children, ...props }) {
                       return (
-                        <div className="my-8 overflow-x-auto rounded-sm border border-slate-hair">
-                          <table className="w-full text-left" {...props}>
-                            {children}
-                          </table>
+                        <div className="my-7 w-full max-w-full">
+                          <div className="mb-1.5 flex items-center justify-end sm:hidden">
+                            <span className="font-mono text-[10px] text-slate-ink/80">
+                              {isVi ? "↔ Vuốt ngang để xem đầy đủ cột" : "↔ Swipe horizontally for all columns"}
+                            </span>
+                          </div>
+                          <div className="w-full max-w-full overflow-x-auto overscroll-x-contain rounded-sm border border-slate-hair shadow-2xs">
+                            <table className="w-full text-left" {...props}>
+                              {children}
+                            </table>
+                          </div>
                         </div>
                       );
                     },
@@ -455,15 +463,15 @@ export default async function BlogPage({ params }: Params) {
               </aside>
             </div>
 
-            {/* ------------- References Section (Ngay dưới phần kết bài, tràn rộng toàn trang) ------------- */}
+            {/* ------------- References Section (Ngay dưới phần kết bài, cố định khung trên mobile) ------------- */}
             {refs.length > 0 && (
-              <section id="references" className="mt-14 scroll-mt-8 border-t-2 border-indigo-deep pt-8">
+              <section id="references" className="mt-14 scroll-mt-8 border-t-2 border-indigo-deep pt-8 max-w-full overflow-hidden">
                 <div className="flex flex-wrap items-end justify-between gap-4">
-                  <div>
+                  <div className="min-w-0">
                     <span className="caps text-slate-ink">
                       {isVi ? "§ 6 · Tài liệu Tham khảo & Y văn Đối soát" : "§ 6 · References & Primary Evidence"}
                     </span>
-                    <h2 className="mt-2 font-display text-[1.4rem] font-bold leading-tight tracking-[-0.03em] text-indigo-deep">
+                    <h2 className="mt-2 font-display text-[1.4rem] font-bold leading-tight tracking-[-0.03em] text-indigo-deep break-words">
                       {isVi ? "Danh mục Y văn Thực chứng." : "Verified Source List."}
                     </h2>
                   </div>
@@ -474,7 +482,7 @@ export default async function BlogPage({ params }: Params) {
                   </p>
                 </div>
 
-                <ol className="mt-6 grid gap-3">
+                <ol className="mt-6 grid gap-3 max-w-full">
                   {refs.map((r) => {
                     const Icon = designIcon(r.design);
                     const pubmedUrl = r.pmid ? `https://pubmed.ncbi.nlm.nih.gov/${r.pmid}/` : null;
@@ -482,9 +490,9 @@ export default async function BlogPage({ params }: Params) {
                     const primaryUrl = pubmedUrl || doiUrl || "#";
 
                     return (
-                      <li key={r.ordinal} className="group rounded-sm border border-slate-hair bg-paper p-5 transition-all duration-200 hover:border-indigo-deep hover:shadow-md">
-                        <div className="grid gap-x-6 gap-y-3 md:grid-cols-[46px_minmax(0,1fr)_auto]">
-                          <span className="num rounded-sm bg-indigo-deep py-1 text-center text-[0.78rem] text-trace font-bold h-fit">
+                      <li key={r.ordinal} className="group rounded-sm border border-slate-hair bg-paper p-4 sm:p-5 transition-all duration-200 hover:border-indigo-deep hover:shadow-md max-w-full overflow-hidden">
+                        <div className="grid gap-x-6 gap-y-3 md:grid-cols-[46px_minmax(0,1fr)_auto] min-w-0">
+                          <span className="num rounded-sm bg-indigo-deep px-2.5 py-1 text-center text-[0.78rem] text-trace font-bold h-fit w-fit">
                             {String(r.ordinal).padStart(2, "0")}
                           </span>
                           <div className="min-w-0">
@@ -492,27 +500,28 @@ export default async function BlogPage({ params }: Params) {
                               href={primaryUrl}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="font-display text-[1.06rem] font-semibold leading-snug tracking-[-0.01em] text-indigo-deep hover:text-trace-ink hover:underline block"
+                              className="font-display text-[1.02rem] sm:text-[1.06rem] font-semibold leading-snug tracking-[-0.01em] text-indigo-deep hover:text-trace-ink hover:underline block break-words"
                             >
                               {r.label}
                             </a>
-                            <p className="mt-1 text-[0.84rem] text-slate-ink">
+                            <p className="mt-1 text-[0.84rem] text-slate-ink break-words">
                               {r.journal} · {r.year}
                             </p>
-                            <p className="mt-2 max-w-4xl text-[0.88rem] leading-relaxed text-indigo-soft">
+                            <p className="mt-2 max-w-4xl text-[0.86rem] sm:text-[0.88rem] leading-relaxed text-indigo-soft break-words">
                               {r.abstract}
                             </p>
                           </div>
-                          <div className="flex flex-row flex-wrap items-start gap-2 md:flex-col md:items-end">
-                            <span className="caps flex items-center gap-1.5 whitespace-nowrap rounded-sm border border-slate-hair px-2.5 py-1 text-xs text-indigo-soft">
-                              <Icon size={11} className="text-trace-ink" /> {r.design}
+                          <div className="flex flex-row flex-wrap items-start gap-2 md:flex-col md:items-end min-w-0 max-w-full md:max-w-[290px]">
+                            <span className="caps inline-flex items-start gap-1.5 rounded-sm border border-slate-hair px-2.5 py-1 text-xs text-indigo-soft break-words max-w-full leading-snug">
+                              <Icon size={11} className="text-trace-ink shrink-0 mt-0.5" />
+                              <span className="break-words">{r.design}</span>
                             </span>
-                            <span className="num whitespace-nowrap text-[0.74rem] text-slate-ink">
+                            <span className="num text-[0.74rem] text-slate-ink break-words max-w-full md:text-right">
                               {r.sampleSize ? `n = ${r.sampleSize}` : "n = systematic/in-vitro"}
                             </span>
                             
                             {/* Explicit Clickable Source Buttons */}
-                            <div className="mt-2 flex flex-wrap gap-2">
+                            <div className="mt-1 flex flex-wrap gap-2">
                               {pubmedUrl && (
                                 <a
                                   href={pubmedUrl}
@@ -547,7 +556,7 @@ export default async function BlogPage({ params }: Params) {
 
             {/* Interactive Simulation (Dưới danh mục Y văn tham khảo) */}
             {article.gizmo && (
-              <div className="my-14 border-t border-slate-hair pt-8">
+              <div className="my-14 border-t border-slate-hair pt-8 max-w-full overflow-x-hidden">
                 <div className="mb-4 border-l-2 border-trace pl-3">
                   <span className="caps text-trace-ink font-semibold">Interactive Laboratory Simulation</span>
                   <p className="text-xs text-slate-ink">Model calculations execute entirely client-side.</p>
@@ -570,16 +579,16 @@ export default async function BlogPage({ params }: Params) {
               />
 
               {/* Author bio card */}
-              <div className="mt-10 rounded-sm border border-slate-hair bg-paper-tint p-6">
+              <div className="mt-10 rounded-sm border border-slate-hair bg-paper-tint p-5 sm:p-6">
                 <div className="flex items-center gap-4">
-                  <div className="h-12 w-12 rounded-full bg-indigo-deep text-trace font-mono font-bold flex items-center justify-center text-base">
+                  <div className="h-12 w-12 shrink-0 rounded-full bg-indigo-deep text-trace font-mono font-bold flex items-center justify-center text-base">
                     CH
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <h4 className="font-display text-[1.1rem] font-bold text-indigo-deep">
                       {isVi ? "TS. Hoàng Xuân Chiến" : "Dr. Xuan Chien Hoang"}
                     </h4>
-                    <p className="caps text-[0.7rem] text-trace-ink font-medium">
+                    <p className="caps text-[0.7rem] text-trace-ink font-medium break-words">
                       {isVi
                         ? "Tiến sĩ Sinh học Phân tử (Đại học Hamburg) · Sáng lập Lava Health GmbH"
                         : "Doctor of Natural Sciences (Univ. of Hamburg) · Founder, Lava Health GmbH"}

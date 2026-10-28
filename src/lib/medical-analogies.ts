@@ -1315,422 +1315,464 @@ export const CURATED_MEDICAL_ANALOGIES: Record<string, LaymanMedicalBoxData> = {
     ],
   },
   "an-rau-truoc-com-kiem-soat-duong-huyet-vi": {
-    title: "Góc Y Khoa Dễ Hiểu: 3 Mắt Xích Thực Chứng",
-    hook: "Giải mã cơ chế sinh học phân tử đằng sau thói quen đời thường:",
+    title: "Góc Y Khoa Dễ Hiểu: 3 Mắt Xích Thực Chứng Khi Ăn Rau Trước Cơm",
+    hook: "Giải mã cơ chế mạng lưới chất xơ và nhịp tiết GLP-1 giúp làm phẳng đỉnh đường huyết sau ăn:",
     points: [
       {
-        term: "Rau củ giàu chất xơ",
-        layTerm: "Điểm khởi phát cơ chế sinh lý",
+        term: "Màng Lọc Gel Chất Xơ Hòa Tan (Viscous Fiber Mesh)",
+        layTerm: "Đan tấm lưới sinh học lót thành ruột trước khi tinh bột tới",
         analogy: "Chất xơ hòa tan trong rau xanh khi vào ruột giống như chiếc lưới mắt cáo phủ lên niêm mạc; nó làm chậm dòng chảy của đường vào máu thay vì để đường ùa vào tự do.",
       },
       {
-        term: "Hình thành lớp gel nhầy trong ruột non",
-        layTerm: "Mắt xích dẫn truyền tế bào",
-        analogy: "Cơ chế hấp thu và điều phối nhịp điệu sinh học theo các khuyến nghị y tế chính thức.",
+        term: "Làm Chậm Tháo Rỗng Dạ Dày & Kích Hoạt GLP-1",
+        layTerm: "Đánh thức hormone báo no sớm cho tuyến tụy chuẩn bị",
+        analogy: "Rau và chất đạm đi xuống ruột non trước sẽ kích thích tế bào L tiết hormone GLP-1, giúp dạ dày co bóp khoan thai và báo trước cho tuyến tụy tiết insulin nhịp nhàng.",
       },
       {
-        term: "Đường huyết tăng thoai thoải không gây buồn ngủ",
-        layTerm: "Hiệu quả lâm sàng đạt được",
-        analogy: "Tối ưu hóa năng lượng bền bỉ và bảo vệ sức khỏe chuyển hóa dài lâu.",
+        term: "Triệt Tiêu Cơn Buồn Ngủ Sau Ăn Trưa (Reactive Hypoglycemia)",
+        layTerm: "Giữ đường huyết êm ả để não bộ tỉnh táo suốt buổi chiều",
+        analogy: "Khi đường không tăng vọt rồi tụt dốc dựng đứng, não bộ không bị thiếu hụt năng lượng đột ngột lúc 2 giờ chiều và thành mạch máu tránh được stress oxy hóa.",
       },
     ],
   },
   "eating-vegetables-before-carbs-flattens-glucose-spikes-en": {
-    title: "Layman Medical Concept: 3 Evidence-Based Pillars",
-    hook: "Translating physiological mechanisms behind daily lifestyle habits:",
+    title: "Layman Medical Concept: 3 Evidence-Based Pillars of Meal Sequencing",
+    hook: "How soluble fiber matrices and early GLP-1 signaling flatten postprandial glucose spikes:",
     points: [
       {
-        term: "Rau củ giàu chất xơ",
-        layTerm: "Primary physiological trigger",
+        term: "Viscous Soluble Fiber Gel Matrix",
+        layTerm: "Weaving a protective biological mesh across the gut wall",
         analogy: "Soluble dietary fiber acts like a fine molecular mesh lining the intestinal wall, slowing glucose absorption instead of allowing sugar to flood the bloodstream unchecked.",
       },
       {
-        term: "Hình thành lớp gel nhầy trong ruột non",
-        layTerm: "Cellular signaling nexus",
-        analogy: "Circadian and biochemical coordination verified by international medical guidelines.",
+        term: "Delayed Gastric Emptying & Early GLP-1 Release",
+        layTerm: "Waking gut satiety hormones before starches arrive",
+        analogy: "Consuming fiber and protein first stimulates intestinal L-cells to secrete GLP-1, moderating stomach emptying and priming pancreatic beta-cells for smooth insulin release.",
       },
       {
-        term: "Đường huyết tăng thoai thoải không gây buồn ngủ",
-        layTerm: "Clinical takeaway",
-        analogy: "Sustaining cellular vitality and metabolic resilience in daily life.",
+        term: "Eliminating the Post-Lunch Energy Crash",
+        layTerm: "Preventing reactive hypoglycemia and vascular glycation",
+        analogy: "Flattening the post-meal glucose peak by up to 40% prevents the subsequent insulin overshoot that causes afternoon brain fog and protects arterial endothelium.",
       },
     ],
   },
   "vi-sao-an-muon-sau-20h-gay-tich-mo-bung-vi": {
-    title: "Góc Y Khoa Dễ Hiểu: 3 Mắt Xích Thực Chứng",
-    hook: "Giải mã cơ chế sinh học phân tử đằng sau thói quen đời thường:",
+    title: "Góc Y Khoa Dễ Hiểu: 3 Mắt Xích Khiến Ăn Đêm Dễ Tích Mỡ Nội Tạng",
+    hook: "Giải mã xung đột giữa hormone giấc ngủ Melatonin và hormone chuyển hóa đường Insulin:",
     points: [
       {
-        term: "Bóng tối kích hoạt tuyến tùng tiết Melatonin",
-        layTerm: "Điểm khởi phát cơ chế sinh lý",
-        analogy: "Ăn tối muộn giống như bạn chuyển hàng tới một nhà kho đã khóa cổng và tắt đèn; nhân viên không bốc dỡ vào dây chuyền sản xuất được nên đành chất đống tạm vào bãi rác nội tạng.",
+        term: "Nhà Kho Chuyển Hóa Đóng Cửa Lúc 20 Giờ",
+        layTerm: "Điểm khởi phát xung đột nhịp sinh học ban đêm",
+        analogy: "Ăn tối muộn giống như bạn chuyển hàng tới một nhà kho đã khóa cổng và tắt đèn; nhân viên không bốc dỡ vào dây chuyền sản xuất được nên đành chất đống tạm vào bãi mỡ nội tạng.",
       },
       {
-        term: "Melatonin gắn thụ thể MT1/MT2 trên tế bào beta tụy",
-        layTerm: "Mắt xích dẫn truyền tế bào",
-        analogy: "Cơ chế hấp thu và điều phối nhịp điệu sinh học theo các khuyến nghị y tế chính thức.",
+        term: "Melatonin Khóa Thụ Thể MT1/MT2 Trên Tuyến Tụy",
+        layTerm: "Hormone gây ngủ ra lệnh cho tuyến tụy ngừng tiết Insulin",
+        analogy: "Khi trời tối, Melatonin gắn vào thụ thể trên tế bào beta tuyến tụy để cho tụy nghỉ ngơi; nạp tinh bột lúc này khiến đường huyết treo cao gấp đôi so với bữa sáng.",
       },
       {
-        term: "Chuyển hướng tích trữ vào mỡ nội tạng gan và bụng",
-        layTerm: "Hiệu quả lâm sàng đạt được",
-        analogy: "Tối ưu hóa năng lượng bền bỉ và bảo vệ sức khỏe chuyển hóa dài lâu.",
+        term: "Ức Chế Đốt Mỡ & Tăng Tích Trữ Triglyceride Gan",
+        layTerm: "Khoa học thời gian dinh dưỡng (Chrononutrition)",
+        analogy: "Kết thúc bữa tối trước 19h30 giúp insulin hạ thấp hoàn toàn trước khi ngủ, mở khóa enzyme HSL để cơ thể đốt mỡ dự trữ và tự thực bào làm sạch tế bào suốt đêm.",
       },
     ],
   },
   "why-eating-after-8pm-triggers-visceral-fat-storage-en": {
-    title: "Layman Medical Concept: 3 Evidence-Based Pillars",
-    hook: "Translating physiological mechanisms behind daily lifestyle habits:",
+    title: "Layman Medical Concept: 3 Pillars of Late-Night Visceral Fat Storage",
+    hook: "Deconstructing the molecular collision between nocturnal Melatonin and pancreatic Insulin:",
     points: [
       {
-        term: "Bóng tối kích hoạt tuyến tùng tiết Melatonin",
-        layTerm: "Primary physiological trigger",
+        term: "The Closed Metabolic Warehouse After 8 PM",
+        layTerm: "Circadian misalignment between calorie intake and clock genes",
         analogy: "Eating late at night is like delivering raw inventory to a factory after closing time; with assembly lines dormant, raw materials get abandoned in deep visceral storage lockers.",
       },
       {
-        term: "Melatonin gắn thụ thể MT1/MT2 trên tế bào beta tụy",
-        layTerm: "Cellular signaling nexus",
-        analogy: "Circadian and biochemical coordination verified by international medical guidelines.",
+        term: "Melatonin Binding to Pancreatic MT1/MT2 Receptors",
+        layTerm: "The sleep hormone actively suppresses insulin secretion",
+        analogy: "Rising nocturnal melatonin binds directly to beta-cell receptors to put the pancreas to sleep, leaving late-night carbohydrates circulating at elevated levels in the blood.",
       },
       {
-        term: "Chuyển hướng tích trữ vào mỡ nội tạng gan và bụng",
-        layTerm: "Clinical takeaway",
-        analogy: "Sustaining cellular vitality and metabolic resilience in daily life.",
+        term: "Suppressed Lipolysis & Hepatic De Novo Lipogenesis",
+        layTerm: "Chrononutrition strategy for overnight fat oxidation",
+        analogy: "Finishing dinner at least 3 hours before bed allows insulin to return to baseline, unlocking nocturnal fat oxidation and cellular repair while you sleep.",
       },
     ],
   },
   "giam-tao-truoc-bua-an-giam-duong-huyet-vi": {
-    title: "Góc Y Khoa Dễ Hiểu: 3 Mắt Xích Thực Chứng",
-    hook: "Giải mã cơ chế sinh học phân tử đằng sau thói quen đời thường:",
+    title: "Góc Y Khoa Dễ Hiểu: 3 Cơ Chế Hạ Đường Huyết Của Giấm Táo",
+    hook: "Giải mã tác động sinh hóa của Acid Acetic lên enzyme tiêu hóa tinh bột và cơ vân:",
     points: [
       {
-        term: "Uống giấm táo pha loãng trước ăn",
-        layTerm: "Điểm khởi phát cơ chế sinh lý",
-        analogy: "Acid acetic trong giấm giống như một chiếc kẹp tạm thời kẹp vào chiếc kéo cắt tinh bột trong ruột; nó làm kéo cắt chậm lại giúp đường giải phóng từ từ.",
+        term: "Hãm Phanh Enzyme Cắt Tinh Bột (Alpha-Amylase)",
+        layTerm: "Làm chậm tốc độ phân giải cơm bún thành đường đơn",
+        analogy: "Acid acetic trong giấm giống như một chiếc kẹp tạm thời kẹp vào chiếc kéo cắt tinh bột trong ruột; nó làm kéo cắt chậm lại giúp đường giải phóng từ từ vào máu.",
       },
       {
-        term: "Acid Acetic ức chế men Alpha-Amylase và Disaccharidase",
-        layTerm: "Mắt xích dẫn truyền tế bào",
-        analogy: "Cơ chế hấp thu và điều phối nhịp điệu sinh học theo các khuyến nghị y tế chính thức.",
+        term: "Kích Hoạt Kênh Hút Đường GLUT4 Tại Cơ Bắp",
+        layTerm: "Mở rộng cửa kho cơ vân để thu gom glucose nhanh chóng",
+        analogy: "Khi vào máu, acetate kích hoạt cảm biến năng lượng AMPK trong tế bào cơ, thúc đẩy các cổng GLUT4 mở rộng để hút đường từ máu vào dự trữ dưới dạng glycogen.",
       },
       {
-        term: "Hút đường vào cơ không cần quá nhiều Insulin",
-        layTerm: "Hiệu quả lâm sàng đạt được",
-        analogy: "Tối ưu hóa năng lượng bền bỉ và bảo vệ sức khỏe chuyển hóa dài lâu.",
+        term: "Nguyên Tắc Pha Loãng Bảo Vệ Men Răng & Dạ Dày",
+        layTerm: "Cách dùng an toàn chuẩn y khoa thực chứng",
+        analogy: "Luôn pha loãng 1 thìa canh giấm táo (15ml) trong một cốc nước lớn 250ml và uống bằng ống hút trước bữa nhiều tinh bột để đạt hiệu quả giảm 20-30% đỉnh đường huyết mà không hại men răng.",
       },
     ],
   },
   "apple-cider-vinegar-before-meals-glucose-blunting-en": {
-    title: "Layman Medical Concept: 3 Evidence-Based Pillars",
-    hook: "Translating physiological mechanisms behind daily lifestyle habits:",
+    title: "Layman Medical Concept: 3 Glycemic Mechanisms of Apple Cider Vinegar",
+    hook: "How acetic acid modulates brush-border digestive enzymes and skeletal muscle glucose uptake:",
     points: [
       {
-        term: "Uống giấm táo pha loãng trước ăn",
-        layTerm: "Primary physiological trigger",
+        term: "Inhibition of Brush-Border Alpha-Amylase",
+        layTerm: "Slowing the enzymatic cleavage of complex starches",
         analogy: "Acetic acid acts like a temporary safety clamp on digestive molecular shears, slowing carbohydrate cleavage so glucose enters the bloodstream at an orderly pace.",
       },
       {
-        term: "Acid Acetic ức chế men Alpha-Amylase và Disaccharidase",
-        layTerm: "Cellular signaling nexus",
-        analogy: "Circadian and biochemical coordination verified by international medical guidelines.",
+        term: "AMPK Activation & Skeletal Muscle GLUT4 Translocation",
+        layTerm: "Opening muscular storage gates to clear circulating glucose",
+        analogy: "Absorbed acetate activates intracellular AMPK sensors in skeletal muscle, deploying GLUT4 transporters to sponge glucose out of circulation into glycogen stores.",
       },
       {
-        term: "Hút đường vào cơ không cần quá nhiều Insulin",
-        layTerm: "Clinical takeaway",
-        analogy: "Sustaining cellular vitality and metabolic resilience in daily life.",
+        term: "Clinical Dilution Protocol for Enamel & Mucosal Safety",
+        layTerm: "Safe evidence-based dosing before starchy meals",
+        analogy: "Always dilute 15 mL (1 tablespoon) of vinegar in 250 mL of water before high-glycemic meals to blunt glucose spikes by 20-30% while protecting tooth enamel.",
       },
     ],
   },
   "anh-sang-xanh-ban-dem-pha-vo-giac-ngu-vi": {
-    title: "Góc Y Khoa Dễ Hiểu: 3 Mắt Xích Thực Chứng",
-    hook: "Giải mã cơ chế sinh học phân tử đằng sau thói quen đời thường:",
+    title: "Góc Y Khoa Dễ Hiểu: 3 Tác Hại Của Ánh Sáng Xanh Ban Đêm",
+    hook: "Giải mã đường truyền quang học từ võng mạc tới tuyến tùng làm đứt gãy giấc ngủ sâu:",
     points: [
       {
-        term: "Ánh sáng xanh 460-480nm xuyên qua mắt",
-        layTerm: "Điểm khởi phát cơ chế sinh lý",
+        term: "Đánh Lừa Đồng Hồ Trung Tâm Bằng Bước Sóng 460-480nm",
+        layTerm: "Báo hiệu giả tạo cho bộ não rằng trời đang giữa trưa",
         analogy: "Nhìn vào màn hình điện thoại trong bóng tối giống như bạn chĩa một ngọn hải đăng rực rỡ vào mắt; các tế bào cảm quang lập tức bấm chuông báo thức khiến não tưởng trời đang đứng bóng trưa.",
       },
       {
-        term: "Kích hoạt tế bào hạch võng mạc nhạy quang ipRGC",
-        layTerm: "Mắt xích dẫn truyền tế bào",
-        analogy: "Cơ chế hấp thu và điều phối nhịp điệu sinh học theo các khuyến nghị y tế chính thức.",
+        term: "Tế Bào Hạch Võng Mạc Nhạy Quang (ipRGC & Melanopsin)",
+        layTerm: "Công tắc khóa chặt nhà máy sản xuất hormone Melatonin",
+        analogy: "Ánh sáng xanh kích thích sắc tố Melanopsin gửi tín hiệu điện thẳng về nhân trên giao thoa thị giác (SCN), làm sụt giảm hơn 50% lượng Melatonin và đẩy lùi cơn buồn ngủ 90 phút.",
       },
       {
-        term: "Melatonin bị chặn đứng, ngủ chập chờn",
-        layTerm: "Hiệu quả lâm sàng đạt được",
-        analogy: "Tối ưu hóa năng lượng bền bỉ và bảo vệ sức khỏe chuyển hóa dài lâu.",
+        term: "Mất Pha Ngủ Sâu Rửa Trôi Độc Tố Thần Kinh (Glymphatic)",
+        layTerm: "Vì sao ngủ đủ 8 tiếng sau khi lướt điện thoại vẫn mệt mỏi",
+        analogy: "Thiếu Melatonin làm giảm giấc ngủ sóng chậm (SWS), khiến hệ thống ống nước Glymphatic của não không thể mở van dọn sạch rác chuyển hóa Beta-amyloid sau một ngày làm việc.",
       },
     ],
   },
   "blue-light-screen-time-disrupts-deep-sleep-en": {
-    title: "Layman Medical Concept: 3 Evidence-Based Pillars",
-    hook: "Translating physiological mechanisms behind daily lifestyle habits:",
+    title: "Layman Medical Concept: 3 Neural Pathways of Nocturnal Blue Light",
+    hook: "How 460-480nm photons hijack retinal melanopsin and suppress restorative slow-wave sleep:",
     points: [
       {
-        term: "Ánh sáng xanh 460-480nm xuyên qua mắt",
-        layTerm: "Primary physiological trigger",
+        term: "Solar Trickery via 460-480nm Short-Wavelength Light",
+        layTerm: "Convincing your master circadian pacemaker that it is noon",
         analogy: "Staring at a bright screen in a pitch-black bedroom is like beaming a miniature lighthouse directly onto your retina; your circadian pacemaker assumes it is noon and cancels nocturnal cleanup.",
       },
       {
-        term: "Kích hoạt tế bào hạch võng mạc nhạy quang ipRGC",
-        layTerm: "Cellular signaling nexus",
-        analogy: "Circadian and biochemical coordination verified by international medical guidelines.",
+        term: "Retinal ipRGC Activation & Pineal Melatonin Blockade",
+        layTerm: "Shutting down the pineal gland's darkness hormone",
+        analogy: "Melanopsin photoreceptors fire direct neural signals to the suprachiasmatic nucleus, suppressing pineal melatonin synthesis by over 50% and delaying sleep onset by 90 minutes.",
       },
       {
-        term: "Melatonin bị chặn đứng, ngủ chập chờn",
-        layTerm: "Clinical takeaway",
-        analogy: "Sustaining cellular vitality and metabolic resilience in daily life.",
+        term: "Impaired Slow-Wave Sleep & Glymphatic Brain Clearance",
+        layTerm: "Why 8 hours of screen-fragmented sleep still leaves you exhausted",
+        analogy: "Without a robust melatonin surge, deep delta-wave sleep shrinks, preventing the brain's glymphatic plumbing from flushing out neurotoxic metabolic waste overnight.",
       },
     ],
   },
   "tra-xanh-l-theanine-va-caffeine-tinh-tao-em-ai-vi": {
-    title: "Góc Y Khoa Dễ Hiểu: 3 Mắt Xích Thực Chứng",
-    hook: "Giải mã cơ chế sinh học phân tử đằng sau thói quen đời thường:",
+    title: "Góc Y Khoa Dễ Hiểu: 3 Mắt Xích Tỉnh Táo Êm Ái Của Trà Xanh",
+    hook: "Sự phối hợp cộng hưởng giữa L-Theanine và Caffeine tạo nên trạng thái tập trung tĩnh tại:",
     points: [
       {
-        term: "Uống trà xanh giàu L-Theanine & Caffeine",
-        layTerm: "Điểm khởi phát cơ chế sinh lý",
+        term: "Sự Kết Hợp Giữa Bàn Đạp Ga Và Hệ Thống Phanh Êm",
+        layTerm: "Tỉnh táo sắc bén nhưng không tim đập nhanh hay bồn chồn",
         analogy: "Caffeine trong trà giống như bàn đạp ga phóng nhanh về phía trước, trong khi L-Theanine là chiếc phanh tái sinh mượt mà; cả hai phối hợp biến năng lượng thành một chuyến đi êm ái.",
       },
       {
-        term: "L-Theanine vượt qua hàng rào máu não trong 30 phút",
-        layTerm: "Mắt xích dẫn truyền tế bào",
-        analogy: "Cơ chế hấp thu và điều phối nhịp điệu sinh học theo các khuyến nghị y tế chính thức.",
+        term: "L-Theanine Vượt Hàng Rào Máu Não Kích Hoạt Sóng Alpha",
+        layTerm: "Đưa bộ não vào tần số tập trung thư thái sau 30-45 phút",
+        analogy: "Axit amin L-Theanine đi thẳng vào não bộ, làm tăng chất dẫn truyền làm dịu GABA và kích thích sóng não Alpha (8-12 Hz), giúp dập tắt cảm giác lo âu do caffeine đơn độc gây ra.",
       },
       {
-        term: "Tập trung sâu điềm tĩnh, không lo âu bồn chồn",
-        layTerm: "Hiệu quả lâm sàng đạt được",
-        analogy: "Tối ưu hóa năng lượng bền bỉ và bảo vệ sức khỏe chuyển hóa dài lâu.",
+        term: "Bảo Vệ Mạch Máu & Duy Trì Năng Lượng Không Sập Nguồn",
+        layTerm: "Khác biệt dược động học giữa trà xanh và cà phê đậm đặc",
+        analogy: "L-Theanine đối kháng lại tác dụng co mạch của caffeine, giữ huyết áp ổn định và duy trì sự tập trung trí óc bền bỉ suốt 4-5 giờ mà không gây tụt dốc năng lượng.",
       },
     ],
   },
   "green-tea-l-theanine-and-caffeine-smooth-focus-en": {
-    title: "Layman Medical Concept: 3 Evidence-Based Pillars",
-    hook: "Translating physiological mechanisms behind daily lifestyle habits:",
+    title: "Layman Medical Concept: 3 Neurochemical Synergies of Green Tea",
+    hook: "How L-Theanine and Caffeine co-orchestrate calm, jitter-free cognitive performance:",
     points: [
       {
-        term: "Uống trà xanh giàu L-Theanine & Caffeine",
-        layTerm: "Primary physiological trigger",
+        term: "The Accelerator and Hydraulic Brake Synergy",
+        layTerm: "High cognitive alertness without cardiovascular jitters",
         analogy: "Caffeine acts like an accelerator pedal, while L-Theanine functions as a precision hydraulic brake; together they engineer high cognitive velocity without engine overheating.",
       },
       {
-        term: "L-Theanine vượt qua hàng rào máu não trong 30 phút",
-        layTerm: "Cellular signaling nexus",
-        analogy: "Circadian and biochemical coordination verified by international medical guidelines.",
+        term: "Blood-Brain Barrier Transit & Alpha-Wave Induction",
+        layTerm: "Tuning cortical oscillations to 8-12 Hz within 40 minutes",
+        analogy: "L-Theanine crosses the blood-brain barrier to elevate calming GABA levels and amplify EEG Alpha waves, fostering a state of relaxed, laser-sharp focus.",
       },
       {
-        term: "Tập trung sâu điềm tĩnh, không lo âu bồn chồn",
-        layTerm: "Clinical takeaway",
-        analogy: "Sustaining cellular vitality and metabolic resilience in daily life.",
+        term: "Vasoprotective Balance & Sustained Executive Attention",
+        layTerm: "Eliminating vasoconstriction and the midday crash",
+        analogy: "By counteracting caffeine-induced vasoconstriction, L-Theanine stabilizes blood pressure and sustains accuracy on complex cognitive tasks for hours.",
       },
     ],
   },
   "nuoc-uong-bu-khoang-dien-giai-khi-tap-the-duc-vi": {
-    title: "Góc Y Khoa Dễ Hiểu: 3 Mắt Xích Thực Chứng",
-    hook: "Giải mã cơ chế sinh học phân tử đằng sau thói quen đời thường:",
+    title: "Góc Y Khoa Dễ Hiểu: 3 Nguyên Tắc Bù Nước & Điện Giải Khi Tập Luyện",
+    hook: "Giải mã áp suất thẩm thấu tế bào và cơ chế đồng vận chuyển Natri-Glucose:",
     points: [
       {
-        term: "Vận động mạnh đổ nhiều mồ hôi mất nước & Natri",
-        layTerm: "Điểm khởi phát cơ chế sinh lý",
-        analogy: "Tế bào cơ thể giống như một quả dưa hấu ngâm trong nước muối; nếu bạn đột ngột đổ toàn nước lã vào, nước sẽ ùa vào trong làm dưa úng nước và trương phình.",
+        term: "Cân Bằng Áp Suất Thẩm Thấu Màng Tế Bào (Osmolarity)",
+        layTerm: "Vì sao uống quá nhiều nước lọc tinh khiết khi đổ mồ hôi lại nguy hiểm",
+        analogy: "Tế bào cơ thể giống như một quả dưa hấu ngâm trong nước muối; nếu bạn đột ngột đổ toàn nước lã vào khi vừa mất muối qua mồ hôi, nước sẽ ùa vào trong làm tế bào trương phình.",
       },
       {
-        term: "Uống ồ ạt nước lọc không khoáng",
-        layTerm: "Mắt xích dẫn truyền tế bào",
-        analogy: "Cơ chế hấp thu và điều phối nhịp điệu sinh học theo các khuyến nghị y tế chính thức.",
+        term: "Cổng Đồng Vận Chuyển SGLT1 Tại Ruột Non",
+        layTerm: "Chiếc cửa xoay đôi cần cả Natri và một chút Glucose để hút nước",
+        analogy: "Trên thành ruột non có các cổng SGLT1 hoạt động như cửa xoay hai chìa: khi có mặt đồng thời ion Natri và một lượng nhỏ đường glucose, tốc độ kéo phân tử nước vào máu nhanh gấp 3-4 lần nước lọc.",
       },
       {
-        term: "Chuột rút, đau đầu, mệt mỏi uể oải",
-        layTerm: "Hiệu quả lâm sàng đạt được",
-        analogy: "Tối ưu hóa năng lượng bền bỉ và bảo vệ sức khỏe chuyển hóa dài lâu.",
+        term: "Ngăn Ngừa Chuột Rút & Bảo Vệ Dẫn Truyền Thần Kinh Cơ",
+        layTerm: "Công thức bù khoáng chuẩn khi vận động trên 60 phút",
+        analogy: "Bổ sung dung dịch có 300-500mg Natri và 100-200mg Kali mỗi lít nước giúp duy trì điện thế màng tế bào cơ vân, dập tắt nguy cơ chuột rút và kiệt sức do nhiệt.",
       },
     ],
   },
   "hydration-electrolytes-cellular-osmosis-workout-en": {
-    title: "Layman Medical Concept: 3 Evidence-Based Pillars",
-    hook: "Translating physiological mechanisms behind daily lifestyle habits:",
+    title: "Layman Medical Concept: 3 Pillars of Cellular Hydration & Osmosis",
+    hook: "Understanding extracellular sodium balance and SGLT1 intestinal water co-transport:",
     points: [
       {
-        term: "Vận động mạnh đổ nhiều mồ hôi mất nước & Natri",
-        layTerm: "Primary physiological trigger",
+        term: "Extracellular Osmotic Equilibrium",
+        layTerm: "Why chugging plain water after heavy sweating dilutes blood sodium",
         analogy: "Your cells behave like delicate water balloons suspended in a saline bath; flooding the outer fluid with pure fresh water forces water inward until the balloons stretch and strain.",
       },
       {
-        term: "Uống ồ ạt nước lọc không khoáng",
-        layTerm: "Cellular signaling nexus",
-        analogy: "Circadian and biochemical coordination verified by international medical guidelines.",
+        term: "Intestinal SGLT1 Sodium-Glucose Co-Transport",
+        layTerm: "The dual-key molecular turnstile accelerating water uptake",
+        analogy: "Small intestinal SGLT1 transporters act like a two-key turnstile: pairing sodium ions with a small amount of glucose pulls hundreds of water molecules into circulation rapidly.",
       },
       {
-        term: "Chuột rút, đau đầu, mệt mỏi uể oải",
-        layTerm: "Clinical takeaway",
-        analogy: "Sustaining cellular vitality and metabolic resilience in daily life.",
+        term: "Neuromuscular Action Potentials & Cramp Prevention",
+        layTerm: "Maintaining electrolyte gradients during prolonged exertion",
+        analogy: "Replenishing sodium and potassium preserves the electrical voltage across muscle fibers, preventing exercise-associated muscle cramps and cardiovascular drift.",
       },
     ],
   },
   "tam-nuoc-nong-hay-nuoc-lanh-truoc-khi-ngu-vi": {
-    title: "Góc Y Khoa Dễ Hiểu: 3 Mắt Xích Thực Chứng",
-    hook: "Giải mã cơ chế sinh học phân tử đằng sau thói quen đời thường:",
+    title: "Góc Y Khoa Dễ Hiểu: 3 Bước Hạ Thân Nhiệt Để Ngủ Sâu Khi Tắm Nước Ấm",
+    hook: "Giải mã nghịch lý sinh lý học: Dùng nước ấm 40-42°C để làm mát lõi cơ thể trước giờ ngủ:",
     points: [
       {
-        term: "Tắm nước ấm 40-42°C trước giờ ngủ 90 phút",
-        layTerm: "Điểm khởi phát cơ chế sinh lý",
-        analogy: "Tắm nước ấm giống như bạn mở tung các cánh cửa sổ ở tầng trên để hơi nóng trong nhà thoát hết ra ngoài; chỉ ít phút sau, toàn bộ căn phòng sẽ mát lạnh dễ chịu.",
+        term: "Nghịch Lý Mở Cửa Sổ Thoát Nhiệt (Warm Bath Effect)",
+        layTerm: "Tắm nước ấm trước giờ ngủ 90 phút để làm mát bên trong cơ thể",
+        analogy: "Tắm nước ấm giống như bạn mở tung các cánh cửa sổ ở tầng trên để hơi nóng trong nhà thoát hết ra ngoài; chỉ ít phút sau khi bước ra khỏi phòng tắm, toàn bộ lõi cơ thể sẽ mát dịu.",
       },
       {
-        term: "Giãn nở các mao mạch đầu chi tại bàn tay và bàn chân",
-        layTerm: "Mắt xích dẫn truyền tế bào",
-        analogy: "Cơ chế hấp thu và điều phối nhịp điệu sinh học theo các khuyến nghị y tế chính thức.",
+        term: "Giãn Đám Rối Mạch Máu Đầu Chi (Bàn Tay & Bàn Chân)",
+        layTerm: "Biến lòng bàn tay và bàn chân thành bộ tản nhiệt sinh học",
+        analogy: "Nước ấm 40-42°C làm giãn nở các nối thông động-tĩnh mạch (AVAs) ở tay chân, bơm máu nóng từ tim và nội tạng ra ngoài da để bức xạ nhiệt nhanh chóng ra không khí.",
       },
       {
-        term: "Kích hoạt trung tâm điều hòa giấc ngủ tại vùng dưới đồi",
-        layTerm: "Hiệu quả lâm sàng đạt được",
-        analogy: "Tối ưu hóa năng lượng bền bỉ và bảo vệ sức khỏe chuyển hóa dài lâu.",
+        term: "Hạ 1°C Thân Nhiệt Lõi Đánh Thức Trung Khu Giấc Ngủ",
+        layTerm: "Tín hiệu vật lý bắt buộc để não bộ bước vào giấc ngủ sâu",
+        analogy: "Khi nhiệt độ lõi cơ thể hạ xuống khoảng 0.5-1°C, các tế bào thần kinh nhạy nhiệt tại vùng dưới đồi lập tức phát lệnh rút ngắn 36% thời gian trằn trọc và tăng độ sâu giấc ngủ.",
       },
     ],
   },
   "warm-bath-effect-on-core-body-temperature-sleep-en": {
-    title: "Layman Medical Concept: 3 Evidence-Based Pillars",
-    hook: "Translating physiological mechanisms behind daily lifestyle habits:",
+    title: "Layman Medical Concept: 3 Thermoregulatory Steps of the Warm Bath Effect",
+    hook: "How a 40-42°C bath 90 minutes before bed paradoxically cools core temperature to induce deep sleep:",
     points: [
       {
-        term: "Tắm nước ấm 40-42°C trước giờ ngủ 90 phút",
-        layTerm: "Primary physiological trigger",
-        analogy: "A warm bath acts like opening all the upstairs thermal windows in a house; dumping heat through the roof cools down the entire living room within minutes.",
+        term: "The Thermal Window Paradox",
+        layTerm: "Using external warmth to dump internal core body heat",
+        analogy: "A warm bath acts like opening all the upstairs thermal windows in a house; dumping heat through the extremities cools down the internal core within minutes of stepping out.",
       },
       {
-        term: "Giãn nở các mao mạch đầu chi tại bàn tay và bàn chân",
-        layTerm: "Cellular signaling nexus",
-        analogy: "Circadian and biochemical coordination verified by international medical guidelines.",
+        term: "Distal Vasodilation in Glabrous Skin (Hands & Feet)",
+        layTerm: "Activating biological radiators in your palms and soles",
+        analogy: "Warm water dilates specialized arteriovenous anastomoses (AVAs) in the hands and feet, shuttling warm blood from deep organs to the skin surface for rapid heat dissipation.",
       },
       {
-        term: "Kích hoạt trung tâm điều hòa giấc ngủ tại vùng dưới đồi",
-        layTerm: "Clinical takeaway",
-        analogy: "Sustaining cellular vitality and metabolic resilience in daily life.",
+        term: "The 1°C Core Temperature Drop & Hypothalamic Sleep Onset",
+        layTerm: "The mandatory thermal cue for slow-wave sleep architecture",
+        analogy: "A steep decline in core body temperature signals thermosensitive neurons in the preoptic hypothalamus to initiate sleep, cutting sleep latency by 36%.",
       },
     ],
   },
   "muoi-an-va-huyet-ap-nghich-ly-ti-le-natri-kali-vi": {
-    title: "Góc Y Khoa Dễ Hiểu: 3 Mắt Xích Thực Chứng",
-    hook: "Giải mã cơ chế sinh học phân tử đằng sau thói quen đời thường:",
+    title: "Góc Y Khoa Dễ Hiểu: 3 Mắt Xích Của Tỉ Lệ Natri / Kali Với Huyết Áp",
+    hook: "Vì sao ăn thêm rau củ giàu Kali quan trọng không kém việc giảm mặn trong kiểm soát huyết áp:",
     points: [
       {
-        term: "Khẩu phần ăn thiếu rau củ giàu Kali",
-        layTerm: "Điểm khởi phát cơ chế sinh lý",
-        analogy: "Natri và Kali giống như hai bên của một chiếc bập bênh áp lực; thay vì chỉ cố hạ bên Natri xuống, bạn chỉ cần nâng bên Kali lên là chiếc bập bênh sẽ lập tức cân bằng hoàn hảo.",
+        term: "Chiếc Bập Bênh Áp Lực Mạch Máu (Na+/K+ Ratio)",
+        layTerm: "Sự mất cân đối giữa thừa muối Natri và thiếu hụt Kali tự nhiên",
+        analogy: "Natri và Kali giống như hai bên của một chiếc bập bênh áp lực; thay vì chỉ cố hạ bên Natri xuống, bạn cần nâng bên Kali từ rau xanh lên để chiếc bập bênh mạch máu cân bằng hoàn hảo.",
       },
       {
-        term: "Tỉ số Na+/K+ trong máu tăng cao",
-        layTerm: "Mắt xích dẫn truyền tế bào",
-        analogy: "Cơ chế hấp thu và điều phối nhịp điệu sinh học theo các khuyến nghị y tế chính thức.",
+        term: "Công Tắc Thải Muối Tại Thận (NCC Cotransporter)",
+        layTerm: "Kali ra lệnh cho thận mở van xả lượng muối Natri dư thừa",
+        analogy: "Khi khẩu phần ăn dồi dào Kali, thận sẽ tự động tắt bớt các kênh tái hấp thu muối (NCC) ở ống lượn xa, giúp đẩy lượng Natri và nước dư thừa ra ngoài qua nước tiểu.",
       },
       {
-        term: "Huyết áp tâm thu và tâm trương tăng vọt",
-        layTerm: "Hiệu quả lâm sàng đạt được",
-        analogy: "Tối ưu hóa năng lượng bền bỉ và bảo vệ sức khỏe chuyển hóa dài lâu.",
+        term: "Làm Mềm Thành Động Mạch & Giảm Nguy Cơ Đột Quỵ",
+        layTerm: "Ứng dụng dinh dưỡng chuẩn DASH trên bàn ăn Việt",
+        analogy: "Kết hợp giảm nước chấm mặn với việc tăng rau lá xanh, chuối, khoai lang và các loại đậu giúp hạ huyết áp tâm thu 5-8 mmHg và giảm 24% nguy cơ đột quỵ.",
       },
     ],
   },
   "salt-blood-pressure-sodium-potassium-ratio-paradox-en": {
-    title: "Layman Medical Concept: 3 Evidence-Based Pillars",
-    hook: "Translating physiological mechanisms behind daily lifestyle habits:",
+    title: "Layman Medical Concept: 3 Pillars of the Sodium-to-Potassium Ratio",
+    hook: "Why boosting dietary potassium is just as critical as restricting sodium for vascular health:",
     points: [
       {
-        term: "Khẩu phần ăn thiếu rau củ giàu Kali",
-        layTerm: "Primary physiological trigger",
-        analogy: "Sodium and Potassium function like opposite seats on a vascular seesaw; rather than obsessively cutting sodium, elevating dietary potassium naturally restores hemodynamic balance.",
+        term: "The Hemodynamic Sodium-Potassium Seesaw",
+        layTerm: "Balancing extracellular fluid volume and arterial tension",
+        analogy: "Sodium and Potassium function like opposite seats on a vascular seesaw; rather than obsessively cutting sodium alone, elevating dietary potassium naturally restores hemodynamic balance.",
       },
       {
-        term: "Tỉ số Na+/K+ trong máu tăng cao",
-        layTerm: "Cellular signaling nexus",
-        analogy: "Circadian and biochemical coordination verified by international medical guidelines.",
+        term: "Renal Potassium Sensing & Natriuresis (The NCC Switch)",
+        layTerm: "How dietary potassium commands the kidneys to flush excess salt",
+        analogy: "High plasma potassium deactivates the renal sodium-chloride cotransporter (NCC) in the distal tubule, acting as a natural diuretic that flushes excess sodium and water.",
       },
       {
-        term: "Huyết áp tâm thu và tâm trương tăng vọt",
-        layTerm: "Clinical takeaway",
-        analogy: "Sustaining cellular vitality and metabolic resilience in daily life.",
+        term: "Endothelial Hyperpolarization & Stroke Risk Reduction",
+        layTerm: "Relaxing vascular smooth muscle through whole-food nutrition",
+        analogy: "Shifting toward potassium-rich leafy greens, legumes, and tubers hyperpolarizes arterial smooth muscle cells, lowering systolic pressure by 5-8 mmHg.",
       },
     ],
   },
   "tinh-bot-khang-com-nguoi-nuoi-vi-khuan-ruot-vi": {
-    title: "Góc Y Khoa Dễ Hiểu: 3 Mắt Xích Thực Chứng",
-    hook: "Giải mã cơ chế sinh học phân tử đằng sau thói quen đời thường:",
+    title: "Góc Y Khoa Dễ Hiểu: 3 Biến Đổi Của Tinh Bột Kháng Trong Cơm Nguội",
+    hook: "Giải mã quá trình thoái hóa tinh bột (Retrogradation) biến cơm nguội thành đại tiệc cho lợi khuẩn:",
     points: [
       {
-        term: "Cơm nóng được làm mát qua đêm ở 4°C",
-        layTerm: "Điểm khởi phát cơ chế sinh lý",
-        analogy: "Làm lạnh cơm giống như việc cuộn chặt những sợi len tinh bột thành một cuộn len thắt nút; chiếc kéo enzyme ở dạ dày không cắt được nên cuộn len đi thẳng xuống đại tràng đãi tiệc lợi khuẩn.",
+        term: "Tái Kết Tinh Chuỗi Amylose Khi Làm Lạnh 4°C",
+        layTerm: "Cuộn chặt các sợi tinh bột để kháng lại enzyme tiêu hóa",
+        analogy: "Làm lạnh cơm qua đêm ở 4°C giống như việc cuộn chặt những sợi len tinh bột thành một cuộn len thắt nút; chiếc kéo enzyme ở ruột non không cắt được nên đường không tăng vọt.",
       },
       {
-        term: "Phân tử Amylose kết tinh lại thành Tinh bột Kháng RS3",
-        layTerm: "Mắt xích dẫn truyền tế bào",
-        analogy: "Cơ chế hấp thu và điều phối nhịp điệu sinh học theo các khuyến nghị y tế chính thức.",
+        term: "Lên Men Tại Đại Tràng Sản Sinh Acid Béo Chuỗi Ngắn (Butyrate)",
+        layTerm: "Nguồn nhiên liệu vàng nuôi dưỡng tế bào niêm mạc đại tràng",
+        analogy: "Khi tinh bột kháng RS3 đi xuống đại tràng, hệ lợi khuẩn sẽ lên men chúng thành Butyrate, cung cấp 70% năng lượng cho tế bào thành ruột và dập tắt phản ứng viêm âm ỉ.",
       },
       {
-        term: "Hàn gắn hàng rào ruột, giảm 50% đỉnh đường huyết",
-        layTerm: "Hiệu quả lâm sàng đạt được",
-        analogy: "Tối ưu hóa năng lượng bền bỉ và bảo vệ sức khỏe chuyển hóa dài lâu.",
+        term: "Bền Vững Khi Hâm Nóng Lại & Bảo Vệ Khỏi Ung Thư Đại Trực Tràng",
+        layTerm: "Cách chế biến cơm, khoai để tối ưu hóa Tinh bột Kháng",
+        analogy: "Cấu trúc tinh thể RS3 một khi đã hình thành sẽ không bị phá vỡ khi bạn hâm nóng lại cơm; thói quen này giúp giảm tới 30-50% đỉnh đường huyết và bảo vệ đại tràng.",
       },
     ],
   },
   "resistant-starch-cold-rice-gut-microbiome-scfa-en": {
-    title: "Layman Medical Concept: 3 Evidence-Based Pillars",
-    hook: "Translating physiological mechanisms behind daily lifestyle habits:",
+    title: "Layman Medical Concept: 3 Transformations of Retrograded Resistant Starch",
+    hook: "How chilling cooked rice and potatoes re-crystallizes starch into prebiotic colon fuel:",
     points: [
       {
-        term: "Cơm nóng được làm mát qua đêm ở 4°C",
-        layTerm: "Primary physiological trigger",
-        analogy: "Chilling cooked starch is like tying loose yarn into tightly coiled cryptographic knots; digestive enzymes fail to untangle them, allowing whole bundles to reach colon bacteria.",
+        term: "Amylose Retrogradation at 4°C",
+        layTerm: "Folding digestible starch chains into enzyme-resistant crystals",
+        analogy: "Chilling cooked starch is like tying loose yarn into tightly coiled cryptographic knots; digestive enzymes fail to untangle them, preventing rapid bloodstream glucose spikes.",
       },
       {
-        term: "Phân tử Amylose kết tinh lại thành Tinh bột Kháng RS3",
-        layTerm: "Cellular signaling nexus",
-        analogy: "Circadian and biochemical coordination verified by international medical guidelines.",
+        term: "Colonic Fermentation into Short-Chain Fatty Acids (Butyrate)",
+        layTerm: "Feeding beneficial gut microbes to heal the intestinal barrier",
+        analogy: "Unabsorbed Type 3 Resistant Starch reaches the colon intact, where commensal bacteria ferment it into Butyrate to fuel colonocytes and silence mucosal inflammation.",
       },
       {
-        term: "Hàn gắn hàng rào ruột, giảm 50% đỉnh đường huyết",
-        layTerm: "Clinical takeaway",
-        analogy: "Sustaining cellular vitality and metabolic resilience in daily life.",
+        term: "Thermal Stability Upon Reheating & Glycemic Control",
+        layTerm: "Why reheated cooled rice still retains its metabolic advantage",
+        analogy: "Once retrograded crystalline structures form during overnight cooling, gently reheating the rice preserves its resistant starch content and blunts post-meal insulin demand.",
       },
     ],
   },
   "di-bo-10-phut-sau-bua-an-kich-hoat-co-bap-vi": {
-    title: "Góc Y Khoa Dễ Hiểu: 3 Mắt Xích Thực Chứng",
-    hook: "Giải mã cơ chế sinh học phân tử đằng sau thói quen đời thường:",
+    title: "Góc Y Khoa Dễ Hiểu: 3 Cơ Chế Hạ Đường Huyết Khi Đi Bộ 10 Phút Sau Ăn",
+    hook: "Tại sao 10 phút dạo bộ nhẹ nhàng ngay sau bữa tối hiệu quả hơn 30 phút tập nặng lúc khác:",
     points: [
       {
-        term: "Bữa ăn xong, đường huyết bắt đầu dâng cao",
-        layTerm: "Điểm khởi phát cơ chế sinh lý",
+        term: "Mở Kênh Tiêu Thụ Đường Ngay Đỉnh Sóng Hấp Thu",
+        layTerm: "Biến đôi chân thành bộ máy hút đường tự nhiên sau bữa ăn",
         analogy: "Đi bộ sau ăn giống như bạn mở một con mương thoát nước phụ ngay khi đập thủy điện xả lũ; nước đường lập tức tràn vào tưới mát cánh đồng cơ bắp mà không làm vỡ bờ đê mạch máu.",
       },
       {
-        term: "Đi bộ nhẹ 10-15 phút",
-        layTerm: "Mắt xích dẫn truyền tế bào",
-        analogy: "Cơ chế hấp thu và điều phối nhịp điệu sinh học theo các khuyến nghị y tế chính thức.",
+        term: "Huy Động GLUT4 Không Phụ Thuộc Insulin (Contraction-Mediated)",
+        layTerm: "Cơ bắp tự mở cửa đón glucose mà không bắt tuyến tụy làm việc",
+        analogy: "Khi cơ bắp chân co duỗi nhịp nhàng, ion Canxi và AMPK tự động đẩy các cổng hút đường GLUT4 ra màng tế bào, giúp giảm tải tới 30% lượng insulin mà tuyến tụy phải tiết ra.",
       },
       {
-        term: "Đường huyết hạ sâu êm dịu, bảo vệ tuyến tụy",
-        layTerm: "Hiệu quả lâm sàng đạt được",
-        analogy: "Tối ưu hóa năng lượng bền bỉ và bảo vệ sức khỏe chuyển hóa dài lâu.",
+        term: "Giảm Triglyceride Máu & Ngăn Ngừa Gan Nhiễm Mỡ",
+        layTerm: "Thói quen 10 phút vàng trong khung giờ 15-30 phút sau bữa ăn",
+        analogy: "Chỉ cần 10 phút đi bộ thong thả trong khoảng 20 phút sau khi buông đũa sẽ chặn đứng quá trình chuyển hóa đường thừa thành mỡ nội tạng và giúp dạ dày tiêu hóa nhẹ nhàng.",
       },
     ],
   },
   "ten-minute-post-meal-walk-glucose-clearance-en": {
-    title: "Layman Medical Concept: 3 Evidence-Based Pillars",
-    hook: "Translating physiological mechanisms behind daily lifestyle habits:",
+    title: "Layman Medical Concept: 3 Metabolic Mechanisms of the 10-Minute Post-Meal Walk",
+    hook: "Why a gentle 10-minute stroll immediately after eating outperforms a single workout later:",
     points: [
       {
-        term: "Bữa ăn xong, đường huyết bắt đầu dâng cao",
-        layTerm: "Primary physiological trigger",
+        term: "Intercepting the Postprandial Glucose Flood",
+        layTerm: "Turning calf and thigh muscles into active glucose sponges",
         analogy: "Walking after dinner acts like opening an auxiliary irrigation channel right as a reservoir overflows; excess glucose drains directly into muscular soil without breaching vascular riverbanks.",
       },
       {
-        term: "Đi bộ nhẹ 10-15 phút",
-        layTerm: "Cellular signaling nexus",
-        analogy: "Circadian and biochemical coordination verified by international medical guidelines.",
+        term: "Insulin-Independent GLUT4 Translocation",
+        layTerm: "Muscle contractions unlock glucose gates without taxing the pancreas",
+        analogy: "Rhythmic skeletal muscle contraction triggers calcium and AMPK pathways that deploy GLUT4 transporters to the cell surface, clearing blood sugar while sparing pancreatic beta-cells.",
       },
       {
-        term: "Đường huyết hạ sâu êm dịu, bảo vệ tuyến tụy",
-        layTerm: "Clinical takeaway",
-        analogy: "Sustaining cellular vitality and metabolic resilience in daily life.",
+        term: "Blunting Hepatic Lipogenesis & Vascular Glycation",
+        layTerm: "The optimal 15-to-30 minute post-meal movement window",
+        analogy: "A relaxed 10-minute walk started within 20 minutes of finishing a meal reduces postprandial glucose area-under-the-curve by 22% to 30%.",
+      },
+    ],
+  },
+  "ca-chua-nau-chin-lycopene-dau-o-liu-phong-ngua-ung-thu-vi": {
+    title: "Góc Y Khoa Dễ Hiểu: 3 Bí Quyết Mở Khóa Lycopene Trong Cà Chua",
+    hook: "Tại sao cà chua nấu chín cùng dầu ô-liu lại tăng sinh khả dụng chống ung thư gấp 3-4 lần ăn sống:",
+    points: [
+      {
+        term: "Đồng Phân Hóa Nhiệt (All-trans sang Cis-Lycopene)",
+        layTerm: "Đun nấu bẻ cong thanh sắt thẳng thành chìa khóa chui lọt màng ruột",
+        analogy: "Trong cà chua sống, Lycopene duỗi thẳng cứng nhắc như thanh sắt và bị nhốt trong vách pectin. Đun ở 85-100°C sẽ làm mềm vách tế bào và uốn cong phân tử sang dạng cis dễ hấp thu gấp 4 lần.",
+      },
+      {
+        term: "Phối Hợp Dầu Ô-liu Kết Tạo Hạt Micelle Mật",
+        layTerm: "Chuyến phà chất béo chở hoạt chất đi qua thành ruột non",
+        analogy: "Lycopene hoàn toàn kỵ nước nên nếu nấu suông sẽ trôi tuột qua ruột. Thêm 10-15ml dầu ô-liu kích thích túi mật tiết muối mật đóng gói Lycopene vào hạt micelle đưa thẳng vào máu.",
+      },
+      {
+        term: "Dập Tắt Oxy Đơn Bội & Giảm 35% Nguy Cơ Ung Thư Tuyến Tiền Liệt",
+        layTerm: "Lá chắn chống đột biến DNA mạnh gấp 10 lần Vitamin E",
+        analogy: "Với 11 liên kết đôi liên hợp, Lycopene tích tụ tại tuyến tiền liệt, vú và gan để dập tắt gốc tự do, khóa tín hiệu tăng sinh IGF-1 và kích hoạt hệ thống giải độc Nrf2.",
+      },
+    ],
+  },
+  "cooked-tomatoes-olive-oil-lycopene-cancer-prevention-en": {
+    title: "Layman Medical Concept: 3 Keys to Unlocking Tomato Lycopene",
+    hook: "Why simmering tomatoes in extra-virgin olive oil multiplies chemopreventive bioavailability 4-fold:",
+    points: [
+      {
+        term: "Thermal Cis-Isomerization (All-trans to Cis-Lycopene)",
+        layTerm: "Heat bends rigid crystalline rods into absorbable molecular keys",
+        analogy: "Raw tomato lycopene exists as rigid linear crystals locked inside pectin walls. Simmering at 88°C ruptures cell walls and bends trans-lycopene into compact cis-isomers.",
+      },
+      {
+        term: "Olive Oil Co-Ingestion & Mixed Micelle Packaging",
+        layTerm: "Lipid ferryboats transporting hydrophobic carotenoids across the gut",
+        analogy: "Because lycopene is strictly fat-soluble, simmering with 10-15 mL of olive oil triggers gallbladder bile release, encapsulating cis-lycopene into chylomicrons for lymphatic uptake.",
+      },
+      {
+        term: "Singlet Oxygen Quenching & 35% Prostate Risk Reduction",
+        layTerm: "Neutralizing DNA oxidative stress 10x faster than Vitamin E",
+        analogy: "Equipped with 11 conjugated double bonds, circulating lycopene concentrates in prostate and hepatic tissues, blunting IGF-1 mitogenic signaling and activating Nrf2 detox enzymes.",
       },
     ],
   },
@@ -2168,25 +2210,44 @@ export const CURATED_MEDICAL_ANALOGIES: Record<string, LaymanMedicalBoxData> = {
 
 };
 
+function isVietnameseText(str: string): boolean {
+  return /[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]/i.test(str);
+}
+
 /**
- * Normalizes any slug (removing language suffixes or aliases) to find a match.
+ * Normalizes any slug (removing language suffixes or aliases) to find a match,
+ * while strictly verifying language compatibility so Vietnamese text never appears on English pages.
  */
-export function getCuratedAnalogy(slug: string): LaymanMedicalBoxData | null {
-  if (CURATED_MEDICAL_ANALOGIES[slug]) {
-    return CURATED_MEDICAL_ANALOGIES[slug];
-  }
+export function getCuratedAnalogy(slug: string, expectedLang?: "vi" | "en"): LaymanMedicalBoxData | null {
+  const checkLangMatch = (entry: LaymanMedicalBoxData | undefined): LaymanMedicalBoxData | null => {
+    if (!entry) return null;
+    if (!expectedLang) return entry;
+    const entryIsVi = isVietnameseText(entry.title + " " + (entry.points?.[0]?.analogy || ""));
+    if (expectedLang === "vi" && !entryIsVi) return null;
+    if (expectedLang === "en" && entryIsVi) return null;
+    return entry;
+  };
 
-  // Try matching via root twins
+  const direct = checkLangMatch(CURATED_MEDICAL_ANALOGIES[slug]);
+  if (direct) return direct;
+
   const baseRoot = slug.replace(/-(vi|en)$/, "");
-  if (CURATED_MEDICAL_ANALOGIES[baseRoot]) {
-    return CURATED_MEDICAL_ANALOGIES[baseRoot];
+  if (expectedLang === "vi") {
+    return (
+      checkLangMatch(CURATED_MEDICAL_ANALOGIES[`${baseRoot}-vi`]) ||
+      checkLangMatch(CURATED_MEDICAL_ANALOGIES[baseRoot])
+    );
   }
-  if (CURATED_MEDICAL_ANALOGIES[`${baseRoot}-vi`]) {
-    return CURATED_MEDICAL_ANALOGIES[`${baseRoot}-vi`];
-  }
-  if (CURATED_MEDICAL_ANALOGIES[`${baseRoot}-en`]) {
-    return CURATED_MEDICAL_ANALOGIES[`${baseRoot}-en`];
+  if (expectedLang === "en") {
+    return (
+      checkLangMatch(CURATED_MEDICAL_ANALOGIES[`${baseRoot}-en`]) ||
+      checkLangMatch(CURATED_MEDICAL_ANALOGIES[baseRoot])
+    );
   }
 
-  return null;
+  return (
+    checkLangMatch(CURATED_MEDICAL_ANALOGIES[baseRoot]) ||
+    checkLangMatch(CURATED_MEDICAL_ANALOGIES[`${baseRoot}-vi`]) ||
+    checkLangMatch(CURATED_MEDICAL_ANALOGIES[`${baseRoot}-en`])
+  );
 }

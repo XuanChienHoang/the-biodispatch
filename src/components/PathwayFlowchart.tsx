@@ -353,8 +353,8 @@ export function PathwayFlowchart({ rawText, isVi = true }: PathwayFlowchartProps
     index: number;
   } | null>(null);
   const [showRaw, setShowRaw] = useState(false);
-  // View mode: "grid" (responsive wrapped cards, no horizontal scroll needed) or "stream" (horizontal carousel with navigation)
-  const [viewMode, setViewMode] = useState<"grid" | "stream">("grid");
+  // View mode: "stream" (horizontal flow default, ideal for mobile & desktop) or "grid" (responsive wrapped cards)
+  const [viewMode, setViewMode] = useState<"grid" | "stream">("stream");
 
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
@@ -465,46 +465,34 @@ export function PathwayFlowchart({ rawText, isVi = true }: PathwayFlowchartProps
   const maxSteps = Math.max(...parsedPipelines.map((p) => p.steps.length));
 
   return (
-    <div className="my-10 w-full">
+    <div className="my-10 w-full max-w-full overflow-hidden">
       {/* Outer Card with no clipping */}
-      <div className="rounded-2xl border border-slate-700/60 bg-[#070e1a] p-4 sm:p-6 shadow-2xl shadow-black/60 relative">
+      <div className="rounded-2xl border border-slate-700/60 bg-[#070e1a] p-4 sm:p-6 shadow-2xl shadow-black/60 relative max-w-full overflow-hidden">
         {/* Subtle background glow */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cyan-950/20 via-transparent to-transparent pointer-events-none rounded-2xl" />
 
         {/* Master Header */}
         <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 border-b border-slate-700/60 pb-4 mb-5">
-          <div className="flex items-center gap-2.5">
-            <span className="relative flex h-2.5 w-2.5">
+          <div className="flex items-center gap-2.5 min-w-0">
+            <span className="relative flex h-2.5 w-2.5 shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-80" />
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-400 shadow-[0_0_8px_#22d3ee]" />
             </span>
-            <div className="flex items-center gap-2">
-              <Activity size={16} className="text-cyan-400" />
-              <span className="font-mono text-xs uppercase tracking-widest text-cyan-300 font-bold">
+            <div className="flex items-center gap-2 min-w-0">
+              <Activity size={16} className="text-cyan-400 shrink-0" />
+              <span className="font-mono text-xs uppercase tracking-widest text-cyan-300 font-bold break-words">
                 {isVi ? "Sơ đồ Cơ chế Phân tử (Click để xem giải mã)" : "Molecular Mechanism Pipeline"}
               </span>
             </div>
           </div>
 
-          <div className="flex items-center gap-2">
-            {/* View Mode Switcher for multi-step pipelines */}
-            {maxSteps >= 4 && (
+          <div className="flex items-center gap-2 flex-wrap">
+            {/* View Mode Switcher for multi-step pipelines (Default: Dòng ngang / stream) */}
+            {maxSteps >= 2 && (
               <div className="flex items-center bg-slate-900/90 rounded-lg p-0.5 border border-slate-800">
                 <button
-                  onClick={() => setViewMode("grid")}
-                  className={`px-2 py-1 rounded text-[0.65rem] font-mono flex items-center gap-1 transition-all ${
-                    viewMode === "grid"
-                      ? "bg-cyan-500/20 text-cyan-300 font-bold border border-cyan-500/40"
-                      : "text-slate-400 hover:text-slate-200"
-                  }`}
-                  title={isVi ? "Xem dạng lưới toàn màn hình" : "Grid full layout"}
-                >
-                  <LayoutGrid size={11} />
-                  {isVi ? "Lưới" : "Grid"}
-                </button>
-                <button
                   onClick={() => setViewMode("stream")}
-                  className={`px-2 py-1 rounded text-[0.65rem] font-mono flex items-center gap-1 transition-all ${
+                  className={`px-2 py-1 rounded text-[0.65rem] font-mono flex items-center gap-1 transition-all cursor-pointer ${
                     viewMode === "stream"
                       ? "bg-cyan-500/20 text-cyan-300 font-bold border border-cyan-500/40"
                       : "text-slate-400 hover:text-slate-200"
@@ -514,12 +502,24 @@ export function PathwayFlowchart({ rawText, isVi = true }: PathwayFlowchartProps
                   <Columns size={11} />
                   {isVi ? "Dòng ngang" : "Stream"}
                 </button>
+                <button
+                  onClick={() => setViewMode("grid")}
+                  className={`px-2 py-1 rounded text-[0.65rem] font-mono flex items-center gap-1 transition-all cursor-pointer ${
+                    viewMode === "grid"
+                      ? "bg-cyan-500/20 text-cyan-300 font-bold border border-cyan-500/40"
+                      : "text-slate-400 hover:text-slate-200"
+                  }`}
+                  title={isVi ? "Xem dạng lưới toàn màn hình" : "Grid full layout"}
+                >
+                  <LayoutGrid size={11} />
+                  {isVi ? "Lưới" : "Grid"}
+                </button>
               </div>
             )}
 
             <button
               onClick={() => setShowRaw(!showRaw)}
-              className="font-mono text-[0.65rem] text-slate-400 hover:text-cyan-300 bg-slate-900/80 px-2 py-1 rounded-md border border-slate-800 hover:border-slate-700 transition-colors flex items-center gap-1"
+              className="font-mono text-[0.65rem] text-slate-400 hover:text-cyan-300 bg-slate-900/80 px-2 py-1 rounded-md border border-slate-800 hover:border-slate-700 transition-colors flex items-center gap-1 cursor-pointer"
               title={isVi ? "Xem mã ký tự thô" : "Toggle raw schema"}
             >
               <Code size={11} />
@@ -536,22 +536,22 @@ export function PathwayFlowchart({ rawText, isVi = true }: PathwayFlowchartProps
         )}
 
         {/* Navigation buttons for Stream Mode */}
-        {viewMode === "stream" && maxSteps >= 4 && (
-          <div className="relative z-10 flex items-center justify-between text-xs text-slate-400 mb-2 px-1">
+        {viewMode === "stream" && maxSteps >= 2 && (
+          <div className="relative z-10 flex items-center justify-between gap-2 text-xs text-slate-400 mb-2 px-1">
             <span className="font-mono text-[0.68rem] text-cyan-300/80">
-              👉 {isVi ? "Kéo hoặc bấm mũi tên để duyệt các giai đoạn:" : "Drag or use arrows to navigate phases:"}
+              👉 {isVi ? "Vuốt ngang hoặc bấm mũi tên để duyệt các giai đoạn:" : "Swipe or use arrows to navigate phases:"}
             </span>
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1 shrink-0">
               <button
                 onClick={scrollLeft}
-                className="w-7 h-7 rounded bg-slate-800/80 hover:bg-slate-700 text-slate-200 flex items-center justify-center border border-slate-700 transition-colors"
+                className="w-7 h-7 rounded bg-slate-800/80 hover:bg-slate-700 text-slate-200 flex items-center justify-center border border-slate-700 transition-colors cursor-pointer"
                 title={isVi ? "Cuộn sang trái" : "Scroll left"}
               >
                 <ChevronLeft size={14} />
               </button>
               <button
                 onClick={scrollRight}
-                className="w-7 h-7 rounded bg-slate-800/80 hover:bg-slate-700 text-slate-200 flex items-center justify-center border border-slate-700 transition-colors"
+                className="w-7 h-7 rounded bg-slate-800/80 hover:bg-slate-700 text-slate-200 flex items-center justify-center border border-slate-700 transition-colors cursor-pointer"
                 title={isVi ? "Cuộn sang phải" : "Scroll right"}
               >
                 <ChevronRight size={14} />
@@ -565,7 +565,7 @@ export function PathwayFlowchart({ rawText, isVi = true }: PathwayFlowchartProps
           {parsedPipelines.map((pipeline, pIdx) => (
             <div
               key={pIdx}
-              className="rounded-xl border border-slate-800/90 bg-[#091424]/90 p-4 sm:p-5 shadow-inner"
+              className="rounded-xl border border-slate-800/90 bg-[#091424]/90 p-3.5 sm:p-5 shadow-inner max-w-full overflow-hidden"
             >
               {pipeline.condition && (
                 <div className="flex items-center justify-between mb-4 border-b border-slate-800/80 pb-2.5">
@@ -579,8 +579,8 @@ export function PathwayFlowchart({ rawText, isVi = true }: PathwayFlowchartProps
                 </div>
               )}
 
-              {/* VIEW MODE 1: ADAPTIVE RESPONSIVE GRID (No truncation, zero cropping) */}
-              {viewMode === "grid" || pipeline.steps.length <= 3 ? (
+              {/* VIEW MODE 1: ADAPTIVE RESPONSIVE GRID */}
+              {viewMode === "grid" ? (
                 <div
                   className={`grid gap-3.5 ${
                     pipeline.steps.length === 2
@@ -656,10 +656,10 @@ export function PathwayFlowchart({ rawText, isVi = true }: PathwayFlowchartProps
                   })}
                 </div>
               ) : (
-                /* VIEW MODE 2: HORIZONTAL STREAM (Scroll track with NO cropping) */
+                /* VIEW MODE 2: HORIZONTAL STREAM (Default on mobile & desktop) */
                 <div
                   ref={scrollContainerRef}
-                  className="flex items-stretch gap-3 overflow-x-auto pb-4 pt-1 px-1 -mx-1"
+                  className="flex items-stretch gap-3 w-full max-w-full overflow-x-auto overscroll-x-contain pb-4 pt-1 px-0.5"
                   style={{
                     scrollbarWidth: "thin",
                     scrollbarColor: "rgba(6, 182, 212, 0.4) rgba(15, 23, 42, 0.6)"

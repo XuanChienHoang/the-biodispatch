@@ -192,29 +192,31 @@ input[type="range"].lab:focus-visible {
   color: var(--color-indigo-soft);
   font-size: 1.125rem;
   line-height: 1.8;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .prose-editorial h2 {
   font-family: var(--font-display);
-  font-size: 1.95rem;
+  font-size: clamp(1.45rem, 4.5vw, 1.95rem);
   font-weight: 800;
   color: var(--color-indigo-deep);
   letter-spacing: -0.025em;
-  line-height: 1.15;
-  margin-top: 3.25rem;
-  margin-bottom: 1.25rem;
+  line-height: 1.18;
+  margin-top: 2.75rem;
+  margin-bottom: 1.15rem;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--color-indigo-deep);
 }
 
 .prose-editorial h3 {
   font-family: var(--font-display);
-  font-size: 1.45rem;
+  font-size: clamp(1.2rem, 3.6vw, 1.45rem);
   font-weight: 700;
   color: var(--color-indigo-deep);
   letter-spacing: -0.02em;
   line-height: 1.25;
-  margin-top: 2.25rem;
+  margin-top: 2rem;
   margin-bottom: 0.85rem;
 }
 
@@ -225,8 +227,8 @@ input[type="range"].lab:focus-visible {
 .prose-editorial blockquote {
   border-left: 3px solid var(--color-trace-ink);
   background: var(--color-paper-tint);
-  padding: 1.25rem 1.75rem;
-  margin: 2.25rem 0;
+  padding: 1.1rem 1.25rem;
+  margin: 2rem 0;
   font-style: italic;
   color: var(--color-indigo-deep);
   border-radius: 0 4px 4px 0;
@@ -234,22 +236,41 @@ input[type="range"].lab:focus-visible {
 
 .prose-editorial table {
   width: 100%;
+  min-width: 540px;
   border-collapse: collapse;
-  margin: 2.5rem 0;
-  font-size: 0.94rem;
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
 }
 
 .prose-editorial th {
   background: var(--color-indigo-deep);
   color: #ffffff;
-  padding: 0.85rem 1rem;
+  padding: 0.75rem 0.9rem;
   text-align: left;
   font-weight: 600;
+  vertical-align: top;
 }
 
 .prose-editorial td {
   border: 1px solid var(--color-slate-hair);
-  padding: 0.85rem 1rem;
+  padding: 0.75rem 0.9rem;
+  vertical-align: top;
+}
+
+@media (max-width: 640px) {
+  .prose-editorial {
+    font-size: 1.03rem;
+    line-height: 1.75;
+  }
+  .prose-editorial table {
+    min-width: 500px;
+    font-size: 0.82rem;
+  }
+  .prose-editorial th,
+  .prose-editorial td {
+    padding: 0.6rem 0.7rem;
+  }
 }
 
 .prose-editorial tr:nth-child(even) {
