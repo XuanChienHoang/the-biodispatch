@@ -1,8 +1,100 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-10-28T11:06:07.562Z",
-  "totalTopics": 165,
+  "lastUpdated": "2026-10-28T11:25:38.979Z",
+  "totalTopics": 167,
   "topics": [
+    {
+      "id": "ngoi-nhieu-te-liet-enzyme-lpl-khi-mau-u-trung-chan",
+      "slugs": [
+        "ngoi-nhieu-te-liet-enzyme-lpl-khi-mau-u-trung-chan-vi"
+      ],
+      "titleVi": "Ngồi làm việc liên tục trên 2 giờ làm tắt ngấm enzyme LPL: Thói quen nhấp nhổm đơn giản giải thoát mạch máu chân",
+      "titleEn": "Ngồi làm việc liên tục trên 2 giờ làm tắt ngấm enzyme LPL: Thói quen nhấp nhổm đơn giản giải thoát mạch máu chân",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1113/jphysiol.2003.045591",
+      "date": "2026-10-28T13:00:00Z",
+      "tags": [
+        "tim-mach",
+        "tuan-hoan",
+        "duong-huyet",
+        "nang-luong",
+        "lao-hoa"
+      ],
+      "keywords": [
+        "ngoi",
+        "lam",
+        "viec",
+        "lien",
+        "tuc",
+        "tren",
+        "gio",
+        "tat",
+        "ngam",
+        "enzyme",
+        "lpl",
+        "thoi",
+        "quen",
+        "nhap",
+        "nhom",
+        "don",
+        "gian",
+        "thoat",
+        "mach",
+        "mau",
+        "chan",
+        "tim",
+        "tuan",
+        "hoan",
+        "duong"
+      ]
+    },
+    {
+      "id": "sitting-paralyzes-lpl-enzyme-venous-stasis",
+      "slugs": [
+        "sitting-paralyzes-lpl-enzyme-venous-stasis-en"
+      ],
+      "titleVi": "Sitting continuously for over 2 hours shuts down LPL enzyme: Simple micro-movements to restore vascular flow",
+      "titleEn": "Sitting continuously for over 2 hours shuts down LPL enzyme: Simple micro-movements to restore vascular flow",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1113/jphysiol.2003.045591",
+      "date": "2026-10-28T13:00:00Z",
+      "tags": [
+        "cardiovascular",
+        "circulation",
+        "blood-sugar",
+        "energy",
+        "aging"
+      ],
+      "keywords": [
+        "sitting",
+        "continuously",
+        "hours",
+        "shuts",
+        "down",
+        "lpl",
+        "enzyme",
+        "simple",
+        "micro",
+        "movements",
+        "restore",
+        "vascular",
+        "flow",
+        "cardiovascular",
+        "circulation",
+        "blood",
+        "sugar",
+        "energy",
+        "aging",
+        "many",
+        "spend",
+        "more",
+        "than",
+        "day",
+        "glued"
+      ]
+    },
     {
       "id": "su-that-ve-cac-bai-thuoc-chua-khoi-ung-thu",
       "slugs": [

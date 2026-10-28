@@ -4479,6 +4479,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Defines cancer cachexia as a multifactorial syndrome characterized by ongoing loss of skeletal muscle mass that cannot be fully reversed by conventional nutritional support and leads to progressive functional impairment. Explains why metabolic starvation exacerbates cachectic mortality.",
     },
   ],
+  "ngoi-nhieu-te-liet-enzyme-lpl-khi-mau-u-trung-chan-vi": [
+    {
+      ordinal: 1,
+      label: "Suppression of skeletal muscle lipoprotein lipase activity during physical inactivity: a molecular reason to maintain daily low-intensity activity",
+      pmid: "12815182",
+      doi: "10.1113/jphysiol.2003.045591",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "J Physiol",
+      year: 2003,
+      abstract: "Physical inactivity suppresses skeletal muscle lipoprotein lipase (LPL) activity, leading to impaired triglyceride clearance and reduced high-density lipoprotein cholesterol levels. This study demonstrates that muscle unloading dramatically downregulates LPL activity locally in red oxidative muscle fibers, independent of whole-body energy balance.",
+    },
+  ],
+  "sitting-paralyzes-lpl-enzyme-venous-stasis-en": [
+    {
+      ordinal: 1,
+      label: "Suppression of skeletal muscle lipoprotein lipase activity during physical inactivity: a molecular reason to maintain daily low-intensity activity",
+      pmid: "12815182",
+      doi: "10.1113/jphysiol.2003.045591",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "J Physiol",
+      year: 2003,
+      abstract: "Physical inactivity suppresses skeletal muscle lipoprotein lipase (LPL) activity, leading to impaired triglyceride clearance and reduced high-density lipoprotein cholesterol levels. This study demonstrates that muscle unloading dramatically downregulates LPL activity locally in red oxidative muscle fibers, independent of whole-body energy balance.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
