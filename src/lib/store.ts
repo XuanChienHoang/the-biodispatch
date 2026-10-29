@@ -4613,6 +4613,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Demonstrates that thermal processing and cellular disruption significantly elevate the bioavailability of lycopene from processed tomato paste compared with fresh raw tomatoes, with a 3.8-fold higher area under the plasma concentration curve.",
     },
   ],
+  "ngan-ngua-teo-co-tuoi-40-leucine-mtor-vi": [
+    {
+      ordinal: 1,
+      label: "A high proportion of leucine is required for optimal stimulation of the rate of muscle protein synthesis by essential amino acids in the elderly",
+      pmid: "16507602",
+      doi: "10.1152/ajpendo.00488.2005",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Am J Physiol Endocrinol Metab",
+      year: 2006,
+      abstract: "This study evaluated whether increasing the proportion of leucine in an essential amino acid (EAA) mixture could overcome the blunted muscle protein synthesis (MPS) response observed in elderly individuals. Young and elderly subjects ingested either a standard EAA mixture (18% leucine) or a leucine-enriched EAA mixture (35% leucine). Results showed that while standard EAAs stimulated MPS less effectively in elderly than in young subjects, the leucine-enriched mixture stimulated MPS in the elderly to a level comparable to that in young subjects. The findings indicate that aging muscle requires a higher concentration of leucine to activate anabolic pathways and prevent age-related sarcopenia.",
+    },
+  ],
+  "preventing-sarcopenia-after-40-leucine-mtor-en": [
+    {
+      ordinal: 1,
+      label: "A high proportion of leucine is required for optimal stimulation of the rate of muscle protein synthesis by essential amino acids in the elderly",
+      pmid: "16507602",
+      doi: "10.1152/ajpendo.00488.2005",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Am J Physiol Endocrinol Metab",
+      year: 2006,
+      abstract: "This study evaluated whether increasing the proportion of leucine in an essential amino acid (EAA) mixture could overcome the blunted muscle protein synthesis (MPS) response observed in elderly individuals. Young and elderly subjects ingested either a standard EAA mixture (18% leucine) or a leucine-enriched EAA mixture (35% leucine). Results showed that while standard EAAs stimulated MPS less effectively in elderly than in young subjects, the leucine-enriched mixture stimulated MPS in the elderly to a level comparable to that in young subjects. The findings indicate that aging muscle requires a higher concentration of leucine to activate anabolic pathways and prevent age-related sarcopenia.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

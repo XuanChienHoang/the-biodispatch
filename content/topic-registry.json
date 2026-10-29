@@ -1,8 +1,106 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-10-28T11:42:40.796Z",
-  "totalTopics": 173,
+  "lastUpdated": "2026-10-29T19:09:19.269Z",
+  "totalTopics": 175,
   "topics": [
+    {
+      "id": "ngan-ngua-teo-co-tuoi-40-leucine-mtor",
+      "slugs": [
+        "ngan-ngua-teo-co-tuoi-40-leucine-mtor-vi"
+      ],
+      "titleVi": "Ngăn ngừa teo cơ sau tuổi 40: Bí quyết nạp axit amin Leucine để kích hoạt công tắc mTOR nuôi dưỡng cơ bắp",
+      "titleEn": "Ngăn ngừa teo cơ sau tuổi 40: Bí quyết nạp axit amin Leucine để kích hoạt công tắc mTOR nuôi dưỡng cơ bắp",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1152/ajpendo.00488.2005",
+      "date": "2026-10-29T17:00:00Z",
+      "tags": [
+        "teo-co",
+        "sarcopenia",
+        "leucine",
+        "mtor",
+        "lao-hoa-te-bao",
+        "dinh-duong-tuoi-40",
+        "suc-khoe-co-khop",
+        "vong-eo-co-bap"
+      ],
+      "keywords": [
+        "ngan",
+        "ngua",
+        "teo",
+        "sau",
+        "tuoi",
+        "quyet",
+        "nap",
+        "axit",
+        "amin",
+        "leucine",
+        "kich",
+        "hoat",
+        "cong",
+        "tac",
+        "mtor",
+        "nuoi",
+        "duong",
+        "bap",
+        "sarcopenia",
+        "lao",
+        "hoa",
+        "bao",
+        "dinh",
+        "suc",
+        "khoe"
+      ]
+    },
+    {
+      "id": "preventing-sarcopenia-after-40-leucine-mtor",
+      "slugs": [
+        "preventing-sarcopenia-after-40-leucine-mtor-en"
+      ],
+      "titleVi": "Preventing Muscle Loss After 40: How Leucine Flips the mTOR Switch to Rebuild Aging Muscles",
+      "titleEn": "Preventing Muscle Loss After 40: How Leucine Flips the mTOR Switch to Rebuild Aging Muscles",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1152/ajpendo.00488.2005",
+      "date": "2026-10-29T17:00:00Z",
+      "tags": [
+        "sarcopenia",
+        "muscle-loss",
+        "leucine",
+        "mtor",
+        "cellular-aging",
+        "nutrition-after-40",
+        "joints-and-mobility",
+        "protein-synthesis"
+      ],
+      "keywords": [
+        "preventing",
+        "muscle",
+        "loss",
+        "leucine",
+        "flips",
+        "mtor",
+        "switch",
+        "rebuild",
+        "aging",
+        "muscles",
+        "sarcopenia",
+        "cellular",
+        "nutrition",
+        "joints",
+        "mobility",
+        "protein",
+        "synthesis",
+        "age",
+        "many",
+        "individuals",
+        "notice",
+        "subtle",
+        "firmness",
+        "physical",
+        "stamina"
+      ]
+    },
     {
       "id": "ca-chua-nau-chin-lycopene-dau-o-liu-phong-ngua-ung-thu",
       "slugs": [
