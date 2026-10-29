@@ -4639,6 +4639,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "This study evaluated whether increasing the proportion of leucine in an essential amino acid (EAA) mixture could overcome the blunted muscle protein synthesis (MPS) response observed in elderly individuals. Young and elderly subjects ingested either a standard EAA mixture (18% leucine) or a leucine-enriched EAA mixture (35% leucine). Results showed that while standard EAAs stimulated MPS less effectively in elderly than in young subjects, the leucine-enriched mixture stimulated MPS in the elderly to a level comparable to that in young subjects. The findings indicate that aging muscle requires a higher concentration of leucine to activate anabolic pathways and prevent age-related sarcopenia.",
     },
   ],
+  "lutein-zeaxanthin-bao-ve-mat-va-da-vi": [
+    {
+      ordinal: 1,
+      label: "Lutein, zeaxanthin, and meso-zeaxanthin: The basic and clinical science underlying carotenoid-based nutritional interventions against ocular disease",
+      pmid: "26541886",
+      doi: "10.1016/j.preteyeres.2015.10.003",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Prog Retin Eye Res",
+      year: 2016,
+      abstract: "Lutein, zeaxanthin, and meso-zeaxanthin accumulate in the human macula where they are known as macular pigment. They function as biological antioxidants and high-energy blue-light filters. This comprehensive review examines the mechanisms of uptake, transport, and tissue deposition of macular carotenoids in the eye and extraocular tissues like skin, highlighting clinical trial evidence for improving visual performance and protecting against light-induced oxidative injury.",
+    },
+  ],
+  "lutein-zeaxanthin-eye-and-skin-protection-en": [
+    {
+      ordinal: 1,
+      label: "Lutein, zeaxanthin, and meso-zeaxanthin: The basic and clinical science underlying carotenoid-based nutritional interventions against ocular disease",
+      pmid: "26541886",
+      doi: "10.1016/j.preteyeres.2015.10.003",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Prog Retin Eye Res",
+      year: 2016,
+      abstract: "Lutein, zeaxanthin, and meso-zeaxanthin accumulate in the human macula where they are known as macular pigment. They function as biological antioxidants and high-energy blue-light filters. This comprehensive review examines the mechanisms of uptake, transport, and tissue deposition of macular carotenoids in the eye and extraocular tissues like skin, highlighting clinical trial evidence for improving visual performance and protecting against light-induced oxidative injury.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

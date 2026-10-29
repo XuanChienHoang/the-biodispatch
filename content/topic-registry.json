@@ -1,8 +1,100 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-10-29T19:09:19.269Z",
-  "totalTopics": 175,
+  "lastUpdated": "2026-10-29T20:45:41.817Z",
+  "totalTopics": 177,
   "topics": [
+    {
+      "id": "lutein-zeaxanthin-bao-ve-mat-va-da",
+      "slugs": [
+        "lutein-zeaxanthin-bao-ve-mat-va-da-vi"
+      ],
+      "titleVi": "Sắc tố vàng Lutein và Zeaxanthin: Chiếc kính râm phân tử bảo vệ mắt và làn da trước màn hình điện tử",
+      "titleEn": "Sắc tố vàng Lutein và Zeaxanthin: Chiếc kính râm phân tử bảo vệ mắt và làn da trước màn hình điện tử",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1016/j.preteyeres.2015.10.003",
+      "date": "2026-10-29T17:00:00Z",
+      "tags": [
+        "thi-luc",
+        "mat-da",
+        "lao-hoa",
+        "hoi-phuc",
+        "nang-luong"
+      ],
+      "keywords": [
+        "sac",
+        "vang",
+        "lutein",
+        "zeaxanthin",
+        "chiec",
+        "kinh",
+        "ram",
+        "phan",
+        "bao",
+        "mat",
+        "lan",
+        "truoc",
+        "man",
+        "hinh",
+        "dien",
+        "thi",
+        "luc",
+        "lao",
+        "hoa",
+        "hoi",
+        "phuc",
+        "nang",
+        "luong",
+        "nhieu",
+        "nguoi"
+      ]
+    },
+    {
+      "id": "lutein-zeaxanthin-eye-and-skin-protection",
+      "slugs": [
+        "lutein-zeaxanthin-eye-and-skin-protection-en"
+      ],
+      "titleVi": "Lutein and Zeaxanthin: The Molecular Sunglasses Shielding Eyes and Skin from Digital Screens",
+      "titleEn": "Lutein and Zeaxanthin: The Molecular Sunglasses Shielding Eyes and Skin from Digital Screens",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1016/j.preteyeres.2015.10.003",
+      "date": "2026-10-29T17:00:00Z",
+      "tags": [
+        "vision",
+        "skin-health",
+        "cellular-aging",
+        "recovery",
+        "energy"
+      ],
+      "keywords": [
+        "lutein",
+        "zeaxanthin",
+        "molecular",
+        "sunglasses",
+        "shielding",
+        "eyes",
+        "skin",
+        "digital",
+        "screens",
+        "vision",
+        "health",
+        "cellular",
+        "aging",
+        "recovery",
+        "energy",
+        "many",
+        "spend",
+        "eight",
+        "hours",
+        "day",
+        "staring",
+        "computer",
+        "smartphone",
+        "only",
+        "step"
+      ]
+    },
     {
       "id": "ngan-ngua-teo-co-tuoi-40-leucine-mtor",
       "slugs": [
