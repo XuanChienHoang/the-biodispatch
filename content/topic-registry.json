@@ -1,8 +1,100 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-10-30T14:36:52.923Z",
-  "totalTopics": 181,
+  "lastUpdated": "2026-10-30T18:41:50.321Z",
+  "totalTopics": 183,
   "topics": [
+    {
+      "id": "astaxanthin-giai-toa-moi-mat-man-hinh-tre-hoa-da",
+      "slugs": [
+        "astaxanthin-giai-toa-moi-mat-man-hinh-tre-hoa-da-vi"
+      ],
+      "titleVi": "Astaxanthin: Sắc tố đỏ giải cứu đôi mắt mỏi do màn hình và trẻ hóa làn da từ cấp tế bào",
+      "titleEn": "Astaxanthin: Sắc tố đỏ giải cứu đôi mắt mỏi do màn hình và trẻ hóa làn da từ cấp tế bào",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1007/s12298-020-00908-w",
+      "date": "2026-10-30T17:00:00Z",
+      "tags": [
+        "mat-moi-man-hinh",
+        "tre-hoa-da",
+        "astaxanthin",
+        "anh-sang-xanh",
+        "lao-hoa-te-bao"
+      ],
+      "keywords": [
+        "astaxanthin",
+        "sac",
+        "cuu",
+        "doi",
+        "mat",
+        "moi",
+        "man",
+        "hinh",
+        "tre",
+        "hoa",
+        "lan",
+        "cap",
+        "bao",
+        "anh",
+        "sang",
+        "xanh",
+        "lao",
+        "sau",
+        "gio",
+        "lien",
+        "tuc",
+        "may",
+        "tinh",
+        "dien",
+        "thoai"
+      ]
+    },
+    {
+      "id": "astaxanthin-screen-eye-fatigue-skin-longevity",
+      "slugs": [
+        "astaxanthin-screen-eye-fatigue-skin-longevity-en"
+      ],
+      "titleVi": "Astaxanthin: The Red Pigment Rescuing Screen Eye Fatigue and Rejuvenating Skin at the Cellular Level",
+      "titleEn": "Astaxanthin: The Red Pigment Rescuing Screen Eye Fatigue and Rejuvenating Skin at the Cellular Level",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1007/s12298-020-00908-w",
+      "date": "2026-10-30T17:00:00Z",
+      "tags": [
+        "screen-eye-fatigue",
+        "skin-rejuvenation",
+        "astaxanthin",
+        "blue-light",
+        "cellular-aging"
+      ],
+      "keywords": [
+        "astaxanthin",
+        "red",
+        "pigment",
+        "rescuing",
+        "screen",
+        "eye",
+        "fatigue",
+        "rejuvenating",
+        "skin",
+        "cellular",
+        "level",
+        "rejuvenation",
+        "blue",
+        "light",
+        "aging",
+        "continuous",
+        "hours",
+        "staring",
+        "computer",
+        "screens",
+        "smartphones",
+        "your",
+        "eyes",
+        "often",
+        "suffer"
+      ]
+    },
     {
       "id": "axit-hyaluronic-duong-uong-dem-khop-goi",
       "slugs": [
