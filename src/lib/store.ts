@@ -4665,6 +4665,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Lutein, zeaxanthin, and meso-zeaxanthin accumulate in the human macula where they are known as macular pigment. They function as biological antioxidants and high-energy blue-light filters. This comprehensive review examines the mechanisms of uptake, transport, and tissue deposition of macular carotenoids in the eye and extraocular tissues like skin, highlighting clinical trial evidence for improving visual performance and protecting against light-induced oxidative injury.",
     },
   ],
+  "axit-hyaluronic-duong-uong-dem-khop-goi-vi": [
+    {
+      ordinal: 1,
+      label: "Oral administration of polymer hyaluronic acid alleviates symptoms of knee osteoarthritis: a double-blind, placebo-controlled study over a 12-month period",
+      pmid: "23226979",
+      doi: "10.1100/2012/167928",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "ScientificWorldJournal",
+      year: 2012,
+      abstract: "This study evaluated the efficacy of oral high molecular weight hyaluronic acid (HA) in subjects with knee osteoarthritis over 12 months. Results demonstrated significant improvements in Japanese Knee Osteoarthritis Measure (JKOM) scores compared to placebo, particularly among patients under 70 years old. The oral HA was well tolerated and reduced synovial inflammation while promoting cartilage extracellular matrix hydration.",
+    },
+  ],
+  "oral-hyaluronic-acid-knee-joint-matrix-en": [
+    {
+      ordinal: 1,
+      label: "Oral administration of polymer hyaluronic acid alleviates symptoms of knee osteoarthritis: a double-blind, placebo-controlled study over a 12-month period",
+      pmid: "23226979",
+      doi: "10.1100/2012/167928",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "ScientificWorldJournal",
+      year: 2012,
+      abstract: "This study evaluated the efficacy of oral high molecular weight hyaluronic acid (HA) in subjects with knee osteoarthritis over 12 months. Results demonstrated significant improvements in Japanese Knee Osteoarthritis Measure (JKOM) scores compared to placebo, particularly among patients under 70 years old. The oral HA was well tolerated and reduced synovial inflammation while promoting cartilage extracellular matrix hydration.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

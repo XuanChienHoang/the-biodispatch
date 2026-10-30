@@ -1,8 +1,102 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-10-29T20:45:41.817Z",
-  "totalTopics": 177,
+  "lastUpdated": "2026-10-30T11:39:37.487Z",
+  "totalTopics": 179,
   "topics": [
+    {
+      "id": "axit-hyaluronic-duong-uong-dem-khop-goi",
+      "slugs": [
+        "axit-hyaluronic-duong-uong-dem-khop-goi-vi"
+      ],
+      "titleVi": "Axit Hyaluronic đường uống: Giải mã cơ chế ngậm nước đệm khớp và phục hồi khả năng leo cầu thang",
+      "titleEn": "Axit Hyaluronic đường uống: Giải mã cơ chế ngậm nước đệm khớp và phục hồi khả năng leo cầu thang",
+      "organ": "Metabolic",
+      "tier": "Clinical Deep-Dive",
+      "doi": "10.1100/2012/167928",
+      "date": "2026-10-30T13:00:00Z",
+      "tags": [
+        "khop-goi",
+        "dau-khop",
+        "lao-hoa",
+        "vong-van-dong",
+        "axit-hyaluronic",
+        "chong-lao-hoa"
+      ],
+      "keywords": [
+        "axit",
+        "hyaluronic",
+        "duong",
+        "uong",
+        "ngam",
+        "nuoc",
+        "dem",
+        "khop",
+        "phuc",
+        "hoi",
+        "kha",
+        "nang",
+        "leo",
+        "cau",
+        "thang",
+        "goi",
+        "dau",
+        "lao",
+        "hoa",
+        "vong",
+        "van",
+        "dong",
+        "chong",
+        "moi",
+        "buoc"
+      ]
+    },
+    {
+      "id": "oral-hyaluronic-acid-knee-joint-matrix",
+      "slugs": [
+        "oral-hyaluronic-acid-knee-joint-matrix-en"
+      ],
+      "titleVi": "Oral Hyaluronic Acid: Unraveling Matrix Hydration and Stair Navigation in Aging Knees",
+      "titleEn": "Oral Hyaluronic Acid: Unraveling Matrix Hydration and Stair Navigation in Aging Knees",
+      "organ": "Metabolic",
+      "tier": "Clinical Deep-Dive",
+      "doi": "10.1100/2012/167928",
+      "date": "2026-10-30T13:00:00Z",
+      "tags": [
+        "knee-joint",
+        "joint-pain",
+        "cellular-aging",
+        "mobility",
+        "hyaluronic-acid",
+        "longevity"
+      ],
+      "keywords": [
+        "oral",
+        "hyaluronic",
+        "acid",
+        "unraveling",
+        "matrix",
+        "hydration",
+        "stair",
+        "navigation",
+        "aging",
+        "knees",
+        "knee",
+        "joint",
+        "pain",
+        "cellular",
+        "mobility",
+        "longevity",
+        "every",
+        "step",
+        "staircase",
+        "exerts",
+        "three",
+        "four",
+        "times",
+        "your",
+        "body"
+      ]
+    },
     {
       "id": "lutein-zeaxanthin-bao-ve-mat-va-da",
       "slugs": [
@@ -464,8 +558,7 @@
     {
       "id": "ngoi-nhieu-te-liet-enzyme-lpl-khi-mau-u-trung-chan",
       "slugs": [
-        "ngoi-nhieu-te-liet-enzyme-lpl-khi-mau-u-trung-chan-vi",
-        "sitting-paralyzes-lpl-enzyme-venous-stasis-en"
+        "ngoi-nhieu-te-liet-enzyme-lpl-khi-mau-u-trung-chan-vi"
       ],
       "titleVi": "Ngồi làm việc liên tục trên 2 giờ làm tắt ngấm enzyme LPL: Thói quen nhấp nhổm đơn giản giải thoát mạch máu chân",
       "titleEn": "Ngồi làm việc liên tục trên 2 giờ làm tắt ngấm enzyme LPL: Thói quen nhấp nhổm đơn giản giải thoát mạch máu chân",
