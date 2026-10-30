@@ -1,7 +1,7 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-10-30T11:39:37.487Z",
-  "totalTopics": 179,
+  "lastUpdated": "2026-10-30T14:36:52.923Z",
+  "totalTopics": 181,
   "topics": [
     {
       "id": "axit-hyaluronic-duong-uong-dem-khop-goi",
@@ -48,6 +48,98 @@
         "chong",
         "moi",
         "buoc"
+      ]
+    },
+    {
+      "id": "chiet-xuat-ke-sua-silymarin-bao-ve-mang-te-bao-gan",
+      "slugs": [
+        "chiet-xuat-ke-sua-silymarin-bao-ve-mang-te-bao-gan-vi"
+      ],
+      "titleVi": "Chiết xuất Kế sữa (Silymarin): Bức tường sinh học bảo vệ màng tế bào gan trước rượu bia và thuốc giảm đau",
+      "titleEn": "Chiết xuất Kế sữa (Silymarin): Bức tường sinh học bảo vệ màng tế bào gan trước rượu bia và thuốc giảm đau",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.4254/wjh.v6.i3.144",
+      "date": "2026-10-30T13:00:00Z",
+      "tags": [
+        "gan",
+        "men-gan",
+        "giaiphan-doc",
+        "metabolic",
+        "lao-hoa"
+      ],
+      "keywords": [
+        "chiet",
+        "xuat",
+        "sua",
+        "silymarin",
+        "buc",
+        "tuong",
+        "sinh",
+        "hoc",
+        "bao",
+        "mang",
+        "gan",
+        "truoc",
+        "ruou",
+        "bia",
+        "thuoc",
+        "giam",
+        "dau",
+        "men",
+        "giaiphan",
+        "doc",
+        "metabolic",
+        "lao",
+        "hoa",
+        "quan",
+        "tham"
+      ]
+    },
+    {
+      "id": "milk-thistle-silymarin-liver-cell-membrane-protection",
+      "slugs": [
+        "milk-thistle-silymarin-liver-cell-membrane-protection-en"
+      ],
+      "titleVi": "Milk Thistle Extract (Silymarin): The Biological Shield Protecting Liver Cell Membranes from Alcohol and Painkillers",
+      "titleEn": "Milk Thistle Extract (Silymarin): The Biological Shield Protecting Liver Cell Membranes from Alcohol and Painkillers",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.4254/wjh.v6.i3.144",
+      "date": "2026-10-30T13:00:00Z",
+      "tags": [
+        "liver-health",
+        "silymarin",
+        "detox",
+        "metabolic",
+        "anti-aging"
+      ],
+      "keywords": [
+        "milk",
+        "thistle",
+        "extract",
+        "silymarin",
+        "biological",
+        "shield",
+        "protecting",
+        "liver",
+        "cell",
+        "membranes",
+        "alcohol",
+        "painkillers",
+        "health",
+        "detox",
+        "metabolic",
+        "anti",
+        "aging",
+        "silently",
+        "bears",
+        "heavy",
+        "burden",
+        "modern",
+        "lifestyle",
+        "ranging",
+        "social"
       ]
     },
     {

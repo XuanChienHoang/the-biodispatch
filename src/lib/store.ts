@@ -4691,6 +4691,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "This study evaluated the efficacy of oral high molecular weight hyaluronic acid (HA) in subjects with knee osteoarthritis over 12 months. Results demonstrated significant improvements in Japanese Knee Osteoarthritis Measure (JKOM) scores compared to placebo, particularly among patients under 70 years old. The oral HA was well tolerated and reduced synovial inflammation while promoting cartilage extracellular matrix hydration.",
     },
   ],
+  "chiet-xuat-ke-sua-silymarin-bao-ve-mang-te-bao-gan-vi": [
+    {
+      ordinal: 1,
+      label: "Hepatoprotective effect of silymarin",
+      pmid: "24672644",
+      doi: "10.4254/wjh.v6.i3.144",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "World J Hepatol",
+      year: 2014,
+      abstract: "Silymarin, a flavonolignan extracted from milk thistle (Silybum marianum), has been widely used for its hepatoprotective effects. It acts as an antioxidant, membrane stabilizer, and promoter of liver regeneration, inhibiting toxins from penetrating hepatic cell membranes and preventing lipid peroxidation induced by alcohol and paracetamol.",
+    },
+  ],
+  "milk-thistle-silymarin-liver-cell-membrane-protection-en": [
+    {
+      ordinal: 1,
+      label: "Hepatoprotective effect of silymarin",
+      pmid: "24672644",
+      doi: "10.4254/wjh.v6.i3.144",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "World J Hepatol",
+      year: 2014,
+      abstract: "Silymarin, a flavonolignan extracted from milk thistle (Silybum marianum), has been widely used for its hepatoprotective effects. It acts as an antioxidant, membrane stabilizer, and promoter of liver regeneration, inhibiting toxins from penetrating hepatic cell membranes and preventing lipid peroxidation induced by alcohol and paracetamol.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
