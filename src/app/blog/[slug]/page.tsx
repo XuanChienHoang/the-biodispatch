@@ -66,12 +66,12 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const twin = resolveTwin(slug);
   const isCurrentVi =
     twin ? twin.lang === "en" :
-    (a.lang === "vi" ||
-    slug.endsWith("-vi") ||
-    slug.includes("sinh-kha-dung") ||
-    slug.includes("keo-dai-tuoi-tho") ||
-    slug.includes("mo-nau") ||
-    slug.includes("sinh-nhiet"));
+      (a.lang === "vi" ||
+        slug.endsWith("-vi") ||
+        slug.includes("sinh-kha-dung") ||
+        slug.includes("keo-dai-tuoi-tho") ||
+        slug.includes("mo-nau") ||
+        slug.includes("sinh-nhiet"));
 
   // Determine twin slug
   const viSlug = isCurrentVi ? slug : (twin?.slug || `${root}-vi`);
@@ -159,13 +159,13 @@ export default async function BlogPage({ params }: Params) {
   const twin = resolveTwin(slug);
   const isVi =
     twin ? twin.lang === "en" :
-    (article.lang === "vi" ||
-    slug.endsWith("-vi") ||
-    slug.includes("sinh-kha-dung") ||
-    slug.includes("keo-dai-tuoi-tho") ||
-    slug.includes("mo-nau") ||
-    slug.includes("sinh-nhiet") ||
-    Boolean(article.tags?.includes("Dược động học")));
+      (article.lang === "vi" ||
+        slug.endsWith("-vi") ||
+        slug.includes("sinh-kha-dung") ||
+        slug.includes("keo-dai-tuoi-tho") ||
+        slug.includes("mo-nau") ||
+        slug.includes("sinh-nhiet") ||
+        Boolean(article.tags?.includes("Dược động học")));
 
   const allArticles = await getArticles();
   const related = allArticles
@@ -519,7 +519,7 @@ export default async function BlogPage({ params }: Params) {
                             <span className="num text-[0.74rem] text-slate-ink break-words max-w-full md:text-right">
                               {r.sampleSize ? `n = ${r.sampleSize}` : "n = systematic/in-vitro"}
                             </span>
-                            
+
                             {/* Explicit Clickable Source Buttons */}
                             <div className="mt-1 flex flex-wrap gap-2">
                               {pubmedUrl && (

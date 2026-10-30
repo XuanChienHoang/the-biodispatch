@@ -187,6 +187,9 @@ export function extractSmartImageKeywords(topic = {}) {
   }
 
   // 2. Nhóm Đời sống / Thói quen ăn uống / Sinh lý học
+  if (/ngồi nhiều|ngoi-nhieu|ngồi yên|sedentary|sitting|lpl|tê liệt enzyme|ứ trệ chân|venous stasis/i.test(text)) {
+    queries.push('office worker sitting desk', 'person sitting at office desk', 'office worker computer desk', 'ergonomic workspace stretching');
+  }
   if (/nướng|cháy|chay-xem|barbecue|bbq|charred|grill|glycation|maillard|ages/i.test(text)) {
     queries.push('barbecue grill meat', 'charred meat', 'grilled food', 'bbq charcoal');
   }
@@ -317,7 +320,7 @@ async function fetchFromWikimediaCommons(keyword, currentSlug) {
   try {
     // Chỉ tìm trong Namespace 6 (File:). Không dùng filetype:bitmap hay các từ âm tính làm hỏng bộ tìm kiếm
     const url = `https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrnamespace=6&gsrsearch=${encodeURIComponent(keyword)}&prop=imageinfo&iiprop=url|size|mime&format=json&gsrlimit=12`;
-    
+
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 10000);
     const res = await fetch(url, {

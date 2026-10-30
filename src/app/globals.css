@@ -21,10 +21,14 @@
   --color-slate-ink: #64748b;
 
   /* --- Accents, one job each --- */
-  --color-trace: #00f2fe; /* measured / live trace */
-  --color-syn: #10b981; /* synergistic / positive delta */
-  --color-plasma: #f59e0b; /* warning / CI band */
-  --color-antag: #ff6b4a; /* antagonist / secondary trace */
+  --color-trace: #00f2fe;
+  /* measured / live trace */
+  --color-syn: #10b981;
+  /* synergistic / positive delta */
+  --color-plasma: #f59e0b;
+  /* warning / CI band */
+  --color-antag: #ff6b4a;
+  /* antagonist / secondary trace */
 
   /* ink steps of the same hues, for journal-white surfaces */
   --color-trace-ink: #0e7490;
@@ -55,13 +59,29 @@
     stroke-dashoffset: -240;
   }
 }
+
 @keyframes trace-pulse {
-  0%, 100% { opacity: 0.55; }
-  50% { opacity: 1; }
+
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
+
 @keyframes rise {
-  from { opacity: 0; transform: translateY(14px); }
-  to { opacity: 1; transform: none; }
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 html {
@@ -89,6 +109,7 @@ body {
     linear-gradient(to bottom, rgba(148, 163, 184, 0.11) 1px, transparent 1px);
   background-size: 34px 34px;
 }
+
 .graticule-fine {
   background-image:
     linear-gradient(to right, rgba(148, 163, 184, 0.07) 1px, transparent 1px),
@@ -106,6 +127,7 @@ body {
 .display-xl {
   font-size: clamp(2.15rem, 7.2vw, 5.61rem);
 }
+
 .display-lg {
   font-size: clamp(1.7rem, 5.4vw, 3.157rem);
 }
@@ -133,24 +155,26 @@ input[type="range"].lab {
   background: transparent;
   cursor: pointer;
 }
+
 input[type="range"].lab::-webkit-slider-runnable-track {
   height: 3px;
-  background: linear-gradient(
-    to right,
-    var(--color-indigo-deep) 0%,
-    var(--color-indigo-deep) var(--pct, 50%),
-    var(--color-slate-hair) var(--pct, 50%),
-    var(--color-slate-hair) 100%
-  );
+  background: linear-gradient(to right,
+      var(--color-indigo-deep) 0%,
+      var(--color-indigo-deep) var(--pct, 50%),
+      var(--color-slate-hair) var(--pct, 50%),
+      var(--color-slate-hair) 100%);
 }
+
 input[type="range"].lab::-moz-range-track {
   height: 3px;
   background: var(--color-slate-hair);
 }
+
 input[type="range"].lab::-moz-range-progress {
   height: 3px;
   background: var(--color-indigo-deep);
 }
+
 input[type="range"].lab::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 14px;
@@ -162,6 +186,7 @@ input[type="range"].lab::-webkit-slider-thumb {
   box-shadow: inset 0 0 0 2px #ffffff, 0 2px 6px rgba(11, 25, 44, 0.35);
   transition: box-shadow 0.15s ease, transform 0.15s ease;
 }
+
 input[type="range"].lab::-moz-range-thumb {
   width: 14px;
   height: 22px;
@@ -170,11 +195,13 @@ input[type="range"].lab::-moz-range-thumb {
   border: 2px solid var(--color-indigo-deep);
   box-shadow: inset 0 0 0 2px #ffffff;
 }
+
 input[type="range"].lab:hover::-webkit-slider-thumb,
 input[type="range"].lab:focus-visible::-webkit-slider-thumb {
   transform: scaleY(1.1);
   box-shadow: inset 0 0 0 2px #ffffff, 0 0 0 4px rgba(0, 242, 254, 0.35);
 }
+
 input[type="range"].lab:focus-visible {
   outline: none;
 }
@@ -263,10 +290,12 @@ input[type="range"].lab:focus-visible {
     font-size: 1.03rem;
     line-height: 1.75;
   }
+
   .prose-editorial table {
     min-width: 500px;
     font-size: 0.82rem;
   }
+
   .prose-editorial th,
   .prose-editorial td {
     padding: 0.6rem 0.7rem;
@@ -277,7 +306,8 @@ input[type="range"].lab:focus-visible {
   background: var(--color-paper-tint);
 }
 
-.prose-editorial ul, .prose-editorial ol {
+.prose-editorial ul,
+.prose-editorial ol {
   padding-left: 1.75rem;
   margin-bottom: 1.65rem;
 }
@@ -340,6 +370,7 @@ input[type="range"].lab:focus-visible {
   html {
     scroll-behavior: auto;
   }
+
   *,
   *::before,
   *::after {
@@ -353,9 +384,12 @@ input[type="range"].lab:focus-visible {
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
 /* Hide scrollbar for IE, Edge and Firefox */
 .no-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
   -webkit-overflow-scrolling: touch;
 }

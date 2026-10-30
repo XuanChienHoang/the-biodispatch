@@ -354,15 +354,15 @@ export function resolveLaymanMedicalData(
 
   const fallbackTerms = isVi
     ? [
-        "Cơ Chế Khởi Phát Tại Tế Bào",
-        "Đường Truyền Tín Hiệu Sinh Hóa",
-        "Ứng Dụng Bảo Vệ Thực Chứng",
-      ]
+      "Cơ Chế Khởi Phát Tại Tế Bào",
+      "Đường Truyền Tín Hiệu Sinh Hóa",
+      "Ứng Dụng Bảo Vệ Thực Chứng",
+    ]
     : [
-        "Primary Cellular Trigger",
-        "Biochemical Signaling Cascade",
-        "Evidence-Based Clinical Action",
-      ];
+      "Primary Cellular Trigger",
+      "Biochemical Signaling Cascade",
+      "Evidence-Based Clinical Action",
+    ];
   fallbackTerms.forEach(addTermCandidate);
 
   // Build candidate pool of distinct EXPLANATIONS / ANALOGIES (3 distinct texts required)
@@ -416,9 +416,9 @@ export function resolveLaymanMedicalData(
     ]) ||
     cleanMarkdown(
       excerpt ||
-        (isVi
-          ? `Khởi phát từ tương tác phân tử đặc hiệu trong "${title}", mở khóa chuỗi đáp ứng sinh lý tại mô đích.`
-          : `Initiated by target-specific molecular interactions in "${title}", unlocking downstream physiological responses.`),
+      (isVi
+        ? `Khởi phát từ tương tác phân tử đặc hiệu trong "${title}", mở khóa chuỗi đáp ứng sinh lý tại mô đích.`
+        : `Initiated by target-specific molecular interactions in "${title}", unlocking downstream physiological responses.`),
       285
     );
 
@@ -470,7 +470,7 @@ export function resolveLaymanMedicalData(
     {
       term:
         curated?.points?.[1]?.term &&
-        curated.points[1].term.toLowerCase() !== (curated?.points?.[0]?.term || "").toLowerCase()
+          curated.points[1].term.toLowerCase() !== (curated?.points?.[0]?.term || "").toLowerCase()
           ? cleanTerm(curated.points[1].term, 80)
           : termCandidates[1] || fallbackTerms[1],
       layTerm: isVi ? layTermsVi[1] : layTermsEn[1],
@@ -479,7 +479,7 @@ export function resolveLaymanMedicalData(
     {
       term:
         curated?.points?.[2]?.term &&
-        curated.points[2].term.toLowerCase() !== (curated?.points?.[1]?.term || "").toLowerCase()
+          curated.points[2].term.toLowerCase() !== (curated?.points?.[1]?.term || "").toLowerCase()
           ? cleanTerm(curated.points[2].term, 80)
           : termCandidates[2] || fallbackTerms[2],
       layTerm: isVi ? layTermsVi[2] : layTermsEn[2],

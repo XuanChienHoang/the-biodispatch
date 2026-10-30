@@ -492,11 +492,10 @@ export function PathwayFlowchart({ rawText, isVi = true }: PathwayFlowchartProps
               <div className="flex items-center bg-slate-900/90 rounded-lg p-0.5 border border-slate-800">
                 <button
                   onClick={() => setViewMode("stream")}
-                  className={`px-2 py-1 rounded text-[0.65rem] font-mono flex items-center gap-1 transition-all cursor-pointer ${
-                    viewMode === "stream"
+                  className={`px-2 py-1 rounded text-[0.65rem] font-mono flex items-center gap-1 transition-all cursor-pointer ${viewMode === "stream"
                       ? "bg-cyan-500/20 text-cyan-300 font-bold border border-cyan-500/40"
                       : "text-slate-400 hover:text-slate-200"
-                  }`}
+                    }`}
                   title={isVi ? "Xem dòng ngang cuộn" : "Stream carousel"}
                 >
                   <Columns size={11} />
@@ -504,11 +503,10 @@ export function PathwayFlowchart({ rawText, isVi = true }: PathwayFlowchartProps
                 </button>
                 <button
                   onClick={() => setViewMode("grid")}
-                  className={`px-2 py-1 rounded text-[0.65rem] font-mono flex items-center gap-1 transition-all cursor-pointer ${
-                    viewMode === "grid"
+                  className={`px-2 py-1 rounded text-[0.65rem] font-mono flex items-center gap-1 transition-all cursor-pointer ${viewMode === "grid"
                       ? "bg-cyan-500/20 text-cyan-300 font-bold border border-cyan-500/40"
                       : "text-slate-400 hover:text-slate-200"
-                  }`}
+                    }`}
                   title={isVi ? "Xem dạng lưới toàn màn hình" : "Grid full layout"}
                 >
                   <LayoutGrid size={11} />
@@ -582,15 +580,14 @@ export function PathwayFlowchart({ rawText, isVi = true }: PathwayFlowchartProps
               {/* VIEW MODE 1: ADAPTIVE RESPONSIVE GRID */}
               {viewMode === "grid" ? (
                 <div
-                  className={`grid gap-3.5 ${
-                    pipeline.steps.length === 2
+                  className={`grid gap-3.5 ${pipeline.steps.length === 2
                       ? "grid-cols-1 sm:grid-cols-2"
                       : pipeline.steps.length === 3
-                      ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
-                      : pipeline.steps.length === 4
-                      ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
-                      : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
-                  }`}
+                        ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+                        : pipeline.steps.length === 4
+                          ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+                          : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+                    }`}
                 >
                   {pipeline.steps.map((step, sIdx) => {
                     const isSelected =
@@ -605,11 +602,11 @@ export function PathwayFlowchart({ rawText, isVi = true }: PathwayFlowchartProps
                             isSelected
                               ? null
                               : {
-                                  title: step.title,
-                                  role: step.role,
-                                  roleLabel: step.roleLabel,
-                                  index: sIdx
-                                }
+                                title: step.title,
+                                role: step.role,
+                                roleLabel: step.roleLabel,
+                                index: sIdx
+                              }
                           )
                         }
                         className={`cursor-pointer select-none rounded-xl border p-4 flex flex-col justify-between transition-all duration-200 min-h-[120px] ${getCardStyle(
@@ -678,11 +675,11 @@ export function PathwayFlowchart({ rawText, isVi = true }: PathwayFlowchartProps
                               isSelected
                                 ? null
                                 : {
-                                    title: step.title,
-                                    role: step.role,
-                                    roleLabel: step.roleLabel,
-                                    index: sIdx
-                                  }
+                                  title: step.title,
+                                  role: step.role,
+                                  roleLabel: step.roleLabel,
+                                  index: sIdx
+                                }
                             )
                           }
                           className={`w-[230px] shrink-0 cursor-pointer select-none rounded-xl border p-4 flex flex-col justify-between transition-all duration-200 min-h-[120px] ${getCardStyle(

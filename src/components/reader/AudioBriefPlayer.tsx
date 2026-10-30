@@ -226,9 +226,8 @@ export function AudioBriefPlayer({ title, summaryText, isVi }: AudioBriefPlayerP
         {/* Title and Badge */}
         <div className="flex items-center gap-3 min-w-0">
           <div
-            className={`grid h-9 w-9 shrink-0 place-items-center rounded-full text-white shadow-xs transition-colors ${
-              isPlaying ? "bg-teal-700 animate-pulse" : "bg-indigo-deep"
-            }`}
+            className={`grid h-9 w-9 shrink-0 place-items-center rounded-full text-white shadow-xs transition-colors ${isPlaying ? "bg-teal-700 animate-pulse" : "bg-indigo-deep"
+              }`}
           >
             <Headphones size={16} />
           </div>
@@ -272,8 +271,8 @@ export function AudioBriefPlayer({ title, summaryText, isVi }: AudioBriefPlayerP
                     ? "Nam Minh (Nam)"
                     : "Hoài My (Nữ)"
                   : voiceGender === "male"
-                  ? "Guy (Male)"
-                  : "Jenny (Female)"}
+                    ? "Guy (Male)"
+                    : "Jenny (Female)"}
               </span>
             </button>
 
@@ -305,9 +304,8 @@ export function AudioBriefPlayer({ title, summaryText, isVi }: AudioBriefPlayerP
             type="button"
             onClick={handleTogglePlay}
             disabled={isLoading}
-            className={`flex items-center justify-center gap-1.5 rounded-sm px-3.5 py-1.5 text-xs font-semibold text-white shadow-xs transition-all cursor-pointer ${
-              isPlaying ? "bg-amber-700 hover:bg-amber-800" : "bg-teal-800 hover:bg-teal-900"
-            }`}
+            className={`flex items-center justify-center gap-1.5 rounded-sm px-3.5 py-1.5 text-xs font-semibold text-white shadow-xs transition-all cursor-pointer ${isPlaying ? "bg-amber-700 hover:bg-amber-800" : "bg-teal-800 hover:bg-teal-900"
+              }`}
           >
             {isLoading ? (
               <>
