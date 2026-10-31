@@ -80,6 +80,26 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "lang": "vi",
     "title": "Lướt điện thoại ban đêm: Tế bào võng mạc ipRGC và bí mật giấc ngủ sâu"
   },
+  "astaxanthin-giai-toa-moi-mat-man-hinh-tre-hoa-da-vi": {
+    "slug": "astaxanthin-screen-eye-fatigue-skin-longevity-en",
+    "lang": "en",
+    "title": "Astaxanthin: The Red Pigment Rescuing Screen Eye Fatigue and Rejuvenating Skin at the Cellular Level"
+  },
+  "astaxanthin-screen-eye-fatigue-skin-longevity-en": {
+    "slug": "astaxanthin-giai-toa-moi-mat-man-hinh-tre-hoa-da-vi",
+    "lang": "vi",
+    "title": "Astaxanthin: Sắc tố đỏ giải cứu đôi mắt mỏi do màn hình và trẻ hóa làn da từ cấp tế bào"
+  },
+  "axit-hyaluronic-duong-uong-dem-khop-goi-vi": {
+    "slug": "oral-hyaluronic-acid-knee-joint-matrix-en",
+    "lang": "en",
+    "title": "Oral Hyaluronic Acid: Unraveling Matrix Hydration and Stair Navigation in Aging Knees"
+  },
+  "oral-hyaluronic-acid-knee-joint-matrix-en": {
+    "slug": "axit-hyaluronic-duong-uong-dem-khop-goi-vi",
+    "lang": "vi",
+    "title": "Axit Hyaluronic đường uống: Giải mã cơ chế ngậm nước đệm khớp và phục hồi khả năng leo cầu thang"
+  },
   "butyrate-scfa-epigenetics-histone-gut-barrier": {
     "slug": "butyrate-scfa-epigenetics-histone-gut-barrier-en",
     "lang": "en",
@@ -129,6 +149,16 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "slug": "chat-xo-pectin-tu-tao-tam-ao-giap-gel-bao-ve-niem-mac-ruot-vi",
     "lang": "vi",
     "title": "Ăn một quả táo mỗi ngày: Cơ chế pectin tạo màng gel sinh học bảo vệ niêm mạc ruột và nuôi dưỡng Akkermansia"
+  },
+  "chiet-xuat-ke-sua-silymarin-bao-ve-mang-te-bao-gan-vi": {
+    "slug": "milk-thistle-silymarin-liver-cell-membrane-protection-en",
+    "lang": "en",
+    "title": "Milk Thistle Extract (Silymarin): The Biological Shield Protecting Liver Cell Membranes from Alcohol and Painkillers"
+  },
+  "milk-thistle-silymarin-liver-cell-membrane-protection-en": {
+    "slug": "chiet-xuat-ke-sua-silymarin-bao-ve-mang-te-bao-gan-vi",
+    "lang": "vi",
+    "title": "Chiết xuất Kế sữa (Silymarin): Bức tường sinh học bảo vệ màng tế bào gan trước rượu bia và thuốc giảm đau"
   },
   "cholesterol-myth-vascular-inflammation": {
     "slug": "cholesterol-myth-vascular-inflammation-en",
@@ -380,6 +410,16 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "lang": "vi",
     "title": "Khi đường làm giòn làn da: Cơ chế Maillard và bí quyết giữ gìn sự đàn hồi cho collagen"
   },
+  "lutein-zeaxanthin-bao-ve-mat-va-da-vi": {
+    "slug": "lutein-zeaxanthin-eye-and-skin-protection-en",
+    "lang": "en",
+    "title": "Lutein and Zeaxanthin: The Molecular Sunglasses Shielding Eyes and Skin from Digital Screens"
+  },
+  "lutein-zeaxanthin-eye-and-skin-protection-en": {
+    "slug": "lutein-zeaxanthin-bao-ve-mat-va-da-vi",
+    "lang": "vi",
+    "title": "Sắc tố vàng Lutein và Zeaxanthin: Chiếc kính râm phân tử bảo vệ mắt và làn da trước màn hình điện tử"
+  },
   "magie-glycinate-vs-citrate-giac-ngu-va-lo-au-vi": {
     "slug": "magnesium-glycinate-versus-citrate-sleep-and-anxiety-en",
     "lang": "en",
@@ -449,6 +489,16 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "slug": "nad-cd38-sirtuin-mitochondria-cellular-aging",
     "lang": "vi",
     "title": "Trục NAD+, Sirtuin và kẻ trộm năng lượng CD38: Cuộc chiến bảo toàn năng lượng ty thể khi tế bào già cỗi"
+  },
+  "ngan-ngua-teo-co-tuoi-40-leucine-mtor-vi": {
+    "slug": "preventing-sarcopenia-after-40-leucine-mtor-en",
+    "lang": "en",
+    "title": "Preventing Muscle Loss After 40: How Leucine Flips the mTOR Switch to Rebuild Aging Muscles"
+  },
+  "preventing-sarcopenia-after-40-leucine-mtor-en": {
+    "slug": "ngan-ngua-teo-co-tuoi-40-leucine-mtor-vi",
+    "lang": "vi",
+    "title": "Ngăn ngừa teo cơ sau tuổi 40: Bí quyết nạp axit amin Leucine để kích hoạt công tắc mTOR nuôi dưỡng cơ bắp"
   },
   "ngat-quang-ngoi-lau-danh-thuc-mach-mau": {
     "slug": "breaking-sedentary-sitting-vascular-shear-stress",

@@ -320,6 +320,21 @@ const ORGAN_PALETTES = {
   Immune: { bg1: "#2d1604", bg2: "#1c1917", accent: "#f59e0b", glow: "#d97706" }
 };
 
+
+function removeAttemptImages(slugVi, slugEn) {
+  for (const s of [slugVi, slugEn]) {
+    [
+      path.join(imagesDir, `${s}.jpg`),
+      path.join(rootDir, 'public/images/covers', `${s}.webp`),
+      path.join(rootDir, 'public/images/thumbs', `${s}.webp`)
+    ].forEach(p => {
+      try {
+        if (fs.existsSync(p)) fs.unlinkSync(p);
+      } catch {}
+    });
+  }
+}
+
 async function createFallbackIllustration(slug, topic = {}) {
   const targetPath = path.join(imagesDir, `${slug}.jpg`);
   if (fs.existsSync(targetPath)) return targetPath;
@@ -380,6 +395,8 @@ export async function runAutonomousDispatch() {
   console.log(`🎯 [Editorial Policy] Hướng tới độc giả phổ thông (tỷ lệ 8:1) -> 8 chủ đề gần nhất có ${recentClinicalCount} bài chuyên sâu -> Mục tiêu kỳ này: ${targetTier}`);
 
   const { validateDispatchContent } = await import('./validate-dispatch.mjs');
+  const { cleanOrphanedImages } = await import('./clean-orphaned-images.mjs');
+  cleanOrphanedImages();
   // Ưu tiên topic từ radar nếu vượt qua kiểm định Dedup Guard và đúng targetTier
   const staticTopic = DISPATCH_RADAR_TOPICS.find(t => 
     !checkTopicCollision(t).isDuplicate && 
@@ -490,6 +507,7 @@ export async function runAutonomousDispatch() {
       console.warn(`⚠️ [Gatekeeper REJECT Lượt ${attempt}] Bài tiếng Việt chưa đạt chuẩn biên tập của TS. Hoàng Xuân Chiến:`);
       viValidation.issues.forEach(issue => console.warn(`   - ${issue}`));
       feedback = `Bản thảo tiếng Việt chưa đạt chuẩn biên tập: ${viValidation.issues.join('; ')}. Bắt buộc viết sâu sắc trên 850 từ, ảnh phân giải cao >=120KB, có bảng Markdown so sánh và bộ tóm tắt brief/practical V2!`;
+      removeAttemptImages(targetSlugVi, targetSlugEn);
       if (staticTopic && attempt === 1) continue;
       continue;
     }
@@ -501,6 +519,7 @@ export async function runAutonomousDispatch() {
       console.warn(`⚠️ [Gatekeeper REJECT Lượt ${attempt}] Bài tiếng Anh chưa đạt chuẩn biên tập:`);
       enValidation.issues.forEach(issue => console.warn(`   - ${issue}`));
       feedback = `Bản thảo tiếng Anh chưa đạt chuẩn biên tập: ${enValidation.issues.join('; ')}. Bắt buộc viết trên 700 từ, ảnh phân giải cao >=120KB, có bảng Markdown so sánh và bộ tóm tắt brief/practical V2!`;
+      removeAttemptImages(targetSlugVi, targetSlugEn);
       continue;
     }
 
@@ -527,10 +546,12 @@ export async function runAutonomousDispatch() {
 
     console.log('\n✅ [Done] Hoàn tất sinh bản tin chuyên sâu song ngữ đạt chuẩn Gatekeeper và Liêm chính Y văn PubMed!');
     publishedTopic = nextTopic;
+    cleanOrphanedImages();
     break;
    } catch (err) {
     console.warn(`⚠️ [Attempt ${attempt}] Lỗi xử lý chủ đề, chuyển lượt tiếp theo: ${err.message}`);
     feedback = `Lỗi cấu trúc dữ liệu: ${err.message}`;
+    if (targetSlugVi && targetSlugEn) removeAttemptImages(targetSlugVi, targetSlugEn);
    }
   }
 

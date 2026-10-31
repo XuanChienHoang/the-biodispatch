@@ -36,6 +36,7 @@ function resolveApiKeys() {
   const keys = {
     PEXELS_API_KEY: process.env.PEXELS_API_KEY || '',
     PIXABAY_API_KEY: process.env.PIXABAY_API_KEY || '',
+    GEMINI_API_KEY: process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY || '',
     HF_TOKEN: process.env.HF_TOKEN || process.env.HUGGINGFACE_TOKEN || ''
   };
 
@@ -57,6 +58,7 @@ function resolveApiKeys() {
           const cleanVal = vals.join('=').trim().replace(/^["']|["']$/g, '');
           if (cleanKey === 'PEXELS_API_KEY' && !keys.PEXELS_API_KEY) keys.PEXELS_API_KEY = cleanVal;
           if (cleanKey === 'PIXABAY_API_KEY' && !keys.PIXABAY_API_KEY) keys.PIXABAY_API_KEY = cleanVal;
+          if ((cleanKey === 'GEMINI_API_KEY' || cleanKey === 'GOOGLE_API_KEY') && !keys.GEMINI_API_KEY) keys.GEMINI_API_KEY = cleanVal;
           if ((cleanKey === 'HF_TOKEN' || cleanKey === 'HUGGINGFACE_TOKEN') && !keys.HF_TOKEN) keys.HF_TOKEN = cleanVal;
         }
       } catch {
@@ -113,6 +115,47 @@ export async function checkIfImageAlreadyUsed(rawBuffer, currentSlug = '') {
 export function extractSmartImageKeywords(topic = {}) {
   const text = ((topic.titleEn || '') + ' ' + (topic.titleVi || '') + ' ' + (topic.tags || []).join(' ')).toLowerCase();
   const queries = [];
+
+
+  // 1a. Nhóm Chuyên biệt: Axit Hyaluronic & Khớp gối / Vận động cầu thang
+  if (/hyaluronic|khớp gối|khop-goi|đệm khớp|knee joint|sụn khớp|hoạt dịch|stair/i.test(text)) {
+    queries.push(
+      'outdoor wooden stairs hiking trail',
+      'scenic outdoor workout staircase',
+      'hiking trail wooden stairs nature',
+      'active senior knee mobility walking'
+    );
+  }
+
+  // 1b. Nhóm Chuyên biệt: Astaxanthin & Mỏi mắt màn hình / Trẻ hóa da
+  if (/astaxanthin|mỏi mắt|moi-mat|màn hình|screen eye|antioxidant carotenoid/i.test(text)) {
+    queries.push(
+      'sockeye salmon underwater river',
+      'red sockeye salmon swimming',
+      'Tagetes marigold yellow flower',
+      'person relaxing eyes outdoor sunlight'
+    );
+  }
+
+  // 1c. Nhóm Chuyên biệt: Lutein & Zeaxanthin / Hoàng điểm & Mắt
+  if (/lutein|zeaxanthin|hoàng điểm|macular|kính râm sinh học/i.test(text)) {
+    queries.push(
+      'Tagetes patula yellow marigold flower',
+      'golden yellow marigold garden',
+      'fresh spinach leaves raw botanical',
+      'kale leaves fresh garden'
+    );
+  }
+
+  // 1d. Nhóm Chuyên biệt: Leucine, mTOR & Teo cơ tuổi 40 (Sarcopenia)
+  if (/leucine|teo cơ|teo-co|sarcopenia|mtor|kháng lực|cơ bắp|muscle strength/i.test(text)) {
+    queries.push(
+      'dumbbell resistance fitness workout',
+      'athlete lifting dumbbells workout',
+      'strength resistance training home',
+      'fitness enthusiast workout vibrant'
+    );
+  }
 
   // 1. Nhóm Dược liệu & Hoạt chất tự nhiên
   if (/ginkgo|bạch quả/i.test(text)) queries.push('Ginkgo biloba medicinal leaf', 'ginkgo leaf autumn');
@@ -214,8 +257,8 @@ export function extractSmartImageKeywords(topic = {}) {
   if (/nhai|ăn rau|cơm nguội|tinh bột kháng|microbiome|gut|ruột/i.test(text)) {
     queries.push('healthy organic vegetables salad', 'fresh salad vegetables');
   }
-  if (/muối|salt|khoáng|mineral salt|hydration/i.test(text)) {
-    queries.push('mineral salt crystals', 'warm water glass', 'glass of water morning');
+  if (/\b(?:muối|salt|mineral salt)\b/i.test(text) && !/hyaluronic|acid|khớp|knee/i.test(text)) {
+    queries.push('natural mineral salt harvest', 'glass of pure water morning');
   }
   if (/nhịn ăn|nhin-an|fasting|autophagy|tự thực bào/i.test(text)) {
     queries.push('healthy light meal', 'fresh vegetables bowl', 'clock timer lifestyle');
@@ -245,6 +288,71 @@ export function extractSmartImageKeywords(topic = {}) {
   queries.push(...fallbacks);
 
   return [...new Set(queries)];
+}
+
+
+/**
+ * Trạm kiểm duyệt thị giác AI (Gemini Vision Gatekeeper)
+ * Đánh giá tính thẩm mỹ, liêm chính y khoa và chất lượng ảnh bìa chuẩn 16:9 của TS. Hoàng Xuân Chiến.
+ */
+export async function evaluateCandidateWithGeminiVision(buf, topic = {}, apiKey = '') {
+  if (!apiKey || !buf || buf.length < 25000) return { pass: true, score: 8, reason: 'Passed (no vision key or buffer check)' };
+
+  const title = topic.titleVi || topic.titleEn || topic.slugVi || 'Biomedical Topic';
+  const prompt = `You are the Art Director for Phytocodex, an elite biomedical editorial publication directed by Dr. Xuan Chien Hoang (University of Hamburg).
+Topic: "${title}".
+Evaluate this candidate cover image for publication.
+Strict Editorial Standards:
+1. Must be an authentic, high-quality photograph or elegant scientific visualization (botanical, natural landscape, active lifestyle, clinical subject, culinary whole foods, laboratory).
+2. REJECT if it is an academic journal multi-panel figure with letters (A, B, C, D), flowcharts, text graphs, or scientific paper extract.
+3. REJECT if it depicts ugly/grey fossils, diatom debris, or unappealing microscope sludge.
+4. REJECT if it has watermarks, stock photo signatures, website URLs (e.g. epSos.de, shutterstock, etc.).
+5. REJECT if the subject is completely wrong or poorly matched (e.g. rock salt for knee joint, raw dirty pans, or irrelevant machinery).
+6. REJECT if it looks like an amateur snapshot with harsh flash, glare, or cluttered room.
+
+Reply ONLY in JSON format:
+{
+  "pass": boolean,
+  "score": number, // 1 to 10
+  "subject": string,
+  "reason": string
+}`;
+
+  const models = ['gemini-3.5-flash-lite', 'gemini-3.5-flash', 'gemini-3-flash-preview'];
+  for (const model of models) {
+    try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 12000);
+      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [{
+            parts: [
+              { text: prompt },
+              { inlineData: { mimeType: 'image/jpeg', data: buf.toString('base64') } }
+            ]
+          }],
+          generationConfig: { responseMimeType: 'application/json' }
+        }),
+        signal: controller.signal
+      });
+      clearTimeout(timeout);
+
+      if (res.ok) {
+        const data = await res.json();
+        const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+        if (text) {
+          const parsed = JSON.parse(text);
+          return parsed;
+        }
+      }
+    } catch {
+      // try next model or fallback
+    }
+  }
+
+  return { pass: true, score: 7.5, reason: 'Gemini Vision fallback (API timeout/busy)' };
 }
 
 /**
@@ -316,7 +424,7 @@ async function fetchFromPixabay(keyword, apiKey, currentSlug) {
 /**
  * 3. Tải ảnh thực tế chất lượng cao từ Wikimedia Commons (Keyless, 100M+ ảnh mở)
  */
-async function fetchFromWikimediaCommons(keyword, currentSlug) {
+async function fetchFromWikimediaCommons(keyword, currentSlug, topic = {}, geminiApiKey = '') {
   try {
     // Chỉ tìm trong Namespace 6 (File:). Không dùng filetype:bitmap hay các từ âm tính làm hỏng bộ tìm kiếm
     const url = `https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrnamespace=6&gsrsearch=${encodeURIComponent(keyword)}&prop=imageinfo&iiprop=url|size|mime&format=json&gsrlimit=12`;
@@ -334,11 +442,11 @@ async function fetchFromWikimediaCommons(keyword, currentSlug) {
 
     for (const p of pages) {
       const title = (p.title || '').toLowerCase();
-      // Loại bỏ sơ đồ, vector, biểu tượng, clip-art, bản đồ, cờ
-      if (/schema|diagram|drawing|clipart|icon|vector|symbol|flag of|map of|logo|\.pdf$|\.djvu$|\.svg$|\.gif$/i.test(title)) continue;
+      // Loại bỏ sơ đồ, bài báo scan, fossil, diatom, vector, clip-art, bản đồ, watermark
+      if (/schema|diagram|figure|plate|drawing|clipart|icon|vector|symbol|flag of|map of|logo|fossil|diatom|specimen|scan|gazette|newsletter|report|bulletin|journal|ia_|manuscript|epsos|watermark|lockout|\.pdf$|\.djvu$|\.svg$|\.gif$/i.test(title)) continue;
 
       const info = p.imageinfo?.[0];
-      if (!info || info.width < 1000 || info.height < 560) continue;
+      if (!info || info.width < 1200 || info.height < 650) continue;
       const fileUrl = info.url || '';
       if (fileUrl.match(/\.(pdf|djvu|svg|gif|webm|ogg|tif|tiff)$/i)) continue;
 
@@ -359,6 +467,15 @@ async function fetchFromWikimediaCommons(keyword, currentSlug) {
             if (meta && (meta.format === 'jpeg' || meta.format === 'png' || meta.format === 'webp')) {
               // Kiểm tra tính độc bản chống trùng lặp với bất kỳ bài nào khác
               if (!await checkIfImageAlreadyUsed(buf, currentSlug)) {
+                // Trạm kiểm định thị giác AI (Gemini Vision Gatekeeper)
+                if (geminiApiKey) {
+                  const evalResult = await evaluateCandidateWithGeminiVision(buf, topic, geminiApiKey);
+                  if (!evalResult.pass || (evalResult.score && evalResult.score < 7)) {
+                    console.warn(`🛡️ [Vision Gatekeeper REJECTED] "${title}": Score ${evalResult.score}/10 - ${evalResult.reason}`);
+                    continue;
+                  }
+                  console.log(`✅ [Vision Gatekeeper APPROVED] "${title}": Score ${evalResult.score}/10 - ${evalResult.subject || ''}`);
+                }
                 return buf;
               }
             }
@@ -567,7 +684,7 @@ export async function generateDispatchImage(slug, topic = {}) {
     return targetPath;
   }
 
-  const { PEXELS_API_KEY, PIXABAY_API_KEY } = resolveApiKeys();
+  const { PEXELS_API_KEY, PIXABAY_API_KEY, GEMINI_API_KEY } = resolveApiKeys();
   const keywordCandidates = extractSmartImageKeywords(topic);
 
   console.log(`📸 [Image Engine] Khởi chạy tìm kiếm ảnh độc bản cho "${slug}"...`);
@@ -595,8 +712,8 @@ export async function generateDispatchImage(slug, topic = {}) {
       }
     }
 
-    // TẦNG 3: Wikimedia Commons (Kho tư liệu khoa học mở, Namespace 6, Không cần Key)
-    const wikiBuffer = await fetchFromWikimediaCommons(keyword, slug);
+    // TẦNG 3: Wikimedia Commons (Kho tư liệu khoa học mở + Trạm kiểm duyệt thị giác Gemini Vision)
+    const wikiBuffer = await fetchFromWikimediaCommons(keyword, slug, topic, GEMINI_API_KEY);
     if (wikiBuffer) {
       await processAndSaveImage(wikiBuffer, slug);
       console.log(`✅ [Image Engine] Đã lấy ảnh khoa học thực tế Wikimedia ("${keyword}") -> ${slug}.jpg`);

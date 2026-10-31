@@ -63,6 +63,7 @@ jobs:
             if [ "$i" -lt 3 ]; then sleep 60; fi
           done
           node scripts/make-thumbs.mjs
+          node scripts/clean-orphaned-images.mjs
           node scripts/verify-image-uniqueness.mjs
 
       - name: Commit and Push New Dispatches to Main
