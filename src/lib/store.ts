@@ -4743,6 +4743,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Astaxanthin, a potent keto-carotenoid, crosses the blood-retinal barrier to accumulate in the ciliary muscle and retinal pigment epithelium. This randomized placebo-controlled study evaluated the protective effect of daily astaxanthin supplementation (6 mg/day) on ocular fatigue, ciliary muscle accommodation, and skin elasticity in prolonged visual display terminal (VDT) users. Results showed significant improvement in accommodation range, reduced refractory recovery time, and enhanced skin hydration and mitochondrial membrane potential.",
     },
   ],
+  "ty-le-kali-natri-xua-tan-noi-lo-muoi-vi": [
+    {
+      ordinal: 1,
+      label: "Sodium-to-potassium ratio and blood pressure, hypertension, and related factors",
+      pmid: "25398734",
+      doi: "10.3945/an.114.006783",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Adv Nutr",
+      year: 2014,
+      abstract: "High sodium intake and low potassium intake are recognized risk factors for elevated blood pressure and cardiovascular disease. This systematic review evaluated evidence on the dietary sodium-to-potassium ratio in relation to cardiovascular outcomes. The findings indicate that the sodium-to-potassium ratio exhibits a stronger association with blood pressure elevation and cardiovascular mortality than either sodium or potassium intake alone, highlighting the critical importance of increasing dietary potassium alongside sodium reduction.",
+    },
+  ],
+  "potassium-sodium-ratio-blood-pressure-en": [
+    {
+      ordinal: 1,
+      label: "Sodium-to-potassium ratio and blood pressure, hypertension, and related factors",
+      pmid: "25398734",
+      doi: "10.3945/an.114.006783",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Adv Nutr",
+      year: 2014,
+      abstract: "High sodium intake and low potassium intake are recognized risk factors for elevated blood pressure and cardiovascular disease. This systematic review evaluated evidence on the dietary sodium-to-potassium ratio in relation to cardiovascular outcomes. The findings indicate that the sodium-to-potassium ratio exhibits a stronger association with blood pressure elevation and cardiovascular mortality than either sodium or potassium intake alone, highlighting the critical importance of increasing dietary potassium alongside sodium reduction.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

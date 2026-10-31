@@ -1,8 +1,104 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-10-30T18:41:50.321Z",
-  "totalTopics": 183,
+  "lastUpdated": "2026-10-31T19:40:41.564Z",
+  "totalTopics": 185,
   "topics": [
+    {
+      "id": "potassium-sodium-ratio-blood-pressure",
+      "slugs": [
+        "potassium-sodium-ratio-blood-pressure-en"
+      ],
+      "titleVi": "The Potassium-to-Sodium Ratio: The Key to Unlocking Vascular Relief Without Extreme Salt Restriction",
+      "titleEn": "The Potassium-to-Sodium Ratio: The Key to Unlocking Vascular Relief Without Extreme Salt Restriction",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.3945/an.114.006783",
+      "date": "2026-10-31T17:00:00Z",
+      "tags": [
+        "blood-pressure",
+        "heart",
+        "blood-vessels",
+        "nutrition",
+        "potassium",
+        "sodium",
+        "aging"
+      ],
+      "keywords": [
+        "potassium",
+        "sodium",
+        "ratio",
+        "key",
+        "unlocking",
+        "vascular",
+        "relief",
+        "without",
+        "extreme",
+        "salt",
+        "restriction",
+        "blood",
+        "pressure",
+        "heart",
+        "vessels",
+        "nutrition",
+        "aging",
+        "many",
+        "individuals",
+        "meticulously",
+        "erase",
+        "every",
+        "grain",
+        "their",
+        "daily"
+      ]
+    },
+    {
+      "id": "ty-le-kali-natri-xua-tan-noi-lo-muoi",
+      "slugs": [
+        "ty-le-kali-natri-xua-tan-noi-lo-muoi-vi"
+      ],
+      "titleVi": "Tỷ lệ Kali và Natri: Chìa khóa vàng giúp xả áp mạch máu mà không cần kiêng muối cực đoan",
+      "titleEn": "Tỷ lệ Kali và Natri: Chìa khóa vàng giúp xả áp mạch máu mà không cần kiêng muối cực đoan",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.3945/an.114.006783",
+      "date": "2026-10-31T17:00:00Z",
+      "tags": [
+        "huyet-ap",
+        "tim-mach",
+        "mach-mau",
+        "dinh-duong",
+        "kali",
+        "natri",
+        "lao-hoa"
+      ],
+      "keywords": [
+        "kali",
+        "natri",
+        "chia",
+        "khoa",
+        "vang",
+        "giup",
+        "mach",
+        "mau",
+        "khong",
+        "can",
+        "kieng",
+        "muoi",
+        "cuc",
+        "doan",
+        "huyet",
+        "tim",
+        "dinh",
+        "duong",
+        "lao",
+        "hoa",
+        "nhieu",
+        "nguoi",
+        "than",
+        "gat",
+        "tung"
+      ]
+    },
     {
       "id": "astaxanthin-giai-toa-moi-mat-man-hinh-tre-hoa-da",
       "slugs": [
