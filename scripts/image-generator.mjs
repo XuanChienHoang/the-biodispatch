@@ -117,6 +117,19 @@ export function extractSmartImageKeywords(topic = {}) {
   const queries = [];
 
 
+
+  // 1e. Nhóm Chuyên biệt: Tỷ lệ Kali & Natri, Huyết áp, Mạch máu, Giải áp tế bào
+  if (/kali|natri|potassium|sodium|huyết áp|huyet-ap|blood pressure|mạch máu|mach-mau|vascular/i.test(text)) {
+    queries.push(
+      'Persea americana fruit',
+      'Spinacia oleracea',
+      'fresh avocado on tree',
+      'fresh spinach leaves bowl',
+      'fresh bananas on tree',
+      'fresh organic vegetables market'
+    );
+  }
+
   // 1a. Nhóm Chuyên biệt: Axit Hyaluronic & Khớp gối / Vận động cầu thang
   if (/hyaluronic|khớp gối|khop-goi|đệm khớp|knee joint|sụn khớp|hoạt dịch|stair/i.test(text)) {
     queries.push(
@@ -257,8 +270,8 @@ export function extractSmartImageKeywords(topic = {}) {
   if (/nhai|ăn rau|cơm nguội|tinh bột kháng|microbiome|gut|ruột/i.test(text)) {
     queries.push('healthy organic vegetables salad', 'fresh salad vegetables');
   }
-  if (/\b(?:muối|salt|mineral salt)\b/i.test(text) && !/hyaluronic|acid|khớp|knee/i.test(text)) {
-    queries.push('natural mineral salt harvest', 'glass of pure water morning');
+  if (/\b(?:muối ăn|table salt|sea salt)\b/i.test(text) && !/kali|natri|potassium|sodium|hyaluronic|acid|khớp|knee/i.test(text)) {
+    queries.push('coarse sea salt culinary bowl', 'natural sea salt harvest');
   }
   if (/nhịn ăn|nhin-an|fasting|autophagy|tự thực bào/i.test(text)) {
     queries.push('healthy light meal', 'fresh vegetables bowl', 'clock timer lifestyle');
@@ -270,18 +283,17 @@ export function extractSmartImageKeywords(topic = {}) {
   // 3. Tầng Fallback theo Hệ cơ quan (Organ-level fallbacks)
   const organ = topic.organ || 'Metabolic';
   const ORGAN_FALLBACKS = {
-    Cardiovascular: ['heart vascular circulation', 'cardiovascular physiology', 'healthy cardio fitness'],
-    Heart: ['heart vascular circulation', 'cardiovascular physiology', 'human heart anatomy'],
-    Brain: ['human brain neuron', 'brain synapse neuroscience', 'deep thinking focus'],
-    Gut: ['healthy intestinal microbiome', 'fresh organic vegetables', 'kombucha fermentation'],
-    Metabolic: ['cellular metabolism mitochondria', 'fresh natural whole foods', 'biochemical laboratory'],
-    'Cellular Aging': ['cell biology microscopy', 'cellular longevity laboratory', 'plant cell microscope'],
-    Immunity: ['immune cell microbiology', 'white blood cells microscopy', 'botanical medicinal herbs'],
-    Immune: ['immune cell microbiology', 'white blood cells microscopy', 'botanical medicinal herbs'],
-    Immunity: ['immune cell microbiology', 'white blood cells microscopy', 'botanical medicinal herbs'],
-    Oncology: ['cancer cell biology research', 'oncology laboratory microscope', 'medical biomedical research'],
-    Cancer: ['cancer cell biology research', 'oncology laboratory microscope', 'medical biomedical research'],
-    Liver: ['liver metabolism health', 'botanical herbs laboratory', 'healthy nutrition liver']
+    Cardiovascular: ['healthy active senior walking', 'fresh organic green vegetables', 'cardiovascular fitness running'],
+    Heart: ['healthy active senior walking', 'fresh organic green vegetables', 'cardiovascular fitness workout'],
+    Brain: ['deep thinking focus nature', 'meditation nature sunlight', 'reading book nature serene'],
+    Gut: ['fresh organic vegetables salad', 'healthy fermented kefir bowl', 'fresh whole vegetables basket'],
+    Metabolic: ['fresh organic whole foods table', 'fresh vegetables farmers market', 'healthy culinary nutrition ingredients', 'fresh green vegetables harvest'],
+    'Cellular Aging': ['active senior vitality outdoor nature', 'olive tree grove mediterranean', 'fresh antioxidant berries garden'],
+    Immunity: ['fresh citrus ginger garlic culinary', 'medicinal herbs botanical garden', 'fresh lemon ginger organic'],
+    Immune: ['fresh citrus ginger garlic culinary', 'medicinal herbs botanical garden', 'fresh lemon ginger organic'],
+    Oncology: ['cancer cell biology research', 'oncology laboratory microscope', 'biomedical research pipette laboratory'],
+    Cancer: ['cancer cell biology research', 'oncology laboratory microscope', 'biomedical research pipette laboratory'],
+    Liver: ['fresh green vegetables botanical', 'healthy nutrition liver whole foods', 'milk thistle botanical plant']
   };
 
   const fallbacks = ORGAN_FALLBACKS[organ] || ['medicinal botany laboratory', 'natural botanical science'];
@@ -446,7 +458,8 @@ async function fetchFromWikimediaCommons(keyword, currentSlug, topic = {}, gemin
       if (/schema|diagram|figure|plate|drawing|clipart|icon|vector|symbol|flag of|map of|logo|fossil|diatom|specimen|scan|gazette|newsletter|report|bulletin|journal|ia_|manuscript|epsos|watermark|lockout|\.pdf$|\.djvu$|\.svg$|\.gif$/i.test(title)) continue;
 
       const info = p.imageinfo?.[0];
-      if (!info || info.width < 1200 || info.height < 650) continue;
+      // Cho phép ảnh chất lượng cao có cạnh dài >= 1200 và cạnh ngắn >= 600 (phù hợp crop 16:9 nét căng)
+      if (!info || Math.max(info.width, info.height) < 1200 || Math.min(info.width, info.height) < 600) continue;
       const fileUrl = info.url || '';
       if (fileUrl.match(/\.(pdf|djvu|svg|gif|webm|ogg|tif|tiff)$/i)) continue;
 
@@ -551,9 +564,10 @@ async function fetchFromOpenverse(keyword, currentSlug) {
  * Đảm bảo tính ĐỘC BẢN 100%, phong cách sang trọng học thuật, TUYỆT ĐỐI KHÔNG COPY ẢNH BÀI KHÁC.
  */
 async function generateProceduralMonographImage(slug, topic = {}) {
+  const isEn = slug.endsWith('-en');
   const organ = topic.organ || 'Metabolic';
-  const title = (topic.titleVi || topic.titleEn || slug).replace(/[<>&"]/g, '');
-  const tier = (topic.tier || 'Clinical Monograph').toUpperCase();
+  const title = (isEn ? (topic.titleEn || topic.titleVi || slug) : (topic.titleVi || topic.titleEn || slug)).replace(/[<>&"]/g, '');
+  const tier = (topic.tier || (isEn ? 'Evidence Monograph' : 'Chuyên khảo thực chứng')).toUpperCase();
 
   // Bảng màu sang trọng theo từng cơ quan
   const PALETTES = {

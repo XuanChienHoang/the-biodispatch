@@ -925,6 +925,16 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "lang": "vi",
     "title": "Tỷ lệ Kali và Natri: Chìa khóa thu giãn mạch máu từ mâm cơm gia đình"
   },
+  "ty-le-kali-natri-xua-tan-noi-lo-muoi-vi": {
+    "slug": "potassium-sodium-ratio-blood-pressure-en",
+    "lang": "en",
+    "title": "The Potassium-to-Sodium Ratio: The Key to Unlocking Vascular Relief Without Extreme Salt Restriction"
+  },
+  "potassium-sodium-ratio-blood-pressure-en": {
+    "slug": "ty-le-kali-natri-xua-tan-noi-lo-muoi-vi",
+    "lang": "vi",
+    "title": "Tỷ lệ Kali và Natri: Chìa khóa vàng giúp xả áp mạch máu mà không cần kiêng muối cực đoan"
+  },
   "uong-ly-nuoc-truoc-bua-an-khoi-dong-da-day": {
     "slug": "drinking-water-before-meals-gastric-distension-metabolism",
     "lang": "en",
