@@ -37,10 +37,16 @@ if (!fs.existsSync(postsDir)) fs.mkdirSync(postsDir, { recursive: true });
 if (!fs.existsSync(imagesDir)) fs.mkdirSync(imagesDir, { recursive: true });
 
 function sanitizeTypography(text) {
-  if (!text) return '';
+  if (text === null || text === undefined) return '';
+  if (typeof text !== 'string') {
+    if (typeof text === 'object') {
+      text = text.text || text.step || text.takeaway || text.title || text.point || text.heading || text.body || JSON.stringify(text);
+    } else {
+      text = String(text);
+    }
+  }
   return text
-    .replace(/—/g, ' - ')
-    .replace(/–/g, ' - ')
+    .replace(/[–—]/g, ' - ')
     .replace(/\s+-\s+/g, ' - ');
 }
 
@@ -140,38 +146,57 @@ function createDispatchMarkdown(topic, lang = 'vi', scheduledIsoDate) {
   const rawBrief = isVi ? (topic.briefVi || topic.brief) : (topic.briefEn || topic.brief);
   const rawPractical = isVi ? (topic.practicalVi || topic.practical) : (topic.practicalEn || topic.practical);
 
-  let briefYaml = '';
-  if (rawBrief && (rawBrief.bottomLine || (Array.isArray(rawBrief.takeaways) && rawBrief.takeaways.length > 0))) {
-    const bottomLineStr = rawBrief.bottomLine ? `brief:\n  bottomLine: "${sanitizeTypography(rawBrief.bottomLine)}"\n` : 'brief:\n';
-    const evidenceStr = rawBrief.evidence ? `  evidence: "${rawBrief.evidence}"\n` : '';
-    const takeawaysList = Array.isArray(rawBrief.takeaways) && rawBrief.takeaways.length > 0
-      ? `  takeaways:\n` + rawBrief.takeaways.map(t => `    - "${sanitizeTypography(t)}"`).join('\n') + '\n'
-      : '';
-    briefYaml = `${bottomLineStr}${evidenceStr}${takeawaysList}`;
-  } else {
-    // Tự động suy luận tóm tắt nếu model chưa sinh
-    const fallbackBottomLine = excerpt.split('.')[0] || title;
+  let bottomLine = (rawBrief && rawBrief.bottomLine && String(rawBrief.bottomLine).trim().length >= 15)
+    ? String(rawBrief.bottomLine).trim()
+    : (excerpt.split('.')[0] || title);
+  let evidence = (rawBrief && rawBrief.evidence) ? rawBrief.evidence : 'human-observational';
+  let takeaways = (rawBrief && Array.isArray(rawBrief.takeaways)) ? rawBrief.takeaways.filter(Boolean) : [];
+  if (takeaways.length < 2) {
     const fallbackTakeaways = sections.slice(0, 3).map(s => s.heading.replace(/^\d+[\.\s]*/, '')).filter(Boolean);
-    briefYaml = `brief:\n  bottomLine: "${sanitizeTypography(fallbackBottomLine)}"\n  evidence: "human-observational"\n  takeaways:\n` +
-      fallbackTakeaways.map(t => `    - "${sanitizeTypography(t)}"`).join('\n') + '\n';
-  }
-
-  let practicalYaml = '';
-  if (rawPractical) {
-    const steps = Array.isArray(rawPractical.steps) && rawPractical.steps.length > 0
-      ? `  steps:\n` + rawPractical.steps.map(s => `    - "${sanitizeTypography(s)}"`).join('\n') + '\n'
-      : '';
-    const avoidIf = Array.isArray(rawPractical.avoidIf) && rawPractical.avoidIf.length > 0
-      ? `  avoidIf:\n` + rawPractical.avoidIf.map(s => `    - "${sanitizeTypography(s)}"`).join('\n') + '\n'
-      : '';
-    const interactions = Array.isArray(rawPractical.interactions) && rawPractical.interactions.length > 0
-      ? `  interactions:\n` + rawPractical.interactions.map(s => `    - "${sanitizeTypography(s)}"`).join('\n') + '\n'
-      : '';
-    const seeDoctor = rawPractical.seeDoctor ? `  seeDoctor: "${sanitizeTypography(rawPractical.seeDoctor)}"\n` : '';
-    if (steps || avoidIf || interactions || seeDoctor) {
-      practicalYaml = `practical:\n${steps}${avoidIf}${interactions}${seeDoctor}`;
+    takeaways = [...takeaways, ...fallbackTakeaways].slice(0, 3);
+    if (takeaways.length < 2) {
+      takeaways.push(isVi ? 'Tối ưu hóa các thói quen dựa trên bằng chứng khoa học.' : 'Optimize daily habits based on biomedical evidence.');
+      takeaways.push(isVi ? 'Duy trì cân bằng dinh dưỡng và nhịp sinh học tự nhiên.' : 'Maintain nutritional balance and natural circadian rhythm.');
     }
   }
+
+  const briefYaml = `brief:\n  bottomLine: "${sanitizeTypography(bottomLine)}"\n  evidence: "${evidence}"\n  takeaways:\n` +
+    takeaways.map(t => `    - "${sanitizeTypography(t)}"`).join('\n') + '\n';
+
+  let practicalSteps = (rawPractical && Array.isArray(rawPractical.steps)) ? rawPractical.steps.filter(Boolean) : [];
+  if (typeof practicalSteps === 'string') practicalSteps = [practicalSteps];
+  if (practicalSteps.length === 0) {
+    const lastSec = sections[sections.length - 1];
+    practicalSteps = isVi
+      ? [
+          'Tham khảo ý kiến bác sĩ chuyên khoa hoặc chuyên gia y tế trước khi thực hiện các thay đổi lớn trong chế độ ăn uống hoặc bổ sung.',
+          lastSec?.heading ? `Áp dụng nguyên tắc: ${lastSec.heading.replace(/^\d+[\.\s]*/, '')}` : 'Duy trì lối sống cân bằng, ăn chín uống sôi và theo dõi phản ứng cơ thể.'
+        ]
+      : [
+          'Consult your physician or healthcare specialist before making significant dietary or supplementation adjustments.',
+          lastSec?.heading ? `Follow guidelines: ${lastSec.heading.replace(/^\d+[\.\s]*/, '')}` : 'Maintain balanced nutrition, proper food preparation, and monitor individual biological response.'
+        ];
+  }
+
+  let practicalAvoid = (rawPractical && Array.isArray(rawPractical.avoidIf)) ? rawPractical.avoidIf.filter(Boolean) : [];
+  if (typeof practicalAvoid === 'string') practicalAvoid = [practicalAvoid];
+
+  let practicalInteractions = (rawPractical && Array.isArray(rawPractical.interactions)) ? rawPractical.interactions.filter(Boolean) : [];
+  if (typeof practicalInteractions === 'string') practicalInteractions = [practicalInteractions];
+
+  const stepsYaml = `  steps:\n` + practicalSteps.map(s => `    - "${sanitizeTypography(s)}"`).join('\n') + '\n';
+  const avoidIfYaml = practicalAvoid.length > 0
+    ? `  avoidIf:\n` + practicalAvoid.map(s => `    - "${sanitizeTypography(s)}"`).join('\n') + '\n'
+    : '';
+  const interactionsYaml = practicalInteractions.length > 0
+    ? `  interactions:\n` + practicalInteractions.map(s => `    - "${sanitizeTypography(s)}"`).join('\n') + '\n'
+    : '';
+  const seeDoctorVal = (rawPractical && rawPractical.seeDoctor)
+    ? rawPractical.seeDoctor
+    : (isVi ? 'Khi xuất hiện các triệu chứng bất thường, đau dai dẳng hoặc sụt cân không rõ nguyên nhân.' : 'If experiencing persistent symptoms, chronic discomfort, or unexplained weight loss.');
+  const seeDoctorYaml = `  seeDoctor: "${sanitizeTypography(seeDoctorVal)}"\n`;
+
+  const practicalYaml = `practical:\n${stepsYaml}${avoidIfYaml}${interactionsYaml}${seeDoctorYaml}`;
 
   let bodyContent = `---
 title: "${sanitizeTypography(title)}"
@@ -419,6 +444,8 @@ export async function runAutonomousDispatch() {
   while (attempt < MAX_ATTEMPTS) {
     attempt++;
     let nextTopic = null;
+    let targetSlugVi = null;
+    let targetSlugEn = null;
    try {
 
     if (attempt === 1) {
@@ -477,8 +504,8 @@ export async function runAutonomousDispatch() {
     }
 
     // 1. Đảm bảo ảnh bìa chuẩn mực đã có sẵn trước khi kiểm duyệt xuất bản
-    let targetSlugVi = nextTopic.slugVi.endsWith('-vi') ? nextTopic.slugVi : `${nextTopic.slugVi}-vi`;
-    let targetSlugEn = nextTopic.slugEn.endsWith('-en') ? nextTopic.slugEn : `${nextTopic.slugEn}-en`;
+    targetSlugVi = nextTopic.slugVi.endsWith('-vi') ? nextTopic.slugVi : `${nextTopic.slugVi}-vi`;
+    targetSlugEn = nextTopic.slugEn.endsWith('-en') ? nextTopic.slugEn : `${nextTopic.slugEn}-en`;
     
     // Sinh ảnh độc bản chất lượng cao cho bản tiếng Việt
     await createFallbackIllustration(targetSlugVi, nextTopic);

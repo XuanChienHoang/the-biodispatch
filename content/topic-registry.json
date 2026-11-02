@@ -1,8 +1,100 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-10-31T19:40:41.564Z",
-  "totalTopics": 185,
+  "lastUpdated": "2026-11-02T10:50:00.526Z",
+  "totalTopics": 187,
   "topics": [
+    {
+      "id": "resistance-training-for-cellular-longevity",
+      "slugs": [
+        "resistance-training-for-cellular-longevity-en"
+      ],
+      "titleVi": "Resistance training in middle age: Stimulating myokines for cellular longevity",
+      "titleEn": "Resistance training in middle age: Stimulating myokines for cellular longevity",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1111/jcmm.70896",
+      "date": "2026-11-02T09:00:00Z",
+      "tags": [
+        "aging",
+        "energy",
+        "cardiovascular",
+        "joints",
+        "endocrine"
+      ],
+      "keywords": [
+        "resistance",
+        "training",
+        "middle",
+        "age",
+        "stimulating",
+        "myokines",
+        "cellular",
+        "longevity",
+        "aging",
+        "energy",
+        "cardiovascular",
+        "joints",
+        "endocrine",
+        "many",
+        "people",
+        "mistakenly",
+        "believe",
+        "only",
+        "bodybuilders",
+        "young",
+        "fitness",
+        "enthusiasts",
+        "modern",
+        "science",
+        "reveals"
+      ]
+    },
+    {
+      "id": "tap-the-luc-khang-luc-giu-tuoi-tho-te-bao",
+      "slugs": [
+        "tap-the-luc-khang-luc-giu-tuoi-tho-te-bao-vi"
+      ],
+      "titleVi": "Tập kháng lực ở tuổi trung niên: Kích thích hormone myokine giữ gìn tuổi thọ tế bào",
+      "titleEn": "Tập kháng lực ở tuổi trung niên: Kích thích hormone myokine giữ gìn tuổi thọ tế bào",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1111/jcmm.70896",
+      "date": "2026-11-02T09:00:00Z",
+      "tags": [
+        "lao-hoa",
+        "nang-luong",
+        "tim-mach",
+        "khop",
+        "noi-tiet"
+      ],
+      "keywords": [
+        "tap",
+        "khang",
+        "luc",
+        "tuoi",
+        "trung",
+        "nien",
+        "kich",
+        "thich",
+        "hormone",
+        "myokine",
+        "giu",
+        "gin",
+        "tho",
+        "bao",
+        "lao",
+        "hoa",
+        "nang",
+        "luong",
+        "tim",
+        "mach",
+        "khop",
+        "noi",
+        "tiet",
+        "nhieu",
+        "nguoi"
+      ]
+    },
     {
       "id": "potassium-sodium-ratio-blood-pressure",
       "slugs": [

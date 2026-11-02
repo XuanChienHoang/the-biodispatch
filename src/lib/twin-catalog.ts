@@ -860,6 +860,16 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "lang": "vi",
     "title": "Tâm trạng bất an bắt nguồn từ đường ruột: Dây thần kinh phế vị, vi khuẩn sản xuất GABA và chiếc phanh sinh học xua tan lo âu"
   },
+  "tap-the-luc-khang-luc-giu-tuoi-tho-te-bao-vi": {
+    "slug": "resistance-training-for-cellular-longevity-en",
+    "lang": "en",
+    "title": "Resistance training in middle age: Stimulating myokines for cellular longevity"
+  },
+  "resistance-training-for-cellular-longevity-en": {
+    "slug": "tap-the-luc-khang-luc-giu-tuoi-tho-te-bao-vi",
+    "lang": "vi",
+    "title": "Tập kháng lực ở tuổi trung niên: Kích thích hormone myokine giữ gìn tuổi thọ tế bào"
+  },
   "thanh-loc-te-bao-zombie-senolytics-va-tuoi-tho-vi-mo-vi": {
     "slug": "clearing-zombie-cells-senolytics-and-microscopic-longevity-en",
     "lang": "en",

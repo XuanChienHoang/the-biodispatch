@@ -4769,6 +4769,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "High sodium intake and low potassium intake are recognized risk factors for elevated blood pressure and cardiovascular disease. This systematic review evaluated evidence on the dietary sodium-to-potassium ratio in relation to cardiovascular outcomes. The findings indicate that the sodium-to-potassium ratio exhibits a stronger association with blood pressure elevation and cardiovascular mortality than either sodium or potassium intake alone, highlighting the critical importance of increasing dietary potassium alongside sodium reduction.",
     },
   ],
+  "tap-the-luc-khang-luc-giu-tuoi-tho-te-bao-vi": [
+    {
+      ordinal: 1,
+      label: "Inter-Organ Crosstalk and Regulatory Mechanisms of Skeletal Muscle-Derived Extracellular Vesicles in Systemic Metabolic Homeostasis",
+      pmid: "41190649",
+      doi: "10.1111/jcmm.70896",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "J Cell Mol Med",
+      year: 2025,
+      abstract: "Contracting skeletal muscles release peptides, named myokines, which can exert endocrine, paracrine, or autocrine effects. These factors mediate metabolic homeostasis, anti-inflammatory responses, and crosstalk between muscle and other organs such as adipose tissue, liver, and brain.",
+    },
+  ],
+  "resistance-training-for-cellular-longevity-en": [
+    {
+      ordinal: 1,
+      label: "Inter-Organ Crosstalk and Regulatory Mechanisms of Skeletal Muscle-Derived Extracellular Vesicles in Systemic Metabolic Homeostasis",
+      pmid: "41190649",
+      doi: "10.1111/jcmm.70896",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "J Cell Mol Med",
+      year: 2025,
+      abstract: "Contracting skeletal muscles release peptides, named myokines, which can exert endocrine, paracrine, or autocrine effects. These factors mediate metabolic homeostasis, anti-inflammatory responses, and crosstalk between muscle and other organs such as adipose tissue, liver, and brain.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

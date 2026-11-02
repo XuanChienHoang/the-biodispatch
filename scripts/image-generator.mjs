@@ -118,6 +118,18 @@ export function extractSmartImageKeywords(topic = {}) {
 
 
 
+
+  // 1f. Nhóm Rượu bia, Đỏ mặt, Acetaldehyde, ALDH2, Giải độc gan (Alcohol flush, ALDH2, Liver detox)
+  if (/rượu|ruou|bia|alcohol|acetaldehyde|aldh2|đỏ mặt|do-mat|facial flush|hangover|giải độc gan|gan nhiễm mỡ|liver detox/i.test(text)) {
+    queries.push(
+      'glass of red wine on table',
+      'red wine glass elegant',
+      'wine glass vineyard outdoor',
+      'fresh water glass lemon morning',
+      'healthy person drinking water'
+    );
+  }
+
   // 1e. Nhóm Chuyên biệt: Tỷ lệ Kali & Natri, Huyết áp, Mạch máu, Giải áp tế bào
   if (/kali|natri|potassium|sodium|huyết áp|huyet-ap|blood pressure|mạch máu|mach-mau|vascular/i.test(text)) {
     queries.push(
