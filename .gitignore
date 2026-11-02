@@ -10,3 +10,5 @@ out/
 _backups/
 scripts/cluster_quality.json
 scripts/duplicate_report.json
+content/subscribers.json
+content/subscribers*.json

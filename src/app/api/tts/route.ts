@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import crypto from "crypto";
 import https from "https";
+import { rateLimit } from "@/lib/rateLimit";
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const WebSocket = require("ws");
 
@@ -452,6 +453,27 @@ function getCachedOrSynthesize(cacheKey: string, text: string, voice: string): P
 }
 
 export async function GET(req: NextRequest) {
+  // Rate limiting: 40 requests per minute per IP
+  const limiter = rateLimit(req, {
+    limit: 40,
+    windowMs: 60 * 1000,
+    keyPrefix: "tts_stream",
+  });
+  if (!limiter.success) {
+    return new NextResponse("Quá nhiều yêu cầu phát âm thanh. Vui lòng chờ giây lát.", {
+      status: 429,
+      headers: {
+        "Retry-After": Math.ceil(limiter.resetMs / 1000).toString(),
+      },
+    });
+  }
+
+  // Cross-site anti-abuse guard
+  const secFetchSite = req.headers.get("sec-fetch-site");
+  if (secFetchSite === "cross-site") {
+    return new NextResponse("Forbidden: Cross-site TTS streaming is disabled.", { status: 403 });
+  }
+
   const { searchParams } = new URL(req.url);
   const text = searchParams.get("text") || "";
   const lang = searchParams.get("lang") || "vi";

@@ -19,9 +19,10 @@ export async function GET(request: Request, { params }: Params) {
   }
 
   const { slug } = await params;
-  const filePath = path.join(postsDirectory, `${slug}.md`);
+  const cleanSlug = (slug || "").replace(/[^a-zA-Z0-9-_]/g, "");
+  const filePath = path.resolve(postsDirectory, `${cleanSlug}.md`);
 
-  if (!fs.existsSync(filePath)) {
+  if (!filePath.startsWith(postsDirectory) || !fs.existsSync(filePath)) {
     return NextResponse.json({ error: "Không tìm thấy bài viết." }, { status: 404 });
   }
 
@@ -62,7 +63,12 @@ export async function DELETE(request: Request, { params }: Params) {
   }
 
   const { slug } = await params;
-  const filePath = path.join(postsDirectory, `${slug}.md`);
+  const cleanSlug = (slug || "").replace(/[^a-zA-Z0-9-_]/g, "");
+  const filePath = path.resolve(postsDirectory, `${cleanSlug}.md`);
+
+  if (!filePath.startsWith(postsDirectory)) {
+    return NextResponse.json({ error: "Yêu cầu không hợp lệ." }, { status: 400 });
+  }
 
   let localDeleted = false;
   if (fs.existsSync(filePath)) {
@@ -79,7 +85,7 @@ export async function DELETE(request: Request, { params }: Params) {
   let gitDeleted = false;
   if (githubToken) {
     try {
-      const ghPath = `content/posts/${slug}.md`;
+      const ghPath = `content/posts/${cleanSlug}.md`;
       const apiUrl = `https://api.github.com/repos/XuanChienHoang/the-biodispatch/contents/${ghPath}`;
 
       const getRes = await fetch(apiUrl, {

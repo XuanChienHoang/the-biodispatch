@@ -1,6 +1,20 @@
 import type { NextConfig } from "next";
 import path from "path";
 
+const ContentSecurityPolicy = `
+  default-src 'self';
+  script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com;
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+  font-src 'self' https://fonts.gstatic.com data:;
+  img-src 'self' data: blob: https://upload.wikimedia.org https://images.unsplash.com https://*.vercel.app https://vercel.com;
+  media-src 'self' blob: data:;
+  connect-src 'self' https://commons.wikimedia.org https://generativelanguage.googleapis.com https://va.vercel-scripts.com https://vitals.vercel-insights.com wss://*.speech.microsoft.com;
+  frame-ancestors 'none';
+  form-action 'self';
+  base-uri 'self';
+  object-src 'none';
+`.replace(/\s{2,}/g, " ").trim();
+
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
@@ -115,6 +129,10 @@ const nextConfig: NextConfig = {
         source: "/(.*)",
         headers: [
           {
+            key: "Content-Security-Policy",
+            value: ContentSecurityPolicy,
+          },
+          {
             key: "Strict-Transport-Security",
             value: "max-age=63072000; includeSubDomains; preload",
           },
@@ -135,8 +153,16 @@ const nextConfig: NextConfig = {
             value: "strict-origin-when-cross-origin",
           },
           {
+            key: "Cross-Origin-Opener-Policy",
+            value: "same-origin",
+          },
+          {
+            key: "Cross-Origin-Resource-Policy",
+            value: "same-origin",
+          },
+          {
             key: "Permissions-Policy",
-            value: "camera=(), microphone=(), geolocation=()",
+            value: "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
           },
         ],
       },
