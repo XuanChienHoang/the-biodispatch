@@ -17,6 +17,33 @@ export interface HealthGoalCategory {
 
 export const HEALTH_GOALS: HealthGoalCategory[] = [
   {
+    id: "cancer-prevention",
+    labelVi: "Phòng ngừa Ung thư",
+    labelEn: "Cancer Prevention",
+    icon: "🎗️",
+    descriptionVi: "Thực phẩm chống ung thư, Lycopene, Sulforaphane, thói quen ăn uống và giải mã hiểu lầm",
+    descriptionEn: "Chemopreventive foods, sulforaphane, lycopene, nitrosamines, and cancer myths debunked",
+    keywords: [
+      "ung-thu", "cancer", "lycopene", "sulforaphane", "ca-chua", "tomato", "thit-do", "meat",
+      "tra-nong", "hot-tea", "nitrit", "nitrite", "nitrosamine", "warburg", "igf-1", "khoi-u",
+      "tumor", "seed-and-soil", "chua-khoi-ung-thu", "miracle-cancer", "thuc-quan", "dai-truc-trang",
+      "hp", "helicobacter", "hpv", "aflatoxin", "curcumin", "piperine", "te-bao-ung-thu", "chemoprevention"
+    ]
+  },
+  {
+    id: "vaccine-immunology",
+    labelVi: "Vaccine & Miễn dịch",
+    labelEn: "Vaccines & Immunity",
+    icon: "💉",
+    descriptionVi: "Khoa học vaccine, kháng thể bảo vệ, vi khuẩn độc lực STSS, virus cúm H5N1, EBV",
+    descriptionEn: "Vaccine science, protective antibodies, STSS superantigens, avian flu H5N1, EBV",
+    keywords: [
+      "vaccin", "vac-xin", "tiem-chung", "immuniz", "antibody", "khang-the", "mien-dich",
+      "immunology", "stss", "streptococcus", "superantigen", "h5n1", "virus", "epstein-barr",
+      "ebv", "yersinia", "t3ss", "sialic-acid", "mui-am", "nasal"
+    ]
+  },
+  {
     id: "sleep-stress",
     labelVi: "Giấc ngủ & Thần kinh",
     labelEn: "Sleep & Stress Relief",
@@ -152,7 +179,7 @@ export function matchesHealthGoal(article: Article, goalId: string): boolean {
   const cat = HEALTH_GOALS.find((g) => g.id === goalId);
   if (!cat) return false;
 
-  const corpus = `${article.slug} ${article.title} ${article.dek || ""} ${(article as any).tags ? (article as any).tags.join(" ") : ""}`.toLowerCase();
+  const corpus = `${article.slug} ${article.title} ${article.titleVi || ""} ${article.dek || ""} ${article.dekVi || ""} ${(article as any).tags ? (article as any).tags.join(" ") : ""}`.toLowerCase();
   return cat.keywords.some((k) => corpus.includes(k.toLowerCase()));
 }
 

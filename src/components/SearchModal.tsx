@@ -79,8 +79,8 @@ export function SearchModal({
             onChange={(e) => setQuery(e.target.value)}
             placeholder={
               isVi
-                ? "Tìm kiếm bài viết, hoạt chất, cơ chế phân tử (vd: mỡ nâu, UCP1, curcumin, Statin...)..."
-                : "Search dispatches, molecules, mechanisms (e.g. BAT, UCP1, curcumin, statins...)..."
+                ? "Tìm kiếm bài viết, ung thư, vaccine, hoạt chất (vd: ung thư, vaccine, lycopene, UCP1...)..."
+                : "Search dispatches, cancer, vaccines, molecules (e.g. cancer, vaccine, sulforaphane, UCP1...)..."
             }
             className="flex-1 bg-transparent text-sm sm:text-base font-sans text-indigo-deep placeholder:text-slate-mute focus:outline-none"
           />
@@ -115,6 +115,8 @@ export function SearchModal({
                 </div>
                 <div className="flex flex-wrap justify-center gap-2">
                   {[
+                    { label: isVi ? "🎗️ Phòng ngừa Ung thư" : "🎗️ Cancer Prevention", query: isVi ? "ung thư" : "cancer" },
+                    { label: isVi ? "💉 Vaccine & Miễn dịch" : "💉 Vaccines & Immunity", query: isVi ? "vaccine" : "vaccine" },
                     { label: isVi ? "😴 Khó ngủ / Giấc ngủ" : "😴 Sleep & Melatonin", query: isVi ? "giấc ngủ" : "sleep" },
                     { label: isVi ? "🩸 Đường huyết & Mỡ bụng" : "🩸 Blood Sugar & Fat", query: isVi ? "đường huyết" : "glucose" },
                     { label: isVi ? "🫀 Canxi hóa & Mỡ máu" : "🫀 Calcification & Statin", query: isVi ? "canxi" : "calcification" },
@@ -136,7 +138,7 @@ export function SearchModal({
                   <span className="text-[11px] text-slate-mute self-center mr-1">
                     {isVi ? "Hoạt chất:" : "Molecules:"}
                   </span>
-                  {["UCP1", "Curcumin", "Mỡ nâu", "Statin", "NAD+", "Glymphatic", "hs-CRP", "Fisetin", "D3 K2"].map((k) => (
+                  {["UCP1", "Sulforaphane", "Lycopene", "Vaccine", "Curcumin", "Mỡ nâu", "Statin", "NAD+", "Glymphatic", "Fisetin", "D3 K2"].map((k) => (
                     <button
                       key={k}
                       type="button"
