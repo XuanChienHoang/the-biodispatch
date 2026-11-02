@@ -4847,6 +4847,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Dietary phytochemicals such as sulforaphane and allicin exhibit potent chemopreventive properties by modulating phase II detoxification enzymes and inhibiting tumor progression. However, their biological efficacy strictly depends on enzymatic activation parameters during culinary preparation and cellular bioavailability in the gastrointestinal tract.",
     },
   ],
+  "chat-xo-hoa-tan-yen-mach-va-axit-butyrate-vi-tuyen-phong-thu-vung-chac-cho-dai-trang-vi": [
+    {
+      ordinal: 1,
+      label: "The role of short-chain fatty acids in health and disease",
+      pmid: "",
+      doi: "10.1046/j.1365-2036.18.s2.3.x",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Alimentary Pharmacology & Therapeutics",
+      year: 2003,
+      abstract: "Short-chain fatty acids (SCFAs), principally acetate, propionate and butyrate, are produced in the colon by bacterial fermentation of dietary carbohydrates that escape digestion in the upper gastrointestinal tract. Butyrate is the preferred energy source for colonocytes, regulates gene expression, and exhibits anti-neoplastic and anti-inflammatory properties, playing a vital role in maintaining colonic mucosal health and preventing carcinogenesis.",
+    },
+  ],
+  "soluble-fiber-oats-butyrate-colon-defense-en": [
+    {
+      ordinal: 1,
+      label: "The role of short-chain fatty acids in health and disease",
+      pmid: "",
+      doi: "10.1046/j.1365-2036.18.s2.3.x",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Alimentary Pharmacology & Therapeutics",
+      year: 2003,
+      abstract: "Short-chain fatty acids (SCFAs), principally acetate, propionate and butyrate, are produced in the colon by bacterial fermentation of dietary carbohydrates that escape digestion in the upper gastrointestinal tract. Butyrate is the preferred energy source for colonocytes, regulates gene expression, and exhibits anti-neoplastic and anti-inflammatory properties, playing a vital role in maintaining colonic mucosal health and preventing carcinogenesis.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

@@ -1,7 +1,7 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-02T17:36:02.289Z",
-  "totalTopics": 191,
+  "lastUpdated": "2026-11-02T23:57:53.940Z",
+  "totalTopics": 193,
   "topics": [
     {
       "id": "anticancer foods and proper culinary preparation",
@@ -48,6 +48,100 @@
         "organic",
         "vegetables",
         "enough"
+      ]
+    },
+    {
+      "id": "chat-xo-hoa-tan-yen-mach-va-axit-butyrate-vi-tuyen-phong-thu-vung-chac-cho-dai-trang",
+      "slugs": [
+        "chat-xo-hoa-tan-yen-mach-va-axit-butyrate-vi-tuyen-phong-thu-vung-chac-cho-dai-trang-vi"
+      ],
+      "titleVi": "Bát yến mạch buổi sáng và chiếc khiên bảo vệ đại tràng thầm lặng",
+      "titleEn": "Bát yến mạch buổi sáng và chiếc khiên bảo vệ đại tràng thầm lặng",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1046/j.1365-2036.18.s2.3.x",
+      "date": "2026-11-02T17:00:00Z",
+      "tags": [
+        "ruot",
+        "tieu-hoa",
+        "ung-thu",
+        "lao-hoa",
+        "dinh-duong",
+        "mien-dich"
+      ],
+      "keywords": [
+        "bat",
+        "yen",
+        "mach",
+        "buoi",
+        "sang",
+        "chiec",
+        "khien",
+        "bao",
+        "dai",
+        "trang",
+        "tham",
+        "lang",
+        "ruot",
+        "tieu",
+        "hoa",
+        "ung",
+        "thu",
+        "lao",
+        "dinh",
+        "duong",
+        "mien",
+        "dich",
+        "nhieu",
+        "nguoi",
+        "nghi"
+      ]
+    },
+    {
+      "id": "soluble-fiber-oats-butyrate-colon-defense",
+      "slugs": [
+        "soluble-fiber-oats-butyrate-colon-defense-en"
+      ],
+      "titleVi": "The morning bowl of oats and the silent colon defense shield",
+      "titleEn": "The morning bowl of oats and the silent colon defense shield",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1046/j.1365-2036.18.s2.3.x",
+      "date": "2026-11-02T17:00:00Z",
+      "tags": [
+        "gut",
+        "digestion",
+        "cancer",
+        "aging",
+        "nutrition",
+        "immune"
+      ],
+      "keywords": [
+        "morning",
+        "bowl",
+        "oats",
+        "silent",
+        "colon",
+        "defense",
+        "shield",
+        "gut",
+        "digestion",
+        "cancer",
+        "aging",
+        "nutrition",
+        "immune",
+        "many",
+        "people",
+        "think",
+        "fiber",
+        "simply",
+        "helps",
+        "smooth",
+        "daily",
+        "bowel",
+        "movements",
+        "however",
+        "journey"
       ]
     },
     {
