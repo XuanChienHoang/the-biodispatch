@@ -297,17 +297,17 @@ export function extractSmartImageKeywords(topic = {}) {
   // 3. Tầng Fallback theo Hệ cơ quan (Organ-level fallbacks)
   const organ = topic.organ || 'Metabolic';
   const ORGAN_FALLBACKS = {
-    Cardiovascular: ['healthy active senior walking', 'fresh organic green vegetables', 'cardiovascular fitness running'],
-    Heart: ['healthy active senior walking', 'fresh organic green vegetables', 'cardiovascular fitness workout'],
-    Brain: ['deep thinking focus nature', 'meditation nature sunlight', 'reading book nature serene'],
-    Gut: ['fresh organic vegetables salad', 'healthy fermented kefir bowl', 'fresh whole vegetables basket'],
-    Metabolic: ['fresh organic whole foods table', 'fresh vegetables farmers market', 'healthy culinary nutrition ingredients', 'fresh green vegetables harvest'],
-    'Cellular Aging': ['active senior vitality outdoor nature', 'olive tree grove mediterranean', 'fresh antioxidant berries garden'],
-    Immunity: ['fresh citrus ginger garlic culinary', 'medicinal herbs botanical garden', 'fresh lemon ginger organic'],
-    Immune: ['fresh citrus ginger garlic culinary', 'medicinal herbs botanical garden', 'fresh lemon ginger organic'],
-    Oncology: ['cancer cell biology research', 'oncology laboratory microscope', 'biomedical research pipette laboratory'],
-    Cancer: ['cancer cell biology research', 'oncology laboratory microscope', 'biomedical research pipette laboratory'],
-    Liver: ['fresh green vegetables botanical', 'healthy nutrition liver whole foods', 'milk thistle botanical plant']
+    Cardiovascular: ['healthy walking', 'dark chocolate', 'avocado', 'blood pressure'],
+    Heart: ['healthy walking', 'dark chocolate', 'avocado'],
+    Brain: ['morning sunlight', 'green tea leaves', 'deep sleep'],
+    Gut: ['garlic press', 'broccoli sprouts', 'curcuma longa'],
+    Metabolic: ['fitness exercise', 'dumbbells', 'roasted coffee beans', 'healthy nutrition'],
+    'Cellular Aging': ['olives on tree', 'blueberries', 'sunlight trees'],
+    Immunity: ['garlic', 'ginger', 'citrus', 'medicinal herbs'],
+    Immune: ['garlic', 'ginger', 'citrus', 'medicinal herbs'],
+    Oncology: ['broccoli sprouts', 'fresh tomatoes', 'green tea', 'curcuma longa roots'],
+    Cancer: ['broccoli sprouts', 'fresh tomatoes', 'green tea', 'curcuma longa roots'],
+    Liver: ['milk thistle plant', 'curcuma longa', 'green vegetables']
   };
 
   const fallbacks = ORGAN_FALLBACKS[organ] || ['medicinal botany laboratory', 'natural botanical science'];
@@ -573,8 +573,120 @@ async function fetchFromOpenverse(keyword, currentSlug) {
 }
 
 /**
- * 5. Bộ sinh bìa chuyên khảo đồ họa chuẩn hóa SVG (Procedural Monograph Card)
- * Kích hoạt khi toàn bộ kết nối API bên ngoài đều gián đoạn.
+ * 5. Thư viện ảnh lưu trữ thẩm mỹ cao (Curated High-Resolution Editorial Library)
+ * Kho ảnh nhiếp ảnh thực tế đạt độ phân giải Full-HD/4K (2000px - 6000px) được phân loại chính xác theo từng hệ cơ quan.
+ * Tuyệt đối nói KHÔNG với ảnh bìa vector/text banner trừu tượng.
+ */
+const CURATED_EDITORIAL_TITLES = {
+  Oncology: [
+    'Broccoli sprouts.jpg',
+    'Fresh Tomatoes, Green Pepper, Red Onion, and English Cucumbers (8736854891).jpg',
+    'Sejak tea leaves.jpg',
+    'A garlic press isolated on white background.jpg',
+    'Curcuma longa roots.jpg'
+  ],
+  Cancer: [
+    'Broccoli sprouts.jpg',
+    'Fresh Tomatoes, Green Pepper, Red Onion, and English Cucumbers (8736854891).jpg',
+    'Sejak tea leaves.jpg',
+    'A garlic press isolated on white background.jpg',
+    'Curcuma longa roots.jpg'
+  ],
+  Metabolic: [
+    'Fitness model shoulder exercise weight training (32004749753).jpg',
+    'Fitness enthusiast performs plank exercise at home on yoga mat.jpg',
+    'Aluminium Dumbbell.jpg',
+    'Roasted coffee beans.jpg'
+  ],
+  Brain: [
+    'Sunlight through trees in a spring forest with white flowers.jpg',
+    'Sejak tea leaves.jpg',
+    'Roasted coffee beans.jpg'
+  ],
+  Gut: [
+    'A garlic press isolated on white background.jpg',
+    'Curcuma longa roots.jpg',
+    'Broccoli sprouts.jpg'
+  ],
+  Cardiovascular: [
+    '2023 Gorzka czekolada.jpg',
+    'Persea americana fruit 2.JPG',
+    'Fitness model shoulder exercise weight training (32004749753).jpg'
+  ],
+  Heart: [
+    '2023 Gorzka czekolada.jpg',
+    'Persea americana fruit 2.JPG',
+    'Fitness model shoulder exercise weight training (32004749753).jpg'
+  ],
+  'Cellular Aging': [
+    'Olea europaea, Coín, Spain.jpg',
+    'Blueberries 2 2017-01-16.jpg',
+    'Sunlight through trees in a spring forest with white flowers.jpg'
+  ],
+  Immune: [
+    'A garlic press isolated on white background.jpg',
+    'Curcuma longa roots.jpg',
+    'Broccoli sprouts.jpg'
+  ],
+  Immunity: [
+    'A garlic press isolated on white background.jpg',
+    'Curcuma longa roots.jpg',
+    'Broccoli sprouts.jpg'
+  ],
+  Liver: [
+    'Curcuma longa roots.jpg',
+    'Broccoli sprouts.jpg'
+  ]
+};
+
+async function fetchWikimediaImageByTitle(title, currentSlug, topic = {}, geminiApiKey = '') {
+  try {
+    const cleanTitle = title.replace(/^File:/i, '');
+    const apiUrl = `https://commons.wikimedia.org/w/api.php?action=query&titles=File:${encodeURIComponent(cleanTitle)}&prop=imageinfo&iiprop=url|size|mime&format=json`;
+    const res = await fetch(apiUrl, {
+      headers: { 'User-Agent': 'PhytocodexBot/1.0 (https://phytocodex.vercel.app; info@phytocodex.org)' }
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    const page = Object.values(data.query?.pages || {})[0];
+    const info = page?.imageinfo?.[0];
+    if (!info || !info.url) return null;
+
+    const imgRes = await fetch(info.url, {
+      headers: { 'User-Agent': 'PhytocodexBot/1.0 (https://phytocodex.vercel.app; info@phytocodex.org)' }
+    });
+    if (!imgRes.ok) return null;
+    const buf = Buffer.from(await imgRes.arrayBuffer());
+    if (buf.length > 25000 && !(await checkIfImageAlreadyUsed(buf, currentSlug))) {
+      return buf;
+    }
+  } catch (err) {
+    console.warn(`[Curated Library Warning]: ${err.message}`);
+  }
+  return null;
+}
+
+async function fetchFromCuratedEditorialLibrary(slug, topic = {}, apiKey = '') {
+  const organ = topic.organ || 'Metabolic';
+  const candidates = CURATED_EDITORIAL_TITLES[organ] || CURATED_EDITORIAL_TITLES.Metabolic;
+  const hash = crypto.createHash('md5').update(slug.replace(/-(vi|en)$/, '')).digest('hex');
+  const startIndex = parseInt(hash.slice(0, 4), 16) % candidates.length;
+
+  for (let i = 0; i < candidates.length; i++) {
+    const idx = (startIndex + i) % candidates.length;
+    const title = candidates[idx];
+    const buf = await fetchWikimediaImageByTitle(title, slug, topic, apiKey);
+    if (buf) {
+      console.log(`🏛️ [Curated Library] Đã kích hoạt ảnh lưu trữ chất lượng cao: "${title}"`);
+      return buf;
+    }
+  }
+  return null;
+}
+
+/**
+ * 6. Bộ sinh bìa chuyên khảo đồ họa chuẩn hóa SVG (Procedural Monograph Card)
+ * Chỉ kích hoạt khi toàn bộ kết nối API bên ngoài đều gián đoạn.
  * Đảm bảo tính ĐỘC BẢN 100%, phong cách sang trọng học thuật, TUYỆT ĐỐI KHÔNG COPY ẢNH BÀI KHÁC.
  */
 async function generateProceduralMonographImage(slug, topic = {}) {
@@ -757,9 +869,18 @@ export async function generateDispatchImage(slug, topic = {}) {
     }
   }
 
-  // TẦNG 5: Procedural Monograph Card (Nếu không tìm thấy ảnh bên ngoài hoặc mất mạng)
+  // TẦNG 5: Curated Editorial Library (Kho ảnh lưu trữ nhiếp ảnh thực tế Full-HD/4K tuyển chọn theo chuyên khoa)
+  console.log(`🏛️ [Image Engine] Kích hoạt Curated Editorial Library cho "${slug}" (organ: ${topic.organ || 'Metabolic'})...`);
+  const curatedBuffer = await fetchFromCuratedEditorialLibrary(slug, topic, GEMINI_API_KEY);
+  if (curatedBuffer) {
+    await processAndSaveImage(curatedBuffer, slug);
+    console.log(`✅ [Image Engine] Đã lấy ảnh thực tế chuẩn mực từ Curated Library -> ${slug}.jpg`);
+    return targetPath;
+  }
+
+  // TẦNG 6: Procedural Monograph Card (Dự phòng khẩn cấp tuyệt đối khi toàn bộ mạng quốc tế gián đoạn)
   // Tuyệt đối không copy ảnh bài cũ để tránh lặp hình
-  console.warn(`🎨 [Image Engine] Kích hoạt Procedural Monograph Artwork (độc bản 100% cho "${slug}")...`);
+  console.warn(`🎨 [Image Engine] Kích hoạt Procedural Monograph Artwork (dự phòng khẩn cấp cho "${slug}")...`);
   const proceduralBuffer = await generateProceduralMonographImage(slug, topic);
   await processAndSaveImage(proceduralBuffer, slug);
   console.log(`✅ [Image Engine] Đã tạo bìa chuyên khảo đồ họa độc bản -> ${slug}.jpg`);
