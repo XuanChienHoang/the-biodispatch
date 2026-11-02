@@ -4821,6 +4821,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Lutein and zeaxanthin are dietary carotenoids that selectively accumulate in the human macula and skin, where they function as powerful blue-light filters and antioxidants. Emerging clinical evidence highlights their critical role in preventing age-related macular degeneration and reducing oxidative skin damage from environmental stressors.",
     },
   ],
+  "thuc phẩm chong ung thu va che bien dung cach-vi": [
+    {
+      ordinal: 1,
+      label: "Long non-coding RNAs are emerging targets of phytochemicals for cancer and other chronic diseases",
+      pmid: "30879091",
+      doi: "10.1007/s00018-019-03053-0",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Cell Mol Life Sci",
+      year: 2019,
+      abstract: "Dietary phytochemicals such as sulforaphane and allicin exhibit potent chemopreventive properties by modulating phase II detoxification enzymes and inhibiting tumor progression. However, their biological efficacy strictly depends on enzymatic activation parameters during culinary preparation and cellular bioavailability in the gastrointestinal tract.",
+    },
+  ],
+  "anticancer foods and proper culinary preparation-en": [
+    {
+      ordinal: 1,
+      label: "Long non-coding RNAs are emerging targets of phytochemicals for cancer and other chronic diseases",
+      pmid: "30879091",
+      doi: "10.1007/s00018-019-03053-0",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Cell Mol Life Sci",
+      year: 2019,
+      abstract: "Dietary phytochemicals such as sulforaphane and allicin exhibit potent chemopreventive properties by modulating phase II detoxification enzymes and inhibiting tumor progression. However, their biological efficacy strictly depends on enzymatic activation parameters during culinary preparation and cellular bioavailability in the gastrointestinal tract.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

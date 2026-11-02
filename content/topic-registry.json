@@ -1,8 +1,102 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-02T13:37:34.709Z",
-  "totalTopics": 189,
+  "lastUpdated": "2026-11-02T17:36:02.289Z",
+  "totalTopics": 191,
   "topics": [
+    {
+      "id": "anticancer foods and proper culinary preparation",
+      "slugs": [
+        "anticancer foods and proper culinary preparation-en"
+      ],
+      "titleVi": "The anti-cancer kitchen: The art of food combination and temperature to activate bioactive compounds",
+      "titleEn": "The anti-cancer kitchen: The art of food combination and temperature to activate bioactive compounds",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1007/s00018-019-03053-0",
+      "date": "2026-11-02T17:00:00Z",
+      "tags": [
+        "cancer-prevention",
+        "nutrition",
+        "longevity",
+        "digestion",
+        "immunity",
+        "lifestyle"
+      ],
+      "keywords": [
+        "anti",
+        "cancer",
+        "kitchen",
+        "art",
+        "food",
+        "combination",
+        "temperature",
+        "activate",
+        "bioactive",
+        "compounds",
+        "prevention",
+        "nutrition",
+        "longevity",
+        "digestion",
+        "immunity",
+        "lifestyle",
+        "many",
+        "people",
+        "mistakenly",
+        "believe",
+        "simply",
+        "eating",
+        "organic",
+        "vegetables",
+        "enough"
+      ]
+    },
+    {
+      "id": "thuc phẩm chong ung thu va che bien dung cach",
+      "slugs": [
+        "thuc phẩm chong ung thu va che bien dung cach-vi"
+      ],
+      "titleVi": "Căn bếp chống ung thư: Nghệ thuật kết hợp thực phẩm và nhiệt độ để kích hoạt hoạt chất sinh học",
+      "titleEn": "Căn bếp chống ung thư: Nghệ thuật kết hợp thực phẩm và nhiệt độ để kích hoạt hoạt chất sinh học",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1007/s00018-019-03053-0",
+      "date": "2026-11-02T17:00:00Z",
+      "tags": [
+        "phong-ngua-ung-thu",
+        "dinh-duong",
+        "lao-hoa",
+        "tieu-hoa",
+        "miễn-dịch",
+        "doi-song"
+      ],
+      "keywords": [
+        "can",
+        "bep",
+        "chong",
+        "ung",
+        "thu",
+        "nghe",
+        "thuat",
+        "ket",
+        "hop",
+        "thuc",
+        "pham",
+        "nhiet",
+        "kich",
+        "hoat",
+        "chat",
+        "sinh",
+        "hoc",
+        "phong",
+        "ngua",
+        "dinh",
+        "duong",
+        "lao",
+        "hoa",
+        "tieu",
+        "mien"
+      ]
+    },
     {
       "id": "tai-nguyen-sac-to-vang-hoang-diem-vi-sao-man-hinh-khien-mat-nhu-chiec-la-kho",
       "slugs": [
