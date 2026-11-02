@@ -4795,6 +4795,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Contracting skeletal muscles release peptides, named myokines, which can exert endocrine, paracrine, or autocrine effects. These factors mediate metabolic homeostasis, anti-inflammatory responses, and crosstalk between muscle and other organs such as adipose tissue, liver, and brain.",
     },
   ],
+  "tai-nguyen-sac-to-vang-hoang-diem-vi-sao-man-hinh-khien-mat-nhu-chiec-la-kho-vi": [
+    {
+      ordinal: 1,
+      label: "Lutein and zeaxanthin in eye and skin health",
+      pmid: "19168000",
+      doi: "10.1016/j.clindermatol.2008.01.011",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Clin Dermatol",
+      year: 2009,
+      abstract: "Lutein and zeaxanthin are dietary carotenoids that selectively accumulate in the human macula and skin, where they function as powerful blue-light filters and antioxidants. Emerging clinical evidence highlights their critical role in preventing age-related macular degeneration and reducing oxidative skin damage from environmental stressors.",
+    },
+  ],
+  "yellow-pigment-macula-screen-dry-leaf-en": [
+    {
+      ordinal: 1,
+      label: "Lutein and zeaxanthin in eye and skin health",
+      pmid: "19168000",
+      doi: "10.1016/j.clindermatol.2008.01.011",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Clin Dermatol",
+      year: 2009,
+      abstract: "Lutein and zeaxanthin are dietary carotenoids that selectively accumulate in the human macula and skin, where they function as powerful blue-light filters and antioxidants. Emerging clinical evidence highlights their critical role in preventing age-related macular degeneration and reducing oxidative skin damage from environmental stressors.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

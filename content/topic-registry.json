@@ -1,8 +1,98 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-02T10:50:00.526Z",
-  "totalTopics": 187,
+  "lastUpdated": "2026-11-02T13:37:34.709Z",
+  "totalTopics": 189,
   "topics": [
+    {
+      "id": "tai-nguyen-sac-to-vang-hoang-diem-vi-sao-man-hinh-khien-mat-nhu-chiec-la-kho",
+      "slugs": [
+        "tai-nguyen-sac-to-vang-hoang-diem-vi-sao-man-hinh-khien-mat-nhu-chiec-la-kho-vi"
+      ],
+      "titleVi": "Bức rèm vàng bảo vệ thị lực: Vì sao màn hình khiến mắt khô héo như chiếc lá mùa thu",
+      "titleEn": "Bức rèm vàng bảo vệ thị lực: Vì sao màn hình khiến mắt khô héo như chiếc lá mùa thu",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1016/j.clindermatol.2008.01.011",
+      "date": "2026-11-02T13:00:00Z",
+      "tags": [
+        "mat-da",
+        "lao-hoa",
+        "nang-luong",
+        "tim-mach"
+      ],
+      "keywords": [
+        "buc",
+        "rem",
+        "vang",
+        "bao",
+        "thi",
+        "luc",
+        "man",
+        "hinh",
+        "khien",
+        "mat",
+        "kho",
+        "heo",
+        "chiec",
+        "mua",
+        "thu",
+        "lao",
+        "hoa",
+        "nang",
+        "luong",
+        "tim",
+        "mach",
+        "moi",
+        "ngay",
+        "chung",
+        "dan"
+      ]
+    },
+    {
+      "id": "yellow-pigment-macula-screen-dry-leaf",
+      "slugs": [
+        "yellow-pigment-macula-screen-dry-leaf-en"
+      ],
+      "titleVi": "The golden visual shield: Why screen light dries our eyes like an autumn leaf",
+      "titleEn": "The golden visual shield: Why screen light dries our eyes like an autumn leaf",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1016/j.clindermatol.2008.01.011",
+      "date": "2026-11-02T13:00:00Z",
+      "tags": [
+        "eyes-skin",
+        "aging",
+        "energy",
+        "metabolic"
+      ],
+      "keywords": [
+        "golden",
+        "visual",
+        "shield",
+        "screen",
+        "light",
+        "dries",
+        "our",
+        "eyes",
+        "like",
+        "autumn",
+        "leaf",
+        "skin",
+        "aging",
+        "energy",
+        "metabolic",
+        "every",
+        "day",
+        "glue",
+        "screens",
+        "hours",
+        "unwittingly",
+        "exposing",
+        "retinas",
+        "high",
+        "blue"
+      ]
+    },
     {
       "id": "resistance-training-for-cellular-longevity",
       "slugs": [
