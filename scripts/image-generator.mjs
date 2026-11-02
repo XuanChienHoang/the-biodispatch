@@ -172,13 +172,15 @@ export function extractSmartImageKeywords(topic = {}) {
     );
   }
 
-  // 1d. Nhóm Chuyên biệt: Leucine, mTOR & Teo cơ tuổi 40 (Sarcopenia)
-  if (/leucine|teo cơ|teo-co|sarcopenia|mtor|kháng lực|cơ bắp|muscle strength/i.test(text)) {
+  // 1d. Nhóm Chuyên biệt: Leucine, mTOR & Teo cơ tuổi 40 (Sarcopenia, Kháng lực, Myokines)
+  if (/leucine|teo cơ|teo-co|sarcopenia|mtor|kháng lực|khang-luc|cơ bắp|muscle strength|myokine|tập tạ|resistance training|weight training/i.test(text)) {
     queries.push(
-      'dumbbell resistance fitness workout',
-      'athlete lifting dumbbells workout',
-      'strength resistance training home',
-      'fitness enthusiast workout vibrant'
+      'dumbbell',
+      'dumbbells',
+      'weight training',
+      'fitness exercise',
+      'kettlebell exercise',
+      'dumbbell exercise'
     );
   }
 
@@ -451,7 +453,7 @@ async function fetchFromPixabay(keyword, apiKey, currentSlug) {
 async function fetchFromWikimediaCommons(keyword, currentSlug, topic = {}, geminiApiKey = '') {
   try {
     // Chỉ tìm trong Namespace 6 (File:). Không dùng filetype:bitmap hay các từ âm tính làm hỏng bộ tìm kiếm
-    const url = `https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrnamespace=6&gsrsearch=${encodeURIComponent(keyword)}&prop=imageinfo&iiprop=url|size|mime&format=json&gsrlimit=12`;
+    const url = `https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrnamespace=6&gsrsearch=${encodeURIComponent('filetype:bitmap ' + keyword)}&prop=imageinfo&iiprop=url|size|mime&format=json&gsrlimit=12`;
 
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 10000);
