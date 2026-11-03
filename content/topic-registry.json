@@ -1,8 +1,100 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-03T13:07:15.434Z",
-  "totalTopics": 197,
+  "lastUpdated": "2026-11-03T15:32:49.147Z",
+  "totalTopics": 199,
   "topics": [
+    {
+      "id": "moldy-food-aflatoxin-and-liver-cancer-prevention-shield",
+      "slugs": [
+        "moldy-food-aflatoxin-and-liver-cancer-prevention-shield-en"
+      ],
+      "titleVi": "Moldy food, Aflatoxin toxicity and natural kitchen strategies to protect liver tumor suppressor genes",
+      "titleEn": "Moldy food, Aflatoxin toxicity and natural kitchen strategies to protect liver tumor suppressor genes",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1073/pnas.251536898",
+      "date": "2026-11-03T17:00:00Z",
+      "tags": [
+        "cancer-prevention",
+        "liver-health",
+        "detoxification",
+        "nutrition",
+        "food-safety"
+      ],
+      "keywords": [
+        "moldy",
+        "food",
+        "aflatoxin",
+        "toxicity",
+        "natural",
+        "kitchen",
+        "strategies",
+        "protect",
+        "liver",
+        "tumor",
+        "suppressor",
+        "genes",
+        "cancer",
+        "prevention",
+        "health",
+        "detoxification",
+        "nutrition",
+        "safety",
+        "many",
+        "households",
+        "habitually",
+        "trim",
+        "away",
+        "parts",
+        "peanuts"
+      ]
+    },
+    {
+      "id": "thuc-pham-moc-aflatoxin-va-la-chan-phong-ngua-ung-thu-gan",
+      "slugs": [
+        "thuc-pham-moc-aflatoxin-va-la-chan-phong-ngua-ung-thu-gan-vi"
+      ],
+      "titleVi": "Thực phẩm mốc, độc tố Aflatoxin và lá chắn tự nhiên bảo vệ gen ung thư gan từ căn bếp",
+      "titleEn": "Thực phẩm mốc, độc tố Aflatoxin và lá chắn tự nhiên bảo vệ gen ung thư gan từ căn bếp",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1073/pnas.251536898",
+      "date": "2026-11-03T17:00:00Z",
+      "tags": [
+        "ung-thu",
+        "gan",
+        "giai-doc",
+        "dinh-duong",
+        "bao-quan-thuc-pham"
+      ],
+      "keywords": [
+        "thuc",
+        "pham",
+        "moc",
+        "doc",
+        "aflatoxin",
+        "chan",
+        "nhien",
+        "bao",
+        "gen",
+        "ung",
+        "thu",
+        "gan",
+        "can",
+        "bep",
+        "dinh",
+        "duong",
+        "quan",
+        "nhieu",
+        "gia",
+        "thuong",
+        "thoi",
+        "quen",
+        "got",
+        "phan",
+        "hat"
+      ]
+    },
     {
       "id": "liquid-fructose-boba-fatty-liver",
       "slugs": [

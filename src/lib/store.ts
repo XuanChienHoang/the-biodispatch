@@ -4925,6 +4925,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "This 10-week study compared the metabolic effects of consuming fructose- or glucose-sweetened beverages providing 25% of energy requirements in overweight and obese individuals. Consumption of fructose-sweetened beverages specifically increased visceral adiposity, de novo lipogenesis, plasma lipids, dyslipidemia, and decreased insulin sensitivity, whereas glucose-sweetened beverage consumption did not produce these adverse metabolic changes despite equal weight gain.",
     },
   ],
+  "thuc-pham-moc-aflatoxin-va-la-chan-phong-ngua-ung-thu-gan-vi": [
+    {
+      ordinal: 1,
+      label: "Chlorophyllin intervention reduces aflatoxin-DNA adducts in individuals at high risk for liver cancer",
+      pmid: "11724948",
+      doi: "10.1073/pnas.251536898",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Proc Natl Acad Sci U S A",
+      year: 2001,
+      abstract: "Aflatoxin B1 (AFB1) is a potent hepatocarcinogen that causes a specific G-to-T transversion mutation at codon 249 of the TP53 gene. In a randomized, double-blind, placebo-controlled clinical trial conducted in Qidong, China, administration of 100 mg of Chlorophyllin three times daily at meals led to a 55% reduction in median urinary levels of AFB1-N7-guanine adducts compared to placebo. This demonstrates that dietary intervention with Chlorophyllin can effectively block bioavailable Aflatoxin DNA damage in high risk human populations.",
+    },
+  ],
+  "moldy-food-aflatoxin-and-liver-cancer-prevention-shield-en": [
+    {
+      ordinal: 1,
+      label: "Chlorophyllin intervention reduces aflatoxin-DNA adducts in individuals at high risk for liver cancer",
+      pmid: "11724948",
+      doi: "10.1073/pnas.251536898",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Proc Natl Acad Sci U S A",
+      year: 2001,
+      abstract: "Aflatoxin B1 (AFB1) is a potent hepatocarcinogen that causes a specific G-to-T transversion mutation at codon 249 of the TP53 gene. In a randomized, double-blind, placebo-controlled clinical trial conducted in Qidong, China, administration of 100 mg of Chlorophyllin three times daily at meals led to a 55% reduction in median urinary levels of AFB1-N7-guanine adducts compared to placebo. This demonstrates that dietary intervention with Chlorophyllin can effectively block bioavailable Aflatoxin DNA damage in high risk human populations.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
