@@ -4873,6 +4873,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Short-chain fatty acids (SCFAs), principally acetate, propionate and butyrate, are produced in the colon by bacterial fermentation of dietary carbohydrates that escape digestion in the upper gastrointestinal tract. Butyrate is the preferred energy source for colonocytes, regulates gene expression, and exhibits anti-neoplastic and anti-inflammatory properties, playing a vital role in maintaining colonic mucosal health and preventing carcinogenesis.",
     },
   ],
+  "toi-tuoi-dap-dap-va-allicin-quy-tac-10-phut-vang-vi-su-song-vi": [
+    {
+      ordinal: 1,
+      label: "Allicin: chemistry and biological properties",
+      pmid: "25153873",
+      doi: "10.3390/molecules190812591",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Molecules",
+      year: 2014,
+      abstract: "Garlic (Allium sativum) has long been used worldwide as a medicinal plant and dietary seasoning. Allicin is the principal bioactive compound formed when the enzyme alliinase interacts with alliin upon tissue damage, exhibiting potent antimicrobial, antioxidant, and apoptosis-inducing properties in experimental models.",
+    },
+  ],
+  "crushed-fresh-garlic-and-allicin-the-10-minute-golden-rule-for-cellular-defense-en": [
+    {
+      ordinal: 1,
+      label: "Allicin: chemistry and biological properties",
+      pmid: "25153873",
+      doi: "10.3390/molecules190812591",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Molecules",
+      year: 2014,
+      abstract: "Garlic (Allium sativum) has long been used worldwide as a medicinal plant and dietary seasoning. Allicin is the principal bioactive compound formed when the enzyme alliinase interacts with alliin upon tissue damage, exhibiting potent antimicrobial, antioxidant, and apoptosis-inducing properties in experimental models.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

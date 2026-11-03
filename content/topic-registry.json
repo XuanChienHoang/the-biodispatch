@@ -1,8 +1,100 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-02T23:57:53.940Z",
-  "totalTopics": 193,
+  "lastUpdated": "2026-11-03T01:49:07.755Z",
+  "totalTopics": 195,
   "topics": [
+    {
+      "id": "crushed-fresh-garlic-and-allicin-the-10-minute-golden-rule-for-cellular-defense",
+      "slugs": [
+        "crushed-fresh-garlic-and-allicin-the-10-minute-golden-rule-for-cellular-defense-en"
+      ],
+      "titleVi": "Crushed fresh garlic and allicin: The 10 minute golden rule for cellular defense and apoptosis",
+      "titleEn": "Crushed fresh garlic and allicin: The 10 minute golden rule for cellular defense and apoptosis",
+      "organ": "Metabolic",
+      "tier": "Clinical Deep-Dive",
+      "doi": "10.3390/molecules190812591",
+      "date": "2026-11-03T05:00:00Z",
+      "tags": [
+        "cancer",
+        "longevity",
+        "immunity",
+        "gut",
+        "heart"
+      ],
+      "keywords": [
+        "crushed",
+        "fresh",
+        "garlic",
+        "allicin",
+        "minute",
+        "golden",
+        "rule",
+        "cellular",
+        "defense",
+        "apoptosis",
+        "cancer",
+        "longevity",
+        "immunity",
+        "gut",
+        "heart",
+        "every",
+        "clove",
+        "your",
+        "kitchen",
+        "harbors",
+        "one",
+        "nature",
+        "most",
+        "sophisticated",
+        "chemical"
+      ]
+    },
+    {
+      "id": "toi-tuoi-dap-dap-va-allicin-quy-tac-10-phut-vang-vi-su-song",
+      "slugs": [
+        "toi-tuoi-dap-dap-va-allicin-quy-tac-10-phut-vang-vi-su-song-vi"
+      ],
+      "titleVi": "Tỏi tươi đập dập và allicin: Quy tắc 10 phút vàng kích hoạt vũ khí sinh học chống đột biến tế bào",
+      "titleEn": "Tỏi tươi đập dập và allicin: Quy tắc 10 phút vàng kích hoạt vũ khí sinh học chống đột biến tế bào",
+      "organ": "Metabolic",
+      "tier": "Clinical Deep-Dive",
+      "doi": "10.3390/molecules190812591",
+      "date": "2026-11-03T05:00:00Z",
+      "tags": [
+        "ung-thu",
+        "lao-hoa",
+        "miễn-dịch",
+        "tieu-hoa",
+        "tim-mach"
+      ],
+      "keywords": [
+        "toi",
+        "tuoi",
+        "dap",
+        "allicin",
+        "quy",
+        "tac",
+        "phut",
+        "vang",
+        "kich",
+        "hoat",
+        "sinh",
+        "hoc",
+        "chong",
+        "dot",
+        "bien",
+        "bao",
+        "ung",
+        "thu",
+        "lao",
+        "hoa",
+        "mien",
+        "dich",
+        "tieu",
+        "tim",
+        "mach"
+      ]
+    },
     {
       "id": "anticancer foods and proper culinary preparation",
       "slugs": [
