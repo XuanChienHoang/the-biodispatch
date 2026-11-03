@@ -4899,6 +4899,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Garlic (Allium sativum) has long been used worldwide as a medicinal plant and dietary seasoning. Allicin is the principal bioactive compound formed when the enzyme alliinase interacts with alliin upon tissue damage, exhibiting potent antimicrobial, antioxidant, and apoptosis-inducing properties in experimental models.",
     },
   ],
+  "tra-sua-duong-fructose-va-gan-nhiem-mo-vi": [
+    {
+      ordinal: 1,
+      label: "Consuming fructose-sweetened, not glucose-sweetened, beverages increases visceral adiposity and lipids and decreases insulin sensitivity in overweight/obese humans",
+      pmid: "19381015",
+      doi: "10.1172/JCI37385",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "J Clin Invest",
+      year: 2009,
+      abstract: "This 10-week study compared the metabolic effects of consuming fructose- or glucose-sweetened beverages providing 25% of energy requirements in overweight and obese individuals. Consumption of fructose-sweetened beverages specifically increased visceral adiposity, de novo lipogenesis, plasma lipids, dyslipidemia, and decreased insulin sensitivity, whereas glucose-sweetened beverage consumption did not produce these adverse metabolic changes despite equal weight gain.",
+    },
+  ],
+  "liquid-fructose-boba-fatty-liver-en": [
+    {
+      ordinal: 1,
+      label: "Consuming fructose-sweetened, not glucose-sweetened, beverages increases visceral adiposity and lipids and decreases insulin sensitivity in overweight/obese humans",
+      pmid: "19381015",
+      doi: "10.1172/JCI37385",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "J Clin Invest",
+      year: 2009,
+      abstract: "This 10-week study compared the metabolic effects of consuming fructose- or glucose-sweetened beverages providing 25% of energy requirements in overweight and obese individuals. Consumption of fructose-sweetened beverages specifically increased visceral adiposity, de novo lipogenesis, plasma lipids, dyslipidemia, and decreased insulin sensitivity, whereas glucose-sweetened beverage consumption did not produce these adverse metabolic changes despite equal weight gain.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

@@ -1,8 +1,104 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-03T01:49:07.755Z",
-  "totalTopics": 195,
+  "lastUpdated": "2026-11-03T13:07:15.434Z",
+  "totalTopics": 197,
   "topics": [
+    {
+      "id": "liquid-fructose-boba-fatty-liver",
+      "slugs": [
+        "liquid-fructose-boba-fatty-liver-en"
+      ],
+      "titleVi": "Why liquid fructose in boba tea accumulates liver fat faster than saturated fats",
+      "titleEn": "Why liquid fructose in boba tea accumulates liver fat faster than saturated fats",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1172/JCI37385",
+      "date": "2026-11-03T13:00:00Z",
+      "tags": [
+        "liver-health",
+        "metabolic-health",
+        "fatty-liver",
+        "fructose",
+        "boba-tea",
+        "de-novo-lipogenesis",
+        "endocrinology"
+      ],
+      "keywords": [
+        "liquid",
+        "fructose",
+        "boba",
+        "tea",
+        "accumulates",
+        "liver",
+        "fat",
+        "faster",
+        "than",
+        "saturated",
+        "fats",
+        "health",
+        "metabolic",
+        "fatty",
+        "novo",
+        "lipogenesis",
+        "endocrinology",
+        "many",
+        "young",
+        "adults",
+        "completely",
+        "eliminate",
+        "animal",
+        "yet",
+        "are"
+      ]
+    },
+    {
+      "id": "tra-sua-duong-fructose-va-gan-nhiem-mo",
+      "slugs": [
+        "tra-sua-duong-fructose-va-gan-nhiem-mo-vi"
+      ],
+      "titleVi": "Vì sao đường fructose lỏng trong trà sữa tích mỡ gan nhanh hơn mỡ động vật?",
+      "titleEn": "Vì sao đường fructose lỏng trong trà sữa tích mỡ gan nhanh hơn mỡ động vật?",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1172/JCI37385",
+      "date": "2026-11-03T13:00:00Z",
+      "tags": [
+        "gan",
+        "duong-huyet",
+        "lao-hoa",
+        "noi-tiet",
+        "tra-sua",
+        "fructose",
+        "gan-nhiem-mo"
+      ],
+      "keywords": [
+        "duong",
+        "fructose",
+        "long",
+        "tra",
+        "sua",
+        "tich",
+        "gan",
+        "nhanh",
+        "hon",
+        "dong",
+        "vat",
+        "huyet",
+        "lao",
+        "hoa",
+        "noi",
+        "tiet",
+        "nhiem",
+        "nhieu",
+        "nguoi",
+        "tre",
+        "cat",
+        "giam",
+        "hoan",
+        "toan",
+        "van"
+      ]
+    },
     {
       "id": "crushed-fresh-garlic-and-allicin-the-10-minute-golden-rule-for-cellular-defense",
       "slugs": [
