@@ -4951,6 +4951,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Aflatoxin B1 (AFB1) is a potent hepatocarcinogen that causes a specific G-to-T transversion mutation at codon 249 of the TP53 gene. In a randomized, double-blind, placebo-controlled clinical trial conducted in Qidong, China, administration of 100 mg of Chlorophyllin three times daily at meals led to a 55% reduction in median urinary levels of AFB1-N7-guanine adducts compared to placebo. This demonstrates that dietary intervention with Chlorophyllin can effectively block bioavailable Aflatoxin DNA damage in high risk human populations.",
     },
   ],
+  "chat-xo-hoa-tan-yen-mach-va-axit-butyrate-phong-ngua-ung-thu-dai-trang-vi": [
+    {
+      ordinal: 1,
+      label: "Short-chain fatty acids: linking diet, the microbiome and immunity",
+      pmid: "38565643",
+      doi: "10.1038/s41577-024-01014-8",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Nat Rev Immunol",
+      year: 2024,
+      abstract: "Short-chain fatty acids, produced by gut microbial fermentation of dietary fibers, play fundamental roles in host metabolism, immune modulation, and epithelial barrier integrity, highlighting their therapeutic potential in metabolic and oncological disorders.",
+    },
+  ],
+  "soluble-fiber-oats-butyrate-colorectal-cancer-prevention-en": [
+    {
+      ordinal: 1,
+      label: "Short-chain fatty acids: linking diet, the microbiome and immunity",
+      pmid: "38565643",
+      doi: "10.1038/s41577-024-01014-8",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Nat Rev Immunol",
+      year: 2024,
+      abstract: "Short-chain fatty acids, produced by gut microbial fermentation of dietary fibers, play fundamental roles in host metabolism, immune modulation, and epithelial barrier integrity, highlighting their therapeutic potential in metabolic and oncological disorders.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

@@ -1,8 +1,54 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-03T15:32:49.147Z",
-  "totalTopics": 199,
+  "lastUpdated": "2026-11-03T20:09:52.724Z",
+  "totalTopics": 201,
   "topics": [
+    {
+      "id": "chat-xo-hoa-tan-yen-mach-va-axit-butyrate-phong-ngua-ung-thu-dai-trang",
+      "slugs": [
+        "chat-xo-hoa-tan-yen-mach-va-axit-butyrate-phong-ngua-ung-thu-dai-trang-vi"
+      ],
+      "titleVi": "Chất xơ hòa tan trong yến mạch và axit butyrate: Chiếc khiên vô hình bảo vệ niêm mạc đại tràng",
+      "titleEn": "Chất xơ hòa tan trong yến mạch và axit butyrate: Chiếc khiên vô hình bảo vệ niêm mạc đại tràng",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1038/s41577-024-01014-8",
+      "date": "2026-11-03T17:00:00Z",
+      "tags": [
+        "ruot",
+        "lao-hoa",
+        "dinh-duong",
+        "ung-thu",
+        "tieu-hoa"
+      ],
+      "keywords": [
+        "chat",
+        "hoa",
+        "tan",
+        "yen",
+        "mach",
+        "axit",
+        "butyrate",
+        "chiec",
+        "khien",
+        "hinh",
+        "bao",
+        "niem",
+        "mac",
+        "dai",
+        "trang",
+        "ruot",
+        "lao",
+        "dinh",
+        "duong",
+        "ung",
+        "thu",
+        "tieu",
+        "chung",
+        "khong",
+        "chi"
+      ]
+    },
     {
       "id": "moldy-food-aflatoxin-and-liver-cancer-prevention-shield",
       "slugs": [
@@ -47,6 +93,52 @@
         "away",
         "parts",
         "peanuts"
+      ]
+    },
+    {
+      "id": "soluble-fiber-oats-butyrate-colorectal-cancer-prevention",
+      "slugs": [
+        "soluble-fiber-oats-butyrate-colorectal-cancer-prevention-en"
+      ],
+      "titleVi": "Soluble fiber in oats and butyrate acid: The invisible shield protecting colonic mucosa",
+      "titleEn": "Soluble fiber in oats and butyrate acid: The invisible shield protecting colonic mucosa",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1038/s41577-024-01014-8",
+      "date": "2026-11-03T17:00:00Z",
+      "tags": [
+        "gut",
+        "longevity",
+        "nutrition",
+        "cancer",
+        "digestion"
+      ],
+      "keywords": [
+        "soluble",
+        "fiber",
+        "oats",
+        "butyrate",
+        "acid",
+        "invisible",
+        "shield",
+        "protecting",
+        "colonic",
+        "mucosa",
+        "gut",
+        "longevity",
+        "nutrition",
+        "cancer",
+        "digestion",
+        "our",
+        "colon",
+        "not",
+        "merely",
+        "final",
+        "digestive",
+        "tract",
+        "but",
+        "miniature",
+        "ecosystem"
       ]
     },
     {
