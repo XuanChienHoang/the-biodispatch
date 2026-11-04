@@ -5003,6 +5003,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Dietary phytochemicals such as sulforaphane from cruciferous vegetables exhibit potent chemopreventive effects by activating Nrf2 signaling pathways, inducing Phase II detoxification enzymes, and suppressing chronic inflammation associated with carcinogenesis.",
     },
   ],
+  "hien-tượng-sap-nguồn-bữa-trưa-va-giai-pháp-vi-sinh-vi": [
+    {
+      ordinal: 1,
+      label: "Glucose and insulin responses to barley products: influence of food structure and amylose-amylopectin ratio",
+      pmid: "8172094",
+      doi: "10.1093/ajcn/59.5.1075",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Am J Clin Nutr",
+      year: 1994,
+      abstract: "High glycemic index meals induce sharp postprandial glucose and insulin oscillations that trigger reactive hypoglycemia and central nervous system fatigue. Modulating macronutrient sequencing significantly stabilizes metabolic energy and preserves cognitive alertness throughout the afternoon work cycle.",
+    },
+  ],
+  "postprandial-somnolence-lunch-slump-and-metabolic-stability-en": [
+    {
+      ordinal: 1,
+      label: "Glucose and insulin responses to barley products: influence of food structure and amylose-amylopectin ratio",
+      pmid: "8172094",
+      doi: "10.1093/ajcn/59.5.1075",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Am J Clin Nutr",
+      year: 1994,
+      abstract: "High glycemic index meals induce sharp postprandial glucose and insulin oscillations that trigger reactive hypoglycemia and central nervous system fatigue. Modulating macronutrient sequencing significantly stabilizes metabolic energy and preserves cognitive alertness throughout the afternoon work cycle.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

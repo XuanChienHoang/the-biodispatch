@@ -1,8 +1,98 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-04T13:09:00.663Z",
-  "totalTopics": 203,
+  "lastUpdated": "2026-11-04T15:53:49.965Z",
+  "totalTopics": 205,
   "topics": [
+    {
+      "id": "hien-tượng-sap-nguồn-bữa-trưa-va-giai-pháp-vi-sinh",
+      "slugs": [
+        "hien-tượng-sap-nguồn-bữa-trưa-va-giai-pháp-vi-sinh-vi"
+      ],
+      "titleVi": "Hiện tượng sập nguồn và buồn ngủ rũ rượi lúc 2 giờ chiều: Thủ phạm thực sự từ đỉnh carbohydrate bữa trưa và cách hóa giải",
+      "titleEn": "Hiện tượng sập nguồn và buồn ngủ rũ rượi lúc 2 giờ chiều: Thủ phạm thực sự từ đỉnh carbohydrate bữa trưa và cách hóa giải",
+      "organ": "Metabolic",
+      "tier": "Clinical Deep-Dive",
+      "doi": "10.1093/ajcn/59.5.1075",
+      "date": "2026-11-04T17:00:00Z",
+      "tags": [
+        "nang-luong",
+        "duong-huyet",
+        "lao-hoa",
+        "chuyen-hoa"
+      ],
+      "keywords": [
+        "hien",
+        "tuong",
+        "sap",
+        "nguon",
+        "buon",
+        "ngu",
+        "ruoi",
+        "luc",
+        "gio",
+        "chieu",
+        "thu",
+        "pham",
+        "thuc",
+        "dinh",
+        "carbohydrate",
+        "bua",
+        "trua",
+        "cach",
+        "hoa",
+        "nang",
+        "luong",
+        "duong",
+        "huyet",
+        "lao",
+        "chuyen"
+      ]
+    },
+    {
+      "id": "postprandial-somnolence-lunch-slump-and-metabolic-stability",
+      "slugs": [
+        "postprandial-somnolence-lunch-slump-and-metabolic-stability-en"
+      ],
+      "titleVi": "The 2 PM crash and postprandial somnolence: The true metabolic culprit of heavy lunches and how to fix it",
+      "titleEn": "The 2 PM crash and postprandial somnolence: The true metabolic culprit of heavy lunches and how to fix it",
+      "organ": "Metabolic",
+      "tier": "Clinical Deep-Dive",
+      "doi": "10.1093/ajcn/59.5.1075",
+      "date": "2026-11-04T17:00:00Z",
+      "tags": [
+        "energy",
+        "blood-sugar",
+        "longevity",
+        "metabolism"
+      ],
+      "keywords": [
+        "crash",
+        "postprandial",
+        "somnolence",
+        "true",
+        "metabolic",
+        "culprit",
+        "heavy",
+        "lunches",
+        "fix",
+        "energy",
+        "blood",
+        "sugar",
+        "longevity",
+        "metabolism",
+        "wave",
+        "sleepiness",
+        "hits",
+        "your",
+        "eyelids",
+        "early",
+        "afternoon",
+        "not",
+        "merely",
+        "physical",
+        "exhaustion"
+      ]
+    },
     {
       "id": "cancer-prevention-nutrition-from-home-kitchen",
       "slugs": [
