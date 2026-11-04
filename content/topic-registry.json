@@ -1,8 +1,100 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-03T20:09:52.724Z",
-  "totalTopics": 201,
+  "lastUpdated": "2026-11-04T13:09:00.663Z",
+  "totalTopics": 203,
   "topics": [
+    {
+      "id": "cancer-prevention-nutrition-from-home-kitchen",
+      "slugs": [
+        "cancer-prevention-nutrition-from-home-kitchen-en"
+      ],
+      "titleVi": "The cancer-blocking wall from your home kitchen and smart food choices",
+      "titleEn": "The cancer-blocking wall from your home kitchen and smart food choices",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.3390/nu13051514",
+      "date": "2026-11-04T13:00:00Z",
+      "tags": [
+        "cancer",
+        "nutrition",
+        "longevity",
+        "food",
+        "immunity"
+      ],
+      "keywords": [
+        "cancer",
+        "blocking",
+        "wall",
+        "your",
+        "home",
+        "kitchen",
+        "smart",
+        "food",
+        "choices",
+        "nutrition",
+        "longevity",
+        "immunity",
+        "many",
+        "people",
+        "mistakenly",
+        "believe",
+        "prevention",
+        "requires",
+        "expensive",
+        "herbs",
+        "harsh",
+        "unsustainable",
+        "diets",
+        "reality",
+        "strongest"
+      ]
+    },
+    {
+      "id": "dinh-duong-phong-ngua-ung-thu-tu-can-bep-gia-dinh",
+      "slugs": [
+        "dinh-duong-phong-ngua-ung-thu-tu-can-bep-gia-dinh-vi"
+      ],
+      "titleVi": "Bức tường chắn ung thư từ căn bếp nhà bạn và cách chọn thực phẩm thông minh",
+      "titleEn": "Bức tường chắn ung thư từ căn bếp nhà bạn và cách chọn thực phẩm thông minh",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.3390/nu13051514",
+      "date": "2026-11-04T13:00:00Z",
+      "tags": [
+        "ung-thu",
+        "dinh-duong",
+        "lao-hoa",
+        "thuc-pham",
+        "mien-dich"
+      ],
+      "keywords": [
+        "buc",
+        "tuong",
+        "chan",
+        "ung",
+        "thu",
+        "can",
+        "bep",
+        "nha",
+        "ban",
+        "cach",
+        "chon",
+        "thuc",
+        "pham",
+        "thong",
+        "minh",
+        "dinh",
+        "duong",
+        "lao",
+        "hoa",
+        "mien",
+        "dich",
+        "nhieu",
+        "nguoi",
+        "lam",
+        "rang"
+      ]
+    },
     {
       "id": "chat-xo-hoa-tan-yen-mach-va-axit-butyrate-phong-ngua-ung-thu-dai-trang",
       "slugs": [

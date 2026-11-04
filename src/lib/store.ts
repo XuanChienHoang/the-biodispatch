@@ -4977,6 +4977,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Short-chain fatty acids, produced by gut microbial fermentation of dietary fibers, play fundamental roles in host metabolism, immune modulation, and epithelial barrier integrity, highlighting their therapeutic potential in metabolic and oncological disorders.",
     },
   ],
+  "dinh-duong-phong-ngua-ung-thu-tu-can-bep-gia-dinh-vi": [
+    {
+      ordinal: 1,
+      label: "Sulforaphane and other nutraceuticals in prevention of human cancer",
+      pmid: "",
+      doi: "10.3390/nu13051514",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Nutrients",
+      year: 2021,
+      abstract: "Dietary phytochemicals such as sulforaphane from cruciferous vegetables exhibit potent chemopreventive effects by activating Nrf2 signaling pathways, inducing Phase II detoxification enzymes, and suppressing chronic inflammation associated with carcinogenesis.",
+    },
+  ],
+  "cancer-prevention-nutrition-from-home-kitchen-en": [
+    {
+      ordinal: 1,
+      label: "Sulforaphane and other nutraceuticals in prevention of human cancer",
+      pmid: "",
+      doi: "10.3390/nu13051514",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Nutrients",
+      year: 2021,
+      abstract: "Dietary phytochemicals such as sulforaphane from cruciferous vegetables exhibit potent chemopreventive effects by activating Nrf2 signaling pathways, inducing Phase II detoxification enzymes, and suppressing chronic inflammation associated with carcinogenesis.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
