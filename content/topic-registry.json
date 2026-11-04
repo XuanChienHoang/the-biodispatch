@@ -1,8 +1,54 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-04T15:53:49.965Z",
-  "totalTopics": 205,
+  "lastUpdated": "2026-11-04T20:33:06.386Z",
+  "totalTopics": 207,
   "topics": [
+    {
+      "id": "berries-and-ellagic-acid-dna-protection",
+      "slugs": [
+        "berries-and-ellagic-acid-dna-protection-en"
+      ],
+      "titleVi": "The morning bowl of berries and the invisible shield protecting DNA from double-strand breaks",
+      "titleEn": "The morning bowl of berries and the invisible shield protecting DNA from double-strand breaks",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1002/cbdv.202500105",
+      "date": "2026-11-04T17:00:00Z",
+      "tags": [
+        "aging",
+        "cancer",
+        "gut",
+        "energy",
+        "cardiovascular"
+      ],
+      "keywords": [
+        "morning",
+        "bowl",
+        "berries",
+        "invisible",
+        "shield",
+        "protecting",
+        "dna",
+        "double",
+        "strand",
+        "breaks",
+        "aging",
+        "cancer",
+        "gut",
+        "energy",
+        "cardiovascular",
+        "every",
+        "time",
+        "bite",
+        "plump",
+        "blueberry",
+        "enjoy",
+        "fresh",
+        "strawberries",
+        "body",
+        "receives"
+      ]
+    },
     {
       "id": "hien-tượng-sap-nguồn-bữa-trưa-va-giai-pháp-vi-sinh",
       "slugs": [
@@ -91,6 +137,52 @@
         "merely",
         "physical",
         "exhaustion"
+      ]
+    },
+    {
+      "id": "qua-mong-va-axit-ellagic-bao-ve-dna",
+      "slugs": [
+        "qua-mong-va-axit-ellagic-bao-ve-dna-vi"
+      ],
+      "titleVi": "Bát quả mọng buổi sáng và chiếc khiên vô hình bảo vệ chuỗi DNA khỏi đứt gãy",
+      "titleEn": "Bát quả mọng buổi sáng và chiếc khiên vô hình bảo vệ chuỗi DNA khỏi đứt gãy",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1002/cbdv.202500105",
+      "date": "2026-11-04T17:00:00Z",
+      "tags": [
+        "lao-hoa",
+        "ung-thu",
+        "ruot",
+        "nang-luong",
+        "tim-mach"
+      ],
+      "keywords": [
+        "bat",
+        "qua",
+        "mong",
+        "buoi",
+        "sang",
+        "chiec",
+        "khien",
+        "hinh",
+        "bao",
+        "chuoi",
+        "dna",
+        "khoi",
+        "dut",
+        "gay",
+        "lao",
+        "hoa",
+        "ung",
+        "thu",
+        "ruot",
+        "nang",
+        "luong",
+        "tim",
+        "mach",
+        "moi",
+        "chung"
       ]
     },
     {

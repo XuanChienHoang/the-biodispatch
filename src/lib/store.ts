@@ -5029,6 +5029,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "High glycemic index meals induce sharp postprandial glucose and insulin oscillations that trigger reactive hypoglycemia and central nervous system fatigue. Modulating macronutrient sequencing significantly stabilizes metabolic energy and preserves cognitive alertness throughout the afternoon work cycle.",
     },
   ],
+  "qua-mong-va-axit-ellagic-bao-ve-dna-vi": [
+    {
+      ordinal: 1,
+      label: "Clinical and Mechanistic Exploration of Ellagic Acid in Neurodegenerative Diseases: Targeted Neuroprotection Through Cellular and Molecular Mechanisms",
+      pmid: "40446132",
+      doi: "10.1002/cbdv.202500105",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Chem Biodivers",
+      year: 2025,
+      abstract: "Ellagic acid, a naturally occurring polyphenol found in various fruits and nuts, exhibits potent antioxidant and chemopreventive properties. Upon ingestion, complex ellagitannins are hydrolyzed and metabolized by gut microflora into urolithins and free ellagic acid, which exert significant systemic cytoprotective effects by modulating cellular signaling pathways and preventing oxidative DNA damage.",
+    },
+  ],
+  "berries-and-ellagic-acid-dna-protection-en": [
+    {
+      ordinal: 1,
+      label: "Clinical and Mechanistic Exploration of Ellagic Acid in Neurodegenerative Diseases: Targeted Neuroprotection Through Cellular and Molecular Mechanisms",
+      pmid: "40446132",
+      doi: "10.1002/cbdv.202500105",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Chem Biodivers",
+      year: 2025,
+      abstract: "Ellagic acid, a naturally occurring polyphenol found in various fruits and nuts, exhibits potent antioxidant and chemopreventive properties. Upon ingestion, complex ellagitannins are hydrolyzed and metabolized by gut microflora into urolithins and free ellagic acid, which exert significant systemic cytoprotective effects by modulating cellular signaling pathways and preventing oxidative DNA damage.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
