@@ -60,6 +60,26 @@ export function verifyImageUniqueness() {
 
   const crossTopicDupes = [];
   for (const [hash, group] of hashes.entries()) {
+    if (group.length <= 1) continue;
+
+    // A bilingual pair has exactly 2 files: one Vietnamese and one English
+    if (group.length === 2) {
+      const langs = new Set();
+      for (const f of group) {
+        const mdPath = path.join(rootDir, 'content/posts', f.replace(/\.jpg$/, '.md'));
+        if (fs.existsSync(mdPath)) {
+          const md = fs.readFileSync(mdPath, 'utf8');
+          const m = md.match(/^lang:\s*["']?(vi|en)["']?/m);
+          if (m) langs.add(m[1]);
+        }
+      }
+      if (langs.has('vi') && langs.has('en')) continue;
+      const viCount = group.filter(f => f.endsWith('-vi.jpg')).length;
+      const enCount = group.filter(f => f.endsWith('-en.jpg')).length;
+      if (viCount === 1 && enCount === 1) continue;
+      if (viCount === 0 && enCount === 0) continue;
+    }
+
     const topicIds = new Set();
     for (const f of group) {
       const slug = f.replace(/\.jpg$/, '');

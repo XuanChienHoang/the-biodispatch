@@ -12,7 +12,7 @@ featured: true
 doi: "10.1007/s00018-019-03053-0"
 gizmo: null
 lang: "en"
-image: "/images/posts/anticancer foods and proper culinary preparation-en.jpg"
+image: "/images/posts/anticancer-foods-and-proper-culinary-preparation-en.jpg"
 imageAlt: "Lifestyle science photography for The anti-cancer kitchen: The art of food combination and temperature to activate bioactive compounds"
 brief:
   bottomLine: "Many people mistakenly believe that simply eating organic vegetables is enough to protect the body against chronic diseases"
@@ -30,7 +30,7 @@ practical:
 
 Every afternoon after work, we rush to wash vegetables, chop tubers, and drop them straight into boiling water to whip up a quick dinner. Few of us suspect that this seemingly harmless habit inadvertently destroys most of the precious cell-protecting compounds that nature gifts to food. In the natural world, plants do not produce the pungent smell of garlic or the slight bitterness of broccoli just to annoy us. These are sophisticated chemical armors designed to fight off environmental DNA-damaging agents. When entering our home kitchens, these armors can be multiplied manifold if we hold the correct activation key, or disappear entirely due to a few impatient minutes by the stove. Understanding the nature of anti-cancer compounds from food is not a distant academic story of international laboratories. It is the everyday biological art that helps each of us protect our own health and our loved ones right from the daily family meal.
 
-![Lifestyle science photography for The anti-cancer kitchen: The art of food combination and temperature to activate bioactive compounds](/images/posts/anticancer foods and proper culinary preparation-en.jpg)
+![Lifestyle science photography for The anti-cancer kitchen: The art of food combination and temperature to activate bioactive compounds](/images/posts/anticancer-foods-and-proper-culinary-preparation-en.jpg)
 
 > *"Imagine the anti-cancer compounds in vegetables as firefighters fast asleep in their station. The natural enzymes inside the plants act as the necessary alarm bell to wake them up. When you finely chop garlic or broccoli and let it rest for a few minutes, you create a fateful encounter between the soldier and the door key. If you throw the vegetables straight into boiling water immediately after cutting, the alarm bell is permanently disabled and the fire brigade never makes it to action."*
 

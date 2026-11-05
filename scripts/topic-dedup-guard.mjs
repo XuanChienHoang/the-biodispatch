@@ -33,7 +33,21 @@ const ENTITY_SIGNATURES = [
   { name: 'Brown Fat & UCP1 Proton Leak', tokens: ['ucp1', 'brown-fat', 'mo-nau', 'proton-leak', 'ro-ri-proton'] },
   { name: 'Sulforaphane & Nrf2 Activation', tokens: ['sulforaphane', 'nrf2', 'sup-lo', 'broccoli'] },
   { name: 'Apple Cider Vinegar & Glucose Spikes', tokens: ['giam-tao', 'vinegar', 'acetic', 'glucose-spike'] },
-  { name: 'Cold Bath / Warm Bath Sleep Core Temp', tokens: ['tam-nuoc-nong', 'tam-nuoc-lanh', 'warm-bath', 'core-body-temperature'] }
+  { name: 'Cold Bath / Warm Bath Sleep Core Temp', tokens: ['tam-nuoc-nong', 'tam-nuoc-lanh', 'warm-bath', 'core-body-temperature'] },
+  { name: 'Oats Soluble Fiber & Colonic Butyrate', tokens: ['yen-mach', 'oats', 'oatmeal', 'chat-xo-hoa-tan', 'soluble-fiber', 'butyrate'] },
+  { name: 'Berries & Ellagic Acid DNA Protection', tokens: ['qua-mong', 'berries', 'ellagic', 'viet-quat', 'dau-tay'] },
+  { name: 'Moldy Food & Aflatoxin Liver Cancer', tokens: ['aflatoxin', 'thuc-pham-moc', 'moldy', 'aspergillus', 'moc'] },
+  { name: 'Liquid Fructose Boba & Fatty Liver MASLD', tokens: ['tra-sua', 'boba', 'fructose', 'gan-nhiem-mo', 'fatty-liver', 'masld'] },
+  { name: 'Crushed Garlic & Allicin 10-Minute Rule', tokens: ['allicin', 'alliinase', 'toi-tuoi', 'dap-dap', 'crushed-garlic', '10-phut'] },
+  { name: 'Postprandial Somnolence & Afternoon Lunch Slump', tokens: ['sap-nguon', 'somnolence', 'lunch-slump', 'bua-trua', 'buon-ngu'] },
+  { name: 'Cooked Tomatoes Lycopene & Olive Oil', tokens: ['ca-chua', 'tomatoes', 'lycopene', 'dau-o-liu', 'olive-oil'] },
+  { name: 'Hot Beverages >65C & Esophageal Injury', tokens: ['65-do', '65c', 'tra-nong', 'canh-soi', 'thuc-quan', 'esophageal'] },
+  { name: 'Processed Red Meat Nitrosamine & Heme Iron', tokens: ['thit-do', 'che-bien-san', 'processed-meat', 'nitrosamine', 'heme'] },
+  { name: 'Macular Pigment Lutein Zeaxanthin & Dry Eye', tokens: ['lutein', 'zeaxanthin', 'hoang-diem', 'macula', 'macular', 'sac-to-vang'] },
+  { name: 'Rice Bran Phytoceramides & Skin Barrier', tokens: ['ceramide', 'cam-gao', 'rice-bran', 'phytoceramides', 'hang-rao-da'] },
+  { name: 'Oral Hyaluronic Acid & Knee Joint Synovial Fluid', tokens: ['hyaluronic', 'khop-goi', 'dem-khop', 'synovial', 'knee-joint'] },
+  { name: 'Milk Thistle Silymarin & Hepatocyte Membrane', tokens: ['ke-sua', 'silymarin', 'milk-thistle', 'mang-te-bao-gan'] },
+  { name: 'Tart Cherry & Uric Acid Gout Prevention', tokens: ['anh-dao', 'tart-cherry', 'axit-uric', 'uric-acid', 'gut-cap'] }
 ];
 
 function normalizeDoi(doi) {

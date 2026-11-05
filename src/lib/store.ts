@@ -4821,7 +4821,7 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Lutein and zeaxanthin are dietary carotenoids that selectively accumulate in the human macula and skin, where they function as powerful blue-light filters and antioxidants. Emerging clinical evidence highlights their critical role in preventing age-related macular degeneration and reducing oxidative skin damage from environmental stressors.",
     },
   ],
-  "thuc phẩm chong ung thu va che bien dung cach-vi": [
+  "thuc-pham-chong-ung-thu-va-che-bien-dung-cach-vi": [
     {
       ordinal: 1,
       label: "Long non-coding RNAs are emerging targets of phytochemicals for cancer and other chronic diseases",
@@ -4834,7 +4834,7 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Dietary phytochemicals such as sulforaphane and allicin exhibit potent chemopreventive properties by modulating phase II detoxification enzymes and inhibiting tumor progression. However, their biological efficacy strictly depends on enzymatic activation parameters during culinary preparation and cellular bioavailability in the gastrointestinal tract.",
     },
   ],
-  "anticancer foods and proper culinary preparation-en": [
+  "anticancer-foods-and-proper-culinary-preparation-en": [
     {
       ordinal: 1,
       label: "Long non-coding RNAs are emerging targets of phytochemicals for cancer and other chronic diseases",
@@ -5003,7 +5003,7 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Dietary phytochemicals such as sulforaphane from cruciferous vegetables exhibit potent chemopreventive effects by activating Nrf2 signaling pathways, inducing Phase II detoxification enzymes, and suppressing chronic inflammation associated with carcinogenesis.",
     },
   ],
-  "hien-tượng-sap-nguồn-bữa-trưa-va-giai-pháp-vi-sinh-vi": [
+  "hien-tuong-sap-nguon-bua-trua-va-giai-phap-vi-sinh-vi": [
     {
       ordinal: 1,
       label: "Glucose and insulin responses to barley products: influence of food structure and amylose-amylopectin ratio",

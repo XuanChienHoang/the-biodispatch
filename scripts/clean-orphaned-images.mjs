@@ -35,7 +35,21 @@ export function cleanOrphanedImages() {
 
   const validSlugs = new Set(SEED_SLUGS);
   for (const f of fs.readdirSync(postsDir)) {
-    if (f.endsWith('.md')) validSlugs.add(f.replace(/\.md$/, ''));
+    if (!f.endsWith('.md')) continue;
+    validSlugs.add(f.replace(/\.md$/, ''));
+    try {
+      const content = fs.readFileSync(path.join(postsDir, f), 'utf8');
+      const imgMatch = content.match(/^image:\s*["']?\/images\/posts\/([^"'\n]+?)\.(?:jpg|png|webp)["']?/m);
+      if (imgMatch && imgMatch[1]) {
+        validSlugs.add(imgMatch[1]);
+      }
+      const bodyMatches = content.matchAll(/\/images\/posts\/([^)\s"']+?)\.(?:jpg|png|webp)/g);
+      for (const m of bodyMatches) {
+        if (m[1]) validSlugs.add(m[1]);
+      }
+    } catch {
+      // ignore read errors
+    }
   }
 
   let cleaned = 0;

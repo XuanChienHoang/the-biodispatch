@@ -109,7 +109,10 @@ QUY TẮC BẮT BUỘC:
    - "interactions": Tương tác thuốc hoặc thực phẩm.
    - "seeDoctor": Triệu chứng báo động cần đi khám bác sĩ.
 12. HỆ THỐNG TAGS THEO TRIỆU CHỨNG (HEALTH GOALS TAXONOMY):
-   - tagsVi và tagsEn bắt buộc chứa từ khóa tìm kiếm theo triệu chứng gần gũi (như: giac-ngu, duong-huyet, tim-mach, ruot, nang-luong, lao-hoa, noi-tiet, khop, gan, mat-da) để hệ thống tự động phân loại vào các mục sức khỏe trên trang chủ.`;
+   - tagsVi và tagsEn bắt buộc chứa từ khóa tìm kiếm theo triệu chứng gần gũi (như: giac-ngu, duong-huyet, tim-mach, ruot, nang-luong, lao-hoa, noi-tiet, khop, gan, mat-da) để hệ thống tự động phân loại vào các mục sức khỏe trên trang chủ.
+13. TỪ KHÓA TÌM ẢNH NHIẾP ẢNH BÁM SÁT NỘI DUNG (imageSearchQueries):
+   - Bắt buộc cung cấp mảng "imageSearchQueries" gồm 4 cụm từ khóa tiếng Anh ngắn gọn (2-4 từ mỗi cụm) mô tả CHÍNH XÁC thực phẩm, dược liệu, bộ phận cơ thể hoặc tình huống đời thường cụ thể của bài viết (ví dụ bài về yến mạch -> ["rolled oats bowl", "oatmeal porridge morning", "Avena sativa oats", "whole grain oats"]; bài về trà sữa -> ["bubble milk tea", "boba pearl tea", "iced milk tea glass", "sweet beverage glass"]).
+   - TUYỆT ĐỐI CẤM dùng từ khóa chung chung hoặc lệch chủ đề như "fitness exercise", "dumbbells", "healthy nutrition", "cancer laboratory" trừ khi bài viết nói trực tiếp về tập tạ hoặc phòng thí nghiệm.`;
 
     // Ngân hàng các trụ cột đề tài bám sát Nhu cầu Sức khỏe Đời sống của độc giả đại chúng
   // ƯU TIÊN HÀNG ĐẦU THEO CHỈ ĐẠO CỦA TS. HOÀNG XUÂN CHIẾN: Nhóm bài phổ thông về Ung thư & Phòng ngừa
@@ -331,6 +334,12 @@ TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON SCHEMA VỚI CẤU TRÚC:
   "tier": "${targetTier}",
   "tagsVi": ["Tag 1", "Tag 2", "Tag 3"],
   "tagsEn": ["Tag 1", "Tag 2", "Tag 3"],
+  "imageSearchQueries": [
+    "specific English visual subject query 1",
+    "specific English visual subject query 2",
+    "specific Latin botanical or culinary query 3",
+    "specific lifestyle context query 4"
+  ],
   "references": [
     {
       "ordinal": 1,

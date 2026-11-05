@@ -12,7 +12,7 @@ featured: true
 doi: "10.1007/s00018-019-03053-0"
 gizmo: null
 lang: "vi"
-image: "/images/posts/thuc phẩm chong ung thu va che bien dung cach-vi.jpg"
+image: "/images/posts/thuc-pham-chong-ung-thu-va-che-bien-dung-cach-vi.jpg"
 imageAlt: "Hình ảnh đời sống khoa học thường thức: Căn bếp chống ung thư: Nghệ thuật kết hợp thực phẩm và nhiệt độ để kích hoạt hoạt chất sinh học"
 brief:
   bottomLine: "Nhiều người lầm tưởng việc ăn rau củ hữu cơ là đủ để bảo vệ cơ thể khỏi các bệnh mạn tính hiểm nghèo"
@@ -30,7 +30,7 @@ practical:
 
 Mỗi chiều đi làm về, chúng ta thường tất bật rửa rau, thái củ và thả ngay vào nồi nước nóng để nấu bữa tối thật nhanh gọn. Ít ai trong chúng ta ngờ rằng, một thói quen tưởng chừng vô hại ấy lại vô tình làm mất đi phần lớn các hợp chất bảo vệ tế bào quý giá nhất mà thiên nhiên ban tặng cho thực phẩm. Trong thế giới tự nhiên, thực vật không tự nhiên tạo ra mùi hăng của tỏi hay vị hắc nhẹ của cải xanh để làm chúng ta khó chịu. Đó chính là những lớp áo giáp hóa học được thiết kế tinh vi để chống lại các tác nhân gây tổn hại DNA từ môi trường. Khi bước vào căn bếp của mỗi gia đình, những lớp áo giáp này có thể được nhân lên gấp bội nếu chúng ta nắm giữ đúng chìa khóa kích hoạt, hoặc sẽ biến mất hoàn toàn chỉ vì một vài phút thiếu kiên nhẫn bên bếp lửa. Việc hiểu rõ bản chất của các hợp chất phòng ngừa ung thư từ thực phẩm không phải là câu chuyện hàn lâm xa vời của các phòng thí nghiệm quốc tế. Đó chính là nghệ thuật sinh học đời thường giúp mỗi chúng ta tự bảo vệ sức khỏe chính mình và người thân ngay từ mâm cơm gia đình mỗi ngày.
 
-![Hình ảnh đời sống khoa học thường thức: Căn bếp chống ung thư: Nghệ thuật kết hợp thực phẩm và nhiệt độ để kích hoạt hoạt chất sinh học](/images/posts/thuc phẩm chong ung thu va che bien dung cach-vi.jpg)
+![Hình ảnh đời sống khoa học thường thức: Căn bếp chống ung thư: Nghệ thuật kết hợp thực phẩm và nhiệt độ để kích hoạt hoạt chất sinh học](/images/posts/thuc-pham-chong-ung-thu-va-che-bien-dung-cach-vi.jpg)
 
 > *"Hãy tưởng tượng các hợp chất phòng chống ung thư trong rau củ giống như những người lính cứu hỏa đang ngủ say trong đồn trực chiến. Các enzyme tự nhiên bên trong thực vật chính là tiếng còi báo động cần thiết để đánh thức họ dậy. Khi bạn băm nhỏ tỏi hoặc cắt nhuyễn bông cải xanh rồi để yên vài phút, bạn đang tạo ra cuộc gặp gỡ định mệnh giữa người lính và chiếc chìa khóa mở cửa. Nếu bạn cho ngay rau củ vào nồi nước sôi sùng sục ngay sau khi cắt, tiếng còi báo động sẽ bị ngắt mạch vĩnh viễn và đội cứu hỏa không bao giờ kịp ra quân."*
 

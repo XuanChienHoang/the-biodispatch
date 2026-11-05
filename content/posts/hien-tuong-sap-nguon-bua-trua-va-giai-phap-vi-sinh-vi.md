@@ -12,7 +12,7 @@ featured: true
 doi: "10.1093/ajcn/59.5.1075"
 gizmo: null
 lang: "vi"
-image: "/images/posts/hien-tượng-sap-nguồn-bữa-trưa-va-giai-pháp-vi-sinh-vi.jpg"
+image: "/images/posts/hien-tuong-sap-nguon-bua-trua-va-giai-phap-vi-sinh-vi.jpg"
 imageAlt: "Đồ họa phân tử y sinh Hiện tượng sập nguồn và buồn ngủ rũ rượi lúc 2 giờ chiều: Thủ phạm thực sự từ đỉnh carbohydrate bữa trưa và cách hóa giải"
 brief:
   bottomLine: "Cơn buồn ngủ trĩu nặng mi mắt vào đầu giờ chiều không đơn thuần là sự mệt mỏi thể chất, mà là một tín hiệu sinh tồn tinh vi của cơ thể trước những biến động đường huyết"
@@ -30,7 +30,7 @@ practical:
 
 Vào khoảng 2 giờ chiều tại mọi văn phòng làm việc trên thế giới, một hiện tượng quen thuộc lại diễn ra. Những đôi mắt trĩu nặng, những cái ngáp dài liên tục và màn hình máy tính bỗng mờ đi sau bữa cơm trưa văn phòng thị soạn. Hầu hết chúng ta thường tự nhủ rằng đó là do chiếc giường ngủ buổi trưa quá ngắn hoặc do khối lượng công việc buổi sáng quá căng thẳng. Tuy nhiên, thủ phạm thực sự lại nằm ẩn giấu ngay trong đĩa thức ăn vừa tiêu thụ, nơi các phân tử đường đơn và tinh bột tinh chế đang tạo ra một cơn chấn động âm thầm bên trong dòng máu của bạn.
 
-![Đồ họa phân tử y sinh Hiện tượng sập nguồn và buồn ngủ rũ rượi lúc 2 giờ chiều: Thủ phạm thực sự từ đỉnh carbohydrate bữa trưa và cách hóa giải](/images/posts/hien-tượng-sap-nguồn-bữa-trưa-va-giai-pháp-vi-sinh-vi.jpg)
+![Đồ họa phân tử y sinh Hiện tượng sập nguồn và buồn ngủ rũ rượi lúc 2 giờ chiều: Thủ phạm thực sự từ đỉnh carbohydrate bữa trưa và cách hóa giải](/images/posts/hien-tuong-sap-nguon-bua-trua-va-giai-phap-vi-sinh-vi.jpg)
 
 > *"Hãy tưởng tượng cơ thể bạn giống như một thành phố vận hành bằng năng lượng điện sinh học. Bữa trưa nhiều carbohydrate tinh chế giống như việc bạn đổ ào ạt hàng tấn củi ướt vào lò hơi trung tâm cùng một lúc. Lò hơi không thể xử lý kịp, sinh ra khói mù mịt và làm sập toàn bộ hệ thống lưới điện khu vực. Trạm kiểm soát năng lượng bắt buộc phải cắt điện các tòa nhà văn phòng và trường học ở vùng ngoại vi, tức là não bộ và cơ bắp của bạn, để dồn toàn bộ nguồn lực cho hệ thống xử lý chất thải trung tâm ở dạ dày và ruột. Kết quả là bạn thấy rũ rượi, ngái ngủ và chỉ muốn gục xuống bàn làm việc."*
 

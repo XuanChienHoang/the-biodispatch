@@ -86,8 +86,11 @@ function normalizeTopic(topic, targetTier) {
   const t = { ...topic };
   t.tier = t.tier || targetTier || 'Clinical Deep-Dive';
   t.organ = t.organ || 'Metabolic';
-  t.slugVi = t.slugVi || slugify(t.titleVi);
-  t.slugEn = t.slugEn || slugify(t.titleEn);
+  t.slugVi = slugify(t.slugVi || t.titleVi);
+  if (!t.slugVi.endsWith('-vi')) t.slugVi += '-vi';
+  t.slugEn = slugify(t.slugEn || t.titleEn);
+  if (!t.slugEn.endsWith('-en')) t.slugEn += '-en';
+  t.imageSearchQueries = arr(t.imageSearchQueries);
   t.tagsVi = arr(t.tagsVi).length ? arr(t.tagsVi) : arr(t.tags);
   t.tagsEn = arr(t.tagsEn).length ? arr(t.tagsEn) : arr(t.tags);
   if (!t.tagsVi.length) t.tagsVi = [t.organ];
