@@ -170,9 +170,219 @@ function sanitizeVietnameseFalseFriends(rawText = '') {
 }
 
 /**
+ * Title-First Entity Extraction Engine:
+ * Trích xuất trực tiếp các thực thể cốt lõi từ Tiêu đề bài viết (titleVi & titleEn).
+ * Bắt buộc đặt ở vị trí ƯU TIÊN SỐ 1: Tiêu đề nói gì -> Ảnh bìa tìm đúng đối tượng đó.
+ */
+export function extractKeywordsFromTitle(titleVi = '', titleEn = '') {
+  const queries = [];
+  const vi = sanitizeVietnameseFalseFriends(titleVi.toLowerCase());
+  const en = (titleEn || '').toLowerCase();
+
+  // 1. Bóc tách thực thể theo Tựa đề tiếng Anh (loại bỏ stop-words, giữ danh từ chuyên môn)
+  if (en) {
+    const cleanEn = en
+      .replace(/[?!:;,"'“”()[\]{}]/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+    // Đối soát các mẫu cụm từ thực thể tiếng Anh phổ biến trong tiêu đề
+    if (/\b(?:cold intolerance|feeling cold|chills)\b/i.test(cleanEn)) {
+      queries.push('Woman enjoys warm drink while sitting at wooden table', 'Woman in knit sweater holding warm tea cup', 'Cozy warm sweater tea');
+    }
+    if (/\b(?:hair loss|thinning hair|alopecia)\b/i.test(cleanEn)) {
+      queries.push('Woman brushing healthy hair mirror', 'Healthy hair care');
+    }
+    if (/\b(?:fatigue|exhaustion|tired|weary)\b/i.test(cleanEn)) {
+      queries.push('Peaceful person resting bed morning light', 'Person relaxing tea comfortable chair');
+    }
+    if (/\b(?:thyroid|hypothyroid|hashimoto)\b/i.test(cleanEn)) {
+      queries.push('Woman enjoys warm drink while sitting at wooden table', 'Seaweed food', 'Tea cup wooden table cozy');
+    }
+    if (/\b(?:oats|oatmeal|avena sativa)\b/i.test(cleanEn)) {
+      queries.push('Rolled oats bowl', 'Oatmeal porridge breakfast', 'Avena sativa');
+    }
+    if (/\b(?:blueberr|strawberr|raspberr|berries)\b/i.test(cleanEn)) {
+      queries.push('Vaccinium corymbosum fresh blueberries', 'Fresh raspberries bowl', 'Strawberries basket');
+    }
+    if (/\b(?:pomegranate|urolithin)\b/i.test(cleanEn)) {
+      queries.push('Punica granatum pomegranate fruit', 'Pomegranate arils bowl');
+    }
+    if (/\b(?:broccoli|sulforaphane|sprouts)\b/i.test(cleanEn)) {
+      queries.push('Broccoli sprouts', 'Brassica oleracea fresh green broccoli');
+    }
+    if (/\b(?:cooked tomato|tomatoes|lycopene)\b/i.test(cleanEn)) {
+      queries.push('Solanum lycopersicum ripe tomatoes', 'fresh red tomatoes on vine', 'cooked tomatoes olive oil');
+    }
+    if (/\b(?:dark chocolate|cocoa|cacao)\b/i.test(cleanEn)) {
+      queries.push('dark chocolate chunks pieces', 'Theobroma cacao cocoa beans');
+    }
+    if (/\b(?:garlic|allicin)\b/i.test(cleanEn)) {
+      queries.push('Allium sativum garlic bulbs', 'fresh garlic cloves wooden board');
+    }
+    if (/\b(?:green tea|matcha|theanine|egcg)\b/i.test(cleanEn)) {
+      queries.push('Camellia sinensis green tea leaves', 'matcha green tea bowl');
+    }
+    if (/\b(?:coffee|caffeine)\b/i.test(cleanEn)) {
+      queries.push('steaming cup of black coffee morning', 'roasted coffee beans wooden table');
+    }
+    if (/\b(?:shiitake|maitake|mushroom)\b/i.test(cleanEn)) {
+      queries.push('Lentinula edodes shiitake mushrooms', 'fresh shiitake mushrooms wooden table');
+    }
+    if (/\b(?:milk thistle|silymarin)\b/i.test(cleanEn)) {
+      queries.push('Silybum marianum milk thistle flower');
+    }
+    if (/\b(?:tart cherry|sour cherry|uric acid|gout)\b/i.test(cleanEn)) {
+      queries.push('Prunus cerasus sour cherries', 'fresh red cherries bowl');
+    }
+    if (/\b(?:avocado|potassium)\b/i.test(cleanEn)) {
+      queries.push('Persea americana avocado fruit tree', 'fresh green avocado cut in half');
+    }
+    if (/\b(?:celery juice|celery)\b/i.test(cleanEn)) {
+      queries.push('fresh green celery stalks wooden table', 'Apium graveolens celery');
+    }
+    if (/\b(?:somnolence|lunch slump|afternoon crash)\b/i.test(cleanEn)) {
+      queries.push('Laptop coffee desk', 'Working on laptop office coffee');
+    }
+    if (/\b(?:dry eyes|screen|eye fatigue|lutein|zeaxanthin)\b/i.test(cleanEn)) {
+      queries.push('woman working computer glasses desk', 'human eye macro closeup iris');
+    }
+    if (/\b(?:sleep|circadian|melatonin|insomnia)\b/i.test(cleanEn)) {
+      queries.push('cozy bedroom night lamp warm light', 'person sleeping peacefully bed');
+    }
+    if (/\b(?:walking|brisk walk)\b/i.test(cleanEn)) {
+      queries.push('person walking forest path morning', 'footpath in autumn forest');
+    }
+    if (/\b(?:sunlight|sunrise|dawn)\b/i.test(cleanEn)) {
+      queries.push('Golden sunrise through forest trees', 'morning sunlight through trees nature');
+    }
+    if (/\b(?:intermittent fasting|autophagy)\b/i.test(cleanEn)) {
+      queries.push('herbal tea glass water lemon table', 'minimalist healthy breakfast bowl');
+    }
+  }
+
+  // 2. Bóc tách thực thể theo Tựa đề tiếng Việt (titleVi)
+  // Nhóm triệu chứng, thể trạng & bối cảnh sống
+  if (/sợ lạnh|lạnh cóng|lạnh chân tay|hạ thân nhiệt/i.test(vi)) {
+    queries.push(
+      'Woman enjoys warm drink while sitting at wooden table',
+      'Woman sitting on her bed in a sweater while holding a cup of coffee and reading a book',
+      'Tea cup wooden table cozy'
+    );
+  }
+  if (/rụng tóc|hói đầu|mỏng tóc/i.test(vi)) {
+    queries.push(
+      'Woman brushing healthy hair mirror',
+      'Healthy hair care'
+    );
+  }
+  if (/uể oải|mệt mỏi mạn tính|kiệt sức|đuối sức/i.test(vi)) {
+    queries.push(
+      'Peaceful person resting bed morning light',
+      'Person relaxing tea comfortable chair'
+    );
+  }
+  if (/tuyến giáp|suy giáp|hashimoto|bướu cổ/i.test(vi)) {
+    queries.push(
+      'Woman enjoys warm drink while sitting at wooden table',
+      'Seaweed food',
+      'Tea cup wooden table cozy'
+    );
+  }
+  if (/sập nguồn|buồn ngủ.*(trưa|chiều)|oải sau ăn|đỉnh đường huyết/i.test(vi)) {
+    queries.push(
+      'Laptop coffee desk',
+      'Working on laptop office coffee',
+      'Office desk laptop espresso'
+    );
+  }
+  if (/khô mắt|mỏi mắt|nhìn mờ|màn hình|hoàng điểm/i.test(vi)) {
+    queries.push(
+      'woman working computer glasses desk',
+      'human eye macro closeup iris',
+      'person resting eyes office laptop'
+    );
+  }
+  if (/mất ngủ|khó ngủ|thao thức|giấc ngủ/i.test(vi)) {
+    queries.push(
+      'cozy bedroom night lamp warm light',
+      'person sleeping peacefully bed',
+      'warm bedside lamp bedroom cozy'
+    );
+  }
+  if (/cổ vai gáy|ngồi lâu|ngồi nhiều|đau lưng/i.test(vi)) {
+    queries.push(
+      'person working at computer desk window',
+      'ergonomic office desk workspace',
+      'office worker stretching desk'
+    );
+  }
+  if (/khớp gối|đau khớp|leo cầu thang|sụn khớp/i.test(vi)) {
+    queries.push(
+      'outdoor wooden stairs hiking trail',
+      'hiking trail wooden steps nature'
+    );
+  }
+  if (/ánh nắng|bình minh|dậy sớm/i.test(vi)) {
+    queries.push(
+      'Golden sunrise through forest trees',
+      'morning sunlight through trees nature'
+    );
+  }
+  if (/đi bộ|vận động nhẹ/i.test(vi)) {
+    queries.push(
+      'person walking forest path morning',
+      'footpath in autumn forest'
+    );
+  }
+  if (/thở 4-7-8|căng thẳng|stress|lo âu|phế vị/i.test(vi)) {
+    queries.push(
+      'person meditating nature sunrise',
+      'calm forest stream water nature'
+    );
+  }
+
+  // Nhóm thực phẩm, dược liệu, thói quen ăn uống trong Tựa đề tiếng Việt
+  if (/yến mạch/i.test(vi)) queries.push('Rolled oats bowl', 'Oatmeal porridge breakfast', 'Avena sativa');
+  if (/bông cải xanh|súp lơ xanh/i.test(vi)) queries.push('Broccoli sprouts', 'Brassica oleracea fresh green broccoli');
+  if (/cà chua/i.test(vi)) queries.push('Solanum lycopersicum ripe tomatoes', 'fresh red tomatoes on vine', 'cooked tomatoes olive oil');
+  if (/tỏi/i.test(vi)) queries.push('Allium sativum garlic bulbs', 'fresh garlic cloves wooden board');
+  if (/socola|cacao/i.test(vi)) queries.push('dark chocolate chunks pieces', 'Theobroma cacao cocoa beans');
+  if (/quả mọng|việt quất|dâu tây|mâm xôi/i.test(vi)) queries.push('Vaccinium corymbosum fresh blueberries', 'Fresh raspberries bowl');
+  if (/quả lựu/i.test(vi)) queries.push('Punica granatum pomegranate fruit', 'Pomegranate arils bowl');
+  if (/kế sữa/i.test(vi)) queries.push('Silybum marianum milk thistle flower');
+  if (/trà xanh|matcha/i.test(vi)) queries.push('Camellia sinensis green tea leaves', 'matcha green tea bowl');
+  if (/cà phê/i.test(vi)) queries.push('steaming cup of black coffee morning', 'roasted coffee beans wooden table');
+  if (/cơm nguội|tinh bột kháng/i.test(vi)) queries.push('cooked white rice bowl chopsticks', 'steamed rice ceramic bowl');
+  if (/ăn rau trước|thứ tự ăn/i.test(vi)) queries.push('fresh green vegetable salad bowl', 'healthy meal vegetables fish bowl');
+  if (/trà sữa/i.test(vi)) queries.push('Bubble tea', 'Boba pearl milk tea');
+  if (/rong biển/i.test(vi)) queries.push('Seaweed food', 'Edible kelp seaweed dried');
+  if (/dầu ô liu/i.test(vi)) queries.push('olive oil bottle culinary', 'olive oil rustic wooden table');
+  if (/nấm hương|nấm dược liệu|nấm maitake/i.test(vi)) queries.push('Lentinula edodes shiitake mushrooms', 'fresh shiitake mushrooms wooden table');
+  if (/anh đào|cherry/i.test(vi)) queries.push('Prunus cerasus sour cherries', 'fresh red cherries bowl');
+  if (/thịt đỏ|thịt xông khói|xúc xích/i.test(vi)) queries.push('charcuterie board cured meat ham', 'fresh raw beef steak culinary');
+  if (/trà nóng|canh sôi/i.test(vi)) queries.push('steaming hot cup of tea', 'hot tea ceramic cup steam vapor');
+  if (/cám gạo/i.test(vi)) queries.push('Brown rice bowl', 'Oryza sativa unmilled rice');
+  if (/quả bơ/i.test(vi)) queries.push('Persea americana avocado fruit tree', 'fresh green avocado cut in half');
+  if (/gừng/i.test(vi)) queries.push('Zingiber officinale fresh ginger root');
+  if (/quế/i.test(vi)) queries.push('Cinnamomum verum cinnamon sticks');
+  if (/nghệ|curcumin/i.test(vi)) queries.push('Curcuma longa turmeric roots powder');
+  if (/đậu nành|đậu phụ/i.test(vi)) queries.push('Glycine max soybeans bowl');
+  if (/giấm táo/i.test(vi)) queries.push('apple cider vinegar bottle apples');
+  if (/táo đỏ|quả táo/i.test(vi)) queries.push('Malus domestica fresh red apples');
+  if (/tập tạ|kháng lực|teo cơ/i.test(vi)) queries.push('dumbbell weight training gym', 'strength training kettlebell');
+  if (/rượu bia|đỏ mặt/i.test(vi)) queries.push('glass of red wine on table');
+  if (/đồ nướng|cháy xém|bbq/i.test(vi)) queries.push('barbecue grill meat flames smoke');
+  if (/cần tây/i.test(vi)) queries.push('fresh green celery stalks wooden table', 'Apium graveolens celery');
+
+  return [...new Set(queries)];
+}
+
+/**
  * Trích xuất danh sách từ khóa tìm kiếm đa tầng từ chủ đề bài viết (Đã khử bẫy từ đồng âm)
  */
 export function extractSmartImageKeywords(topic = {}) {
+  const titleQueries = extractKeywordsFromTitle(topic.titleVi || '', topic.titleEn || '');
   const rawText = [
     topic.titleVi || '',
     topic.titleEn || '',
@@ -184,7 +394,7 @@ export function extractSmartImageKeywords(topic = {}) {
   ].join(' ');
 
   const text = sanitizeVietnameseFalseFriends(rawText);
-  const queries = [];
+  const queries = [...titleQueries];
 
   // 0. Ưu tiên từ khóa chuyên biệt do Gemini cung cấp (nếu hợp lệ và không phải từ khóa rác)
   if (Array.isArray(topic.imageSearchQueries)) {
@@ -526,23 +736,35 @@ export function extractSmartImageKeywords(topic = {}) {
 /**
  * Zero-LLM Deterministic Visual Spec Engine:
  * Tuyệt đối không dùng Gemini LLM để sinh từ khóa, loại bỏ hoàn toàn các liên tưởng sai lệch ngoài ý muốn.
- * Kết hợp trực tiếp từ khóa đã định nghĩa của bài viết (topic.imageSearchQueries)
- * với 27+ nhóm hoạt chất chuyên sâu trong extractSmartImageKeywords.
+ * Kết hợp trực tiếp:
+ * 1. Title-First Entity Extraction (Ưu tiên số 1: Tiêu đề nói gì -> Tìm đúng đối tượng đó)
+ * 2. Từ khóa đã định nghĩa của bài viết (topic.imageSearchQueries)
+ * 3. 27+ nhóm hoạt chất và hệ cơ quan chuyên sâu (Fallback bảo vệ)
  */
 export function buildDeterministicVisualSpec(topic = {}) {
+  const titleQueries = extractKeywordsFromTitle(topic.titleVi || '', topic.titleEn || '');
   const deterministicQueries = extractSmartImageKeywords(topic);
   const userQueries = Array.isArray(topic.imageSearchQueries)
     ? topic.imageSearchQueries.filter(q => typeof q === 'string' && q.trim().length >= 2)
     : [];
 
-  const combinedQueries = [...new Set([...userQueries, ...deterministicQueries])];
+  // THỨ TỰ ƯU TIÊN TUYỆT ĐỐI: 1. Từ khóa Tựa đề -> 2. imageSearchQueries định nghĩa -> 3. Phân loại nội dung
+  const combinedQueries = [...new Set([...titleQueries, ...userQueries, ...deterministicQueries])];
 
   const titleVi = topic.titleVi || topic.titleEn || '';
-  const isSymptom = /sợ lạnh|mệt mỏi|uể oải|rụng tóc|suy giáp|tuyến giáp|giấc ngủ|mất ngủ|stress|căng thẳng|sương mù não|sập nguồn|postprandial/i.test(titleVi);
-  const isCulinary = /nấu chín|căn bếp|chế biến|nấu ăn|thực phẩm|bữa trưa|bữa ăn|rau|yến mạch|gạo/i.test(titleVi);
+  const isSymptom = /sợ lạnh|lạnh cóng|mệt mỏi|uể oải|rụng tóc|suy giáp|tuyến giáp|giấc ngủ|mất ngủ|stress|căng thẳng|sương mù não|sập nguồn|postprandial/i.test(titleVi);
+  const isCulinary = /nấu chín|căn bếp|chế biến|nấu ăn|thực phẩm|bữa trưa|bữa ăn|rau|yến mạch|gạo|bông cải|cà chua|tỏi|dầu ô liu/i.test(titleVi);
 
   let coreSubject = '';
-  if (isSymptom) {
+  if (titleQueries.length > 0) {
+    if (isSymptom) {
+      coreSubject = `Cozy authentic lifestyle or wellness scene depicting: "${topic.titleVi || topic.titleEn}" (e.g. warm knit sweater, relaxing with tea, peaceful rest)`;
+    } else if (isCulinary) {
+      coreSubject = `Natural culinary or botanical setting depicting: "${topic.titleVi || topic.titleEn}" (rustic table, kitchen preparation, fresh whole ingredients)`;
+    } else {
+      coreSubject = `Authentic high-resolution photograph closely depicting the title subject: "${topic.titleVi || topic.titleEn}"`;
+    }
+  } else if (isSymptom) {
     coreSubject = 'Cozy warm indoor scene, person wearing a knit sweater holding a warm tea mug, or peaceful resting';
   } else if (isCulinary) {
     coreSubject = 'Food ingredients in a natural kitchen or dining setting (bowl, cutting board, rustic wooden table)';
