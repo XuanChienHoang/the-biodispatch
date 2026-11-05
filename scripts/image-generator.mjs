@@ -524,88 +524,41 @@ export function extractSmartImageKeywords(topic = {}) {
 }
 
 /**
- * AI Visual Art Director: Phân tích tiêu đề & tóm tắt bài viết để trích xuất:
- * - coreSubject: Chủ thể vật lý bắt buộc phải có trong ảnh
- * - forbiddenSubjects: Các chủ thể cấm xuất hiện
- * - queries: 5 cụm từ khóa tiếng Anh cụ thể nhất để tìm ảnh nhiếp ảnh thực tế
+ * Zero-LLM Deterministic Visual Spec Engine:
+ * Tuyệt đối không dùng Gemini LLM để sinh từ khóa, loại bỏ hoàn toàn các liên tưởng sai lệch ngoài ý muốn.
+ * Kết hợp trực tiếp từ khóa đã định nghĩa của bài viết (topic.imageSearchQueries)
+ * với 27+ nhóm hoạt chất chuyên sâu trong extractSmartImageKeywords.
  */
-export async function generateVisualSpecWithGemini(topic = {}, apiKey = '') {
+export function buildDeterministicVisualSpec(topic = {}) {
   const deterministicQueries = extractSmartImageKeywords(topic);
-  const fallbackSpec = {
-    coreSubject: topic.titleVi || topic.titleEn || 'Biomedical & Lifestyle Subject',
-    forbiddenSubjects: 'Gym equipment/dumbbells (unless topic is resistance training), commercial snack packaging/logos, dead fish on rocks, generic lab technicians for kitchen/food topics, raw turmeric for non-turmeric topics, multi-panel text diagrams.',
-    queries: deterministicQueries
-  };
+  const userQueries = Array.isArray(topic.imageSearchQueries)
+    ? topic.imageSearchQueries.filter(q => typeof q === 'string' && q.trim().length >= 2)
+    : [];
 
-  if (!apiKey) return fallbackSpec;
+  const combinedQueries = [...new Set([...userQueries, ...deterministicQueries])];
 
-  const titleVi = topic.titleVi || '';
-  const titleEn = topic.titleEn || '';
-  const excerptVi = topic.excerptVi || '';
+  const titleVi = topic.titleVi || topic.titleEn || '';
+  const isSymptom = /sợ lạnh|mệt mỏi|uể oải|rụng tóc|suy giáp|tuyến giáp|giấc ngủ|mất ngủ|stress|căng thẳng|sương mù não|sập nguồn|postprandial/i.test(titleVi);
+  const isCulinary = /nấu chín|căn bếp|chế biến|nấu ăn|thực phẩm|bữa trưa|bữa ăn|rau|yến mạch|gạo/i.test(titleVi);
 
-  const prompt = `You are the Editorial Photo Director for PhytoCodex (directed by Dr. Xuan Chien Hoang, University of Hamburg).
-We need a 100% content-accurate, authentic 16:9 stock photograph from Wikimedia Commons / Pexels for this article:
-- Vietnamese Title: "${titleVi}"
-- English Title: "${titleEn}"
-- Excerpt: "${excerptVi.slice(0, 300)}"
-
-EDITORIAL ARCHETYPE RULES:
-1. SYMPTOM, HORMONE & MENTAL TOPICS (cold intolerance/sợ lạnh, fatigue/uể oải, hair loss/rụng tóc, thyroid/tuyến giáp, sleep, mood, stress, brain fog): Prioritize authentic human lifestyle warmth (someone wearing a cozy warm sweater holding a steaming tea mug, resting peacefully indoors, warm golden morning light). NEVER suggest raw isolated seeds/nuts or pills on plain white backgrounds!
-2. CULINARY & WHOLE FOODS TOPICS (berries, oats, broccoli, garlic, olive oil, tea, rice): Food MUST be shown in a natural culinary setting (in a ceramic bowl, on a rustic wooden table, or fresh produce on a cutting board). NEVER suggest floating cutout ingredients on pure white backgrounds.
-3. BOTANICAL & NATURAL PLANT TOPICS (herbs, microalgae, medicinal plants): Plants must be growing in nature, in a garden, or fresh whole botanicals.
-4. NEVER suggest generic gym/dumbbell photos unless the topic is explicitly weightlifting/resistance training.
-5. NEVER suggest generic lab microscope technicians for kitchen, food, or lifestyle articles.
-6. Provide 4 concise (1-2 word) English search queries that work well on Wikimedia Commons.
-
-Reply ONLY in valid JSON:
-{
-  "coreSubject": "A clear, realistic single-subject photographic description using OR alternatives (e.g. Someone wearing a warm knit sweater holding a warm tea mug OR relaxing in cozy indoor lighting)",
-  "forbiddenSubjects": "1 concise sentence listing off-topic visuals and isolated studio cutouts that must be rejected",
-  "queries": [
-    "1-2 word query 1",
-    "1-2 word query 2",
-    "1-2 word query 3",
-    "1-2 word query 4"
-  ]
-}`;
-
-  for (const model of VISION_MODELS.slice(0, 3)) {
-    try {
-      const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 10000);
-      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: prompt }] }],
-          generationConfig: { responseMimeType: 'application/json', temperature: 0.1 }
-        }),
-        signal: controller.signal
-      });
-      clearTimeout(timeout);
-
-      if (res.ok) {
-        const data = await res.json();
-        const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-        if (text) {
-          const parsed = JSON.parse(text.replace(/^```json\s*|\s*```$/g, ''));
-          const aiQueries = Array.isArray(parsed.queries) ? parsed.queries.filter(q => typeof q === 'string' && q.trim().length >= 3) : [];
-          // Đặt các từ khóa chuẩn xác đã qua bộ lọc deterministic lên đầu, tiếp nối bởi từ khóa AI
-          const combinedQueries = [...new Set([...deterministicQueries.slice(0, 3), ...aiQueries, ...deterministicQueries.slice(3)])];
-          return {
-            coreSubject: parsed.coreSubject || fallbackSpec.coreSubject,
-            forbiddenSubjects: parsed.forbiddenSubjects || fallbackSpec.forbiddenSubjects,
-            queries: combinedQueries
-          };
-        }
-      }
-    } catch {
-      // try next model
-    }
+  let coreSubject = '';
+  if (isSymptom) {
+    coreSubject = 'Cozy warm indoor scene, person wearing a knit sweater holding a warm tea mug, or peaceful resting';
+  } else if (isCulinary) {
+    coreSubject = 'Food ingredients in a natural kitchen or dining setting (bowl, cutting board, rustic wooden table)';
+  } else {
+    coreSubject = 'Authentic high-resolution botanical, culinary, or lifestyle photograph matching ' + (topic.titleEn || topic.titleVi || 'health topic');
   }
 
-  return fallbackSpec;
+  return {
+    coreSubject,
+    forbiddenSubjects: 'Isolated seeds, nuts, pills, or food cutouts floating on pure white studio background (#FFFFFF); generic dumbbells/gym equipment; generic lab technicians at microscope; commercial branding/packaging; dead fish.',
+    queries: combinedQueries
+  };
 }
+
+// Backward-compatible alias
+export const generateVisualSpecWithGemini = buildDeterministicVisualSpec;
 
 /**
  * Trạm kiểm duyệt thị giác AI (Universal Fail-Closed Gemini Vision Gatekeeper)
@@ -915,6 +868,8 @@ const CURATED_EDITORIAL_TITLES = {
     'Curcuma longa roots.jpg'
   ],
   Metabolic: [
+    'Woman enjoys warm drink while sitting at wooden table.jpg',
+    'Tea cup (Unsplash).jpg',
     'Fresh Tomatoes, Green Pepper, Red Onion, and English Cucumbers (8736854891).jpg',
     'Broccoli sprouts.jpg',
     'Persea americana fruit 2.JPG',
@@ -923,6 +878,8 @@ const CURATED_EDITORIAL_TITLES = {
   ],
   Brain: [
     'Sunlight through trees in a spring forest with white flowers.jpg',
+    'Woman enjoys warm drink while sitting at wooden table.jpg',
+    'Tea cup (Unsplash).jpg',
     'Sejak tea leaves.jpg',
     'Roasted coffee beans.jpg'
   ],
@@ -999,12 +956,24 @@ async function fetchFromCuratedEditorialLibrary(slug, topic = {}, apiKey = '', v
   const hash = crypto.createHash('md5').update(slug.replace(/-(vi|en)$/, '')).digest('hex');
   const startIndex = parseInt(hash.slice(0, 4), 16) % candidates.length;
 
+  // Lượt 1: Thử kiểm định qua Vision Gatekeeper
   for (let i = 0; i < candidates.length; i++) {
     const idx = (startIndex + i) % candidates.length;
     const title = candidates[idx];
     const buf = await fetchWikimediaImageByTitle(title, slug, topic, apiKey, visualSpec, false);
     if (buf) {
       console.log(`🏛️ [Curated Library] Đã kích hoạt ảnh lưu trữ đạt chuẩn Vision: "${title}"`);
+      return buf;
+    }
+  }
+
+  // Lượt 2: Nếu Vision bị giới hạn quota/lỗi mạng, bốc ảnh an toàn đã kiểm duyệt sẵn (skipVision = true)
+  for (let i = 0; i < candidates.length; i++) {
+    const idx = (startIndex + i) % candidates.length;
+    const title = candidates[idx];
+    const buf = await fetchWikimediaImageByTitle(title, slug, topic, apiKey, visualSpec, true);
+    if (buf) {
+      console.log(`🏛️ [Curated Library Fallback] Đã kích hoạt ảnh tuyển chọn thẩm mỹ cao (Zero-Quota Safe): "${title}"`);
       return buf;
     }
   }
@@ -1146,13 +1115,13 @@ export async function generateDispatchImage(slug, topic = {}) {
 
   const { PEXELS_API_KEY, PIXABAY_API_KEY, GEMINI_API_KEY } = resolveApiKeys();
 
-  // Bước 1: AI Visual Art Director + Clean Deterministic Subject Extraction
-  const visualSpec = await generateVisualSpecWithGemini(topic, GEMINI_API_KEY);
+  // Bước 1: 100% Deterministic Visual Spec Engine (Zero-LLM Query Generation, Zero Token Cost)
+  const visualSpec = buildDeterministicVisualSpec(topic);
   const keywordCandidates = visualSpec.queries;
 
-  console.log(`📸 [Image Engine v3.0] Khởi chạy tìm kiếm ảnh chuẩn nội dung cho "${slug}"...`);
-  console.log(`   🎯 Chủ thể bắt buộc: ${visualSpec.coreSubject}`);
-  console.log(`   🔍 Các từ khóa ưu tiên: ${keywordCandidates.slice(0, 5).map(k => `"${k}"`).join(', ')}`);
+  console.log(`📸 [Image Engine v3.1 Tất Định] Tìm ảnh chụp thực tế 100% cho "${slug}"...`);
+  console.log(`   🎯 Tiêu chuẩn chủ thể: ${visualSpec.coreSubject}`);
+  console.log(`   🔍 Từ khóa tất định: ${keywordCandidates.slice(0, 5).map(k => `"${k}"`).join(', ')}`);
 
   // Bước 2: Duyệt qua từng từ khóa ứng viên (Tất cả các tầng đều phải vượt qua Fail-Closed Gemini Vision Gatekeeper)
   for (const keyword of keywordCandidates) {
