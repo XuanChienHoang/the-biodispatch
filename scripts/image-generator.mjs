@@ -297,6 +297,16 @@ export function extractSmartImageKeywords(topic = {}) {
     );
   }
 
+  // 10b. NHÓM TUYẾN GIÁP, SUY GIÁP, SỢ LẠNH, RỤNG TÓC, I-ỐT & SELEN (Ưu tiên cảm xúc đời sống ấm áp & bàn trà/khăn ấm, cấm ảnh hạt trơ trọi nền trắng)
+  if (/tuyến giáp|tuyen-giap|thyroid|suy giáp|hypothyroid|hashimoto|sợ lạnh|so-lanh|cold intolerance|rụng tóc|hair loss|i-ốt|iodine|selen\b|selenium|bướu cổ|goiter/i.test(text)) {
+    queries.push(
+      'Woman enjoys warm drink while sitting at wooden table',
+      'Tea cup',
+      'Woman sitting on her bed in a sweater while holding a cup of coffee and reading a book',
+      'Seaweed food'
+    );
+  }
+
   // 11. NHÓM CÀ CHUA NẤU CHÍN, DẦU Ô LIU & LYCOPENE
   if (/cà chua|ca-chua|tomato|lycopene|dầu ô liu|olive oil/i.test(text)) {
     queries.push(
@@ -545,6 +555,7 @@ CRITICAL RULES:
 3. Watch out for Vietnamese homonyms: "nghệ thuật" means "the art of" (NOT turmeric/nghệ!). "tỉnh táo" means "alert" (NOT apple/táo!).
 4. NEVER suggest generic gym/dumbbell photos unless the article is explicitly about weightlifting/resistance training.
 5. NEVER suggest generic lab microscope technicians if the article is about everyday food, cooking, kitchen habits, or lifestyle.
+6. NEVER suggest isolated raw seeds, nuts, or pills on pure white cutout backgrounds — for symptom-based articles (cold intolerance, thyroid, hair loss, fatigue), prioritize authentic human lifestyle warmth (e.g. wearing a warm sweater holding a steaming tea mug, cozy indoor lighting).
 
 Reply ONLY in valid JSON:
 {
