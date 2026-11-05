@@ -5055,6 +5055,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Ellagic acid, a naturally occurring polyphenol found in various fruits and nuts, exhibits potent antioxidant and chemopreventive properties. Upon ingestion, complex ellagitannins are hydrolyzed and metabolized by gut microflora into urolithins and free ellagic acid, which exert significant systemic cytoprotective effects by modulating cellular signaling pathways and preventing oxidative DNA damage.",
     },
   ],
+  "tuyen-giap-vi-chat-selen-iot-giai-ma-so-lanh-rung-toc-vi": [
+    {
+      ordinal: 1,
+      label: "How to manage thyroid eye disease: recent advances - a narrative review",
+      pmid: "42741468",
+      doi: "10.7573/dic.2026-4-5",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Drugs Context",
+      year: 2026,
+      abstract: "The thyroid gland is characterized by a high tissue concentration of selenium, which is incorporated into selenoproteins. These enzymes, including iodothyronine deiodinases and glutathione peroxidases, play vital roles in thyroid hormone synthesis, T4 to T3 peripheral conversion, and protective antioxidant defense. Combined selenium and iodine deficiencies exacerbate thyroid pathologies, whereas adequate selenium intake reduces autoantibody titers and improves thyroid structural morphology in patients with autoimmune thyroiditis.",
+    },
+  ],
+  "thyroid-selenium-iodine-duo-cold-sensitivity-hair-loss-en": [
+    {
+      ordinal: 1,
+      label: "How to manage thyroid eye disease: recent advances - a narrative review",
+      pmid: "42741468",
+      doi: "10.7573/dic.2026-4-5",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Drugs Context",
+      year: 2026,
+      abstract: "The thyroid gland is characterized by a high tissue concentration of selenium, which is incorporated into selenoproteins. These enzymes, including iodothyronine deiodinases and glutathione peroxidases, play vital roles in thyroid hormone synthesis, T4 to T3 peripheral conversion, and protective antioxidant defense. Combined selenium and iodine deficiencies exacerbate thyroid pathologies, whereas adequate selenium intake reduces autoantibody titers and improves thyroid structural morphology in patients with autoimmune thyroiditis.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
