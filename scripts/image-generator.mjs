@@ -31,8 +31,8 @@ const coversDir = path.join(rootDir, 'public/images/covers');
 
 const VISION_MODELS = [
   'gemini-3.5-flash-lite',
-  'gemini-3.1-flash-lite',
   'gemini-3.5-flash',
+  'gemini-3.1-flash-lite',
   'gemini-3.7-flash',
   'gemini-3.8-flash',
   'gemma-4-31b-it'
@@ -549,23 +549,23 @@ We need a 100% content-accurate, authentic 16:9 stock photograph from Wikimedia 
 - English Title: "${titleEn}"
 - Excerpt: "${excerptVi.slice(0, 300)}"
 
-CRITICAL RULES:
-1. Define "coreSubject" as a realistic, single-subject photographic description using "OR" alternatives so real stock photos can match (e.g. "Fresh blueberries, strawberries, or raspberries" — NEVER require multiple props or complex composite scenes in a single photo!).
-2. Provide 4 concise (1-2 word) English or Latin botanical search queries ("queries") that work well on Wikimedia Commons (e.g. "Rolled oats", "Oatmeal", "Vaccinium corymbosum", "Brown rice", "Bubble tea", "Raw peanuts", "Fresh vegetables", "Human eye iris").
-3. Watch out for Vietnamese homonyms: "nghệ thuật" means "the art of" (NOT turmeric/nghệ!). "tỉnh táo" means "alert" (NOT apple/táo!).
-4. NEVER suggest generic gym/dumbbell photos unless the article is explicitly about weightlifting/resistance training.
-5. NEVER suggest generic lab microscope technicians if the article is about everyday food, cooking, kitchen habits, or lifestyle.
-6. NEVER suggest isolated raw seeds, nuts, or pills on pure white cutout backgrounds — for symptom-based articles (cold intolerance, thyroid, hair loss, fatigue), prioritize authentic human lifestyle warmth (e.g. wearing a warm sweater holding a steaming tea mug, cozy indoor lighting).
+EDITORIAL ARCHETYPE RULES:
+1. SYMPTOM, HORMONE & MENTAL TOPICS (cold intolerance/sợ lạnh, fatigue/uể oải, hair loss/rụng tóc, thyroid/tuyến giáp, sleep, mood, stress, brain fog): Prioritize authentic human lifestyle warmth (someone wearing a cozy warm sweater holding a steaming tea mug, resting peacefully indoors, warm golden morning light). NEVER suggest raw isolated seeds/nuts or pills on plain white backgrounds!
+2. CULINARY & WHOLE FOODS TOPICS (berries, oats, broccoli, garlic, olive oil, tea, rice): Food MUST be shown in a natural culinary setting (in a ceramic bowl, on a rustic wooden table, or fresh produce on a cutting board). NEVER suggest floating cutout ingredients on pure white backgrounds.
+3. BOTANICAL & NATURAL PLANT TOPICS (herbs, microalgae, medicinal plants): Plants must be growing in nature, in a garden, or fresh whole botanicals.
+4. NEVER suggest generic gym/dumbbell photos unless the topic is explicitly weightlifting/resistance training.
+5. NEVER suggest generic lab microscope technicians for kitchen, food, or lifestyle articles.
+6. Provide 4 concise (1-2 word) English search queries that work well on Wikimedia Commons.
 
 Reply ONLY in valid JSON:
 {
-  "coreSubject": "Any authentic photograph showing [Subject Option A] OR [Subject Option B] (single clear subject, do not require multiple props)",
-  "forbiddenSubjects": "1 concise sentence listing off-topic visuals that must be rejected",
+  "coreSubject": "A clear, realistic single-subject photographic description using OR alternatives (e.g. Someone wearing a warm knit sweater holding a warm tea mug OR relaxing in cozy indoor lighting)",
+  "forbiddenSubjects": "1 concise sentence listing off-topic visuals and isolated studio cutouts that must be rejected",
   "queries": [
-    "1-2 word English noun query 1",
-    "1-2 word English noun query 2",
-    "Latin scientific name or 2-word query 3",
-    "1-2 word English noun query 4"
+    "1-2 word query 1",
+    "1-2 word query 2",
+    "1-2 word query 3",
+    "1-2 word query 4"
   ]
 }`;
 
@@ -648,10 +648,12 @@ IMPORTANT EVALUATION GUIDELINES:
 - Real stock photography depicts a SINGLE clear subject (e.g., just fresh rice grains, OR just fresh vegetables, OR just a bowl of oats, OR just a human eye, OR just a laptop/coffee desk). Do NOT demand multiple objects or metaphors in the same frame! If the photo cleanly and authentically shows the primary food, plant, ingredient, organ, or workspace relevant to the article title, APPROVE IT ("pass": true, "score" >= 8).
 
 MANDATORY REJECTION RULES (Must set "pass": false and "score" <= 4 if ANY of these apply):
-1. CONTENT MISMATCH: The main visible subject in the photo is unrelated to the article topic (e.g., gym equipment/dumbbells/treadmills for a food/tea/oats/liver/gut article; raw turmeric for an article not about turmeric; generic lab technicians at a microscope for a home kitchen/dietary article; historical black-and-white child labor/archival photos).
-2. COMMERCIAL PACKAGING / LOGOS / WATERMARKS: The photo shows commercial snack boxes, brand logos (e.g., KIND bars, supermarket packaging), website URLs, or stock watermarks.
-3. DEAD / SPAWNING FISH FOR EYE/SCREEN TOPICS: Reject photos of dead or underwater salmon for articles about screen eye strain, dry eyes, or macular pigment.
-4. ACADEMIC DIAGRAMS / TEXT CHARTS: Reject multi-panel journal figures (A, B, C), flowcharts full of text labels, statistical bar charts, scanned documents, or ugly grey microscope debris.
+1. CONTENT & EDITORIAL MISMATCH: The main visible subject in the photo is unrelated to the article topic (e.g., gym equipment/dumbbells/treadmills for a food/tea/oats/liver/gut article; raw turmeric for an article not about turmeric; generic lab technicians at a microscope for a home kitchen/dietary article; historical black-and-white child labor/archival photos).
+2. ISOLATED RAW CUTOUT ON SEAMLESS PURE WHITE BACKGROUND: Reject photos showing 1-3 isolated nuts, seeds, raw beans, pills, capsules, or food chunks floating on a pure white, sterile seamless studio background (#FFFFFF). It looks like an amateur e-commerce product cutout and is completely unidentifiable/alienating to general magazine readers. Cover photography MUST have a natural scene, shallow depth of field, warm lifestyle atmosphere, or natural table/kitchen/nature environment.
+3. MAINSTREAM READER CONFUSION / MISIDENTIFICATION TRAP: If an average reader glancing at the thumbnail on a mobile screen would be confused, disgusted, or unable to immediately recognize what the object is (e.g. 3 obscure brown nuts looking like garlic cloves, larvae, tree bark, or potato peelings), REJECT IT! The image must create an immediate, intuitive, pleasant, and scientifically sensible visual anchor for the headline.
+4. COMMERCIAL PACKAGING / LOGOS / WATERMARKS: The photo shows commercial snack boxes, brand logos (e.g., KIND bars, supermarket packaging), website URLs, or stock watermarks.
+5. DEAD / SPAWNING FISH FOR EYE/SCREEN TOPICS: Reject photos of dead or underwater salmon for articles about screen eye strain, dry eyes, or macular pigment.
+6. ACADEMIC DIAGRAMS / TEXT CHARTS: Reject multi-panel journal figures (A, B, C), flowcharts full of text labels, statistical bar charts, scanned documents, or ugly grey microscope debris.
 
 To PASS ("pass": true), the image MUST score >= 7.5 and clearly, authentically match the article's core subject.
 
