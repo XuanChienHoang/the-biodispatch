@@ -1,8 +1,54 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-06T15:27:24.048Z",
-  "totalTopics": 213,
+  "lastUpdated": "2026-11-06T20:03:37.940Z",
+  "totalTopics": 215,
   "topics": [
+    {
+      "id": "dau-nanh-nguyen-ban-va-isoflavone-genistein-giai-ma-noi-so-vo-can-cu",
+      "slugs": [
+        "dau-nanh-nguyen-ban-va-isoflavone-genistein-giai-ma-noi-so-vo-can-cu-vi"
+      ],
+      "titleVi": "Đậu nành nguyên bản và Genistein: Giải mã nỗi sợ vô căn cứ và góc nhìn y học chuyển hóa",
+      "titleEn": "Đậu nành nguyên bản và Genistein: Giải mã nỗi sợ vô căn cứ và góc nhìn y học chuyển hóa",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1158/1055-9965.EPI-07-2554",
+      "date": "2026-11-06T17:00:00Z",
+      "tags": [
+        "ung-thu",
+        "noi-tiet",
+        "tim-mach",
+        "lao-hoa",
+        "ruot"
+      ],
+      "keywords": [
+        "dau",
+        "nanh",
+        "nguyen",
+        "ban",
+        "genistein",
+        "noi",
+        "can",
+        "goc",
+        "nhin",
+        "hoc",
+        "chuyen",
+        "hoa",
+        "ung",
+        "thu",
+        "tiet",
+        "tim",
+        "mach",
+        "lao",
+        "ruot",
+        "nhieu",
+        "nguoi",
+        "chung",
+        "tung",
+        "nghe",
+        "rang"
+      ]
+    },
     {
       "id": "muoi-kali-va-huyet-ap-vi-sao-can-rau-xanh-hon-la-so-muoi",
       "slugs": [
@@ -93,6 +139,52 @@
         "slightly",
         "however",
         "modern"
+      ]
+    },
+    {
+      "id": "whole-soy-and-genistein-debunking-the-unfounded-fear",
+      "slugs": [
+        "whole-soy-and-genistein-debunking-the-unfounded-fear-en"
+      ],
+      "titleVi": "Whole Soy and Genistein: Debunking Unfounded Fears and Metabolic Insights",
+      "titleEn": "Whole Soy and Genistein: Debunking Unfounded Fears and Metabolic Insights",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1158/1055-9965.EPI-07-2554",
+      "date": "2026-11-06T17:00:00Z",
+      "tags": [
+        "oncology",
+        "endocrine",
+        "cardiovascular",
+        "longevity",
+        "gut"
+      ],
+      "keywords": [
+        "whole",
+        "soy",
+        "genistein",
+        "debunking",
+        "unfounded",
+        "fears",
+        "metabolic",
+        "insights",
+        "oncology",
+        "endocrine",
+        "cardiovascular",
+        "longevity",
+        "gut",
+        "many",
+        "have",
+        "heard",
+        "whispers",
+        "consuming",
+        "disrupts",
+        "hormones",
+        "triggers",
+        "tumor",
+        "growth",
+        "modern",
+        "scientific"
       ]
     },
     {

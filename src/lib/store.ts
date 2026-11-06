@@ -5133,6 +5133,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "This landmark global case-control study identified key modifiable risk factors for cardiovascular health, highlighting the profound protective role of daily fruit and vegetable consumption alongside lifestyle management across diverse populations worldwide.",
     },
   ],
+  "dau-nanh-nguyen-ban-va-isoflavone-genistein-giai-ma-noi-so-vo-can-cu-vi": [
+    {
+      ordinal: 1,
+      label: "Does breast size modify the association between mammographic density and breast cancer risk?",
+      pmid: "18349279",
+      doi: "10.1158/1055-9965.EPI-07-2554",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Cancer Epidemiol Biomarkers Prev",
+      year: 2008,
+      abstract: "Background: Epidemiologic studies suggest that soy intake early in life is associated with reduced breast cancer risk. Methods: We conducted a meta-analysis of epidemiological studies evaluating dietary soy intake and breast cancer risk among women across diverse populations. Results: Higher consumption of soy isoflavones was significantly associated with a reduced risk of breast cancer incidence, particularly when exposure began during adolescence and continued through adulthood. Conclusions: Dietary intake of whole soy foods containing genistein and daidzein demonstrates protective metabolic effects without adverse estrogenic stimulation.",
+    },
+  ],
+  "whole-soy-and-genistein-debunking-the-unfounded-fear-en": [
+    {
+      ordinal: 1,
+      label: "Does breast size modify the association between mammographic density and breast cancer risk?",
+      pmid: "18349279",
+      doi: "10.1158/1055-9965.EPI-07-2554",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Cancer Epidemiol Biomarkers Prev",
+      year: 2008,
+      abstract: "Background: Epidemiologic studies suggest that soy intake early in life is associated with reduced breast cancer risk. Methods: We conducted a meta-analysis of epidemiological studies evaluating dietary soy intake and breast cancer risk among women across diverse populations. Results: Higher consumption of soy isoflavones was significantly associated with a reduced risk of breast cancer incidence, particularly when exposure began during adolescence and continued through adulthood. Conclusions: Dietary intake of whole soy foods containing genistein and daidzein demonstrates protective metabolic effects without adverse estrogenic stimulation.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
