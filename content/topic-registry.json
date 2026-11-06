@@ -1,8 +1,100 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-05T15:52:09.320Z",
-  "totalTopics": 209,
+  "lastUpdated": "2026-11-06T13:05:05.594Z",
+  "totalTopics": 211,
   "topics": [
+    {
+      "id": "h-pylori-caga-toxin-gastric-cancer",
+      "slugs": [
+        "h-pylori-caga-toxin-gastric-cancer-en"
+      ],
+      "titleVi": "H. pylori and Gastric Cancer: The CagA Toxin Mechanism, Golden Treatment Window, and Protective Phytochemicals",
+      "titleEn": "H. pylori and Gastric Cancer: The CagA Toxin Mechanism, Golden Treatment Window, and Protective Phytochemicals",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1158/1940-6207.CAPR-08-0192",
+      "date": "2026-11-06T13:00:00Z",
+      "tags": [
+        "stomach-ache",
+        "cancer",
+        "ulcer",
+        "digestion",
+        "h-pylori"
+      ],
+      "keywords": [
+        "pylori",
+        "gastric",
+        "cancer",
+        "caga",
+        "toxin",
+        "golden",
+        "treatment",
+        "window",
+        "protective",
+        "phytochemicals",
+        "stomach",
+        "ache",
+        "ulcer",
+        "digestion",
+        "helicobacter",
+        "infection",
+        "primary",
+        "cause",
+        "worldwide",
+        "however",
+        "not",
+        "all",
+        "strains",
+        "carry",
+        "same"
+      ]
+    },
+    {
+      "id": "vi-khuan-hp-caga-va-ung-thu-da-dau",
+      "slugs": [
+        "vi-khuan-hp-caga-va-ung-thu-da-dau-vi"
+      ],
+      "titleVi": "Vi khuẩn HP và ung thư dạ dày: Độc tố CagA, thời điểm vàng điều trị và hoạt chất tự nhiên bảo vệ niêm mạc",
+      "titleEn": "Vi khuẩn HP và ung thư dạ dày: Độc tố CagA, thời điểm vàng điều trị và hoạt chất tự nhiên bảo vệ niêm mạc",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1158/1940-6207.CAPR-08-0192",
+      "date": "2026-11-06T13:00:00Z",
+      "tags": [
+        "da-dau",
+        "ung-thu",
+        "viem-loet",
+        "tieu-hoa",
+        "vi-khuan-hp"
+      ],
+      "keywords": [
+        "khuan",
+        "ung",
+        "thu",
+        "day",
+        "doc",
+        "caga",
+        "thoi",
+        "diem",
+        "vang",
+        "dieu",
+        "tri",
+        "hoat",
+        "chat",
+        "nhien",
+        "bao",
+        "niem",
+        "mac",
+        "dau",
+        "viem",
+        "loet",
+        "tieu",
+        "hoa",
+        "nhiem",
+        "helicobacter",
+        "pylori"
+      ]
+    },
     {
       "id": "thyroid-selenium-iodine-duo-cold-sensitivity-hair-loss",
       "slugs": [

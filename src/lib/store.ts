@@ -5081,6 +5081,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "The thyroid gland is characterized by a high tissue concentration of selenium, which is incorporated into selenoproteins. These enzymes, including iodothyronine deiodinases and glutathione peroxidases, play vital roles in thyroid hormone synthesis, T4 to T3 peripheral conversion, and protective antioxidant defense. Combined selenium and iodine deficiencies exacerbate thyroid pathologies, whereas adequate selenium intake reduces autoantibody titers and improves thyroid structural morphology in patients with autoimmune thyroiditis.",
     },
   ],
+  "vi-khuan-hp-caga-va-ung-thu-da-dau-vi": [
+    {
+      ordinal: 1,
+      label: "Dietary sulforaphane-rich broccoli sprouts reduce colonization and attenuate gastritis in Helicobacter pylori-infected mice and humans",
+      pmid: "19349290",
+      doi: "10.1158/1940-6207.CAPR-08-0192",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Cancer Prev Res (Phila)",
+      year: 2009,
+      abstract: "Helicobacter pylori infection is a major cause of gastric cancer. Sulforaphane, an isothiocyanate abundant in broccoli sprouts, is a potent inducer of phase 2 detoxifying enzymes and exhibits bactericidal activity against H. pylori. In a randomized clinical trial, daily consumption of sulforaphane-rich broccoli sprouts for 8 weeks significantly reduced urease biomarkers of H. pylori colonization and decreased gastric inflammation markers in infected human subjects.",
+    },
+  ],
+  "h-pylori-caga-toxin-gastric-cancer-en": [
+    {
+      ordinal: 1,
+      label: "Dietary sulforaphane-rich broccoli sprouts reduce colonization and attenuate gastritis in Helicobacter pylori-infected mice and humans",
+      pmid: "19349290",
+      doi: "10.1158/1940-6207.CAPR-08-0192",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Cancer Prev Res (Phila)",
+      year: 2009,
+      abstract: "Helicobacter pylori infection is a major cause of gastric cancer. Sulforaphane, an isothiocyanate abundant in broccoli sprouts, is a potent inducer of phase 2 detoxifying enzymes and exhibits bactericidal activity against H. pylori. In a randomized clinical trial, daily consumption of sulforaphane-rich broccoli sprouts for 8 weeks significantly reduced urease biomarkers of H. pylori colonization and decreased gastric inflammation markers in infected human subjects.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
