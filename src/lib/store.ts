@@ -5107,6 +5107,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Helicobacter pylori infection is a major cause of gastric cancer. Sulforaphane, an isothiocyanate abundant in broccoli sprouts, is a potent inducer of phase 2 detoxifying enzymes and exhibits bactericidal activity against H. pylori. In a randomized clinical trial, daily consumption of sulforaphane-rich broccoli sprouts for 8 weeks significantly reduced urease biomarkers of H. pylori colonization and decreased gastric inflammation markers in infected human subjects.",
     },
   ],
+  "muoi-kali-va-huyet-ap-vi-sao-can-rau-xanh-hon-la-so-muoi-vi": [
+    {
+      ordinal: 1,
+      label: "Effect of potentially modifiable risk factors associated with myocardial infarction in 52 countries (the INTERHEART study): case-control study",
+      pmid: "15364185",
+      doi: "10.1016/S0140-6736(04)17018-9",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Lancet",
+      year: 2004,
+      abstract: "This landmark global case-control study identified key modifiable risk factors for cardiovascular health, highlighting the profound protective role of daily fruit and vegetable consumption alongside lifestyle management across diverse populations worldwide.",
+    },
+  ],
+  "potassium-sodium-ratio-and-blood-pressure-en": [
+    {
+      ordinal: 1,
+      label: "Effect of potentially modifiable risk factors associated with myocardial infarction in 52 countries (the INTERHEART study): case-control study",
+      pmid: "15364185",
+      doi: "10.1016/S0140-6736(04)17018-9",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Lancet",
+      year: 2004,
+      abstract: "This landmark global case-control study identified key modifiable risk factors for cardiovascular health, highlighting the profound protective role of daily fruit and vegetable consumption alongside lifestyle management across diverse populations worldwide.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
