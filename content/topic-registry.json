@@ -1,7 +1,7 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-06T20:03:37.940Z",
-  "totalTopics": 215,
+  "lastUpdated": "2026-11-06T21:09:48.891Z",
+  "totalTopics": 217,
   "topics": [
     {
       "id": "dau-nanh-nguyen-ban-va-isoflavone-genistein-giai-ma-noi-so-vo-can-cu",
@@ -47,6 +47,52 @@
         "tung",
         "nghe",
         "rang"
+      ]
+    },
+    {
+      "id": "hpv-virus-and-p53-inactivation-mechanism",
+      "slugs": [
+        "hpv-virus-and-p53-inactivation-mechanism-en"
+      ],
+      "titleVi": "HPV and cervical cancer: The molecular mechanism of p53 inactivation and the protective shield of vaccination",
+      "titleEn": "HPV and cervical cancer: The molecular mechanism of p53 inactivation and the protective shield of vaccination",
+      "organ": "Metabolic",
+      "tier": "Clinical Deep-Dive",
+      "doi": "10.36721/PJPS/2026.40.16231.1",
+      "date": "2026-11-06T17:00:00Z",
+      "tags": [
+        "oncology",
+        "endocrine",
+        "aging",
+        "immunity",
+        "womens-health"
+      ],
+      "keywords": [
+        "hpv",
+        "cervical",
+        "cancer",
+        "molecular",
+        "p53",
+        "inactivation",
+        "protective",
+        "shield",
+        "vaccination",
+        "oncology",
+        "endocrine",
+        "aging",
+        "immunity",
+        "womens",
+        "health",
+        "every",
+        "year",
+        "hundreds",
+        "thousands",
+        "women",
+        "face",
+        "disease",
+        "largely",
+        "originating",
+        "silent"
       ]
     },
     {
@@ -139,6 +185,52 @@
         "slightly",
         "however",
         "modern"
+      ]
+    },
+    {
+      "id": "virus-hpv-va-co-che-vo-hieu-hoa-p53",
+      "slugs": [
+        "virus-hpv-va-co-che-vo-hieu-hoa-p53-vi"
+      ],
+      "titleVi": "Virus HPV và ung thư cổ tử cung: Cơ chế phân tử vô hiệu hóa gen p53 và lá chắn bảo vệ từ vaccine",
+      "titleEn": "Virus HPV và ung thư cổ tử cung: Cơ chế phân tử vô hiệu hóa gen p53 và lá chắn bảo vệ từ vaccine",
+      "organ": "Metabolic",
+      "tier": "Clinical Deep-Dive",
+      "doi": "10.36721/PJPS/2026.40.16231.1",
+      "date": "2026-11-06T17:00:00Z",
+      "tags": [
+        "ung-thu",
+        "noi-tiet",
+        "lao-hoa",
+        "mien-dich",
+        "phu-nu"
+      ],
+      "keywords": [
+        "virus",
+        "hpv",
+        "ung",
+        "thu",
+        "cung",
+        "phan",
+        "hieu",
+        "hoa",
+        "gen",
+        "p53",
+        "chan",
+        "bao",
+        "vaccine",
+        "noi",
+        "tiet",
+        "lao",
+        "mien",
+        "dich",
+        "phu",
+        "moi",
+        "nam",
+        "hang",
+        "tram",
+        "nghin",
+        "doi"
       ]
     },
     {

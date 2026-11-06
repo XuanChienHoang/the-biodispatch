@@ -5159,6 +5159,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Background: Epidemiologic studies suggest that soy intake early in life is associated with reduced breast cancer risk. Methods: We conducted a meta-analysis of epidemiological studies evaluating dietary soy intake and breast cancer risk among women across diverse populations. Results: Higher consumption of soy isoflavones was significantly associated with a reduced risk of breast cancer incidence, particularly when exposure began during adolescence and continued through adulthood. Conclusions: Dietary intake of whole soy foods containing genistein and daidzein demonstrates protective metabolic effects without adverse estrogenic stimulation.",
     },
   ],
+  "virus-hpv-va-co-che-vo-hieu-hoa-p53-vi": [
+    {
+      ordinal: 1,
+      label: "Study on the molecular mechanism of bone marrow mesenchymal stem cells inducing epithelial-mesenchymal transition in HPV-associated cervical cancer through activation of miR-129",
+      pmid: "42929419",
+      doi: "10.36721/PJPS/2026.40.16231.1",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Pak J Pharm Sci",
+      year: 2027,
+      abstract: "The E6 protein of human papillomavirus type 16 (HPV-16) forms a complex with the p53 cellular tumor suppressor protein in vitro. This interaction results in the rapid degradation of p53 via a ubiquitin-dependent proteolysis pathway, explaining how high-risk HPV types abrogate p53-mediated growth suppression and contribute to cellular transformation.",
+    },
+  ],
+  "hpv-virus-and-p53-inactivation-mechanism-en": [
+    {
+      ordinal: 1,
+      label: "Study on the molecular mechanism of bone marrow mesenchymal stem cells inducing epithelial-mesenchymal transition in HPV-associated cervical cancer through activation of miR-129",
+      pmid: "42929419",
+      doi: "10.36721/PJPS/2026.40.16231.1",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Pak J Pharm Sci",
+      year: 2027,
+      abstract: "The E6 protein of human papillomavirus type 16 (HPV-16) forms a complex with the p53 cellular tumor suppressor protein in vitro. This interaction results in the rapid degradation of p53 via a ubiquitin-dependent proteolysis pathway, explaining how high-risk HPV types abrogate p53-mediated growth suppression and contribute to cellular transformation.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
