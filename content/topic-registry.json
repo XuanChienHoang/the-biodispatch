@@ -1,8 +1,98 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-07T18:07:53.491Z",
-  "totalTopics": 223,
+  "lastUpdated": "2026-11-07T19:38:48.361Z",
+  "totalTopics": 225,
   "topics": [
+    {
+      "id": "dau-moi-co-vai-gay-nguoi-ngoi-may-tinh",
+      "slugs": [
+        "dau-moi-co-vai-gay-nguoi-ngoi-may-tinh-vi"
+      ],
+      "titleVi": "Cơn đau mỏi cổ vai gáy của người ngồi máy tính: Khi cơ thang chịu trận và cách giải phóng cơ học trong hai phút",
+      "titleEn": "Cơn đau mỏi cổ vai gáy của người ngồi máy tính: Khi cơ thang chịu trận và cách giải phóng cơ học trong hai phút",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1097/BRS.0b013e3181643ece",
+      "date": "2026-11-07T17:00:00Z",
+      "tags": [
+        "khop",
+        "nang-luong",
+        "lao-hoa",
+        "vận-động"
+      ],
+      "keywords": [
+        "con",
+        "dau",
+        "moi",
+        "vai",
+        "gay",
+        "nguoi",
+        "ngoi",
+        "may",
+        "tinh",
+        "thang",
+        "chiu",
+        "tran",
+        "cach",
+        "phong",
+        "hoc",
+        "hai",
+        "phut",
+        "khop",
+        "nang",
+        "luong",
+        "lao",
+        "hoa",
+        "van",
+        "dong",
+        "chieu"
+      ]
+    },
+    {
+      "id": "desk-workers-neck-and-shoulder-pain",
+      "slugs": [
+        "desk-workers-neck-and-shoulder-pain-en"
+      ],
+      "titleVi": "Desk worker neck and shoulder pain: When the trapezius muscle suffers and a two minute mechanical release",
+      "titleEn": "Desk worker neck and shoulder pain: When the trapezius muscle suffers and a two minute mechanical release",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1097/BRS.0b013e3181643ece",
+      "date": "2026-11-07T17:00:00Z",
+      "tags": [
+        "joints",
+        "energy",
+        "aging",
+        "mobility"
+      ],
+      "keywords": [
+        "desk",
+        "worker",
+        "neck",
+        "shoulder",
+        "pain",
+        "when",
+        "trapezius",
+        "muscle",
+        "suffers",
+        "two",
+        "minute",
+        "mechanical",
+        "release",
+        "joints",
+        "energy",
+        "aging",
+        "mobility",
+        "every",
+        "afternoon",
+        "stiffness",
+        "dull",
+        "around",
+        "shoulders",
+        "plague",
+        "office"
+      ]
+    },
     {
       "id": "hoi-chung-ro-rui-ruot-va-met-moi-keo-dai",
       "slugs": [

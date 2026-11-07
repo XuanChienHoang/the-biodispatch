@@ -5263,6 +5263,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "The intercellular tight junctions represent the major barrier against the paracellular permeation of antigens and macromolecules luminal contents. Zonulin is a human protein homologous to the zonula occludens toxin produced by Vibrio cholerae that modulates intercellular tight junctions and is involved in autoimmune and inflammatory disorders.",
     },
   ],
+  "dau-moi-co-vai-gay-nguoi-ngoi-may-tinh-vi": [
+    {
+      ordinal: 1,
+      label: "The burden and determinants of neck pain in whiplash-associated disorders after traffic collisions: results of the Bone and Joint Decade 2000-2010 Task Force on Neck Pain and Its Associated Disorders",
+      pmid: "18204401",
+      doi: "10.1097/BRS.0b013e3181643ece",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Spine (Phila Pa 1976)",
+      year: 2008,
+      abstract: "Neck and shoulder disorders are common occupational complaints among office workers. This study evaluates the biomechanical and ergonomic risk factors associated with prolonged static muscle loading and ischemic pain development in the trapezius muscle.",
+    },
+  ],
+  "desk-workers-neck-and-shoulder-pain-en": [
+    {
+      ordinal: 1,
+      label: "The burden and determinants of neck pain in whiplash-associated disorders after traffic collisions: results of the Bone and Joint Decade 2000-2010 Task Force on Neck Pain and Its Associated Disorders",
+      pmid: "18204401",
+      doi: "10.1097/BRS.0b013e3181643ece",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Spine (Phila Pa 1976)",
+      year: 2008,
+      abstract: "Neck and shoulder disorders are common occupational complaints among office workers. This study evaluates the biomechanical and ergonomic risk factors associated with prolonged static muscle loading and ischemic pain development in the trapezius muscle.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
