@@ -1,7 +1,7 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-07T11:46:13.591Z",
-  "totalTopics": 219,
+  "lastUpdated": "2026-11-07T14:22:15.146Z",
+  "totalTopics": 221,
   "topics": [
     {
       "id": "creatine-cho-nguoi-lam-viec-tri-oc-vi-sao-bo-nao-cung-can-vien-pin-du-phong",
@@ -93,6 +93,96 @@
         "few",
         "suspect",
         "organ"
+      ]
+    },
+    {
+      "id": "tai-sao-uong-ruou-bi-do-mat-va-giai-phap-bao-ve-gen",
+      "slugs": [
+        "tai-sao-uong-ruou-bi-do-mat-va-giai-phap-bao-ve-gen-vi"
+      ],
+      "titleVi": "Vì sao uống rượu bị đỏ mặt và cách bảo vệ gen trước chất độc acetaldehyde",
+      "titleEn": "Vì sao uống rượu bị đỏ mặt và cách bảo vệ gen trước chất độc acetaldehyde",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.21873/invivo.14348",
+      "date": "2026-11-07T13:00:00Z",
+      "tags": [
+        "noi-tiet",
+        "gan",
+        "lao-hoa",
+        "nang-luong"
+      ],
+      "keywords": [
+        "uong",
+        "ruou",
+        "mat",
+        "cach",
+        "bao",
+        "gen",
+        "truoc",
+        "chat",
+        "doc",
+        "acetaldehyde",
+        "noi",
+        "tiet",
+        "gan",
+        "lao",
+        "hoa",
+        "nang",
+        "luong",
+        "hien",
+        "tuong",
+        "tim",
+        "dap",
+        "nhanh",
+        "ngay",
+        "sau",
+        "nhap"
+      ]
+    },
+    {
+      "id": "why-alcohol-flush-happens-and-protecting-dna",
+      "slugs": [
+        "why-alcohol-flush-happens-and-protecting-dna-en"
+      ],
+      "titleVi": "Why alcohol flushing happens and protecting your DNA from acetaldehyde toxicity",
+      "titleEn": "Why alcohol flushing happens and protecting your DNA from acetaldehyde toxicity",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.21873/invivo.14348",
+      "date": "2026-11-07T13:00:00Z",
+      "tags": [
+        "endocrinology",
+        "liver",
+        "aging",
+        "metabolism"
+      ],
+      "keywords": [
+        "alcohol",
+        "flushing",
+        "happens",
+        "protecting",
+        "your",
+        "dna",
+        "acetaldehyde",
+        "toxicity",
+        "endocrinology",
+        "liver",
+        "aging",
+        "metabolism",
+        "facial",
+        "rapid",
+        "heartbeat",
+        "sip",
+        "are",
+        "not",
+        "just",
+        "signs",
+        "mild",
+        "intoxication",
+        "they",
+        "signal",
+        "enzymatic"
       ]
     },
     {

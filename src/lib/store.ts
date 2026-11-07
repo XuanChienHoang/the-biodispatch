@@ -5211,6 +5211,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Creatine supplementation is known for enhancing athletic performance, but its effects on cognitive function have recently gained attention. This systematic review evaluated randomized controlled trials assessing the impact of creatine administration on various cognitive domains in healthy humans, demonstrating positive effects on memory and intelligence tasks.",
     },
   ],
+  "tai-sao-uong-ruou-bi-do-mat-va-giai-phap-bao-ve-gen-vi": [
+    {
+      ordinal: 1,
+      label: "Exploratory Analysis of VEGF Polymorphisms and Colorectal Cancer Risk in a Hungarian Population: A Case-Control Study",
+      pmid: "42379765",
+      doi: "10.21873/invivo.14348",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "In Vivo",
+      year: 2026,
+      abstract: "Acetaldehyde, the first metabolite of ethanol, is a mutagen and a group 1 human carcinogen. Individuals with inactive aldehyde dehydrogenase 2 (ALDH2) variants accumulate high levels of acetaldehyde after drinking alcohol, leading to facial flushing, tachycardia, and a substantially increased risk of upper aerodigestive tract cancers.",
+    },
+  ],
+  "why-alcohol-flush-happens-and-protecting-dna-en": [
+    {
+      ordinal: 1,
+      label: "Exploratory Analysis of VEGF Polymorphisms and Colorectal Cancer Risk in a Hungarian Population: A Case-Control Study",
+      pmid: "42379765",
+      doi: "10.21873/invivo.14348",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "In Vivo",
+      year: 2026,
+      abstract: "Acetaldehyde, the first metabolite of ethanol, is a mutagen and a group 1 human carcinogen. Individuals with inactive aldehyde dehydrogenase 2 (ALDH2) variants accumulate high levels of acetaldehyde after drinking alcohol, leading to facial flushing, tachycardia, and a substantially increased risk of upper aerodigestive tract cancers.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
