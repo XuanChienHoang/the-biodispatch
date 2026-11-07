@@ -5185,6 +5185,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "The E6 protein of human papillomavirus type 16 (HPV-16) forms a complex with the p53 cellular tumor suppressor protein in vitro. This interaction results in the rapid degradation of p53 via a ubiquitin-dependent proteolysis pathway, explaining how high-risk HPV types abrogate p53-mediated growth suppression and contribute to cellular transformation.",
     },
   ],
+  "creatine-cho-nguoi-lam-viec-tri-oc-vi-sao-bo-nao-cung-can-vien-pin-du-phong-vi": [
+    {
+      ordinal: 1,
+      label: "Effects of creatine supplementation on memory in healthy individuals: a systematic review and meta-analysis of randomized controlled trials",
+      pmid: "35984306",
+      doi: "10.1093/nutrit/nuac064",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Nutr Rev",
+      year: 2023,
+      abstract: "Creatine supplementation is known for enhancing athletic performance, but its effects on cognitive function have recently gained attention. This systematic review evaluated randomized controlled trials assessing the impact of creatine administration on various cognitive domains in healthy humans, demonstrating positive effects on memory and intelligence tasks.",
+    },
+  ],
+  "creatine-for-mental-fatigue-why-your-brain-needs-a-backup-battery-en": [
+    {
+      ordinal: 1,
+      label: "Effects of creatine supplementation on memory in healthy individuals: a systematic review and meta-analysis of randomized controlled trials",
+      pmid: "35984306",
+      doi: "10.1093/nutrit/nuac064",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Nutr Rev",
+      year: 2023,
+      abstract: "Creatine supplementation is known for enhancing athletic performance, but its effects on cognitive function have recently gained attention. This systematic review evaluated randomized controlled trials assessing the impact of creatine administration on various cognitive domains in healthy humans, demonstrating positive effects on memory and intelligence tasks.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

@@ -1,8 +1,100 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-06T21:09:48.891Z",
-  "totalTopics": 217,
+  "lastUpdated": "2026-11-07T11:46:13.591Z",
+  "totalTopics": 219,
   "topics": [
+    {
+      "id": "creatine-cho-nguoi-lam-viec-tri-oc-vi-sao-bo-nao-cung-can-vien-pin-du-phong",
+      "slugs": [
+        "creatine-cho-nguoi-lam-viec-tri-oc-vi-sao-bo-nao-cung-can-vien-pin-du-phong-vi"
+      ],
+      "titleVi": "Creatine cho người làm việc trí óc: Vì sao bộ não cũng cần viên pin dự phòng khi áp lực dâng cao",
+      "titleEn": "Creatine cho người làm việc trí óc: Vì sao bộ não cũng cần viên pin dự phòng khi áp lực dâng cao",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1093/nutrit/nuac064",
+      "date": "2026-11-07T13:00:00Z",
+      "tags": [
+        "nang-luong",
+        "giac-ngu",
+        "nao",
+        "lao-hoa",
+        "tieu-hoa"
+      ],
+      "keywords": [
+        "creatine",
+        "nguoi",
+        "lam",
+        "viec",
+        "tri",
+        "nao",
+        "cung",
+        "can",
+        "vien",
+        "pin",
+        "phong",
+        "luc",
+        "dang",
+        "cao",
+        "nang",
+        "luong",
+        "giac",
+        "ngu",
+        "lao",
+        "hoa",
+        "tieu",
+        "chung",
+        "thuong",
+        "nghe",
+        "noi"
+      ]
+    },
+    {
+      "id": "creatine-for-mental-fatigue-why-your-brain-needs-a-backup-battery",
+      "slugs": [
+        "creatine-for-mental-fatigue-why-your-brain-needs-a-backup-battery-en"
+      ],
+      "titleVi": "Creatine for mental fatigue: Why your brain needs a backup battery during high pressure",
+      "titleEn": "Creatine for mental fatigue: Why your brain needs a backup battery during high pressure",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1093/nutrit/nuac064",
+      "date": "2026-11-07T13:00:00Z",
+      "tags": [
+        "energy",
+        "sleep",
+        "brain",
+        "aging",
+        "metabolism"
+      ],
+      "keywords": [
+        "creatine",
+        "mental",
+        "fatigue",
+        "your",
+        "brain",
+        "needs",
+        "backup",
+        "battery",
+        "high",
+        "pressure",
+        "energy",
+        "sleep",
+        "aging",
+        "metabolism",
+        "often",
+        "hear",
+        "about",
+        "faithful",
+        "helper",
+        "bodybuilder",
+        "muscles",
+        "yet",
+        "few",
+        "suspect",
+        "organ"
+      ]
+    },
     {
       "id": "dau-nanh-nguyen-ban-va-isoflavone-genistein-giai-ma-noi-so-vo-can-cu",
       "slugs": [
