@@ -5237,6 +5237,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Acetaldehyde, the first metabolite of ethanol, is a mutagen and a group 1 human carcinogen. Individuals with inactive aldehyde dehydrogenase 2 (ALDH2) variants accumulate high levels of acetaldehyde after drinking alcohol, leading to facial flushing, tachycardia, and a substantially increased risk of upper aerodigestive tract cancers.",
     },
   ],
+  "hoi-chung-ro-rui-ruot-va-met-moi-keo-dai-vi": [
+    {
+      ordinal: 1,
+      label: "Intestinal permeability and the zonulin pathway: tight junctions, mucosal immunity, dietary modulators and clinical relevance",
+      pmid: "42903485",
+      doi: "10.3389/fnut.2026.1938370",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Front Nutr",
+      year: 2026,
+      abstract: "The intercellular tight junctions represent the major barrier against the paracellular permeation of antigens and macromolecules luminal contents. Zonulin is a human protein homologous to the zonula occludens toxin produced by Vibrio cholerae that modulates intercellular tight junctions and is involved in autoimmune and inflammatory disorders.",
+    },
+  ],
+  "leaky-gut-syndrome-and-chronic-fatigue-en": [
+    {
+      ordinal: 1,
+      label: "Intestinal permeability and the zonulin pathway: tight junctions, mucosal immunity, dietary modulators and clinical relevance",
+      pmid: "42903485",
+      doi: "10.3389/fnut.2026.1938370",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Front Nutr",
+      year: 2026,
+      abstract: "The intercellular tight junctions represent the major barrier against the paracellular permeation of antigens and macromolecules luminal contents. Zonulin is a human protein homologous to the zonula occludens toxin produced by Vibrio cholerae that modulates intercellular tight junctions and is involved in autoimmune and inflammatory disorders.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

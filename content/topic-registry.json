@@ -1,8 +1,100 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-07T14:22:15.146Z",
-  "totalTopics": 221,
+  "lastUpdated": "2026-11-07T18:07:53.491Z",
+  "totalTopics": 223,
   "topics": [
+    {
+      "id": "hoi-chung-ro-rui-ruot-va-met-moi-keo-dai",
+      "slugs": [
+        "hoi-chung-ro-rui-ruot-va-met-moi-keo-dai-vi"
+      ],
+      "titleVi": "Hội chứng rò rỉ ruột và những cơn mệt mỏi vô cớ: Khi hàng rào niêm mạc lỏng lẻo",
+      "titleEn": "Hội chứng rò rỉ ruột và những cơn mệt mỏi vô cớ: Khi hàng rào niêm mạc lỏng lẻo",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.3389/fnut.2026.1938370",
+      "date": "2026-11-07T17:00:00Z",
+      "tags": [
+        "ruot",
+        "nang-luong",
+        "tieu-hoa",
+        "lao-hoa",
+        "mien-dich"
+      ],
+      "keywords": [
+        "hoi",
+        "chung",
+        "ruot",
+        "con",
+        "met",
+        "moi",
+        "hang",
+        "rao",
+        "niem",
+        "mac",
+        "long",
+        "leo",
+        "nang",
+        "luong",
+        "tieu",
+        "hoa",
+        "lao",
+        "mien",
+        "dich",
+        "nhieu",
+        "nguoi",
+        "thuong",
+        "xuyen",
+        "cam",
+        "thay"
+      ]
+    },
+    {
+      "id": "leaky-gut-syndrome-and-chronic-fatigue",
+      "slugs": [
+        "leaky-gut-syndrome-and-chronic-fatigue-en"
+      ],
+      "titleVi": "Leaky gut syndrome and unexplained chronic fatigue: When mucosal barriers loosen",
+      "titleEn": "Leaky gut syndrome and unexplained chronic fatigue: When mucosal barriers loosen",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.3389/fnut.2026.1938370",
+      "date": "2026-11-07T17:00:00Z",
+      "tags": [
+        "gut",
+        "energy",
+        "digestion",
+        "aging",
+        "immune"
+      ],
+      "keywords": [
+        "leaky",
+        "gut",
+        "syndrome",
+        "unexplained",
+        "chronic",
+        "fatigue",
+        "when",
+        "mucosal",
+        "barriers",
+        "loosen",
+        "energy",
+        "digestion",
+        "aging",
+        "immune",
+        "many",
+        "people",
+        "frequently",
+        "experience",
+        "crushing",
+        "bloating",
+        "brain",
+        "fog",
+        "despite",
+        "getting",
+        "enough"
+      ]
+    },
     {
       "id": "creatine-cho-nguoi-lam-viec-tri-oc-vi-sao-bo-nao-cung-can-vien-pin-du-phong",
       "slugs": [
