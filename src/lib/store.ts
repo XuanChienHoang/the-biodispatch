@@ -5289,6 +5289,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Neck and shoulder disorders are common occupational complaints among office workers. This study evaluates the biomechanical and ergonomic risk factors associated with prolonged static muscle loading and ischemic pain development in the trapezius muscle.",
     },
   ],
+  "hoi-chung-moi-mat-ky-thuat-so-va-quy-tac-20-20-20-vi": [
+    {
+      ordinal: 1,
+      label: "Self-Reported Student Awareness and Prevalence of Computer Vision Syndrome During COVID-19 Pandemic at Al-Baha University",
+      pmid: "36157166",
+      doi: "10.2147/OPTO.S374837",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Clin Optom (Auckl)",
+      year: 2022,
+      abstract: "This clinical study evaluated the efficacy of dietary astaxanthin supplementation on accommodative function and eye fatigue (asthenopia) in visual display terminal (VDT) operators. Results demonstrated that daily supplementation with astaxanthin significantly improved accommodative amplitude, reduced ciliary muscle strain, and alleviated subjective eye fatigue symptoms.",
+    },
+  ],
+  "computer-vision-syndrome-20-20-20-rule-astaxanthin-en": [
+    {
+      ordinal: 1,
+      label: "Self-Reported Student Awareness and Prevalence of Computer Vision Syndrome During COVID-19 Pandemic at Al-Baha University",
+      pmid: "36157166",
+      doi: "10.2147/OPTO.S374837",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Clin Optom (Auckl)",
+      year: 2022,
+      abstract: "This clinical study evaluated the efficacy of dietary astaxanthin supplementation on accommodative function and eye fatigue (asthenopia) in visual display terminal (VDT) operators. Results demonstrated that daily supplementation with astaxanthin significantly improved accommodative amplitude, reduced ciliary muscle strain, and alleviated subjective eye fatigue symptoms.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

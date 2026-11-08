@@ -1,8 +1,98 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-07T19:38:48.361Z",
-  "totalTopics": 225,
+  "lastUpdated": "2026-11-08T12:06:23.898Z",
+  "totalTopics": 227,
   "topics": [
+    {
+      "id": "computer-vision-syndrome-20-20-20-rule-astaxanthin",
+      "slugs": [
+        "computer-vision-syndrome-20-20-20-rule-astaxanthin-en"
+      ],
+      "titleVi": "Computer Vision Syndrome: Why the 20-20-20 Rule and Astaxanthin Relief Ciliary Muscle Spasms",
+      "titleEn": "Computer Vision Syndrome: Why the 20-20-20 Rule and Astaxanthin Relief Ciliary Muscle Spasms",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.2147/OPTO.S374837",
+      "date": "2026-11-08T13:00:00Z",
+      "tags": [
+        "vision",
+        "eye-fatigue",
+        "aging",
+        "energy"
+      ],
+      "keywords": [
+        "computer",
+        "vision",
+        "syndrome",
+        "rule",
+        "astaxanthin",
+        "relief",
+        "ciliary",
+        "muscle",
+        "spasms",
+        "eye",
+        "fatigue",
+        "aging",
+        "energy",
+        "you",
+        "end",
+        "your",
+        "workday",
+        "front",
+        "screen",
+        "dry",
+        "eyes",
+        "deep",
+        "ache",
+        "behind",
+        "sockets"
+      ]
+    },
+    {
+      "id": "hoi-chung-moi-mat-ky-thuat-so-va-quy-tac-20-20-20",
+      "slugs": [
+        "hoi-chung-moi-mat-ky-thuat-so-va-quy-tac-20-20-20-vi"
+      ],
+      "titleVi": "Hội chứng mỏi mắt kỹ thuật số: Vì sao quy tắc 20-20-20 và Astaxanthin giúp giải tỏa co quắp cơ mi",
+      "titleEn": "Hội chứng mỏi mắt kỹ thuật số: Vì sao quy tắc 20-20-20 và Astaxanthin giúp giải tỏa co quắp cơ mi",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.2147/OPTO.S374837",
+      "date": "2026-11-08T13:00:00Z",
+      "tags": [
+        "thi-luc",
+        "moi-mat",
+        "lao-hoa",
+        "nang-luong"
+      ],
+      "keywords": [
+        "hoi",
+        "chung",
+        "moi",
+        "mat",
+        "thuat",
+        "quy",
+        "tac",
+        "astaxanthin",
+        "giup",
+        "toa",
+        "quap",
+        "thi",
+        "luc",
+        "lao",
+        "hoa",
+        "nang",
+        "luong",
+        "neu",
+        "ban",
+        "ket",
+        "thuc",
+        "ngay",
+        "lam",
+        "viec",
+        "truoc"
+      ]
+    },
     {
       "id": "dau-moi-co-vai-gay-nguoi-ngoi-may-tinh",
       "slugs": [
