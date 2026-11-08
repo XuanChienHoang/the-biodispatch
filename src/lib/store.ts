@@ -5341,6 +5341,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Beta-glucans are naturally occurring polysaccharides found in the cell walls of fungi, yeast, bacteria, and cereals. They exhibit significant biological activities, notably immunomodulatory and anti-tumor effects, primarily mediated through specific receptors such as Dectin-1 on immune cells, enhancing phagocytosis and cytokine production.",
     },
   ],
+  "dinh-duong-chuan-y-khoa-cho-benh-nhan-ung-thu-va-cach-bao-ton-khoi-co-nac-vi": [
+    {
+      ordinal: 1,
+      label: "Cancer cachexia: molecular basis and therapeutic advances",
+      pmid: "41526343",
+      doi: "10.1038/s41392-025-02331-7",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Signal Transduct Target Ther",
+      year: 2026,
+      abstract: "Cancer cachexia is a multi-organ syndrome characterized by progressive functional impairment, ongoing muscle wasting, and metabolic abnormalities. Current clinical insights emphasize that nutritional support combined with anti-inflammatory strategies is essential to preserve lean body mass and improve survival outcomes in cancer patients.",
+    },
+  ],
+  "medical-nutrition-therapy-for-cancer-patients-and-muscle-preservation-en": [
+    {
+      ordinal: 1,
+      label: "Cancer cachexia: molecular basis and therapeutic advances",
+      pmid: "41526343",
+      doi: "10.1038/s41392-025-02331-7",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Signal Transduct Target Ther",
+      year: 2026,
+      abstract: "Cancer cachexia is a multi-organ syndrome characterized by progressive functional impairment, ongoing muscle wasting, and metabolic abnormalities. Current clinical insights emphasize that nutritional support combined with anti-inflammatory strategies is essential to preserve lean body mass and improve survival outcomes in cancer patients.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

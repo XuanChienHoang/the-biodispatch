@@ -1,8 +1,100 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-08T14:46:46.036Z",
-  "totalTopics": 229,
+  "lastUpdated": "2026-11-08T18:35:25.449Z",
+  "totalTopics": 231,
   "topics": [
+    {
+      "id": "dinh-duong-chuan-y-khoa-cho-benh-nhan-ung-thu-va-cach-bao-ton-khoi-co-nac",
+      "slugs": [
+        "dinh-duong-chuan-y-khoa-cho-benh-nhan-ung-thu-va-cach-bao-ton-khoi-co-nac-vi"
+      ],
+      "titleVi": "Dinh dưỡng chuẩn y khoa cho bệnh nhân ung thư: Đập tan hiểu lầm kiêng thịt bỏ đói khối u và cách bảo tồn khối cơ nạc",
+      "titleEn": "Dinh dưỡng chuẩn y khoa cho bệnh nhân ung thư: Đập tan hiểu lầm kiêng thịt bỏ đói khối u và cách bảo tồn khối cơ nạc",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1038/s41392-025-02331-7",
+      "date": "2026-11-08T17:00:00Z",
+      "tags": [
+        "ung-thu",
+        "dinh-duong",
+        "chuyen-hoa",
+        "mien-dich",
+        "lao-hoa"
+      ],
+      "keywords": [
+        "dinh",
+        "duong",
+        "chuan",
+        "khoa",
+        "benh",
+        "nhan",
+        "ung",
+        "thu",
+        "dap",
+        "tan",
+        "hieu",
+        "lam",
+        "kieng",
+        "thit",
+        "doi",
+        "khoi",
+        "cach",
+        "bao",
+        "ton",
+        "nac",
+        "chuyen",
+        "hoa",
+        "mien",
+        "dich",
+        "lao"
+      ]
+    },
+    {
+      "id": "medical-nutrition-therapy-for-cancer-patients-and-muscle-preservation",
+      "slugs": [
+        "medical-nutrition-therapy-for-cancer-patients-and-muscle-preservation-en"
+      ],
+      "titleVi": "Medical nutrition therapy for cancer patients: Debunking tumor-starvation myths and preserving lean muscle mass",
+      "titleEn": "Medical nutrition therapy for cancer patients: Debunking tumor-starvation myths and preserving lean muscle mass",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1038/s41392-025-02331-7",
+      "date": "2026-11-08T17:00:00Z",
+      "tags": [
+        "cancer",
+        "nutrition",
+        "metabolism",
+        "immunity",
+        "longevity"
+      ],
+      "keywords": [
+        "medical",
+        "nutrition",
+        "therapy",
+        "cancer",
+        "patients",
+        "debunking",
+        "tumor",
+        "starvation",
+        "myths",
+        "preserving",
+        "lean",
+        "muscle",
+        "mass",
+        "metabolism",
+        "immunity",
+        "longevity",
+        "when",
+        "facing",
+        "diagnosis",
+        "many",
+        "families",
+        "hastily",
+        "eliminate",
+        "red",
+        "meat"
+      ]
+    },
     {
       "id": "computer-vision-syndrome-20-20-20-rule-astaxanthin",
       "slugs": [
