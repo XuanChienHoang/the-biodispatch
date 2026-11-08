@@ -1,7 +1,7 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-08T12:06:23.898Z",
-  "totalTopics": 227,
+  "lastUpdated": "2026-11-08T14:46:46.036Z",
+  "totalTopics": 229,
   "topics": [
     {
       "id": "computer-vision-syndrome-20-20-20-rule-astaxanthin",
@@ -91,6 +91,98 @@
         "lam",
         "viec",
         "truoc"
+      ]
+    },
+    {
+      "id": "nam-huong-beta-glucan-dectin-1-mien-dich",
+      "slugs": [
+        "nam-huong-beta-glucan-dectin-1-mien-dich-vi"
+      ],
+      "titleVi": "Bản giao hưởng của nấm hương và Beta-Glucan: Đánh thức hệ tuần tra tế bào lạ bằng chìa khóa Dectin-1",
+      "titleEn": "Bản giao hưởng của nấm hương và Beta-Glucan: Đánh thức hệ tuần tra tế bào lạ bằng chìa khóa Dectin-1",
+      "organ": "Metabolic",
+      "tier": "Clinical Deep-Dive",
+      "doi": "10.3390/molecules25163625",
+      "date": "2026-11-08T13:00:00Z",
+      "tags": [
+        "mien-dich",
+        "ung-thu",
+        "lao-hoa",
+        "dinh-duong",
+        "ruot"
+      ],
+      "keywords": [
+        "ban",
+        "giao",
+        "huong",
+        "nam",
+        "beta",
+        "glucan",
+        "danh",
+        "thuc",
+        "tuan",
+        "tra",
+        "bao",
+        "bang",
+        "chia",
+        "khoa",
+        "dectin",
+        "mien",
+        "dich",
+        "ung",
+        "thu",
+        "lao",
+        "hoa",
+        "dinh",
+        "duong",
+        "ruot",
+        "nhieu"
+      ]
+    },
+    {
+      "id": "shiitake-beta-glucan-dectin-1-immunity",
+      "slugs": [
+        "shiitake-beta-glucan-dectin-1-immunity-en"
+      ],
+      "titleVi": "The symphony of shiitake and Beta-Glucan: Awakening immune patrol cells through the Dectin-1 key",
+      "titleEn": "The symphony of shiitake and Beta-Glucan: Awakening immune patrol cells through the Dectin-1 key",
+      "organ": "Metabolic",
+      "tier": "Clinical Deep-Dive",
+      "doi": "10.3390/molecules25163625",
+      "date": "2026-11-08T13:00:00Z",
+      "tags": [
+        "immunity",
+        "oncology",
+        "longevity",
+        "nutrition",
+        "gut"
+      ],
+      "keywords": [
+        "symphony",
+        "shiitake",
+        "beta",
+        "glucan",
+        "awakening",
+        "immune",
+        "patrol",
+        "cells",
+        "dectin",
+        "key",
+        "immunity",
+        "oncology",
+        "longevity",
+        "nutrition",
+        "gut",
+        "many",
+        "assume",
+        "mushrooms",
+        "are",
+        "merely",
+        "natural",
+        "flavor",
+        "enhancer",
+        "family",
+        "soups"
       ]
     },
     {

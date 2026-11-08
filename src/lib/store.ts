@@ -5315,6 +5315,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "This clinical study evaluated the efficacy of dietary astaxanthin supplementation on accommodative function and eye fatigue (asthenopia) in visual display terminal (VDT) operators. Results demonstrated that daily supplementation with astaxanthin significantly improved accommodative amplitude, reduced ciliary muscle strain, and alleviated subjective eye fatigue symptoms.",
     },
   ],
+  "nam-huong-beta-glucan-dectin-1-mien-dich-vi": [
+    {
+      ordinal: 1,
+      label: "Beta-glucans: versatile biologically active polysaccharides",
+      pmid: "",
+      doi: "10.3390/molecules25163625",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Molecules",
+      year: 2020,
+      abstract: "Beta-glucans are naturally occurring polysaccharides found in the cell walls of fungi, yeast, bacteria, and cereals. They exhibit significant biological activities, notably immunomodulatory and anti-tumor effects, primarily mediated through specific receptors such as Dectin-1 on immune cells, enhancing phagocytosis and cytokine production.",
+    },
+  ],
+  "shiitake-beta-glucan-dectin-1-immunity-en": [
+    {
+      ordinal: 1,
+      label: "Beta-glucans: versatile biologically active polysaccharides",
+      pmid: "",
+      doi: "10.3390/molecules25163625",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Molecules",
+      year: 2020,
+      abstract: "Beta-glucans are naturally occurring polysaccharides found in the cell walls of fungi, yeast, bacteria, and cereals. They exhibit significant biological activities, notably immunomodulatory and anti-tumor effects, primarily mediated through specific receptors such as Dectin-1 on immune cells, enhancing phagocytosis and cytokine production.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
