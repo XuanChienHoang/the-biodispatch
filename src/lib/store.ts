@@ -5367,6 +5367,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Cancer cachexia is a multi-organ syndrome characterized by progressive functional impairment, ongoing muscle wasting, and metabolic abnormalities. Current clinical insights emphasize that nutritional support combined with anti-inflammatory strategies is essential to preserve lean body mass and improve survival outcomes in cancer patients.",
     },
   ],
+  "giai-ma-gla-nhuong-bo-chung-do-mat-khi-uong-ruou-va-nguy-co-dot-bien-gen-vi": [
+    {
+      ordinal: 1,
+      label: "ALDH2 Deficiency and Alcohol Intake in the United States: Opportunity for Precision Cancer Prevention",
+      pmid: "40063522",
+      doi: "10.1158/1055-9965.EPI-24-1296",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Cancer Epidemiol Biomarkers Prev",
+      year: 2025,
+      abstract: "Aldehyde dehydrogenase 2 (ALDH2) deficiency is prevalent in East Asian populations and leads to the accumulation of toxic acetaldehyde following alcohol consumption. This metabolic impairment is strongly associated with an increased risk of esophageal squamous cell carcinoma and other alcohol-related malignancies due to direct DNA damage and genomic instability.",
+    },
+  ],
+  "decoding-the-asian-glow-alcohol-flushing-and-tp53-gene-mutation-risk-en": [
+    {
+      ordinal: 1,
+      label: "ALDH2 Deficiency and Alcohol Intake in the United States: Opportunity for Precision Cancer Prevention",
+      pmid: "40063522",
+      doi: "10.1158/1055-9965.EPI-24-1296",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Cancer Epidemiol Biomarkers Prev",
+      year: 2025,
+      abstract: "Aldehyde dehydrogenase 2 (ALDH2) deficiency is prevalent in East Asian populations and leads to the accumulation of toxic acetaldehyde following alcohol consumption. This metabolic impairment is strongly associated with an increased risk of esophageal squamous cell carcinoma and other alcohol-related malignancies due to direct DNA damage and genomic instability.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

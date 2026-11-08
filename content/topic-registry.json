@@ -1,8 +1,54 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-08T18:35:25.449Z",
-  "totalTopics": 231,
+  "lastUpdated": "2026-11-08T20:05:24.544Z",
+  "totalTopics": 233,
   "topics": [
+    {
+      "id": "decoding-the-asian-glow-alcohol-flushing-and-tp53-gene-mutation-risk",
+      "slugs": [
+        "decoding-the-asian-glow-alcohol-flushing-and-tp53-gene-mutation-risk-en"
+      ],
+      "titleVi": "Why alcohol flushing happens and its unexpected link to cellular risk",
+      "titleEn": "Why alcohol flushing happens and its unexpected link to cellular risk",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1158/1055-9965.EPI-24-1296",
+      "date": "2026-11-08T17:00:00Z",
+      "tags": [
+        "oncology",
+        "liver",
+        "metabolism",
+        "longevity",
+        "nutrition"
+      ],
+      "keywords": [
+        "alcohol",
+        "flushing",
+        "happens",
+        "its",
+        "unexpected",
+        "link",
+        "cellular",
+        "risk",
+        "oncology",
+        "liver",
+        "metabolism",
+        "longevity",
+        "nutrition",
+        "familiar",
+        "flush",
+        "sip",
+        "not",
+        "just",
+        "quirky",
+        "trait",
+        "but",
+        "internal",
+        "alarm",
+        "your",
+        "detoxification"
+      ]
+    },
     {
       "id": "dinh-duong-chuan-y-khoa-cho-benh-nhan-ung-thu-va-cach-bao-ton-khoi-co-nac",
       "slugs": [
@@ -47,6 +93,52 @@
         "mien",
         "dich",
         "lao"
+      ]
+    },
+    {
+      "id": "giai-ma-gla-nhuong-bo-chung-do-mat-khi-uong-ruou-va-nguy-co-dot-bien-gen",
+      "slugs": [
+        "giai-ma-gla-nhuong-bo-chung-do-mat-khi-uong-ruou-va-nguy-co-dot-bien-gen-vi"
+      ],
+      "titleVi": "Vì sao uống rượu bị đỏ mặt và mối liên hệ bất ngờ với nguy cơ tế bào",
+      "titleEn": "Vì sao uống rượu bị đỏ mặt và mối liên hệ bất ngờ với nguy cơ tế bào",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1158/1055-9965.EPI-24-1296",
+      "date": "2026-11-08T17:00:00Z",
+      "tags": [
+        "ung-thu",
+        "gan",
+        "chuyen-hoa",
+        "lao-hoa",
+        "dinh-duong"
+      ],
+      "keywords": [
+        "uong",
+        "ruou",
+        "mat",
+        "moi",
+        "lien",
+        "bat",
+        "ngo",
+        "nguy",
+        "bao",
+        "ung",
+        "thu",
+        "gan",
+        "chuyen",
+        "hoa",
+        "lao",
+        "dinh",
+        "duong",
+        "hien",
+        "tuong",
+        "bung",
+        "sau",
+        "ngum",
+        "dau",
+        "tien",
+        "khong"
       ]
     },
     {
