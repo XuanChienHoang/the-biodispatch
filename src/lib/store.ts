@@ -5393,6 +5393,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Aldehyde dehydrogenase 2 (ALDH2) deficiency is prevalent in East Asian populations and leads to the accumulation of toxic acetaldehyde following alcohol consumption. This metabolic impairment is strongly associated with an increased risk of esophageal squamous cell carcinoma and other alcohol-related malignancies due to direct DNA damage and genomic instability.",
     },
   ],
+  "su-that-ve-dau-nay-va-isoflavone-genistein-vi": [
+    {
+      ordinal: 1,
+      label: "Soy Intake During Childhood and/or Adolescence and Adult Breast Cancer: An Examination of the Early Soy Intake Hypothesis",
+      pmid: "42280462",
+      doi: "10.3390/nu18111820",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Nutrients",
+      year: 2026,
+      abstract: "Background: Epidemiologic studies of soy intake and breast cancer risk have yielded inconsistent results, possibly because of differences in the assessment of soy intake and life stage at exposure. Objective: We conducted a meta-analysis to evaluate the association between soy isoflavone intake and breast cancer risk across different populations and menopausal statuses. Results: Intake of soy isoflavones was associated with a statistically significant reduction in breast cancer risk in both premenopausal and postmenopausal women.",
+    },
+  ],
+  "truth-about-soy-and-genistein-en": [
+    {
+      ordinal: 1,
+      label: "Soy Intake During Childhood and/or Adolescence and Adult Breast Cancer: An Examination of the Early Soy Intake Hypothesis",
+      pmid: "42280462",
+      doi: "10.3390/nu18111820",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Nutrients",
+      year: 2026,
+      abstract: "Background: Epidemiologic studies of soy intake and breast cancer risk have yielded inconsistent results, possibly because of differences in the assessment of soy intake and life stage at exposure. Objective: We conducted a meta-analysis to evaluate the association between soy isoflavone intake and breast cancer risk across different populations and menopausal statuses. Results: Intake of soy isoflavones was associated with a statistically significant reduction in breast cancer risk in both premenopausal and postmenopausal women.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

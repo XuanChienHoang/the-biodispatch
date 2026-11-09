@@ -1,8 +1,100 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-08T20:05:24.544Z",
-  "totalTopics": 233,
+  "lastUpdated": "2026-11-09T14:01:45.535Z",
+  "totalTopics": 235,
   "topics": [
+    {
+      "id": "su-that-ve-dau-nay-va-isoflavone-genistein",
+      "slugs": [
+        "su-that-ve-dau-nay-va-isoflavone-genistein-vi"
+      ],
+      "titleVi": "Sự thật về đậu nành và isoflavone genistein: Phá tan nỗi sợ vô căn cứ và bảo vệ sức khỏe từ củ khoai, hạt đỗ",
+      "titleEn": "Sự thật về đậu nành và isoflavone genistein: Phá tan nỗi sợ vô căn cứ và bảo vệ sức khỏe từ củ khoai, hạt đỗ",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.3390/nu18111820",
+      "date": "2026-11-09T13:00:00Z",
+      "tags": [
+        "ung-thu",
+        "noi-tiet",
+        "tim-mach",
+        "lao-hoa",
+        "duong-chuyen-hoa"
+      ],
+      "keywords": [
+        "dau",
+        "nanh",
+        "isoflavone",
+        "genistein",
+        "pha",
+        "tan",
+        "noi",
+        "can",
+        "bao",
+        "suc",
+        "khoe",
+        "khoai",
+        "hat",
+        "ung",
+        "thu",
+        "tiet",
+        "tim",
+        "mach",
+        "lao",
+        "hoa",
+        "duong",
+        "chuyen",
+        "nhieu",
+        "nguoi",
+        "lam"
+      ]
+    },
+    {
+      "id": "truth-about-soy-and-genistein",
+      "slugs": [
+        "truth-about-soy-and-genistein-en"
+      ],
+      "titleVi": "The truth about soy and genistein isoflavones: Debunking unfounded fears and protecting health naturally",
+      "titleEn": "The truth about soy and genistein isoflavones: Debunking unfounded fears and protecting health naturally",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.3390/nu18111820",
+      "date": "2026-11-09T13:00:00Z",
+      "tags": [
+        "cancer",
+        "hormones",
+        "heart",
+        "longevity",
+        "metabolism"
+      ],
+      "keywords": [
+        "truth",
+        "about",
+        "soy",
+        "genistein",
+        "isoflavones",
+        "debunking",
+        "unfounded",
+        "fears",
+        "protecting",
+        "health",
+        "naturally",
+        "cancer",
+        "hormones",
+        "heart",
+        "longevity",
+        "metabolism",
+        "many",
+        "people",
+        "mistakenly",
+        "believe",
+        "consuming",
+        "milk",
+        "causes",
+        "hormonal",
+        "imbalance"
+      ]
+    },
     {
       "id": "decoding-the-asian-glow-alcohol-flushing-and-tp53-gene-mutation-risk",
       "slugs": [
