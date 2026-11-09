@@ -1,8 +1,100 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-09T14:01:45.535Z",
-  "totalTopics": 235,
+  "lastUpdated": "2026-11-09T17:53:56.148Z",
+  "totalTopics": 237,
   "topics": [
+    {
+      "id": "biological-damage-of-eating-late-at-night",
+      "slugs": [
+        "biological-damage-of-eating-late-at-night-en"
+      ],
+      "titleVi": "Biological damage of eating late dinner after 8 PM: When fat cells lock receptors and excess calories turn straight into visceral fat",
+      "titleEn": "Biological damage of eating late dinner after 8 PM: When fat cells lock receptors and excess calories turn straight into visceral fat",
+      "organ": "Metabolic",
+      "tier": "Clinical Deep-Dive",
+      "doi": "10.3945/ajcn.116.134528",
+      "date": "2026-11-09T17:00:00Z",
+      "tags": [
+        "blood-sugar",
+        "aging",
+        "metabolism",
+        "gut-health",
+        "energy"
+      ],
+      "keywords": [
+        "biological",
+        "damage",
+        "eating",
+        "late",
+        "dinner",
+        "when",
+        "fat",
+        "cells",
+        "lock",
+        "receptors",
+        "excess",
+        "calories",
+        "turn",
+        "straight",
+        "visceral",
+        "blood",
+        "sugar",
+        "aging",
+        "metabolism",
+        "gut",
+        "health",
+        "energy",
+        "many",
+        "have",
+        "habit"
+      ]
+    },
+    {
+      "id": "tac-hai-sinh-hoc-cua-viec-an-toi-muon-sau-8-gio",
+      "slugs": [
+        "tac-hai-sinh-hoc-cua-viec-an-toi-muon-sau-8-gio-vi"
+      ],
+      "titleVi": "Tác hại sinh học của việc ăn tối muộn sau 8 giờ: Khi tế bào mỡ khóa thụ thể và lượng calo dư thừa chuyển thẳng thành mỡ nội tạng",
+      "titleEn": "Tác hại sinh học của việc ăn tối muộn sau 8 giờ: Khi tế bào mỡ khóa thụ thể và lượng calo dư thừa chuyển thẳng thành mỡ nội tạng",
+      "organ": "Metabolic",
+      "tier": "Clinical Deep-Dive",
+      "doi": "10.3945/ajcn.116.134528",
+      "date": "2026-11-09T17:00:00Z",
+      "tags": [
+        "duong-huyet",
+        "lao-hoa",
+        "noi-tiet",
+        "ruot",
+        "nang-luong"
+      ],
+      "keywords": [
+        "tac",
+        "hai",
+        "sinh",
+        "hoc",
+        "viec",
+        "toi",
+        "muon",
+        "sau",
+        "gio",
+        "bao",
+        "khoa",
+        "thu",
+        "luong",
+        "calo",
+        "thua",
+        "chuyen",
+        "thang",
+        "thanh",
+        "noi",
+        "tang",
+        "duong",
+        "huyet",
+        "lao",
+        "hoa",
+        "tiet"
+      ]
+    },
     {
       "id": "su-that-ve-dau-nay-va-isoflavone-genistein",
       "slugs": [

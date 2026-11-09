@@ -5419,6 +5419,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Background: Epidemiologic studies of soy intake and breast cancer risk have yielded inconsistent results, possibly because of differences in the assessment of soy intake and life stage at exposure. Objective: We conducted a meta-analysis to evaluate the association between soy isoflavone intake and breast cancer risk across different populations and menopausal statuses. Results: Intake of soy isoflavones was associated with a statistically significant reduction in breast cancer risk in both premenopausal and postmenopausal women.",
     },
   ],
+  "tac-hai-sinh-hoc-cua-viec-an-toi-muon-sau-8-gio-vi": [
+    {
+      ordinal: 1,
+      label: "Lunch eating predicts weight-loss effectiveness in carriers of the common allele at PERILIPIN1: the ONTIME (Obesity, Nutrigenetics, Timing, Mediterranean) study",
+      pmid: "27629052",
+      doi: "10.3945/ajcn.116.134528",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Am J Clin Nutr",
+      year: 2016,
+      abstract: "Late eaters experience significantly less weight loss and lower resting energy expenditure compared to early eaters during weight loss treatment, demonstrating that meal timing has a causal impact on metabolic outcomes independent of total caloric intake.",
+    },
+  ],
+  "biological-damage-of-eating-late-at-night-en": [
+    {
+      ordinal: 1,
+      label: "Lunch eating predicts weight-loss effectiveness in carriers of the common allele at PERILIPIN1: the ONTIME (Obesity, Nutrigenetics, Timing, Mediterranean) study",
+      pmid: "27629052",
+      doi: "10.3945/ajcn.116.134528",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Am J Clin Nutr",
+      year: 2016,
+      abstract: "Late eaters experience significantly less weight loss and lower resting energy expenditure compared to early eaters during weight loss treatment, demonstrating that meal timing has a causal impact on metabolic outcomes independent of total caloric intake.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
