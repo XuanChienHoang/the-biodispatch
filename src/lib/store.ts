@@ -5445,6 +5445,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Late eaters experience significantly less weight loss and lower resting energy expenditure compared to early eaters during weight loss treatment, demonstrating that meal timing has a causal impact on metabolic outcomes independent of total caloric intake.",
     },
   ],
+  "tuyen-giap-va-bo-doi-vi-chat-selen-iod-vi-sao-so-lanh-u-e-oai-vi": [
+    {
+      ordinal: 1,
+      label: "Iodine excess in relation to decreased free thyroxine levels during pregnancy in an iodine-sufficient region, and potential interactions with iron and selenium",
+      pmid: "42580175",
+      doi: "10.1016/j.jtemb.2026.127940",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "J Trace Elem Med Biol",
+      year: 2026,
+      abstract: "Selenium is an essential trace element that plays a critical role in thyroid hormone metabolism. Adequate selenium status is required for the optimal activity of iodothyronine deiodinases, enzymes necessary for the conversion of T4 to active T3. Without balanced selenium and iodine interactions, thyroid function efficiency declines, manifesting as metabolic slowdown and fatigue.",
+    },
+  ],
+  "thyroid-and-selenium-iodine-pair-why-cold-fatigue-en": [
+    {
+      ordinal: 1,
+      label: "Iodine excess in relation to decreased free thyroxine levels during pregnancy in an iodine-sufficient region, and potential interactions with iron and selenium",
+      pmid: "42580175",
+      doi: "10.1016/j.jtemb.2026.127940",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "J Trace Elem Med Biol",
+      year: 2026,
+      abstract: "Selenium is an essential trace element that plays a critical role in thyroid hormone metabolism. Adequate selenium status is required for the optimal activity of iodothyronine deiodinases, enzymes necessary for the conversion of T4 to active T3. Without balanced selenium and iodine interactions, thyroid function efficiency declines, manifesting as metabolic slowdown and fatigue.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

@@ -1,8 +1,100 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-09T17:53:56.148Z",
-  "totalTopics": 237,
+  "lastUpdated": "2026-11-10T00:43:04.082Z",
+  "totalTopics": 239,
   "topics": [
+    {
+      "id": "thyroid-and-selenium-iodine-pair-why-cold-fatigue",
+      "slugs": [
+        "thyroid-and-selenium-iodine-pair-why-cold-fatigue-en"
+      ],
+      "titleVi": "Thyroid and the Selenium-Iodine Duo: Why Fatigue and Cold Intolerance Persist Despite Sleep and Water",
+      "titleEn": "Thyroid and the Selenium-Iodine Duo: Why Fatigue and Cold Intolerance Persist Despite Sleep and Water",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1016/j.jtemb.2026.127940",
+      "date": "2026-11-10T05:00:00Z",
+      "tags": [
+        "thyroid",
+        "metabolism",
+        "energy",
+        "hormones",
+        "longevity"
+      ],
+      "keywords": [
+        "thyroid",
+        "selenium",
+        "iodine",
+        "duo",
+        "fatigue",
+        "cold",
+        "intolerance",
+        "persist",
+        "despite",
+        "sleep",
+        "water",
+        "metabolism",
+        "energy",
+        "hormones",
+        "longevity",
+        "many",
+        "people",
+        "mistakenly",
+        "attribute",
+        "hands",
+        "afternoon",
+        "poor",
+        "sluggish",
+        "circulation",
+        "deep"
+      ]
+    },
+    {
+      "id": "tuyen-giap-va-bo-doi-vi-chat-selen-iod-vi-sao-so-lanh-u-e-oai",
+      "slugs": [
+        "tuyen-giap-va-bo-doi-vi-chat-selen-iod-vi-sao-so-lanh-u-e-oai-vi"
+      ],
+      "titleVi": "Tuyến giáp và bộ đôi vi chất Selen cùng I-ốt: Vì sao uống đủ nước, ngủ đủ giấc vẫn thấy uể oải sợ lạnh?",
+      "titleEn": "Tuyến giáp và bộ đôi vi chất Selen cùng I-ốt: Vì sao uống đủ nước, ngủ đủ giấc vẫn thấy uể oải sợ lạnh?",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1016/j.jtemb.2026.127940",
+      "date": "2026-11-10T05:00:00Z",
+      "tags": [
+        "tuyen-giap",
+        "chuyen-hoa",
+        "nang-luong",
+        "noi-tiet",
+        "lao-hoa"
+      ],
+      "keywords": [
+        "tuyen",
+        "giap",
+        "doi",
+        "chat",
+        "selen",
+        "cung",
+        "uong",
+        "nuoc",
+        "ngu",
+        "giac",
+        "van",
+        "thay",
+        "oai",
+        "lanh",
+        "chuyen",
+        "hoa",
+        "nang",
+        "luong",
+        "noi",
+        "tiet",
+        "lao",
+        "nhieu",
+        "nguoi",
+        "thuong",
+        "lam"
+      ]
+    },
     {
       "id": "biological-damage-of-eating-late-at-night",
       "slugs": [
