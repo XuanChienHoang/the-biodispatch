@@ -5471,6 +5471,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Selenium is an essential trace element that plays a critical role in thyroid hormone metabolism. Adequate selenium status is required for the optimal activity of iodothyronine deiodinases, enzymes necessary for the conversion of T4 to active T3. Without balanced selenium and iodine interactions, thyroid function efficiency declines, manifesting as metabolic slowdown and fatigue.",
     },
   ],
+  "vi-sao-luon-met-moi-hoi-chung-ro-ri-ruot-endotoxin-vi": [
+    {
+      ordinal: 1,
+      label: "Zonulin and its regulation of intestinal barrier function: the biological door to inflammation, autoimmunity, and cancer",
+      pmid: "21248165",
+      doi: "10.1152/physrev.00003.2008",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Physiol Rev",
+      year: 2011,
+      abstract: "Intestinal epithelial cells interplay with the environment and the immune system via tight junctions. Zonulin is a primary physiological modulator of intercellular tight junctions. Dysregulation of the zonulin pathway increases intestinal permeability, allowing luminal antigens and lipopolysaccharide (LPS) endotoxins to cross the epithelial barrier into the circulation, initiating systemic immune activation and chronic fatigue symptoms.",
+    },
+  ],
+  "leaky-gut-syndrome-chronic-fatigue-endotoxin-en": [
+    {
+      ordinal: 1,
+      label: "Zonulin and its regulation of intestinal barrier function: the biological door to inflammation, autoimmunity, and cancer",
+      pmid: "21248165",
+      doi: "10.1152/physrev.00003.2008",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Physiol Rev",
+      year: 2011,
+      abstract: "Intestinal epithelial cells interplay with the environment and the immune system via tight junctions. Zonulin is a primary physiological modulator of intercellular tight junctions. Dysregulation of the zonulin pathway increases intestinal permeability, allowing luminal antigens and lipopolysaccharide (LPS) endotoxins to cross the epithelial barrier into the circulation, initiating systemic immune activation and chronic fatigue symptoms.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

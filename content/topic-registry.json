@@ -1,8 +1,55 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-10T00:43:04.082Z",
-  "totalTopics": 239,
+  "lastUpdated": "2026-11-10T02:34:23.961Z",
+  "totalTopics": 241,
   "topics": [
+    {
+      "id": "leaky-gut-syndrome-chronic-fatigue-endotoxin",
+      "slugs": [
+        "leaky-gut-syndrome-chronic-fatigue-endotoxin-en"
+      ],
+      "titleVi": "Why You Feel Exhausted Despite 8 Hours of Sleep: Unveiling Leaky Gut Syndrome and Endotoxins",
+      "titleEn": "Why You Feel Exhausted Despite 8 Hours of Sleep: Unveiling Leaky Gut Syndrome and Endotoxins",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1152/physrev.00003.2008",
+      "date": "2026-11-10T05:00:00Z",
+      "tags": [
+        "gut",
+        "leaky-gut",
+        "chronic-fatigue",
+        "endotoxin",
+        "gut-microbiome",
+        "inflammation"
+      ],
+      "keywords": [
+        "you",
+        "feel",
+        "exhausted",
+        "despite",
+        "hours",
+        "sleep",
+        "unveiling",
+        "leaky",
+        "gut",
+        "syndrome",
+        "endotoxins",
+        "chronic",
+        "fatigue",
+        "endotoxin",
+        "microbiome",
+        "inflammation",
+        "many",
+        "individuals",
+        "daily",
+        "without",
+        "underlying",
+        "major",
+        "diseases",
+        "yet",
+        "wake"
+      ]
+    },
     {
       "id": "thyroid-and-selenium-iodine-pair-why-cold-fatigue",
       "slugs": [
@@ -93,6 +140,53 @@
         "nguoi",
         "thuong",
         "lam"
+      ]
+    },
+    {
+      "id": "vi-sao-luon-met-moi-hoi-chung-ro-ri-ruot-endotoxin",
+      "slugs": [
+        "vi-sao-luon-met-moi-hoi-chung-ro-ri-ruot-endotoxin-vi"
+      ],
+      "titleVi": "Vì sao bạn luôn cảm thấy mệt mỏi dù ngủ đủ 8 tiếng: Giải mã hội chứng rò rỉ ruột và độc tố endotoxin",
+      "titleEn": "Vì sao bạn luôn cảm thấy mệt mỏi dù ngủ đủ 8 tiếng: Giải mã hội chứng rò rỉ ruột và độc tố endotoxin",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1152/physrev.00003.2008",
+      "date": "2026-11-10T05:00:00Z",
+      "tags": [
+        "ruot",
+        "hoi-chung-ro-ri-ruot",
+        "met-moi-man-tinh",
+        "duong-ruot",
+        "doc-to-endotoxin",
+        "lao-hoa"
+      ],
+      "keywords": [
+        "ban",
+        "luon",
+        "cam",
+        "thay",
+        "met",
+        "moi",
+        "ngu",
+        "tieng",
+        "hoi",
+        "chung",
+        "ruot",
+        "doc",
+        "endotoxin",
+        "man",
+        "tinh",
+        "duong",
+        "lao",
+        "hoa",
+        "nhieu",
+        "nguoi",
+        "giac",
+        "khong",
+        "mac",
+        "benh",
+        "nguy"
       ]
     },
     {
