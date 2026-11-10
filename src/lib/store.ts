@@ -5497,6 +5497,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Intestinal epithelial cells interplay with the environment and the immune system via tight junctions. Zonulin is a primary physiological modulator of intercellular tight junctions. Dysregulation of the zonulin pathway increases intestinal permeability, allowing luminal antigens and lipopolysaccharide (LPS) endotoxins to cross the epithelial barrier into the circulation, initiating systemic immune activation and chronic fatigue symptoms.",
     },
   ],
+  "van-dong-va-te-bao-nk-phong-ngua-ung-thu-vi": [
+    {
+      ordinal: 1,
+      label: "Sustaining efficient immune functions with regular physical exercise in the COVID-19 era and beyond",
+      pmid: "33393082",
+      doi: "10.1111/eci.13485",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Eur J Clin Invest",
+      year: 2021,
+      abstract: "Physical activity provokes profound systemic changes in the immune system, characterized by a mobilization and redistribution of immune cells, particularly natural killer cells and cytotoxic T cells, driven largely by muscle-derived cytokines known as myokines such as interleukin-6.",
+    },
+  ],
+  "exercise-and-nk-cells-cancer-prevention-en": [
+    {
+      ordinal: 1,
+      label: "Sustaining efficient immune functions with regular physical exercise in the COVID-19 era and beyond",
+      pmid: "33393082",
+      doi: "10.1111/eci.13485",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Eur J Clin Invest",
+      year: 2021,
+      abstract: "Physical activity provokes profound systemic changes in the immune system, characterized by a mobilization and redistribution of immune cells, particularly natural killer cells and cytotoxic T cells, driven largely by muscle-derived cytokines known as myokines such as interleukin-6.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

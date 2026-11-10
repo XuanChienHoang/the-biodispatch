@@ -1,8 +1,100 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-10T02:34:23.961Z",
-  "totalTopics": 241,
+  "lastUpdated": "2026-11-10T22:31:14.519Z",
+  "totalTopics": 243,
   "topics": [
+    {
+      "id": "exercise-and-nk-cells-cancer-prevention",
+      "slugs": [
+        "exercise-and-nk-cells-cancer-prevention-en"
+      ],
+      "titleVi": "How muscle contraction activates NK patrol cells to eliminate early cancer cells",
+      "titleEn": "How muscle contraction activates NK patrol cells to eliminate early cancer cells",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1111/eci.13485",
+      "date": "2026-11-10T17:00:00Z",
+      "tags": [
+        "aging",
+        "energy",
+        "endocrinology",
+        "joints",
+        "cancer-prevention"
+      ],
+      "keywords": [
+        "muscle",
+        "contraction",
+        "activates",
+        "patrol",
+        "cells",
+        "eliminate",
+        "early",
+        "cancer",
+        "aging",
+        "energy",
+        "endocrinology",
+        "joints",
+        "prevention",
+        "every",
+        "time",
+        "step",
+        "away",
+        "couch",
+        "walk",
+        "lift",
+        "light",
+        "weights",
+        "our",
+        "body",
+        "does"
+      ]
+    },
+    {
+      "id": "van-dong-va-te-bao-nk-phong-ngua-ung-thu",
+      "slugs": [
+        "van-dong-va-te-bao-nk-phong-ngua-ung-thu-vi"
+      ],
+      "titleVi": "Vận động cơ bắp kích hoạt đội tuần tra NK tiêu diệt mầm mống ung thư ra sao",
+      "titleEn": "Vận động cơ bắp kích hoạt đội tuần tra NK tiêu diệt mầm mống ung thư ra sao",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1111/eci.13485",
+      "date": "2026-11-10T17:00:00Z",
+      "tags": [
+        "lao-hoa",
+        "nang-luong",
+        "noi-tiet",
+        "khop",
+        "phong-ngua-ung-thu"
+      ],
+      "keywords": [
+        "van",
+        "dong",
+        "bap",
+        "kich",
+        "hoat",
+        "doi",
+        "tuan",
+        "tra",
+        "tieu",
+        "diet",
+        "mam",
+        "mong",
+        "ung",
+        "thu",
+        "lao",
+        "hoa",
+        "nang",
+        "luong",
+        "noi",
+        "tiet",
+        "khop",
+        "phong",
+        "ngua",
+        "moi",
+        "chung"
+      ]
+    },
     {
       "id": "leaky-gut-syndrome-chronic-fatigue-endotoxin",
       "slugs": [
