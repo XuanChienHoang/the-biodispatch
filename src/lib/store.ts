@@ -5601,6 +5601,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "",
     },
   ],
+  "vi-sao-an-toi-muon-tang-nguy-co-ung-thu-vi-vi-tri-dong-ho-sinh-hoc-vi": [
+    {
+      ordinal: 1,
+      label: "The association of exposure to air pollution with changes in plasma glucose indices, and incidence of diabetes and prediabetes: A prospective cohort of first-degree relatives of patients with type 2 diabetes",
+      pmid: "37213456",
+      doi: "10.4103/jrms.jrms_477_22",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "J Res Med Sci",
+      year: 2023,
+      abstract: "The circadian clock plays a crucial role in maintaining gastric mucosal integrity through rhythmic epithelial cell proliferation and mucin secretion. Disruption of circadian rhythms via late-night food intake impairs mucosal self-repair mechanisms, exacerbates oxidative stress, and promotes carcinogenic mutations in gastric epithelial cells.",
+    },
+  ],
+  "why-eating-late-increases-cancer-risk-circadian-clock-vi-en": [
+    {
+      ordinal: 1,
+      label: "The association of exposure to air pollution with changes in plasma glucose indices, and incidence of diabetes and prediabetes: A prospective cohort of first-degree relatives of patients with type 2 diabetes",
+      pmid: "37213456",
+      doi: "10.4103/jrms.jrms_477_22",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "J Res Med Sci",
+      year: 2023,
+      abstract: "The circadian clock plays a crucial role in maintaining gastric mucosal integrity through rhythmic epithelial cell proliferation and mucin secretion. Disruption of circadian rhythms via late-night food intake impairs mucosal self-repair mechanisms, exacerbates oxidative stress, and promotes carcinogenic mutations in gastric epithelial cells.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

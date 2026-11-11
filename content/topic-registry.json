@@ -1,7 +1,7 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-11T16:13:33.662Z",
-  "totalTopics": 249,
+  "lastUpdated": "2026-11-11T22:28:46.094Z",
+  "totalTopics": 251,
   "topics": [
     {
       "id": "dau-hat-bi-do-va-rung-toc-noi-tiet",
@@ -93,6 +93,98 @@
         "but",
         "underlying",
         "culprit"
+      ]
+    },
+    {
+      "id": "vi-sao-an-toi-muon-tang-nguy-co-ung-thu-vi-vi-tri-dong-ho-sinh-hoc",
+      "slugs": [
+        "vi-sao-an-toi-muon-tang-nguy-co-ung-thu-vi-vi-tri-dong-ho-sinh-hoc-vi"
+      ],
+      "titleVi": "Vì sao ăn tối muộn làm tăng nguy cơ ung thư dạ dày và cách bảo vệ hệ tiêu hóa ban đêm",
+      "titleEn": "Vì sao ăn tối muộn làm tăng nguy cơ ung thư dạ dày và cách bảo vệ hệ tiêu hóa ban đêm",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.4103/jrms.jrms_477_22",
+      "date": "2026-11-11T17:00:00Z",
+      "tags": [
+        "tieu-hoa",
+        "ung-thu",
+        "lao-hoa",
+        "dong-ho-sinh-hoc",
+        "dinh-duong"
+      ],
+      "keywords": [
+        "toi",
+        "muon",
+        "lam",
+        "tang",
+        "nguy",
+        "ung",
+        "thu",
+        "day",
+        "cach",
+        "bao",
+        "tieu",
+        "hoa",
+        "ban",
+        "dem",
+        "lao",
+        "dong",
+        "sinh",
+        "hoc",
+        "dinh",
+        "duong",
+        "nhieu",
+        "nguoi",
+        "thoi",
+        "quen",
+        "khuya"
+      ]
+    },
+    {
+      "id": "why-eating-late-increases-cancer-risk-circadian-clock-vi",
+      "slugs": [
+        "why-eating-late-increases-cancer-risk-circadian-clock-vi-en"
+      ],
+      "titleVi": "Why eating late increases gastric cancer risk and how to protect your digestive system at night",
+      "titleEn": "Why eating late increases gastric cancer risk and how to protect your digestive system at night",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.4103/jrms.jrms_477_22",
+      "date": "2026-11-11T17:00:00Z",
+      "tags": [
+        "digestion",
+        "cancer-prevention",
+        "longevity",
+        "circadian-rhythm",
+        "nutrition"
+      ],
+      "keywords": [
+        "eating",
+        "late",
+        "increases",
+        "gastric",
+        "cancer",
+        "risk",
+        "protect",
+        "your",
+        "digestive",
+        "system",
+        "night",
+        "digestion",
+        "prevention",
+        "longevity",
+        "circadian",
+        "rhythm",
+        "nutrition",
+        "many",
+        "busy",
+        "people",
+        "have",
+        "habit",
+        "snacking",
+        "without",
+        "realizing"
       ]
     },
     {
