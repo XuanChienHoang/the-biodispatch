@@ -1,8 +1,100 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-11T00:20:00.284Z",
-  "totalTopics": 245,
+  "lastUpdated": "2026-11-11T12:45:54.273Z",
+  "totalTopics": 247,
   "topics": [
+    {
+      "id": "phytoestrogen-dau-nanh-va-hat-lanh-giai-ma-su-that-va-loi-ich-tien-man-kinh",
+      "slugs": [
+        "phytoestrogen-dau-nanh-va-hat-lanh-giai-ma-su-that-va-loi-ich-tien-man-kinh-vi"
+      ],
+      "titleVi": "Phytoestrogen trong đậu nành và hạt lanh: Giải mã sự thật và lợi ích tiền mãn kinh",
+      "titleEn": "Phytoestrogen trong đậu nành và hạt lanh: Giải mã sự thật và lợi ích tiền mãn kinh",
+      "organ": "Metabolic",
+      "tier": "Clinical Deep-Dive",
+      "doi": "10.1016/j.toxrep.2018.10.012",
+      "date": "2026-11-11T13:00:00Z",
+      "tags": [
+        "noi-tiet",
+        "lao-hoa",
+        "chuyen-hoa",
+        "tim-mach",
+        "nang-luong"
+      ],
+      "keywords": [
+        "phytoestrogen",
+        "dau",
+        "nanh",
+        "hat",
+        "lanh",
+        "loi",
+        "ich",
+        "tien",
+        "man",
+        "kinh",
+        "noi",
+        "tiet",
+        "lao",
+        "hoa",
+        "chuyen",
+        "tim",
+        "mach",
+        "nang",
+        "luong",
+        "doan",
+        "thuong",
+        "mang",
+        "lai",
+        "con",
+        "boc"
+      ]
+    },
+    {
+      "id": "phytoestrogen-soy-and-flaxseed-truth-and-menopause-benefits",
+      "slugs": [
+        "phytoestrogen-soy-and-flaxseed-truth-and-menopause-benefits-en"
+      ],
+      "titleVi": "Phytoestrogens in soy and flaxseed: Deodorizing myths and menopause benefits",
+      "titleEn": "Phytoestrogens in soy and flaxseed: Deodorizing myths and menopause benefits",
+      "organ": "Metabolic",
+      "tier": "Clinical Deep-Dive",
+      "doi": "10.1016/j.toxrep.2018.10.012",
+      "date": "2026-11-11T13:00:00Z",
+      "tags": [
+        "hormones",
+        "aging",
+        "metabolic",
+        "heart",
+        "energy"
+      ],
+      "keywords": [
+        "phytoestrogens",
+        "soy",
+        "flaxseed",
+        "deodorizing",
+        "myths",
+        "menopause",
+        "benefits",
+        "hormones",
+        "aging",
+        "metabolic",
+        "heart",
+        "energy",
+        "transition",
+        "brings",
+        "hot",
+        "flashes",
+        "fatigue",
+        "anxiety",
+        "trouble",
+        "many",
+        "women",
+        "rich",
+        "are",
+        "seen",
+        "golden"
+      ]
+    },
     {
       "id": "tai-sao-uong-ruou-bi-do-mat-va-nguy-co-dot-bien-gen-tp53",
       "slugs": [

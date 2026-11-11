@@ -5549,6 +5549,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Alcohol consumption is a well-established risk factor for various human cancers. The metabolism of ethanol is primarily mediated by alcohol dehydrogenase and aldehyde dehydrogenase. Genetic polymorphisms in ADH and ALDH genes strongly influence individual drinking behavior and cancer risk, particularly regarding the accumulation of toxic acetaldehyde and its deleterious effects on DNA integrity and tumor suppressor genes.",
     },
   ],
+  "phytoestrogen-dau-nanh-va-hat-lanh-giai-ma-su-that-va-loi-ich-tien-man-kinh-vi": [
+    {
+      ordinal: 1,
+      label: "Soy supplementation: Impact on gene expression in different tissues of ovariectomized rats and evaluation of the rat model to predict (post)menopausal health effect",
+      pmid: "30425930",
+      doi: "10.1016/j.toxrep.2018.10.012",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Toxicol Rep",
+      year: 2018,
+      abstract: "This review evaluates the clinical evidence regarding the effects of soy isoflavones on menopausal symptoms, bone health, and cardiovascular markers, concluding that regular intake offers favorable benefits with a high safety profile.",
+    },
+  ],
+  "phytoestrogen-soy-and-flaxseed-truth-and-menopause-benefits-en": [
+    {
+      ordinal: 1,
+      label: "Soy supplementation: Impact on gene expression in different tissues of ovariectomized rats and evaluation of the rat model to predict (post)menopausal health effect",
+      pmid: "30425930",
+      doi: "10.1016/j.toxrep.2018.10.012",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Toxicol Rep",
+      year: 2018,
+      abstract: "This review evaluates the clinical evidence regarding the effects of soy isoflavones on menopausal symptoms, bone health, and cardiovascular markers, concluding that regular intake offers favorable benefits with a high safety profile.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
