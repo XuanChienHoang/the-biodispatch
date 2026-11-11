@@ -5523,6 +5523,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Physical activity provokes profound systemic changes in the immune system, characterized by a mobilization and redistribution of immune cells, particularly natural killer cells and cytotoxic T cells, driven largely by muscle-derived cytokines known as myokines such as interleukin-6.",
     },
   ],
+  "tai-sao-uong-ruou-bi-do-mat-va-nguy-co-dot-bien-gen-tp53-vi": [
+    {
+      ordinal: 1,
+      label: "[Advance in research on the association of ALDH2 gene polymorphisms with cancer susceptibility in drinkers]",
+      pmid: "25636114",
+      doi: "10.3760/cma.j.issn.1003-9406.2015.01.025",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Zhonghua Yi Xue Yi Chuan Xue Za Zhi",
+      year: 2015,
+      abstract: "Alcohol consumption is a well-established risk factor for various human cancers. The metabolism of ethanol is primarily mediated by alcohol dehydrogenase and aldehyde dehydrogenase. Genetic polymorphisms in ADH and ALDH genes strongly influence individual drinking behavior and cancer risk, particularly regarding the accumulation of toxic acetaldehyde and its deleterious effects on DNA integrity and tumor suppressor genes.",
+    },
+  ],
+  "why-alcohol-flushing-happens-and-tp53-mutation-risk-en": [
+    {
+      ordinal: 1,
+      label: "[Advance in research on the association of ALDH2 gene polymorphisms with cancer susceptibility in drinkers]",
+      pmid: "25636114",
+      doi: "10.3760/cma.j.issn.1003-9406.2015.01.025",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Zhonghua Yi Xue Yi Chuan Xue Za Zhi",
+      year: 2015,
+      abstract: "Alcohol consumption is a well-established risk factor for various human cancers. The metabolism of ethanol is primarily mediated by alcohol dehydrogenase and aldehyde dehydrogenase. Genetic polymorphisms in ADH and ALDH genes strongly influence individual drinking behavior and cancer risk, particularly regarding the accumulation of toxic acetaldehyde and its deleterious effects on DNA integrity and tumor suppressor genes.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

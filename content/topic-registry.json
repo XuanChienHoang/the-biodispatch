@@ -1,8 +1,100 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-10T22:31:14.519Z",
-  "totalTopics": 243,
+  "lastUpdated": "2026-11-11T00:20:00.284Z",
+  "totalTopics": 245,
   "topics": [
+    {
+      "id": "tai-sao-uong-ruou-bi-do-mat-va-nguy-co-dot-bien-gen-tp53",
+      "slugs": [
+        "tai-sao-uong-ruou-bi-do-mat-va-nguy-co-dot-bien-gen-tp53-vi"
+      ],
+      "titleVi": "Vì sao uống rượu bị đỏ mặt: Góc khuất enzyme ALDH2 và chiếc khiên bảo vệ ADN",
+      "titleEn": "Vì sao uống rượu bị đỏ mặt: Góc khuất enzyme ALDH2 và chiếc khiên bảo vệ ADN",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.3760/cma.j.issn.1003-9406.2015.01.025",
+      "date": "2026-11-11T05:00:00Z",
+      "tags": [
+        "ung-thu",
+        "gan",
+        "lao-hoa",
+        "chuyen-hoa",
+        "dinh-duong"
+      ],
+      "keywords": [
+        "uong",
+        "ruou",
+        "mat",
+        "goc",
+        "khuat",
+        "enzyme",
+        "aldh2",
+        "chiec",
+        "khien",
+        "bao",
+        "adn",
+        "ung",
+        "thu",
+        "gan",
+        "lao",
+        "hoa",
+        "chuyen",
+        "dinh",
+        "duong",
+        "moi",
+        "lan",
+        "chen",
+        "chu",
+        "anh",
+        "nhieu"
+      ]
+    },
+    {
+      "id": "why-alcohol-flushing-happens-and-tp53-mutation-risk",
+      "slugs": [
+        "why-alcohol-flushing-happens-and-tp53-mutation-risk-en"
+      ],
+      "titleVi": "Why alcohol flushing happens: The hidden face of ALDH2 deficiency and DNA protection",
+      "titleEn": "Why alcohol flushing happens: The hidden face of ALDH2 deficiency and DNA protection",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.3760/cma.j.issn.1003-9406.2015.01.025",
+      "date": "2026-11-11T05:00:00Z",
+      "tags": [
+        "oncology",
+        "liver",
+        "longevity",
+        "metabolism",
+        "nutrition"
+      ],
+      "keywords": [
+        "alcohol",
+        "flushing",
+        "happens",
+        "hidden",
+        "face",
+        "aldh2",
+        "deficiency",
+        "dna",
+        "protection",
+        "oncology",
+        "liver",
+        "longevity",
+        "metabolism",
+        "nutrition",
+        "every",
+        "time",
+        "glasses",
+        "clink",
+        "gathering",
+        "many",
+        "hear",
+        "joke",
+        "facial",
+        "means",
+        "high"
+      ]
+    },
     {
       "id": "exercise-and-nk-cells-cancer-prevention",
       "slugs": [
