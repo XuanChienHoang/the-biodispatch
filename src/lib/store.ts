@@ -5575,6 +5575,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "This review evaluates the clinical evidence regarding the effects of soy isoflavones on menopausal symptoms, bone health, and cardiovascular markers, concluding that regular intake offers favorable benefits with a high safety profile.",
     },
   ],
+  "dau-hat-bi-do-va-rung-toc-noi-tiet-vi": [
+    {
+      ordinal: 1,
+      label: "Addressing the Root Causes of Female Hair Loss and Non-Pharmaceutical Interventions",
+      pmid: "40627570",
+      doi: "10.36849/JDD.8763",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "J Drugs Dermatol",
+      year: 2025,
+      abstract: "",
+    },
+  ],
+  "pumpkin-seed-oil-and-hormonal-hair-loss-en": [
+    {
+      ordinal: 1,
+      label: "Addressing the Root Causes of Female Hair Loss and Non-Pharmaceutical Interventions",
+      pmid: "40627570",
+      doi: "10.36849/JDD.8763",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "J Drugs Dermatol",
+      year: 2025,
+      abstract: "",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

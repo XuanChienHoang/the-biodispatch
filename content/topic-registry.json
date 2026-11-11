@@ -1,8 +1,100 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-11T12:45:54.273Z",
-  "totalTopics": 247,
+  "lastUpdated": "2026-11-11T16:13:33.662Z",
+  "totalTopics": 249,
   "topics": [
+    {
+      "id": "dau-hat-bi-do-va-rung-toc-noi-tiet",
+      "slugs": [
+        "dau-hat-bi-do-va-rung-toc-noi-tiet-vi"
+      ],
+      "titleVi": "Dầu hạt bí đỏ và hiện tượng rụng tóc nội tiết: Giải mã cơ chế bảo vệ nang tóc từ vi chất Phytosterol",
+      "titleEn": "Dầu hạt bí đỏ và hiện tượng rụng tóc nội tiết: Giải mã cơ chế bảo vệ nang tóc từ vi chất Phytosterol",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.36849/JDD.8763",
+      "date": "2026-11-11T17:00:00Z",
+      "tags": [
+        "rung-toc",
+        "noi-tiet",
+        "chuyen-hoa",
+        "dinh-duong",
+        "suckhoe-nam-nu"
+      ],
+      "keywords": [
+        "dau",
+        "hat",
+        "hien",
+        "tuong",
+        "rung",
+        "toc",
+        "noi",
+        "tiet",
+        "bao",
+        "nang",
+        "chat",
+        "phytosterol",
+        "chuyen",
+        "hoa",
+        "dinh",
+        "duong",
+        "suckhoe",
+        "nam",
+        "nhieu",
+        "nguoi",
+        "thuong",
+        "loi",
+        "goi",
+        "hay",
+        "thoi"
+      ]
+    },
+    {
+      "id": "pumpkin-seed-oil-and-hormonal-hair-loss",
+      "slugs": [
+        "pumpkin-seed-oil-and-hormonal-hair-loss-en"
+      ],
+      "titleVi": "Pumpkin Seed Oil and Hormonal Hair Loss: Decrypting How Phytosterols Protect Scalp Hair Follicles",
+      "titleEn": "Pumpkin Seed Oil and Hormonal Hair Loss: Decrypting How Phytosterols Protect Scalp Hair Follicles",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.36849/JDD.8763",
+      "date": "2026-11-11T17:00:00Z",
+      "tags": [
+        "hair-loss",
+        "hormones",
+        "metabolism",
+        "nutrition",
+        "vitality"
+      ],
+      "keywords": [
+        "pumpkin",
+        "seed",
+        "oil",
+        "hormonal",
+        "hair",
+        "loss",
+        "decrypting",
+        "phytosterols",
+        "protect",
+        "scalp",
+        "follicles",
+        "hormones",
+        "metabolism",
+        "nutrition",
+        "vitality",
+        "many",
+        "people",
+        "blame",
+        "shampoo",
+        "seasonal",
+        "changes",
+        "thinning",
+        "but",
+        "underlying",
+        "culprit"
+      ]
+    },
     {
       "id": "phytoestrogen-dau-nanh-va-hat-lanh-giai-ma-su-that-va-loi-ich-tien-man-kinh",
       "slugs": [
