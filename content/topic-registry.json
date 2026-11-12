@@ -1,8 +1,100 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-11T22:28:46.094Z",
-  "totalTopics": 251,
+  "lastUpdated": "2026-11-12T16:30:44.503Z",
+  "totalTopics": 253,
   "topics": [
+    {
+      "id": "charcoal-grilled-meat-carcinogens-herbs-garlic-shield",
+      "slugs": [
+        "charcoal-grilled-meat-carcinogens-herbs-garlic-shield-en"
+      ],
+      "titleVi": "Charcoal Grilled Meat Carcinogens and the Molecular Shield: How Fresh Herbs and Raw Garlic Neutralize HCAs and PAHs",
+      "titleEn": "Charcoal Grilled Meat Carcinogens and the Molecular Shield: How Fresh Herbs and Raw Garlic Neutralize HCAs and PAHs",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1038/s41598-025-03807-w",
+      "date": "2026-11-12T17:00:00Z",
+      "tags": [
+        "cancer-prevention",
+        "detoxification",
+        "nutrition",
+        "gut-health",
+        "liver-health"
+      ],
+      "keywords": [
+        "charcoal",
+        "grilled",
+        "meat",
+        "carcinogens",
+        "molecular",
+        "shield",
+        "fresh",
+        "herbs",
+        "raw",
+        "garlic",
+        "neutralize",
+        "hcas",
+        "pahs",
+        "cancer",
+        "prevention",
+        "detoxification",
+        "nutrition",
+        "gut",
+        "health",
+        "liver",
+        "irresistible",
+        "aroma",
+        "staple",
+        "vietnamese",
+        "culinary"
+      ]
+    },
+    {
+      "id": "do-nuong-chay-canh-la-chan-phong-ung-thu-tu-rau-song",
+      "slugs": [
+        "do-nuong-chay-canh-la-chan-phong-ung-thu-tu-rau-song-vi"
+      ],
+      "titleVi": "Đồ nướng cháy cạnh và nguy cơ ung thư: Giải mã lá chắn giải độc phân tử từ đĩa rau sống và tép tỏi sống Việt Nam",
+      "titleEn": "Đồ nướng cháy cạnh và nguy cơ ung thư: Giải mã lá chắn giải độc phân tử từ đĩa rau sống và tép tỏi sống Việt Nam",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1038/s41598-025-03807-w",
+      "date": "2026-11-12T17:00:00Z",
+      "tags": [
+        "ung-thu",
+        "giai-doc",
+        "dinh-duong",
+        "ruot",
+        "gan"
+      ],
+      "keywords": [
+        "nuong",
+        "chay",
+        "canh",
+        "nguy",
+        "ung",
+        "thu",
+        "chan",
+        "doc",
+        "phan",
+        "dia",
+        "rau",
+        "song",
+        "tep",
+        "toi",
+        "viet",
+        "nam",
+        "dinh",
+        "duong",
+        "ruot",
+        "gan",
+        "mieng",
+        "thit",
+        "thom",
+        "lung",
+        "dam"
+      ]
+    },
     {
       "id": "dau-hat-bi-do-va-rung-toc-noi-tiet",
       "slugs": [
