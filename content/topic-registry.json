@@ -1,7 +1,7 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-12T16:30:44.503Z",
-  "totalTopics": 253,
+  "lastUpdated": "2026-11-12T22:45:45.090Z",
+  "totalTopics": 255,
   "topics": [
     {
       "id": "charcoal-grilled-meat-carcinogens-herbs-garlic-shield",
@@ -93,6 +93,98 @@
         "thom",
         "lung",
         "dam"
+      ]
+    },
+    {
+      "id": "tai-sao-uong-ruou-bi-do-mat-va-bien-phap-bao-ve-dna",
+      "slugs": [
+        "tai-sao-uong-ruou-bi-do-mat-va-bien-phap-bao-ve-dna-vi"
+      ],
+      "titleVi": "Vì sao uống rượu bị đỏ mặt và cách bảo vệ bộ gene trong căn bếp của bạn",
+      "titleEn": "Vì sao uống rượu bị đỏ mặt và cách bảo vệ bộ gene trong căn bếp của bạn",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1016/S1470-2045(06)70918-0",
+      "date": "2026-11-12T17:00:00Z",
+      "tags": [
+        "ung-thu",
+        "giai-doc",
+        "noi-tiet",
+        "chuyen-hoa",
+        "gan"
+      ],
+      "keywords": [
+        "uong",
+        "ruou",
+        "mat",
+        "cach",
+        "bao",
+        "gene",
+        "can",
+        "bep",
+        "ban",
+        "ung",
+        "thu",
+        "doc",
+        "noi",
+        "tiet",
+        "chuyen",
+        "hoa",
+        "gan",
+        "moi",
+        "lan",
+        "nang",
+        "buoi",
+        "tiec",
+        "tung",
+        "nhieu",
+        "nguoi"
+      ]
+    },
+    {
+      "id": "why-alcohol-flushing-happens-and-how-to-protect-dna",
+      "slugs": [
+        "why-alcohol-flushing-happens-and-how-to-protect-dna-en"
+      ],
+      "titleVi": "Why alcohol flushing happens and how to protect your genome in the kitchen",
+      "titleEn": "Why alcohol flushing happens and how to protect your genome in the kitchen",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1016/S1470-2045(06)70918-0",
+      "date": "2026-11-12T17:00:00Z",
+      "tags": [
+        "cancer-prevention",
+        "detoxification",
+        "metabolism",
+        "liver",
+        "genetics"
+      ],
+      "keywords": [
+        "alcohol",
+        "flushing",
+        "happens",
+        "protect",
+        "your",
+        "genome",
+        "kitchen",
+        "cancer",
+        "prevention",
+        "detoxification",
+        "metabolism",
+        "liver",
+        "genetics",
+        "every",
+        "time",
+        "glasses",
+        "clink",
+        "gatherings",
+        "many",
+        "asians",
+        "experience",
+        "facial",
+        "rapid",
+        "heartbeat",
+        "dizziness"
       ]
     },
     {

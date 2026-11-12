@@ -5675,6 +5675,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "",
     },
   ],
+  "tai-sao-uong-ruou-bi-do-mat-va-bien-phap-bao-ve-dna-vi": [
+    {
+      ordinal: 1,
+      label: "Alcohol and acetaldehyde in public health: from biological mechanisms to cancer prevention",
+      pmid: "",
+      doi: "10.1016/S1470-2045(06)70918-0",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Lancet Oncology",
+      year: 2006,
+      abstract: "Alcohol consumption is a major preventable cause of cancer worldwide. Acetaldehyde, the primary metabolite of ethanol, is classified as a group 1 carcinogen and plays a central role in upper aerodigestive tract carcinogenesis, particularly among individuals with genetic polymorphisms affecting alcohol-metabolizing enzymes such as ALDH2.",
+    },
+  ],
+  "why-alcohol-flushing-happens-and-how-to-protect-dna-en": [
+    {
+      ordinal: 1,
+      label: "Alcohol and acetaldehyde in public health: from biological mechanisms to cancer prevention",
+      pmid: "",
+      doi: "10.1016/S1470-2045(06)70918-0",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Lancet Oncology",
+      year: 2006,
+      abstract: "Alcohol consumption is a major preventable cause of cancer worldwide. Acetaldehyde, the primary metabolite of ethanol, is classified as a group 1 carcinogen and plays a central role in upper aerodigestive tract carcinogenesis, particularly among individuals with genetic polymorphisms affecting alcohol-metabolizing enzymes such as ALDH2.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
