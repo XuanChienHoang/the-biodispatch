@@ -5727,6 +5727,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Melatonin is a ubiquitous molecule with well-documented antioxidant and oncostatic properties. It protects nuclear DNA and cellular membranes from oxidative damage by scavenging free radicals and upregulating DNA repair enzymes such as DNA-PKcs and Rad51, thereby maintaining genomic integrity and preventing neoplastic transformations.",
     },
   ],
+  "rung-toc-sau-tuoi-30-va-hormone-dht-vi-sao-saw-palmetto-va-kem-giup-bao-ve-nang--vi": [
+    {
+      ordinal: 1,
+      label: "Effects of Serenoa repens extract on sexual function in patients with benign prostatic hyperplasia: a systematic review and meta-analysis",
+      pmid: "42751554",
+      doi: "10.1093/sexmed/qfag088",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Sex Med",
+      year: 2026,
+      abstract: "Saw palmetto extract exhibits 5-alpha-reductase inhibitory properties similar to finasteride, making it a promising botanical candidate for modulating androgenetic alopecia and supporting hair follicle health without significant systemic adverse effects.",
+    },
+  ],
+  "hair-loss-after-30-and-dht-hormone-how-saw-palmetto-and-zinc-protect-hair-follic-en": [
+    {
+      ordinal: 1,
+      label: "Effects of Serenoa repens extract on sexual function in patients with benign prostatic hyperplasia: a systematic review and meta-analysis",
+      pmid: "42751554",
+      doi: "10.1093/sexmed/qfag088",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Sex Med",
+      year: 2026,
+      abstract: "Saw palmetto extract exhibits 5-alpha-reductase inhibitory properties similar to finasteride, making it a promising botanical candidate for modulating androgenetic alopecia and supporting hair follicle health without significant systemic adverse effects.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
