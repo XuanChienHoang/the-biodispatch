@@ -5701,6 +5701,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Alcohol consumption is a major preventable cause of cancer worldwide. Acetaldehyde, the primary metabolite of ethanol, is classified as a group 1 carcinogen and plays a central role in upper aerodigestive tract carcinogenesis, particularly among individuals with genetic polymorphisms affecting alcohol-metabolizing enzymes such as ALDH2.",
     },
   ],
+  "giac-ngu-ngat-quang-va-nguy-co-dot-gay-dna-vi": [
+    {
+      ordinal: 1,
+      label: "Melatonin, a master hormone and antioxidant, in the regulation of genomic stability and cancer prevention",
+      pmid: "",
+      doi: "10.1016/j.mrrev.2013.01.001",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Mutation Research / Reviews in Mutation Research",
+      year: 2013,
+      abstract: "Melatonin is a ubiquitous molecule with well-documented antioxidant and oncostatic properties. It protects nuclear DNA and cellular membranes from oxidative damage by scavenging free radicals and upregulating DNA repair enzymes such as DNA-PKcs and Rad51, thereby maintaining genomic integrity and preventing neoplastic transformations.",
+    },
+  ],
+  "fragmented-sleep-and-dna-double-strand-break-risk-en": [
+    {
+      ordinal: 1,
+      label: "Melatonin, a master hormone and antioxidant, in the regulation of genomic stability and cancer prevention",
+      pmid: "",
+      doi: "10.1016/j.mrrev.2013.01.001",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Mutation Research / Reviews in Mutation Research",
+      year: 2013,
+      abstract: "Melatonin is a ubiquitous molecule with well-documented antioxidant and oncostatic properties. It protects nuclear DNA and cellular membranes from oxidative damage by scavenging free radicals and upregulating DNA repair enzymes such as DNA-PKcs and Rad51, thereby maintaining genomic integrity and preventing neoplastic transformations.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

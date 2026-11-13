@@ -1,8 +1,100 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-12T22:45:45.090Z",
-  "totalTopics": 255,
+  "lastUpdated": "2026-11-13T00:43:07.069Z",
+  "totalTopics": 257,
   "topics": [
+    {
+      "id": "fragmented-sleep-and-dna-double-strand-break-risk",
+      "slugs": [
+        "fragmented-sleep-and-dna-double-strand-break-risk-en"
+      ],
+      "titleVi": "Fragmented sleep and group 2a carcinogenic risk when nocturnal melatonin depletion deprives dna double-strand break repair mechanisms",
+      "titleEn": "Fragmented sleep and group 2a carcinogenic risk when nocturnal melatonin depletion deprives dna double-strand break repair mechanisms",
+      "organ": "Metabolic",
+      "tier": "Clinical Deep-Dive",
+      "doi": "10.1016/j.mrrev.2013.01.001",
+      "date": "2026-11-13T05:00:00Z",
+      "tags": [
+        "sleep",
+        "oncology",
+        "aging",
+        "hormones",
+        "brain"
+      ],
+      "keywords": [
+        "fragmented",
+        "sleep",
+        "group",
+        "carcinogenic",
+        "risk",
+        "when",
+        "nocturnal",
+        "melatonin",
+        "depletion",
+        "deprives",
+        "dna",
+        "double",
+        "strand",
+        "break",
+        "repair",
+        "oncology",
+        "aging",
+        "hormones",
+        "brain",
+        "every",
+        "night",
+        "you",
+        "wake",
+        "midway",
+        "due"
+      ]
+    },
+    {
+      "id": "giac-ngu-ngat-quang-va-nguy-co-dot-gay-dna",
+      "slugs": [
+        "giac-ngu-ngat-quang-va-nguy-co-dot-gay-dna-vi"
+      ],
+      "titleVi": "Giấc ngủ ngắt quãng và tác nhân sinh ung nhóm 2a khi sự suy giảm melatonin về đêm tước đoạt cơ chế sửa chữa đứt gãy dna",
+      "titleEn": "Giấc ngủ ngắt quãng và tác nhân sinh ung nhóm 2a khi sự suy giảm melatonin về đêm tước đoạt cơ chế sửa chữa đứt gãy dna",
+      "organ": "Metabolic",
+      "tier": "Clinical Deep-Dive",
+      "doi": "10.1016/j.mrrev.2013.01.001",
+      "date": "2026-11-13T05:00:00Z",
+      "tags": [
+        "giac-ngu",
+        "ung-thu",
+        "lao-hoa",
+        "noi-tiet",
+        "nao-bo"
+      ],
+      "keywords": [
+        "giac",
+        "ngu",
+        "ngat",
+        "quang",
+        "tac",
+        "nhan",
+        "sinh",
+        "ung",
+        "nhom",
+        "suy",
+        "giam",
+        "melatonin",
+        "dem",
+        "tuoc",
+        "doat",
+        "sua",
+        "chua",
+        "dut",
+        "gay",
+        "dna",
+        "thu",
+        "lao",
+        "hoa",
+        "noi",
+        "tiet"
+      ]
+    },
     {
       "id": "charcoal-grilled-meat-carcinogens-herbs-garlic-shield",
       "slugs": [
