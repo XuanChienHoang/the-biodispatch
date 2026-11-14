@@ -1,8 +1,98 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-14T12:15:36.924Z",
-  "totalTopics": 261,
+  "lastUpdated": "2026-11-14T18:53:28.622Z",
+  "totalTopics": 263,
   "topics": [
+    {
+      "id": "delay-first-morning-coffee-60-90-minutes",
+      "slugs": [
+        "delay-first-morning-coffee-60-90-minutes-en"
+      ],
+      "titleVi": "Why delaying your first morning coffee by 90 minutes prevents that dreaded afternoon energy crash",
+      "titleEn": "Why delaying your first morning coffee by 90 minutes prevents that dreaded afternoon energy crash",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.2174/156802611795347654",
+      "date": "2026-11-14T17:00:00Z",
+      "tags": [
+        "energy",
+        "sleep",
+        "metabolism",
+        "longevity"
+      ],
+      "keywords": [
+        "delaying",
+        "your",
+        "first",
+        "morning",
+        "coffee",
+        "minutes",
+        "prevents",
+        "dreaded",
+        "afternoon",
+        "energy",
+        "crash",
+        "sleep",
+        "metabolism",
+        "longevity",
+        "many",
+        "reach",
+        "hot",
+        "cup",
+        "moment",
+        "their",
+        "eyes",
+        "open",
+        "wake",
+        "however",
+        "habit"
+      ]
+    },
+    {
+      "id": "tri-hoan-ngum-ca-phe-dau-tien-60-90-phut",
+      "slugs": [
+        "tri-hoan-ngum-ca-phe-dau-tien-60-90-phut-vi"
+      ],
+      "titleVi": "Vì sao việc trì hoãn ngụm cà phê đầu tiên 90 phút sau khi ngủ dậy lại giúp bạn không bị đuối sức vào buổi chiều",
+      "titleEn": "Vì sao việc trì hoãn ngụm cà phê đầu tiên 90 phút sau khi ngủ dậy lại giúp bạn không bị đuối sức vào buổi chiều",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.2174/156802611795347654",
+      "date": "2026-11-14T17:00:00Z",
+      "tags": [
+        "nang-luong",
+        "giac-ngu",
+        "trao-doi-chat",
+        "lao-hoa"
+      ],
+      "keywords": [
+        "viec",
+        "tri",
+        "hoan",
+        "ngum",
+        "phe",
+        "dau",
+        "tien",
+        "phut",
+        "sau",
+        "ngu",
+        "day",
+        "lai",
+        "giup",
+        "ban",
+        "khong",
+        "duoi",
+        "suc",
+        "vao",
+        "buoi",
+        "chieu",
+        "nang",
+        "luong",
+        "giac",
+        "trao",
+        "doi"
+      ]
+    },
     {
       "id": "an-rau-truoc-com-kiem-soat-duong-huyet-giam-mo-bung",
       "slugs": [

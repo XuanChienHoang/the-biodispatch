@@ -5801,6 +5801,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "",
     },
   ],
+  "tri-hoan-ngum-ca-phe-dau-tien-60-90-phut-vi": [
+    {
+      ordinal: 1,
+      label: "The role of adenosine in the regulation of sleep",
+      pmid: "21401496",
+      doi: "10.2174/156802611795347654",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Curr Top Med Chem",
+      year: 2011,
+      abstract: "Caffeine acts as a non-selective adenosine receptor antagonist that promotes wakefulness. Timing of caffeine consumption relative to awakening and circadian phase significantly modulates alertness, subjective fatigue, and sleep architecture, suggesting that delaying morning intake optimizes endogenous cortisol and adenosine clearance.",
+    },
+  ],
+  "delay-first-morning-coffee-60-90-minutes-en": [
+    {
+      ordinal: 1,
+      label: "The role of adenosine in the regulation of sleep",
+      pmid: "21401496",
+      doi: "10.2174/156802611795347654",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Curr Top Med Chem",
+      year: 2011,
+      abstract: "Caffeine acts as a non-selective adenosine receptor antagonist that promotes wakefulness. Timing of caffeine consumption relative to awakening and circadian phase significantly modulates alertness, subjective fatigue, and sleep architecture, suggesting that delaying morning intake optimizes endogenous cortisol and adenosine clearance.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
