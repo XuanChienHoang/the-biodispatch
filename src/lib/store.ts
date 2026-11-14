@@ -5827,6 +5827,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Caffeine acts as a non-selective adenosine receptor antagonist that promotes wakefulness. Timing of caffeine consumption relative to awakening and circadian phase significantly modulates alertness, subjective fatigue, and sleep architecture, suggesting that delaying morning intake optimizes endogenous cortisol and adenosine clearance.",
     },
   ],
+  "duong-va-nep-nhan-da-cau-chuyen-nhung-chiec-cau-sat-bi-gi-set-vi-ngot-vi": [
+    {
+      ordinal: 1,
+      label: "Improvement Effect and Mechanism of Hydroxytyrosol on Skin Aging Induced Advanced Glycation End Products",
+      pmid: "40944206",
+      doi: "10.3390/nu17172810",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Nutrients",
+      year: 2025,
+      abstract: "Advanced glycation end products (AGEs) accumulate in skin matrix proteins throughout life, contributing significantly to structural degradation, loss of elasticity, and accelerated wrinkle formation by altering collagen architecture and triggering cellular inflammation.",
+    },
+  ],
+  "sugar-and-skin-wrinkles-the-story-of-rusty-iron-bridges-from-sweetness-en": [
+    {
+      ordinal: 1,
+      label: "Improvement Effect and Mechanism of Hydroxytyrosol on Skin Aging Induced Advanced Glycation End Products",
+      pmid: "40944206",
+      doi: "10.3390/nu17172810",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Nutrients",
+      year: 2025,
+      abstract: "Advanced glycation end products (AGEs) accumulate in skin matrix proteins throughout life, contributing significantly to structural degradation, loss of elasticity, and accelerated wrinkle formation by altering collagen architecture and triggering cellular inflammation.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

@@ -1,7 +1,7 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-14T18:53:28.622Z",
-  "totalTopics": 263,
+  "lastUpdated": "2026-11-14T20:12:25.275Z",
+  "totalTopics": 265,
   "topics": [
     {
       "id": "delay-first-morning-coffee-60-90-minutes",
@@ -46,6 +46,96 @@
         "wake",
         "however",
         "habit"
+      ]
+    },
+    {
+      "id": "duong-va-nep-nhan-da-cau-chuyen-nhung-chiec-cau-sat-bi-gi-set-vi-ngot",
+      "slugs": [
+        "duong-va-nep-nhan-da-cau-chuyen-nhung-chiec-cau-sat-bi-gi-set-vi-ngot-vi"
+      ],
+      "titleVi": "Đường và nếp nhăn da: Câu chuyện những chiếc cầu sắt bị gỉ sét vì vị ngọt",
+      "titleEn": "Đường và nếp nhăn da: Câu chuyện những chiếc cầu sắt bị gỉ sét vì vị ngọt",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.3390/nu17172810",
+      "date": "2026-11-14T17:00:00Z",
+      "tags": [
+        "lao-hoa",
+        "mat-da",
+        "duong-huyet",
+        "nang-luong"
+      ],
+      "keywords": [
+        "duong",
+        "nep",
+        "nhan",
+        "cau",
+        "chuyen",
+        "chiec",
+        "sat",
+        "set",
+        "ngot",
+        "lao",
+        "hoa",
+        "mat",
+        "huyet",
+        "nang",
+        "luong",
+        "moi",
+        "chung",
+        "thuong",
+        "thuc",
+        "banh",
+        "hay",
+        "tra",
+        "sua",
+        "dam",
+        "mon"
+      ]
+    },
+    {
+      "id": "sugar-and-skin-wrinkles-the-story-of-rusty-iron-bridges-from-sweetness",
+      "slugs": [
+        "sugar-and-skin-wrinkles-the-story-of-rusty-iron-bridges-from-sweetness-en"
+      ],
+      "titleVi": "Sugar and skin wrinkles: The story of iron bridges rusting from sweetness",
+      "titleEn": "Sugar and skin wrinkles: The story of iron bridges rusting from sweetness",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.3390/nu17172810",
+      "date": "2026-11-14T17:00:00Z",
+      "tags": [
+        "aging",
+        "skin",
+        "blood-sugar",
+        "energy"
+      ],
+      "keywords": [
+        "sugar",
+        "skin",
+        "wrinkles",
+        "story",
+        "iron",
+        "bridges",
+        "rusting",
+        "sweetness",
+        "aging",
+        "blood",
+        "energy",
+        "every",
+        "time",
+        "enjoy",
+        "pastry",
+        "sweet",
+        "milk",
+        "tea",
+        "treat",
+        "not",
+        "only",
+        "brings",
+        "instant",
+        "joy",
+        "but"
       ]
     },
     {
