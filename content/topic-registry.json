@@ -1,8 +1,102 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-13T13:09:53.438Z",
-  "totalTopics": 259,
+  "lastUpdated": "2026-11-14T12:15:36.924Z",
+  "totalTopics": 261,
   "topics": [
+    {
+      "id": "an-rau-truoc-com-kiem-soat-duong-huyet-giam-mo-bung",
+      "slugs": [
+        "an-rau-truoc-com-kiem-soat-duong-huyet-giam-mo-bung-vi"
+      ],
+      "titleVi": "Vì sao ăn rau trước cơm lại dập tắt cơn sóng đường huyết: Mẹo xếp thứ tự thức ăn giúp tuyến tụy thơi thả và giảm mỡ bụng",
+      "titleEn": "Vì sao ăn rau trước cơm lại dập tắt cơn sóng đường huyết: Mẹo xếp thứ tự thức ăn giúp tuyến tụy thơi thả và giảm mỡ bụng",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1016/j.appet.2017.02.019",
+      "date": "2026-11-14T13:00:00Z",
+      "tags": [
+        "duong-huyet",
+        "khang-insulin",
+        "mo-bung",
+        "chuyen-hoa",
+        "lao-hoa",
+        "dieu-tri-tieu-duong"
+      ],
+      "keywords": [
+        "rau",
+        "truoc",
+        "com",
+        "lai",
+        "dap",
+        "tat",
+        "con",
+        "song",
+        "duong",
+        "huyet",
+        "meo",
+        "xep",
+        "thu",
+        "thuc",
+        "giup",
+        "tuyen",
+        "tuy",
+        "thoi",
+        "tha",
+        "giam",
+        "bung",
+        "khang",
+        "insulin",
+        "chuyen",
+        "hoa"
+      ]
+    },
+    {
+      "id": "food-sequencing-vegetables-first-blood-sugar-fat-loss",
+      "slugs": [
+        "food-sequencing-vegetables-first-blood-sugar-fat-loss-en"
+      ],
+      "titleVi": "Why Eating Vegetables Before Carbs Flattens Blood Sugar Spikes: How Food Sequencing Protects the Pancreas and Cuts Visceral Fat",
+      "titleEn": "Why Eating Vegetables Before Carbs Flattens Blood Sugar Spikes: How Food Sequencing Protects the Pancreas and Cuts Visceral Fat",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1016/j.appet.2017.02.019",
+      "date": "2026-11-14T13:00:00Z",
+      "tags": [
+        "blood-sugar",
+        "insulin-resistance",
+        "belly-fat",
+        "metabolism",
+        "longevity",
+        "diabetes-management"
+      ],
+      "keywords": [
+        "eating",
+        "vegetables",
+        "carbs",
+        "flattens",
+        "blood",
+        "sugar",
+        "spikes",
+        "food",
+        "sequencing",
+        "protects",
+        "pancreas",
+        "cuts",
+        "visceral",
+        "fat",
+        "insulin",
+        "resistance",
+        "belly",
+        "metabolism",
+        "longevity",
+        "diabetes",
+        "management",
+        "many",
+        "habitually",
+        "reach",
+        "warm"
+      ]
+    },
     {
       "id": "hair-loss-after-30-and-dht-hormone-how-saw-palmetto-and-zinc-protect-hair-follic",
       "slugs": [
