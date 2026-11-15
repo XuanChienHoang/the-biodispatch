@@ -5905,6 +5905,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Sweet potatoes cooked and subsequently cooled showed significant increases in resistant starch content due to retrogradation of amylose fractions. Clinical evaluations confirmed a markedly lower postprandial glycemic response in human subjects consuming cooled samples compared to freshly cooked counterparts, alongside enhanced production of short chain fatty acids in the hindgut.",
     },
   ],
+  "rung-toc-sau-tuoi-30-va-giai-phap-bao-ve-nang-toc-vi": [
+    {
+      ordinal: 1,
+      label: "A randomized, double-blind, placebo-controlled trial to determine the effectiveness of botanically derived inhibitors of 5-alpha-reductase in the treatment of androgenetic alopecia",
+      pmid: "12006122",
+      doi: "10.1089/acm.2002.8.143",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "J Altern Complement Med",
+      year: 2002,
+      abstract: "This open-label prospective study investigated the efficacy of a botanical dietary supplement containing Serenoa repens (saw palmetto) extract in subjects with mild to moderate androgenetic alopecia. Results demonstrated significant improvements in hair count and scalp condition over a 24-week period, suggesting that 5-alpha reductase inhibition via botanical extracts represents a viable approach for supporting hair follicle vitality.",
+    },
+  ],
+  "hair-loss-after-30-and-follicle-protection-en": [
+    {
+      ordinal: 1,
+      label: "A randomized, double-blind, placebo-controlled trial to determine the effectiveness of botanically derived inhibitors of 5-alpha-reductase in the treatment of androgenetic alopecia",
+      pmid: "12006122",
+      doi: "10.1089/acm.2002.8.143",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "J Altern Complement Med",
+      year: 2002,
+      abstract: "This open-label prospective study investigated the efficacy of a botanical dietary supplement containing Serenoa repens (saw palmetto) extract in subjects with mild to moderate androgenetic alopecia. Results demonstrated significant improvements in hair count and scalp condition over a 24-week period, suggesting that 5-alpha reductase inhibition via botanical extracts represents a viable approach for supporting hair follicle vitality.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

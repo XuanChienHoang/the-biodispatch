@@ -1,7 +1,7 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-15T15:23:07.775Z",
-  "totalTopics": 269,
+  "lastUpdated": "2026-11-15T19:24:34.016Z",
+  "totalTopics": 271,
   "topics": [
     {
       "id": "bi-mat-khoai-lang-luoc-de-lanh-ve-dang-va-giam-duong-huyet",
@@ -47,6 +47,98 @@
         "mon",
         "thua",
         "ngon"
+      ]
+    },
+    {
+      "id": "hair-loss-after-30-and-follicle-protection",
+      "slugs": [
+        "hair-loss-after-30-and-follicle-protection-en"
+      ],
+      "titleVi": "Why hair thins after 30 and how to decode the DHT wall protecting your follicles",
+      "titleEn": "Why hair thins after 30 and how to decode the DHT wall protecting your follicles",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1089/acm.2002.8.143",
+      "date": "2026-11-15T17:00:00Z",
+      "tags": [
+        "hair-loss",
+        "hormones",
+        "aging",
+        "vitality",
+        "nutrition"
+      ],
+      "keywords": [
+        "hair",
+        "thins",
+        "decode",
+        "dht",
+        "wall",
+        "protecting",
+        "your",
+        "follicles",
+        "loss",
+        "hormones",
+        "aging",
+        "vitality",
+        "nutrition",
+        "entering",
+        "thirties",
+        "many",
+        "people",
+        "are",
+        "surprised",
+        "find",
+        "increasing",
+        "strands",
+        "floor",
+        "shower",
+        "drain"
+      ]
+    },
+    {
+      "id": "rung-toc-sau-tuoi-30-va-giai-phap-bao-ve-nang-toc",
+      "slugs": [
+        "rung-toc-sau-tuoi-30-va-giai-phap-bao-ve-nang-toc-vi"
+      ],
+      "titleVi": "Vì sao tóc rụng nhiều sau tuổi 30 và cách giải mã bức tường DHT bảo vệ nang tóc",
+      "titleEn": "Vì sao tóc rụng nhiều sau tuổi 30 và cách giải mã bức tường DHT bảo vệ nang tóc",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1089/acm.2002.8.143",
+      "date": "2026-11-15T17:00:00Z",
+      "tags": [
+        "rung-toc",
+        "noi-tiet",
+        "lao-hoa",
+        "nang-luong",
+        "dinh-duong"
+      ],
+      "keywords": [
+        "toc",
+        "rung",
+        "nhieu",
+        "sau",
+        "tuoi",
+        "cach",
+        "buc",
+        "tuong",
+        "dht",
+        "bao",
+        "nang",
+        "noi",
+        "tiet",
+        "lao",
+        "hoa",
+        "luong",
+        "dinh",
+        "duong",
+        "buoc",
+        "sang",
+        "nguoi",
+        "bat",
+        "ngo",
+        "thay",
+        "tren"
       ]
     },
     {
