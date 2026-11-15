@@ -1,8 +1,100 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-15T12:48:03.523Z",
-  "totalTopics": 267,
+  "lastUpdated": "2026-11-15T15:23:07.775Z",
+  "totalTopics": 269,
   "topics": [
+    {
+      "id": "bi-mat-khoai-lang-luoc-de-lanh-ve-dang-va-giam-duong-huyet",
+      "slugs": [
+        "bi-mat-khoai-lang-luoc-de-lanh-ve-dang-va-giam-duong-huyet-vi"
+      ],
+      "titleVi": "Bí mật khoai lang luộc để lạnh: Phép màu hạ đường huyết từ củ khoai quen thuộc",
+      "titleEn": "Bí mật khoai lang luộc để lạnh: Phép màu hạ đường huyết từ củ khoai quen thuộc",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1016/j.foodres.2026.119994",
+      "date": "2026-11-15T17:00:00Z",
+      "tags": [
+        "duong-huyet",
+        "ruot",
+        "lao-hoa",
+        "nang-luong",
+        "noi-tiet"
+      ],
+      "keywords": [
+        "mat",
+        "khoai",
+        "lang",
+        "luoc",
+        "lanh",
+        "phep",
+        "mau",
+        "duong",
+        "huyet",
+        "quen",
+        "thuoc",
+        "ruot",
+        "lao",
+        "hoa",
+        "nang",
+        "luong",
+        "noi",
+        "tiet",
+        "nhieu",
+        "nguoi",
+        "lam",
+        "tuong",
+        "mon",
+        "thua",
+        "ngon"
+      ]
+    },
+    {
+      "id": "the-secret-of-cooled-boiled-sweet-potatoes-for-blood-sugar",
+      "slugs": [
+        "the-secret-of-cooled-boiled-sweet-potatoes-for-blood-sugar-en"
+      ],
+      "titleVi": "The secret of cooled boiled sweet potatoes: Blood sugar magic from a humble root",
+      "titleEn": "The secret of cooled boiled sweet potatoes: Blood sugar magic from a humble root",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1016/j.foodres.2026.119994",
+      "date": "2026-11-15T17:00:00Z",
+      "tags": [
+        "blood-sugar",
+        "gut",
+        "longevity",
+        "energy",
+        "metabolism"
+      ],
+      "keywords": [
+        "secret",
+        "cooled",
+        "boiled",
+        "sweet",
+        "potatoes",
+        "blood",
+        "sugar",
+        "magic",
+        "humble",
+        "root",
+        "gut",
+        "longevity",
+        "energy",
+        "metabolism",
+        "many",
+        "people",
+        "mistakenly",
+        "believe",
+        "kept",
+        "fridge",
+        "are",
+        "leftovers",
+        "lacking",
+        "flavor",
+        "nutrition"
+      ]
+    },
     {
       "id": "duong-va-nep-nhan-da-hien-tuong-dut-gay-soi-collagen",
       "slugs": [

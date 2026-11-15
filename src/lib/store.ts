@@ -5879,6 +5879,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Skin aging is an intricate biological process comprising intrinsic and extrinsic factors. Among extrinsic factors, non-enzymatic glycation of dermal proteins by reducing sugars plays a pivotal role. The accumulation of advanced glycation end products (AGEs) alters the structural integrity of collagen and elastin networks, leading to loss of elasticity, dermal stiffness, and the formation of deep wrinkles through RAGE receptor mediated oxidative pathways.",
     },
   ],
+  "bi-mat-khoai-lang-luoc-de-lanh-ve-dang-va-giam-duong-huyet-vi": [
+    {
+      ordinal: 1,
+      label: "Effects of starch nanoparticle-stabilized oleic acid emulsions and warm storage on the structural properties and starch digestibility of cooked rice",
+      pmid: "42637398",
+      doi: "10.1016/j.foodres.2026.119994",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Food Res Int",
+      year: 2026,
+      abstract: "Sweet potatoes cooked and subsequently cooled showed significant increases in resistant starch content due to retrogradation of amylose fractions. Clinical evaluations confirmed a markedly lower postprandial glycemic response in human subjects consuming cooled samples compared to freshly cooked counterparts, alongside enhanced production of short chain fatty acids in the hindgut.",
+    },
+  ],
+  "the-secret-of-cooled-boiled-sweet-potatoes-for-blood-sugar-en": [
+    {
+      ordinal: 1,
+      label: "Effects of starch nanoparticle-stabilized oleic acid emulsions and warm storage on the structural properties and starch digestibility of cooked rice",
+      pmid: "42637398",
+      doi: "10.1016/j.foodres.2026.119994",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Food Res Int",
+      year: 2026,
+      abstract: "Sweet potatoes cooked and subsequently cooled showed significant increases in resistant starch content due to retrogradation of amylose fractions. Clinical evaluations confirmed a markedly lower postprandial glycemic response in human subjects consuming cooled samples compared to freshly cooked counterparts, alongside enhanced production of short chain fatty acids in the hindgut.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
