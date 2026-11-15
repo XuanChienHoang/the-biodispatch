@@ -96,8 +96,8 @@ export function validateDispatchContent(markdownString, lang = 'vi', options = {
       issues.push(`Ảnh bài viết không tồn tại trên đĩa: public/${imgRel}`);
     } else {
       const stats = fs.statSync(imgFullPath);
-      if (stats.size < 30000) {
-        issues.push(`Ảnh bài viết quá nhỏ (${stats.size} bytes). Phát hiện ảnh placeholder hoặc SVG thô sơ, bắt buộc là đồ họa y sinh chất lượng cao (>= 30KB).`);
+      if (stats.size < 85000) {
+        issues.push(`Ảnh bài viết quá nhỏ (${stats.size} bytes). Phát hiện ảnh placeholder hoặc SVG thô sơ, bắt buộc là đồ họa y sinh / nhiếp ảnh chất lượng cao (>= 85KB).`);
       }
     }
   }

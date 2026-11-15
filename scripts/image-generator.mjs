@@ -2,13 +2,13 @@
  * Autonomous Hybrid Image Generation & Curation Module for Phytocodex
  * Dr. Xuan Chien Hoang (Dr. rer. nat. | University of Hamburg)
  * 
- * Architecture (v3.0 — Zero Content Mismatch Guarantee):
- * 1. AI Visual Art Director: Extracts exact tangible subject, forbidden visual traps, and concrete English/Latin search queries from article title & excerpt.
- * 2. False-Friend Sanitized Deterministic Keyword Engine: Prevents Vietnamese homonym/substring traps ("nghệ thuật" != turmeric, "tỉnh táo" != apple, "màn hình" != salmon) and bans generic gym/microscope fallbacks.
- * 3. Multi-Source High-Res Photography Acquisition: Pexels 4K -> Pixabay HD -> Wikimedia Commons -> Openverse -> Topic-Matched Curated Archive.
- * 4. Universal Fail-Closed Gemini Vision Gatekeeper: EVERY candidate image from EVERY source must pass strict semantic subject alignment (score >= 7.5/10) before saving. Never fails open.
- * 5. Perceptual + Cryptographic Dedup Guard: Combines MD5 hash + 16x16 RGB perceptual fingerprint (MAE) to block both identical files and near-identical shots from the same photo shoot.
- * 6. Procedural Monograph Fallback: Generates a bespoke 16:9 SVG monograph card only if all external networks are unreachable.
+ * Architecture (v4.0 — Zero Content Mismatch & Editorial Quality Guarantee):
+ * 1. Sanitized Deterministic Keyword Engine: Prevents Vietnamese false-friend idioms ("thời điểm vàng" != macula, "cầu sắt/gỉ sét", "nghệ thuật" != turmeric) and prioritizes exact title entities before organ fallbacks.
+ * 2. Concise 2-4 Word & Unsplash-Filtered Queries: Optimized for Wikimedia Commons CirrusSearch `filetype:bitmap` with anti-archive/anti-pathology filters.
+ * 3. Multi-Source High-Res Photography Acquisition: Pexels 4K -> Pixabay HD -> Wikimedia Commons (`filetype:bitmap` landscape >= 0.85 ratio) -> Curated 4K Editorial Library. (Dead Openverse Cloudflare-403 tier removed.)
+ * 4. Universal Fail-Closed Gemini Vision Gatekeeper v4.0: EVERY candidate image must score >= 8.0/10 and pass strict rejection of cutouts (#FFF/#000), pathology jars, military/hospital beds, amateur flash, messy 2000s desks, burlap sacks, raw uncooked rice, and tree twigs. Never overrides Vision rejection when API key is configured.
+ * 5. Perceptual + Cryptographic Dedup Guard: Combines MD5 hash + 16x16 RGB perceptual fingerprint (MAE) to block both identical files and near-identical shots.
+ * 6. Procedural Monograph Fallback: Generates a 16:9 SVG monograph card only if all external sources fail.
  */
 
 import fs from 'fs';
@@ -155,12 +155,14 @@ export async function checkIfImageAlreadyUsed(rawBuffer, currentSlug = '') {
 }
 
 /**
- * Làm sạch các cụm từ đồng âm tiếng Việt dễ gây bắt nhầm từ khóa thực vật/thực phẩm
- * Ví dụ: "nghệ thuật" != củ nghệ; "tỉnh táo" / "sáng tạo" != quả táo; "cơ chế" != cơ bắp
+ * Làm sạch các cụm từ đồng âm tiếng Việt dễ gây bắt nhầm từ khóa thực vật/thực phẩm/ẩn dụ
+ * Ví dụ: "thời điểm vàng" != điểm vàng mắt; "nghệ thuật" != củ nghệ; "tỉnh táo" != quả táo
  */
 function sanitizeVietnameseFalseFriends(rawText = '') {
   return rawText
     .toLowerCase()
+    .replace(/thời\s+điểm\s+vàng|thoi-diem-vang|giờ\s+vàng|gio-vang/gi, ' ')
+    .replace(/cầu\s+sắt|cau-sat|gỉ\s+sét|gi-set|bức\s+tường|buc-tuong|viên\s+pin|vien-pin|nhà\s+máy|nha-may|lá\s+chắn|la-chan|chiếc\s+khiên|chiec-khien|đội\s+tuần\s+tra|doi-tuan-tra|xe\s+bồn|xe-bon|chìa\s+khóa|chia-khoa|vôi\s+vữa|voi-vua/gi, ' ')
     .replace(/nghệ\s+thuật|công\s+nghệ|văn\s+nghệ|kỹ\s+nghệ|thiện\s+nghệ|nghệ\s+sĩ|nghệ\s+nhân/gi, ' ')
     .replace(/tỉnh\s+táo|sáng\s+tạo|cấu\s+tạo|tái\s+tạo|nhân\s+tạo|táo\s+bạo|cải\s+tạo|đào\s+tạo|chế\s+tạo/gi, ' ')
     .replace(/cơ\s+chế|cơ\s+thể|cơ\s+quan|nguy\s+cơ|hữu\s+cơ|cơ\s+bản|cơ\s+học|động\s+cơ|cơ\s+sở|cơ\s+hội/gi, ' ')
@@ -177,203 +179,242 @@ function sanitizeVietnameseFalseFriends(rawText = '') {
 export function extractKeywordsFromTitle(titleVi = '', titleEn = '') {
   const queries = [];
   const vi = sanitizeVietnameseFalseFriends(titleVi.toLowerCase());
-  const en = (titleEn || '').toLowerCase();
+  const en = sanitizeVietnameseFalseFriends((titleEn || '').toLowerCase());
 
-  // 1. Bóc tách thực thể theo Tựa đề tiếng Anh (loại bỏ stop-words, giữ danh từ chuyên môn)
+  // 1. Bóc tách thực thể theo Tựa đề tiếng Anh
   if (en) {
     const cleanEn = en
       .replace(/[?!:;,"'“”()[\]{}]/g, ' ')
       .replace(/\s+/g, ' ')
       .trim();
 
-    // Đối soát các mẫu cụm từ thực thể tiếng Anh phổ biến trong tiêu đề
+    // Đặt nhóm đặc hiệu (hạt bí đỏ, đồ nướng, ăn tối muộn, rò rỉ ruột, creatine, HPV, H. pylori, ...) lên trước
+    if (/\b(?:pumpkin seed|cucurbita pepo|pepita)\b/i.test(cleanEn)) {
+      queries.push('Pumpkin Seeds macro', 'Pepita de calabaza', 'Kürbiskernöl', 'pumpkin seeds bowl');
+    }
+    if (/\b(?:hair loss|thinning hair|alopecia|follicle|saw palmetto)\b/i.test(cleanEn)) {
+      queries.push('intitle:Unsplash hair woman', 'intitle:Unsplash braided hair', 'Seated woman with blonde hair', 'woman healthy hair');
+    }
+    if (/\b(?:sweet potato|ipomoea batatas)\b/i.test(cleanEn)) {
+      queries.push('Steamed sweet potato', 'Jjin-goguma', 'Baked potato, baked sweet potato', 'boiled sweet potato');
+    }
+    if (/\b(?:skin wrinkle|wrinkles|collagen|skin aging)\b/i.test(cleanEn)) {
+      queries.push('intitle:Unsplash woman portrait', 'intitle:Unsplash berries', 'Fruit Platter (Unsplash)', 'fresh berries bowl');
+    }
+    if (/\b(?:eating late|late dinner|late at night|after 8)\b/i.test(cleanEn)) {
+      queries.push('intitle:Unsplash dinner', 'Healthy Meal Prep (Unsplash)', 'Steak Dinner (Unsplash)', 'evening dinner table');
+    }
+    if (/\b(?:leaky gut|endotoxin|gut barrier)\b/i.test(cleanEn)) {
+      queries.push('Healthy Lentil Salad (Unsplash)', 'Vegetable Salad (Unsplash)', 'fermented vegetables bowl', 'probiotic yogurt berries');
+    }
+    if (/\b(?:h\.?\s*pylori|helicobacter|caga|gastric cancer)\b/i.test(cleanEn)) {
+      queries.push('Broccoli sprouts', 'Fresh Vegetable Produce (Unsplash)', 'green cabbage kitchen', 'Brassica oleracea sprouts');
+    }
+    if (/\b(?:hpv|cervical cancer)\b/i.test(cleanEn)) {
+      queries.push('HumanPapillomavirus', 'DNA methylation H o', 'microscope laboratory research', 'laboratory research scientist');
+    }
+    if (/\b(?:soy|soybean|tofu|flaxseed|phytoestrogen)\b/i.test(cleanEn)) {
+      queries.push('tofu salad bowl', 'Linum usitatissimum seeds', 'Flaxseeds', 'Edamame bowl');
+    }
+    if (/\b(?:creatine|mental fatigue|backup battery)\b/i.test(cleanEn)) {
+      queries.push('Working on a laptop outdoors (Unsplash)', 'Man at a laptop in an office (Unsplash)', 'Macbook and tea (Unsplash)', 'desk laptop coffee');
+    }
+    if (/\b(?:medical nutrition|cancer patients|muscle preservation)\b/i.test(cleanEn)) {
+      queries.push('Healthy Meal Prep (Unsplash)', 'Steak Dinner (Unsplash)', 'Vegetable Salad (Unsplash)', 'salmon vegetables meal');
+    }
+    if (/\b(?:phosphatidylserine|dha|neuronal membrane|omega-3)\b/i.test(cleanEn)) {
+      queries.push('salmon fillet culinary', 'walnuts bowl wooden', 'omega 3 capsules');
+    }
+    if (/\b(?:neck and shoulder|trapezius|desk workers)\b/i.test(cleanEn)) {
+      queries.push('Man at a laptop in an office (Unsplash)', 'Working on a laptop outdoors (Unsplash)', 'Businessman working and writing notes in office (Unsplash)', 'office worker laptop desk');
+    }
+    if (/\b(?:charcoal|grilled meat|barbecue|bbq)\b/i.test(cleanEn)) {
+      queries.push('grilled meat skewers herbs', 'barbecue grill meat', 'charcoal grilled meat');
+    }
+    if (/\b(?:potassium|sodium|blood pressure)\b/i.test(cleanEn)) {
+      queries.push('Persea americana fruit 2', 'Fresh Vegetable Produce (Unsplash)', 'Spinacia oleracea spinach', 'fresh green avocado halved');
+    }
     if (/\b(?:cold intolerance|feeling cold|chills)\b/i.test(cleanEn)) {
-      queries.push('Woman enjoys warm drink while sitting at wooden table', 'Woman in knit sweater holding warm tea cup', 'Cozy warm sweater tea');
-    }
-    if (/\b(?:hair loss|thinning hair|alopecia)\b/i.test(cleanEn)) {
-      queries.push('Woman brushing healthy hair mirror', 'Healthy hair care');
-    }
-    if (/\b(?:fatigue|exhaustion|tired|weary)\b/i.test(cleanEn)) {
-      queries.push('Peaceful person resting bed morning light', 'Person relaxing tea comfortable chair');
+      queries.push('Sejak tea leaves', 'Tea cup (Unsplash)', 'knit sweater warm tea');
     }
     if (/\b(?:thyroid|hypothyroid|hashimoto)\b/i.test(cleanEn)) {
-      queries.push('Woman enjoys warm drink while sitting at wooden table', 'Seaweed food', 'Tea cup wooden table cozy');
+      queries.push('Sejak tea leaves', 'Seaweed food', 'Tea cup (Unsplash)');
     }
     if (/\b(?:oats|oatmeal|avena sativa)\b/i.test(cleanEn)) {
-      queries.push('Rolled oats bowl', 'Oatmeal porridge breakfast', 'Avena sativa');
+      queries.push('oatmeal breakfast', 'Bowl of Cereal (Unsplash)', 'granola yogurt berries', 'Healthy breakfast (Unsplash)');
     }
     if (/\b(?:blueberr|strawberr|raspberr|berries)\b/i.test(cleanEn)) {
-      queries.push('Vaccinium corymbosum fresh blueberries', 'Fresh raspberries bowl', 'Strawberries basket');
+      queries.push('Strawberry and blueberries (Unsplash V6FcCG14q30)', 'Fresh raspberries bowl', 'intitle:Unsplash berries');
     }
     if (/\b(?:pomegranate|urolithin)\b/i.test(cleanEn)) {
-      queries.push('Punica granatum pomegranate fruit', 'Pomegranate arils bowl');
+      queries.push('Punica granatum pomegranate', 'Pomegranate arils bowl');
     }
     if (/\b(?:broccoli|sulforaphane|sprouts)\b/i.test(cleanEn)) {
-      queries.push('Broccoli sprouts', 'Brassica oleracea fresh green broccoli');
+      queries.push('Broccoli sprouts', 'Brassica oleracea broccoli');
     }
     if (/\b(?:cooked tomato|tomatoes|lycopene)\b/i.test(cleanEn)) {
-      queries.push('Solanum lycopersicum ripe tomatoes', 'fresh red tomatoes on vine', 'cooked tomatoes olive oil');
+      queries.push('Solanum lycopersicum tomatoes', 'fresh red tomatoes vine', 'cooked tomatoes olive oil');
     }
     if (/\b(?:dark chocolate|cocoa|cacao)\b/i.test(cleanEn)) {
-      queries.push('dark chocolate chunks pieces', 'Theobroma cacao cocoa beans');
+      queries.push('Theobroma cacao beans', 'dark chocolate pieces');
     }
-    if (/\b(?:garlic|allicin)\b/i.test(cleanEn)) {
-      queries.push('Allium sativum garlic bulbs', 'fresh garlic cloves wooden board');
+    if (/\b(?:garlic|allicin)\b/i.test(cleanEn) && !/\b(?:charcoal|grilled meat|barbecue|bbq)\b/i.test(cleanEn)) {
+      queries.push('Allium sativum garlic', 'fresh garlic wooden board');
     }
     if (/\b(?:green tea|matcha|theanine|egcg)\b/i.test(cleanEn)) {
-      queries.push('Camellia sinensis green tea leaves', 'matcha green tea bowl');
+      queries.push('Sejak tea leaves', 'matcha green tea bowl', 'Tea cup (Unsplash)');
     }
     if (/\b(?:coffee|caffeine)\b/i.test(cleanEn)) {
-      queries.push('steaming cup of black coffee morning', 'roasted coffee beans wooden table');
+      queries.push('Sweet morning coffee (Unsplash)', 'Coffee (Unsplash BIYoKb7Lux0)', 'Roasted coffee beans');
     }
     if (/\b(?:shiitake|maitake|mushroom)\b/i.test(cleanEn)) {
-      queries.push('Lentinula edodes shiitake mushrooms', 'fresh shiitake mushrooms wooden table');
+      queries.push('Lentinula edodes shiitake', 'fresh shiitake mushrooms');
     }
     if (/\b(?:milk thistle|silymarin)\b/i.test(cleanEn)) {
-      queries.push('Silybum marianum milk thistle flower');
+      queries.push('Silybum marianum flower');
     }
     if (/\b(?:tart cherry|sour cherry|uric acid|gout)\b/i.test(cleanEn)) {
-      queries.push('Prunus cerasus sour cherries', 'fresh red cherries bowl');
+      queries.push('Prunus cerasus cherries', 'fresh red cherries bowl');
     }
-    if (/\b(?:avocado|potassium)\b/i.test(cleanEn)) {
-      queries.push('Persea americana avocado fruit tree', 'fresh green avocado cut in half');
+    if (/\b(?:avocado)\b/i.test(cleanEn)) {
+      queries.push('Persea americana fruit 2', 'fresh green avocado halved');
     }
     if (/\b(?:celery juice|celery)\b/i.test(cleanEn)) {
-      queries.push('fresh green celery stalks wooden table', 'Apium graveolens celery');
+      queries.push('fresh green celery', 'Apium graveolens celery');
     }
     if (/\b(?:somnolence|lunch slump|afternoon crash)\b/i.test(cleanEn)) {
-      queries.push('Laptop coffee desk', 'Working on laptop office coffee');
+      queries.push('Laptop on a neat desk (Unsplash)', 'Macbook and tea (Unsplash)', 'laptop coffee desk');
     }
     if (/\b(?:dry eyes|screen|eye fatigue|lutein|zeaxanthin)\b/i.test(cleanEn)) {
-      queries.push('woman working computer glasses desk', 'human eye macro closeup iris');
+      queries.push('Laptop on a green thumb\'s desk (Unsplash)', 'Macbook and tea (Unsplash)', 'human eye iris');
     }
-    if (/\b(?:sleep|circadian|melatonin|insomnia)\b/i.test(cleanEn)) {
-      queries.push('cozy bedroom night lamp warm light', 'person sleeping peacefully bed');
+    if (/\b(?:sleep|circadian|melatonin|insomnia)\b/i.test(cleanEn) && !/\b(?:eating late|late dinner|late at night)\b/i.test(cleanEn)) {
+      queries.push('Soft Comforts (Unsplash)', 'cozy bedroom lamp', 'person sleeping bed');
     }
     if (/\b(?:walking|brisk walk)\b/i.test(cleanEn)) {
-      queries.push('person walking forest path morning', 'footpath in autumn forest');
+      queries.push('Early morning in autumn forest (Unsplash)', 'person walking forest path');
     }
     if (/\b(?:sunlight|sunrise|dawn)\b/i.test(cleanEn)) {
-      queries.push('Golden sunrise through forest trees', 'morning sunlight through trees nature');
+      queries.push('Early morning in autumn forest (Unsplash)', 'morning sunlight forest');
     }
     if (/\b(?:intermittent fasting|autophagy)\b/i.test(cleanEn)) {
-      queries.push('herbal tea glass water lemon table', 'minimalist healthy breakfast bowl');
+      queries.push('Sejak tea leaves', 'Healthy breakfast (Unsplash)');
+    }
+    if (/\b(?:fatigue|exhaustion|tired|weary)\b/i.test(cleanEn) && !/\b(?:leaky gut|creatine|cold intolerance)\b/i.test(cleanEn)) {
+      queries.push('Soft Comforts (Unsplash)', 'Tea cup (Unsplash)');
     }
   }
 
   // 2. Bóc tách thực thể theo Tựa đề tiếng Việt (titleVi)
+  // Nhóm đặc hiệu ưu tiên cao nhất
+  if (/hạt bí đỏ|hat-bi-do|dầu hạt bí|pumpkin seed/i.test(vi)) {
+    queries.push('Pumpkin Seeds macro', 'Pepita de calabaza', 'Kürbiskernöl', 'pumpkin seeds bowl');
+  }
+  if (/rụng tóc|tóc rụng|rung-toc|nang tóc|hói đầu|mỏng tóc|saw palmetto|\bdht\b/i.test(vi)) {
+    queries.push('intitle:Unsplash hair woman', 'intitle:Unsplash braided hair', 'Seated woman with blonde hair', 'woman healthy hair');
+  }
+  if (/khoai lang|khoai-lang/i.test(vi)) {
+    queries.push('Steamed sweet potato', 'Jjin-goguma', 'Baked potato, baked sweet potato', 'boiled sweet potato');
+  }
+  if (/nếp nhăn|nep-nhan|làn da|lan-da|collagen|lão hóa da|đứt gãy sợi/i.test(vi)) {
+    queries.push('intitle:Unsplash woman portrait', 'intitle:Unsplash berries', 'Fruit Platter (Unsplash)', 'fresh berries bowl');
+  }
+  if (/ăn tối muộn|an-toi-muon|ăn khuya|sau 8 giờ/i.test(vi)) {
+    queries.push('intitle:Unsplash dinner', 'Healthy Meal Prep (Unsplash)', 'Steak Dinner (Unsplash)', 'evening dinner table');
+  }
+  if (/rò rỉ ruột|ro-ri-ruot|endotoxin|hàng rào niêm mạc|luôn mệt mỏi|mệt mỏi kéo dài/i.test(vi)) {
+    queries.push('Healthy Lentil Salad (Unsplash)', 'Vegetable Salad (Unsplash)', 'fermented vegetables bowl', 'probiotic yogurt berries');
+  }
+  if (/vi khuẩn hp|vi-khuan-hp|helicobacter|caga|ung thư dạ dày/i.test(vi)) {
+    queries.push('Broccoli sprouts', 'Fresh Vegetable Produce (Unsplash)', 'green cabbage kitchen', 'Brassica oleracea sprouts');
+  }
+  if (/virus hpv|\bhpv\b|cổ tử cung/i.test(vi)) {
+    queries.push('HumanPapillomavirus', 'DNA methylation H o', 'microscope laboratory research', 'laboratory research scientist');
+  }
+  if (/creatine|làm việc trí óc|pin dự phòng/i.test(vi)) {
+    queries.push('Working on a laptop outdoors (Unsplash)', 'Man at a laptop in an office (Unsplash)', 'Macbook and tea (Unsplash)', 'desk laptop coffee');
+  }
+  if (/bệnh nhân ung thư|dinh dưỡng chuẩn y khoa|khối cơ nạc/i.test(vi)) {
+    queries.push('Healthy Meal Prep (Unsplash)', 'Steak Dinner (Unsplash)', 'Vegetable Salad (Unsplash)', 'salmon vegetables meal');
+  }
+  if (/phosphatidylserine|\bdha\b|màng tế bào thần kinh/i.test(vi)) {
+    queries.push('salmon fillet culinary', 'walnuts bowl wooden', 'omega 3 capsules');
+  }
+  if (/đồ nướng|thịt nướng|cháy cạnh|cháy xém|barbecue|bbq/i.test(vi)) {
+    queries.push('grilled meat skewers herbs', 'barbecue grill meat', 'charcoal grilled meat');
+  }
+  if (/muối và kali|cân bằng muối|kali|natri/i.test(vi)) {
+    queries.push('Persea americana fruit 2', 'Fresh Vegetable Produce (Unsplash)', 'Spinacia oleracea spinach', 'fresh green avocado halved');
+  }
+
   // Nhóm triệu chứng, thể trạng & bối cảnh sống
   if (/sợ lạnh|lạnh cóng|lạnh chân tay|hạ thân nhiệt/i.test(vi)) {
-    queries.push(
-      'Woman enjoys warm drink while sitting at wooden table',
-      'Woman sitting on her bed in a sweater while holding a cup of coffee and reading a book',
-      'Tea cup wooden table cozy'
-    );
+    queries.push('Sejak tea leaves', 'Tea cup (Unsplash)', 'knit sweater warm tea');
   }
-  if (/rụng tóc|hói đầu|mỏng tóc/i.test(vi)) {
-    queries.push(
-      'Woman brushing healthy hair mirror',
-      'Healthy hair care'
-    );
-  }
-  if (/uể oải|mệt mỏi mạn tính|kiệt sức|đuối sức/i.test(vi)) {
-    queries.push(
-      'Peaceful person resting bed morning light',
-      'Person relaxing tea comfortable chair'
-    );
+  if (/uể oải|kiệt sức|đuối sức/i.test(vi) && !/rò rỉ ruột|creatine/i.test(vi)) {
+    queries.push('Soft Comforts (Unsplash)', 'Tea cup (Unsplash)');
   }
   if (/tuyến giáp|suy giáp|hashimoto|bướu cổ/i.test(vi)) {
-    queries.push(
-      'Woman enjoys warm drink while sitting at wooden table',
-      'Seaweed food',
-      'Tea cup wooden table cozy'
-    );
+    queries.push('Sejak tea leaves', 'Seaweed food', 'Tea cup (Unsplash)');
   }
   if (/sập nguồn|buồn ngủ.*(trưa|chiều)|oải sau ăn|đỉnh đường huyết/i.test(vi)) {
-    queries.push(
-      'Laptop coffee desk',
-      'Working on laptop office coffee',
-      'Office desk laptop espresso'
-    );
+    queries.push('Laptop on a neat desk (Unsplash)', 'Macbook and tea (Unsplash)', 'laptop coffee desk');
   }
   if (/khô mắt|mỏi mắt|nhìn mờ|màn hình|hoàng điểm/i.test(vi)) {
-    queries.push(
-      'woman working computer glasses desk',
-      'human eye macro closeup iris',
-      'person resting eyes office laptop'
-    );
+    queries.push('Laptop on a green thumb\'s desk (Unsplash)', 'Macbook and tea (Unsplash)', 'human eye iris');
   }
   if (/mất ngủ|khó ngủ|thao thức|giấc ngủ/i.test(vi)) {
-    queries.push(
-      'cozy bedroom night lamp warm light',
-      'person sleeping peacefully bed',
-      'warm bedside lamp bedroom cozy'
-    );
+    queries.push('Soft Comforts (Unsplash)', 'cozy bedroom lamp', 'person sleeping bed');
   }
-  if (/cổ vai gáy|ngồi lâu|ngồi nhiều|đau lưng/i.test(vi)) {
-    queries.push(
-      'person working at computer desk window',
-      'ergonomic office desk workspace',
-      'office worker stretching desk'
-    );
+  if (/cổ vai gáy|ngồi lâu|ngồi nhiều|đau lưng|ngồi máy tính/i.test(vi)) {
+    queries.push('Man at a laptop in an office (Unsplash)', 'Working on a laptop outdoors (Unsplash)', 'Businessman working and writing notes in office (Unsplash)', 'office worker laptop desk');
   }
   if (/khớp gối|đau khớp|leo cầu thang|sụn khớp/i.test(vi)) {
-    queries.push(
-      'outdoor wooden stairs hiking trail',
-      'hiking trail wooden steps nature'
-    );
+    queries.push('outdoor wooden stairs', 'hiking trail wooden steps');
   }
   if (/ánh nắng|bình minh|dậy sớm/i.test(vi)) {
-    queries.push(
-      'Golden sunrise through forest trees',
-      'morning sunlight through trees nature'
-    );
+    queries.push('Early morning in autumn forest (Unsplash)', 'morning sunlight forest');
   }
   if (/đi bộ|vận động nhẹ/i.test(vi)) {
-    queries.push(
-      'person walking forest path morning',
-      'footpath in autumn forest'
-    );
+    queries.push('Early morning in autumn forest (Unsplash)', 'person walking forest path');
   }
   if (/thở 4-7-8|căng thẳng|stress|lo âu|phế vị/i.test(vi)) {
-    queries.push(
-      'person meditating nature sunrise',
-      'calm forest stream water nature'
-    );
+    queries.push('Yoga sunrise. (Unsplash)', 'calm forest stream');
   }
 
   // Nhóm thực phẩm, dược liệu, thói quen ăn uống trong Tựa đề tiếng Việt
-  if (/yến mạch/i.test(vi)) queries.push('Rolled oats bowl', 'Oatmeal porridge breakfast', 'Avena sativa');
-  if (/bông cải xanh|súp lơ xanh/i.test(vi)) queries.push('Broccoli sprouts', 'Brassica oleracea fresh green broccoli');
-  if (/cà chua/i.test(vi)) queries.push('Solanum lycopersicum ripe tomatoes', 'fresh red tomatoes on vine', 'cooked tomatoes olive oil');
-  if (/tỏi/i.test(vi)) queries.push('Allium sativum garlic bulbs', 'fresh garlic cloves wooden board');
-  if (/socola|cacao/i.test(vi)) queries.push('dark chocolate chunks pieces', 'Theobroma cacao cocoa beans');
-  if (/quả mọng|việt quất|dâu tây|mâm xôi/i.test(vi)) queries.push('Vaccinium corymbosum fresh blueberries', 'Fresh raspberries bowl');
-  if (/quả lựu/i.test(vi)) queries.push('Punica granatum pomegranate fruit', 'Pomegranate arils bowl');
-  if (/kế sữa/i.test(vi)) queries.push('Silybum marianum milk thistle flower');
-  if (/trà xanh|matcha/i.test(vi)) queries.push('Camellia sinensis green tea leaves', 'matcha green tea bowl');
-  if (/cà phê/i.test(vi)) queries.push('steaming cup of black coffee morning', 'roasted coffee beans wooden table');
-  if (/cơm nguội|tinh bột kháng/i.test(vi)) queries.push('cooked white rice bowl chopsticks', 'steamed rice ceramic bowl');
-  if (/ăn rau trước|thứ tự ăn/i.test(vi)) queries.push('fresh green vegetable salad bowl', 'healthy meal vegetables fish bowl');
+  if (/yến mạch/i.test(vi)) queries.push('oatmeal breakfast', 'Bowl of Cereal (Unsplash)', 'granola yogurt berries', 'Healthy breakfast (Unsplash)');
+  if (/bông cải xanh|súp lơ xanh/i.test(vi)) queries.push('Broccoli sprouts', 'Brassica oleracea broccoli');
+  if (/cà chua/i.test(vi)) queries.push('Solanum lycopersicum tomatoes', 'fresh red tomatoes vine', 'cooked tomatoes olive oil');
+  if (/tỏi/i.test(vi) && !/đồ nướng|thịt nướng|cháy cạnh|cháy xém|barbecue|bbq/i.test(vi)) {
+    queries.push('Allium sativum garlic', 'fresh garlic wooden board');
+  }
+  if (/socola|cacao/i.test(vi)) queries.push('Theobroma cacao beans', 'dark chocolate pieces');
+  if (/quả mọng|việt quất|dâu tây|mâm xôi/i.test(vi)) queries.push('Strawberry and blueberries (Unsplash V6FcCG14q30)', 'Fresh raspberries bowl', 'intitle:Unsplash berries');
+  if (/quả lựu/i.test(vi)) queries.push('Punica granatum pomegranate', 'Pomegranate arils bowl');
+  if (/kế sữa/i.test(vi)) queries.push('Silybum marianum flower');
+  if (/trà xanh|matcha/i.test(vi)) queries.push('Sejak tea leaves', 'matcha green tea bowl', 'Tea cup (Unsplash)');
+  if (/cà phê/i.test(vi)) queries.push('Sweet morning coffee (Unsplash)', 'Coffee (Unsplash BIYoKb7Lux0)', 'Roasted coffee beans');
+  if (/cơm nguội|tinh bột kháng/i.test(vi) && !/khoai lang/i.test(vi)) queries.push('cooked white rice bowl', 'steamed rice ceramic bowl');
+  if (/ăn rau trước|thứ tự ăn/i.test(vi)) queries.push('Salad Bowl (Unsplash)', 'Vegetable Salad (Unsplash)', 'Healthy Meal Prep (Unsplash)');
   if (/trà sữa/i.test(vi)) queries.push('Bubble tea', 'Boba pearl milk tea');
-  if (/rong biển/i.test(vi)) queries.push('Seaweed food', 'Edible kelp seaweed dried');
-  if (/dầu ô liu/i.test(vi)) queries.push('olive oil bottle culinary', 'olive oil rustic wooden table');
-  if (/nấm hương|nấm dược liệu|nấm maitake/i.test(vi)) queries.push('Lentinula edodes shiitake mushrooms', 'fresh shiitake mushrooms wooden table');
-  if (/anh đào|cherry/i.test(vi)) queries.push('Prunus cerasus sour cherries', 'fresh red cherries bowl');
-  if (/thịt đỏ|thịt xông khói|xúc xích/i.test(vi)) queries.push('charcuterie board cured meat ham', 'fresh raw beef steak culinary');
-  if (/trà nóng|canh sôi/i.test(vi)) queries.push('steaming hot cup of tea', 'hot tea ceramic cup steam vapor');
-  if (/cám gạo/i.test(vi)) queries.push('Brown rice bowl', 'Oryza sativa unmilled rice');
-  if (/quả bơ/i.test(vi)) queries.push('Persea americana avocado fruit tree', 'fresh green avocado cut in half');
-  if (/gừng/i.test(vi)) queries.push('Zingiber officinale fresh ginger root');
-  if (/quế/i.test(vi)) queries.push('Cinnamomum verum cinnamon sticks');
-  if (/nghệ|curcumin/i.test(vi)) queries.push('Curcuma longa turmeric roots powder');
-  if (/đậu nành|đậu phụ/i.test(vi)) queries.push('Glycine max soybeans bowl');
-  if (/giấm táo/i.test(vi)) queries.push('apple cider vinegar bottle apples');
-  if (/táo đỏ|quả táo/i.test(vi)) queries.push('Malus domestica fresh red apples');
-  if (/tập tạ|kháng lực|teo cơ/i.test(vi)) queries.push('dumbbell weight training gym', 'strength training kettlebell');
-  if (/rượu bia|đỏ mặt/i.test(vi)) queries.push('glass of red wine on table');
-  if (/đồ nướng|cháy xém|bbq/i.test(vi)) queries.push('barbecue grill meat flames smoke');
-  if (/cần tây/i.test(vi)) queries.push('fresh green celery stalks wooden table', 'Apium graveolens celery');
+  if (/rong biển/i.test(vi)) queries.push('Seaweed food', 'Edible kelp seaweed');
+  if (/dầu ô liu/i.test(vi)) queries.push('olive oil culinary', 'olive oil wooden table');
+  if (/nấm hương|nấm dược liệu|nấm maitake/i.test(vi)) queries.push('Lentinula edodes shiitake', 'fresh shiitake mushrooms');
+  if (/anh đào|cherry/i.test(vi)) queries.push('Prunus cerasus cherries', 'fresh red cherries bowl');
+  if (/thịt đỏ|thịt xông khói|xúc xích/i.test(vi)) queries.push('charcuterie board cured meat', 'fresh raw beef steak');
+  if (/trà nóng|canh sôi/i.test(vi)) queries.push('Tea cup (Unsplash)', 'steaming hot cup tea');
+  if (/cám gạo/i.test(vi)) queries.push('Brown rice bowl', 'Oryza sativa rice');
+  if (/quả bơ/i.test(vi)) queries.push('Persea americana fruit 2', 'fresh green avocado halved');
+  if (/gừng/i.test(vi)) queries.push('Zingiber officinale ginger');
+  if (/quế/i.test(vi)) queries.push('Cinnamomum verum cinnamon');
+  if (/nghệ|curcumin/i.test(vi)) queries.push('Curcuma longa roots', 'turmeric powder');
+  if (/đậu nành|đậu phụ|hạt lanh|phytoestrogen/i.test(vi)) queries.push('tofu salad bowl', 'Linum usitatissimum seeds', 'Flaxseeds', 'Edamame bowl');
+  if (/giấm táo/i.test(vi)) queries.push('apple cider vinegar', 'Malus domestica apples');
+  if (/táo đỏ|quả táo/i.test(vi)) queries.push('Malus domestica apples', 'red apple wooden table');
+  if (/tập tạ|kháng lực|teo cơ/i.test(vi)) queries.push('dumbbell weight training', 'strength training kettlebell');
+  if (/rượu bia|đỏ mặt/i.test(vi)) queries.push('Wine glasses (Unsplash)', 'red wine glass table');
+  if (/cần tây/i.test(vi)) queries.push('fresh green celery', 'Apium graveolens celery');
 
   return [...new Set(queries)];
 }
@@ -408,324 +449,262 @@ export function extractSmartImageKeywords(topic = {}) {
     }
   }
 
+  // 0a. NHÓM HẠT BÍ ĐỎ & RỤNG TÓC NỘI TIẾT (Đặt trước nhóm rụng tóc chung)
+  if (/hạt bí đỏ|hat-bi-do|dầu hạt bí|pumpkin seed|cucurbita pepo|pepita/i.test(text)) {
+    queries.push('Pumpkin Seeds macro', 'Pepita de calabaza', 'Kürbiskernöl', 'pumpkin seeds bowl');
+  }
+
+  // 0b. NHÓM RỤNG TÓC, NANG TÓC & HÓI ĐẦU
+  if (/rụng tóc|tóc rụng|rung-toc|nang tóc|hói đầu|mỏng tóc|saw palmetto|\bdht\b|hair loss|thinning hair|alopecia|follicle/i.test(text)) {
+    queries.push('intitle:Unsplash hair woman', 'intitle:Unsplash braided hair', 'Seated woman with blonde hair', 'woman healthy hair');
+  }
+
+  // 0c. NHÓM KHOAI LANG LUỘC ĐỂ LẠNH & TINH BỘT KHÁNG
+  if (/khoai lang|khoai-lang|sweet potato|ipomoea batatas/i.test(text)) {
+    queries.push('Steamed sweet potato', 'Jjin-goguma', 'Baked potato, baked sweet potato', 'boiled sweet potato');
+  }
+
+  // 0d. NHÓM ĐƯỜNG, NẾP NHĂN DA & COLLAGEN
+  if (/nếp nhăn|nep-nhan|làn da|lan-da|collagen|lão hóa da|đứt gãy sợi|skin wrinkle|skin aging/i.test(text)) {
+    queries.push('intitle:Unsplash woman portrait', 'intitle:Unsplash berries', 'Fruit Platter (Unsplash)', 'fresh berries bowl');
+  }
+
+  // 0e. NHÓM ĂN TỐI MUỘN SAU 8 GIỜ & ĐỒNG HỒ SINH HỌC
+  if (/ăn tối muộn|an-toi-muon|ăn khuya|sau 8 giờ|eating late|late dinner|late at night/i.test(text)) {
+    queries.push('intitle:Unsplash dinner', 'Healthy Meal Prep (Unsplash)', 'Steak Dinner (Unsplash)', 'evening dinner table');
+  }
+
+  // 0f. NHÓM RÒ RỈ RUỘT (LEAKY GUT) & MỆT MỎI KÉO DÀI
+  if (/rò rỉ ruột|ro-ri-ruot|leaky gut|endotoxin|hàng rào niêm mạc|luôn mệt mỏi|mệt mỏi kéo dài/i.test(text)) {
+    queries.push('Healthy Lentil Salad (Unsplash)', 'Vegetable Salad (Unsplash)', 'fermented vegetables bowl', 'probiotic yogurt berries');
+  }
+
+  // 0g. NHÓM VI KHUẨN HP (H. PYLORI), CAGA & UNG THƯ DẠ DÀY
+  if (/vi khuẩn hp|vi-khuan-hp|h\.?\s*pylori|helicobacter|caga|ung thư dạ dày|gastric cancer/i.test(text)) {
+    queries.push('Broccoli sprouts', 'Fresh Vegetable Produce (Unsplash)', 'green cabbage kitchen', 'Brassica oleracea sprouts');
+  }
+
+  // 0h. NHÓM VIRUS HPV, GEN P53 & VACCINE CỔ TỬ CUNG
+  if (/virus hpv|\bhpv\b|cổ tử cung|cervical cancer/i.test(text)) {
+    queries.push('HumanPapillomavirus', 'DNA methylation H o', 'microscope laboratory research', 'laboratory research scientist');
+  }
+
+  // 0i. NHÓM CREATINE & LÀM VIỆC TRÍ ÓC
+  if (/creatine|làm việc trí óc|pin dự phòng|mental fatigue|backup battery/i.test(text)) {
+    queries.push('Working on a laptop outdoors (Unsplash)', 'Man at a laptop in an office (Unsplash)', 'Macbook and tea (Unsplash)', 'desk laptop coffee');
+  }
+
+  // 0j. NHÓM DINH DƯỠNG BỆNH NHÂN UNG THƯ & BẢO TỒN KHỐI CƠ NẠC
+  if (/bệnh nhân ung thư|dinh dưỡng chuẩn y khoa|khối cơ nạc|medical nutrition|muscle preservation/i.test(text)) {
+    queries.push('Healthy Meal Prep (Unsplash)', 'Steak Dinner (Unsplash)', 'Vegetable Salad (Unsplash)', 'salmon vegetables meal');
+  }
+
+  // 0k. NHÓM PHOSPHATIDYLSERINE, DHA & MÀNG TẾ BÀO THẦN KINH
+  if (/phosphatidylserine|\bdha\b|màng tế bào thần kinh|neuronal membrane|omega-3/i.test(text)) {
+    queries.push('salmon fillet culinary', 'walnuts bowl wooden', 'omega 3 capsules');
+  }
+
+  // 0l. NHÓM ĐỒ NƯỚNG CHÁY XÉM, PHẢN ỨNG GLYCATION (AGEs) & MAILLARD (Đặt trước nhóm Tỏi!)
+  if (/đồ nướng|thịt nướng|cháy cạnh|cháy xém|chay-xem|barbecue|bbq|charred|charcoal grill|grilled meat/i.test(text)) {
+    queries.push('grilled meat skewers herbs', 'barbecue grill meat', 'charcoal grilled meat');
+  }
+
   // 1. NHÓM NGŨ CỐC, YẾN MẠCH, CHẤT XƠ HÒA TAN & AXIT BUTYRATE
   if (/yến mạch|yen-mach|oat|oatmeal|avena sativa|butyrate|chất xơ hòa tan|soluble fiber/i.test(text)) {
-    queries.push(
-      'Rolled oats',
-      'Oatmeal',
-      'Avena sativa',
-      'Porridge bowl'
-    );
+    queries.push('oatmeal breakfast', 'Bowl of Cereal (Unsplash)', 'granola yogurt berries', 'Healthy breakfast (Unsplash)');
   }
 
   // 2. NHÓM QUẢ MỌNG, VIỆT QUẤT, DÂU TÂY, MÂM XÔI & AXIT ELLAGIC
   if (/quả mọng|qua-mong|việt quất|viet-quat|dâu tây|dau-tay|mâm xôi|berries|berry|blueberry|blueberries|strawberry|strawberries|raspberry|ellagic|fisetin/i.test(text)) {
-    queries.push(
-      'Vaccinium corymbosum',
-      'Fresh blueberries',
-      'Raspberries',
-      'Strawberries'
-    );
+    queries.push('Strawberry and blueberries (Unsplash V6FcCG14q30)', 'Fresh raspberries bowl', 'intitle:Unsplash berries');
   }
 
   // 3. NHÓM QUẢ LỰU, UROLITHIN A & TÁI TẠO TY THỂ (MITOPHAGY)
   if (/quả lựu|qua-luu|pomegranate|punica granatum|urolithin/i.test(text)) {
-    queries.push(
-      'Punica granatum',
-      'Pomegranate fruit',
-      'Pomegranate arils'
-    );
+    queries.push('Punica granatum pomegranate', 'Pomegranate arils bowl');
   }
 
   // 4. NHÓM CÁM GẠO, LÚA GẠO & CERAMIDE THỰC VẬT
   if (/cám gạo|cam-gao|rice bran|ceramide|phytoceramide|hạt gạo|oryza sativa/i.test(text)) {
-    queries.push(
-      'Brown rice',
-      'Oryza sativa',
-      'Rice grains',
-      'Unmilled rice'
-    );
+    queries.push('Brown rice bowl', 'Oryza sativa rice');
   }
 
   // 5. NHÓM TRÀ SỮA, ĐƯỜNG FRUCTOSE LỎNG, NƯỚC NGỌT & GAN NHIỄM MỠ (MASLD)
   if (/trà sữa|tra-sua|boba|bubble tea|fructose|nước ngọt|soft drink|soda|gan nhiễm mỡ|fatty liver|masld/i.test(text)) {
-    queries.push(
-      'Bubble tea',
-      'Boba tea',
-      'Pearl milk tea',
-      'Iced milk tea'
-    );
+    queries.push('Bubble tea', 'Boba tea', 'Iced milk tea');
   }
 
   // 6. NHÓM THỰC PHẨM MỐC, ĐỘC TỐ AFLATOXIN & BẢO QUẢN NGŨ CỐC / ĐẬU PHỘNG
   if (/thực phẩm mốc|thuc-pham-moc|aflatoxin|aspergillus|nấm mốc|moldy|ngũ cốc mốc|đậu phộng|lạc mốc/i.test(text)) {
-    queries.push(
-      'Arachis hypogaea',
-      'Raw peanuts',
-      'Peanuts',
-      'Corn kernels'
-    );
+    queries.push('Arachis hypogaea peanuts', 'Raw peanuts', 'Corn kernels');
   }
 
   // 7. NHÓM SẬP NGUỒN BỮA TRƯA, BUỒN NGỦ 2 GIỜ CHIỀU (POSTPRANDIAL SOMNOLENCE / LUNCH SLUMP)
   if (/sập nguồn|sap-nguon|bữa trưa|bua-trua|lunch slump|somnolence|buồn ngủ.*chiều|2 giờ chiều|đỉnh carbohydrate/i.test(text)) {
-    queries.push(
-      'Laptop coffee desk',
-      'Working on laptop',
-      'Office desk laptop',
-      'Espresso cup'
-    );
+    queries.push('Laptop on a neat desk (Unsplash)', 'Macbook and tea (Unsplash)', 'laptop coffee desk');
   }
 
   // 8. NHÓM CĂN BẾP CHỐNG UNG THƯ & CHẾ BIẾN THỰC PHẨM THÔNG MINH TẠI GIA ĐÌNH
   if (/căn bếp|can-bep|chế biến đúng cách|che-bien-dung-cach|chọn thực phẩm thông minh|home kitchen|culinary preparation|anticancer foods/i.test(text)) {
-    queries.push(
-      'Fresh vegetables',
-      'Mediterranean diet',
-      'Stir fry vegetables',
-      'Organic vegetables'
-    );
+    queries.push('Fresh Vegetable Produce (Unsplash)', 'Healthy Vegetables (Unsplash)', 'Salad Bowl (Unsplash)');
   }
 
   // 9. NHÓM LUTEIN, ZEAXANTHIN, HOÀNG ĐIỂM & KHÔ MỎI MẮT MÀN HÌNH
   if (/lutein|zeaxanthin|hoàng điểm|hoang-diem|điểm vàng|macula|macular|sắc tố vàng|sac-to-vang|bức rèm vàng|thị lực|mắt khô|khô mắt|dry eye/i.test(text)) {
-    queries.push(
-      'Human eye iris',
-      'Tagetes patula',
-      'Tagetes erecta',
-      'Human eye closeup'
-    );
+    queries.push('Human eye iris', 'Tagetes patula', 'Tagetes erecta');
   }
 
-  // 10. NHÓM ASTAXANTHIN & MỎI MẮT KỸ THUẬT SỐ (Tuyệt đối không dùng ảnh cá hồi chết trên đá)
+  // 10. NHÓM ASTAXANTHIN & MỎI MẮT KỸ THUẬT SỐ
   if (/astaxanthin|computer vision syndrome|hội chứng mỏi mắt|vết chân chim/i.test(text)) {
-    queries.push(
-      'Haematococcus pluvialis microalgae',
-      'human eye macro closeup iris',
-      'woman working computer glasses desk',
-      'person resting eyes office laptop'
-    );
+    queries.push('Laptop on a green thumb\'s desk (Unsplash)', 'Macbook and tea (Unsplash)', 'human eye iris');
   }
 
-  // 10b. NHÓM TUYẾN GIÁP, SUY GIÁP, SỢ LẠNH, RỤNG TÓC, I-ỐT & SELEN (Ưu tiên cảm xúc đời sống ấm áp & bàn trà/khăn ấm, cấm ảnh hạt trơ trọi nền trắng)
-  if (/tuyến giáp|tuyen-giap|thyroid|suy giáp|hypothyroid|hashimoto|sợ lạnh|so-lanh|cold intolerance|rụng tóc|hair loss|i-ốt|iodine|selen\b|selenium|bướu cổ|goiter/i.test(text)) {
-    queries.push(
-      'Woman enjoys warm drink while sitting at wooden table',
-      'Tea cup',
-      'Woman sitting on her bed in a sweater while holding a cup of coffee and reading a book',
-      'Seaweed food'
-    );
+  // 10b. NHÓM TUYẾN GIÁP, SUY GIÁP, SỢ LẠNH, I-ỐT & SELEN (Đã tách riêng khỏi rụng tóc!)
+  if (/tuyến giáp|tuyen-giap|thyroid|suy giáp|hypothyroid|hashimoto|sợ lạnh|so-lanh|cold intolerance|i-ốt|iodine|selen\b|selenium|bướu cổ|goiter/i.test(text)) {
+    queries.push('Sejak tea leaves', 'Seaweed food', 'Tea cup (Unsplash)');
   }
 
   // 11. NHÓM CÀ CHUA NẤU CHÍN, DẦU Ô LIU & LYCOPENE
   if (/cà chua|ca-chua|tomato|lycopene|dầu ô liu|olive oil/i.test(text)) {
-    queries.push(
-      'Solanum lycopersicum ripe tomatoes',
-      'fresh red tomatoes on vine',
-      'cherry tomatoes olive oil culinary',
-      'ripe red tomatoes basket'
-    );
+    queries.push('Solanum lycopersicum tomatoes', 'fresh red tomatoes vine', 'cherry tomatoes olive oil');
   }
 
-  // 12. NHÓM TỎI TƯƠI ĐẬP DẬP & ALLICIN
-  if (/tỏi|toi-tuoi|garlic|allicin|alliinase/i.test(text)) {
-    queries.push(
-      'Allium sativum garlic bulbs',
-      'fresh garlic cloves wooden board',
-      'garlic bulbs closeup',
-      'crushed garlic culinary'
-    );
+  // 12. NHÓM TỎI TƯƠI ĐẬP DẬP & ALLICIN (Chỉ khi không phải bài đồ nướng BBQ)
+  if (/tỏi|toi-tuoi|garlic|allicin|alliinase/i.test(text) && !/đồ nướng|thịt nướng|cháy cạnh|cháy xém|barbecue|bbq|grilled meat/i.test(text)) {
+    queries.push('Allium sativum garlic', 'fresh garlic wooden board', 'crushed garlic culinary');
   }
 
   // 13. NHÓM MẦM SÚP LƠ XANH, BÔNG CẢI XANH & SULFORAPHANE (Nrf2-Keap1)
   if (/sulforaphane|súp lơ|sup-lo|bông cải xanh|broccoli|brassica oleracea|nrf2/i.test(text)) {
-    queries.push(
-      'Broccoli sprouts',
-      'Brassica oleracea fresh green broccoli',
-      'broccoli florets healthy vegetable',
-      'microgreens sprouts glass jar'
-    );
+    queries.push('Broccoli sprouts', 'Brassica oleracea broccoli', 'microgreens sprouts');
   }
 
   // 14. NHÓM NẤM DƯỢC LIỆU, NẤM HƯƠNG, MAITAKE & BETA-GLUCAN
   if (/nấm hương|nấm maitake|shiitake|maitake|mushroom|beta-glucan|dectin-1/i.test(text)) {
-    queries.push(
-      'Lentinula edodes shiitake mushrooms',
-      'fresh shiitake mushrooms wooden table',
-      'edible mushrooms basket culinary'
-    );
+    queries.push('Lentinula edodes shiitake', 'fresh shiitake mushrooms', 'edible mushrooms basket');
   }
 
   // 15. NHÓM THỊT ĐỎ CHẾ BIẾN SẴN, XÚC XÍCH, THỊT XÔNG KHÓI & NITROSAMINE
   if (/thịt đỏ|thit-do|thịt xông khói|xúc xích|processed meat|bacon|sausage|nitrosamine|sắt heme/i.test(text)) {
-    queries.push(
-      'charcuterie board cured meat ham',
-      'fresh raw beef steak culinary',
-      'sliced cured salami prosciutto'
-    );
+    queries.push('charcuterie board cured meat', 'fresh raw beef steak');
   }
 
   // 16. NHÓM CANH SÔI, TRÀ NÓNG TRÊN 65 ĐỘ & THỰC QUẢN
   if (/trà nóng|tra-nong|canh sôi|trên 65|65°c|65-do|hot tea|scalding|thực quản|esophageal/i.test(text)) {
-    queries.push(
-      'steaming hot cup of tea',
-      'hot tea ceramic cup steam vapor',
-      'steaming bowl of soup'
-    );
+    queries.push('Tea cup (Unsplash)', 'steaming hot cup tea', 'steaming bowl soup');
   }
 
-  // 17. NHÓM KẾ SỮA (SILYMARIN) & BẢO VỆ TẾ BÀO GAN (Đặt trước nhóm rượu bia để không bị lấy nhầm ảnh ly rượu)
+  // 17. NHÓM KẾ SỮA (SILYMARIN) & BẢO VỆ TẾ BÀO GAN
   if (/kế sữa|ke-sua|milk thistle|silymarin|silybum marianum/i.test(text)) {
-    queries.push(
-      'Silybum marianum milk thistle flower',
-      'milk thistle purple flower botanical',
-      'Silybum marianum plant'
-    );
+    queries.push('Silybum marianum flower', 'milk thistle flower');
   }
 
   // 18. NHÓM ĐỎ MẶT KHI UỐNG RƯỢU BIA, ACETALDEHYDE & ALDH2
   if (/đỏ mặt|do-mat|acetaldehyde|aldh2|facial flush|hangover|rượu bia|alcohol/i.test(text) && !/kế sữa|silymarin|milk thistle/i.test(text)) {
-    queries.push(
-      'glass of red wine on table',
-      'red wine glass restaurant',
-      'pouring red wine glass'
-    );
+    queries.push('Wine glasses (Unsplash)', 'red wine glass table');
   }
 
   // 19. NHÓM QUẢ ANH ĐÀO CHUA (TART CHERRY) & AXIT URIC / BỆNH GÚT
   if (/anh đào|anh-dao|cherry|tart cherry|axit uric|uric acid|gout|gút/i.test(text)) {
-    queries.push(
-      'Prunus cerasus sour cherries',
-      'fresh red cherries bowl',
-      'ripe red cherries on branch'
-    );
+    queries.push('Prunus cerasus cherries', 'fresh red cherries bowl');
   }
 
-  // 20. NHÓM SOCOLA ĐEN, CACAO, FLAVANOL & OXIT NITRIC (Đặt trước nhóm huyết áp để không bị lấy nhầm quả bơ)
+  // 20. NHÓM SOCOLA ĐEN, CACAO, FLAVANOL & OXIT NITRIC
   if (/socola|chocolate|cacao|flavanol|theobroma/i.test(text)) {
-    queries.push(
-      'dark chocolate chunks pieces',
-      '2023 Gorzka czekolada',
-      'Theobroma cacao cocoa beans'
-    );
-  }
-
-  // 21. NHÓM ĐỒ NƯỚNG CHÁY XÉM, PHẢN ỨNG GLYCATION (AGEs) & MAILLARD
-  if (/nướng|cháy xém|chay-xem|barbecue|bbq|charred|grill|glycation|maillard|\bages\b/i.test(text)) {
-    queries.push(
-      'barbecue grill meat flames smoke',
-      'grilled meat charcoal barbecue',
-      'roasting meat on grill'
-    );
+    queries.push('Theobroma cacao beans', 'dark chocolate pieces');
   }
 
   // 22. NHÓM NGỒI NHIỀU, TÊ LIỆT ENZYME LPL & ĐAU MỎI CỔ VAI GÁY VĂN PHÒNG
-  if (/ngồi nhiều|ngoi-nhieu|ngồi làm việc|sedentary|enzyme lpl|cổ vai gáy|co-vai-gay|trapezius|văn phòng/i.test(text)) {
-    queries.push(
-      'office worker sitting laptop desk',
-      'person working at computer desk window',
-      'ergonomic office desk workspace'
-    );
+  if (/ngồi nhiều|ngoi-nhieu|ngồi làm việc|sedentary|enzyme lpl|cổ vai gáy|co-vai-gay|trapezius|ngồi máy tính|neck and shoulder/i.test(text)) {
+    queries.push('Man at a laptop in an office (Unsplash)', 'Working on a laptop outdoors (Unsplash)', 'Businessman working and writing notes in office (Unsplash)', 'office worker laptop desk');
   }
 
-  // 23. NHÓM TỶ LỆ KALI & NATRI, XẢ ÁP MẠCH MÁU (Chỉ khớp khi nói về Kali/Natri hoặc Bơ/Chuối)
+  // 23. NHÓM TỶ LỆ KALI & NATRI, XẢ ÁP MẠCH MÁU
   if (/kali|natri|potassium|sodium|quả bơ|avocado/i.test(text)) {
-    queries.push(
-      'Persea americana avocado fruit tree',
-      'fresh green avocado cut in half',
-      'Spinacia oleracea fresh spinach leaves'
-    );
+    queries.push('Persea americana fruit 2', 'Fresh Vegetable Produce (Unsplash)', 'Spinacia oleracea spinach', 'fresh green avocado halved');
   }
 
   // 24. NHÓM AXIT HYALURONIC, ĐỆM KHỚP GỐI & LEO CẦU THANG
   if (/hyaluronic|khớp gối|khop-goi|đệm khớp|knee joint|sụn khớp|hoạt dịch|cầu thang|stair/i.test(text)) {
-    queries.push(
-      'outdoor wooden stairs hiking trail',
-      'scenic wooden staircase nature forest',
-      'hiking trail wooden steps'
-    );
+    queries.push('outdoor wooden stairs', 'hiking trail wooden steps');
   }
 
   // 25. NHÓM TẬP KHÁNG LỰC, TẬP TẠ, LEUCINE, mTOR & NGĂN NGỪA TEO CƠ (SARCOPENIA)
   if (/leucine|teo cơ|teo-co|sarcopenia|kháng lực|khang-luc|tập tạ|resistance training|weight training|myokine/i.test(text)) {
-    queries.push(
-      'dumbbell weight training gym',
-      'fitness exercise dumbbells workout',
-      'strength training kettlebell'
-    );
+    queries.push('dumbbell weight training', 'strength training kettlebell');
   }
 
   // 26. NHÓM DƯỢC LIỆU & THỰC PHẨM CHỨC NĂNG CỤ THỂ KHÁC
-  if (/bạch quả|ginkgo biloba/i.test(text)) queries.push('Ginkgo biloba leaf autumn', 'Ginkgo biloba tree leaves');
-  if (/berberin|vàng đắng/i.test(text)) queries.push('Berberis vulgaris plant berries', 'Berberis botanical');
+  if (/bạch quả|ginkgo biloba/i.test(text)) queries.push('Ginkgo biloba leaf', 'Ginkgo biloba autumn');
+  if (/berberin|vàng đắng/i.test(text)) queries.push('Berberis vulgaris berries');
   if (/\b(?:curcumin|turmeric|củ nghệ|nghệ vàng|tinh bột nghệ)\b/i.test(text)) {
-    queries.push('Curcuma longa turmeric roots powder', 'fresh turmeric rhizome');
+    queries.push('Curcuma longa roots', 'turmeric powder');
   }
-  if (/ashwagandha|sâm ấn độ|withania/i.test(text)) queries.push('Withania somnifera Ashwagandha plant');
-  if (/rhodiola|rễ vàng/i.test(text)) queries.push('Rhodiola rosea golden root flower');
-  if (/nhân sâm|panax ginseng/i.test(text)) queries.push('Panax ginseng root herbal');
-  if (/trà xanh|green tea|theanine|egcg|matcha/i.test(text)) queries.push('Camellia sinensis green tea leaves', 'matcha green tea bowl');
-  if (/resveratrol|nho đỏ/i.test(text)) queries.push('red wine grapes Vitis vinifera');
-  if (/gừng|ginger|zingiber/i.test(text)) queries.push('Zingiber officinale fresh ginger root');
-  if (/quế|cinnamon/i.test(text)) queries.push('Cinnamomum verum cinnamon sticks');
+  if (/ashwagandha|sâm ấn độ|withania/i.test(text)) queries.push('Withania somnifera plant');
+  if (/rhodiola|rễ vàng/i.test(text)) queries.push('Rhodiola rosea flower');
+  if (/nhân sâm|panax ginseng/i.test(text)) queries.push('Panax ginseng root');
+  if (/trà xanh|green tea|theanine|egcg|matcha/i.test(text)) queries.push('Sejak tea leaves', 'matcha green tea bowl', 'Tea cup (Unsplash)');
+  if (/resveratrol|nho đỏ/i.test(text)) queries.push('Vitis vinifera grapes');
+  if (/gừng|ginger|zingiber/i.test(text)) queries.push('Zingiber officinale ginger');
+  if (/quế|cinnamon/i.test(text)) queries.push('Cinnamomum verum cinnamon');
   if (/đậu nành|soybean|isoflavone|genistein|hạt lanh|flaxseed|phytoestrogen/i.test(text)) {
-    queries.push('Glycine max soybeans bowl', 'Linum usitatissimum flaxseed');
+    queries.push('tofu salad bowl', 'Linum usitatissimum seeds', 'Flaxseeds', 'Edamame bowl');
   }
   if (/\b(?:quả táo|ăn táo|táo đỏ|apple fruit|pectin|akkermansia)\b/i.test(text)) {
-    queries.push('Malus domestica fresh red apples', 'red apple fruit on wooden table');
+    queries.push('Malus domestica apples', 'red apple wooden table');
   }
   if (/giấm táo|giam-tao|apple cider vinegar/i.test(text)) {
-    queries.push('apple cider vinegar bottle apples', 'fresh apples wooden table');
+    queries.push('apple cider vinegar', 'Malus domestica apples');
   }
-  if (/cơm nguội|com-nguoi|tinh bột kháng|resistant starch/i.test(text)) {
-    queries.push('cooked white rice bowl chopsticks', 'steamed rice ceramic bowl');
+  if (/cơm nguội|com-nguoi|tinh bột kháng|resistant starch/i.test(text) && !/khoai lang/i.test(text)) {
+    queries.push('cooked white rice bowl', 'steamed rice ceramic bowl');
   }
   if (/ăn rau trước|an-rau-truoc|thứ tự bữa ăn|thu-tu-an/i.test(text)) {
-    queries.push('fresh green vegetable salad bowl', 'healthy meal vegetables fish bowl');
+    queries.push('Salad Bowl (Unsplash)', 'Vegetable Salad (Unsplash)', 'Healthy Meal Prep (Unsplash)');
   }
   if (/cà phê|ca-phe|coffee|caffeine|adenosine/i.test(text)) {
-    queries.push('steaming cup of black coffee morning', 'Coffea arabica roasted coffee beans');
+    queries.push('Sweet morning coffee (Unsplash)', 'Coffee (Unsplash BIYoKb7Lux0)', 'Roasted coffee beans');
   }
   if (/nhịn ăn gián đoạn|nhin-an-gian-doat|intermittent fasting|autophagy|tự thực bào/i.test(text)) {
-    queries.push('herbal tea glass water lemon table', 'minimalist healthy breakfast bowl');
+    queries.push('Sejak tea leaves', 'Healthy breakfast (Unsplash)');
   }
   if (/muối khoáng|muoi-khoang|nước ấm sáng sớm|điện giải|electrolyte/i.test(text)) {
-    queries.push('glass of water with lemon sea salt morning', 'clear glass of water morning sunlight');
+    queries.push('glass water lemon', 'clear glass water morning');
   }
   if (/ánh nắng|anh-nang|morning sun|bình minh|nhân trên chéo|scn/i.test(text)) {
-    queries.push('Golden sunrise through forest trees', 'morning sunlight through trees nature');
+    queries.push('Early morning in autumn forest (Unsplash)', 'morning sunlight forest');
   }
   if (/đi bộ|di-bo|walking|glut4/i.test(text)) {
-    queries.push('person walking forest path morning', 'footpath in autumn forest');
+    queries.push('Early morning in autumn forest (Unsplash)', 'person walking forest path');
   }
-  if (/giấc ngủ|giac-ngu|sleep|melatonin|night shift|ánh sáng xanh|blue light|nhiệt độ phòng ngủ/i.test(text)) {
-    queries.push('cozy bedroom night lamp warm light', 'person sleeping peacefully bed');
+  if (/giấc ngủ|giac-ngu|sleep|melatonin|night shift|ánh sáng xanh|blue light|nhiệt độ phòng ngủ/i.test(text) && !/ăn tối muộn|eating late/i.test(text)) {
+    queries.push('Soft Comforts (Unsplash)', 'cozy bedroom lamp', 'person sleeping bed');
   }
   if (/cortisol|stress|căng thẳng|thở 4-7-8|phế vị|vagus nerve/i.test(text)) {
-    queries.push('person meditating nature sunrise', 'calm forest stream water nature');
+    queries.push('Yoga sunrise. (Unsplash)', 'calm forest stream');
   }
   if (/vaccin|vac-xin|tiêm chủng|immuniz|mrna|kháng thể/i.test(text)) {
-    queries.push('medical vaccine vial syringe laboratory', 'immunology research laboratory');
+    queries.push('microscope laboratory research', 'intitle:Unsplash laboratory', 'Drmakete lab 2015 (Unsplash)');
   }
   if (/bài thuốc.*ung thư|chữa khỏi ung thư|lang băm|quackery/i.test(text)) {
-    queries.push('oncology research laboratory microscope', 'medical scientist laboratory');
+    queries.push('oncology research microscope', 'medical scientist laboratory');
   }
 
-  // 27. TẦNG DỰ PHÒNG THEO HỆ CƠ QUAN (Tuyệt đối KHÔNG dùng ảnh tập tạ/gym cho Metabolic!)
+  // 27. TẦNG DỰ PHÒNG THEO HỆ CƠ QUAN (Verified 4K Wikimedia Unsplash queries)
   if (queries.length === 0) {
     const organ = topic.organ || 'Metabolic';
     const SAFE_ORGAN_FALLBACKS = {
-      Cardiovascular: ['fresh Mediterranean vegetables olive oil', 'fresh red berries bowl'],
-      Heart: ['fresh Mediterranean vegetables olive oil', 'fresh avocado and greens'],
-      Brain: ['morning sunlight through forest trees', 'green tea ceramic cup'],
-      Gut: ['fresh organic vegetables basket', 'fermented food vegetables bowl'],
-      Metabolic: ['fresh colorful vegetables wooden table', 'healthy whole foods ingredients kitchen'],
-      'Cellular Aging': ['olive trees Mediterranean grove', 'fresh blueberries bowl'],
-      Immunity: ['fresh citrus lemon ginger herbs', 'medicinal herbs garden'],
-      Immune: ['fresh citrus lemon ginger herbs', 'medicinal herbs garden'],
-      Oncology: ['fresh broccoli tomatoes garlic kitchen', 'Brassica oleracea broccoli sprouts'],
-      Cancer: ['fresh broccoli tomatoes garlic kitchen', 'Brassica oleracea broccoli sprouts'],
-      Liver: ['Silybum marianum milk thistle', 'fresh green leafy vegetables']
+      Cardiovascular: ['Fresh Vegetable Produce (Unsplash)', 'Strawberry and blueberries (Unsplash V6FcCG14q30)'],
+      Heart: ['Fresh Vegetable Produce (Unsplash)', 'Salad Bowl (Unsplash)'],
+      Brain: ['Early morning in autumn forest (Unsplash)', 'Tea cup (Unsplash)'],
+      Gut: ['Salad Bowl (Unsplash)', 'Vegetable Salad (Unsplash)'],
+      Metabolic: ['Healthy Meal Prep (Unsplash)', 'Healthy Vegetables (Unsplash)'],
+      'Cellular Aging': ['Fruit Platter (Unsplash)', 'Early morning in autumn forest (Unsplash)'],
+      Immunity: ['Healthy Vegetables (Unsplash)', 'Broccoli sprouts'],
+      Immune: ['Healthy Vegetables (Unsplash)', 'Broccoli sprouts'],
+      Oncology: ['Fresh Vegetable Produce (Unsplash)', 'Broccoli sprouts'],
+      Cancer: ['Fresh Vegetable Produce (Unsplash)', 'Broccoli sprouts'],
+      Liver: ['Silybum marianum flower', 'Vegetable Salad (Unsplash)']
     };
     queries.push(...(SAFE_ORGAN_FALLBACKS[organ] || SAFE_ORGAN_FALLBACKS.Metabolic));
   }
@@ -734,47 +713,49 @@ export function extractSmartImageKeywords(topic = {}) {
 }
 
 /**
- * Zero-LLM Deterministic Visual Spec Engine:
- * Tuyệt đối không dùng Gemini LLM để sinh từ khóa, loại bỏ hoàn toàn các liên tưởng sai lệch ngoài ý muốn.
+ * Zero-LLM Deterministic Visual Spec Engine v4.0:
  * Kết hợp trực tiếp:
  * 1. Title-First Entity Extraction (Ưu tiên số 1: Tiêu đề nói gì -> Tìm đúng đối tượng đó)
- * 2. Từ khóa đã định nghĩa của bài viết (topic.imageSearchQueries)
- * 3. 27+ nhóm hoạt chất và hệ cơ quan chuyên sâu (Fallback bảo vệ)
+ * 2. Phân loại nội dung & 35+ nhóm hoạt chất chuyên sâu
+ * 3. Từ khóa đã định nghĩa của bài viết (topic.imageSearchQueries)
  */
 export function buildDeterministicVisualSpec(topic = {}) {
   const titleQueries = extractKeywordsFromTitle(topic.titleVi || '', topic.titleEn || '');
   const deterministicQueries = extractSmartImageKeywords(topic);
   const userQueries = Array.isArray(topic.imageSearchQueries)
-    ? topic.imageSearchQueries.filter(q => typeof q === 'string' && q.trim().length >= 2)
+    ? topic.imageSearchQueries.filter(q => typeof q === 'string' && q.trim().length >= 2 && !/^(?:fitness exercise|dumbbells|healthy nutrition|cancer laboratory)$/i.test(q.trim()))
     : [];
 
-  // THỨ TỰ ƯU TIÊN TUYỆT ĐỐI: 1. Từ khóa Tựa đề -> 2. imageSearchQueries định nghĩa -> 3. Phân loại nội dung
-  const combinedQueries = [...new Set([...titleQueries, ...userQueries, ...deterministicQueries])];
+  // THỨ TỰ ƯU TIÊN TUYỆT ĐỐI: 1. Từ khóa Tựa đề -> 2. Phân loại từ khóa chuẩn hóa -> 3. imageSearchQueries từ AI
+  const combinedQueries = [...new Set([...titleQueries, ...deterministicQueries, ...userQueries])];
 
   const titleVi = topic.titleVi || topic.titleEn || '';
-  const isSymptom = /sợ lạnh|lạnh cóng|mệt mỏi|uể oải|rụng tóc|suy giáp|tuyến giáp|giấc ngủ|mất ngủ|stress|căng thẳng|sương mù não|sập nguồn|postprandial/i.test(titleVi);
-  const isCulinary = /nấu chín|căn bếp|chế biến|nấu ăn|thực phẩm|bữa trưa|bữa ăn|rau|yến mạch|gạo|bông cải|cà chua|tỏi|dầu ô liu/i.test(titleVi);
+  const isSymptom = /sợ lạnh|lạnh cóng|mệt mỏi|uể oải|rụng tóc|tóc rụng|suy giáp|tuyến giáp|giấc ngủ|mất ngủ|stress|căng thẳng|sương mù não|sập nguồn|postprandial|đau mỏi|cổ vai gáy/i.test(titleVi);
+  const isCulinary = /nấu chín|căn bếp|chế biến|nấu ăn|thực phẩm|bữa trưa|bữa ăn|bữa tối|ăn tối|rau|yến mạch|khoai lang|gạo|bông cải|cà chua|tỏi|dầu ô liu|đậu nành|hạt bí|socola|đồ nướng/i.test(titleVi);
+  const isMolecular = /Clinical Deep-Dive|Deep Dispatch/i.test(topic.tier || '') && /virus|hpv|p53|dna|phân tử|molecular|protein|synap|tế bào/i.test(titleVi);
 
   let coreSubject = '';
   if (titleQueries.length > 0) {
-    if (isSymptom) {
-      coreSubject = `Cozy authentic lifestyle or wellness scene depicting: "${topic.titleVi || topic.titleEn}" (e.g. warm knit sweater, relaxing with tea, peaceful rest)`;
-    } else if (isCulinary) {
-      coreSubject = `Natural culinary or botanical setting depicting: "${topic.titleVi || topic.titleEn}" (rustic table, kitchen preparation, fresh whole ingredients)`;
+    if (isCulinary) {
+      coreSubject = `Natural appetizing culinary or botanical photography depicting: "${topic.titleVi || topic.titleEn}" (rustic wooden table, kitchen preparation, fresh whole ingredients)`;
+    } else if (isSymptom) {
+      coreSubject = `Cozy authentic lifestyle, workspace, or wellness photography depicting: "${topic.titleVi || topic.titleEn}" (natural light, warm human context, relaxing with tea, ergonomic desk)`;
+    } else if (isMolecular) {
+      coreSubject = `Clean, text-free 3D molecular/viral structural artwork OR authentic high-resolution 35mm biomedical photograph closely depicting: "${topic.titleVi || topic.titleEn}"`;
     } else {
-      coreSubject = `Authentic high-resolution photograph closely depicting the title subject: "${topic.titleVi || topic.titleEn}"`;
+      coreSubject = `Authentic high-resolution 35mm photograph closely depicting the title subject: "${topic.titleVi || topic.titleEn}"`;
     }
-  } else if (isSymptom) {
-    coreSubject = 'Cozy warm indoor scene, person wearing a knit sweater holding a warm tea mug, or peaceful resting';
   } else if (isCulinary) {
-    coreSubject = 'Food ingredients in a natural kitchen or dining setting (bowl, cutting board, rustic wooden table)';
+    coreSubject = 'Appetizing food ingredients in a natural kitchen or dining setting (bowl, cutting board, rustic wooden table)';
+  } else if (isSymptom) {
+    coreSubject = 'Cozy warm lifestyle scene, person in natural morning light, ergonomic desk, or peaceful resting';
   } else {
     coreSubject = 'Authentic high-resolution botanical, culinary, or lifestyle photograph matching ' + (topic.titleEn || topic.titleVi || 'health topic');
   }
 
   return {
     coreSubject,
-    forbiddenSubjects: 'Isolated seeds, nuts, pills, or food cutouts floating on pure white studio background (#FFFFFF); generic dumbbells/gym equipment; generic lab technicians at microscope; commercial branding/packaging; dead fish.',
+    forbiddenSubjects: 'Isolated objects/cutouts on pure white (#FFFFFF) or pure black (#000000) studio backgrounds; pathology/autopsy/formaldehyde jars; laboratory petri dishes; military/army scenes; hospital patient beds; amateur harsh-flash snapshots; messy 2000s computer rooms with tangled cables; wholesale burlap sacks; raw uncooked rice; plain tree twigs/leaves for nutrition topics; commercial packaging/logos.',
     queries: combinedQueries
   };
 }
@@ -783,16 +764,16 @@ export function buildDeterministicVisualSpec(topic = {}) {
 export const generateVisualSpecWithGemini = buildDeterministicVisualSpec;
 
 /**
- * Trạm kiểm duyệt thị giác AI (Universal Fail-Closed Gemini Vision Gatekeeper)
- * Áp dụng cho MỌI nguồn ảnh (Pexels, Pixabay, Wikimedia Commons, Openverse, Curated Library).
- * Tuyệt đối KHÔNG fail-open (nếu ảnh không khớp nội dung -> REJECT ngay lập tức).
+ * Trạm kiểm duyệt thị giác AI (Universal Fail-Closed Gemini Vision Gatekeeper v4.0)
+ * Áp dụng cho MỌI nguồn ảnh (Pexels, Pixabay, Wikimedia Commons, Curated Library).
+ * Tuyệt đối KHÔNG fail-open (nếu ảnh không khớp nội dung hoặc dính bẫy chất lượng -> REJECT ngay lập tức).
  */
 export async function evaluateCandidateWithGeminiVision(buf, topic = {}, apiKey = '', visualSpec = null) {
   if (!buf || buf.length < 25000) {
     return { pass: false, score: 0, reason: 'Buffer too small (<25KB)' };
   }
   if (!apiKey) {
-    return { pass: true, score: 7.5, reason: 'No GEMINI_API_KEY configured (local offline mode)' };
+    return { pass: true, score: 8.0, reason: 'No GEMINI_API_KEY configured (local offline mode)' };
   }
 
   // Resize candidate image to 640x360 before sending to Gemini Vision for fast (<1.5s) & low-token evaluation
@@ -809,7 +790,7 @@ export async function evaluateCandidateWithGeminiVision(buf, topic = {}, apiKey 
   const titleVi = topic.titleVi || topic.slugVi || '';
   const titleEn = topic.titleEn || topic.slugEn || '';
   const coreSubject = visualSpec?.coreSubject || titleVi || titleEn;
-  const forbidden = visualSpec?.forbiddenSubjects || 'Unrelated gym equipment, commercial packaging/logos, dead fish for eye topics, turmeric for non-turmeric topics, multi-panel text diagrams.';
+  const forbidden = visualSpec?.forbiddenSubjects || 'Cutouts on pure white/black backgrounds, pathology/autopsy jars, laboratory petri dishes, military scenes, amateur harsh-flash snapshots, messy computer rooms, burlap sacks, raw uncooked rice, plain tree twigs.';
 
   const prompt = `You are the strict Editorial Art Director for PhytoCodex, a premier biomedical & health publication directed by Dr. Xuan Chien Hoang (University of Hamburg).
 
@@ -820,24 +801,25 @@ Forbidden Visual Traps: "${forbidden}"
 
 Inspect this candidate cover photograph and score its suitability from 1 to 10.
 IMPORTANT EVALUATION GUIDELINES:
-- Real stock photography depicts a SINGLE clear subject (e.g., just fresh rice grains, OR just fresh vegetables, OR just a bowl of oats, OR just a human eye, OR just a laptop/coffee desk). Do NOT demand multiple objects or metaphors in the same frame! If the photo cleanly and authentically shows the primary food, plant, ingredient, organ, or workspace relevant to the article title, APPROVE IT ("pass": true, "score" >= 8).
+- Real editorial photography depicts a SINGLE clear, appetizing or relatable subject (e.g., steamed sweet potatoes on a plate, OR a clean bowl of healthy salad, OR a bright ergonomic laptop desk, OR a cozy bedroom at night, OR a vibrant woman brushing healthy hair). Do NOT demand multiple metaphors in one frame. If the photo is aesthetically refined (magazine quality, natural light, pleasant composition) and authentically matches the article headline, APPROVE IT ("pass": true, "score" >= 8.0).
 
 MANDATORY REJECTION RULES (Must set "pass": false and "score" <= 4 if ANY of these apply):
-1. CONTENT & EDITORIAL MISMATCH: The main visible subject in the photo is unrelated to the article topic (e.g., gym equipment/dumbbells/treadmills for a food/tea/oats/liver/gut article; raw turmeric for an article not about turmeric; generic lab technicians at a microscope for a home kitchen/dietary article; historical black-and-white child labor/archival photos).
-2. ISOLATED RAW CUTOUT ON SEAMLESS PURE WHITE BACKGROUND: Reject photos showing 1-3 isolated nuts, seeds, raw beans, pills, capsules, or food chunks floating on a pure white, sterile seamless studio background (#FFFFFF). It looks like an amateur e-commerce product cutout and is completely unidentifiable/alienating to general magazine readers. Cover photography MUST have a natural scene, shallow depth of field, warm lifestyle atmosphere, or natural table/kitchen/nature environment.
-3. MAINSTREAM READER CONFUSION / MISIDENTIFICATION TRAP: If an average reader glancing at the thumbnail on a mobile screen would be confused, disgusted, or unable to immediately recognize what the object is (e.g. 3 obscure brown nuts looking like garlic cloves, larvae, tree bark, or potato peelings), REJECT IT! The image must create an immediate, intuitive, pleasant, and scientifically sensible visual anchor for the headline.
-4. COMMERCIAL PACKAGING / LOGOS / WATERMARKS: The photo shows commercial snack boxes, brand logos (e.g., KIND bars, supermarket packaging), website URLs, or stock watermarks.
-5. DEAD / SPAWNING FISH FOR EYE/SCREEN TOPICS: Reject photos of dead or underwater salmon for articles about screen eye strain, dry eyes, or macular pigment.
-6. ACADEMIC DIAGRAMS / TEXT CHARTS: Reject multi-panel journal figures (A, B, C), flowcharts full of text labels, statistical bar charts, scanned documents, or ugly grey microscope debris.
+1. CONTENT & EDITORIAL MISMATCH: The main visible subject does NOT directly align with the article's specific headline (e.g., coffee beans for late-night dinner, generic salad for skin wrinkles unless clearly skincare/collagen nutrition, olive tree branches for stomach cancer, marigold flower for H. pylori, gym equipment for food/sleep/liver topics).
+2. ISOLATED CUTOUT ON PURE WHITE (#FFFFFF) OR PURE BLACK (#000000) BACKGROUND: Reject objects, bulbs, broccoli, chocolate chunks, or pills isolated on seamless pure white or pure black studio backgrounds. Cover photography MUST have a natural scene, shallow depth of field, warm lifestyle atmosphere, or natural table/kitchen/nature environment.
+3. PATHOLOGY / AUTOPSY / FORMALDEHYDE MUSEUM JARS / PETRI DISHES: Reject preserved organs in jars, pickled brains, surgical gore, clinical lesions, or ugly agar petri dishes.
+4. MILITARY / ARMY / HOSPITAL PATIENT BEDS: Reject military uniforms, camouflage field tents, or institutional hospital cots.
+5. AMATEUR / UNAPPETIZING / CLUTTERED SNAPSHOTS: Reject harsh direct-flash snapshots, messy 2000s computer rooms with CRT monitors or tangled cables, dirty cafe tables with crumpled napkins, empty cheap hotel rooms, industrial wholesale burlap sacks, or dry uncooked white rice grains macro texture.
+6. BOTANICAL TWIGS / TREE LEAVES WITHOUT FOOD: Reject plain tree branches or leaves without clearly recognizable food/fruit for dietary/nutrition articles.
+7. COMMERCIAL PACKAGING / LOGOS / WATERMARKS / DIAGRAMS: Reject snack boxes, brand logos, stock watermarks, multi-panel figures, or text charts.
 
-To PASS ("pass": true), the image MUST score >= 7.5 and clearly, authentically match the article's core subject.
+To PASS ("pass": true), the image MUST score >= 8.0 and look like a cohesive, appetizing, magazine-grade 35mm editorial photograph matching the headline (or clean, text-free 3D molecular/viral structural artwork when Acceptable Visual Subject explicitly allows it).
 
 Reply ONLY in valid JSON:
 {
   "pass": boolean,
   "score": number,
   "subject": "what is literally visible in the image",
-  "reason": "why it passed or failed content alignment"
+  "reason": "why it passed or failed content alignment and aesthetic quality"
 }`;
 
   for (const model of VISION_MODELS) {
@@ -867,7 +849,7 @@ Reply ONLY in valid JSON:
           const cleaned = text.replace(/^```json\s*|\s*```$/g, '').trim();
           const parsed = JSON.parse(cleaned);
           const score = Number(parsed.score) || 0;
-          const pass = Boolean(parsed.pass) && score >= 7.5;
+          const pass = Boolean(parsed.pass) && score >= 8.0;
           return {
             pass,
             score,
@@ -920,7 +902,7 @@ async function fetchFromPexels(keyword, apiKey, currentSlug, topic, geminiApiKey
   try {
     const url = `https://api.pexels.com/v1/search?query=${encodeURIComponent(keyword)}&orientation=landscape&size=large&per_page=6`;
     const res = await fetch(url, {
-      headers: { Authorization: apiKey, 'User-Agent': 'Phytocodex-Engine/3.0' }
+      headers: { Authorization: apiKey, 'User-Agent': 'Phytocodex-Engine/4.0' }
     });
     if (!res.ok) return null;
     const data = await res.json();
@@ -949,7 +931,7 @@ async function fetchFromPixabay(keyword, apiKey, currentSlug, topic, geminiApiKe
   if (!apiKey) return null;
   try {
     const url = `https://pixabay.com/api/?key=${apiKey}&q=${encodeURIComponent(keyword)}&image_type=photo&orientation=horizontal&safesearch=true&per_page=6`;
-    const res = await fetch(url, { headers: { 'User-Agent': 'Phytocodex-Engine/3.0' } });
+    const res = await fetch(url, { headers: { 'User-Agent': 'Phytocodex-Engine/4.0' } });
     if (!res.ok) return null;
     const data = await res.json();
     const hits = data.hits || [];
@@ -971,40 +953,62 @@ async function fetchFromPixabay(keyword, apiKey, currentSlug, topic, geminiApiKe
 }
 
 /**
- * 3. Tải ảnh thực tế chất lượng cao từ Wikimedia Commons (Keyless, 100M+ ảnh mở + Vision Gatekeeper)
+ * 3. Tải ảnh thực tế chất lượng cao từ Wikimedia Commons (filetype:bitmap + chống rác + Vision Gatekeeper v4.0)
  */
 async function fetchFromWikimediaCommons(keyword, currentSlug, topic = {}, geminiApiKey = '', visualSpec = null) {
   try {
-    const url = `https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrnamespace=6&gsrsearch=${encodeURIComponent(keyword)}&prop=imageinfo&iiprop=url|size|mime&format=json&gsrlimit=12`;
+    const filteredQuery = `filetype:bitmap -intitle:pdf -intitle:djvu -intitle:diagram -intitle:chart -intitle:specimen -intitle:pathology -intitle:autopsy -intitle:museum -intitle:military -intitle:army ${keyword}`;
+    const url = `https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrnamespace=6&gsrsearch=${encodeURIComponent(filteredQuery)}&prop=imageinfo&iiprop=url|size|mime&format=json&gsrlimit=12`;
 
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 10000);
-    const res = await fetch(url, {
-      headers: { 'User-Agent': 'Phytocodex-Engine/3.0 (https://phytocodex.vercel.app; contact: hoangxuanchien86@gmail.com)' },
-      signal: controller.signal
-    });
-    clearTimeout(timeout);
-    if (!res.ok) return null;
-    const data = await res.json();
+    let data = null;
+    for (let attempt = 0; attempt < 2; attempt++) {
+      await new Promise(r => setTimeout(r, attempt === 0 ? 900 : 4500));
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 10000);
+      const res = await fetch(url, {
+        headers: { 'User-Agent': 'PhytocodexBot/4.0 (https://phytocodex.vercel.app; info@phytocodex.org)' },
+        signal: controller.signal
+      });
+      clearTimeout(timeout);
+      if (res.status === 429) {
+        const ra = parseInt(res.headers.get('retry-after') || '5', 10);
+        if (attempt === 0) {
+          await new Promise(r => setTimeout(r, Math.min(Math.max(ra, 3), 15) * 1000));
+          continue;
+        }
+        return null;
+      }
+      if (!res.ok) return null;
+      const contentType = res.headers.get('content-type') || '';
+      if (!contentType.includes('application/json')) {
+        if (attempt === 0) continue;
+        return null;
+      }
+      data = await res.json();
+      break;
+    }
+    if (!data) return null;
     const pages = Object.values(data.query?.pages || {});
 
     for (const p of pages) {
       const title = (p.title || '').toLowerCase();
-      // Loại bỏ sơ đồ, bài báo scan, fossil, diatom, vector, clip-art, bản đồ, watermark, logo thương mại, ảnh lịch sử đen trắng
-      if (/schema|diagram|figure|plate|drawing|clipart|icon|vector|symbol|flag of|map of|logo|packaging|brand|snack|in-pack|box|fossil|diatom|specimen|scan|gazette|newsletter|report|bulletin|journal|ia_|manuscript|epsos|watermark|lockout|chart|graph|plot|table|loc |nclc|189\d|190\d|191\d|192\d|\.pdf$|\.djvu$|\.svg$|\.gif$/i.test(title)) {
+      // Loại bỏ sơ đồ, bài báo scan, fossil, diatom, vector, clip-art, bệnh học/xác chết, quân đội, bao tải, đĩa petri, ảnh lịch sử
+      if (/schema|diagram|figure|plate|drawing|clipart|icon|vector|symbol|flag of|map of|logo|packaging|brand|snack|in-pack|box|fossil|diatom|specimen|scan|gazette|newsletter|report|bulletin|journal|ia_|manuscript|epsos|watermark|lockout|chart|graph|plot|table|loc |nclc|pathology|autopsy|cadaver|formalin|formaldehyde|brain_in|military|soldier|army|burlap|petri|189\d|190\d|191\d|192\d|\.pdf$|\.djvu$|\.svg$|\.gif$/i.test(title)) {
         continue;
       }
 
       const info = p.imageinfo?.[0];
       if (!info || Math.max(info.width, info.height) < 1100 || Math.min(info.width, info.height) < 550) continue;
+      if (info.width < info.height * 0.85) continue; // Bắt buộc khung ngang hoặc gần vuông cho bìa 16:9
       const fileUrl = info.url || '';
       if (fileUrl.match(/\.(pdf|djvu|svg|gif|webm|ogg|tif|tiff)$/i)) continue;
 
       try {
+        await new Promise(r => setTimeout(r, 200));
         const fetchCtrl = new AbortController();
         const fetchTimeout = setTimeout(() => fetchCtrl.abort(), 12000);
         const imgRes = await fetch(fileUrl, {
-          headers: { 'User-Agent': 'Phytocodex-Engine/3.0 (https://phytocodex.vercel.app; contact: hoangxuanchien86@gmail.com)' },
+          headers: { 'User-Agent': 'PhytocodexBot/4.0 (https://phytocodex.vercel.app; info@phytocodex.org)' },
           signal: fetchCtrl.signal
         });
         clearTimeout(fetchTimeout);
@@ -1025,118 +1029,104 @@ async function fetchFromWikimediaCommons(keyword, currentSlug, topic = {}, gemin
 }
 
 /**
- * 4. Tải ảnh nhiếp ảnh mở chất lượng cao từ Openverse (Bắt buộc qua Vision Gatekeeper!)
- */
-async function fetchFromOpenverse(keyword, currentSlug, topic = {}, geminiApiKey = '', visualSpec = null) {
-  try {
-    const url = `https://api.openverse.org/v1/images/?q=${encodeURIComponent(keyword)}&page_size=6`;
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 5000);
-    const res = await fetch(url, {
-      headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Phytocodex/3.0' },
-      signal: controller.signal
-    });
-    clearTimeout(timeout);
-    if (!res.ok) return null;
-    const data = await res.json();
-    const results = data.results || [];
-
-    for (const item of results) {
-      const title = (item.title || '').toLowerCase();
-      if (/schema|diagram|drawing|clipart|icon|vector|symbol|logo|brand|packaging|chart/i.test(title)) continue;
-
-      if (item.url && !item.url.match(/\.(svg|gif|pdf|webm|ogg)$/i)) {
-        try {
-          const fetchCtrl = new AbortController();
-          const fetchTimeout = setTimeout(() => fetchCtrl.abort(), 7000);
-          const imgRes = await fetch(item.url, {
-            headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' },
-            signal: fetchCtrl.signal
-          });
-          clearTimeout(fetchTimeout);
-
-          if (imgRes.ok) {
-            const buf = Buffer.from(await imgRes.arrayBuffer());
-            const validated = await validateCandidateBuffer(buf, `Openverse:${title}`, currentSlug, topic, geminiApiKey, visualSpec);
-            if (validated) return validated;
-          }
-        } catch {
-          // ignore single item failure
-        }
-      }
-    }
-  } catch {
-    // Openverse timeout or error
-  }
-  return null;
-}
-
-/**
- * 5. Thư viện ảnh lưu trữ thẩm mỹ cao (Curated High-Resolution Editorial Library)
- * BẮT BUỘC đi qua Vision Gatekeeper để đảm bảo 100% ăn nhập với nội dung bài viết.
- * Đã loại bỏ hoàn toàn các ảnh tập tạ/gym khỏi nhóm Metabolic để tránh gán nhầm cho bài dinh dưỡng!
+ * 4. Thư viện ảnh lưu trữ thẩm mỹ cao (Curated High-Resolution 4K Unsplash/Editorial Library)
+ * BẮT BUỘC đi qua Vision Gatekeeper khi có GEMINI_API_KEY để đảm bảo 100% ăn nhập với nội dung bài viết.
+ * TUYỆT ĐỐI KHÔNG bỏ qua kết quả từ chối của Vision Gatekeeper!
  */
 const CURATED_EDITORIAL_TITLES = {
   Oncology: [
     'Broccoli sprouts.jpg',
-    'Fresh Tomatoes, Green Pepper, Red Onion, and English Cucumbers (8736854891).jpg',
+    'Fresh Vegetable Produce (Unsplash).jpg',
+    'Healthy Vegetables (Unsplash).jpg',
+    'Healthy harvest (Unsplash).jpg',
+    'Healthy lentil salad (Unsplash).jpg',
+    'Salad Bowl (Unsplash).jpg',
     'Sejak tea leaves.jpg',
     'Curcuma longa roots.jpg'
   ],
   Cancer: [
     'Broccoli sprouts.jpg',
-    'Fresh Tomatoes, Green Pepper, Red Onion, and English Cucumbers (8736854891).jpg',
+    'Fresh Vegetable Produce (Unsplash).jpg',
+    'Healthy Vegetables (Unsplash).jpg',
+    'Healthy harvest (Unsplash).jpg',
+    'Healthy lentil salad (Unsplash).jpg',
+    'Salad Bowl (Unsplash).jpg',
     'Sejak tea leaves.jpg',
     'Curcuma longa roots.jpg'
   ],
   Metabolic: [
-    'Woman enjoys warm drink while sitting at wooden table.jpg',
-    'Tea cup (Unsplash).jpg',
-    'Fresh Tomatoes, Green Pepper, Red Onion, and English Cucumbers (8736854891).jpg',
+    'Healthy Meal Prep (Unsplash).jpg',
+    'Salad Bowl (Unsplash).jpg',
+    'Vegetable Salad (Unsplash).jpg',
+    'Healthy lentil salad (Unsplash).jpg',
+    'Healthy harvest (Unsplash).jpg',
+    'Healthy breakfast (Unsplash).jpg',
+    'Sweet morning coffee (Unsplash).jpg',
     'Broccoli sprouts.jpg',
-    'Persea americana fruit 2.JPG',
-    'Blueberries 2 2017-01-16.jpg',
-    'Roasted coffee beans.jpg'
+    'Sejak tea leaves.jpg',
+    'Strawberry and blueberries (Unsplash V6FcCG14q30).jpg'
   ],
   Brain: [
-    'Sunlight through trees in a spring forest with white flowers.jpg',
-    'Woman enjoys warm drink while sitting at wooden table.jpg',
-    'Tea cup (Unsplash).jpg',
+    'Early morning in autumn forest (Unsplash).jpg',
+    'Yoga sunrise. (Unsplash).jpg',
+    'Laptop on a neat desk (Unsplash).jpg',
+    'Macbook and tea (Unsplash).jpg',
+    'Sweet morning coffee (Unsplash).jpg',
     'Sejak tea leaves.jpg',
-    'Roasted coffee beans.jpg'
+    'Woman yoga pose sunrise (Unsplash).jpg'
   ],
   Gut: [
+    'Salad Bowl (Unsplash).jpg',
+    'Vegetable Salad (Unsplash).jpg',
+    'Healthy lentil salad (Unsplash).jpg',
+    'Healthy harvest (Unsplash).jpg',
+    'Healthy breakfast (Unsplash).jpg',
+    'Healthy Meal Prep (Unsplash).jpg',
     'Broccoli sprouts.jpg',
-    'Fresh Tomatoes, Green Pepper, Red Onion, and English Cucumbers (8736854891).jpg',
-    'Persea americana fruit 2.JPG'
+    'Fresh Vegetable Produce (Unsplash).jpg'
   ],
   Cardiovascular: [
-    'Persea americana fruit 2.JPG',
-    '2023 Gorzka czekolada.jpg',
-    'Olea europaea, Coín, Spain.jpg'
+    'Fresh Vegetable Produce (Unsplash).jpg',
+    'Healthy harvest (Unsplash).jpg',
+    'Strawberry and blueberries (Unsplash V6FcCG14q30).jpg',
+    'Theobroma cacao (cacao 2).jpg',
+    'Salad Bowl (Unsplash).jpg',
+    'Fruit Platter (Unsplash).jpg'
   ],
   Heart: [
-    'Persea americana fruit 2.JPG',
-    '2023 Gorzka czekolada.jpg',
-    'Olea europaea, Coín, Spain.jpg'
+    'Fresh Vegetable Produce (Unsplash).jpg',
+    'Healthy harvest (Unsplash).jpg',
+    'Salad Bowl (Unsplash).jpg',
+    'Strawberry and blueberries (Unsplash V6FcCG14q30).jpg',
+    'Theobroma cacao (cacao 2).jpg',
+    'Fruit Platter (Unsplash).jpg'
   ],
   'Cellular Aging': [
-    'Olea europaea, Coín, Spain.jpg',
-    'Blueberries 2 2017-01-16.jpg',
-    'Sunlight through trees in a spring forest with white flowers.jpg'
+    'Fruit Platter (Unsplash).jpg',
+    'Strawberry and blueberries (Unsplash V6FcCG14q30).jpg',
+    'Healthy harvest (Unsplash).jpg',
+    'Early morning in autumn forest (Unsplash).jpg',
+    'Yoga sunrise. (Unsplash).jpg',
+    'Healthy Vegetables (Unsplash).jpg'
   ],
   Immune: [
+    'Healthy Vegetables (Unsplash).jpg',
+    'Healthy harvest (Unsplash).jpg',
     'Broccoli sprouts.jpg',
     'Curcuma longa roots.jpg',
     'Sejak tea leaves.jpg'
   ],
   Immunity: [
+    'Healthy Vegetables (Unsplash).jpg',
+    'Healthy harvest (Unsplash).jpg',
     'Broccoli sprouts.jpg',
     'Curcuma longa roots.jpg',
     'Sejak tea leaves.jpg'
   ],
   Liver: [
     'Broccoli sprouts.jpg',
+    'Vegetable Salad (Unsplash).jpg',
+    'Healthy lentil salad (Unsplash).jpg',
     'Sejak tea leaves.jpg'
   ]
 };
@@ -1146,7 +1136,7 @@ export async function fetchWikimediaImageByTitle(title, currentSlug, topic = {},
     const cleanTitle = title.replace(/^File:/i, '');
     const apiUrl = `https://commons.wikimedia.org/w/api.php?action=query&titles=File:${encodeURIComponent(cleanTitle)}&prop=imageinfo&iiprop=url|size|mime&format=json`;
     const res = await fetch(apiUrl, {
-      headers: { 'User-Agent': 'PhytocodexBot/3.0 (https://phytocodex.vercel.app; info@phytocodex.org)' }
+      headers: { 'User-Agent': 'PhytocodexBot/4.0 (https://phytocodex.vercel.app; info@phytocodex.org)' }
     });
     if (!res.ok) return null;
     const data = await res.json();
@@ -1155,7 +1145,7 @@ export async function fetchWikimediaImageByTitle(title, currentSlug, topic = {},
     if (!info || !info.url) return null;
 
     const imgRes = await fetch(info.url, {
-      headers: { 'User-Agent': 'PhytocodexBot/3.0 (https://phytocodex.vercel.app; info@phytocodex.org)' }
+      headers: { 'User-Agent': 'PhytocodexBot/4.0 (https://phytocodex.vercel.app; info@phytocodex.org)' }
     });
     if (!imgRes.ok) return null;
     const buf = Buffer.from(await imgRes.arrayBuffer());
@@ -1178,24 +1168,15 @@ async function fetchFromCuratedEditorialLibrary(slug, topic = {}, apiKey = '', v
   const hash = crypto.createHash('md5').update(slug.replace(/-(vi|en)$/, '')).digest('hex');
   const startIndex = parseInt(hash.slice(0, 4), 16) % candidates.length;
 
-  // Lượt 1: Thử kiểm định qua Vision Gatekeeper
+  // Khi có GEMINI_API_KEY: Bắt buộc kiểm định qua Vision Gatekeeper, TUYỆT ĐỐI KHÔNG bỏ qua khi bị từ chối!
+  // Chỉ chạy skipVision ở chế độ cục bộ không có API key (!apiKey).
+  const skipVision = !apiKey;
   for (let i = 0; i < candidates.length; i++) {
     const idx = (startIndex + i) % candidates.length;
     const title = candidates[idx];
-    const buf = await fetchWikimediaImageByTitle(title, slug, topic, apiKey, visualSpec, false);
+    const buf = await fetchWikimediaImageByTitle(title, slug, topic, apiKey, visualSpec, skipVision);
     if (buf) {
-      console.log(`🏛️ [Curated Library] Đã kích hoạt ảnh lưu trữ đạt chuẩn Vision: "${title}"`);
-      return buf;
-    }
-  }
-
-  // Lượt 2: Nếu Vision bị giới hạn quota/lỗi mạng, bốc ảnh an toàn đã kiểm duyệt sẵn (skipVision = true)
-  for (let i = 0; i < candidates.length; i++) {
-    const idx = (startIndex + i) % candidates.length;
-    const title = candidates[idx];
-    const buf = await fetchWikimediaImageByTitle(title, slug, topic, apiKey, visualSpec, true);
-    if (buf) {
-      console.log(`🏛️ [Curated Library Fallback] Đã kích hoạt ảnh tuyển chọn thẩm mỹ cao (Zero-Quota Safe): "${title}"`);
+      console.log(`🏛️ [Curated Library] Đã kích hoạt ảnh lưu trữ đạt chuẩn: "${title}"`);
       return buf;
     }
   }
@@ -1203,7 +1184,7 @@ async function fetchFromCuratedEditorialLibrary(slug, topic = {}, apiKey = '', v
 }
 
 /**
- * 6. Bộ sinh bìa chuyên khảo đồ họa chuẩn hóa SVG (Procedural Monograph Card)
+ * 5. Bộ sinh bìa chuyên khảo đồ họa chuẩn hóa SVG (Procedural Monograph Card)
  * Chỉ kích hoạt khi toàn bộ kết nối API bên ngoài đều gián đoạn hoặc không tìm được ảnh khớp 100% nội dung.
  * Đảm bảo tính ĐỘC BẢN 100%, hiển thị chính xác tiêu đề bài viết, TUYỆT ĐỐI KHÔNG GÁN ẢNH LỆCH CHỦ ĐỀ.
  */
@@ -1337,15 +1318,15 @@ export async function generateDispatchImage(slug, topic = {}) {
 
   const { PEXELS_API_KEY, PIXABAY_API_KEY, GEMINI_API_KEY } = resolveApiKeys();
 
-  // Bước 1: 100% Deterministic Visual Spec Engine (Zero-LLM Query Generation, Zero Token Cost)
+  // Bước 1: 100% Deterministic Visual Spec Engine v4.0 (Zero-LLM Query Generation, Zero Token Cost)
   const visualSpec = buildDeterministicVisualSpec(topic);
   const keywordCandidates = visualSpec.queries;
 
-  console.log(`📸 [Image Engine v3.1 Tất Định] Tìm ảnh chụp thực tế 100% cho "${slug}"...`);
+  console.log(`📸 [Image Engine v4.0 Tất Định] Tìm ảnh chụp thực tế 100% cho "${slug}"...`);
   console.log(`   🎯 Tiêu chuẩn chủ thể: ${visualSpec.coreSubject}`);
   console.log(`   🔍 Từ khóa tất định: ${keywordCandidates.slice(0, 5).map(k => `"${k}"`).join(', ')}`);
 
-  // Bước 2: Duyệt qua từng từ khóa ứng viên (Tất cả các tầng đều phải vượt qua Fail-Closed Gemini Vision Gatekeeper)
+  // Bước 2: Duyệt qua từng từ khóa ứng viên (Tất cả các tầng đều phải vượt qua Fail-Closed Gemini Vision Gatekeeper v4.0)
   for (const keyword of keywordCandidates) {
     // TẦNG 1: Pexels API (Nếu có key)
     if (PEXELS_API_KEY) {
@@ -1367,24 +1348,16 @@ export async function generateDispatchImage(slug, topic = {}) {
       }
     }
 
-    // TẦNG 3: Wikimedia Commons (Kho tư liệu khoa học mở + Vision Gatekeeper)
+    // TẦNG 3: Wikimedia Commons (Kho tư liệu mở `filetype:bitmap` + Vision Gatekeeper v4.0)
     const wikiBuffer = await fetchFromWikimediaCommons(keyword, slug, topic, GEMINI_API_KEY, visualSpec);
     if (wikiBuffer) {
       await processAndSaveImage(wikiBuffer, slug);
       console.log(`✅ [Image Engine] Đã lưu ảnh thực tế Wikimedia đạt chuẩn Vision ("${keyword}") -> ${slug}.jpg`);
       return targetPath;
     }
-
-    // TẦNG 4: Openverse (WordPress Foundation + Vision Gatekeeper)
-    const openverseBuffer = await fetchFromOpenverse(keyword, slug, topic, GEMINI_API_KEY, visualSpec);
-    if (openverseBuffer) {
-      await processAndSaveImage(openverseBuffer, slug);
-      console.log(`✅ [Image Engine] Đã lưu ảnh Openverse đạt chuẩn Vision ("${keyword}") -> ${slug}.jpg`);
-      return targetPath;
-    }
   }
 
-  // TẦNG 5: Curated Editorial Library (Chỉ chấp nhận nếu vượt qua Vision Gatekeeper khớp chủ đề!)
+  // TẦNG 4: Curated Editorial Library (Chỉ chấp nhận nếu vượt qua Vision Gatekeeper khớp chủ đề!)
   console.log(`🏛️ [Image Engine] Kiểm tra Curated Editorial Library cho "${slug}"...`);
   const curatedBuffer = await fetchFromCuratedEditorialLibrary(slug, topic, GEMINI_API_KEY, visualSpec);
   if (curatedBuffer) {
@@ -1393,7 +1366,7 @@ export async function generateDispatchImage(slug, topic = {}) {
     return targetPath;
   }
 
-  // TẦNG 6: Procedural Monograph Card (Hiển thị chính xác tiêu đề chuyên khảo, tuyệt đối không lấy ảnh râu ông nọ cắm cằm bà kia)
+  // TẦNG 5: Procedural Monograph Card (Hiển thị chính xác tiêu đề chuyên khảo, tuyệt đối không lấy ảnh râu ông nọ cắm cằm bà kia)
   console.warn(`🎨 [Image Engine] Kích hoạt Procedural Monograph Artwork cho "${slug}"...`);
   const proceduralBuffer = await generateProceduralMonographImage(slug, topic);
   await processAndSaveImage(proceduralBuffer, slug);
