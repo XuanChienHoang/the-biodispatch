@@ -5931,6 +5931,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "This open-label prospective study investigated the efficacy of a botanical dietary supplement containing Serenoa repens (saw palmetto) extract in subjects with mild to moderate androgenetic alopecia. Results demonstrated significant improvements in hair count and scalp condition over a 24-week period, suggesting that 5-alpha reductase inhibition via botanical extracts represents a viable approach for supporting hair follicle vitality.",
     },
   ],
+  "hien-tuong-do-mat-khi-uong-ruou-va-giai-phap-bao-ve-gene-vi": [
+    {
+      ordinal: 1,
+      label: "Wet Your Whistles: Alcohol-Induced Flushing With Use of Topical Calcineurin Inhibitors",
+      pmid: "35659131",
+      doi: "10.12788/cutis.0478",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Cutis",
+      year: 2022,
+      abstract: "Genetic variations in alcohol-metabolizing enzymes, notably the inactive ALDH2 variant common in East Asians, lead to the accumulation of toxic acetaldehyde during alcohol consumption. This metabolic bottleneck significantly increases the risk of upper aerodigestive tract cancers, particularly esophageal squamous cell carcinoma, highlighting the critical importance of recognizing personal biological risk factors.",
+    },
+  ],
+  "asian-glow-alcohol-flush-and-gene-protection-strategies-en": [
+    {
+      ordinal: 1,
+      label: "Wet Your Whistles: Alcohol-Induced Flushing With Use of Topical Calcineurin Inhibitors",
+      pmid: "35659131",
+      doi: "10.12788/cutis.0478",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Cutis",
+      year: 2022,
+      abstract: "Genetic variations in alcohol-metabolizing enzymes, notably the inactive ALDH2 variant common in East Asians, lead to the accumulation of toxic acetaldehyde during alcohol consumption. This metabolic bottleneck significantly increases the risk of upper aerodigestive tract cancers, particularly esophageal squamous cell carcinoma, highlighting the critical importance of recognizing personal biological risk factors.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

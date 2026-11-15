@@ -1,8 +1,54 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-15T19:24:34.016Z",
-  "totalTopics": 271,
+  "lastUpdated": "2026-11-15T20:52:01.959Z",
+  "totalTopics": 273,
   "topics": [
+    {
+      "id": "asian-glow-alcohol-flush-and-gene-protection-strategies",
+      "slugs": [
+        "asian-glow-alcohol-flush-and-gene-protection-strategies-en"
+      ],
+      "titleVi": "Alcohol flush reaction: When your body sends a toxin warning signal",
+      "titleEn": "Alcohol flush reaction: When your body sends a toxin warning signal",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.12788/cutis.0478",
+      "date": "2026-11-15T17:00:00Z",
+      "tags": [
+        "oncology",
+        "liver",
+        "metabolism",
+        "nutrition",
+        "longevity"
+      ],
+      "keywords": [
+        "alcohol",
+        "flush",
+        "reaction",
+        "when",
+        "your",
+        "body",
+        "sends",
+        "toxin",
+        "warning",
+        "signal",
+        "oncology",
+        "liver",
+        "metabolism",
+        "nutrition",
+        "longevity",
+        "many",
+        "people",
+        "dismiss",
+        "facial",
+        "flushing",
+        "rapid",
+        "heartbeat",
+        "sip",
+        "fun",
+        "party"
+      ]
+    },
     {
       "id": "bi-mat-khoai-lang-luoc-de-lanh-ve-dang-va-giam-duong-huyet",
       "slugs": [
@@ -93,6 +139,52 @@
         "floor",
         "shower",
         "drain"
+      ]
+    },
+    {
+      "id": "hien-tuong-do-mat-khi-uong-ruou-va-giai-phap-bao-ve-gene",
+      "slugs": [
+        "hien-tuong-do-mat-khi-uong-ruou-va-giai-phap-bao-ve-gene-vi"
+      ],
+      "titleVi": "Hiện tượng đỏ mặt khi uống rượu: Khi cơ thể gửi tín hiệu cảnh báo độc tố",
+      "titleEn": "Hiện tượng đỏ mặt khi uống rượu: Khi cơ thể gửi tín hiệu cảnh báo độc tố",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.12788/cutis.0478",
+      "date": "2026-11-15T17:00:00Z",
+      "tags": [
+        "ung-thu",
+        "gan",
+        "chuyen-hoa",
+        "dinh-duong",
+        "lao-hoa"
+      ],
+      "keywords": [
+        "hien",
+        "tuong",
+        "mat",
+        "uong",
+        "ruou",
+        "gui",
+        "tin",
+        "hieu",
+        "canh",
+        "bao",
+        "doc",
+        "ung",
+        "thu",
+        "gan",
+        "chuyen",
+        "hoa",
+        "dinh",
+        "duong",
+        "lao",
+        "nhieu",
+        "nguoi",
+        "thuong",
+        "xem",
+        "viec",
+        "bung"
       ]
     },
     {
