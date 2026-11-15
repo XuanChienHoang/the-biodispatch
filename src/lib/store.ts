@@ -5853,6 +5853,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Advanced glycation end products (AGEs) accumulate in skin matrix proteins throughout life, contributing significantly to structural degradation, loss of elasticity, and accelerated wrinkle formation by altering collagen architecture and triggering cellular inflammation.",
     },
   ],
+  "duong-va-nep-nhan-da-hien-tuong-dut-gay-soi-collagen-vi": [
+    {
+      ordinal: 1,
+      label: "Improvement Effect and Mechanism of Hydroxytyrosol on Skin Aging Induced Advanced Glycation End Products",
+      pmid: "40944206",
+      doi: "10.3390/nu17172810",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Nutrients",
+      year: 2025,
+      abstract: "Skin aging is an intricate biological process comprising intrinsic and extrinsic factors. Among extrinsic factors, non-enzymatic glycation of dermal proteins by reducing sugars plays a pivotal role. The accumulation of advanced glycation end products (AGEs) alters the structural integrity of collagen and elastin networks, leading to loss of elasticity, dermal stiffness, and the formation of deep wrinkles through RAGE receptor mediated oxidative pathways.",
+    },
+  ],
+  "sugar-and-skin-wrinkles-molecular-collagen-crosslinking-en": [
+    {
+      ordinal: 1,
+      label: "Improvement Effect and Mechanism of Hydroxytyrosol on Skin Aging Induced Advanced Glycation End Products",
+      pmid: "40944206",
+      doi: "10.3390/nu17172810",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Nutrients",
+      year: 2025,
+      abstract: "Skin aging is an intricate biological process comprising intrinsic and extrinsic factors. Among extrinsic factors, non-enzymatic glycation of dermal proteins by reducing sugars plays a pivotal role. The accumulation of advanced glycation end products (AGEs) alters the structural integrity of collagen and elastin networks, leading to loss of elasticity, dermal stiffness, and the formation of deep wrinkles through RAGE receptor mediated oxidative pathways.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

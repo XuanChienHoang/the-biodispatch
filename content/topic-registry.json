@@ -1,8 +1,100 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-14T20:12:25.275Z",
-  "totalTopics": 265,
+  "lastUpdated": "2026-11-15T12:48:03.523Z",
+  "totalTopics": 267,
   "topics": [
+    {
+      "id": "duong-va-nep-nhan-da-hien-tuong-dut-gay-soi-collagen",
+      "slugs": [
+        "duong-va-nep-nhan-da-hien-tuong-dut-gay-soi-collagen-vi"
+      ],
+      "titleVi": "Đường và nếp nhăn da: Khi các phân tử đường vô tình bẻ gãy hệ thống lò xo collagen trong cơ thể",
+      "titleEn": "Đường và nếp nhăn da: Khi các phân tử đường vô tình bẻ gãy hệ thống lò xo collagen trong cơ thể",
+      "organ": "Metabolic",
+      "tier": "Clinical Deep-Dive",
+      "doi": "10.3390/nu17172810",
+      "date": "2026-11-15T13:00:00Z",
+      "tags": [
+        "lao-hoa",
+        "mat-da",
+        "duong-huyet",
+        "noi-tiet",
+        "nang-luong"
+      ],
+      "keywords": [
+        "duong",
+        "nep",
+        "nhan",
+        "phan",
+        "tinh",
+        "gay",
+        "thong",
+        "collagen",
+        "lao",
+        "hoa",
+        "mat",
+        "huyet",
+        "noi",
+        "tiet",
+        "nang",
+        "luong",
+        "chung",
+        "thuong",
+        "ton",
+        "kem",
+        "dat",
+        "tien",
+        "lai",
+        "pha",
+        "huy"
+      ]
+    },
+    {
+      "id": "sugar-and-skin-wrinkles-molecular-collagen-crosslinking",
+      "slugs": [
+        "sugar-and-skin-wrinkles-molecular-collagen-crosslinking-en"
+      ],
+      "titleVi": "Sugar and skin wrinkles: How sweet molecules permanently damage your skin spring system",
+      "titleEn": "Sugar and skin wrinkles: How sweet molecules permanently damage your skin spring system",
+      "organ": "Metabolic",
+      "tier": "Clinical Deep-Dive",
+      "doi": "10.3390/nu17172810",
+      "date": "2026-11-15T13:00:00Z",
+      "tags": [
+        "cellular-aging",
+        "skin-care",
+        "glycemia",
+        "metabolism",
+        "longevity"
+      ],
+      "keywords": [
+        "sugar",
+        "skin",
+        "wrinkles",
+        "sweet",
+        "molecules",
+        "permanently",
+        "damage",
+        "your",
+        "spring",
+        "system",
+        "cellular",
+        "aging",
+        "care",
+        "glycemia",
+        "metabolism",
+        "longevity",
+        "often",
+        "spend",
+        "fortune",
+        "expensive",
+        "anti",
+        "creams",
+        "while",
+        "unknowingly",
+        "destroying"
+      ]
+    },
     {
       "id": "delay-first-morning-coffee-60-90-minutes",
       "slugs": [
