@@ -1,8 +1,100 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-15T20:52:01.959Z",
-  "totalTopics": 273,
+  "lastUpdated": "2026-11-16T13:43:35.653Z",
+  "totalTopics": 275,
   "topics": [
+    {
+      "id": "creatine-brain-energy-regeneration",
+      "slugs": [
+        "creatine-brain-energy-regeneration-en"
+      ],
+      "titleVi": "Creatine Is Not Just for Muscles: The Brain Power Bank That Defeats Afternoon Brain Fog",
+      "titleEn": "Creatine Is Not Just for Muscles: The Brain Power Bank That Defeats Afternoon Brain Fog",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.3389/fnut.2026.1915252",
+      "date": "2026-11-16T13:00:00Z",
+      "tags": [
+        "brain-health",
+        "energy",
+        "metabolic",
+        "focus",
+        "longevity"
+      ],
+      "keywords": [
+        "creatine",
+        "not",
+        "just",
+        "muscles",
+        "brain",
+        "power",
+        "bank",
+        "defeats",
+        "afternoon",
+        "fog",
+        "health",
+        "energy",
+        "metabolic",
+        "focus",
+        "longevity",
+        "many",
+        "still",
+        "view",
+        "strictly",
+        "bodybuilding",
+        "supplement",
+        "used",
+        "build",
+        "muscle",
+        "mass"
+      ]
+    },
+    {
+      "id": "creatine-tai-tao-nang-luong-nao-bo",
+      "slugs": [
+        "creatine-tai-tao-nang-luong-nao-bo-vi"
+      ],
+      "titleVi": "Creatine không chỉ dành cho cơ bắp: Trạm sạc năng lượng não bộ giúp vượt qua cơn sập nguồn chiều",
+      "titleEn": "Creatine không chỉ dành cho cơ bắp: Trạm sạc năng lượng não bộ giúp vượt qua cơn sập nguồn chiều",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.3389/fnut.2026.1915252",
+      "date": "2026-11-16T13:00:00Z",
+      "tags": [
+        "nang-luong",
+        "duong-huyet",
+        "lao-hoa",
+        "thanh-xuan",
+        "tri-nho"
+      ],
+      "keywords": [
+        "creatine",
+        "khong",
+        "chi",
+        "danh",
+        "bap",
+        "tram",
+        "sac",
+        "nang",
+        "luong",
+        "nao",
+        "giup",
+        "vuot",
+        "qua",
+        "con",
+        "sap",
+        "nguon",
+        "chieu",
+        "duong",
+        "huyet",
+        "lao",
+        "hoa",
+        "thanh",
+        "xuan",
+        "tri",
+        "nho"
+      ]
+    },
     {
       "id": "asian-glow-alcohol-flush-and-gene-protection-strategies",
       "slugs": [
