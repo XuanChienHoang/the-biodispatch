@@ -6031,6 +6031,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Aldehyde dehydrogenase 2 (ALDH2) deficiency is prevalent in East Asian populations and leads to the accumulation of toxic acetaldehyde following alcohol consumption. This review highlights the molecular mechanisms linking ALDH2 deficiency with DNA damage, mutagenesis, and significantly elevated risks of upper aerodigestive tract cancers.",
     },
   ],
+  "tuyen-giap-va-bo-doi-vi-chat-selen-iod-vi-sao-so-lanh-vi-sao-met-moi-vi": [
+    {
+      ordinal: 1,
+      label: "How to manage thyroid eye disease: recent advances - a narrative review",
+      pmid: "42741468",
+      doi: "10.7573/dic.2026-4-5",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Drugs Context",
+      year: 2026,
+      abstract: "Selenium is an essential trace element that exerts its biological effects largely via incorporation into selenoproteins. The thyroid gland has the highest selenium content per gram of tissue and expresses numerous selenoproteins, including glutathione peroxidases, thioredoxin reductases, and iodothyronine deiodinases, which are crucial for thyroid hormone metabolism and antioxidant defense.",
+    },
+  ],
+  "thyroid-selenium-iodine-axis-cold-fatigue-en": [
+    {
+      ordinal: 1,
+      label: "How to manage thyroid eye disease: recent advances - a narrative review",
+      pmid: "42741468",
+      doi: "10.7573/dic.2026-4-5",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Drugs Context",
+      year: 2026,
+      abstract: "Selenium is an essential trace element that exerts its biological effects largely via incorporation into selenoproteins. The thyroid gland has the highest selenium content per gram of tissue and expresses numerous selenoproteins, including glutathione peroxidases, thioredoxin reductases, and iodothyronine deiodinases, which are crucial for thyroid hormone metabolism and antioxidant defense.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

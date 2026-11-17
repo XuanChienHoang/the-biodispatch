@@ -1,7 +1,7 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-17T01:10:57.432Z",
-  "totalTopics": 277,
+  "lastUpdated": "2026-11-17T02:43:18.743Z",
+  "totalTopics": 279,
   "topics": [
     {
       "id": "alcohol-flush-reaction-and-gene-mutation",
@@ -95,6 +95,96 @@
         "dap",
         "nhanh",
         "dau"
+      ]
+    },
+    {
+      "id": "thyroid-selenium-iodine-axis-cold-fatigue",
+      "slugs": [
+        "thyroid-selenium-iodine-axis-cold-fatigue-en"
+      ],
+      "titleVi": "Why you still wear sweaters in warm rooms and feel exhausted: Decoding the selenium and iodine duo for your thyroid",
+      "titleEn": "Why you still wear sweaters in warm rooms and feel exhausted: Decoding the selenium and iodine duo for your thyroid",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.7573/dic.2026-4-5",
+      "date": "2026-11-17T05:00:00Z",
+      "tags": [
+        "hormones",
+        "energy",
+        "aging",
+        "metabolic"
+      ],
+      "keywords": [
+        "you",
+        "still",
+        "wear",
+        "sweaters",
+        "warm",
+        "rooms",
+        "feel",
+        "exhausted",
+        "decoding",
+        "selenium",
+        "iodine",
+        "duo",
+        "your",
+        "thyroid",
+        "hormones",
+        "energy",
+        "aging",
+        "metabolic",
+        "many",
+        "people",
+        "mistakenly",
+        "attribute",
+        "afternoon",
+        "fatigue",
+        "cold"
+      ]
+    },
+    {
+      "id": "tuyen-giap-va-bo-doi-vi-chat-selen-iod-vi-sao-so-lanh-vi-sao-met-moi",
+      "slugs": [
+        "tuyen-giap-va-bo-doi-vi-chat-selen-iod-vi-sao-so-lanh-vi-sao-met-moi-vi"
+      ],
+      "titleVi": "Vì sao bạn luôn mặc áo len trong phòng ấm và cảm thấy kiệt sức: Giải mã bộ đôi Selenium và I-ốt cho tuyến giáp",
+      "titleEn": "Vì sao bạn luôn mặc áo len trong phòng ấm và cảm thấy kiệt sức: Giải mã bộ đôi Selenium và I-ốt cho tuyến giáp",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.7573/dic.2026-4-5",
+      "date": "2026-11-17T05:00:00Z",
+      "tags": [
+        "noi-tiet",
+        "nang-luong",
+        "lao-hoa",
+        "metabolic"
+      ],
+      "keywords": [
+        "ban",
+        "luon",
+        "mac",
+        "len",
+        "phong",
+        "cam",
+        "thay",
+        "kiet",
+        "suc",
+        "doi",
+        "selenium",
+        "tuyen",
+        "giap",
+        "noi",
+        "tiet",
+        "nang",
+        "luong",
+        "lao",
+        "hoa",
+        "metabolic",
+        "nhieu",
+        "nguoi",
+        "thuong",
+        "lam",
+        "tuong"
       ]
     },
     {
