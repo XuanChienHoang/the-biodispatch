@@ -1,8 +1,102 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-16T13:43:35.653Z",
-  "totalTopics": 275,
+  "lastUpdated": "2026-11-17T01:10:57.432Z",
+  "totalTopics": 277,
   "topics": [
+    {
+      "id": "alcohol-flush-reaction-and-gene-mutation",
+      "slugs": [
+        "alcohol-flush-reaction-and-gene-mutation-en"
+      ],
+      "titleVi": "Why alcohol flush is not just a party trick but a vital genetic warning",
+      "titleEn": "Why alcohol flush is not just a party trick but a vital genetic warning",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1158/1055-9965.EPI-26-0629",
+      "date": "2026-11-17T05:00:00Z",
+      "tags": [
+        "cancer",
+        "liver",
+        "detox",
+        "nutrition",
+        "metabolism",
+        "longevity"
+      ],
+      "keywords": [
+        "alcohol",
+        "flush",
+        "not",
+        "just",
+        "party",
+        "trick",
+        "but",
+        "vital",
+        "genetic",
+        "warning",
+        "cancer",
+        "liver",
+        "detox",
+        "nutrition",
+        "metabolism",
+        "longevity",
+        "sudden",
+        "facial",
+        "rapid",
+        "heartbeat",
+        "dizziness",
+        "sip",
+        "many",
+        "individuals",
+        "merely"
+      ]
+    },
+    {
+      "id": "hien-tuong-do-mat-khi-uong-ruou-va-nguy-co-dot-bien-gen",
+      "slugs": [
+        "hien-tuong-do-mat-khi-uong-ruou-va-nguy-co-dot-bien-gen-vi"
+      ],
+      "titleVi": "Vì sao đỏ mặt khi uống rượu không chỉ là chuyện vui mà là lời cảnh báo từ gen",
+      "titleEn": "Vì sao đỏ mặt khi uống rượu không chỉ là chuyện vui mà là lời cảnh báo từ gen",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1158/1055-9965.EPI-26-0629",
+      "date": "2026-11-17T05:00:00Z",
+      "tags": [
+        "ung-thu",
+        "gan",
+        "giai-doc",
+        "dinh-duong",
+        "chuyen-hoa",
+        "lao-hoa"
+      ],
+      "keywords": [
+        "mat",
+        "uong",
+        "ruou",
+        "khong",
+        "chi",
+        "chuyen",
+        "vui",
+        "loi",
+        "canh",
+        "bao",
+        "gen",
+        "ung",
+        "thu",
+        "gan",
+        "doc",
+        "dinh",
+        "duong",
+        "hoa",
+        "lao",
+        "hien",
+        "tuong",
+        "tim",
+        "dap",
+        "nhanh",
+        "dau"
+      ]
+    },
     {
       "id": "creatine-brain-energy-regeneration",
       "slugs": [

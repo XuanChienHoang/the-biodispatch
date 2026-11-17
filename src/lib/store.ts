@@ -6005,6 +6005,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "",
     },
   ],
+  "hien-tuong-do-mat-khi-uong-ruou-va-nguy-co-dot-bien-gen-vi": [
+    {
+      ordinal: 1,
+      label: "Joint Effects of ALDH2 rs671 and Pathogenic Germline Variants in DNA Repair Genes on Risk of Aerodigestive and Gastrointestinal Cancers",
+      pmid: "42944724",
+      doi: "10.1158/1055-9965.EPI-26-0629",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Cancer Epidemiol Biomarkers Prev",
+      year: 2026,
+      abstract: "Aldehyde dehydrogenase 2 (ALDH2) deficiency is prevalent in East Asian populations and leads to the accumulation of toxic acetaldehyde following alcohol consumption. This review highlights the molecular mechanisms linking ALDH2 deficiency with DNA damage, mutagenesis, and significantly elevated risks of upper aerodigestive tract cancers.",
+    },
+  ],
+  "alcohol-flush-reaction-and-gene-mutation-en": [
+    {
+      ordinal: 1,
+      label: "Joint Effects of ALDH2 rs671 and Pathogenic Germline Variants in DNA Repair Genes on Risk of Aerodigestive and Gastrointestinal Cancers",
+      pmid: "42944724",
+      doi: "10.1158/1055-9965.EPI-26-0629",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Cancer Epidemiol Biomarkers Prev",
+      year: 2026,
+      abstract: "Aldehyde dehydrogenase 2 (ALDH2) deficiency is prevalent in East Asian populations and leads to the accumulation of toxic acetaldehyde following alcohol consumption. This review highlights the molecular mechanisms linking ALDH2 deficiency with DNA damage, mutagenesis, and significantly elevated risks of upper aerodigestive tract cancers.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
