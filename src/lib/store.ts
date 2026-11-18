@@ -6057,6 +6057,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Selenium is an essential trace element that exerts its biological effects largely via incorporation into selenoproteins. The thyroid gland has the highest selenium content per gram of tissue and expresses numerous selenoproteins, including glutathione peroxidases, thioredoxin reductases, and iodothyronine deiodinases, which are crucial for thyroid hormone metabolism and antioxidant defense.",
     },
   ],
+  "vi-sao-do-mat-khi-uong-ruou-la-tieng-chuong-bao-dong-dot-bien-gen-vi": [
+    {
+      ordinal: 1,
+      label: "Alcohol and its associated liver carcinogenesis",
+      pmid: "37263779",
+      doi: "10.1111/jgh.16248",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "J Gastroenterol Hepatol",
+      year: 2023,
+      abstract: "Alcohol consumption is a major risk factor for several human cancers. Acetaldehyde, the first metabolite of ethanol, is a carcinogen and causes DNA damage and chromosomal aberrations. Genetic polymorphisms in alcohol-metabolizing enzymes, such as aldehyde dehydrogenase 2, significantly modulate individual cancer risk.",
+    },
+  ],
+  "why-alcohol-flush-is-a-genetic-alarm-bell-for-dna-damage-en": [
+    {
+      ordinal: 1,
+      label: "Alcohol and its associated liver carcinogenesis",
+      pmid: "37263779",
+      doi: "10.1111/jgh.16248",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "J Gastroenterol Hepatol",
+      year: 2023,
+      abstract: "Alcohol consumption is a major risk factor for several human cancers. Acetaldehyde, the first metabolite of ethanol, is a carcinogen and causes DNA damage and chromosomal aberrations. Genetic polymorphisms in alcohol-metabolizing enzymes, such as aldehyde dehydrogenase 2, significantly modulate individual cancer risk.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

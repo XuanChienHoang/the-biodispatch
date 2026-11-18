@@ -1,8 +1,100 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-17T02:43:18.743Z",
-  "totalTopics": 279,
+  "lastUpdated": "2026-11-18T23:39:31.041Z",
+  "totalTopics": 281,
   "topics": [
+    {
+      "id": "vi-sao-do-mat-khi-uong-ruou-la-tieng-chuong-bao-dong-dot-bien-gen",
+      "slugs": [
+        "vi-sao-do-mat-khi-uong-ruou-la-tieng-chuong-bao-dong-dot-bien-gen-vi"
+      ],
+      "titleVi": "Vì sao đỏ mặt khi uống rượu là tiếng chuông báo động đột biến gen bảo vệ",
+      "titleEn": "Vì sao đỏ mặt khi uống rượu là tiếng chuông báo động đột biến gen bảo vệ",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1111/jgh.16248",
+      "date": "2026-11-18T17:00:00Z",
+      "tags": [
+        "ung-thu",
+        "gan",
+        "noi-tiet",
+        "lao-hoa",
+        "duong-huyet"
+      ],
+      "keywords": [
+        "mat",
+        "uong",
+        "ruou",
+        "tieng",
+        "chuong",
+        "bao",
+        "dong",
+        "dot",
+        "bien",
+        "gen",
+        "ung",
+        "thu",
+        "gan",
+        "noi",
+        "tiet",
+        "lao",
+        "hoa",
+        "duong",
+        "huyet",
+        "nhieu",
+        "nguoi",
+        "lam",
+        "tuong",
+        "hien",
+        "tim"
+      ]
+    },
+    {
+      "id": "why-alcohol-flush-is-a-genetic-alarm-bell-for-dna-damage",
+      "slugs": [
+        "why-alcohol-flush-is-a-genetic-alarm-bell-for-dna-damage-en"
+      ],
+      "titleVi": "Why alcohol flush is a genetic alarm bell for DNA damage protection",
+      "titleEn": "Why alcohol flush is a genetic alarm bell for DNA damage protection",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1111/jgh.16248",
+      "date": "2026-11-18T17:00:00Z",
+      "tags": [
+        "oncology",
+        "liver",
+        "metabolism",
+        "longevity",
+        "detox"
+      ],
+      "keywords": [
+        "alcohol",
+        "flush",
+        "genetic",
+        "alarm",
+        "bell",
+        "dna",
+        "damage",
+        "protection",
+        "oncology",
+        "liver",
+        "metabolism",
+        "longevity",
+        "detox",
+        "many",
+        "people",
+        "mistakenly",
+        "believe",
+        "facial",
+        "flushing",
+        "rapid",
+        "heartbeat",
+        "first",
+        "sip",
+        "merely",
+        "indicate"
+      ]
+    },
     {
       "id": "alcohol-flush-reaction-and-gene-mutation",
       "slugs": [
