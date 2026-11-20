@@ -6109,6 +6109,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "This 2-year comparative study evaluated the efficacy of Serenoa repens (Saw Palmetto) versus finasteride in male androgenetic alopecia (AGA). Results demonstrated that Serenoa repens led to noticeable hair growth improvement in 38% of patients, particularly in the vertex area, showing a positive safety profile and providing an effective natural alternative for mild-to-moderate AGA.",
     },
   ],
+  "creatine-cho-nguoi-lam-viec-tri-oc-tai-tao-nang-luong-nao-bo-vi-sao-ho-chieu-can-vi": [
+    {
+      ordinal: 1,
+      label: "Effects of creatine supplementation on memory in healthy individuals: a systematic review and meta-analysis of randomized controlled trials",
+      pmid: "35984306",
+      doi: "10.1093/nutrit/nuac064",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Nutr Rev",
+      year: 2023,
+      abstract: "Background: Creatine supplementation has been investigated for its potential to enhance cognitive performance. Methods: A systematic review and meta-analysis of randomized controlled trials were conducted to assess the effects of creatine supplementation on memory and intelligence in healthy individuals. Results: Creatine supplementation significantly improved cognitive performance, particularly in tasks requiring high cognitive processing demand such as memory and intelligence tests. Conclusion: Creatine administration exerts a beneficial effect on brain performance, especially under conditions of mental fatigue or stress.",
+    },
+  ],
+  "creatine-for-brain-power-replenishing-neural-atp-under-mental-fatigue-en": [
+    {
+      ordinal: 1,
+      label: "Effects of creatine supplementation on memory in healthy individuals: a systematic review and meta-analysis of randomized controlled trials",
+      pmid: "35984306",
+      doi: "10.1093/nutrit/nuac064",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Nutr Rev",
+      year: 2023,
+      abstract: "Background: Creatine supplementation has been investigated for its potential to enhance cognitive performance. Methods: A systematic review and meta-analysis of randomized controlled trials were conducted to assess the effects of creatine supplementation on memory and intelligence in healthy individuals. Results: Creatine supplementation significantly improved cognitive performance, particularly in tasks requiring high cognitive processing demand such as memory and intelligence tests. Conclusion: Creatine administration exerts a beneficial effect on brain performance, especially under conditions of mental fatigue or stress.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

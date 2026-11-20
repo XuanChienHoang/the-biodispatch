@@ -1,8 +1,100 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-20T01:32:52.653Z",
-  "totalTopics": 283,
+  "lastUpdated": "2026-11-20T23:07:02.687Z",
+  "totalTopics": 285,
   "topics": [
+    {
+      "id": "creatine-cho-nguoi-lam-viec-tri-oc-tai-tao-nang-luong-nao-bo-vi-sao-ho-chieu-can",
+      "slugs": [
+        "creatine-cho-nguoi-lam-viec-tri-oc-tai-tao-nang-luong-nao-bo-vi-sao-ho-chieu-can-vi"
+      ],
+      "titleVi": "Creatine cho người làm việc trí óc: Tái tạo năng lượng tế bào thần kinh khi cạn kiệt ý tưởng",
+      "titleEn": "Creatine cho người làm việc trí óc: Tái tạo năng lượng tế bào thần kinh khi cạn kiệt ý tưởng",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1093/nutrit/nuac064",
+      "date": "2026-11-20T17:00:00Z",
+      "tags": [
+        "nang-luong",
+        "giac-ngu",
+        "nao-bo",
+        "lao-hoa",
+        "duong-huyet"
+      ],
+      "keywords": [
+        "creatine",
+        "nguoi",
+        "lam",
+        "viec",
+        "tri",
+        "tao",
+        "nang",
+        "luong",
+        "bao",
+        "than",
+        "kinh",
+        "can",
+        "kiet",
+        "tuong",
+        "giac",
+        "ngu",
+        "nao",
+        "lao",
+        "hoa",
+        "duong",
+        "huyet",
+        "chung",
+        "thuong",
+        "nghi",
+        "chi"
+      ]
+    },
+    {
+      "id": "creatine-for-brain-power-replenishing-neural-atp-under-mental-fatigue",
+      "slugs": [
+        "creatine-for-brain-power-replenishing-neural-atp-under-mental-fatigue-en"
+      ],
+      "titleVi": "Creatine for brain power: Replenishing neural ATP under mental fatigue",
+      "titleEn": "Creatine for brain power: Replenishing neural ATP under mental fatigue",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1093/nutrit/nuac064",
+      "date": "2026-11-20T17:00:00Z",
+      "tags": [
+        "energy",
+        "sleep",
+        "brain",
+        "aging",
+        "glucose"
+      ],
+      "keywords": [
+        "creatine",
+        "brain",
+        "power",
+        "replenishing",
+        "neural",
+        "atp",
+        "mental",
+        "fatigue",
+        "energy",
+        "sleep",
+        "aging",
+        "glucose",
+        "often",
+        "think",
+        "only",
+        "meant",
+        "bodybuilders",
+        "build",
+        "massive",
+        "muscle",
+        "mass",
+        "yet",
+        "behind",
+        "delicate",
+        "membranes"
+      ]
+    },
     {
       "id": "saw-palmetto-kem-ngan-rung-toc-sinh-luc",
       "slugs": [
