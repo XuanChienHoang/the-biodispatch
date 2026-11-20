@@ -1,8 +1,102 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-18T23:39:31.041Z",
-  "totalTopics": 281,
+  "lastUpdated": "2026-11-20T01:32:52.653Z",
+  "totalTopics": 283,
   "topics": [
+    {
+      "id": "saw-palmetto-kem-ngan-rung-toc-sinh-luc",
+      "slugs": [
+        "saw-palmetto-kem-ngan-rung-toc-sinh-luc-vi"
+      ],
+      "titleVi": "Bảo vệ nang tóc và sinh lực tuổi trung niên: Giải mã cơ chế khoá enzyme 5-alpha reductase từ Saw Palmetto và Kẽm",
+      "titleEn": "Bảo vệ nang tóc và sinh lực tuổi trung niên: Giải mã cơ chế khoá enzyme 5-alpha reductase từ Saw Palmetto và Kẽm",
+      "organ": "Metabolic",
+      "tier": "Clinical Deep-Dive",
+      "doi": "10.1177/039463201202500435",
+      "date": "2026-11-20T05:00:00Z",
+      "tags": [
+        "rung-toc",
+        "dht",
+        "noi-tiet",
+        "nang-luong",
+        "lao-hoa",
+        "gan"
+      ],
+      "keywords": [
+        "bao",
+        "nang",
+        "toc",
+        "sinh",
+        "luc",
+        "tuoi",
+        "trung",
+        "nien",
+        "khoa",
+        "enzyme",
+        "alpha",
+        "reductase",
+        "saw",
+        "palmetto",
+        "kem",
+        "rung",
+        "dht",
+        "noi",
+        "tiet",
+        "luong",
+        "lao",
+        "hoa",
+        "gan",
+        "buoc",
+        "sang"
+      ]
+    },
+    {
+      "id": "saw-palmetto-zinc-dht-hair-loss-vitality",
+      "slugs": [
+        "saw-palmetto-zinc-dht-hair-loss-vitality-en"
+      ],
+      "titleVi": "Protecting Hair Follicles and Vitality in Midlife: Unlocking the 5-Alpha Reductase Inhibition Mechanism of Saw Palmetto and Zinc",
+      "titleEn": "Protecting Hair Follicles and Vitality in Midlife: Unlocking the 5-Alpha Reductase Inhibition Mechanism of Saw Palmetto and Zinc",
+      "organ": "Metabolic",
+      "tier": "Clinical Deep-Dive",
+      "doi": "10.1177/039463201202500435",
+      "date": "2026-11-20T05:00:00Z",
+      "tags": [
+        "hair-loss",
+        "dht",
+        "hormones",
+        "vitality",
+        "aging",
+        "metabolism"
+      ],
+      "keywords": [
+        "protecting",
+        "hair",
+        "follicles",
+        "vitality",
+        "midlife",
+        "unlocking",
+        "alpha",
+        "reductase",
+        "inhibition",
+        "saw",
+        "palmetto",
+        "zinc",
+        "loss",
+        "dht",
+        "hormones",
+        "aging",
+        "metabolism",
+        "people",
+        "enter",
+        "many",
+        "face",
+        "thinning",
+        "scalp",
+        "accompanied",
+        "subtle"
+      ]
+    },
     {
       "id": "vi-sao-do-mat-khi-uong-ruou-la-tieng-chuong-bao-dong-dot-bien-gen",
       "slugs": [

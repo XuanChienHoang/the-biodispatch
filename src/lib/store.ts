@@ -6083,6 +6083,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Alcohol consumption is a major risk factor for several human cancers. Acetaldehyde, the first metabolite of ethanol, is a carcinogen and causes DNA damage and chromosomal aberrations. Genetic polymorphisms in alcohol-metabolizing enzymes, such as aldehyde dehydrogenase 2, significantly modulate individual cancer risk.",
     },
   ],
+  "saw-palmetto-kem-ngan-rung-toc-sinh-luc-vi": [
+    {
+      ordinal: 1,
+      label: "Comparitive effectiveness of finasteride vs Serenoa repens in male androgenetic alopecia: a two-year study",
+      pmid: "23298508",
+      doi: "10.1177/039463201202500435",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Int J Immunopathol Pharmacol",
+      year: 2012,
+      abstract: "This 2-year comparative study evaluated the efficacy of Serenoa repens (Saw Palmetto) versus finasteride in male androgenetic alopecia (AGA). Results demonstrated that Serenoa repens led to noticeable hair growth improvement in 38% of patients, particularly in the vertex area, showing a positive safety profile and providing an effective natural alternative for mild-to-moderate AGA.",
+    },
+  ],
+  "saw-palmetto-zinc-dht-hair-loss-vitality-en": [
+    {
+      ordinal: 1,
+      label: "Comparitive effectiveness of finasteride vs Serenoa repens in male androgenetic alopecia: a two-year study",
+      pmid: "23298508",
+      doi: "10.1177/039463201202500435",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Int J Immunopathol Pharmacol",
+      year: 2012,
+      abstract: "This 2-year comparative study evaluated the efficacy of Serenoa repens (Saw Palmetto) versus finasteride in male androgenetic alopecia (AGA). Results demonstrated that Serenoa repens led to noticeable hair growth improvement in 38% of patients, particularly in the vertex area, showing a positive safety profile and providing an effective natural alternative for mild-to-moderate AGA.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
