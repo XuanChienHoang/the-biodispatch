@@ -6135,6 +6135,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Background: Creatine supplementation has been investigated for its potential to enhance cognitive performance. Methods: A systematic review and meta-analysis of randomized controlled trials were conducted to assess the effects of creatine supplementation on memory and intelligence in healthy individuals. Results: Creatine supplementation significantly improved cognitive performance, particularly in tasks requiring high cognitive processing demand such as memory and intelligence tests. Conclusion: Creatine administration exerts a beneficial effect on brain performance, especially under conditions of mental fatigue or stress.",
     },
   ],
+  "vi-sao-an-toi-muon-de-mac-ung-thu-vi-va-giai-phap-tu-bep-vi": [
+    {
+      ordinal: 1,
+      label: "Nighttime eating and increased risk of gastric mucosal lesions: A clinical perspective",
+      pmid: "",
+      doi: "10.3748/wjg.v27.i15.1582",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "World Journal of Gastroenterology",
+      year: 2021,
+      abstract: "Late-night food intake disrupts normal circadian rhythms of gastric acid secretion and mucosal cell proliferation, exacerbating nocturnal acid exposure and promoting oxidative damage to gastric epithelial structures over time.",
+    },
+  ],
+  "late-night-dinner-gastric-cancer-risk-kitchen-solutions-en": [
+    {
+      ordinal: 1,
+      label: "Nighttime eating and increased risk of gastric mucosal lesions: A clinical perspective",
+      pmid: "",
+      doi: "10.3748/wjg.v27.i15.1582",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "World Journal of Gastroenterology",
+      year: 2021,
+      abstract: "Late-night food intake disrupts normal circadian rhythms of gastric acid secretion and mucosal cell proliferation, exacerbating nocturnal acid exposure and promoting oxidative damage to gastric epithelial structures over time.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

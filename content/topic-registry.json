@@ -1,8 +1,102 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-20T23:07:02.687Z",
-  "totalTopics": 285,
+  "lastUpdated": "2026-11-21T01:08:01.075Z",
+  "totalTopics": 287,
   "topics": [
+    {
+      "id": "late-night-dinner-gastric-cancer-risk-kitchen-solutions",
+      "slugs": [
+        "late-night-dinner-gastric-cancer-risk-kitchen-solutions-en"
+      ],
+      "titleVi": "Why late-night dinners elevate gastric risks and kitchen-based protective strategies",
+      "titleEn": "Why late-night dinners elevate gastric risks and kitchen-based protective strategies",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.3748/wjg.v27.i15.1582",
+      "date": "2026-11-21T05:00:00Z",
+      "tags": [
+        "digestion",
+        "stomach",
+        "cancer",
+        "nutrition",
+        "aging",
+        "habits"
+      ],
+      "keywords": [
+        "late",
+        "night",
+        "dinners",
+        "elevate",
+        "gastric",
+        "risks",
+        "kitchen",
+        "based",
+        "protective",
+        "strategies",
+        "digestion",
+        "stomach",
+        "cancer",
+        "nutrition",
+        "aging",
+        "habits",
+        "many",
+        "people",
+        "eat",
+        "busy",
+        "workday",
+        "unaware",
+        "their",
+        "midnight",
+        "struggling"
+      ]
+    },
+    {
+      "id": "vi-sao-an-toi-muon-de-mac-ung-thu-vi-va-giai-phap-tu-bep",
+      "slugs": [
+        "vi-sao-an-toi-muon-de-mac-ung-thu-vi-va-giai-phap-tu-bep-vi"
+      ],
+      "titleVi": "Vì sao ăn tối muộn dễ tăng nguy cơ dạ dày và giải pháp bảo vệ từ căn bếp",
+      "titleEn": "Vì sao ăn tối muộn dễ tăng nguy cơ dạ dày và giải pháp bảo vệ từ căn bếp",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.3748/wjg.v27.i15.1582",
+      "date": "2026-11-21T05:00:00Z",
+      "tags": [
+        "tieu-hoa",
+        "da-dày",
+        "ung-thu",
+        "dinh-duong",
+        "lao-hoa",
+        "thoi-quen"
+      ],
+      "keywords": [
+        "toi",
+        "muon",
+        "tang",
+        "nguy",
+        "day",
+        "phap",
+        "bao",
+        "can",
+        "bep",
+        "tieu",
+        "hoa",
+        "ung",
+        "thu",
+        "dinh",
+        "duong",
+        "lao",
+        "thoi",
+        "quen",
+        "nhieu",
+        "nguoi",
+        "uong",
+        "mang",
+        "sau",
+        "ngay",
+        "lam"
+      ]
+    },
     {
       "id": "creatine-cho-nguoi-lam-viec-tri-oc-tai-tao-nang-luong-nao-bo-vi-sao-ho-chieu-can",
       "slugs": [
