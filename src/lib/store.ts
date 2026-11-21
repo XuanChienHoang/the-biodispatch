@@ -6187,6 +6187,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "This study evaluated the effects of caffeine administered 0, 3, and 6 hours prior to bed on sleep disturbance measured by polysomnography and sleep logs. Results demonstrated that caffeine administered 6 hours before sleep substantially disrupted sleep architecture, reducing total sleep time by more than one hour, proving that even afternoon coffee consumption has profound disruptive effects on nocturnal rest.",
     },
   ],
+  "duong-va-nep-nhan-da-cau-chuyen-nhung-thanh-keo-cao-su-bi-cung-gion-vi-duong-vi": [
+    {
+      ordinal: 1,
+      label: "Improvement Effect and Mechanism of Hydroxytyrosol on Skin Aging Induced Advanced Glycation End Products",
+      pmid: "40944206",
+      doi: "10.3390/nu17172810",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Nutrients",
+      year: 2025,
+      abstract: "Advanced glycation end products (AGEs) accumulate in dermal proteins over time, leading to structural stiffening, loss of elasticity, and accelerated skin aging through receptor-mediated inflammation and extracellular matrix degradation.",
+    },
+  ],
+  "sugar-and-skin-wrinkles-the-story-of-collagen-glycation-en": [
+    {
+      ordinal: 1,
+      label: "Improvement Effect and Mechanism of Hydroxytyrosol on Skin Aging Induced Advanced Glycation End Products",
+      pmid: "40944206",
+      doi: "10.3390/nu17172810",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Nutrients",
+      year: 2025,
+      abstract: "Advanced glycation end products (AGEs) accumulate in dermal proteins over time, leading to structural stiffening, loss of elasticity, and accelerated skin aging through receptor-mediated inflammation and extracellular matrix degradation.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

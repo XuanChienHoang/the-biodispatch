@@ -1,8 +1,98 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-21T13:42:08.449Z",
-  "totalTopics": 289,
+  "lastUpdated": "2026-11-21T15:57:29.176Z",
+  "totalTopics": 291,
   "topics": [
+    {
+      "id": "duong-va-nep-nhan-da-cau-chuyen-nhung-thanh-keo-cao-su-bi-cung-gion-vi-duong",
+      "slugs": [
+        "duong-va-nep-nhan-da-cau-chuyen-nhung-thanh-keo-cao-su-bi-cung-gion-vi-duong-vi"
+      ],
+      "titleVi": "Đường và nếp nhăn da: Câu chuyện những thanh kẹo cao su bị cứng giòn vì đường",
+      "titleEn": "Đường và nếp nhăn da: Câu chuyện những thanh kẹo cao su bị cứng giòn vì đường",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.3390/nu17172810",
+      "date": "2026-11-21T17:00:00Z",
+      "tags": [
+        "lao-hoa",
+        "mat-da",
+        "duong-huyet",
+        "dinh-duong"
+      ],
+      "keywords": [
+        "duong",
+        "nep",
+        "nhan",
+        "cau",
+        "chuyen",
+        "thanh",
+        "keo",
+        "cao",
+        "cung",
+        "gion",
+        "lao",
+        "hoa",
+        "mat",
+        "huyet",
+        "dinh",
+        "nhieu",
+        "nguoi",
+        "thuong",
+        "loay",
+        "hoay",
+        "tim",
+        "kiem",
+        "loai",
+        "kem",
+        "dat"
+      ]
+    },
+    {
+      "id": "sugar-and-skin-wrinkles-the-story-of-collagen-glycation",
+      "slugs": [
+        "sugar-and-skin-wrinkles-the-story-of-collagen-glycation-en"
+      ],
+      "titleVi": "Sugar and skin wrinkles: The story of chewy collagen turning brittle",
+      "titleEn": "Sugar and skin wrinkles: The story of chewy collagen turning brittle",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.3390/nu17172810",
+      "date": "2026-11-21T17:00:00Z",
+      "tags": [
+        "cellular-aging",
+        "skin-care",
+        "blood-sugar",
+        "nutrition"
+      ],
+      "keywords": [
+        "sugar",
+        "skin",
+        "wrinkles",
+        "story",
+        "chewy",
+        "collagen",
+        "turning",
+        "brittle",
+        "cellular",
+        "aging",
+        "care",
+        "blood",
+        "nutrition",
+        "many",
+        "people",
+        "spend",
+        "fortune",
+        "expensive",
+        "skincare",
+        "creams",
+        "while",
+        "ignoring",
+        "silent",
+        "culprit",
+        "their"
+      ]
+    },
     {
       "id": "afternoon-coffee-and-adenosine-why-you-sleep-without-deep-repair-vi",
       "slugs": [
