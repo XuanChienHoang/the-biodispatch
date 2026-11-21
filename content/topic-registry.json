@@ -1,8 +1,100 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-21T01:08:01.075Z",
-  "totalTopics": 287,
+  "lastUpdated": "2026-11-21T13:42:08.449Z",
+  "totalTopics": 289,
   "topics": [
+    {
+      "id": "afternoon-coffee-and-adenosine-why-you-sleep-without-deep-repair-vi",
+      "slugs": [
+        "afternoon-coffee-and-adenosine-why-you-sleep-without-deep-repair-vi-en"
+      ],
+      "titleVi": "Afternoon coffee and adenosine molecules: Why you still doze off but your brain misses deep repair sleep",
+      "titleEn": "Afternoon coffee and adenosine molecules: Why you still doze off but your brain misses deep repair sleep",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.5664/jcsm.3170",
+      "date": "2026-11-21T13:00:00Z",
+      "tags": [
+        "sleep",
+        "energy",
+        "brain",
+        "stress",
+        "metabolism"
+      ],
+      "keywords": [
+        "afternoon",
+        "coffee",
+        "adenosine",
+        "molecules",
+        "you",
+        "still",
+        "doze",
+        "off",
+        "but",
+        "your",
+        "brain",
+        "misses",
+        "deep",
+        "repair",
+        "sleep",
+        "energy",
+        "stress",
+        "metabolism",
+        "many",
+        "people",
+        "pride",
+        "themselves",
+        "drinking",
+        "strong",
+        "cup"
+      ]
+    },
+    {
+      "id": "ca-phe-sau-2-gio-chieu-va-phan-tu-adenosine-vi-sao-chung-ta-van-ngu-duoc-nhung-n",
+      "slugs": [
+        "ca-phe-sau-2-gio-chieu-va-phan-tu-adenosine-vi-sao-chung-ta-van-ngu-duoc-nhung-n-vi"
+      ],
+      "titleVi": "Cà phê sau 2 giờ chiều và phân tử adenosine: Vì sao bạn vẫn chợp mắt được nhưng não bộ không thể bước vào pha ngủ sâu?",
+      "titleEn": "Cà phê sau 2 giờ chiều và phân tử adenosine: Vì sao bạn vẫn chợp mắt được nhưng não bộ không thể bước vào pha ngủ sâu?",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.5664/jcsm.3170",
+      "date": "2026-11-21T13:00:00Z",
+      "tags": [
+        "giac-ngu",
+        "nang-luong",
+        "nao-bo",
+        "cang-thang",
+        "chuyen-hoa"
+      ],
+      "keywords": [
+        "phe",
+        "sau",
+        "gio",
+        "chieu",
+        "phan",
+        "adenosine",
+        "ban",
+        "van",
+        "chop",
+        "mat",
+        "duoc",
+        "nao",
+        "khong",
+        "buoc",
+        "vao",
+        "pha",
+        "ngu",
+        "giac",
+        "nang",
+        "luong",
+        "cang",
+        "thang",
+        "chuyen",
+        "hoa",
+        "nhieu"
+      ]
+    },
     {
       "id": "late-night-dinner-gastric-cancer-risk-kitchen-solutions",
       "slugs": [

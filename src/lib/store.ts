@@ -6161,6 +6161,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Late-night food intake disrupts normal circadian rhythms of gastric acid secretion and mucosal cell proliferation, exacerbating nocturnal acid exposure and promoting oxidative damage to gastric epithelial structures over time.",
     },
   ],
+  "ca-phe-sau-2-gio-chieu-va-phan-tu-adenosine-vi-sao-chung-ta-van-ngu-duoc-nhung-n-vi": [
+    {
+      ordinal: 1,
+      label: "Caffeine effects on sleep taken 0, 3, or 6 hours before going to bed",
+      pmid: "24235903",
+      doi: "10.5664/jcsm.3170",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "J Clin Sleep Med",
+      year: 2013,
+      abstract: "This study evaluated the effects of caffeine administered 0, 3, and 6 hours prior to bed on sleep disturbance measured by polysomnography and sleep logs. Results demonstrated that caffeine administered 6 hours before sleep substantially disrupted sleep architecture, reducing total sleep time by more than one hour, proving that even afternoon coffee consumption has profound disruptive effects on nocturnal rest.",
+    },
+  ],
+  "afternoon-coffee-and-adenosine-why-you-sleep-without-deep-repair-vi-en": [
+    {
+      ordinal: 1,
+      label: "Caffeine effects on sleep taken 0, 3, or 6 hours before going to bed",
+      pmid: "24235903",
+      doi: "10.5664/jcsm.3170",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "J Clin Sleep Med",
+      year: 2013,
+      abstract: "This study evaluated the effects of caffeine administered 0, 3, and 6 hours prior to bed on sleep disturbance measured by polysomnography and sleep logs. Results demonstrated that caffeine administered 6 hours before sleep substantially disrupted sleep architecture, reducing total sleep time by more than one hour, proving that even afternoon coffee consumption has profound disruptive effects on nocturnal rest.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
