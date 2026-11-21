@@ -6213,6 +6213,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Advanced glycation end products (AGEs) accumulate in dermal proteins over time, leading to structural stiffening, loss of elasticity, and accelerated skin aging through receptor-mediated inflammation and extracellular matrix degradation.",
     },
   ],
+  "mot-coc-nuoc-am-pha-nhum-muoi-khoang-buoi-sang-vi": [
+    {
+      ordinal: 1,
+      label: "Effects of Water Restriction and Supplementation on Cognitive Performances and Mood among Young Adults in Baoding, China: A Randomized Controlled Trial (RCT)",
+      pmid: "34684650",
+      doi: "10.3390/nu13103645",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Nutrients",
+      year: 2021,
+      abstract: "Hydration status influences numerous physiological parameters, including cellular osmolality, electrolyte homeostasis, and metabolic energy production. Maintaining optimal fluid and mineral balance upon awakening prevents subclinical dehydration symptoms, enhances cognitive function, and supports sustained daily physical and mental performance.",
+    },
+  ],
+  "warm-water-with-a-pinch-of-sea-salt-in-the-morning-en": [
+    {
+      ordinal: 1,
+      label: "Effects of Water Restriction and Supplementation on Cognitive Performances and Mood among Young Adults in Baoding, China: A Randomized Controlled Trial (RCT)",
+      pmid: "34684650",
+      doi: "10.3390/nu13103645",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Nutrients",
+      year: 2021,
+      abstract: "Hydration status influences numerous physiological parameters, including cellular osmolality, electrolyte homeostasis, and metabolic energy production. Maintaining optimal fluid and mineral balance upon awakening prevents subclinical dehydration symptoms, enhances cognitive function, and supports sustained daily physical and mental performance.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

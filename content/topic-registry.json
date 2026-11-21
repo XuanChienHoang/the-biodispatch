@@ -1,7 +1,7 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-21T15:57:29.176Z",
-  "totalTopics": 291,
+  "lastUpdated": "2026-11-21T22:29:29.554Z",
+  "totalTopics": 293,
   "topics": [
     {
       "id": "duong-va-nep-nhan-da-cau-chuyen-nhung-thanh-keo-cao-su-bi-cung-gion-vi-duong",
@@ -49,6 +49,52 @@
       ]
     },
     {
+      "id": "mot-coc-nuoc-am-pha-nhum-muoi-khoang-buoi-sang",
+      "slugs": [
+        "mot-coc-nuoc-am-pha-nhum-muoi-khoang-buoi-sang-vi"
+      ],
+      "titleVi": "Một cốc nước ấm pha nhúm muối khoáng buổi sáng: Bí quyết đánh thức nhà máy điện tế bào sau 8 tiếng ngủ say",
+      "titleEn": "Một cốc nước ấm pha nhúm muối khoáng buổi sáng: Bí quyết đánh thức nhà máy điện tế bào sau 8 tiếng ngủ say",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.3390/nu13103645",
+      "date": "2026-11-21T17:00:00Z",
+      "tags": [
+        "nang-luong",
+        "trao-doi-chat",
+        "tuan-hoan",
+        "giai-doc",
+        "thoi-quen-sang"
+      ],
+      "keywords": [
+        "coc",
+        "nuoc",
+        "pha",
+        "nhum",
+        "muoi",
+        "khoang",
+        "buoi",
+        "sang",
+        "quyet",
+        "danh",
+        "thuc",
+        "nha",
+        "may",
+        "dien",
+        "bao",
+        "sau",
+        "tieng",
+        "ngu",
+        "say",
+        "nang",
+        "luong",
+        "trao",
+        "doi",
+        "chat",
+        "tuan"
+      ]
+    },
+    {
       "id": "sugar-and-skin-wrinkles-the-story-of-collagen-glycation",
       "slugs": [
         "sugar-and-skin-wrinkles-the-story-of-collagen-glycation-en"
@@ -91,6 +137,52 @@
         "silent",
         "culprit",
         "their"
+      ]
+    },
+    {
+      "id": "warm-water-with-a-pinch-of-sea-salt-in-the-morning",
+      "slugs": [
+        "warm-water-with-a-pinch-of-sea-salt-in-the-morning-en"
+      ],
+      "titleVi": "A warm glass of water with a pinch of sea salt in the morning: Awakening cellular power plants after 8 hours of sleep",
+      "titleEn": "A warm glass of water with a pinch of sea salt in the morning: Awakening cellular power plants after 8 hours of sleep",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.3390/nu13103645",
+      "date": "2026-11-21T17:00:00Z",
+      "tags": [
+        "energy",
+        "metabolism",
+        "hydration",
+        "circulation",
+        "morning-routine"
+      ],
+      "keywords": [
+        "warm",
+        "glass",
+        "water",
+        "pinch",
+        "sea",
+        "salt",
+        "morning",
+        "awakening",
+        "cellular",
+        "power",
+        "plants",
+        "hours",
+        "sleep",
+        "energy",
+        "metabolism",
+        "hydration",
+        "circulation",
+        "routine",
+        "many",
+        "people",
+        "have",
+        "habit",
+        "drinking",
+        "cold",
+        "plain"
       ]
     },
     {
