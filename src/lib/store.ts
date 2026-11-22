@@ -6239,6 +6239,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Hydration status influences numerous physiological parameters, including cellular osmolality, electrolyte homeostasis, and metabolic energy production. Maintaining optimal fluid and mineral balance upon awakening prevents subclinical dehydration symptoms, enhances cognitive function, and supports sustained daily physical and mental performance.",
     },
   ],
+  "dot-bien-gen-tp53-va-doc-to-acetaldehyde-vi-sao-do-mat-khi-uong-ruou-lai-nguy-hi-vi": [
+    {
+      ordinal: 1,
+      label: "Benzo[a]pyrene, aflatoxine B₁ and acetaldehyde mutational patterns in TP53 gene using a functional assay: relevance to human cancer aetiology",
+      pmid: "22319594",
+      doi: "10.1371/journal.pone.0030921",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "PLoS One",
+      year: 2012,
+      abstract: "Many people mistakenly believe that flushing after a sip of alcohol is merely a mild allergic reaction or low alcohol tolerance. However, beneath the rosy skin lies a silent biological warning from the liver and epithelial cells. When detoxification enzymes are defective, toxic acetaldehyde accumulates and directly attacks the genetic code, weakening the guardian of the genome TP53 and paving the way for gastrointestinal cancer risks.",
+    },
+  ],
+  "tp53-gene-mutation-and-acetaldehyde-toxicity-why-alcohol-flush-reaction-is-more--en": [
+    {
+      ordinal: 1,
+      label: "Benzo[a]pyrene, aflatoxine B₁ and acetaldehyde mutational patterns in TP53 gene using a functional assay: relevance to human cancer aetiology",
+      pmid: "22319594",
+      doi: "10.1371/journal.pone.0030921",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "PLoS One",
+      year: 2012,
+      abstract: "Many people mistakenly believe that flushing after a sip of alcohol is merely a mild allergic reaction or low alcohol tolerance. However, beneath the rosy skin lies a silent biological warning from the liver and epithelial cells. When detoxification enzymes are defective, toxic acetaldehyde accumulates and directly attacks the genetic code, weakening the guardian of the genome TP53 and paving the way for gastrointestinal cancer risks.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

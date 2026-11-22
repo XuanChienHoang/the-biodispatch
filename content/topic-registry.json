@@ -1,8 +1,100 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-21T22:29:29.554Z",
-  "totalTopics": 293,
+  "lastUpdated": "2026-11-22T15:49:25.587Z",
+  "totalTopics": 295,
   "topics": [
+    {
+      "id": "dot-bien-gen-tp53-va-doc-to-acetaldehyde-vi-sao-do-mat-khi-uong-ruou-lai-nguy-hi",
+      "slugs": [
+        "dot-bien-gen-tp53-va-doc-to-acetaldehyde-vi-sao-do-mat-khi-uong-ruou-lai-nguy-hi-vi"
+      ],
+      "titleVi": "Đột biến gen TP53 và độc tố acetaldehyde: Vì sao đỏ mặt khi uống rượu lại nguy hiểm hơn bạn nghĩ",
+      "titleEn": "Đột biến gen TP53 và độc tố acetaldehyde: Vì sao đỏ mặt khi uống rượu lại nguy hiểm hơn bạn nghĩ",
+      "organ": "Metabolic",
+      "tier": "Clinical Deep-Dive",
+      "doi": "10.1371/journal.pone.0030921",
+      "date": "2026-11-22T17:00:00Z",
+      "tags": [
+        "ung-thu",
+        "gan",
+        "lao-hoa",
+        "tieu-hoa",
+        "chuyen-hoa"
+      ],
+      "keywords": [
+        "dot",
+        "bien",
+        "gen",
+        "tp53",
+        "doc",
+        "acetaldehyde",
+        "mat",
+        "uong",
+        "ruou",
+        "lai",
+        "nguy",
+        "hiem",
+        "hon",
+        "ban",
+        "nghi",
+        "ung",
+        "thu",
+        "gan",
+        "lao",
+        "hoa",
+        "tieu",
+        "chuyen",
+        "nhieu",
+        "nguoi",
+        "lam"
+      ]
+    },
+    {
+      "id": "tp53-gene-mutation-and-acetaldehyde-toxicity-why-alcohol-flush-reaction-is-more-",
+      "slugs": [
+        "tp53-gene-mutation-and-acetaldehyde-toxicity-why-alcohol-flush-reaction-is-more--en"
+      ],
+      "titleVi": "TP53 gene mutation and acetaldehyde toxicity: Why alcohol flush reaction is more dangerous than you think",
+      "titleEn": "TP53 gene mutation and acetaldehyde toxicity: Why alcohol flush reaction is more dangerous than you think",
+      "organ": "Metabolic",
+      "tier": "Clinical Deep-Dive",
+      "doi": "10.1371/journal.pone.0030921",
+      "date": "2026-11-22T17:00:00Z",
+      "tags": [
+        "oncology",
+        "liver",
+        "aging",
+        "gut",
+        "metabolism"
+      ],
+      "keywords": [
+        "tp53",
+        "gene",
+        "mutation",
+        "acetaldehyde",
+        "toxicity",
+        "alcohol",
+        "flush",
+        "reaction",
+        "more",
+        "dangerous",
+        "than",
+        "you",
+        "think",
+        "oncology",
+        "liver",
+        "aging",
+        "gut",
+        "metabolism",
+        "many",
+        "people",
+        "mistakenly",
+        "believe",
+        "flushing",
+        "sip",
+        "merely"
+      ]
+    },
     {
       "id": "duong-va-nep-nhan-da-cau-chuyen-nhung-thanh-keo-cao-su-bi-cung-gion-vi-duong",
       "slugs": [
