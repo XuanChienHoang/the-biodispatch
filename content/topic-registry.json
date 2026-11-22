@@ -1,7 +1,7 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-11-22T15:49:25.587Z",
-  "totalTopics": 295,
+  "lastUpdated": "2026-11-22T22:35:43.185Z",
+  "totalTopics": 297,
   "topics": [
     {
       "id": "dot-bien-gen-tp53-va-doc-to-acetaldehyde-vi-sao-do-mat-khi-uong-ruou-lai-nguy-hi",
@@ -47,6 +47,98 @@
         "nhieu",
         "nguoi",
         "lam"
+      ]
+    },
+    {
+      "id": "sugar-damage-to-collagen-and-skin-protection",
+      "slugs": [
+        "sugar-damage-to-collagen-and-skin-protection-en"
+      ],
+      "titleVi": "Afternoon pastries and premature wrinkles: When sugar turns elastic fibers into rusty ironbars",
+      "titleEn": "Afternoon pastries and premature wrinkles: When sugar turns elastic fibers into rusty ironbars",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1186/s12986-018-0306-7",
+      "date": "2026-11-22T17:00:00Z",
+      "tags": [
+        "aging",
+        "skin",
+        "blood-sugar",
+        "metabolism",
+        "energy"
+      ],
+      "keywords": [
+        "afternoon",
+        "pastries",
+        "premature",
+        "wrinkles",
+        "when",
+        "sugar",
+        "turns",
+        "elastic",
+        "fibers",
+        "rusty",
+        "ironbars",
+        "aging",
+        "skin",
+        "blood",
+        "metabolism",
+        "energy",
+        "often",
+        "spend",
+        "fortune",
+        "expensive",
+        "skincare",
+        "creams",
+        "while",
+        "forgetting",
+        "our"
+      ]
+    },
+    {
+      "id": "tac-hai-cua-duong-den-collagen-va-cach-bao-ve-da",
+      "slugs": [
+        "tac-hai-cua-duong-den-collagen-va-cach-bao-ve-da-vi"
+      ],
+      "titleVi": "Bánh ngọt buổi chiều và nếp nhăn sớm: Khi đường biến sợi đàn hồi thành những thanh sắt gỉ",
+      "titleEn": "Bánh ngọt buổi chiều và nếp nhăn sớm: Khi đường biến sợi đàn hồi thành những thanh sắt gỉ",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1186/s12986-018-0306-7",
+      "date": "2026-11-22T17:00:00Z",
+      "tags": [
+        "lao-hoa",
+        "mat-da",
+        "duong-huyet",
+        "noi-tiet",
+        "nang-luong"
+      ],
+      "keywords": [
+        "banh",
+        "ngot",
+        "buoi",
+        "chieu",
+        "nep",
+        "nhan",
+        "som",
+        "duong",
+        "bien",
+        "soi",
+        "dan",
+        "hoi",
+        "thanh",
+        "sat",
+        "lao",
+        "hoa",
+        "mat",
+        "huyet",
+        "noi",
+        "tiet",
+        "nang",
+        "luong",
+        "chung",
+        "thuong",
+        "ton"
       ]
     },
     {

@@ -6265,6 +6265,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Many people mistakenly believe that flushing after a sip of alcohol is merely a mild allergic reaction or low alcohol tolerance. However, beneath the rosy skin lies a silent biological warning from the liver and epithelial cells. When detoxification enzymes are defective, toxic acetaldehyde accumulates and directly attacks the genetic code, weakening the guardian of the genome TP53 and paving the way for gastrointestinal cancer risks.",
     },
   ],
+  "tac-hai-cua-duong-den-collagen-va-cach-bao-ve-da-vi": [
+    {
+      ordinal: 1,
+      label: "Role of advanced glycation end products in mobility and considerations in possible dietary and nutritional intervention strategies",
+      pmid: "30337945",
+      doi: "10.1186/s12986-018-0306-7",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Nutr Metab (Lond)",
+      year: 2018,
+      abstract: "Advanced glycation end products (AGEs) accumulate in dermal extracellular matrix proteins due to chronic high sugar intake and oxidative stress, leading to cross-linking of collagen fibers, loss of skin elasticity, and premature wrinkle formation. Dietary interventions focusing on low glycemic index foods and natural polyphenols effectively inhibit glycation pathways and preserve skin structural integrity.",
+    },
+  ],
+  "sugar-damage-to-collagen-and-skin-protection-en": [
+    {
+      ordinal: 1,
+      label: "Role of advanced glycation end products in mobility and considerations in possible dietary and nutritional intervention strategies",
+      pmid: "30337945",
+      doi: "10.1186/s12986-018-0306-7",
+      design: "Landmark Literature Synthesis",
+      sampleSize: null,
+      journal: "Nutr Metab (Lond)",
+      year: 2018,
+      abstract: "Advanced glycation end products (AGEs) accumulate in dermal extracellular matrix proteins due to chronic high sugar intake and oxidative stress, leading to cross-linking of collagen fibers, loss of skin elasticity, and premature wrinkle formation. Dietary interventions focusing on low glycemic index foods and natural polyphenols effectively inhibit glycation pathways and preserve skin structural integrity.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
