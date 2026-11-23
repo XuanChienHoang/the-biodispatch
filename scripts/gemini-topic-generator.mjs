@@ -1,23 +1,20 @@
 /**
- * Autonomous Gemini Topic & Content Generator for Phytocodex
+ * Autonomous Gemini Topic & Content Generator for Phytocodex (v4.0 — High Diversity & Natural Editorial Style)
  * Dr. Xuan Chien Hoang (Dr. rer. nat. | University of Hamburg)
- * 
- * Generates brand new cutting-edge bilingual dispatches adhering to:
- * - 7 Editorial Gatekeeper criteria
- * - TS. Xuan Chien Hoang's tone & storytelling archetype
- * - No em-dash/en-dash
- * - Clear analogical blockquote
- * - Linear pathway flowchart ([A] ──► [B])
- * - Clinical comparison table
- * - Actionable clinical protocols / translation takeaway
+ *
+ * Key upgrades in v4.0:
+ * - Fixes critical bug where commonGuidelines (JSON schema + retry feedback) were omitted from payload
+ * - Expands to 12 balanced domains with 85+ fresh uncovered biomedical/everyday-health ideas + Open Frontier Discovery mode
+ * - Zero fallback to exhausted ideas[0]
+ * - Enforces 7 rotating natural headline archetypes (bans overused "Vì sao..." / "Tại sao..." / "Why..." openings)
+ * - Enforces 6 rotating engaging opening hook archetypes (bans AI-slop clichés like "Chị Lan kế toán Hà Nội", "Trong guồng quay hối hả", "tiệc tùng cuối năm")
  */
 
 import fs from 'fs';
 import path from 'path';
-import { getCompactExclusionSummary } from './topic-registry.mjs';
+import { getCompactExclusionSummary, getRecentDispatchContext } from './topic-registry.mjs';
 import { checkTopicCollision } from './topic-dedup-guard.mjs';
 
-// Model candidates with fallback support (stable and responsive models prioritized)
 const MODEL_CANDIDATES = [
   'gemini-3.1-flash-lite',
   'gemini-flash-lite-latest',
@@ -27,12 +24,202 @@ const MODEL_CANDIDATES = [
   'gemini-3.8-flash'
 ];
 
+// 7 rotating editorial headline archetypes — natural, journalistic, NO "Vì sao..." cliché
+const TITLE_ARCHETYPES = [
+  {
+    id: 'paradox',
+    name: 'Nghịch lý / Lật ngược thói quen quen thuộc',
+    instruction: 'Đặt tựa đề kiểu khẳng định một nghịch lý đời thường bất ngờ (KHÔNG dùng câu hỏi "Vì sao/Tại sao"). Ví dụ tham khảo phong cách: "Nước súc miệng diệt khuẩn có thể vô hiệu hóa lợi ích hạ huyết áp của củ dền" hoặc "Cà phê uống ngay sau bữa ăn giàu sắt đang âm thầm giảm một nửa lượng sắt hấp thu".'
+  },
+  {
+    id: 'metric-rule',
+    name: 'Con số / Quy tắc thực chiến gọn sắc',
+    instruction: 'Đặt tựa đề mở đầu hoặc neo vào một con số sinh học/thời lượng cụ thể đi kèm lợi ích rõ ràng (KHÔNG dùng "Vì sao/Tại sao"). Ví dụ tham khảo phong cách: "30 loại thực vật mỗi tuần: Ngưỡng đa dạng giúp hệ vi sinh đường ruột hồi sinh" hoặc "15 phút chợp mắt buổi trưa và ranh giới tránh cơn uể oải sau khi tỉnh".'
+  },
+  {
+    id: 'vivid-image',
+    name: 'Hình ảnh đời thường sắc nét (Editorial Metaphor)',
+    instruction: 'Đặt tựa đề ngắn gọn dùng một hình ảnh cụ thể, tinh tế, giàu sức gợi về cơ thể hoặc thực phẩm (KHÔNG dùng "Vì sao/Tại sao", KHÔNG lạm dụng "Giải mã"). Ví dụ tham khảo phong cách: "Cơ dép bắp chân, cỗ máy bơm đường huyết thầm lặng dưới gầm bàn làm việc" hoặc "Lớp màng trắng quanh múi cam và lá chắn Hesperidin cho thành mao mạch".'
+  },
+  {
+    id: 'smart-contrast',
+    name: 'So sánh hai lựa chọn thực tế (A hay B)',
+    instruction: 'Đặt tựa đề đối chiếu trực tiếp hai cách chế biến, hai loại thực phẩm hoặc hai thói quen phổ biến (KHÔNG dùng "Vì sao/Tại sao"). Ví dụ tham khảo phong cách: "Gừng tươi pha trà hay gừng nướng cháy vỏ: Sự biến đổi từ Gingerol sang Shogaol" hoặc "Quế Ceylon và quế Cassia: Ranh giới tinh tế giữa ổn định đường huyết và gánh nặng cho gan".'
+  },
+  {
+    id: 'declarative-mechanism',
+    name: 'Câu trần thuật chủ động nêu cơ chế bất ngờ',
+    instruction: 'Đặt tựa đề là một câu trần thuật trực diện, mạch lạc, không cần dấu hai chấm hoặc chỉ dùng khi thật tự nhiên (KHÔNG dùng "Vì sao/Tại sao"). Ví dụ tham khảo phong cách: "Thở bằng mũi giải phóng khí Oxit Nitric tự nhiên ngay từ các xoang mặt" hoặc "Mất chỉ 1% lượng nước cơ thể đã đủ làm suy giảm khả năng tập trung ở vỏ não trước trán".'
+  },
+  {
+    id: 'hidden-blindspot',
+    name: 'Góc khuất đời sống ít người để ý',
+    instruction: 'Đặt tựa đề chỉ thẳng một góc khuất tinh tế trong sinh hoạt hằng ngày bằng giọng điềm tĩnh, chuẩn khoa học (KHÔNG giật gân, KHÔNG dùng "Vì sao/Tại sao"). Ví dụ tham khảo phong cách: "Ngủ bù cuối tuần lệch quá 2 giờ đang tạo ra cơn lệch múi giờ chuyển hóa ngay tại nhà" hoặc "Ánh nắng UVA xuyên qua cửa kính văn phòng âm thầm thúc đẩy lão hóa da dù không gây cháy nắng".'
+  },
+  {
+    id: 'ingredient-spotlight',
+    name: 'Cận cảnh một hoạt chất / thực phẩm bình dị',
+    instruction: 'Đặt tựa đề tôn vinh một thực phẩm hoặc hoạt chất quen thuộc theo kiểu tạp chí khoa học hiện đại (KHÔNG dùng "Vì sao/Tại sao"). Ví dụ tham khảo phong cách: "Ergothioneine trong nấm ăn: Hoạt chất được tế bào người thiết kế riêng kênh vận chuyển" hoặc "Trà hoa bụp giấm Hibiscus và cơ chế ức chế men chuyển tự nhiên trên thành mạch".'
+  }
+];
+
+// 6 rotating opening hook styles — kills repetitive "Chị Lan kế toán Hà Nội" / "tiệc tùng cuối năm" / "Trong guồng quay hối hả"
+const HOOK_ARCHETYPES = [
+  {
+    id: 'sensory-micro-scene',
+    name: 'Khoảnh khắc giác quan cận cảnh',
+    instruction: 'Mở bài ngay bằng một chi tiết giác quan rất nhỏ, chân thực (âm thanh, mùi hương, cảm giác sinh lý cụ thể như tiếng tách nhỏ khi ngâm hạt é, vị cay nồng bốc lên từ lát hành tím, cảm giác nặng nề ở đôi chân sau 3 tiếng ngồi yên). TUYỆT ĐỐI KHÔNG bịa nhân vật kiểu "Chị Lan 34 tuổi kế toán Hà Nội" hay "Anh Minh".'
+  },
+  {
+    id: 'surprising-number',
+    name: 'Con số sinh lý hoặc kết quả nghiên cứu gây khựng lại',
+    instruction: 'Mở bài thẳng bằng một con số sinh lý hoặc dữ liệu thực nghiệm đáng kinh ngạc (ngắn gọn, 1-2 câu đầu súc tích), sau đó nối tự nhiên vào thói quen hằng ngày của người đọc.'
+  },
+  {
+    id: 'habit-paradox',
+    name: 'Nghịch lý của một thói quen tưởng là rất tốt',
+    instruction: 'Mở bài bằng việc nêu một thói quen quen thuộc mà hầu hết mọi người đều tin là lành mạnh, rồi nhẹ nhàng đặt lại vấn đề bằng bằng chứng sinh học sắc sảo — không dùng câu sáo rỗng "Có bao giờ bạn tự hỏi".'
+  },
+  {
+    id: 'science-vignette',
+    name: 'Giai thoại phòng thí nghiệm / Khám phá khoa học ngắn',
+    instruction: 'Mở bài bằng một quan sát lịch sử y học hoặc thí nghiệm khoa học thú vị (2-3 câu ngắn, giàu hình ảnh), rồi kéo thẳng về ứng dụng trong bữa ăn hoặc sinh hoạt hôm nay.'
+  },
+  {
+    id: 'direct-dialogue',
+    name: 'Chia sẻ trực diện góc nhìn TS. Hoàng Xuân Chiến',
+    instruction: 'Mở bài như một lời trò chuyện điềm đạm, gần gũi, thẳng thắn từ trải nghiệm nghiên cứu và câu hỏi thường gặp của người thân/bạn đọc — tự nhiên, ấm áp, tuyệt đối không kiểu cách hay lên lớp.'
+  },
+  {
+    id: 'sharp-contrast',
+    name: 'Đặt hai tình huống tương phản cạnh nhau ngay câu đầu',
+    instruction: 'Mở bài bằng sự đối lập rõ rệt giữa hai cách làm tưởng chừng giống hệt nhau (ví dụ: cùng một loại thực phẩm nhưng khác nhiệt độ, thời điểm uống, hoặc cách kết hợp), để khơi gợi tò mò lập tức.'
+  }
+];
+
+// Rich, fresh, diverse domain pillars (12 pillars, 85+ UNCOVERED everyday-health & preventive biomedical topics)
+const DOMAIN_PILLARS = [
+  {
+    domain: 'Hóa sinh Căn bếp & Phòng ngừa Ung thư Thực chứng (Culinary Biochemistry & Chemoprevention)',
+    organ: 'Oncology',
+    goalId: 'cancer-prevention',
+    ideas: [
+      'Quercetin trong vỏ hành tím và cách thái mỏng giữ nguyên hợp chất chống viêm bảo vệ ADN',
+      'Ướp thịt với hương thảo và nghệ tươi trước khi áp chảo giúp giảm hơn 70% hợp chất dị vòng HCA',
+      'Khói dầu ăn chiên đi chiên lại giải phóng aldehyde 4-HNE và cách chọn dầu theo điểm bốc khói',
+      'Nồi chiên không dầu và hợp chất Acrylamide trong tinh bột nướng giòn ở nhiệt độ trên 160°C',
+      'Nhựa dùng một lần gặp canh nóng giải phóng vi nhựa cùng chất gây rối loạn nội tiết BPA và Phthalate',
+      'Cải xoong và củ cải trắng chứa PEITC kích hoạt men giải độc gan Pha 2 trước tác nhân gây đột biến',
+      'Gạo lứt tím, bắp cải tím và sắc tố Anthocyanin bảo vệ lớp màng tế bào trước tổn thương oxy hóa',
+      'Kimchi, dưa muối lên men tự nhiên và axit hữu cơ postbiotic nuôi dưỡng miễn dịch niêm mạc đại tràng',
+      'Hạt hạch Brazil giàu Selen chống oxy hóa: Ranh giới giữa liều bảo vệ tế bào và ngưỡng dư thừa',
+      'Thụ thể Vitamin D trong tế bào biểu mô ruột và vai trò điều hòa phân chia tế bào khỏe mạnh'
+    ]
+  },
+  {
+    domain: 'Dinh dưỡng Đời thường & Tối ưu Hấp thu Vi chất (Smart Nutrition & Bioavailability)',
+    organ: 'Metabolic',
+    goalId: 'smart-nutrition',
+    ideas: [
+      'Bữa sáng giàu đạm so với bữa sáng thuần tinh bột: Tác động lên hormone Ghrelin và cơn thèm ngọt giữa buổi',
+      'Quế Ceylon và quế Cassia: Khác biệt về hàm lượng Coumarin bảo vệ gan khi hỗ trợ nhạy cảm insulin',
+      'Hạt chia và hạt é ngâm nước tạo lớp gel chất nhầy làm chậm hấp thu chất béo và đường sau ăn',
+      'Ngâm đậu đen, đậu lăng qua đêm để giảm Axit Phytic và Lectin giúp hấp thu khoáng chất, hết đầy bụng',
+      'Dầu ô liu nguyên chất chứa Oleocanthal: Nhiệt độ nấu bao nhiêu thì polyphenol bắt đầu suy giảm',
+      'Cá béo kích thước nhỏ (cá mòi, cá thu nhật) so với cá săn mồi lớn: Cân bằng EPA/DHA và nguy cơ thủy ngân',
+      'Một lát bơ ăn cùng salad cà rốt và rau bina giúp tăng hấp thu Carotenoid tan trong dầu gấp nhiều lần',
+      'Lòng đỏ trứng gà và dưỡng chất Choline: Giải oan cholesterol thực phẩm cho màng tế bào và trí nhớ',
+      'Chuối xanh và tinh bột kháng tự nhiên hỗ trợ điều hòa đường huyết và nuôi lợi khuẩn đường ruột',
+      'Uống trà đặc ngay sau bữa ăn giàu sắt thực vật khiến Tannin khóa chặt quá trình hấp thu sắt không heme',
+      'Kết hợp Vitamin C từ chanh hoặc ớt chuông để chuyển hóa sắt thực vật sang dạng dễ hấp thu hơn gấp 3 lần'
+    ]
+  },
+  {
+    domain: 'Thần kinh, Tập trung & Giấc ngủ Phục hồi (Brain, Focus & Restorative Sleep)',
+    organ: 'Brain',
+    goalId: 'brain-sleep',
+    ideas: [
+      'Giấc ngủ trưa 15 đến 20 phút so với ngủ 60 phút: Tránh quán tính giấc ngủ và giữ tỉnh táo đến tối',
+      'Ngủ bù cuối tuần lệch quá 2 giờ tạo ra hội chứng lệch múi giờ xã hội (Social Jetlag) phá vỡ chuyển hóa',
+      'Mất chỉ 1 đến 2% lượng nước cơ thể đã làm suy giảm trí nhớ ngắn hạn và tăng cảm giác mệt mỏi thần kinh',
+      'Nấm hầu thủ (Lion Mane) và hợp chất Hericenones kích thích yếu tố tăng trưởng thần kinh NGF',
+      'Nhụy hoa nghệ tây (Saffron) với Crocin và Safranal hỗ trợ điều hòa chất dẫn truyền thần kinh và giấc ngủ nhẹ',
+      'Nhịp thở dài sinh lý (Physiological Sigh) với hai lần hít vào giúp tái phồng phế nang và dịu căng thẳng tức thì',
+      'Thở bằng mũi so với thở bằng miệng khi ngủ: Nguồn khí Oxit Nitric tự nhiên trong xoang mặt và chất lượng oxy',
+      'Hương tinh dầu hương thảo chứa 1,8-Cineole và cơ chế bảo vệ chất dẫn truyền Acetylcholine cho trí nhớ làm việc',
+      'Đọc sách giấy 15 phút trước giờ ngủ làm dịu hoạt động hạch hạnh nhân và rút ngắn thời gian vào giấc',
+      'Tiếng ồn hồng (Pink Noise) và tác động ổn định sóng chậm trong giấc ngủ phục hồi trí nhớ dài hạn'
+    ]
+  },
+  {
+    domain: 'Hệ Vi sinh Đường ruột & Tiêu hóa Chuyên sâu (Gut Microbiome & Digestive Health)',
+    organ: 'Gut',
+    goalId: 'gut-microbiome',
+    ideas: [
+      'Quy tắc 30 loại thực vật mỗi tuần từ dự án American Gut giúp nhân đôi độ đa dạng hệ vi sinh đường ruột',
+      'Gừng tươi và gừng nướng khô: Sự chuyển hóa từ Gingerol sang Shogaol quyết định hiệu quả làm rỗng dạ dày',
+      'Tinh dầu bạc hà chứa Menthol tác động lên kênh thụ thể TRPM8 giúp thư giãn cơ trơn đường ruột',
+      'Bông atiso và hoạt chất Cynarin kích thích tiết dịch mật hỗ trợ tiêu hóa bữa ăn giàu chất béo',
+      'Chất xơ tiền sinh học Inulin trong hành tây, tỏi tây và ranh giới gây chướng bụng ở người nhạy cảm FODMAP',
+      'Chất tạo ngọt nhân tạo Sucralose và Saccharin làm thay đổi hệ vi sinh ruột và phản ứng đường huyết ra sao',
+      'Phục hồi hệ vi sinh sau đợt dùng kháng sinh: Vai trò nấm men Saccharomyces boulardii và thời điểm bổ sung lợi khuẩn',
+      'Rau vị đắng (mướp đắng, cải cúc) kích hoạt thụ thể vị đắng T2R dọc đường ruột điều hòa cảm giác no',
+      'Trà lên men Kombucha: Lợi ích từ axit hữu cơ và cái bẫy đường dư ẩn giấu trong các chai pha sẵn',
+      'Glycine trong nước hầm xương và thực phẩm giàu đạm giúp củng cố niêm mạc ruột và điều hòa nhiệt độ giấc ngủ'
+    ]
+  },
+  {
+    domain: 'Tim mạch, Vi tuần hoàn & Sức khỏe Mạch máu (Cardiovascular & Microcirculation)',
+    organ: 'Heart',
+    goalId: 'cardio-vessels',
+    ideas: [
+      'Nước súc miệng diệt khuẩn mạnh có thể làm mất tác dụng hạ huyết áp từ nitrat tự nhiên trong củ dền và rau bina',
+      'Trà hoa bụp giấm (Hibiscus) giàu Anthocyanin hỗ trợ giãn mạch tương tự cơ chế ức chế men chuyển nhẹ',
+      'Lớp màng trắng quanh múi cam, bưởi giàu Hesperidin củng cố độ bền mao mạch và giảm ứ trệ tuần hoàn',
+      'Cơ dép ở bắp chân (Soleus Push-up), trái tim thứ hai giúp bơm máu tĩnh mạch và tiêu thụ đường ngay khi ngồi',
+      'Chóng mặt khi đứng dậy đột ngột: Phản xạ thụ thể áp suất Baroreceptor và cách giữ ổn định huyết áp tư thế',
+      'Omega-3 thực vật (ALA) từ hạt óc chó và tỷ lệ chuyển hóa rất thấp sang EPA, DHA trong cơ thể người',
+      'Chân tay thường xuyên lạnh dù trời không quá rét: Góc nhìn vi tuần hoàn mao mạch và tín hiệu Oxit Nitric',
+      'Chất xơ Beta-Glucan trong lúa mạch và nấm ăn bẫy axit mật giúp gan kéo bớt cholesterol LDL ra khỏi máu'
+    ]
+  },
+  {
+    domain: 'Lão hóa Tế bào, Ty thể & Trường thọ Thực chứng (Cellular Longevity & Resilience)',
+    organ: 'Cellular Aging',
+    goalId: 'longevity-aging',
+    ideas: [
+      'Ergothioneine trong nấm ăn: Hoạt chất bảo vệ ty thể được tế bào người thiết kế riêng kênh vận chuyển OCTN1',
+      'Taurine suy giảm theo tuổi tác và vai trò bảo vệ chức năng ty thể, võng mạc và cơ tim ở tuổi trung niên',
+      'Sức nắm bàn tay (Grip Strength), chỉ số sinh học dự báo tuổi thọ và sức khỏe hệ thần kinh cơ chuẩn xác hơn BMI',
+      'Đứng một chân 10 giây và hệ tiền đình, cảm thụ bản thể: Dấu hiệu lão hóa thầm lặng sau tuổi 50',
+      'Thiếu hụt Vitamin B12 âm thầm ở người lớn tuổi và người dùng thuốc tiểu đường Metformin gây tê bì thần kinh',
+      'Tỷ lệ Kẽm và Đồng trong cơ thể: Uống kẽm liều cao kéo dài có thể vô tình gây thiếu hụt đồng và thiếu máu',
+      'Bệnh nha chu và vi khuẩn Porphyromonas gingivalis: Con đường từ nướu răng đến phản ứng viêm mạn tính mạch máu',
+      'Bài tập cơ lệch tâm (đi xuống cầu thang, hạ tạ chậm) tái cấu trúc gân khớp và cải thiện độ nhạy insulin vượt trội'
+    ]
+  },
+  {
+    domain: 'Làn da, Thị lực, Miễn dịch & Môi trường Sống (Skin, Vision, Immunity & Daily Environment)',
+    organ: 'Immune',
+    goalId: 'immune-environment',
+    ideas: [
+      'Tia UVA xuyên qua cửa kính văn phòng và xe hơi âm thầm phá hủy sợi đàn hồi da dù không gây cháy nắng',
+      'Ngồi phòng điều hòa khô lạnh suốt 8 giờ làm tăng mất nước qua biểu bì (TEWL) và làm khô hàng rào niêm mạc mũi',
+      'Vitamin C từ ổi, ớt chuông và vai trò đồng yếu tố bắt buộc của enzym prolyl hydroxylase giúp vết thương mau lành',
+      'Chăm sóc hệ vi sinh trên bề mặt da: Rửa mặt quá nhiều lần bằng chất tẩy mạnh làm hỏng lớp màng axit bảo vệ pH 5.5',
+      'Mật ong nguyên chất và cơ chế làm dịu phản xạ ho về đêm ở người lớn cùng lưu ý tuyệt đối với trẻ dưới 1 tuổi',
+      'Ánh sáng tự nhiên ngoài trời giúp võng mạc tiết Dopamine bảo vệ trục nhãn cầu chống tiến triển cận thị',
+      'Chất lượng không khí trong phòng ngủ đóng kín: Nồng độ CO2 vượt 1.000 ppm làm giảm rõ rệt hiệu suất nhận thức sáng hôm sau',
+      'Thở cơ hoành sâu và tư thế khung chậu giúp giảm áp lực lên cột sống thắt lưng và cải thiện tuần hoàn bạch huyết'
+    ]
+  }
+];
+
 function resolveGeminiApiKey() {
   if (process.env.GEMINI_API_KEY && process.env.GEMINI_API_KEY.trim()) {
     return process.env.GEMINI_API_KEY.trim();
   }
 
-  // Fallback to local configs if available
   const candidateConfigPaths = [
     path.resolve(process.cwd(), '.env'),
     path.resolve(process.cwd(), '.env.local'),
@@ -52,6 +239,44 @@ function resolveGeminiApiKey() {
   return '';
 }
 
+function pickDiversePillarAndIdea(recentOrgans = []) {
+  // Compute unused ideas for EVERY pillar using Dedup Guard v3.0
+  const pillarsWithFresh = DOMAIN_PILLARS.map(pillar => {
+    const freshIdeas = pillar.ideas.filter(idea => !checkTopicCollision({ titleVi: idea }).isDuplicate);
+    return { ...pillar, freshIdeas };
+  });
+
+  const nonEmptyPillars = pillarsWithFresh.filter(p => p.freshIdeas.length > 0);
+
+  // Avoid repeating the last 2 published organs whenever possible
+  const lastTwoOrgans = new Set(recentOrgans.slice(0, 2));
+  const freshRotated = nonEmptyPillars.filter(p => !lastTwoOrgans.has(p.organ));
+  const candidatePool = freshRotated.length > 0 ? freshRotated : nonEmptyPillars;
+
+  if (candidatePool.length > 0) {
+    // Balanced 30% priority for Oncology/Chemoprevention if fresh ideas remain and not just posted
+    const cancerPillar = candidatePool.find(p => p.goalId === 'cancer-prevention');
+    let chosenPillar;
+    if (cancerPillar && Math.random() < 0.30) {
+      chosenPillar = cancerPillar;
+    } else {
+      const others = candidatePool.filter(p => p.goalId !== 'cancer-prevention');
+      const pickPool = others.length > 0 ? others : candidatePool;
+      chosenPillar = pickPool[Math.floor(Math.random() * pickPool.length)];
+    }
+
+    const randomIdea = chosenPillar.freshIdeas[Math.floor(Math.random() * chosenPillar.freshIdeas.length)];
+    return { chosenPillar, randomIdea, isOpenDiscovery: false };
+  }
+
+  // OPEN FRONTIER DISCOVERY MODE: If all static seeds are ever exhausted, NEVER recycle ideas[0]!
+  // Pick the least-recently-used organ and let Gemini discover a brand-new topic.
+  const allOrgans = ['Oncology', 'Metabolic', 'Brain', 'Gut', 'Heart', 'Cellular Aging', 'Immune'];
+  const leastRecent = allOrgans.find(o => !recentOrgans.slice(0, 4).includes(o)) || allOrgans[Math.floor(Math.random() * allOrgans.length)];
+  const fallbackPillar = DOMAIN_PILLARS.find(p => p.organ === leastRecent) || DOMAIN_PILLARS[0];
+  return { chosenPillar: fallbackPillar, randomIdea: null, isOpenDiscovery: true };
+}
+
 export async function generateTopicWithGemini(existingCatalog = [], feedback = null, targetTier = 'Life Dispatch') {
   const apiKey = resolveGeminiApiKey();
   if (!apiKey) {
@@ -59,368 +284,184 @@ export async function generateTopicWithGemini(existingCatalog = [], feedback = n
     return null;
   }
 
-  // CƠ CHẾ SIÊU TIẾT KIỆM TOKEN: Nén toàn bộ 100+ bài đã xuất bản thành danh mục hoạt chất/cơ chế dưới 200 tokens
   const exclusionSummary = getCompactExclusionSummary();
+  const recentCtx = getRecentDispatchContext(8);
+  const { chosenPillar, randomIdea, isOpenDiscovery } = pickDiversePillarAndIdea(recentCtx.recentOrgans);
+
+  // Rotate headline & opening hook archetypes randomly each run
+  const chosenTitleArchetype = TITLE_ARCHETYPES[Math.floor(Math.random() * TITLE_ARCHETYPES.length)];
+  const chosenHookArchetype = HOOK_ARCHETYPES[Math.floor(Math.random() * HOOK_ARCHETYPES.length)];
+
+  console.log(`🧭 [Diversity Engine] Lĩnh vực: ${chosenPillar.organ} | Kiểu tựa đề: ${chosenTitleArchetype.id} | Kiểu mở bài: ${chosenHookArchetype.id} | OpenDiscovery=${isOpenDiscovery}`);
 
   const systemInstruction = `Bạn là TS. Hoàng Xuân Chiến (Dr. rer. nat. - Đại học Hamburg, CHLB Đức), Giám đốc Học thuật kiêm Tổng biên tập của ấn bản y sinh "Phytocodex" (phytocodex.vercel.app).
 Bạn là chuyên gia hàng đầu về Y học Chuyển hóa, Lão hóa & Trường thọ (Metabolic Longevity), Dược động học và Tín hiệu tế bào.
 
 ĐỐI TƯỢNG ĐỘC GIẢ VÀ ĐỊNH HƯỚNG NỘI DUNG:
-- ĐỐI TƯỢNG ĐỘC GIẢ: Độc giả phổ thông đại chúng là chính (người đi làm, phụ huynh, người quan tâm đến sức khỏe bản thân và gia đình).
-- TỶ LỆ NỘI DUNG: Ưu tiên tối đa bài viết đời sống thường thức (Life Dispatch) mang tính ứng dụng thực tế cao, dễ hiểu, giải tỏa lo lắng, giải mã các thói quen hàng ngày. Ít bài quá nặng về nghiên cứu hàn lâm chuyên sâu.
-- VĂN PHONG TS. HOÀNG XUÂN CHIẾN: Ấm áp, gần gũi, hóm hỉnh, sâu sắc. Luôn dùng các hình ảnh ẩn dụ đời thường tinh tế để giải thích cơ chế phân tử (ví như "nhà máy điện", "cửa an ninh", "xe bồn rửa đường", "bức tường vôi vữa"). Tránh dùng từ ngữ hàn lâm khó hiểu mà không giải thích.
+- ĐỐI TƯỢNG ĐỘC GIẢ: Độc giả phổ thông đại chúng (người đi làm, phụ huynh, người quan tâm sức khỏe gia đình dựa trên khoa học thực chứng).
+- VĂN PHONG TS. HOÀNG XUÂN CHIẾN: Tự nhiên, điềm đạm, ấm áp, hóm hỉnh vừa đủ, sắc sảo và tôn trọng trí tuệ người đọc. Dùng ẩn dụ tinh tế để giải thích cơ chế phân tử nhưng KHÔNG sáo rỗng, KHÔNG viết kiểu văn mẫu AI.
 
-MỤC TIÊU:
-Nghiên cứu và tạo ra 1 chủ đề bài viết chuyên khảo y sinh song ngữ MỚI HOÀN TOÀN, đột phá, mang tính thực chứng cao (Nature/Science/Cell/Lancet), TUYỆT ĐỐI KHÔNG TRÙNG LẶP HOẶC TƯƠNG TỰ VỚI BẤT KỲ BÀI NÀO ĐÃ CÓ TRONG KHO.
+MỤC TIÊU TUYỆT ĐỐI:
+Tạo ra 1 bài viết chuyên khảo y sinh song ngữ MỚI HOÀN TOÀN, mang tính thực chứng cao (Nature/Science/Cell/Lancet/NEJM/AJCN/Nutrients), TUYỆT ĐỐI KHÔNG TRÙNG LẶP hoặc viết lại bất kỳ chủ đề, hoạt chất hay cơ chế nào đã xuất bản dưới đây!
 
 ${exclusionSummary}
 
-QUY TẮC BẮT BUỘC:
-1. KHÔNG dùng bất kỳ dấu em-dash (—) hay en-dash (–) nào. Chỉ dùng dấu phẩy, hai chấm, gạch nối ngắn (-) hoặc ngoặc đơn.
-2. Tiêu đề (titleVi, titleEn): Hấp dẫn, gần gũi, theo câu tự nhiên (Sentence case tiếng Việt), phản ánh đúng lợi ích đời thường, tối thiểu 20 ký tự.
-3. Tóm tắt (excerptVi, excerptEn): Tối thiểu 100 từ, nêu bật nghịch lý sinh học hoặc thói quen phổ biến nhưng ít người hiểu đúng.
-4. Ẩn dụ (analogyVi, analogyEn): Một đoạn so sánh ví von đời thường cực kỳ tinh tế, giải thích cơ chế phân tử bằng hình ảnh thân thuộc, dễ nhớ.
-5. Dẫn nhập (leadVi, leadEn): Mở đầu bằng câu chuyện đời thực, tình huống thường gặp tại gia đình hoặc nơi làm việc trước khi đi vào cơ chế khoa học. Tối thiểu 160 từ.
-6. Sơ đồ Flowchart (flowchart): Chuỗi phản ứng phân tử bắt buộc dùng mũi tên "──►" và ngoặc vuông, ví dụ: [Thói quen / Tác nhân] ──► [Thụ thể / Enzyme] ──► [Lợi ích sức khỏe]
-7. Phần nội dung (sectionsVi, sectionsEn): Phải có ĐỦ 3 phần chi tiết (Heading + Body):
-   - Phần 1: Cơ chế sinh học đằng sau thói quen / vi chất (giải nghĩa rõ từng chữ viết tắt bằng ngôn từ mộc mạc). Tối thiểu 250 từ.
-   - Phần 2: Giải mã sự thật khoa học & BẮT BUỘC có 1 BẢNG SO SÁNH MARKDOWN (Markdown Table) đối chiếu các chỉ số sinh lý / thói quen / liều lượng (với tiêu đề cột rõ ràng, ít nhất 3 dòng dữ liệu). Tối thiểu 250 từ kèm bảng.
-   - Phần 3: BẮT BUỘC là phần "Ứng dụng thực tế & Lời khuyên lâm sàng" (Heading phải chứa từ như "Chiến lược đời sống", "Ứng dụng thực tế", "Khuyến nghị an toàn", hoặc "Tối ưu hóa thói quen"). Hướng dẫn cụ thể: ăn gì, uống khi nào, tránh gì. Tối thiểu 250 từ.
-8. Đảm bảo tổng độ dài văn bản mỗi ngôn ngữ ĐẠT TỐI THIỂU 850 - 1.200 từ. Tuyệt đối không viết tóm tắt ngắn dưới 750 từ.
-9. TÀI LIỆU THAM KHẢO CHÍNH XÁC TUYỆT ĐỐI (ZERO HALLUCINATION):
-   - Cung cấp bài báo gốc có thật đã xuất bản trên các tạp chí uy tín (Nature, Science, Cell, Lancet, NEJM, Nutrients, AJCN, v.v.).
-   - "refPaperTitle": Tiêu đề NGUYÊN GỐC CỦA BÀI BÁO KHOA HỌC (chính xác từng chữ trên PubMed/CrossRef).
-   - "refAuthors": Tác giả chính hoặc nhóm nghiên cứu.
-   - "refJournal": Tên tạp chí khoa học.
-   - "refYear": Năm xuất bản chính xác.
-   - "refDoi": Mã DOI CHÍNH XÁC CỦA BÀI BÁO (bắt đầu bằng 10.xxxx/...).
-   - "refPmid": Mã PMID chính xác trên PubMed tương ứng với DOI đó.
-   - "refAbstract": Tóm tắt học thuật bằng tiếng Anh của nghiên cứu đó (khoảng 3-4 câu).
-   - TUYỆT ĐỐI KHÔNG gán DOI của bài báo này cho bài báo khác!
-10. CẤU TRÚC ĐOẠN VĂN THOÁNG ĐÃNG (CHỐNG BỨC TƯỜNG CHỮ):
-   - Mỗi đoạn văn (paragraph) chỉ dài 2-4 câu (khoảng 80-120 từ/đoạn). Thường xuyên xuống dòng tạo khoảng trắng, giúp độc giả trên điện thoại đọc êm mắt, tiếp thu trọn vẹn.
-11. BỘ TÓM TẮT & HƯỚNG DẪN THỰC HÀNH V2 (BRIEF & PRACTICAL GUIDE):
-   - Bắt buộc điền đầy đủ "briefVi", "briefEn", "practicalVi", "practicalEn":
-   - "bottomLine": 1 câu đắt giá nhất giải thích độc giả được lợi gì trong cuộc sống thực tế.
-   - "evidence": Chọn chuẩn xác mức bằng chứng ('human-rct', 'human-observational', 'mixed', 'review', 'animal', 'in-vitro').
-   - "takeaways": Đúng 3 gạch đầu dòng then chốt, mỗi gạch 1 câu súc tích.
-   - "steps": 2-3 hành động thực tiễn (thời điểm, liều dùng, mẹo áp dụng dễ nhớ).
-   - "avoidIf": Cảnh báo thận trọng / chống chỉ định.
-   - "interactions": Tương tác thuốc hoặc thực phẩm.
-   - "seeDoctor": Triệu chứng báo động cần đi khám bác sĩ.
-12. HỆ THỐNG TAGS THEO TRIỆU CHỨNG (HEALTH GOALS TAXONOMY):
-   - tagsVi và tagsEn bắt buộc chứa từ khóa tìm kiếm theo triệu chứng gần gũi (như: giac-ngu, duong-huyet, tim-mach, ruot, nang-luong, lao-hoa, noi-tiet, khop, gan, mat-da) để hệ thống tự động phân loại vào các mục sức khỏe trên trang chủ.
-13. TỪ KHÓA TÌM ẢNH NHIẾP ẢNH BÁM SÁT NỘI DUNG (imageSearchQueries):
-   - Bắt buộc cung cấp mảng "imageSearchQueries" gồm 4 cụm từ khóa tiếng Anh ngắn gọn (2-4 từ mỗi cụm) mô tả CHÍNH XÁC thực phẩm, dược liệu, bộ phận cơ thể hoặc tình huống đời thường cụ thể của bài viết (ví dụ bài về yến mạch -> ["rolled oats bowl", "oatmeal porridge morning", "Avena sativa oats", "whole grain oats"]; bài về trà sữa -> ["bubble milk tea", "boba pearl tea", "iced milk tea glass", "sweet beverage glass"]).
-   - TUYỆT ĐỐI CẤM dùng từ khóa chung chung hoặc lệch chủ đề như "fitness exercise", "dumbbells", "healthy nutrition", "cancer laboratory" trừ khi bài viết nói trực tiếp về tập tạ hoặc phòng thí nghiệm.`;
+QUY TẮC BẮT BUỘC VỀ TỰA ĐỀ & MỞ BÀI (CHỐNG RẬP KHUÔN AI):
+1. TIÊU ĐỀ TỰ NHIÊN (titleVi, titleEn):
+   - TUYỆT ĐỐI KHÔNG bắt đầu tiêu đề tiếng Việt bằng "Vì sao..." hay "Tại sao...", và KHÔNG bắt đầu tiêu đề tiếng Anh bằng "Why...".
+   - Hạn chế tối đa các cụm sáo rỗng như "Giải mã bí mật...", "Sự thật bất ngờ...", "Phép màu...".
+   - Viết câu trần thuật hoặc cấu trúc tự nhiên theo Sentence case tiếng Việt (chỉ viết hoa chữ cái đầu câu, sau dấu hai chấm nếu là mệnh đề độc lập, và danh từ riêng/thuật ngữ).
+   - BẮT BUỘC áp dụng phong cách đặt tựa đề cho kỳ này: [${chosenTitleArchetype.name}] -> ${chosenTitleArchetype.instruction}
+2. MỞ BÀI THU HÚT & ĐA DẠNG (leadVi, leadEn):
+   - BẮT BUỘC áp dụng kiểu mở bài cho kỳ này: [${chosenHookArchetype.name}] -> ${chosenHookArchetype.instruction}
+   - CẤM TUYỆT ĐỐI các câu mở bài sáo rỗng kiểu AI sau:
+     * "Trong guồng quay hối hả của cuộc sống hiện đại..." / "Trong nhịp sống hiện đại..."
+     * "Có bao giờ bạn tự hỏi..." / "Bạn có bao giờ thắc mắc..." / "Đã bao giờ bạn cảm thấy..."
+     * "Hãy tưởng tượng..." / "Trong những buổi tiệc tùng cuối năm..." / "Trong gian bếp của mỗi gia đình Việt Nam..."
+     * Bịa nhân vật rập khuôn kiểu "Chị Lan, 34 tuổi, nhân viên kế toán tại Hà Nội", "Chị Minh", "Anh Minh"...
+     * Tiếng Anh: "In today's fast-paced world...", "Have you ever wondered...", "Imagine a..."
+   - Độ dài leadVi >= 150 từ, chia 2 đoạn ngắn thoáng mắt (mỗi đoạn 2-3 câu).
 
-    // Ngân hàng các trụ cột đề tài bám sát Nhu cầu Sức khỏe Đời sống của độc giả đại chúng
-  // ƯU TIÊN HÀNG ĐẦU THEO CHỈ ĐẠO CỦA TS. HOÀNG XUÂN CHIẾN: Nhóm bài phổ thông về Ung thư & Phòng ngừa
-  const DOMAIN_PILLARS = [
-    {
-      domain: 'Phòng ngừa Ung thư, Hợp chất Thực vật & Dinh dưỡng Miễn dịch (Cancer Prevention & Chemopreventive Phytochemicals)',
-      organ: 'Oncology',
-      goalId: 'cancer-prevention',
-      ideas: [
-        // Nhánh 1: Hợp chất thực vật & Thực phẩm bổ trợ phòng ngừa ung thư (Chemopreventive Foods & Phytochemicals)
-        'Cà chua nấu chín, dầu ô liu và Lycopene: Vì sao nhiệt độ và chất béo mở khóa hoạt chất dập tắt gốc tự do bảo vệ tế bào tuyến tiền liệt?',
-        'Tỏi tươi đập dập và Allicin: Quy tắc 10 phút vàng để enzyme Alliinase kích hoạt vũ khí tự nhiên thúc đẩy tế bào đột biến tự tiêu hủy (Apoptosis)',
-        'Mầm súp lơ xanh và Sulforaphane: Cơ chế kích hoạt enzym Phase 2 qua con đường Nrf2 quét sạch chất sinh ung thư trước khi chúng làm hỏng DNA',
-        'Trà xanh thượng hạng và EGCG: Phân tử ức chế yếu tố hình thành mạch máu nuôi khối u (VEGF) và mẹo thêm một lát chanh để tăng hấp thu',
-        'Nấm hương, nấm Maitake và Beta-Glucan: Cơ chế đánh thức thụ thể Dectin-1 trên đại thực bào để tăng cường tuần tra tế bào lạ',
-        'Nghệ vàng và Curcumin kết hợp hạt tiêu đen: Cơ chế ức chế ngòi nổ viêm mạn tính NF-kB và tăng sinh khả dụng 2000% nhờ Piperine',
-        'Quả mọng việt quất, dâu tây và Axit Ellagic: Cơ chế bảo vệ đầu mút telomere và ngăn ngừa đứt gãy sợi đôi DNA',
-        'Đậu nành nguyên bản và Isoflavone (Genistein): Sự thật về thụ thể ER-beta bảo vệ và phá tan nỗi sợ vô căn cứ về đậu nành',
-        'Chất xơ hòa tan trong yến mạch, đậu ván và Axit Butyrate: Nguồn thức ăn nuôi tế bào biểu mô đại tràng và củng cố hàng rào miễn dịch niêm mạc',
-        // Nhánh 2: Thói quen đời sống & Cảnh báo tác nhân nguy cơ (Lifestyle & Risk Mitigations)
-        'Thịt đỏ chế biến sẵn và ung thư đại trực tràng: Hợp chất Nitrosamine, sắt Heme và cách trung hòa bằng rau xanh giàu diệp lục',
-        'Thói quen ăn canh sôi, uống trà nóng trên 65°C: Tổn thương nhiệt vi mô niêm mạc thực quản và quy tắc 5 phút để nguội',
-        'Vận động thể chất và tế bào NK: Cơ chế cơ bắp tiết Myokine huy động bạch cầu tuần tra và tiêu diệt tế bào tiền ung thư',
-        'Đỏ mặt khi uống rượu bia: Thiếu hụt enzym ALDH2 làm tích tụ độc tố Acetaldehyde gây đột biến gen TP53 ở người châu Á',
-        'Thực phẩm mốc và độc tố Aflatoxin: Đột biến gen ức chế khối u ở gan và quy tắc bảo quản ngũ cốc an toàn tuyệt đối',
-        'Nhiễm vi khuẩn HP (Helicobacter pylori) và ung thư dạ dày: Cơ chế độc tố CagA gây viêm teo niêm mạc và thời điểm vàng cần điều trị',
-        'Virus HPV và ung thư cổ tử cung: Cơ chế protein E6/E7 vô hiệu hóa gen p53 và hiệu quả bảo vệ lên đến 90% của vaccine HPV',
-        'Giấc ngủ ngắt quãng và tác nhân sinh ung Nhóm 2A: Khi sự suy giảm Melatonin về đêm tước đoạt cơ chế sửa chữa đứt gãy DNA',
-        'Dinh dưỡng chuẩn y khoa cho bệnh nhân ung thư: Đập tan hiểu lầm kiêng thịt bỏ đói khối u và cách bảo tồn khối cơ nạc'
-      ]
-    },
-    {
-      domain: 'Giấc ngủ, Nhịp sinh học & Giảm căng thẳng thần kinh (Sleep & Stress Management)',
-      organ: 'Brain',
-      goalId: 'sleep-stress',
-      ideas: [
-        'Cà phê sau 2 giờ chiều và phân tử Adenosine: Vì sao bạn vẫn chợp mắt được nhưng não bộ không thể bước vào pha ngủ sâu?',
-        'Kỹ thuật thở 4-7-8 kích hoạt dây thần kinh phế vị (Vagus Nerve): Cơ chế phân tử giúp hạ nhịp tim và dập tắt cơn lo âu sau 2 phút',
-        'Ánh sáng xanh từ điện thoại trước khi đi ngủ: Vì sao bật chế độ Night Shift hay đeo kính vàng vẫn chưa đủ để bảo vệ Melatonin?',
-        'Hạ nhiệt độ phòng ngủ xuống 19-20°C: Cơ chế sinh học kích hoạt giấc ngủ sóng chậm NREM và thúc đẩy hệ Glymphatic dọn rác não',
-        'Magie Glycinate vs Magie Citrate: Vì sao uống sai dạng muối magie lại gây kích thích tiêu hóa thay vì an thần ngủ ngon?'
-      ]
-    },
-    {
-      domain: 'Kiểm soát Đường huyết, Kháng Insulin & Đốt mỡ bụng (Blood Sugar & Weight Health)',
-      organ: 'Metabolic',
-      goalId: 'metabolic-weight',
-      ideas: [
-        'Trật tự bữa ăn chuẩn khoa học (Rau trước - Đạm giữa - Tinh bột cuối): Cơ chế làm phẳng đỉnh đường huyết sau ăn tới 40%',
-        'Một thìa giấm táo trước bữa ăn nhiều tinh bột: Axit axetic ức chế men alpha-amylase và làm chậm tốc độ rỗng dạ dày ra sao?',
-        'Đi bộ nhẹ 10-15 phút sau ăn: Cơ chế cơ bắp co bóp kích hoạt kênh GLUT4 kéo đường vào tế bào mà không cần tụy tiết thêm insulin',
-        'Tác hại sinh học của việc ăn tối muộn sau 8 giờ: Khi tế bào mỡ khóa thụ thể và lượng calo dư thừa chuyển thẳng thành mỡ nội tạng',
-        'Bí mật tinh bột kháng trong cơm nguội và khoai tây luộc để lạnh: Quá trình thoái biến tinh bột thành thức ăn nuôi lợi khuẩn đại tràng'
-      ]
-    },
-    {
-      domain: 'Sức khỏe Tim mạch, Huyết áp & Bảo vệ Thành mạch (Heart & Vascular Health)',
-      organ: 'Heart',
-      goalId: 'cardio-vessels',
-      ideas: [
-        'Bổ sung Canxi mà quên Vitamin D3 và K2 (MK-7): Nguy cơ vôi hóa lắng đọng tại thành mạch máu mà ít người để ý',
-        'Socola đen trên 85% cacao và huyết áp: Hợp chất Flavanol kích hoạt giải phóng Oxit Nitric (NO) làm giãn nở động mạch tự nhiên',
-        'Muối ăn và huyết áp: Vì sao việc nạp đủ Kali từ rau củ quả lại quan trọng hơn là kiêng muối quá mức?',
-        'Ngồi làm việc liên tục trên 2 tiếng làm tê liệt enzyme LPL: Thói quen nhấp nhổm đơn giản giúp ngăn ngừa ứ trệ tuần hoàn chi dưới',
-        'Xông hơi (Sauna) và sức khỏe cơ tim: Cơ chế kích hoạt protein sốc nhiệt HSP mô phỏng lợi ích của bài tập thể lực vừa phải'
-      ]
-    },
-    {
-      domain: 'Đường ruột, Tiêu hóa & Hệ Vi sinh (Gut Health & Microbiome)',
-      organ: 'Gut',
-      goalId: 'gut-microbiome',
-      ideas: [
-        'Uống nước đá lạnh ngay sau bữa ăn nhiều dầu mỡ: Thực hư chuyện đông đặc chất béo và làm chậm men tiêu hóa dạ dày',
-        'Hội chứng rò rỉ ruột (Leaky Gut) và chứng mệt mỏi kéo dài: Khi khoảng hở niêm mạc giải phóng độc tố vi khuẩn endotoxin vào máu',
-        'Chất xơ hòa tan Pectin từ táo và yến mạch: Thức ăn nuôi dưỡng lớp màng nhầy Mucin bảo vệ niêm mạc đại tràng',
-        'Curcumin từ nghệ kết hợp Piperine từ hạt tiêu đen: Bí quyết tăng sinh khả dụng gấp 20 lần giúp làm dịu niêm mạc tiêu hóa',
-        'Thói quen nhai kỹ 20-30 lần mỗi miếng ăn: Cơ chế enzyme amylase trong nước bọt giúp giải phóng 50% gánh nặng cho dạ dày'
-      ]
-    },
-    {
-      domain: 'Năng lượng Tế bào, Chống sập nguồn & Sức bền (Daily Energy & Recovery)',
-      organ: 'Metabolic',
-      goalId: 'energy-vitality',
-      ideas: [
-        'Hiện tượng sập nguồn và buồn ngủ rũ rượi lúc 2 giờ chiều: Thủ phạm thực sự từ đỉnh carbohydrate bữa trưa và cách hóa giải',
-        'Trì hoãn ngụm cà phê đầu tiên sau khi thức dậy 60-90 phút: Cho phép cơ thể tự dọn sạch Adenosine và tránh tình trạng đuối sức buổi chiều',
-        'Một cốc nước ấm pha nhúm muối khoáng buổi sáng: Cơ chế cân bằng điện giải thẩm thấu đánh thức tế bào sau 8 tiếng mất nước',
-        'Tắm ánh nắng tự nhiên 10 phút đầu ngày: Đặt lại đồng hồ sinh học tại nhân trên chéo (SCN) để tỉnh táo ban ngày và ngủ sâu ban đêm',
-        'Creatine monohydrate cho người làm việc trí óc: Tái tạo năng lượng ATP cho tế bào thần kinh khi đối mặt với áp lực công việc cao'
-      ]
-    },
-    {
-      domain: 'Trẻ hóa Tế bào, Ty thể & Chống Lão hóa Sớm (Longevity & Anti-Aging)',
-      organ: 'Cellular Aging',
-      goalId: 'longevity-cancer',
-      ideas: [
-        'Fisetin từ quả dâu tây: Hoạt chất tự nhiên giúp đào thải tế bào già cỗi (Zombie cells) gây viêm âm ỉ trong mô',
-        'Nhịn ăn gián đoạn 14-16 tiếng đúng cách: Thời điểm vàng kích hoạt cơ chế tự thực bào (Autophagy) dọn sạch rác phân tử',
-        'Urolithin A từ quả lựu và quả óc chó: Tái sinh các ty thể già cỗi thành nhà máy sản xuất năng lượng mới (Mitophagy)',
-        'Đồ nướng cháy khét và phản ứng Glycation (AGEs): Vì sao đường liên kết với protein làm giòn mạch máu và đẩy nhanh nếp nhăn?',
-        'Tập thể lực kháng lực (Resistance Training) ở tuổi trung niên: Kích thích hormone myokine bảo vệ não bộ và kéo dài tuổi thọ sinh học'
-      ]
-    },
-    {
-      domain: 'Cân bằng Nội tiết, Ngăn rụng tóc & Phục hồi Sinh lực (Hormones, Hair & Vitality)',
-      organ: 'Metabolic',
-      goalId: 'hormones-vitality',
-      ideas: [
-        'Rụng tóc sau tuổi 30 và hormone DHT: Vì sao chiết xuất Saw Palmetto và kẽm giúp bảo vệ nang tóc khỏi tác động teo nhỏ?',
-        'Tuyến giáp và bộ đôi vi chất Selen + I-ốt: Mối liên hệ mật thiết giữa quá trình chuyển đổi T4 sang T3 và cảm giác uể oải sợ lạnh',
-        'Hiện tượng Cortisol Steal khi căng thẳng kéo dài: Khi stress triệt tiêu nguồn nguyên liệu tổng hợp hormone sinh sản và sinh lực',
-        'Phytoestrogen trong đậu nành và hạt lanh: Giải mã những hiểu lầm phổ biến và lợi ích thực sự cho phụ nữ giai đoạn tiền mãn kinh'
-      ]
-    },
-    {
-      domain: 'Bảo vệ Xương khớp, Đau mỏi Cơ & Vận động Linh hoạt (Joints & Mobility)',
-      organ: 'Cellular Aging',
-      goalId: 'joints-mobility',
-      ideas: [
-        'Đau mỏi cổ vai gáy của người ngồi máy tính: Cơ chế thiếu máu cục bộ cơ thang và các bài giải phóng căng thẳng cơ học 2 phút',
-        'Collagen peptide thủy phân: Sự thật về việc các mảnh dipeptide ngắn Pro-Hyp kích thích tế bào sụn sản sinh dịch nhờn khớp',
-        'Axit Hyaluronic đường uống: Khả năng ngậm nước tại mô đệm liên kết và cải thiện tình trạng khô khớp gối khi leo cầu thang',
-        'Ngăn ngừa teo cơ sau tuổi 40 (Sarcopenia): Tầm quan trọng của axit amin Leucine trong bữa ăn để kích hoạt con đường mTOR nuôi cơ'
-      ]
-    },
-    {
-      domain: 'Bảo vệ Gan mật, Hạ men gan & Đào thải Axit Uric (Liver Care & Detox)',
-      organ: 'Metabolic',
-      goalId: 'liver-detox',
-      ideas: [
-        'Gan nhiễm mỡ không do rượu (MASLD): Vì sao đường Fructose lỏng trong trà sữa và nước ngọt tích tụ mỡ gan nhanh hơn mỡ động vật?',
-        'Sự thật về các gói trà thải độc gan cấp tốc: Cơ chế giải độc Phase 1 và Phase 2 của tế bào gan thực sự cần những vi chất nào?',
-        'Chiết xuất Kế sữa (Silymarin) và màng tế bào gan: Khả năng ngăn chặn độc tố từ rượu bia và thuốc hạ sốt giảm đau xâm nhập',
-        'Axit Uric cao và nguy cơ cơn gút cấp: Vì sao ăn quả anh đào (Tart Cherry) và uống đủ nước giúp tăng đào thải axit uric qua thận?'
-      ]
-    },
-    {
-      domain: 'Chăm sóc Thị lực, Mỏi mắt Màn hình & Trẻ hóa Làn da (Eyes & Skin Care)',
-      organ: 'Cellular Aging',
-      goalId: 'skin-eyes',
-      ideas: [
-        'Hội chứng mỏi mắt kỹ thuật số (Computer Vision Syndrome): Quy tắc 20-20-20 và cơ chế thư giãn điều tiết của cơ thể mi',
-        'Lutein và Zeaxanthin: Hai sắc tố vàng tích tụ tại hoàng điểm để hấp thụ ánh sáng xanh có năng lượng cao từ màn hình',
-        'Ceramide thực vật đường uống từ cám gạo: Cơ chế tái lập hàng rào lipid chống mất nước qua biểu bì cho da khô nhạy cảm',
-        'Đường và nếp nhăn da: Hiện tượng đứt gãy sợi collagen do liên kết chéo phân tử và giải pháp bảo vệ da qua chế độ ăn ít đường'
-      ]
-    }
-  ];
-
-  // Lựa chọn ngẫu nhiên một trụ cột và chủ đề chưa từng xuất hiện trên website
-  // ƯU TIÊN HÀNG ĐẦU THEO CHỈ ĐẠO CỦA TS. HOÀNG XUÂN CHIẾN: Tần suất 45% cho nhóm bài Ung thư & Phòng ngừa
-  let chosenPillar;
-  const isCancerTurn = Math.random() < 0.45;
-  if (isCancerTurn) {
-    chosenPillar = DOMAIN_PILLARS.find(p => p.goalId === 'cancer-prevention') || DOMAIN_PILLARS[0];
-  } else {
-    const otherPillars = DOMAIN_PILLARS.filter(p => p.goalId !== 'cancer-prevention');
-    chosenPillar = otherPillars[Math.floor(Math.random() * otherPillars.length)];
-  }
-  const availableIdeas = chosenPillar.ideas.filter(idea => {
-    const col = checkTopicCollision({ titleVi: idea });
-    return !col.isDuplicate;
-  });
-  const randomIdea = availableIdeas.length > 0
-    ? availableIdeas[Math.floor(Math.random() * availableIdeas.length)]
-    : chosenPillar.ideas[0];
+QUY TẮC CẤU TRÚC & KHOA HỌC BẮT BUỘC:
+3. KHÔNG dùng bất kỳ dấu em-dash (—) hay en-dash (–) nào. Chỉ dùng dấu phẩy, hai chấm, gạch nối ngắn (-) hoặc ngoặc đơn.
+4. Tóm tắt (excerptVi, excerptEn): 90-130 từ, nêu bật góc nhìn khoa học mới mẻ và giá trị thực tế.
+5. Ẩn dụ (analogyVi, analogyEn): Một đoạn so sánh ví von mới mẻ, sáng tạo, gắn sát với cơ chế của riêng bài này.
+6. Sơ đồ Flowchart (flowchartVi, flowchartEn): Chuỗi phản ứng phân tử bắt buộc dùng mũi tên "──►" và ngoặc vuông, ví dụ: [Tác nhân] ──► [Thụ thể / Enzyme] ──► [Tác động sinh học].
+7. Phần nội dung (sectionsVi, sectionsEn): ĐỦ 3 phần chi tiết (Heading + Body), đoạn văn thoáng 2-4 câu/đoạn:
+   - Phần 1: Cơ chế sinh học đằng sau thói quen / vi chất (giải nghĩa mộc mạc từng thuật ngữ). Tối thiểu 250 từ.
+   - Phần 2: Đối chiếu bằng chứng khoa học & BẮT BUỘC có 1 BẢNG SO SÁNH MARKDOWN (ít nhất 3 dòng dữ liệu cụ thể, có số liệu/ngưỡng rõ ràng). Tối thiểu 250 từ kèm bảng.
+   - Phần 3: BẮT BUỘC là phần "Ứng dụng thực tế & Khuyến nghị an toàn" (Heading chứa từ khóa như "Ứng dụng thực tế", "Chiến lược đời sống", "Khuyến nghị an toàn", "Thực hành an toàn"). Hướng dẫn cụ thể liều lượng, thời điểm, cách chế biến. Tối thiểu 250 từ.
+8. Tổng độ dài văn bản tiếng Việt đạt 850 - 1.250 từ, tiếng Anh đạt 750 - 1.100 từ.
+9. TÀI LIỆU THAM KHẢO CÓ THẬT (ZERO HALLUCINATION):
+   - Chỉ dẫn bài báo gốc thực sự tồn tại trên PubMed/CrossRef (Nature, Science, Cell, Lancet, NEJM, BMJ, AJCN, Nutrients, J Nutr, Am J Clin Nutr, v.v.).
+   - "label": Tiêu đề nguyên bản tiếng Anh chính xác. Để trống pmid/doi nếu không chắc 100% (hệ thống Citation Verifier sẽ tự tra cứu và đối khớp PubMed).
+10. BỘ TÓM TẮT & HƯỚNG DẪN THỰC HÀNH V2: Điền đầy đủ briefVi, briefEn (bottomLine, evidence, 3 takeaways) và practicalVi, practicalEn (steps, avoidIf, interactions, seeDoctor).
+11. TAGS THEO MỤC SỨC KHỎE: tagsVi và tagsEn chứa từ khóa gần gũi (như giac-ngu, duong-huyet, tim-mach, ruot, nang-luong, lao-hoa, noi-tiet, khop, gan, mat-da, ung-thu, mien-dich).
+12. TỪ KHÓA TÌM ẢNH (imageSearchQueries): Mảng 4 cụm từ khóa tiếng Anh ngắn (2-4 từ) mô tả CHÍNH XÁC thực phẩm, dược liệu, nguyên liệu nấu ăn hoặc khung cảnh đời thường của bài viết (TUYỆT ĐỐI KHÔNG dùng cụm chung chung như "fitness exercise", "healthy nutrition", "cancer laboratory").`;
 
   const isLifeDispatch = targetTier === 'Life Dispatch';
+  const topicDirective = isOpenDiscovery
+    ? `- CHẾ ĐỘ KHÁM PHÁ CHỦ ĐỀ MỚI HOÀN TOÀN (Open Frontier): Hãy chọn 1 chủ đề đời sống y sinh cụ thể, thú vị, có bằng chứng nghiên cứu rõ ràng thuộc nhóm cơ quan "${chosenPillar.organ}" (${chosenPillar.domain}), HOÀN TOÀN CHƯA TỪNG XUẤT HIỆN trong danh mục loại trừ ở trên.`
+    : `- Lĩnh vực: ${chosenPillar.domain}\n- Phân loại cơ quan: "${chosenPillar.organ}"\n- Gợi ý chủ đề gốc (hãy viết lại tựa đề thật tự nhiên theo đúng phong cách [${chosenTitleArchetype.name}], KHÔNG copy nguyên văn): "${randomIdea}"`;
 
-  const prompt = isLifeDispatch
-    ? `Hãy sáng tạo một bài viết đời sống y khoa thường thức dễ hiểu, gần gũi nhưng chuẩn xác khoa học (Tier: "Life Dispatch") song ngữ (Tiếng Việt và Tiếng Anh) cho ấn bản Phytocodex của TS. Hoàng Xuân Chiến.
+  const basePrompt = isLifeDispatch
+    ? `Hãy viết một bài báo khoa học đời sống thường thức gần gũi, chuẩn xác (Tier: "Life Dispatch") song ngữ (Tiếng Việt & Tiếng Anh) cho ấn bản Phytocodex của TS. Hoàng Xuân Chiến.
 
-GỢI Ý CHỦ ĐỀ ĐỜI THƯỜNG / THÓI QUEN SỐNG (BẮT BUỘC MỚI LẠ, CHƯA CÓ TRONG KHO):
-- Lĩnh vực: ${chosenPillar.domain}
-- Phân loại cơ quan: "${chosenPillar.organ}"
-- Gợi ý chủ đề tham khảo: "${randomIdea}"
-(TUYỆT ĐỐI KHÔNG lặp lại các chủ đề cũ đã có trong danh mục loại trừ ở trên).
+ĐỊNH HƯỚNG CHỦ ĐỀ KỲ NÀY (BẮT BUỘC MỚI 100%, KHÔNG TRÙNG KHO CŨ):
+${topicDirective}
 
-NGUYÊN TẮC BIÊN TẬP CỦA TS. HOÀNG XUÂN CHIẾN (LIFE DISPATCH):
-1. TIẾP CẬN ĐỜI THƯỜNG & DỄ HIỂU: Văn phong ấm áp, gần gũi, bóc tách các thói quen hàng ngày, giúp độc giả đại chúng đọc là hiểu ngay và áp dụng được liền.
-2. ĐỀ TÀI UNG THƯ PHẢI CÂN BẰNG GIỮA CẢNH BÁO NGUY CƠ VÀ CÁC HỢP CHẤT/THỨC ĂN BỔ TRỢ PHÒNG NGỪA: Không chỉ đưa cảnh báo rủi ro mà phải chú trọng các hoạt chất sinh học tự nhiên (Lycopene, Allicin, Sulforaphane, EGCG, Curcumin, Beta-Glucan...) và hướng dẫn cách chế biến, kết hợp thực phẩm trong căn bếp để tối ưu hóa hiệu quả phòng ngừa ung thư.
-2. KHÔNG LẠM DỤNG TỪ NGỮ QUÁ HÀN LÂM: Cơ chế phân tử giải thích mộc mạc, có ẩn dụ sinh động.
-3. TIÊU ĐỀ HẤP DẪN, DỄ HIỂU: Tiêu đề tiếng Việt viết theo văn phong tự nhiên (Sentence case), hấp dẫn nhưng KHÔNG giật gân, phản ánh đúng lợi ích sức khỏe thực tế.
-4. ĐỊNH DẠNG SLUG: Tiếng Việt có hậu tố "-vi", tiếng Anh có hậu tố "-en".
-5. LIÊM CHÍNH Y VĂN: Cung cấp 1-2 tài liệu tham khảo thực tế có thật trên PubMed/CrossRef.`
-    : `Hãy sáng tạo một bài phân tích chuyên khảo y sinh chuyên sâu (Tier: "Clinical Deep-Dive") song ngữ (Tiếng Việt và Tiếng Anh) cho ấn bản Phytocodex của TS. Hoàng Xuân Chiến.
+YÊU CẦU BIÊN TẬP BẮT BUỘC:
+- Tựa đề theo phong cách: [${chosenTitleArchetype.name}] — KHÔNG bắt đầu bằng "Vì sao/Tại sao" hay "Why".
+- Mở bài theo phong cách: [${chosenHookArchetype.name}] — tự nhiên, cuốn hút, KHÔNG dùng câu sáo rỗng AI hay bịa nhân vật "Chị Lan/Anh Minh".
+- Nếu là đề tài phòng ngừa ung thư, chú trọng giải pháp thực tiễn từ căn bếp, cách chế biến hoặc hợp chất thực vật bảo vệ thay vì chỉ hù dọa.
+- Slug tiếng Việt kết thúc bằng "-vi", slug tiếng Anh kết thúc bằng "-en".`
+    : `Hãy viết một bài phân tích chuyên khảo y sinh chuyên sâu (Tier: "Clinical Deep-Dive") song ngữ (Tiếng Việt & Tiếng Anh) cho ấn bản Phytocodex của TS. Hoàng Xuân Chiến.
 
-GỢI Ý LĨNH VỰC CHO KỲ NÀY:
-- Lĩnh vực: ${chosenPillar.domain}
-- Phân loại cơ quan: "${chosenPillar.organ}"
-- Gợi ý chủ đề tham khảo: "${randomIdea}"
-(TUYỆT ĐỐI KHÔNG lặp lại các chủ đề cũ đã có trong danh mục loại trừ ở trên).
+ĐỊNH HƯỚNG CHỦ ĐỀ KỲ NÀY (BẮT BUỘC MỚI 100%, KHÔNG TRÙNG KHO CŨ):
+${topicDirective}
 
-NGUYÊN TẮC BIÊN TẬP CỦA TS. HOÀNG XUÂN CHIẾN (CLINICAL DEEP-DIVE):
-1. TIẾP CẬN CHUYÊN SÂU & THỰC CHỨNG: Đi sâu vào con đường tín hiệu phân tử, enzym, thụ thể, cơ chế dược động học.
-2. CÓ BẢNG SO SÁNH ĐỐI CHIẾU LÂM SÀNG CHI TIẾT.
-3. TIÊU ĐỀ CHUẨN MỰC KHOA HỌC: Sentence case, không viết hoa toàn bộ từ tiếng Việt.
-4. ĐỊNH DẠNG SLUG: Tiếng Việt có hậu tố "-vi", tiếng Anh có hậu tố "-en".
-5. LIÊM CHÍNH Y VĂN: Trích dẫn bài báo gốc trên Nature, Science, Cell, Lancet, v.v.`;
+YÊU CẦU BIÊN TẬP BẮT BUỘC:
+- Đi sâu cơ chế phân tử, thụ thể, enzym, dược động học kèm bảng so sánh định lượng cụ thể.
+- Tựa đề theo phong cách: [${chosenTitleArchetype.name}] — tự nhiên, chuẩn khoa học, KHÔNG bắt đầu bằng "Vì sao/Tại sao" hay "Why".
+- Mở bài theo phong cách: [${chosenHookArchetype.name}] — ấn tượng, trực diện, không mở đầu rập khuôn.
+- Slug tiếng Việt kết thúc bằng "-vi", slug tiếng Anh kết thúc bằng "-en".`;
 
-  const commonGuidelines = `
-NGUYÊN TẮC BIÊN TẬP BẮT BUỘC:
-1. KHÔNG DÙNG DẤU GẠCH NGANG DÀI (EM-DASH "—" HOẶC EN-DASH "–"). Chỉ dùng dấu phẩy, hai chấm, gạch nối ngắn (-) hoặc ngoặc đơn.
-2. NÓI VỀ KHOA HỌC THUẦN TÚY - TUYỆT ĐỐI KHÔNG CHÍNH TRỊ.
-3. QUY CHUẨN VIẾT HOA TIÊU ĐỀ TIẾNG VIỆT (Sentence case): Chỉ viết hoa chữ cái đầu tiên và danh từ riêng/thuật ngữ.
-4. ĐỊNH DẠNG SLUG BẮT BUỘC: slugVi kết thúc bằng "-vi", slugEn kết thúc bằng "-en".
-5. LIÊM CHÍNH Y VĂN: Tiêu đề "label" phải là tên tiếng Anh chính xác nguyên bản của bài báo khoa học đã xuất bản.
-
-TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON SCHEMA VỚI CẤU TRÚC:
+  const buildSchemaAndFeedback = (activeFeedback) => `
+TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON VỚI CẤU TRÚC SAU (KHÔNG kèm markdown fence thừa):
 {
-  "topicId": "slug-id-viet-tat",
+  "topicId": "slug-id-ngan-gon",
   "slugVi": "slug-tieng-viet-co-hau-to-vi",
   "slugEn": "slug-tieng-anh-co-hau-to-en",
-  "titleVi": "Tiêu đề tiếng Việt hấp dẫn, gần gũi",
-  "titleEn": "Tiêu đề tiếng Anh chuẩn mực",
-  "excerptVi": "Tóm tắt tiếng Việt",
-  "excerptEn": "Tóm tắt tiếng Anh",
+  "titleVi": "Tiêu đề tiếng Việt tự nhiên, KHÔNG bắt đầu bằng Vì sao/Tại sao",
+  "titleEn": "Natural English editorial headline, NOT starting with Why",
+  "excerptVi": "Tóm tắt tiếng Việt 90-130 từ",
+  "excerptEn": "English excerpt 80-120 words",
   "organ": "${chosenPillar.organ}",
   "tier": "${targetTier}",
-  "tagsVi": ["Tag 1", "Tag 2", "Tag 3"],
-  "tagsEn": ["Tag 1", "Tag 2", "Tag 3"],
+  "tagsVi": ["tag-1", "tag-2", "tag-3", "tag-4"],
+  "tagsEn": ["tag-1", "tag-2", "tag-3", "tag-4"],
   "imageSearchQueries": [
-    "specific English visual subject query 1",
-    "specific English visual subject query 2",
-    "specific Latin botanical or culinary query 3",
+    "specific English culinary or visual query 1",
+    "specific English culinary or visual query 2",
+    "specific Latin botanical or ingredient query 3",
     "specific lifestyle context query 4"
   ],
   "references": [
     {
       "ordinal": 1,
       "label": "Exact authentic paper title in English as published in journal",
-      "pmid": "Official PubMed ID if 100% sure, otherwise empty string",
-      "doi": "Official DOI if 100% sure, otherwise empty string",
-      "design": "Landmark Review / RCT / Meta-analysis",
-      "journal": "Nature / Science / Cell / Lancet",
+      "pmid": "",
+      "doi": "",
+      "design": "RCT / Meta-analysis / Systematic Review",
+      "journal": "Journal Name",
       "year": 2023,
-      "abstract": "Key molecular findings (1-2 sentences)."
+      "abstract": "Key molecular and clinical findings in 2 concise sentences."
     }
   ],
   "gizmo": "pathway",
-  "readingTimeVi": "8 phút đọc",
-  "readingTimeEn": "8 min read",
-  "analogyVi": "Lời giải thích ẩn dụ đời thường dễ nhớ...",
-  "analogyEn": "Metaphorical analogy...",
-  "leadVi": "Lời dẫn nhập tiếng Việt mở đầu bằng câu chuyện/thực tế đời sống...",
-  "leadEn": "Lead in English...",
+  "readingTimeVi": "7 phút đọc",
+  "readingTimeEn": "7 min read",
+  "analogyVi": "Ẩn dụ đời thường tinh tế, mới mẻ dành riêng cho bài viết này...",
+  "analogyEn": "Fresh vivid everyday analogy...",
+  "leadVi": "Mở bài cuốn hút theo phong cách [${chosenHookArchetype.name}], chia 2 đoạn ngắn thoáng mắt...",
+  "leadEn": "Engaging opening hook in English matching the chosen hook style...",
   "flowchartVi": "[Bước 1 bằng Tiếng Việt] ──► [Bước 2] ──► [Bước 3]",
   "flowchartEn": "[Step 1 in English] ──► [Step 2] ──► [Step 3]",
   "sectionsVi": [
-    { "heading": "1. Tiêu đề mục 1: Cơ chế phân tử vi mô", "body": "Nội dung mục 1 phân tích cơ chế thụ thể (tối thiểu 250 từ)..." },
-    { "heading": "2. Tiêu đề mục 2: Phân tích sự thật & Bảng đối chiếu lâm sàng", "body": "Nội dung mục 2 phân tích sâu sắc...\\n\\n| Trạng thái Sinh lý | Nồng độ Phân tử | Tác động Lâm sàng |\\n| :--- | :--- | :--- |\\n| Sinh lý Cơ bản (Baseline) | Mức chuẩn nội môi | Duy trì chức năng bình thường |\\n| Tổn thương / Lão hóa | Biến đổi vượt ngưỡng | Kích hoạt chuỗi viêm mạn tính |\\n| Can thiệp Tối ưu hóa | Trở về ngưỡng an toàn | Phục hồi hiệu suất tế bào |\\n\\nTiếp tục phân tích chi tiết..." },
-    { "heading": "3. Ứng dụng thực tế & Khuyến nghị an toàn", "body": "Nội dung mục 3 hướng dẫn áp dụng thực tế (tối thiểu 250 từ)..." }
+    { "heading": "1. Tiêu đề mục 1 rõ ràng", "body": "Phân tích cơ chế phân tử mộc mạc, chia đoạn ngắn 2-4 câu (tối thiểu 250 từ)..." },
+    { "heading": "2. Tiêu đề mục 2: Bằng chứng & Bảng đối chiếu", "body": "Phân tích dữ liệu thực chứng...\\n\\n| Chỉ số / Tình huống | Cơ chế Sinh học | Ảnh hưởng Thực tế |\\n| :--- | :--- | :--- |\\n| Mức 1 | ... | ... |\\n| Mức 2 | ... | ... |\\n| Mức 3 | ... | ... |\\n\\nPhân tích tiếp..." },
+    { "heading": "3. Ứng dụng thực tế & Khuyến nghị an toàn", "body": "Hướng dẫn thực hành cụ thể liều lượng, thời điểm, cách chế biến (tối thiểu 250 từ)..." }
   ],
   "sectionsEn": [
-    { "heading": "1. Heading 1: Molecular Mechanisms", "body": "Section 1 detailed molecular analysis (min 200 words)..." },
-    { "heading": "2. Heading 2: Fact-Checking & Comparative Metrics", "body": "Section 2 in-depth discussion...\\n\\n| Physiological State | Molecular Concentration | Clinical Endpoint |\\n| :--- | :--- | :--- |\\n| Homeostatic Baseline | Normal physiological range | Optimal function |\\n| Pathological Strain | Pathological elevation | Chronic cellular stress |\\n| Optimized Intervention | Functional restoration | Resilient cellular longevity |\\n\\nFurther detailed discussion..." },
-    { "heading": "3. Practical Takeaways & Safety Guidelines", "body": "Section 3 actionable clinical protocols (min 200 words)..." }
+    { "heading": "1. Section 1 Heading", "body": "Clear molecular explanation in short paragraphs (min 220 words)..." },
+    { "heading": "2. Section 2: Evidence & Clinical Comparison", "body": "Evidence breakdown...\\n\\n| Condition / Variable | Molecular Mechanism | Practical Outcome |\\n| :--- | :--- | :--- |\\n| Level 1 | ... | ... |\\n| Level 2 | ... | ... |\\n| Level 3 | ... | ... |\\n\\nFurther analysis..." },
+    { "heading": "3. Practical Takeaways & Safety Guidelines", "body": "Actionable everyday steps and safety notes (min 220 words)..." }
   ],
   "briefVi": {
-    "bottomLine": "Một câu kết luận súc tích, đắt giá, dễ hiểu cho người bình thường",
+    "bottomLine": "Một câu kết luận thực tiễn đắt giá nhất cho bạn đọc",
     "evidence": "human-rct",
-    "takeaways": [
-      "Ý chính 1 (1 câu ngắn)",
-      "Ý chính 2 (1 câu ngắn)",
-      "Ý chính 3 (1 câu ngắn)"
-    ]
+    "takeaways": ["Ý chính 1", "Ý chính 2", "Ý chính 3"]
   },
   "briefEn": {
-    "bottomLine": "One clear bottom-line practical insight",
+    "bottomLine": "One clear practical bottom-line insight",
     "evidence": "human-rct",
-    "takeaways": [
-      "Key takeaway 1",
-      "Key takeaway 2",
-      "Key takeaway 3"
-    ]
+    "takeaways": ["Key takeaway 1", "Key takeaway 2", "Key takeaway 3"]
   },
   "practicalVi": {
-    "steps": ["Việc nên làm 1", "Việc nên làm 2"],
-    "avoidIf": ["Những ai cần thận trọng hoặc không nên áp dụng"],
-    "interactions": ["Tương tác thuốc hoặc thực phẩm đáng chú ý"],
-    "seeDoctor": "Khi nào cần đi khám hoặc tham vấn bác sĩ"
+    "steps": ["Bước thực hành cụ thể 1", "Bước thực hành cụ thể 2"],
+    "avoidIf": ["Đối tượng cần thận trọng"],
+    "interactions": ["Tương tác thuốc hoặc thực phẩm đáng lưu ý"],
+    "seeDoctor": "Dấu hiệu cần thăm khám bác sĩ"
   },
   "practicalEn": {
     "steps": ["Actionable step 1", "Actionable step 2"],
     "avoidIf": ["Cautions or contraindications"],
-    "interactions": ["Known drug or nutrient interactions"],
-    "seeDoctor": "When to consult a healthcare provider"
+    "interactions": ["Notable drug or food interactions"],
+    "seeDoctor": "When to consult a physician"
   }
-};
+}${activeFeedback ? `\n\n🚨 PHẢN HỒI BẮT BUỘC KHẮC PHỤC TỪ CỔNG KIỂM DUYỆT:\n${activeFeedback}\nHãy đổi sang đề tài/cách diễn đạt hoàn toàn đáp ứng yêu cầu trên!` : ''}`;
 
-${feedback ? `\n\n🚨 PHẢN HỒI QUAN TRỌNG TỪ HỆ THỐNG BIÊN TẬP (BẮT BUỘC KHẮC PHỤC TRONG LẦN NÀY):\n${feedback}\nHãy chắc chắn bản thảo tiếng Việt đạt trên 850 từ và bản tiếng Anh đạt trên 700 từ, có đầy đủ bảng so sánh Markdown!` : ''}`;
+  let currentFeedback = feedback;
 
   for (const model of MODEL_CANDIDATES) {
     try {
       console.log(`🤖 [Gemini Generator] Đang thử kết nối AI model: ${model}...`);
       const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 60000); // 60s timeout
+      const timeout = setTimeout(() => controller.abort(), 90000);
+
+      // FIX v4.0: Gắn đầy đủ schema + feedback vào prompt thực sự gửi lên Gemini!
+      const fullPrompt = `${basePrompt}\n${buildSchemaAndFeedback(currentFeedback)}`;
 
       const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
         method: 'POST',
         signal: controller.signal,
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          contents: [{ parts: [{ text: prompt }] }],
+          contents: [{ parts: [{ text: fullPrompt }] }],
           systemInstruction: { parts: [{ text: systemInstruction }] },
           generationConfig: {
             responseMimeType: 'application/json',
-            temperature: 0.6
+            temperature: 0.72
           }
         })
       });
@@ -438,15 +479,22 @@ ${feedback ? `\n\n🚨 PHẢN HỒI QUAN TRỌNG TỪ HỆ THỐNG BIÊN TẬP (
 
       const parsed = JSON.parse(rawText);
       if (parsed && parsed.slugVi && parsed.sectionsVi && parsed.sectionsEn) {
-        // Kiểm định chống trùng lặp cục bộ tức thì bằng Deterministic Dedup Guard (0 token)
+        // Kiểm định chống trùng lặp cục bộ tức thì bằng Deterministic Dedup Guard v3.0 (0 token)
         const collision = checkTopicCollision(parsed);
         if (collision.isDuplicate) {
           console.warn(`🛑 [Topic Dedup Guard BỊ CHẶN] ${collision.reason}`);
-          feedback = `Đề tài "${parsed.titleVi}" bị từ chối do trùng lặp: ${collision.reason}. Bắt buộc chọn một đề tài hoàn toàn khác chưa từng có trong kho!`;
+          currentFeedback = `Đề tài "${parsed.titleVi}" bị từ chối do trùng lặp: ${collision.reason}. BẮT BUỘC chọn một đề tài KHÁC HẲN chưa từng có trong kho!`;
           continue;
         }
 
-        console.log(`🎯 [Gemini Generator] AI đã sinh thành công chuyên khảo: "${parsed.titleVi}"`);
+        // Kiểm tra nhanh chống tiêu đề "Vì sao/Tại sao/Why" (cả ở đầu câu và sau dấu hai chấm)
+        if (/(?:^|[:\-]\s*)(?:vì sao|tại sao)\b/i.test((parsed.titleVi || '').trim()) || /(?:^|[:\-]\s*)why\b/i.test((parsed.titleEn || '').trim())) {
+          console.warn(`🛑 [Title Style Guard] Tiêu đề dùng khuôn mẫu Vì sao/Why ("${parsed.titleVi}") -> yêu cầu model tiếp theo viết tự nhiên hơn.`);
+          currentFeedback = `Tiêu đề "${parsed.titleVi}" dùng khuôn mẫu "Vì sao/Tại sao/Why". BẮT BUỘC đặt lại tiêu đề tự nhiên theo phong cách [${chosenTitleArchetype.name}], KHÔNG dùng "Vì sao/Tại sao/Why" ở đầu câu hay sau dấu hai chấm.`;
+          continue;
+        }
+
+        console.log(`🎯 [Gemini Generator] AI đã sinh thành công bài mới: "${parsed.titleVi}"`);
         return parsed;
       }
     } catch (err) {

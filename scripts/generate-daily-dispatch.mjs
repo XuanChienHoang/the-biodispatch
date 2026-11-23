@@ -381,6 +381,8 @@ export async function runAutonomousDispatch() {
 
   const existingSlugs = getExistingSlugs();
   console.log(`📊 [Inventory] Đang có ${existingSlugs.size} bài viết trong content/posts/`);
+  // Luôn đồng bộ Topic Registry mới nhất từ content/posts/ trước khi kiểm tra trùng lặp
+  buildTopicRegistry();
 
   // Determine publication timestamp: 4 configured slots per day (Giờ Đức CEST: 07:00, 11:00, 15:00, 19:00 -> UTC: 05:00, 09:00, 13:00, 17:00)
   const now = new Date();
@@ -536,7 +538,7 @@ export async function runAutonomousDispatch() {
     if (!viValidation.isValid) {
       console.warn(`⚠️ [Gatekeeper REJECT Lượt ${attempt}] Bài tiếng Việt chưa đạt chuẩn biên tập của TS. Hoàng Xuân Chiến:`);
       viValidation.issues.forEach(issue => console.warn(`   - ${issue}`));
-      feedback = `Bản thảo tiếng Việt chưa đạt chuẩn biên tập: ${viValidation.issues.join('; ')}. Bắt buộc viết sâu sắc trên 850 từ, ảnh phân giải cao >=120KB, có bảng Markdown so sánh và bộ tóm tắt brief/practical V2!`;
+      feedback = `Bản thảo tiếng Việt chưa đạt chuẩn biên tập: ${viValidation.issues.join('; ')}. Bắt buộc viết sâu sắc trên 850 từ, tựa đề tự nhiên không mở bằng "Vì sao/Tại sao", mở bài cuốn hút không sáo rỗng, ảnh phân giải cao >=85KB, có bảng Markdown so sánh và bộ tóm tắt brief/practical V2!`;
       removeAttemptImages(targetSlugVi, targetSlugEn);
       if (staticTopic && attempt === 1) continue;
       continue;
@@ -548,7 +550,7 @@ export async function runAutonomousDispatch() {
     if (!enValidation.isValid) {
       console.warn(`⚠️ [Gatekeeper REJECT Lượt ${attempt}] Bài tiếng Anh chưa đạt chuẩn biên tập:`);
       enValidation.issues.forEach(issue => console.warn(`   - ${issue}`));
-      feedback = `Bản thảo tiếng Anh chưa đạt chuẩn biên tập: ${enValidation.issues.join('; ')}. Bắt buộc viết trên 700 từ, ảnh phân giải cao >=120KB, có bảng Markdown so sánh và bộ tóm tắt brief/practical V2!`;
+      feedback = `Bản thảo tiếng Anh chưa đạt chuẩn biên tập: ${enValidation.issues.join('; ')}. Bắt buộc viết trên 700 từ, tựa đề tự nhiên không mở bằng "Why", mở bài tự nhiên không sáo rỗng, ảnh phân giải cao >=85KB, có bảng Markdown so sánh và bộ tóm tắt brief/practical V2!`;
       removeAttemptImages(targetSlugVi, targetSlugEn);
       continue;
     }

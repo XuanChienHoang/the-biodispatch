@@ -38,6 +38,47 @@ export function validateDispatchContent(markdownString, lang = 'vi', options = {
       issues.push(`Tiêu đề tiếng Việt mang phong cách Title Case cơ giới hóa kiểu AI (viết hoa tất cả các từ: "${frontmatter.title}"). Bắt buộc dùng văn phong tự nhiên (Sentence case): chỉ viết hoa đầu câu, sau dấu hai chấm và các danh từ riêng/thuật ngữ.`);
     }
   }
+
+  // 1b. Kiểm tra Phong cách Tựa đề Tự nhiên & Chống mở bài rập khuôn AI (chỉ áp dụng cho bài mới strict V2)
+  if (options.isStrictV2) {
+    const cleanTitle = (frontmatter.title || '').trim();
+    if (lang === 'vi' && (/(?:^|[:\-]\s*)(?:vì sao|tại sao)\b/i.test(cleanTitle))) {
+      issues.push(`Tiêu đề tiếng Việt lặp khuôn mẫu câu hỏi "${cleanTitle}". Hãy viết lại bằng câu trần thuật tự nhiên, nghịch lý, con số hoặc hình ảnh sắc nét (KHÔNG dùng "Vì sao" hay "Tại sao" ở đầu hoặc sau dấu hai chấm).`);
+    }
+    if (lang === 'en' && (/(?:^|[:\-]\s*)why\b/i.test(cleanTitle))) {
+      issues.push(`English headline uses repetitive "Why..." template ("${cleanTitle}"). Rewrite as a natural declarative, contrast, or specific insight headline.`);
+    }
+
+    const firstLead = content
+      .split(/\r?\n\r?\n/)
+      .map(p => p.trim())
+      .find(p => p && !p.startsWith('![') && !p.startsWith('#') && !p.startsWith('>')) || '';
+    const leadHead = firstLead.slice(0, 320);
+
+    const BANNED_VI_HOOKS = [
+      /trong guồng quay hối hả/i,
+      /trong nhịp sống hiện đại/i,
+      /trong cuộc sống bận rộn/i,
+      /có bao giờ bạn tự hỏi/i,
+      /bạn có bao giờ thắc mắc/i,
+      /đã bao giờ bạn cảm thấy/i,
+      /hãy tưởng tượng/i,
+      /tiệc tùng cuối năm/i,
+      /trong gian bếp của mỗi gia đình việt nam/i,
+      /(?:chị lan|chị minh|anh minh)\b/i,
+      /kế toán.*hà nội/i
+    ];
+    const BANNED_EN_HOOKS = [
+      /in today['’]s fast-paced/i,
+      /have you ever wondered/i,
+      /^imagine\s+(?:a|sitting|waking)/i
+    ];
+    const hookPatterns = lang === 'vi' ? BANNED_VI_HOOKS : BANNED_EN_HOOKS;
+    const matchedCliche = hookPatterns.find(rx => rx.test(leadHead));
+    if (matchedCliche) {
+      issues.push(`Đoạn mở bài chứa mô-típ rập khuôn kiểu AI (${matchedCliche}). Hãy mở bài trực diện, tự nhiên bằng chi tiết giác quan, con số bất ngờ, nghịch lý thói quen hoặc quan sát khoa học cụ thể.`);
+    }
+  }
   if (!frontmatter.excerpt || frontmatter.excerpt.length < 60) {
     issues.push('Đoạn trích tóm tắt (excerpt) quá ngắn, chưa nêu bật nghịch lý sinh học.');
   }
