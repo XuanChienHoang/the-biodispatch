@@ -60,26 +60,6 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "lang": "vi",
     "title": "Ánh nắng ban mai: Khởi động đồng hồ sinh học và kiểm soát mỡ cơ thể"
   },
-  "anh-sang-do-670nm-sac-pin-ty-the-vong-mac-vi": {
-    "slug": "670nm-red-light-recharging-retinal-mitochondria-en",
-    "lang": "en",
-    "title": "670nm Red Light Therapy: Recharging Retinal Mitochondria and Reversing Visual Fatigue"
-  },
-  "670nm-red-light-recharging-retinal-mitochondria-en": {
-    "slug": "quang-sinh-hoc-670nm-phuc-hoi-ty-the-vong-mac-vi",
-    "lang": "vi",
-    "title": "Quang sinh học 670 nm: Tái kích hoạt Cytochrome c Oxidase và cứu vãn suy thoái năng lượng võng mạc"
-  },
-  "anh-sang-xanh-ban-dem-pha-vo-giac-ngu-vi": {
-    "slug": "blue-light-screen-time-disrupts-deep-sleep-en",
-    "lang": "en",
-    "title": "Screen Time Before Sleep: How Retinal ipRGCs Sabotage Deep Sleep Architecture"
-  },
-  "blue-light-screen-time-disrupts-deep-sleep-en": {
-    "slug": "anh-sang-xanh-ban-dem-pha-vo-giac-ngu-vi",
-    "lang": "vi",
-    "title": "Lướt điện thoại ban đêm: Tế bào võng mạc ipRGC và bí mật giấc ngủ sâu"
-  },
   "astaxanthin-giai-toa-moi-mat-man-hinh-tre-hoa-da-vi": {
     "slug": "astaxanthin-screen-eye-fatigue-skin-longevity-en",
     "lang": "en",
@@ -99,6 +79,16 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "slug": "axit-hyaluronic-duong-uong-dem-khop-goi-vi",
     "lang": "vi",
     "title": "Axit Hyaluronic đường uống: Giải mã cơ chế ngậm nước đệm khớp và phục hồi khả năng leo cầu thang"
+  },
+  "bi-mat-khoai-lang-luoc-de-lanh-ve-dang-va-giam-duong-huyet-vi": {
+    "slug": "the-secret-of-cooled-boiled-sweet-potatoes-for-blood-sugar-en",
+    "lang": "en",
+    "title": "The secret of cooled boiled sweet potatoes: Blood sugar magic from a humble root"
+  },
+  "the-secret-of-cooled-boiled-sweet-potatoes-for-blood-sugar-en": {
+    "slug": "bi-mat-khoai-lang-luoc-de-lanh-ve-dang-va-giam-duong-huyet-vi",
+    "lang": "vi",
+    "title": "Bí mật khoai lang luộc để lạnh: Phép màu hạ đường huyết từ củ khoai quen thuộc"
   },
   "butyrate-scfa-epigenetics-histone-gut-barrier": {
     "slug": "butyrate-scfa-epigenetics-histone-gut-barrier-en",
@@ -120,6 +110,16 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "lang": "vi",
     "title": "Cà chua nấu chín, dầu ô liu và Lycopene: Vì sao nhiệt độ và chất béo mở khóa hoạt chất dập tắt gốc tự do bảo vệ tế bào?"
   },
+  "ca-phe-sau-2-gio-chieu-va-phan-tu-adenosine-vi-sao-chung-ta-van-ngu-duoc-nhung-n-vi": {
+    "slug": "afternoon-coffee-and-adenosine-why-you-sleep-without-deep-repair-vi-en",
+    "lang": "en",
+    "title": "Afternoon coffee and adenosine molecules: Why you still doze off but your brain misses deep repair sleep"
+  },
+  "afternoon-coffee-and-adenosine-why-you-sleep-without-deep-repair-vi-en": {
+    "slug": "ca-phe-sau-2-gio-chieu-va-phan-tu-adenosine-vi-sao-chung-ta-van-ngu-duoc-nhung-n-vi",
+    "lang": "vi",
+    "title": "Cà phê sau 2 giờ chiều và phân tử adenosine: Vì sao bạn vẫn chợp mắt được nhưng não bộ không thể bước vào pha ngủ sâu?"
+  },
   "cancer-seed-and-soil-metabolism": {
     "slug": "cancer-seed-and-soil-metabolism-en",
     "lang": "en",
@@ -139,6 +139,16 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "slug": "ceramide-thuc-vat-tu-cam-gao-tai-lap-hang-rao-da-vi",
     "lang": "vi",
     "title": "Ceramide thực vật từ cám gạo và nghệ thuật vá lớp vữa khóa nước cho làn da khô nhạy cảm"
+  },
+  "chat-xo-hoa-tan-yen-mach-va-axit-butyrate-phong-ngua-ung-thu-dai-trang-vi": {
+    "slug": "soluble-fiber-oats-butyrate-colorectal-cancer-prevention-en",
+    "lang": "en",
+    "title": "Soluble fiber in oats and butyrate acid: The invisible shield protecting colonic mucosa"
+  },
+  "soluble-fiber-oats-butyrate-colorectal-cancer-prevention-en": {
+    "slug": "chat-xo-hoa-tan-yen-mach-va-axit-butyrate-phong-ngua-ung-thu-dai-trang-vi",
+    "lang": "vi",
+    "title": "Chất xơ hòa tan trong yến mạch và axit butyrate: Chiếc khiên vô hình bảo vệ niêm mạc đại tràng"
   },
   "chat-xo-pectin-tu-tao-tam-ao-giap-gel-bao-ve-niem-mac-ruot-vi": {
     "slug": "apple-pectin-and-gut-barrier-protection-en",
@@ -180,16 +190,6 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "lang": "vi",
     "title": "Nghịch lý rò rỉ proton ty thể: Kích hoạt UCP1 ở mỡ nâu để tái cấu trúc chuyển hóa và kéo dài tuổi thọ"
   },
-  "co-che-ro-ri-ruot-va-xu-huong-viêm-he-thong-vi": {
-    "slug": "leaky-gut-syndrome-and-systemic-inflammation-en",
-    "lang": "en",
-    "title": "Molecular mechanisms of leaky gut syndrome: Tight junction degradation and systemic chronic inflammation"
-  },
-  "leaky-gut-syndrome-and-systemic-inflammation-en": {
-    "slug": "co-che-ro-ri-ruot-va-xu-huong-viêm-he-thong-vi",
-    "lang": "vi",
-    "title": "Cơ chế phân tử của hội chứng rò rỉ ruột: Sự suy giảm mối nối chặt tế bào và hệ lụy viêm hệ thống mạn tính"
-  },
   "co-che-tiet-doc-to-loai-iii-cua-yersinia-pestis-vi-chi-huy-pha-vo-hang-rao-mien-dich-vi": {
     "slug": "type-iii-secretion-system-of-yersinia-pestis-disrupting-immune-defenses-en",
     "lang": "en",
@@ -220,6 +220,16 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "lang": "vi",
     "title": "Nghịch lý Kynurenine: Khi chuyển hóa Tryptophan trở thành 'kẻ thù' gây viêm não bộ"
   },
+  "creatine-tai-tao-nang-luong-nao-bo-vi": {
+    "slug": "creatine-brain-energy-regeneration-en",
+    "lang": "en",
+    "title": "Creatine Is Not Just for Muscles: The Brain Power Bank That Defeats Afternoon Brain Fog"
+  },
+  "creatine-brain-energy-regeneration-en": {
+    "slug": "creatine-tai-tao-nang-luong-nao-bo-vi",
+    "lang": "vi",
+    "title": "Creatine không chỉ dành cho cơ bắp: Trạm sạc năng lượng não bộ giúp vượt qua cơn sập nguồn chiều"
+  },
   "cu-h5n1-va-o-khoa-acid-sialic-vi-sao-virus-kho-lay-nhung-gay-viem-phoi-nang-vi": {
     "slug": "h5n1-avian-flu-and-the-sialic-acid-lock-why-transmission-is-rare-yet-fatal-en",
     "lang": "en",
@@ -240,6 +250,16 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "lang": "vi",
     "title": "Vì sao hạt tiêu đen giúp tinh chất nghệ tăng hấp thu gấp 20 lần? Giải mã 'chiếc phanh sinh học' của lá gan"
   },
+  "dau-hat-bi-do-va-rung-toc-noi-tiet-vi": {
+    "slug": "pumpkin-seed-oil-and-hormonal-hair-loss-en",
+    "lang": "en",
+    "title": "Pumpkin Seed Oil and Hormonal Hair Loss: Decrypting How Phytosterols Protect Scalp Hair Follicles"
+  },
+  "pumpkin-seed-oil-and-hormonal-hair-loss-en": {
+    "slug": "dau-hat-bi-do-va-rung-toc-noi-tiet-vi",
+    "lang": "vi",
+    "title": "Dầu hạt bí đỏ và hiện tượng rụng tóc nội tiết: Giải mã cơ chế bảo vệ nang tóc từ vi chất Phytosterol"
+  },
   "dau-moi-co-vai-gay-ngoi-may-tinh-giai-phap-2-phut-vi": {
     "slug": "desk-worker-trapezius-ischemia-2-minute-solution-en",
     "lang": "en",
@@ -249,6 +269,16 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "slug": "dau-moi-co-vai-gay-ngoi-may-tinh-giai-phap-2-phut-vi",
     "lang": "vi",
     "title": "Giải mã cơn đau mỏi cổ vai gáy ở dân văn phòng: Từ cơ chế thiếu máu cục bộ cơ thang đến bài tập 2 phút"
+  },
+  "dau-nanh-nguyen-ban-va-isoflavone-genistein-giai-ma-noi-so-vo-can-cu-vi": {
+    "slug": "whole-soy-and-genistein-debunking-the-unfounded-fear-en",
+    "lang": "en",
+    "title": "Whole Soy and Genistein: Debunking Unfounded Fears and Metabolic Insights"
+  },
+  "whole-soy-and-genistein-debunking-the-unfounded-fear-en": {
+    "slug": "dau-nanh-nguyen-ban-va-isoflavone-genistein-giai-ma-noi-so-vo-can-cu-vi",
+    "lang": "vi",
+    "title": "Đậu nành nguyên bản và Genistein: Giải mã nỗi sợ vô căn cứ và góc nhìn y học chuyển hóa"
   },
   "dem-che-do-night-shift-va-kinh-loc-anh-sang-xanh-melatonin-vi": {
     "slug": "night-shift-mode-blue-blocking-glasses-melatonin-en",
@@ -260,16 +290,6 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "lang": "vi",
     "title": "Chế độ Night Shift và kính lọc ánh sáng xanh: Vì sao đổi màu màn hình vẫn chưa đủ để cứu vãn giấc ngủ?"
   },
-  "di-bo-sau-an-giai-ma-chuyen-hoa-glut4-khong-can-insulin-vi": {
-    "slug": "postprandial-walking-insulin-independent-glut4-glucose-clearance-en",
-    "lang": "en",
-    "title": "Ten-Minute Postprandial Walking: Decoding the Biological Key to Clearing Blood Glucose Without Relying on Insulin"
-  },
-  "postprandial-walking-insulin-independent-glut4-glucose-clearance-en": {
-    "slug": "di-bo-sau-an-giai-ma-chuyen-hoa-glut4-khong-can-insulin-vi",
-    "lang": "vi",
-    "title": "Đi bộ 10 phút sau bữa ăn: Giải mã chiếc chìa khóa sinh học giúp cơ bắp dọn sạch đường huyết không cần Insulin"
-  },
   "di-bo-sau-an-giam-duong-huyet-vi": {
     "slug": "post-meal-walking-glycemic-control-en",
     "lang": "en",
@@ -280,6 +300,26 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "lang": "vi",
     "title": "Đi bộ mười phút sau bữa ăn: Khi cơ bắp trở thành miếng bọt biển hút đường tự nhiên"
   },
+  "dinh-duong-chuan-y-khoa-cho-benh-nhan-ung-thu-va-cach-bao-ton-khoi-co-nac-vi": {
+    "slug": "medical-nutrition-therapy-for-cancer-patients-and-muscle-preservation-en",
+    "lang": "en",
+    "title": "Medical nutrition therapy for cancer patients: Debunking tumor-starvation myths and preserving lean muscle mass"
+  },
+  "medical-nutrition-therapy-for-cancer-patients-and-muscle-preservation-en": {
+    "slug": "dinh-duong-chuan-y-khoa-cho-benh-nhan-ung-thu-va-cach-bao-ton-khoi-co-nac-vi",
+    "lang": "vi",
+    "title": "Dinh dưỡng chuẩn y khoa cho bệnh nhân ung thư: Đập tan hiểu lầm kiêng thịt bỏ đói khối u và cách bảo tồn khối cơ nạc"
+  },
+  "do-nuong-chay-canh-la-chan-phong-ung-thu-tu-rau-song-vi": {
+    "slug": "charcoal-grilled-meat-carcinogens-herbs-garlic-shield-en",
+    "lang": "en",
+    "title": "Charcoal Grilled Meat Carcinogens and the Molecular Shield: How Fresh Herbs and Raw Garlic Neutralize HCAs and PAHs"
+  },
+  "charcoal-grilled-meat-carcinogens-herbs-garlic-shield-en": {
+    "slug": "do-nuong-chay-canh-la-chan-phong-ung-thu-tu-rau-song-vi",
+    "lang": "vi",
+    "title": "Đồ nướng cháy cạnh và nguy cơ ung thư: Giải mã lá chắn giải độc phân tử từ đĩa rau sống và tép tỏi sống Việt Nam"
+  },
   "do-nuong-chay-xem-phan-ung-glycation-ages-lao-hoa-da-va-mach-mau-vi": {
     "slug": "charred-food-glycation-ages-skin-wrinkles-arterial-stiffness-en",
     "lang": "en",
@@ -289,6 +329,16 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "slug": "do-nuong-chay-xem-phan-ung-glycation-ages-lao-hoa-da-va-mach-mau-vi",
     "lang": "vi",
     "title": "Đồ nướng cháy xém và phản ứng đường hóa: Khi phân tử đường làm giòn mạch máu và tăng nếp nhăn"
+  },
+  "duong-va-nep-nhan-da-hien-tuong-dut-gay-soi-collagen-vi": {
+    "slug": "sugar-and-skin-wrinkles-molecular-collagen-crosslinking-en",
+    "lang": "en",
+    "title": "Sugar and skin wrinkles: How sweet molecules permanently damage your skin spring system"
+  },
+  "sugar-and-skin-wrinkles-molecular-collagen-crosslinking-en": {
+    "slug": "duong-va-nep-nhan-da-hien-tuong-dut-gay-soi-collagen-vi",
+    "lang": "vi",
+    "title": "Đường và nếp nhăn da: Khi các phân tử đường vô tình bẻ gãy hệ thống lò xo collagen trong cơ thể"
   },
   "ferroptosis-sat-te-bao-nao-vi": {
     "slug": "ferroptosis-brain-cell-death-en",
@@ -309,6 +359,16 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "slug": "forecasting-hs-crp-delta",
     "lang": "vi",
     "title": "Dự báo Biến thiên Chỉ số Viêm hs-CRP: Khi khoa học thống kê phân tích gộp định hình sức khỏe tim mạch thực chứng"
+  },
+  "giac-ngu-ngat-quang-va-nguy-co-dot-gay-dna-vi": {
+    "slug": "fragmented-sleep-and-dna-double-strand-break-risk-en",
+    "lang": "en",
+    "title": "Fragmented sleep and group 2a carcinogenic risk when nocturnal melatonin depletion deprives dna double-strand break repair mechanisms"
+  },
+  "fragmented-sleep-and-dna-double-strand-break-risk-en": {
+    "slug": "giac-ngu-ngat-quang-va-nguy-co-dot-gay-dna-vi",
+    "lang": "vi",
+    "title": "Giấc ngủ ngắt quãng và tác nhân sinh ung nhóm 2a khi sự suy giảm melatonin về đêm tước đoạt cơ chế sửa chữa đứt gãy dna"
   },
   "giai-ma-khoa-hoc-vaccine-va-cac-hieu-lam-vi": {
     "slug": "demystifying-vaccine-science-and-misconceptions-en",
@@ -380,6 +440,36 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "lang": "vi",
     "title": "Hiện tượng Cortisol Steal: Khi căng thẳng kéo dài âm thầm cướp đi sinh lực và mái tóc của bạn"
   },
+  "hien-tuong-do-mat-khi-uong-ruou-va-giai-phap-bao-ve-gene-vi": {
+    "slug": "asian-glow-alcohol-flush-and-gene-protection-strategies-en",
+    "lang": "en",
+    "title": "Alcohol flush reaction: When your body sends a toxin warning signal"
+  },
+  "asian-glow-alcohol-flush-and-gene-protection-strategies-en": {
+    "slug": "hien-tuong-do-mat-khi-uong-ruou-va-giai-phap-bao-ve-gene-vi",
+    "lang": "vi",
+    "title": "Hiện tượng đỏ mặt khi uống rượu: Khi cơ thể gửi tín hiệu cảnh báo độc tố"
+  },
+  "hien-tuong-sap-nguon-bua-trua-va-giai-phap-vi-sinh-vi": {
+    "slug": "postprandial-somnolence-lunch-slump-and-metabolic-stability-en",
+    "lang": "en",
+    "title": "The 2 PM crash and postprandial somnolence: The true metabolic culprit of heavy lunches and how to fix it"
+  },
+  "postprandial-somnolence-lunch-slump-and-metabolic-stability-en": {
+    "slug": "hien-tuong-sap-nguon-bua-trua-va-giai-phap-vi-sinh-vi",
+    "lang": "vi",
+    "title": "Hiện tượng sập nguồn và buồn ngủ rũ rượi lúc 2 giờ chiều: Thủ phạm thực sự từ đỉnh carbohydrate bữa trưa và cách hóa giải"
+  },
+  "hoi-chung-ro-rui-ruot-va-met-moi-keo-dai-vi": {
+    "slug": "leaky-gut-syndrome-and-chronic-fatigue-en",
+    "lang": "en",
+    "title": "Leaky gut syndrome and unexplained chronic fatigue: When mucosal barriers loosen"
+  },
+  "leaky-gut-syndrome-and-chronic-fatigue-en": {
+    "slug": "hoi-chung-ro-rui-ruot-va-met-moi-keo-dai-vi",
+    "lang": "vi",
+    "title": "Hội chứng rò rỉ ruột và những cơn mệt mỏi vô cớ: Khi hàng rào niêm mạc lỏng lẻo"
+  },
   "inositols-ti-le-vang-40-1-buong-trung-pcos-vi": {
     "slug": "inositols-golden-ratio-40-1-ovarian-pcos-en",
     "lang": "en",
@@ -399,16 +489,6 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "slug": "insulin-igf1-cancer-proliferation",
     "lang": "vi",
     "title": "Mật mã Ung thư Phần 3: Trục Insulin & IGF-1: Chiếc công tắc phân tử thúc đẩy tăng sinh tế bào ác tính"
-  },
-  "khi-duong-lam-gion-lan-da-co-che-maillard-va-bi-quyet-bao-ve-collagen-vi": {
-    "slug": "when-sugar-makes-skin-brittle-glycation-and-collagen-protection-en",
-    "lang": "en",
-    "title": "When Sugar Makes Skin Brittle: The Maillard Mechanism and Strategies to Preserve Collagen Elasticity"
-  },
-  "when-sugar-makes-skin-brittle-glycation-and-collagen-protection-en": {
-    "slug": "khi-duong-lam-gion-lan-da-co-che-maillard-va-bi-quyet-bao-ve-collagen-vi",
-    "lang": "vi",
-    "title": "Khi đường làm giòn làn da: Cơ chế Maillard và bí quyết giữ gìn sự đàn hồi cho collagen"
   },
   "lutein-zeaxanthin-bao-ve-mat-va-da-vi": {
     "slug": "lutein-zeaxanthin-eye-and-skin-protection-en",
@@ -460,26 +540,6 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "lang": "vi",
     "title": "Ngã ba Mevalonate: Khi thuốc Statin hạ mỡ máu vô tình làm cạn kiệt Coenzyme Q10 ở ty thể"
   },
-  "moi-mat-vet-chan-chim-man-hinh-astaxanthin-vi": {
-    "slug": "screen-eye-strain-crows-feet-astaxanthin-en",
-    "lang": "en",
-    "title": "Screen-Induced Eye Strain and Crow's Feet: How Blue Light Depletes the Macula and How Astaxanthin Restores Cellular Defense"
-  },
-  "screen-eye-strain-crows-feet-astaxanthin-en": {
-    "slug": "moi-mat-vet-chan-chim-man-hinh-astaxanthin-vi",
-    "lang": "vi",
-    "title": "Mỏi mắt và vết chân chim do màn hình: Giải mã cơ chế ánh sáng xanh bào mòn điểm vàng và sức mạnh phục hồi của Astaxanthin"
-  },
-  "muoi-an-va-huyet-ap-nghich-ly-ti-le-natri-kali-vi": {
-    "slug": "salt-blood-pressure-sodium-potassium-ratio-paradox-en",
-    "lang": "en",
-    "title": "Salt and Blood Pressure: Unraveling the Sodium-to-Potassium Ratio Paradox"
-  },
-  "salt-blood-pressure-sodium-potassium-ratio-paradox-en": {
-    "slug": "muoi-an-va-huyet-ap-nghich-ly-ti-le-natri-kali-vi",
-    "lang": "vi",
-    "title": "Kiêng muối vẫn tăng huyết áp: Khám phá nghịch lý tỷ lệ Natri và Kali"
-  },
   "nad-cd38-sirtuin-mitochondria-cellular-aging": {
     "slug": "nad-cd38-sirtuin-mitochondria-cellular-aging-en",
     "lang": "en",
@@ -489,6 +549,16 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "slug": "nad-cd38-sirtuin-mitochondria-cellular-aging",
     "lang": "vi",
     "title": "Trục NAD+, Sirtuin và kẻ trộm năng lượng CD38: Cuộc chiến bảo toàn năng lượng ty thể khi tế bào già cỗi"
+  },
+  "nam-huong-beta-glucan-dectin-1-mien-dich-vi": {
+    "slug": "shiitake-beta-glucan-dectin-1-immunity-en",
+    "lang": "en",
+    "title": "The symphony of shiitake and Beta-Glucan: Awakening immune patrol cells through the Dectin-1 key"
+  },
+  "shiitake-beta-glucan-dectin-1-immunity-en": {
+    "slug": "nam-huong-beta-glucan-dectin-1-mien-dich-vi",
+    "lang": "vi",
+    "title": "Bản giao hưởng của nấm hương và Beta-Glucan: Đánh thức hệ tuần tra tế bào lạ bằng chìa khóa Dectin-1"
   },
   "ngan-ngua-teo-co-tuoi-40-leucine-mtor-vi": {
     "slug": "preventing-sarcopenia-after-40-leucine-mtor-en",
@@ -631,19 +701,24 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "title": "Cách đọc đường cong Nồng độ Dược chất trong Máu: 4 con số quyết định một liều uống có thực sự hiệu quả hay không"
   },
   "phosphatidylserine-dha-mang-te-bao-than-kinh-vi": {
-    "slug": "phosphatidylserine-and-dha-neuronal-membrane-en",
+    "slug": "phosphatidylserine-dha-neuronal-membrane-en",
     "lang": "en",
-    "title": "Phosphatidylserine and DHA in neuronal membranes: Synaptic transmission mechanisms and cognitive restoration in midlife decline"
+    "title": "Phosphatidylserine and DHA: Restoring Neuronal Membrane Fluidity and Countering Midlife Brain Fog"
   },
-  "phosphatidylserine-and-dha-neuronal-membrane-en": {
-    "slug": "phosphatidylserine-va-dha-mang-te-bao-than-kinh-vi",
+  "phosphatidylserine-dha-neuronal-membrane-en": {
+    "slug": "phosphatidylserine-dha-mang-te-bao-than-kinh-vi",
     "lang": "vi",
-    "title": "Phosphatidylserine và DHA màng tế bào thần kinh: Cơ chế truyền dẫn synap và phục hồi suy giảm nhận thức tuổi trung niên"
+    "title": "Phosphatidylserine và DHA: Phục hồi độ linh hoạt màng nơ-ron và đẩy lùi sương mù não tuổi trung niên"
   },
-  "phosphatidylserine-va-dha-mang-te-bao-than-kinh-vi": {
-    "slug": "phosphatidylserine-and-dha-neuronal-membrane-en",
+  "phytoestrogen-dau-nanh-va-hat-lanh-giai-ma-su-that-va-loi-ich-tien-man-kinh-vi": {
+    "slug": "phytoestrogen-soy-and-flaxseed-truth-and-menopause-benefits-en",
     "lang": "en",
-    "title": "Phosphatidylserine and DHA in neuronal membranes: Synaptic transmission mechanisms and cognitive restoration in midlife decline"
+    "title": "Phytoestrogens in soy and flaxseed: Deodorizing myths and menopause benefits"
+  },
+  "phytoestrogen-soy-and-flaxseed-truth-and-menopause-benefits-en": {
+    "slug": "phytoestrogen-dau-nanh-va-hat-lanh-giai-ma-su-that-va-loi-ich-tien-man-kinh-vi",
+    "lang": "vi",
+    "title": "Phytoestrogen trong đậu nành và hạt lanh: Giải mã sự thật và lợi ích tiền mãn kinh"
   },
   "policosanol-versus-statins": {
     "slug": "policosanol-versus-statins-en",
@@ -675,10 +750,25 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "lang": "vi",
     "title": "Quả mọng: Lá chắn Anthocyanin chống lão hóa mạch máu và bảo vệ tim mạch"
   },
-  "quang-sinh-hoc-670nm-phuc-hoi-ty-the-vong-mac-vi": {
-    "slug": "670nm-red-light-recharging-retinal-mitochondria-en",
+  "qua-mong-va-axit-ellagic-bao-ve-dna-vi": {
+    "slug": "berries-and-ellagic-acid-dna-protection-en",
     "lang": "en",
-    "title": "670nm Red Light Therapy: Recharging Retinal Mitochondria and Reversing Visual Fatigue"
+    "title": "The morning bowl of berries and the invisible shield protecting DNA from double-strand breaks"
+  },
+  "berries-and-ellagic-acid-dna-protection-en": {
+    "slug": "qua-mong-va-axit-ellagic-bao-ve-dna-vi",
+    "lang": "vi",
+    "title": "Bát quả mọng buổi sáng và chiếc khiên vô hình bảo vệ chuỗi DNA khỏi đứt gãy"
+  },
+  "quang-sinh-hoc-670nm-phuc-hoi-ty-the-vong-mac-vi": {
+    "slug": "photobiomodulation-670nm-retinal-mitochondria-en",
+    "lang": "en",
+    "title": "670 nm Photobiomodulation: Recharging Cytochrome c Oxidase and Rescuing Retinal Bioenergetic Decline"
+  },
+  "photobiomodulation-670nm-retinal-mitochondria-en": {
+    "slug": "quang-sinh-hoc-670nm-phuc-hoi-ty-the-vong-mac-vi",
+    "lang": "vi",
+    "title": "Quang sinh học 670 nm: Tái kích hoạt Cytochrome c Oxidase và cứu vãn suy thoái năng lượng võng mạc"
   },
   "resistant-starch-scfa-gut-vi": {
     "slug": "resistant-starch-scfa-gut-en",
@@ -690,15 +780,15 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "lang": "vi",
     "title": "Vì sao tinh bột kháng nuôi sống tế bào niêm mạc ruột? Giải mã chiếc khóa protein Claudin-1 chống rò rỉ ruột"
   },
-  "senolytics-fisetin-te-bao-gia-sasp-vi": {
-    "slug": "clearing-zombie-cells-senolytics-and-microscopic-longevity-en",
+  "saw-palmetto-kem-ngan-rung-toc-sinh-luc-vi": {
+    "slug": "saw-palmetto-zinc-dht-hair-loss-vitality-en",
     "lang": "en",
-    "title": "Clearing zombie cells: Senolytics compounds and the mechanism of cellular rejuvenation"
+    "title": "Protecting Hair Follicles and Vitality in Midlife: Unlocking the 5-Alpha Reductase Inhibition Mechanism of Saw Palmetto and Zinc"
   },
-  "clearing-zombie-cells-senolytics-and-microscopic-longevity-en": {
-    "slug": "thanh-loc-te-bao-zombie-senolytics-va-tuoi-tho-vi-mo-vi",
+  "saw-palmetto-zinc-dht-hair-loss-vitality-en": {
+    "slug": "saw-palmetto-kem-ngan-rung-toc-sinh-luc-vi",
     "lang": "vi",
-    "title": "Thanh lọc tế bào zombie: Hợp chất senolytics và cơ chế đảo ngược lão hóa tế bào"
+    "title": "Bảo vệ nang tóc và sinh lực tuổi trung niên: Giải mã cơ chế khoá enzyme 5-alpha reductase từ Saw Palmetto và Kẽm"
   },
   "sirt6-gen-truong-tho-sua-chua-dna-vi": {
     "slug": "sirt6-longevity-gene-dna-repair-en",
@@ -820,15 +910,25 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "lang": "vi",
     "title": "Ma trận Tương tác Hoạt chất Tự nhiên & Thuốc Kê đơn: Khi bổ sung thảo dược sai cách trở thành mối nguy sinh tử"
   },
-  "tam-anh-nang-som-dieu-hoa-nhan-tren-cheo-vi": {
-    "slug": "morning-sunlight-scd-circadian-reset-en",
+  "tac-hai-sinh-hoc-cua-viec-an-toi-muon-sau-8-gio-vi": {
+    "slug": "biological-damage-of-eating-late-at-night-en",
     "lang": "en",
-    "title": "Ten minutes of morning sunlight: Resetting the suprachiasmatic nucleus for daytime alertness and deep nocturnal sleep"
+    "title": "Biological damage of eating late dinner after 8 PM: When fat cells lock receptors and excess calories turn straight into visceral fat"
   },
-  "morning-sunlight-scd-circadian-reset-en": {
-    "slug": "tam-anh-nang-som-dieu-hoa-nhan-tren-cheo-vi",
+  "biological-damage-of-eating-late-at-night-en": {
+    "slug": "tac-hai-sinh-hoc-cua-viec-an-toi-muon-sau-8-gio-vi",
     "lang": "vi",
-    "title": "Tắm ánh nắng tự nhiên mười phút đầu ngày: Đặt lại đồng hồ sinh học tại nhân trên chéo để tỉnh táo ban ngày và ngủ sâu ban đêm"
+    "title": "Tác hại sinh học của việc ăn tối muộn sau 8 giờ: Khi tế bào mỡ khóa thụ thể và lượng calo dư thừa chuyển thẳng thành mỡ nội tạng"
+  },
+  "tai-nguyen-sac-to-vang-hoang-diem-vi-sao-man-hinh-khien-mat-nhu-chiec-la-kho-vi": {
+    "slug": "yellow-pigment-macula-screen-dry-leaf-en",
+    "lang": "en",
+    "title": "The golden visual shield: Why screen light dries our eyes like an autumn leaf"
+  },
+  "yellow-pigment-macula-screen-dry-leaf-en": {
+    "slug": "tai-nguyen-sac-to-vang-hoang-diem-vi-sao-man-hinh-khien-mat-nhu-chiec-la-kho-vi",
+    "lang": "vi",
+    "title": "Bức rèm vàng bảo vệ thị lực: Vì sao màn hình khiến mắt khô héo như chiếc lá mùa thu"
   },
   "tam-nuoc-nong-hay-nuoc-lanh-truoc-khi-ngu-vi": {
     "slug": "warm-bath-effect-on-core-body-temperature-sleep-en",
@@ -875,6 +975,11 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "lang": "en",
     "title": "Clearing zombie cells: Senolytics compounds and the mechanism of cellular rejuvenation"
   },
+  "clearing-zombie-cells-senolytics-and-microscopic-longevity-en": {
+    "slug": "thanh-loc-te-bao-zombie-senolytics-va-tuoi-tho-vi-mo-vi",
+    "lang": "vi",
+    "title": "Thanh lọc tế bào zombie: Hợp chất senolytics và cơ chế đảo ngược lão hóa tế bào"
+  },
   "thit-do-che-bien-san-nitrit-ung-thu-dai-truc-trang-vi": {
     "slug": "processed-meat-nitrites-colorectal-cancer-risk-en",
     "lang": "en",
@@ -885,15 +990,25 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "lang": "vi",
     "title": "Thịt đỏ chế biến sẵn và ung thư đại trực tràng: Cơ chế Nitrosamine, sắt Heme và giải pháp dinh dưỡng an toàn"
   },
-  "thu-tu-an-uong-glp1-duong-huyet-vi": {
-    "slug": "meal-sequencing-glp1-glucose-en",
+  "thuc-pham-chong-ung-thu-va-che-bien-dung-cach-vi": {
+    "slug": "anticancer-foods-and-proper-culinary-preparation-en",
     "lang": "en",
-    "title": "Scientific Meal Sequencing: The Secret to Flattening Glucose Spikes and Boosting Endogenous GLP-1"
+    "title": "The anti-cancer kitchen: The art of food combination and temperature to activate bioactive compounds"
   },
-  "meal-sequencing-glp1-glucose-en": {
-    "slug": "thu-tu-an-uong-glp1-duong-huyet-vi",
+  "anticancer-foods-and-proper-culinary-preparation-en": {
+    "slug": "thuc-pham-chong-ung-thu-va-che-bien-dung-cach-vi",
     "lang": "vi",
-    "title": "Thứ tự ăn uống chuẩn khoa học: Bí quyết làm phẳng đường cong glucose và kích hoạt GLP-1 nội sinh"
+    "title": "Căn bếp chống ung thư: Nghệ thuật kết hợp thực phẩm và nhiệt độ để kích hoạt hoạt chất sinh học"
+  },
+  "thuc-pham-moc-aflatoxin-va-la-chan-phong-ngua-ung-thu-gan-vi": {
+    "slug": "moldy-food-aflatoxin-and-liver-cancer-prevention-shield-en",
+    "lang": "en",
+    "title": "Moldy food, Aflatoxin toxicity and natural kitchen strategies to protect liver tumor suppressor genes"
+  },
+  "moldy-food-aflatoxin-and-liver-cancer-prevention-shield-en": {
+    "slug": "thuc-pham-moc-aflatoxin-va-la-chan-phong-ngua-ung-thu-gan-vi",
+    "lang": "vi",
+    "title": "Thực phẩm mốc, độc tố Aflatoxin và lá chắn tự nhiên bảo vệ gen ung thư gan từ căn bếp"
   },
   "tinh-bot-khang-com-nguoi-nuoi-vi-khuan-ruot-vi": {
     "slug": "resistant-starch-cold-rice-gut-microbiome-scfa-en",
@@ -905,6 +1020,26 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "lang": "vi",
     "title": "Cơm nguội để tủ lạnh tốt cho đường ruột: Bí mật cấu trúc Tinh bột Kháng"
   },
+  "toi-tuoi-dap-dap-va-allicin-quy-tac-10-phut-vang-vi-su-song-vi": {
+    "slug": "crushed-fresh-garlic-and-allicin-the-10-minute-golden-rule-for-cellular-defense-en",
+    "lang": "en",
+    "title": "Crushed fresh garlic and allicin: The 10 minute golden rule for cellular defense and apoptosis"
+  },
+  "crushed-fresh-garlic-and-allicin-the-10-minute-golden-rule-for-cellular-defense-en": {
+    "slug": "toi-tuoi-dap-dap-va-allicin-quy-tac-10-phut-vang-vi-su-song-vi",
+    "lang": "vi",
+    "title": "Tỏi tươi đập dập và allicin: Quy tắc 10 phút vàng kích hoạt vũ khí sinh học chống đột biến tế bào"
+  },
+  "tra-sua-duong-fructose-va-gan-nhiem-mo-vi": {
+    "slug": "liquid-fructose-boba-fatty-liver-en",
+    "lang": "en",
+    "title": "Why liquid fructose in boba tea accumulates liver fat faster than saturated fats"
+  },
+  "liquid-fructose-boba-fatty-liver-en": {
+    "slug": "tra-sua-duong-fructose-va-gan-nhiem-mo-vi",
+    "lang": "vi",
+    "title": "Vì sao đường fructose lỏng trong trà sữa tích mỡ gan nhanh hơn mỡ động vật?"
+  },
   "tra-xanh-l-theanine-va-caffeine-tinh-tao-em-ai-vi": {
     "slug": "green-tea-l-theanine-and-caffeine-smooth-focus-en",
     "lang": "en",
@@ -914,6 +1049,16 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "slug": "tra-xanh-l-theanine-va-caffeine-tinh-tao-em-ai-vi",
     "lang": "vi",
     "title": "Uống trà xanh tỉnh táo êm dịu: Sức mạnh sóng não Alpha từ L-Theanine"
+  },
+  "tri-hoan-ngum-ca-phe-dau-tien-60-90-phut-vi": {
+    "slug": "delay-first-morning-coffee-60-90-minutes-en",
+    "lang": "en",
+    "title": "Why delaying your first morning coffee by 90 minutes prevents that dreaded afternoon energy crash"
+  },
+  "delay-first-morning-coffee-60-90-minutes-en": {
+    "slug": "tri-hoan-ngum-ca-phe-dau-tien-60-90-phut-vi",
+    "lang": "vi",
+    "title": "Vì sao việc trì hoãn ngụm cà phê đầu tiên 90 phút sau khi ngủ dậy lại giúp bạn không bị đuối sức vào buổi chiều"
   },
   "triglyceride-hdl-ratio-metabolic-health": {
     "slug": "triglyceride-hdl-ratio-metabolic-health-en",
@@ -925,15 +1070,15 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "lang": "vi",
     "title": "Mật mã Tim mạch Phần 3: Tỉ số Vàng Triglyceride / HDL: Thước đo nhạy bén hơn cả xét nghiệm mỡ máu thông thường"
   },
-  "ty-le-kali-natri-chia-khoa-thu-gian-mach-mau-vi": {
-    "slug": "sodium-potassium-ratio-vascular-health-en",
+  "tuyen-giap-va-bo-doi-vi-chat-selen-iod-vi-sao-so-lanh-u-e-oai-vi": {
+    "slug": "thyroid-and-selenium-iodine-pair-why-cold-fatigue-en",
     "lang": "en",
-    "title": "The Sodium-Potassium Ratio: Unlocking Vascular Relaxation from the Dinner Table"
+    "title": "Thyroid and the Selenium-Iodine Duo: Why Fatigue and Cold Intolerance Persist Despite Sleep and Water"
   },
-  "sodium-potassium-ratio-vascular-health-en": {
-    "slug": "ty-le-kali-natri-chia-khoa-thu-gian-mach-mau-vi",
+  "thyroid-and-selenium-iodine-pair-why-cold-fatigue-en": {
+    "slug": "tuyen-giap-va-bo-doi-vi-chat-selen-iod-vi-sao-so-lanh-u-e-oai-vi",
     "lang": "vi",
-    "title": "Tỷ lệ Kali và Natri: Chìa khóa thu giãn mạch máu từ mâm cơm gia đình"
+    "title": "Tuyến giáp và bộ đôi vi chất Selen cùng I-ốt: Vì sao uống đủ nước, ngủ đủ giấc vẫn thấy uể oải sợ lạnh?"
   },
   "ty-le-kali-natri-xua-tan-noi-lo-muoi-vi": {
     "slug": "potassium-sodium-ratio-blood-pressure-en",
@@ -965,16 +1110,6 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "lang": "vi",
     "title": "Uống nước đá lạnh sau bữa ăn nhiều dầu mỡ: Thực hư chuyện đông đặc mỡ và gánh nặng cho dạ dày"
   },
-  "urolithin-a-kich-hoat-mitophagy-phuc-hoi-co-bap-vi": {
-    "slug": "urolithin-a-mitophagy-muscle-endurance-en",
-    "lang": "en",
-    "title": "Urolithin A from Pomegranate: Deciphering the NAD+ Independent Mitophagy Pathway for Muscle Recovery and Mitochondrial Longevity"
-  },
-  "urolithin-a-mitophagy-muscle-endurance-en": {
-    "slug": "urolithin-a-kich-hoat-mitophagy-phuc-hoi-co-bap-vi",
-    "lang": "vi",
-    "title": "Urolithin A từ Quả Lựu: Cơ chế Kích hoạt Mitophagy Dọn dẹp Ty thể Độc lập với NAD+ Giúp Phục hồi Sức bền Cơ bắp"
-  },
   "urolithin-a-mitophagy-don-dep-ty-the-phuc-hoi-suc-ben-vi": {
     "slug": "urolithin-a-mitophagy-mitochondrial-recycling-muscle-endurance-en",
     "lang": "en",
@@ -985,25 +1120,25 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "lang": "vi",
     "title": "Urolithin A và nghệ thuật dọn dẹp ty thể: Bí quyết tái tạo sức bền tế bào từ quả lựu"
   },
-  "vi-sao-an-muon-sau-20h-gay-tich-mo-bung-vi": {
-    "slug": "why-eating-after-8pm-triggers-visceral-fat-storage-en",
+  "van-dong-va-te-bao-nk-phong-ngua-ung-thu-vi": {
+    "slug": "exercise-and-nk-cells-cancer-prevention-en",
     "lang": "en",
-    "title": "Eating Dinner After 8 PM: Why Circadian Desynchrony Accelerates Visceral Fat Storage"
+    "title": "How muscle contraction activates NK patrol cells to eliminate early cancer cells"
   },
-  "why-eating-after-8pm-triggers-visceral-fat-storage-en": {
-    "slug": "vi-sao-an-muon-sau-20h-gay-tich-mo-bung-vi",
+  "exercise-and-nk-cells-cancer-prevention-en": {
+    "slug": "van-dong-va-te-bao-nk-phong-ngua-ung-thu-vi",
     "lang": "vi",
-    "title": "Ăn tối muộn sau 20 giờ: Chiếc bẫy sinh học khiến mỡ bụng tích tụ nhanh"
+    "title": "Vận động cơ bắp kích hoạt đội tuần tra NK tiêu diệt mầm mống ung thư ra sao"
   },
-  "vi-sao-ca-phe-sang-gay-sup-nguon-10h-vi": {
-    "slug": "why-morning-coffee-causes-midmorning-crash-en",
+  "vi-khuan-hp-caga-va-ung-thu-da-dau-vi": {
+    "slug": "h-pylori-caga-toxin-gastric-cancer-en",
     "lang": "en",
-    "title": "Why does that 7 AM morning coffee trigger a sudden energy crash at 10 AM?"
+    "title": "H. pylori and Gastric Cancer: The CagA Toxin Mechanism, Golden Treatment Window, and Protective Phytochemicals"
   },
-  "why-morning-coffee-causes-midmorning-crash-en": {
-    "slug": "vi-sao-ca-phe-sang-gay-sup-nguon-10h-vi",
+  "h-pylori-caga-toxin-gastric-cancer-en": {
+    "slug": "vi-khuan-hp-caga-va-ung-thu-da-dau-vi",
     "lang": "vi",
-    "title": "Vì sao cốc cà phê lúc 7 giờ sáng lại khiến bạn sập nguồn vào lúc 10 giờ?"
+    "title": "Vi khuẩn HP và ung thư dạ dày: Độc tố CagA, thời điểm vàng điều trị và hoạt chất tự nhiên bảo vệ niêm mạc"
   },
   "virus-epstein-barr-va-da-xo-cung-bat-chuoc-phan-tu-vi": {
     "slug": "epstein-barr-virus-multiple-sclerosis-molecular-mimicry-en",
@@ -1014,6 +1149,16 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "slug": "virus-epstein-barr-va-da-xo-cung-bat-chuoc-phan-tu-vi",
     "lang": "vi",
     "title": "Virus Epstein-Barr và hiện tượng bắt chước phân tử: Khi hệ miễn dịch nhầm lẫn tế bào thần kinh với kẻ thù"
+  },
+  "virus-hpv-va-co-che-vo-hieu-hoa-p53-vi": {
+    "slug": "hpv-virus-and-p53-inactivation-mechanism-en",
+    "lang": "en",
+    "title": "HPV and cervical cancer: The molecular mechanism of p53 inactivation and the protective shield of vaccination"
+  },
+  "hpv-virus-and-p53-inactivation-mechanism-en": {
+    "slug": "virus-hpv-va-co-che-vo-hieu-hoa-p53-vi",
+    "lang": "vi",
+    "title": "Virus HPV và ung thư cổ tử cung: Cơ chế phân tử vô hiệu hóa gen p53 và lá chắn bảo vệ từ vaccine"
   },
   "vitamin-d3-k2-mk7-chong-voi-hoa-dong-mach-vi": {
     "slug": "vitamin-d3-k2-mk7-arterial-calcification-en",
