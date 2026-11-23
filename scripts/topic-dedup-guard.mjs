@@ -18,7 +18,7 @@ const ENTITY_SIGNATURES = [
   { name: 'Pumpkin Seed Oil & Hormonal Hair Loss', tokens: ['hat bi do', 'pumpkin seed', 'phytosterol', 'rung toc', 'nang toc'] },
   { name: 'Late-Night Dinner & Circadian Fat / Gastric Risk', tokens: ['an toi muon', 'an muon', 'late dinner', 'eating late', 'sau 8 gio', 'sau 20h', 'after 8pm', 'an khuya'] },
   { name: 'Thyroid, Selenium & Iodine Cold Fatigue', tokens: ['tuyen giap', 'thyroid', 'selen', 'selenium', 'iod', 'i ot', 'iodine', 'so lanh', 'cold intolerance', 'cold sensitivity', 'hashimoto'] },
-  { name: 'Creatine & Brain ATP Mental Fatigue', tokens: ['creatine', 'lam viec tri oc', 'mental fatigue', 'pin du phong', 'backup battery', 'neural atp', 'brain energy', 'nao bo'] },
+  { name: 'Creatine & Brain ATP Mental Fatigue', tokens: ['creatine', 'lam viec tri oc', 'mental fatigue', 'pin du phong', 'backup battery', 'neural atp', 'brain energy', 'nao bo', 'te bao nao', 'brain', 'atp', 'tram sac'] },
   { name: 'Coffee Timing & Adenosine Afternoon Crash', tokens: ['ca phe', 'coffee', 'adenosine', '90 phut', '60 90', 'sau 2 gio chieu', 'afternoon coffee', 'tri hoan', 'midmorning crash'] },
   { name: 'Soy, Isoflavones, Genistein & Flaxseed', tokens: ['dau nanh', 'soy', 'soybean', 'isoflavone', 'genistein', 'phytoestrogen', 'hat lanh', 'flaxseed', 'tien man kinh', 'menopause'] },
   { name: 'Food Sequencing (Vegetables Before Carbs)', tokens: ['an rau truoc', 'thu tu an', 'trat tu bua an', 'food sequencing', 'vegetables first', 'vegetables before carbs', 'tuyen tuy'] },
@@ -235,6 +235,26 @@ export function checkTopicCollision(proposedTopic, customRegistry = null) {
   const propViTokens = new Set(extractTokens(proposedTopic.titleVi || ''));
   const propEnTokens = new Set(extractTokens(proposedTopic.titleEn || ''));
 
+  // Generic organ/domain terms excluded from Layer 5 self-learning rare-keyword fingerprint
+  const BROAD_DOMAIN_TERMS = new Set([
+    'metabolic', 'aging', 'longevity', 'nutrition', 'lifestyle', 'health', 'healthy',
+    'cancer', 'prevention', 'cardiovascular', 'heart', 'brain', 'gut', 'immune', 'immunity',
+    'stress', 'sleep', 'digestion', 'hormones', 'endocrine', 'energy', 'inflammation',
+    'blood', 'sugar', 'pressure', 'risk', 'diet', 'food', 'foods', 'daily', 'natural',
+    'human', 'clinical', 'effect', 'effects', 'benefits', 'damage', 'chronic', 'system',
+    'lao', 'hoa', 'dinh', 'duong', 'chuyen', 'nang', 'luong', 'ung', 'thu', 'tim', 'mach',
+    'ruot', 'mien', 'dich', 'giac', 'ngu', 'huyet', 'tieu', 'noi', 'tiet', 'viem', 'man',
+    'tinh', 'thuc', 'pham', 'thoi', 'quen', 'song', 'doi', 'thuong', 'tang', 'giam', 'chong',
+    'can', 'bep', 'bua', 'sang', 'toi', 'chieu', 'dem', 'tuoi', 'trung', 'nien', 'phong', 'ngua'
+  ]);
+
+  const toRareTokens = (text) => new Set(
+    extractTokens(text).filter(t => t.length >= 4 && !BROAD_DOMAIN_TERMS.has(t))
+  );
+
+  const propRareVi = toRareTokens(`${proposedTopic.titleVi || ''} ${proposedTopic.slugVi || ''}`);
+  const propRareEn = toRareTokens(`${proposedTopic.titleEn || ''} ${proposedTopic.slugEn || ''}`);
+
   for (const t of registry.topics) {
     const existingViTokens = new Set(extractTokens(t.titleVi));
     const existingEnTokens = new Set(extractTokens(t.titleEn));
@@ -251,6 +271,23 @@ export function checkTopicCollision(proposedTopic, customRegistry = null) {
         isDuplicate: true,
         type: 'TITLE_SIMILARITY',
         reason: `Tiêu đề quá tương đồng (Jaccard ${(maxJacc * 100).toFixed(0)}%, Dice ${(maxDice * 100).toFixed(0)}%) với bài "${t.titleVi}"`,
+        matchedTopic: t
+      };
+    }
+
+    // 5. Self-Learning Rare-Keyword Fingerprint Guard (auto-protects ANY newly discovered future topic!)
+    const existRareVi = toRareTokens(`${t.titleVi || ''} ${t.id || ''}`);
+    const existRareEn = toRareTokens(`${t.titleEn || ''} ${t.id || ''}`);
+    const sharedVi = [...propRareVi].filter(tok => existRareVi.has(tok));
+    const sharedEn = [...propRareEn].filter(tok => existRareEn.has(tok));
+    const bestShared = sharedVi.length >= sharedEn.length ? sharedVi : sharedEn;
+    const hasLongSpecificPair = bestShared.filter(tok => tok.length >= 7).length >= 2;
+
+    if (bestShared.length >= 3 || (hasLongSpecificPair && Math.max(viDice, enDice) >= 0.30)) {
+      return {
+        isDuplicate: true,
+        type: 'SELF_LEARNING_KEYWORD_COLLISION',
+        reason: `Trùng cụm từ khóa đặc hiệu tự học (${bestShared.slice(0, 4).join(', ')}) với bài "${t.titleVi}"`,
         matchedTopic: t
       };
     }

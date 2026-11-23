@@ -690,34 +690,16 @@ export function extractSmartImageKeywords(topic = {}) {
     queries.push('oncology research microscope', 'medical scientist laboratory');
   }
 
-  // 27. TẦNG DỰ PHÒNG THEO HỆ CƠ QUAN (Verified 4K Wikimedia Unsplash queries)
-  if (queries.length === 0) {
-    const organ = topic.organ || 'Metabolic';
-    const SAFE_ORGAN_FALLBACKS = {
-      Cardiovascular: ['Fresh Vegetable Produce (Unsplash)', 'Strawberry and blueberries (Unsplash V6FcCG14q30)'],
-      Heart: ['Fresh Vegetable Produce (Unsplash)', 'Salad Bowl (Unsplash)'],
-      Brain: ['Early morning in autumn forest (Unsplash)', 'Tea cup (Unsplash)'],
-      Gut: ['Salad Bowl (Unsplash)', 'Vegetable Salad (Unsplash)'],
-      Metabolic: ['Healthy Meal Prep (Unsplash)', 'Healthy Vegetables (Unsplash)'],
-      'Cellular Aging': ['Fruit Platter (Unsplash)', 'Early morning in autumn forest (Unsplash)'],
-      Immunity: ['Healthy Vegetables (Unsplash)', 'Broccoli sprouts'],
-      Immune: ['Healthy Vegetables (Unsplash)', 'Broccoli sprouts'],
-      Oncology: ['Fresh Vegetable Produce (Unsplash)', 'Broccoli sprouts'],
-      Cancer: ['Fresh Vegetable Produce (Unsplash)', 'Broccoli sprouts'],
-      Liver: ['Silybum marianum flower', 'Vegetable Salad (Unsplash)']
-    };
-    queries.push(...(SAFE_ORGAN_FALLBACKS[organ] || SAFE_ORGAN_FALLBACKS.Metabolic));
-  }
-
   return [...new Set(queries)];
 }
 
 /**
- * Zero-LLM Deterministic Visual Spec Engine v4.0:
- * Kết hợp trực tiếp:
- * 1. Title-First Entity Extraction (Ưu tiên số 1: Tiêu đề nói gì -> Tìm đúng đối tượng đó)
+ * Zero-LLM Deterministic Visual Spec Engine v4.1:
+ * Kết hợp trực tiếp (hỗ trợ mở rộng vô hạn cho chủ đề mới từ PubMed Radar & Open Frontier):
+ * 1. Title-First Entity Extraction (Tiêu đề nói gì -> Tìm đúng đối tượng đó)
  * 2. Phân loại nội dung & 35+ nhóm hoạt chất chuyên sâu
- * 3. Từ khóa đã định nghĩa của bài viết (topic.imageSearchQueries)
+ * 3. Từ khóa cụ thể do AI tạo cho chủ đề mới (topic.imageSearchQueries)
+ * 4. Chỉ dùng SAFE_ORGAN_FALLBACKS ở cuối cùng sau khi các truy vấn cụ thể đều không khớp!
  */
 export function buildDeterministicVisualSpec(topic = {}) {
   const titleQueries = extractKeywordsFromTitle(topic.titleVi || '', topic.titleEn || '');
@@ -726,8 +708,24 @@ export function buildDeterministicVisualSpec(topic = {}) {
     ? topic.imageSearchQueries.filter(q => typeof q === 'string' && q.trim().length >= 2 && !/^(?:fitness exercise|dumbbells|healthy nutrition|cancer laboratory)$/i.test(q.trim()))
     : [];
 
-  // THỨ TỰ ƯU TIÊN TUYỆT ĐỐI: 1. Từ khóa Tựa đề -> 2. Phân loại từ khóa chuẩn hóa -> 3. imageSearchQueries từ AI
-  const combinedQueries = [...new Set([...titleQueries, ...deterministicQueries, ...userQueries])];
+  const organ = topic.organ || 'Metabolic';
+  const SAFE_ORGAN_FALLBACKS = {
+    Cardiovascular: ['Fresh Vegetable Produce (Unsplash)', 'Strawberry and blueberries (Unsplash V6FcCG14q30)'],
+    Heart: ['Fresh Vegetable Produce (Unsplash)', 'Salad Bowl (Unsplash)'],
+    Brain: ['Early morning in autumn forest (Unsplash)', 'Sejak tea leaves'],
+    Gut: ['Salad Bowl (Unsplash)', 'Vegetable Salad (Unsplash)'],
+    Metabolic: ['Healthy Meal Prep (Unsplash)', 'Healthy Vegetables (Unsplash)'],
+    'Cellular Aging': ['Fruit Platter (Unsplash)', 'Early morning in autumn forest (Unsplash)'],
+    Immunity: ['Healthy Vegetables (Unsplash)', 'Broccoli sprouts'],
+    Immune: ['Healthy Vegetables (Unsplash)', 'Broccoli sprouts'],
+    Oncology: ['Fresh Vegetable Produce (Unsplash)', 'Broccoli sprouts'],
+    Cancer: ['Fresh Vegetable Produce (Unsplash)', 'Broccoli sprouts'],
+    Liver: ['Silybum marianum flower', 'Vegetable Salad (Unsplash)']
+  };
+  const organFallbacks = SAFE_ORGAN_FALLBACKS[organ] || SAFE_ORGAN_FALLBACKS.Metabolic;
+
+  // THỨ TỰ ƯU TIÊN: 1. Từ khóa Tựa đề -> 2. Phân loại chuẩn hóa -> 3. imageSearchQueries từ AI (cho chủ đề mới mở rộng!) -> 4. Fallback cơ quan
+  const combinedQueries = [...new Set([...titleQueries, ...deterministicQueries, ...userQueries, ...organFallbacks])];
 
   const titleVi = topic.titleVi || topic.titleEn || '';
   const isSymptom = /sợ lạnh|lạnh cóng|mệt mỏi|uể oải|rụng tóc|tóc rụng|suy giáp|tuyến giáp|giấc ngủ|mất ngủ|stress|căng thẳng|sương mù não|sập nguồn|postprandial|đau mỏi|cổ vai gáy/i.test(titleVi);

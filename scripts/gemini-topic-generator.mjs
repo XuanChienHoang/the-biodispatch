@@ -1,13 +1,22 @@
 /**
- * Autonomous Gemini Topic & Content Generator for Phytocodex (v4.0 — High Diversity & Natural Editorial Style)
+ * Autonomous Gemini Topic & Content Generator for Phytocodex (v5.0 — Self-Expanding Discovery Engine)
  * Dr. Xuan Chien Hoang (Dr. rer. nat. | University of Hamburg)
  *
- * Key upgrades in v4.0:
- * - Fixes critical bug where commonGuidelines (JSON schema + retry feedback) were omitted from payload
- * - Expands to 12 balanced domains with 85+ fresh uncovered biomedical/everyday-health ideas + Open Frontier Discovery mode
- * - Zero fallback to exhausted ideas[0]
- * - Enforces 7 rotating natural headline archetypes (bans overused "Vì sao..." / "Tại sao..." / "Why..." openings)
- * - Enforces 6 rotating engaging opening hook archetypes (bans AI-slop clichés like "Chị Lan kế toán Hà Nội", "Trong guồng quay hối hả", "tiệc tùng cuối năm")
+ * 3-Track Self-Expanding Topic Discovery Architecture (never locked to a static topic list!):
+ * - Track A (~40%): LIVE PUBMED SCIENCE RADAR — queries NCBI PubMed E-utilities (2023-2026) across
+ *   16 adjacent biomedical & everyday-health subfields, filters out covered topics, and anchors the
+ *   article in a REAL newly published study (PMID/DOI verified from the start!).
+ * - Track B (~35%): OPEN ADJACENT-FIELD EXPANSION — combines 16 open-ended adjacent domains
+ *   (environmental health, drug-food interactions, sensory aging, oral-systemic link, chronobiology,
+ *   Asian culinary biochemistry, respiratory/thermal physiology, musculoskeletal biomechanics, etc.)
+ *   with 8 rotating editorial lenses so Gemini freely originates fresh topics beyond fixed lists.
+ * - Track C (~25%, auto-fades to 0% as used): CURATED EVERYDAY SEEDS — verified high-interest
+ *   everyday health topics; zero fallback to exhausted ideas[0].
+ *
+ * Also enforces:
+ * - 7 rotating natural headline archetypes (bans "Vì sao..." / "Tại sao..." / "Why..." templates)
+ * - 6 rotating engaging opening hook styles (bans AI-slop clichés & fake personas)
+ * - Full 100% exclusion catalog + Self-Learning Dedup Guard v3.1
  */
 
 import fs from 'fs';
@@ -24,42 +33,45 @@ const MODEL_CANDIDATES = [
   'gemini-3.8-flash'
 ];
 
+const NCBI_BASE = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils';
+const NCBI_PARAMS = 'tool=ThePhytocodex&email=contact@phytocodex.org';
+
 // 7 rotating editorial headline archetypes — natural, journalistic, NO "Vì sao..." cliché
 const TITLE_ARCHETYPES = [
   {
     id: 'paradox',
     name: 'Nghịch lý / Lật ngược thói quen quen thuộc',
-    instruction: 'Đặt tựa đề kiểu khẳng định một nghịch lý đời thường bất ngờ (KHÔNG dùng câu hỏi "Vì sao/Tại sao"). Ví dụ tham khảo phong cách: "Nước súc miệng diệt khuẩn có thể vô hiệu hóa lợi ích hạ huyết áp của củ dền" hoặc "Cà phê uống ngay sau bữa ăn giàu sắt đang âm thầm giảm một nửa lượng sắt hấp thu".'
+    instruction: 'Đặt tựa đề kiểu khẳng định một nghịch lý đời thường bất ngờ (KHÔNG dùng câu hỏi "Vì sao/Tại sao"). Ví dụ phong cách: "Nước súc miệng diệt khuẩn có thể vô hiệu hóa lợi ích hạ huyết áp của củ dền".'
   },
   {
     id: 'metric-rule',
     name: 'Con số / Quy tắc thực chiến gọn sắc',
-    instruction: 'Đặt tựa đề mở đầu hoặc neo vào một con số sinh học/thời lượng cụ thể đi kèm lợi ích rõ ràng (KHÔNG dùng "Vì sao/Tại sao"). Ví dụ tham khảo phong cách: "30 loại thực vật mỗi tuần: Ngưỡng đa dạng giúp hệ vi sinh đường ruột hồi sinh" hoặc "15 phút chợp mắt buổi trưa và ranh giới tránh cơn uể oải sau khi tỉnh".'
+    instruction: 'Đặt tựa đề mở đầu hoặc neo vào một con số sinh học/thời lượng cụ thể đi kèm lợi ích rõ ràng (KHÔNG dùng "Vì sao/Tại sao"). Ví dụ phong cách: "30 loại thực vật mỗi tuần: Ngưỡng đa dạng giúp hệ vi sinh đường ruột hồi sinh".'
   },
   {
     id: 'vivid-image',
     name: 'Hình ảnh đời thường sắc nét (Editorial Metaphor)',
-    instruction: 'Đặt tựa đề ngắn gọn dùng một hình ảnh cụ thể, tinh tế, giàu sức gợi về cơ thể hoặc thực phẩm (KHÔNG dùng "Vì sao/Tại sao", KHÔNG lạm dụng "Giải mã"). Ví dụ tham khảo phong cách: "Cơ dép bắp chân, cỗ máy bơm đường huyết thầm lặng dưới gầm bàn làm việc" hoặc "Lớp màng trắng quanh múi cam và lá chắn Hesperidin cho thành mao mạch".'
+    instruction: 'Đặt tựa đề ngắn gọn dùng một hình ảnh cụ thể, tinh tế, giàu sức gợi về cơ thể hoặc thực phẩm (KHÔNG dùng "Vì sao/Tại sao", KHÔNG lạm dụng "Giải mã"). Ví dụ phong cách: "Cơ dép bắp chân, cỗ máy bơm đường huyết thầm lặng dưới gầm bàn làm việc".'
   },
   {
     id: 'smart-contrast',
     name: 'So sánh hai lựa chọn thực tế (A hay B)',
-    instruction: 'Đặt tựa đề đối chiếu trực tiếp hai cách chế biến, hai loại thực phẩm hoặc hai thói quen phổ biến (KHÔNG dùng "Vì sao/Tại sao"). Ví dụ tham khảo phong cách: "Gừng tươi pha trà hay gừng nướng cháy vỏ: Sự biến đổi từ Gingerol sang Shogaol" hoặc "Quế Ceylon và quế Cassia: Ranh giới tinh tế giữa ổn định đường huyết và gánh nặng cho gan".'
+    instruction: 'Đặt tựa đề đối chiếu trực tiếp hai cách chế biến, hai loại thực phẩm hoặc hai thói quen phổ biến (KHÔNG dùng "Vì sao/Tại sao"). Ví dụ phong cách: "Gừng tươi pha trà hay gừng nướng cháy vỏ: Sự biến đổi từ Gingerol sang Shogaol".'
   },
   {
     id: 'declarative-mechanism',
     name: 'Câu trần thuật chủ động nêu cơ chế bất ngờ',
-    instruction: 'Đặt tựa đề là một câu trần thuật trực diện, mạch lạc, không cần dấu hai chấm hoặc chỉ dùng khi thật tự nhiên (KHÔNG dùng "Vì sao/Tại sao"). Ví dụ tham khảo phong cách: "Thở bằng mũi giải phóng khí Oxit Nitric tự nhiên ngay từ các xoang mặt" hoặc "Mất chỉ 1% lượng nước cơ thể đã đủ làm suy giảm khả năng tập trung ở vỏ não trước trán".'
+    instruction: 'Đặt tựa đề là một câu trần thuật trực diện, mạch lạc, không nhất thiết cần dấu hai chấm (KHÔNG dùng "Vì sao/Tại sao"). Ví dụ phong cách: "Thở bằng mũi giải phóng khí Oxit Nitric tự nhiên ngay từ các xoang mặt".'
   },
   {
     id: 'hidden-blindspot',
     name: 'Góc khuất đời sống ít người để ý',
-    instruction: 'Đặt tựa đề chỉ thẳng một góc khuất tinh tế trong sinh hoạt hằng ngày bằng giọng điềm tĩnh, chuẩn khoa học (KHÔNG giật gân, KHÔNG dùng "Vì sao/Tại sao"). Ví dụ tham khảo phong cách: "Ngủ bù cuối tuần lệch quá 2 giờ đang tạo ra cơn lệch múi giờ chuyển hóa ngay tại nhà" hoặc "Ánh nắng UVA xuyên qua cửa kính văn phòng âm thầm thúc đẩy lão hóa da dù không gây cháy nắng".'
+    instruction: 'Đặt tựa đề chỉ thẳng một góc khuất tinh tế trong sinh hoạt hằng ngày bằng giọng điềm tĩnh, chuẩn khoa học (KHÔNG giật gân, KHÔNG dùng "Vì sao/Tại sao"). Ví dụ phong cách: "Ngủ bù cuối tuần lệch quá 2 giờ đang tạo ra cơn lệch múi giờ chuyển hóa ngay tại nhà".'
   },
   {
     id: 'ingredient-spotlight',
     name: 'Cận cảnh một hoạt chất / thực phẩm bình dị',
-    instruction: 'Đặt tựa đề tôn vinh một thực phẩm hoặc hoạt chất quen thuộc theo kiểu tạp chí khoa học hiện đại (KHÔNG dùng "Vì sao/Tại sao"). Ví dụ tham khảo phong cách: "Ergothioneine trong nấm ăn: Hoạt chất được tế bào người thiết kế riêng kênh vận chuyển" hoặc "Trà hoa bụp giấm Hibiscus và cơ chế ức chế men chuyển tự nhiên trên thành mạch".'
+    instruction: 'Đặt tựa đề tôn vinh một thực phẩm, thói quen hoặc hoạt chất quen thuộc theo kiểu tạp chí khoa học hiện đại (KHÔNG dùng "Vì sao/Tại sao"). Ví dụ phong cách: "Ergothioneine trong nấm ăn: Hoạt chất được tế bào người thiết kế riêng kênh vận chuyển".'
   }
 ];
 
@@ -68,12 +80,12 @@ const HOOK_ARCHETYPES = [
   {
     id: 'sensory-micro-scene',
     name: 'Khoảnh khắc giác quan cận cảnh',
-    instruction: 'Mở bài ngay bằng một chi tiết giác quan rất nhỏ, chân thực (âm thanh, mùi hương, cảm giác sinh lý cụ thể như tiếng tách nhỏ khi ngâm hạt é, vị cay nồng bốc lên từ lát hành tím, cảm giác nặng nề ở đôi chân sau 3 tiếng ngồi yên). TUYỆT ĐỐI KHÔNG bịa nhân vật kiểu "Chị Lan 34 tuổi kế toán Hà Nội" hay "Anh Minh".'
+    instruction: 'Mở bài ngay bằng một chi tiết giác quan rất nhỏ, chân thực (âm thanh, mùi hương, cảm giác sinh lý cụ thể như vị cay nồng bốc lên từ lát hành tím, cảm giác nặng nề ở đôi chân sau 3 tiếng ngồi yên). TUYỆT ĐỐI KHÔNG bịa nhân vật kiểu "Chị Lan 34 tuổi kế toán Hà Nội" hay "Anh Minh".'
   },
   {
     id: 'surprising-number',
     name: 'Con số sinh lý hoặc kết quả nghiên cứu gây khựng lại',
-    instruction: 'Mở bài thẳng bằng một con số sinh lý hoặc dữ liệu thực nghiệm đáng kinh ngạc (ngắn gọn, 1-2 câu đầu súc tích), sau đó nối tự nhiên vào thói quen hằng ngày của người đọc.'
+    instruction: 'Mở bài thẳng bằng một con số sinh lý hoặc dữ liệu thực nghiệm đáng chú ý (1-2 câu đầu súc tích), sau đó nối tự nhiên vào thói quen hằng ngày của người đọc.'
   },
   {
     id: 'habit-paradox',
@@ -88,7 +100,7 @@ const HOOK_ARCHETYPES = [
   {
     id: 'direct-dialogue',
     name: 'Chia sẻ trực diện góc nhìn TS. Hoàng Xuân Chiến',
-    instruction: 'Mở bài như một lời trò chuyện điềm đạm, gần gũi, thẳng thắn từ trải nghiệm nghiên cứu và câu hỏi thường gặp của người thân/bạn đọc — tự nhiên, ấm áp, tuyệt đối không kiểu cách hay lên lớp.'
+    instruction: 'Mở bài như một lời trò chuyện điềm đạm, gần gũi, thẳng thắn từ trải nghiệm nghiên cứu và câu hỏi thường gặp của bạn đọc — tự nhiên, ấm áp, tuyệt đối không kiểu cách hay lên lớp.'
   },
   {
     id: 'sharp-contrast',
@@ -97,7 +109,136 @@ const HOOK_ARCHETYPES = [
   }
 ];
 
-// Rich, fresh, diverse domain pillars (12 pillars, 85+ UNCOVERED everyday-health & preventive biomedical topics)
+// === TRACK A & TRACK B: 16 EXPANDED ADJACENT BIOMEDICAL & EVERYDAY-LIFE FRONTIER DOMAINS ===
+// Automatically expands beyond narrow fixed topics into real-world adjacent health sciences!
+export const ADJACENT_FRONTIER_DOMAINS = [
+  {
+    id: 'culinary-chemoprevention',
+    organ: 'Oncology',
+    domain: 'Hóa sinh Căn bếp, Bảo quản Thực phẩm & Phòng ngừa Ung thư Thực chứng',
+    pubmedQuery: '(phytochemical OR polyphenol OR glucosinolate OR marinade OR acrylamide OR cooking oil) AND (cancer prevention OR DNA damage OR phase II enzymes) AND (humans[MeSH] OR review[pt])',
+    scopeHint: 'Khám phá tương tác gia vị, phương pháp nấu (hấp, luộc, lên men, ướp thảo mộc, nhiệt độ dầu ăn), hợp chất bảo vệ tế bào mới ngoài các bài đã đăng.'
+  },
+  {
+    id: 'drug-nutrient-interactions',
+    organ: 'Metabolic',
+    domain: 'Tương tác Thuốc - Thực phẩm & Dược động học Đời thường (Food-Drug & Nutrient Interactions)',
+    pubmedQuery: '(food-drug interaction OR micronutrient absorption OR iron absorption OR vitamin B12 metformin OR grapefruit CYP3A4 OR zinc copper) AND (clinical[tiab] OR review[pt])',
+    scopeHint: 'Các tương tác thực tế ít người để ý: thực phẩm/đồ uống làm tăng hoặc cản trở hấp thu khoáng chất, vitamin hoặc thuốc thông dụng (sắt-tannin, kẽm-đồng, B12-metformin, canxi-levothyroxine, bưởi-CYP3A4...).'
+  },
+  {
+    id: 'environmental-daily-exposures',
+    organ: 'Immune',
+    domain: 'Y học Môi trường Sống Hằng ngày (Không khí trong nhà, Vi nhựa, Nhiệt độ, Nước uống & Tiếp xúc Da)',
+    pubmedQuery: '(microplastics OR indoor air quality CO2 OR endocrine disruptor OR food packaging OR drinking water OR UVA window) AND (human health OR inflammation OR cognition)',
+    scopeHint: 'Các yếu tố môi trường ngay trong nhà và văn phòng: chất lượng không khí CO2 phòng ngủ, hộp nhựa đựng đồ nóng, chất chống dính, ánh nắng qua cửa kính, độ ẩm phòng điều hòa.'
+  },
+  {
+    id: 'oral-systemic-axis',
+    organ: 'Heart',
+    domain: 'Trục Răng miệng - Tim mạch - Não bộ & Hệ Vi sinh Khoang miệng (Oral-Systemic Health)',
+    pubmedQuery: '(oral microbiome OR antiseptic mouthwash nitric oxide OR periodontal disease cardiovascular OR Porphyromonas gingivalis) AND (human OR review[pt])',
+    scopeHint: 'Mối liên hệ bất ngờ giữa vệ sinh răng miệng, vi khuẩn trên lưỡi chuyển hóa nitrat tạo Oxit Nitric, bệnh nha chu với viêm mạch máu và sức khỏe não bộ.'
+  },
+  {
+    id: 'chronobiology-seasonal',
+    organ: 'Brain',
+    domain: 'Sinh học Nhịp điệu, Ngủ bù & Thích nghi Mùa (Chronobiology, Social Jetlag & Light Timing)',
+    pubmedQuery: '(social jetlag OR chrononutrition OR light exposure circadian OR sleep inertia OR pink noise slow-wave sleep) AND (humans[MeSH] OR clinical)',
+    scopeHint: 'Nhịp sinh học thực tế ngoài melatonin/ánh sáng xanh cơ bản: lệch múi giờ cuối tuần, ánh sáng hoàng hôn, độ dài giấc ngủ trưa, giờ tập thể dục theo đồng hồ sinh học, nhịp thân nhiệt.'
+  },
+  {
+    id: 'fermentation-postbiotics',
+    organ: 'Gut',
+    domain: 'Thực phẩm Lên men Truyền thống, Tiền sinh học & Chuyển hóa Vi sinh (Fermented Foods & Postbiotics)',
+    pubmedQuery: '(fermented foods microbiome OR postbiotics OR inulin FODMAP OR plant diversity gut microbiome OR Saccharomyces boulardii) AND (humans[MeSH] OR clinical)',
+    scopeHint: 'Đa dạng thực vật nuôi lợi khuẩn, dưa muối/kimchi/kombucha/miso/natto, phục hồi hệ vi sinh sau kháng sinh, ranh giới chất xơ FODMAP gây đầy hơi.'
+  },
+  {
+    id: 'spices-asian-botanicals',
+    organ: 'Gut',
+    domain: 'Hóa sinh Gia vị & Thảo mộc Bếp Á (Gừng, Quế, Bạc hà, Atiso, Hạt é, Đinh hương, Nhụy hoa nghệ tây)',
+    pubmedQuery: '(gingerol shogaol OR peppermint oil TRPM8 OR cinnamon Ceylon coumarin OR saffron crocin OR artichoke cynarin OR bitter taste receptor T2R) AND (clinical OR review[pt])',
+    scopeHint: 'Cơ chế phân tử của các gia vị và thảo mộc gần gũi trong bếp Việt/Á: chuyển hóa hoạt chất khi phơi/nướng/hãm trà, khác biệt giữa các chủng loại và liều an toàn.'
+  },
+  {
+    id: 'vascular-microcirculation',
+    organ: 'Heart',
+    domain: 'Vi tuần hoàn, Động lực học Mạch máu & Huyết áp Đời thường (Microcirculation & Vascular Tone)',
+    pubmedQuery: '(dietary nitrate beetroot blood pressure OR hibiscus sabdariffa blood pressure OR hesperidin endothelial OR soleus muscle metabolism OR orthostatic hypotension) AND (humans[MeSH] OR clinical)',
+    scopeHint: 'Các cơ chế ít người biết về tuần hoàn máu: cơ bắp chân bơm máu tĩnh mạch khi ngồi, nitrat rau củ, polyphenol vỏ cam quýt, hạ huyết áp tư thế, tuần hoàn ngoại vi lạnh tay chân.'
+  },
+  {
+    id: 'sensory-vestibular-aging',
+    organ: 'Brain',
+    domain: 'Lão hóa Giác quan, Thăng bằng & Thần kinh Vận động (Sensory, Hearing, Vision & Balance Health)',
+    pubmedQuery: '(grip strength longevity OR single-leg balance aging OR outdoor light myopia dopamine OR olfactory decline neurodegeneration OR noise hearing aging) AND (humans[MeSH] OR cohort)',
+    scopeHint: 'Sức khỏe thính giác, khứu giác, tiền đình thăng bằng (đứng 1 chân), sức nắm bàn tay dự báo tuổi thọ, ánh sáng ngoài trời phòng cận thị, sự phối hợp não-cơ.'
+  },
+  {
+    id: 'musculoskeletal-tendon',
+    organ: 'Cellular Aging',
+    domain: 'Cơ sinh học Gân Khớp, Xương & Phục hồi Vận động (Tendon, Bone Density & Eccentric Mechanics)',
+    pubmedQuery: '(eccentric exercise tendon OR bone mineral density impact exercise OR diaphragmatic breathing posture OR barefoot intrinsic foot muscles OR joint loading cartilage) AND (humans[MeSH] OR clinical)',
+    scopeHint: 'Bài tập cơ lệch tâm (đi xuống dốc, hạ tạ chậm), tái cấu trúc gân, cơ bàn chân và thăng bằng, tải trọng cơ học nuôi mật độ xương, thở cơ hoành và cột sống.'
+  },
+  {
+    id: 'hydration-renal-electrolytes',
+    organ: 'Metabolic',
+    domain: 'Cân bằng Dịch, Thận & Thẩm thấu Tế bào (Hydration Physiology, Renal Protection & Electrolytes)',
+    pubmedQuery: '(mild dehydration cognition OR kidney stone oxalate calcium OR potassium citrate renal OR overhydration hyponatremia OR uric acid hydration) AND (humans[MeSH] OR clinical)',
+    scopeHint: 'Mất nước nhẹ 1-2% và não bộ, sỏi thận oxalat và nghịch lý ăn đủ canxi để ngăn sỏi, uống nước rải rác so với uống dồn, chức năng lọc thận theo nhịp ngày đêm.'
+  },
+  {
+    id: 'respiratory-autonomic',
+    organ: 'Brain',
+    domain: 'Sinh lý Hô hấp, Xoang mặt & Hệ Thần kinh Tự chủ (Respiratory Nitric Oxide & Autonomic Balance)',
+    pubmedQuery: '(nasal breathing nitric oxide OR physiological sigh stress OR humming paranasal sinus nitric oxide OR heart rate variability breathing) AND (humans[MeSH] OR clinical)',
+    scopeHint: 'Thở bằng mũi so với thở miệng khi ngủ, khí Oxit Nitric tạo ra ở xoang cạnh mũi, kỹ thuật thở dài sinh lý 2 nhịp, mối liên hệ hơi thở và hệ thần kinh đối giao cảm.'
+  },
+  {
+    id: 'dermatology-skin-microbiome',
+    organ: 'Immune',
+    domain: 'Hàng rào Biểu bì, Hệ Vi sinh Da & Lành thương (Skin Microbiome, pH Mantle & Wound Biology)',
+    pubmedQuery: '(skin microbiome acid mantle OR transepidermal water loss indoor OR vitamin C prolyl hydroxylase wound OR niacinamide skin barrier OR UV photoaging diet) AND (humans[MeSH] OR review[pt])',
+    scopeHint: 'Lớp màng axit pH 5.5 và hệ vi sinh da, mất nước biểu bì trong phòng lạnh, cơ chế tổng hợp mô liên kết lành thương, dinh dưỡng hỗ trợ chống lão hóa ánh sáng.'
+  },
+  {
+    id: 'cellular-longevity-metabolites',
+    organ: 'Cellular Aging',
+    domain: 'Chuyển hóa Trường thọ & Vi chất Bảo vệ Ty thể Thế hệ mới (Next-Gen Longevity Metabolites)',
+    pubmedQuery: '(ergothioneine OCTN1 longevity OR taurine aging humans OR glycine sleep metabolism OR choline brain health OR omega-3 ALA conversion) AND (humans[MeSH] OR clinical OR review[pt])',
+    scopeHint: 'Các phân tử trường thọ mới nổi chưa từng xuất bản trên Phytocodex: Ergothioneine, Taurine, Glycine, Choline, Astaxanthin ngoài mắt, tỷ lệ chuyển hóa ALA thực vật.'
+  },
+  {
+    id: 'midlife-hormonal-transitions',
+    organ: 'Metabolic',
+    domain: 'Chuyển dịch Nội tiết Tuổi Trung niên & Chuyển hóa Theo Giới (Midlife Hormonal & Metabolic Shifts)',
+    pubmedQuery: '(perimenopause metabolic health OR muscle protein synthesis aging women OR iron deficiency ferritin fatigue OR progesterone sleep OR testosterone resistance training) AND (humans[MeSH] OR clinical)',
+    scopeHint: 'Thiếu hụt ferritin dự trữ sắt tiềm ẩn gây mệt mỏi dù không thiếu máu, thay đổi chuyển hóa tuổi 40-55, nhu cầu đạm theo tuổi, giấc ngủ giai đoạn tiền mãn kinh.'
+  },
+  {
+    id: 'food-matrix-processing',
+    organ: 'Metabolic',
+    domain: 'Cấu trúc Ma trận Thực phẩm & Tốc độ Hấp thu (Food Matrix, Processing & Satiety Biochemistry)',
+    pubmedQuery: '(food matrix bioavailability OR whole fruit versus juice glycemic OR soaking legumes phytate lectin OR ultra-processed food satiety OR carotenoid fat absorption) AND (humans[MeSH] OR clinical)',
+    scopeHint: 'Khác biệt sinh học giữa ăn nguyên trái và ép nước, ma trận chất béo giúp hấp thu vitamin tan trong dầu, ngâm hạt/đậu giảm kháng dưỡng chất, thực phẩm siêu chế biến đánh lừa tín hiệu no.'
+  }
+];
+
+// 8 rotating editorial lenses for Track B (Open Adjacent-Field Expansion)
+const EDITORIAL_LENSES = [
+  'Thói quen nhỏ trong căn bếp hằng ngày tạo ra khác biệt sinh hóa lớn',
+  'Tương tác thực phẩm - đồ uống - thuốc ít người để ý trong bữa ăn hằng ngày',
+  'Yếu tố môi trường sống (ánh sáng, không khí, nhiệt độ, đồ dùng) âm thầm tác động lên tế bào',
+  'Cơ chế tự điều chỉnh và tự chữa lành kỳ diệu của cơ thể khi được kích hoạt đúng cách',
+  'So sánh thực tế giữa hai cách chế biến hoặc hai dạng thực phẩm tưởng như giống hệt nhau',
+  'Tín hiệu sinh học sớm mà cơ thể phát ra trước khi triệu chứng rõ rệt xuất hiện',
+  'Lật lại một niềm tin dinh dưỡng phổ biến bằng bằng chứng lâm sàng mới nhất',
+  'Tối ưu hiệu suất trí não, vận động và phục hồi cho người đi làm bận rộn'
+];
+
+// === TRACK C: CURATED EVERYDAY SEEDS (65 verified uncovered seeds, auto-fades out once used) ===
 const DOMAIN_PILLARS = [
   {
     domain: 'Hóa sinh Căn bếp & Phòng ngừa Ung thư Thực chứng (Culinary Biochemistry & Chemoprevention)',
@@ -139,7 +280,7 @@ const DOMAIN_PILLARS = [
     organ: 'Brain',
     goalId: 'brain-sleep',
     ideas: [
-      'Giấc ngủ trưa 15 đến 20 phút so với ngủ 60 phút: Tránh quán tính giấc ngủ và giữ tỉnh táo đến tối',
+      'Ánh sáng hoàng hôn buổi chiều muộn giúp võng mạc phát tín hiệu chuẩn bị tiết Melatonin đúng nhịp',
       'Ngủ bù cuối tuần lệch quá 2 giờ tạo ra hội chứng lệch múi giờ xã hội (Social Jetlag) phá vỡ chuyển hóa',
       'Mất chỉ 1 đến 2% lượng nước cơ thể đã làm suy giảm trí nhớ ngắn hạn và tăng cảm giác mệt mỏi thần kinh',
       'Nấm hầu thủ (Lion Mane) và hợp chất Hericenones kích thích yếu tố tăng trưởng thần kinh NGF',
@@ -239,42 +380,154 @@ function resolveGeminiApiKey() {
   return '';
 }
 
-function pickDiversePillarAndIdea(recentOrgans = []) {
-  // Compute unused ideas for EVERY pillar using Dedup Guard v3.0
-  const pillarsWithFresh = DOMAIN_PILLARS.map(pillar => {
-    const freshIdeas = pillar.ideas.filter(idea => !checkTopicCollision({ titleVi: idea }).isDuplicate);
-    return { ...pillar, freshIdeas };
-  });
+/**
+ * Track A: Live PubMed Science Radar (Zero LLM cost, uses free NCBI E-utilities)
+ * Queries recent (2023-2026) peer-reviewed biomedical papers in an adjacent domain
+ * and returns a verified, non-duplicate paper to serve as a fresh editorial anchor.
+ */
+export async function fetchLivePubMedDiscovery(frontierDomain) {
+  try {
+    const term = `(${frontierDomain.pubmedQuery}) AND ("2023/01/01"[PDAT] : "2026/12/31"[PDAT]) AND hasabstract[text]`;
+    const searchUrl = `${NCBI_BASE}/esearch.fcgi?db=pubmed&term=${encodeURIComponent(term)}&retmax=12&sort=relevance&retmode=json&${NCBI_PARAMS}`;
 
-  const nonEmptyPillars = pillarsWithFresh.filter(p => p.freshIdeas.length > 0);
+    const ctrl = new AbortController();
+    const t1 = setTimeout(() => ctrl.abort(), 10000);
+    const searchRes = await fetch(searchUrl, {
+      signal: ctrl.signal,
+      headers: { 'User-Agent': 'ThePhytocodex-Editorial/5.0 (contact@phytocodex.org)' }
+    });
+    clearTimeout(t1);
+    if (!searchRes.ok) return null;
 
-  // Avoid repeating the last 2 published organs whenever possible
-  const lastTwoOrgans = new Set(recentOrgans.slice(0, 2));
-  const freshRotated = nonEmptyPillars.filter(p => !lastTwoOrgans.has(p.organ));
-  const candidatePool = freshRotated.length > 0 ? freshRotated : nonEmptyPillars;
+    const searchData = await searchRes.json();
+    const idList = searchData?.esearchresult?.idlist || [];
+    if (idList.length === 0) return null;
 
-  if (candidatePool.length > 0) {
-    // Balanced 30% priority for Oncology/Chemoprevention if fresh ideas remain and not just posted
-    const cancerPillar = candidatePool.find(p => p.goalId === 'cancer-prevention');
-    let chosenPillar;
-    if (cancerPillar && Math.random() < 0.30) {
-      chosenPillar = cancerPillar;
-    } else {
-      const others = candidatePool.filter(p => p.goalId !== 'cancer-prevention');
-      const pickPool = others.length > 0 ? others : candidatePool;
-      chosenPillar = pickPool[Math.floor(Math.random() * pickPool.length)];
+    await new Promise(r => setTimeout(r, 350)); // Respect NCBI <= 3 req/sec
+
+    const summaryUrl = `${NCBI_BASE}/esummary.fcgi?db=pubmed&id=${idList.join(',')}&retmode=json&${NCBI_PARAMS}`;
+    const ctrl2 = new AbortController();
+    const t2 = setTimeout(() => ctrl2.abort(), 10000);
+    const sumRes = await fetch(summaryUrl, {
+      signal: ctrl2.signal,
+      headers: { 'User-Agent': 'ThePhytocodex-Editorial/5.0 (contact@phytocodex.org)' }
+    });
+    clearTimeout(t2);
+    if (!sumRes.ok) return null;
+
+    const sumData = await sumRes.json();
+    const candidates = [];
+
+    for (const pmid of idList) {
+      const item = sumData?.result?.[pmid];
+      if (!item || !item.title || item.error) continue;
+      const title = item.title.replace(/\.$/, '').trim();
+      // Skip protocol-only, erratum, veterinary, or overly narrow case reports
+      if (/\b(?:protocol|erratum|corrigendum|comment on|letter to|case report|mouse|mice|rat|rats|murine|zebrafish|broiler|piglet)\b/i.test(title)) {
+        continue;
+      }
+      const doiObj = Array.isArray(item.articleids) ? item.articleids.find(a => a.idtype === 'doi') : null;
+      const doi = doiObj?.value || '';
+      const yearMatch = (item.pubdate || '').match(/\d{4}/);
+      const year = yearMatch ? parseInt(yearMatch[0], 10) : 2024;
+
+      // Filter against our Zero-Token Dedup Guard (checks DOI, entity signatures, title & rare keywords!)
+      const col = checkTopicCollision({ titleEn: title, titleVi: title, doi });
+      if (!col.isDuplicate) {
+        candidates.push({
+          pmid,
+          doi,
+          title,
+          journal: item.source || item.fulljournalname || 'Peer-Reviewed Journal',
+          year
+        });
+      }
     }
 
-    const randomIdea = chosenPillar.freshIdeas[Math.floor(Math.random() * chosenPillar.freshIdeas.length)];
-    return { chosenPillar, randomIdea, isOpenDiscovery: false };
+    if (candidates.length === 0) return null;
+    // Randomly pick from top 5 fresh papers so consecutive runs explore different angles
+    const topSlice = candidates.slice(0, Math.min(5, candidates.length));
+    return topSlice[Math.floor(Math.random() * topSlice.length)];
+  } catch (err) {
+    console.warn(`⚠️ [PubMed Radar] Không thể truy vấn PubMed tạm thời (${err.message}) -> chuyển sang Open Expansion.`);
+    return null;
+  }
+}
+
+/**
+ * Picks a self-expanding discovery strategy across 3 tracks:
+ * - Track A (~40%): Live PubMed Science Radar (real 2023-2026 study in an adjacent domain)
+ * - Track B (~35%): Open Adjacent-Field Expansion (adjacent domain × editorial lens, zero fixed topic list)
+ * - Track C (~25% -> auto-fades to 0%): Unused curated seeds from DOMAIN_PILLARS
+ */
+export async function pickSelfExpandingDiscovery(recentOrgans = []) {
+  const lastTwoOrgans = new Set(recentOrgans.slice(0, 2));
+
+  // Filter unused static seeds for Track C
+  const pillarsWithFresh = DOMAIN_PILLARS
+    .map(p => ({ ...p, freshIdeas: p.ideas.filter(idea => !checkTopicCollision({ titleVi: idea }).isDuplicate) }))
+    .filter(p => p.freshIdeas.length > 0);
+
+  // Pick a rotated frontier domain avoiding the last 2 published organs
+  const rotatedFrontiers = ADJACENT_FRONTIER_DOMAINS.filter(d => !lastTwoOrgans.has(d.organ));
+  const frontierPool = rotatedFrontiers.length > 0 ? rotatedFrontiers : ADJACENT_FRONTIER_DOMAINS;
+  const chosenFrontier = frontierPool[Math.floor(Math.random() * frontierPool.length)];
+  const chosenLens = EDITORIAL_LENSES[Math.floor(Math.random() * EDITORIAL_LENSES.length)];
+
+  const roll = Math.random();
+  const hasCuratedSeeds = pillarsWithFresh.length > 0;
+
+  // Track A (~40%, or ~55% when seeds are exhausted): Live PubMed Science Radar
+  if (roll < (hasCuratedSeeds ? 0.40 : 0.55)) {
+    const paper = await fetchLivePubMedDiscovery(chosenFrontier);
+    if (paper) {
+      return {
+        track: 'PUBMED_RADAR',
+        organ: chosenFrontier.organ,
+        domain: chosenFrontier.domain,
+        paper,
+        lens: chosenLens,
+        idea: null
+      };
+    }
+    // Graceful fallback to Track B if PubMed unavailable
+    return {
+      track: 'OPEN_ADJACENT_EXPANSION',
+      organ: chosenFrontier.organ,
+      domain: chosenFrontier.domain,
+      scopeHint: chosenFrontier.scopeHint,
+      lens: chosenLens,
+      paper: null,
+      idea: null
+    };
   }
 
-  // OPEN FRONTIER DISCOVERY MODE: If all static seeds are ever exhausted, NEVER recycle ideas[0]!
-  // Pick the least-recently-used organ and let Gemini discover a brand-new topic.
-  const allOrgans = ['Oncology', 'Metabolic', 'Brain', 'Gut', 'Heart', 'Cellular Aging', 'Immune'];
-  const leastRecent = allOrgans.find(o => !recentOrgans.slice(0, 4).includes(o)) || allOrgans[Math.floor(Math.random() * allOrgans.length)];
-  const fallbackPillar = DOMAIN_PILLARS.find(p => p.organ === leastRecent) || DOMAIN_PILLARS[0];
-  return { chosenPillar: fallbackPillar, randomIdea: null, isOpenDiscovery: true };
+  // Track B (~35%, or ~45% when seeds are exhausted): Open Adjacent-Field Expansion
+  if (roll < (hasCuratedSeeds ? 0.75 : 1.0)) {
+    return {
+      track: 'OPEN_ADJACENT_EXPANSION',
+      organ: chosenFrontier.organ,
+      domain: chosenFrontier.domain,
+      scopeHint: chosenFrontier.scopeHint,
+      lens: chosenLens,
+      paper: null,
+      idea: null
+    };
+  }
+
+  // Track C (~25% while unused seeds remain): Curated Everyday Seeds
+  const rotatedSeeds = pillarsWithFresh.filter(p => !lastTwoOrgans.has(p.organ));
+  const seedPool = rotatedSeeds.length > 0 ? rotatedSeeds : pillarsWithFresh;
+  const chosenPillar = seedPool[Math.floor(Math.random() * seedPool.length)];
+  const randomIdea = chosenPillar.freshIdeas[Math.floor(Math.random() * chosenPillar.freshIdeas.length)];
+  return {
+    track: 'CURATED_SEED',
+    organ: chosenPillar.organ,
+    domain: chosenPillar.domain,
+    idea: randomIdea,
+    lens: chosenLens,
+    paper: null
+  };
 }
 
 export async function generateTopicWithGemini(existingCatalog = [], feedback = null, targetTier = 'Life Dispatch') {
@@ -286,13 +539,15 @@ export async function generateTopicWithGemini(existingCatalog = [], feedback = n
 
   const exclusionSummary = getCompactExclusionSummary();
   const recentCtx = getRecentDispatchContext(8);
-  const { chosenPillar, randomIdea, isOpenDiscovery } = pickDiversePillarAndIdea(recentCtx.recentOrgans);
+  const discovery = await pickSelfExpandingDiscovery(recentCtx.recentOrgans);
 
-  // Rotate headline & opening hook archetypes randomly each run
   const chosenTitleArchetype = TITLE_ARCHETYPES[Math.floor(Math.random() * TITLE_ARCHETYPES.length)];
   const chosenHookArchetype = HOOK_ARCHETYPES[Math.floor(Math.random() * HOOK_ARCHETYPES.length)];
 
-  console.log(`🧭 [Diversity Engine] Lĩnh vực: ${chosenPillar.organ} | Kiểu tựa đề: ${chosenTitleArchetype.id} | Kiểu mở bài: ${chosenHookArchetype.id} | OpenDiscovery=${isOpenDiscovery}`);
+  console.log(`🧭 [Self-Expanding Engine v5.0] Track=${discovery.track} | Organ=${discovery.organ} | TitleStyle=${chosenTitleArchetype.id} | HookStyle=${chosenHookArchetype.id}`);
+  if (discovery.paper) {
+    console.log(`🔬 [PubMed Anchor] PMID=${discovery.paper.pmid} (${discovery.paper.year}, ${discovery.paper.journal}): "${discovery.paper.title}"`);
+  }
 
   const systemInstruction = `Bạn là TS. Hoàng Xuân Chiến (Dr. rer. nat. - Đại học Hamburg, CHLB Đức), Giám đốc Học thuật kiêm Tổng biên tập của ấn bản y sinh "Phytocodex" (phytocodex.vercel.app).
 Bạn là chuyên gia hàng đầu về Y học Chuyển hóa, Lão hóa & Trường thọ (Metabolic Longevity), Dược động học và Tín hiệu tế bào.
@@ -302,18 +557,18 @@ Bạn là chuyên gia hàng đầu về Y học Chuyển hóa, Lão hóa & Trư�
 - VĂN PHONG TS. HOÀNG XUÂN CHIẾN: Tự nhiên, điềm đạm, ấm áp, hóm hỉnh vừa đủ, sắc sảo và tôn trọng trí tuệ người đọc. Dùng ẩn dụ tinh tế để giải thích cơ chế phân tử nhưng KHÔNG sáo rỗng, KHÔNG viết kiểu văn mẫu AI.
 
 MỤC TIÊU TUYỆT ĐỐI:
-Tạo ra 1 bài viết chuyên khảo y sinh song ngữ MỚI HOÀN TOÀN, mang tính thực chứng cao (Nature/Science/Cell/Lancet/NEJM/AJCN/Nutrients), TUYỆT ĐỐI KHÔNG TRÙNG LẶP hoặc viết lại bất kỳ chủ đề, hoạt chất hay cơ chế nào đã xuất bản dưới đây!
+Tạo ra 1 bài viết chuyên khảo y sinh song ngữ MỚI HOÀN TOÀN, mở rộng kiến thức thực chứng sang các góc nhìn đời sống mới mẻ, TUYỆT ĐỐI KHÔNG TRÙNG LẶP hoặc viết lại bất kỳ chủ đề, hoạt chất hay cơ chế nào đã xuất bản dưới đây!
 
 ${exclusionSummary}
 
 QUY TẮC BẮT BUỘC VỀ TỰA ĐỀ & MỞ BÀI (CHỐNG RẬP KHUÔN AI):
 1. TIÊU ĐỀ TỰ NHIÊN (titleVi, titleEn):
-   - TUYỆT ĐỐI KHÔNG bắt đầu tiêu đề tiếng Việt bằng "Vì sao..." hay "Tại sao...", và KHÔNG bắt đầu tiêu đề tiếng Anh bằng "Why...".
+   - TUYỆT ĐỐI KHÔNG dùng "Vì sao..." hay "Tại sao..." (kể cả ở đầu câu hay ngay sau dấu hai chấm), và KHÔNG dùng "Why..." ở đầu/sau dấu hai chấm bản tiếng Anh.
    - Hạn chế tối đa các cụm sáo rỗng như "Giải mã bí mật...", "Sự thật bất ngờ...", "Phép màu...".
-   - Viết câu trần thuật hoặc cấu trúc tự nhiên theo Sentence case tiếng Việt (chỉ viết hoa chữ cái đầu câu, sau dấu hai chấm nếu là mệnh đề độc lập, và danh từ riêng/thuật ngữ).
-   - BẮT BUỘC áp dụng phong cách đặt tựa đề cho kỳ này: [${chosenTitleArchetype.name}] -> ${chosenTitleArchetype.instruction}
+   - Viết câu trần thuật hoặc cấu trúc tự nhiên theo Sentence case tiếng Việt.
+   - BẮT BUỘC áp dụng phong cách đặt tựa đề kỳ này: [${chosenTitleArchetype.name}] -> ${chosenTitleArchetype.instruction}
 2. MỞ BÀI THU HÚT & ĐA DẠNG (leadVi, leadEn):
-   - BẮT BUỘC áp dụng kiểu mở bài cho kỳ này: [${chosenHookArchetype.name}] -> ${chosenHookArchetype.instruction}
+   - BẮT BUỘC áp dụng kiểu mở bài kỳ này: [${chosenHookArchetype.name}] -> ${chosenHookArchetype.instruction}
    - CẤM TUYỆT ĐỐI các câu mở bài sáo rỗng kiểu AI sau:
      * "Trong guồng quay hối hả của cuộc sống hiện đại..." / "Trong nhịp sống hiện đại..."
      * "Có bao giờ bạn tự hỏi..." / "Bạn có bao giờ thắc mắc..." / "Đã bao giờ bạn cảm thấy..."
@@ -326,24 +581,40 @@ QUY TẮC CẤU TRÚC & KHOA HỌC BẮT BUỘC:
 3. KHÔNG dùng bất kỳ dấu em-dash (—) hay en-dash (–) nào. Chỉ dùng dấu phẩy, hai chấm, gạch nối ngắn (-) hoặc ngoặc đơn.
 4. Tóm tắt (excerptVi, excerptEn): 90-130 từ, nêu bật góc nhìn khoa học mới mẻ và giá trị thực tế.
 5. Ẩn dụ (analogyVi, analogyEn): Một đoạn so sánh ví von mới mẻ, sáng tạo, gắn sát với cơ chế của riêng bài này.
-6. Sơ đồ Flowchart (flowchartVi, flowchartEn): Chuỗi phản ứng phân tử bắt buộc dùng mũi tên "──►" và ngoặc vuông, ví dụ: [Tác nhân] ──► [Thụ thể / Enzyme] ──► [Tác động sinh học].
+6. Sơ đồ Flowchart (flowchartVi, flowchartEn): Chuỗi phản ứng phân tử bắt buộc dùng mũi tên "──►" và ngoặc vuông.
 7. Phần nội dung (sectionsVi, sectionsEn): ĐỦ 3 phần chi tiết (Heading + Body), đoạn văn thoáng 2-4 câu/đoạn:
    - Phần 1: Cơ chế sinh học đằng sau thói quen / vi chất (giải nghĩa mộc mạc từng thuật ngữ). Tối thiểu 250 từ.
    - Phần 2: Đối chiếu bằng chứng khoa học & BẮT BUỘC có 1 BẢNG SO SÁNH MARKDOWN (ít nhất 3 dòng dữ liệu cụ thể, có số liệu/ngưỡng rõ ràng). Tối thiểu 250 từ kèm bảng.
-   - Phần 3: BẮT BUỘC là phần "Ứng dụng thực tế & Khuyến nghị an toàn" (Heading chứa từ khóa như "Ứng dụng thực tế", "Chiến lược đời sống", "Khuyến nghị an toàn", "Thực hành an toàn"). Hướng dẫn cụ thể liều lượng, thời điểm, cách chế biến. Tối thiểu 250 từ.
+   - Phần 3: BẮT BUỘC là phần "Ứng dụng thực tế & Khuyến nghị an toàn" (Heading chứa từ khóa như "Ứng dụng thực tế", "Chiến lược đời sống", "Khuyến nghị an toàn"). Hướng dẫn cụ thể liều lượng, thời điểm, cách chế biến. Tối thiểu 250 từ.
 8. Tổng độ dài văn bản tiếng Việt đạt 850 - 1.250 từ, tiếng Anh đạt 750 - 1.100 từ.
 9. TÀI LIỆU THAM KHẢO CÓ THẬT (ZERO HALLUCINATION):
-   - Chỉ dẫn bài báo gốc thực sự tồn tại trên PubMed/CrossRef (Nature, Science, Cell, Lancet, NEJM, BMJ, AJCN, Nutrients, J Nutr, Am J Clin Nutr, v.v.).
-   - "label": Tiêu đề nguyên bản tiếng Anh chính xác. Để trống pmid/doi nếu không chắc 100% (hệ thống Citation Verifier sẽ tự tra cứu và đối khớp PubMed).
-10. BỘ TÓM TẮT & HƯỚNG DẪN THỰC HÀNH V2: Điền đầy đủ briefVi, briefEn (bottomLine, evidence, 3 takeaways) và practicalVi, practicalEn (steps, avoidIf, interactions, seeDoctor).
+   - Chỉ dẫn bài báo gốc thực sự tồn tại trên PubMed/CrossRef. Nếu đề bài có sẵn bài báo gốc từ PubMed Radar, BẮT BUỘC đưa chính xác bài báo đó làm tài liệu tham khảo số 1 (giữ nguyên title, pmid, doi, journal, year).
+10. BỘ TÓM TẮT & HƯỚNG DẪN THỰC HÀNH V2: Điền đầy đủ briefVi, briefEn và practicalVi, practicalEn.
 11. TAGS THEO MỤC SỨC KHỎE: tagsVi và tagsEn chứa từ khóa gần gũi (như giac-ngu, duong-huyet, tim-mach, ruot, nang-luong, lao-hoa, noi-tiet, khop, gan, mat-da, ung-thu, mien-dich).
 12. TỪ KHÓA TÌM ẢNH (imageSearchQueries): Mảng 4 cụm từ khóa tiếng Anh ngắn (2-4 từ) mô tả CHÍNH XÁC thực phẩm, dược liệu, nguyên liệu nấu ăn hoặc khung cảnh đời thường của bài viết (TUYỆT ĐỐI KHÔNG dùng cụm chung chung như "fitness exercise", "healthy nutrition", "cancer laboratory").`;
 
-  const isLifeDispatch = targetTier === 'Life Dispatch';
-  const topicDirective = isOpenDiscovery
-    ? `- CHẾ ĐỘ KHÁM PHÁ CHỦ ĐỀ MỚI HOÀN TOÀN (Open Frontier): Hãy chọn 1 chủ đề đời sống y sinh cụ thể, thú vị, có bằng chứng nghiên cứu rõ ràng thuộc nhóm cơ quan "${chosenPillar.organ}" (${chosenPillar.domain}), HOÀN TOÀN CHƯA TỪNG XUẤT HIỆN trong danh mục loại trừ ở trên.`
-    : `- Lĩnh vực: ${chosenPillar.domain}\n- Phân loại cơ quan: "${chosenPillar.organ}"\n- Gợi ý chủ đề gốc (hãy viết lại tựa đề thật tự nhiên theo đúng phong cách [${chosenTitleArchetype.name}], KHÔNG copy nguyên văn): "${randomIdea}"`;
+  let topicDirective = '';
+  if (discovery.track === 'PUBMED_RADAR' && discovery.paper) {
+    topicDirective = `- NGUỒN KHÁM PHÁ TRỰC TIẾP TỪ PUBMED (Nghiên cứu mới công bố):
+  * Tiêu đề nghiên cứu gốc: "${discovery.paper.title}"
+  * Tạp chí: ${discovery.paper.journal} (${discovery.paper.year}) | PMID: ${discovery.paper.pmid}${discovery.paper.doi ? ` | DOI: ${discovery.paper.doi}` : ''}
+- Lĩnh vực mở rộng: ${discovery.domain} | Nhóm cơ quan: "${discovery.organ}"
+- Lăng kính biên tập: ${discovery.lens}
+- NHIỆM VỤ: Chuyển hóa phát hiện khoa học có thật từ nghiên cứu trên thành một bài báo đời sống hấp dẫn, dễ áp dụng (hoặc chuyên sâu nếu tier là Clinical Deep-Dive), đặt tựa đề thật tự nhiên theo phong cách [${chosenTitleArchetype.name}] và dùng chính nghiên cứu trên làm tài liệu tham khảo #1.`;
+  } else if (discovery.track === 'OPEN_ADJACENT_EXPANSION') {
+    topicDirective = `- CHẾ ĐỘ TỰ MỞ RỘNG LĨNH VỰC LIÊN QUAN (Open Adjacent-Field Expansion — KHÔNG bị bó hẹp vào danh sách có sẵn):
+  * Lĩnh vực mở rộng: ${discovery.domain}
+  * Gợi mở hướng khám phá: ${discovery.scopeHint}
+  * Lăng kính đời sống kỳ này: ${discovery.lens}
+  * Phân loại cơ quan: "${discovery.organ}"
+- NHIỆM VỤ: Tự do đề xuất 1 chủ đề y sinh/dinh dưỡng/lối sống CỤ THỂ, MỚI LẠ, có bằng chứng nghiên cứu rõ ràng nằm trong giao điểm giữa lĩnh vực và lăng kính trên, HOÀN TOÀN KHÔNG TRÙNG với bất kỳ bài nào trong danh mục loại trừ.`;
+  } else {
+    topicDirective = `- Lĩnh vực: ${discovery.domain}
+- Phân loại cơ quan: "${discovery.organ}"
+- Gợi ý chủ đề gốc (hãy viết lại tựa đề thật tự nhiên theo đúng phong cách [${chosenTitleArchetype.name}], KHÔNG copy nguyên văn): "${discovery.idea}"`;
+  }
 
+  const isLifeDispatch = targetTier === 'Life Dispatch';
   const basePrompt = isLifeDispatch
     ? `Hãy viết một bài báo khoa học đời sống thường thức gần gũi, chuẩn xác (Tier: "Life Dispatch") song ngữ (Tiếng Việt & Tiếng Anh) cho ấn bản Phytocodex của TS. Hoàng Xuân Chiến.
 
@@ -351,9 +622,8 @@ QUY TẮC CẤU TRÚC & KHOA HỌC BẮT BUỘC:
 ${topicDirective}
 
 YÊU CẦU BIÊN TẬP BẮT BUỘC:
-- Tựa đề theo phong cách: [${chosenTitleArchetype.name}] — KHÔNG bắt đầu bằng "Vì sao/Tại sao" hay "Why".
+- Tựa đề theo phong cách: [${chosenTitleArchetype.name}] — KHÔNG dùng "Vì sao/Tại sao" hay "Why".
 - Mở bài theo phong cách: [${chosenHookArchetype.name}] — tự nhiên, cuốn hút, KHÔNG dùng câu sáo rỗng AI hay bịa nhân vật "Chị Lan/Anh Minh".
-- Nếu là đề tài phòng ngừa ung thư, chú trọng giải pháp thực tiễn từ căn bếp, cách chế biến hoặc hợp chất thực vật bảo vệ thay vì chỉ hù dọa.
 - Slug tiếng Việt kết thúc bằng "-vi", slug tiếng Anh kết thúc bằng "-en".`
     : `Hãy viết một bài phân tích chuyên khảo y sinh chuyên sâu (Tier: "Clinical Deep-Dive") song ngữ (Tiếng Việt & Tiếng Anh) cho ấn bản Phytocodex của TS. Hoàng Xuân Chiến.
 
@@ -362,7 +632,7 @@ ${topicDirective}
 
 YÊU CẦU BIÊN TẬP BẮT BUỘC:
 - Đi sâu cơ chế phân tử, thụ thể, enzym, dược động học kèm bảng so sánh định lượng cụ thể.
-- Tựa đề theo phong cách: [${chosenTitleArchetype.name}] — tự nhiên, chuẩn khoa học, KHÔNG bắt đầu bằng "Vì sao/Tại sao" hay "Why".
+- Tựa đề theo phong cách: [${chosenTitleArchetype.name}] — tự nhiên, chuẩn khoa học, KHÔNG dùng "Vì sao/Tại sao" hay "Why".
 - Mở bài theo phong cách: [${chosenHookArchetype.name}] — ấn tượng, trực diện, không mở đầu rập khuôn.
 - Slug tiếng Việt kết thúc bằng "-vi", slug tiếng Anh kết thúc bằng "-en".`;
 
@@ -372,11 +642,11 @@ TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON VỚI CẤU TRÚC SAU (KHÔNG kèm markdow
   "topicId": "slug-id-ngan-gon",
   "slugVi": "slug-tieng-viet-co-hau-to-vi",
   "slugEn": "slug-tieng-anh-co-hau-to-en",
-  "titleVi": "Tiêu đề tiếng Việt tự nhiên, KHÔNG bắt đầu bằng Vì sao/Tại sao",
-  "titleEn": "Natural English editorial headline, NOT starting with Why",
+  "titleVi": "Tiêu đề tiếng Việt tự nhiên, KHÔNG dùng Vì sao/Tại sao",
+  "titleEn": "Natural English editorial headline, NOT using Why",
   "excerptVi": "Tóm tắt tiếng Việt 90-130 từ",
   "excerptEn": "English excerpt 80-120 words",
-  "organ": "${chosenPillar.organ}",
+  "organ": "${discovery.organ}",
   "tier": "${targetTier}",
   "tagsVi": ["tag-1", "tag-2", "tag-3", "tag-4"],
   "tagsEn": ["tag-1", "tag-2", "tag-3", "tag-4"],
@@ -389,12 +659,12 @@ TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON VỚI CẤU TRÚC SAU (KHÔNG kèm markdow
   "references": [
     {
       "ordinal": 1,
-      "label": "Exact authentic paper title in English as published in journal",
-      "pmid": "",
-      "doi": "",
+      "label": "${discovery.paper ? discovery.paper.title.replace(/"/g, '\\"') : 'Exact authentic paper title in English as published in journal'}",
+      "pmid": "${discovery.paper ? discovery.paper.pmid : ''}",
+      "doi": "${discovery.paper ? discovery.paper.doi : ''}",
       "design": "RCT / Meta-analysis / Systematic Review",
-      "journal": "Journal Name",
-      "year": 2023,
+      "journal": "${discovery.paper ? discovery.paper.journal.replace(/"/g, '\\"') : 'Journal Name'}",
+      "year": ${discovery.paper ? discovery.paper.year : 2024},
       "abstract": "Key molecular and clinical findings in 2 concise sentences."
     }
   ],
@@ -449,7 +719,6 @@ TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON VỚI CẤU TRÚC SAU (KHÔNG kèm markdow
       const controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), 90000);
 
-      // FIX v4.0: Gắn đầy đủ schema + feedback vào prompt thực sự gửi lên Gemini!
       const fullPrompt = `${basePrompt}\n${buildSchemaAndFeedback(currentFeedback)}`;
 
       const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
@@ -461,7 +730,7 @@ TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON VỚI CẤU TRÚC SAU (KHÔNG kèm markdow
           systemInstruction: { parts: [{ text: systemInstruction }] },
           generationConfig: {
             responseMimeType: 'application/json',
-            temperature: 0.72
+            temperature: 0.78
           }
         })
       });
@@ -479,7 +748,6 @@ TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON VỚI CẤU TRÚC SAU (KHÔNG kèm markdow
 
       const parsed = JSON.parse(rawText);
       if (parsed && parsed.slugVi && parsed.sectionsVi && parsed.sectionsEn) {
-        // Kiểm định chống trùng lặp cục bộ tức thì bằng Deterministic Dedup Guard v3.0 (0 token)
         const collision = checkTopicCollision(parsed);
         if (collision.isDuplicate) {
           console.warn(`🛑 [Topic Dedup Guard BỊ CHẶN] ${collision.reason}`);
@@ -487,14 +755,13 @@ TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON VỚI CẤU TRÚC SAU (KHÔNG kèm markdow
           continue;
         }
 
-        // Kiểm tra nhanh chống tiêu đề "Vì sao/Tại sao/Why" (cả ở đầu câu và sau dấu hai chấm)
         if (/(?:^|[:\-]\s*)(?:vì sao|tại sao)\b/i.test((parsed.titleVi || '').trim()) || /(?:^|[:\-]\s*)why\b/i.test((parsed.titleEn || '').trim())) {
           console.warn(`🛑 [Title Style Guard] Tiêu đề dùng khuôn mẫu Vì sao/Why ("${parsed.titleVi}") -> yêu cầu model tiếp theo viết tự nhiên hơn.`);
           currentFeedback = `Tiêu đề "${parsed.titleVi}" dùng khuôn mẫu "Vì sao/Tại sao/Why". BẮT BUỘC đặt lại tiêu đề tự nhiên theo phong cách [${chosenTitleArchetype.name}], KHÔNG dùng "Vì sao/Tại sao/Why" ở đầu câu hay sau dấu hai chấm.`;
           continue;
         }
 
-        console.log(`🎯 [Gemini Generator] AI đã sinh thành công bài mới: "${parsed.titleVi}"`);
+        console.log(`🎯 [Gemini Generator] AI đã sinh thành công bài mới (${discovery.track}): "${parsed.titleVi}"`);
         return parsed;
       }
     } catch (err) {
