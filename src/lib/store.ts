@@ -6317,6 +6317,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "The molecular mechanisms of skin moisturization involve complex interactions within the stratum corneum, emphasizing the role of pH regulation in maintaining barrier integrity and microbial homeostasis.",
     },
   ],
+  "ergothioneine-chia-khoa-ty-the-vi": [
+    {
+      ordinal: 1,
+      label: "The longevity vitamin: Ergothioneine as a cytoprotective agent",
+      pmid: "",
+      doi: "10.1016/j.tifs.2022.11.018",
+      design: "Systematic Review",
+      sampleSize: null,
+      journal: "Trends in Food Science & Technology",
+      year: 2023,
+      abstract: "Ergothioneine acts as a unique sulfur-containing amino acid that protects DNA and proteins from oxidative damage. It is specifically sequestered by the OCTN1 transporter into mitochondria to maintain cellular integrity.",
+    },
+  ],
+  "ergothioneine-mitochondrial-key-en": [
+    {
+      ordinal: 1,
+      label: "The longevity vitamin: Ergothioneine as a cytoprotective agent",
+      pmid: "",
+      doi: "10.1016/j.tifs.2022.11.018",
+      design: "Systematic Review",
+      sampleSize: null,
+      journal: "Trends in Food Science & Technology",
+      year: 2023,
+      abstract: "Ergothioneine acts as a unique sulfur-containing amino acid that protects DNA and proteins from oxidative damage. It is specifically sequestered by the OCTN1 transporter into mitochondria to maintain cellular integrity.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

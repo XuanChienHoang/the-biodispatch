@@ -1,8 +1,8 @@
 {
   "version": "3.0.0",
-  "fileCount": 238,
-  "lastUpdated": "2026-11-24T03:21:14.000Z",
-  "totalTopics": 215,
+  "fileCount": 240,
+  "lastUpdated": "2026-11-24T04:31:42.140Z",
+  "totalTopics": 217,
   "topics": [
     {
       "id": "can-bang-ph-da-va-he-vi-sinh",
@@ -54,6 +54,110 @@
         "hai",
         "viet",
         "tich"
+      ]
+    },
+    {
+      "id": "ergothioneine-chia-khoa-ty-the",
+      "slugs": [
+        "ergothioneine-chia-khoa-ty-the-vi"
+      ],
+      "lang": "vi",
+      "titleVi": "5 miligam Ergothioneine mỗi ngày: Liều lượng bảo vệ ty thể khỏi sự lão hóa sớm",
+      "titleEn": "5 miligam Ergothioneine mỗi ngày: Liều lượng bảo vệ ty thể khỏi sự lão hóa sớm",
+      "organ": "Cellular Aging",
+      "tier": "Life Dispatch",
+      "doi": "10.1016/j.tifs.2022.11.018",
+      "date": "2026-11-24T05:00:00Z",
+      "tags": [
+        "lao-hoa",
+        "ty-the",
+        "vi-chat",
+        "truong-tho"
+      ],
+      "leadVi": "Nhiều người tin rằng chỉ cần bổ sung đủ rau xanh và trái cây là đã cung cấp đầy đủ khiên chắn chống oxy hóa cho cơ thể. Thực tế, phần lớn cá",
+      "keywords": [
+        "miligam",
+        "ergothioneine",
+        "lieu",
+        "luong",
+        "khoi",
+        "lao",
+        "hoa",
+        "som",
+        "chat",
+        "truong",
+        "tho",
+        "chi",
+        "chong",
+        "oxy",
+        "thong",
+        "thuong",
+        "duoc",
+        "chu",
+        "dong",
+        "van",
+        "vao",
+        "quan",
+        "viet",
+        "kham",
+        "pha",
+        "thuc",
+        "hoat",
+        "suy",
+        "thoai",
+        "sanh"
+      ]
+    },
+    {
+      "id": "ergothioneine-mitochondrial-key",
+      "slugs": [
+        "ergothioneine-mitochondrial-key-en"
+      ],
+      "lang": "en",
+      "titleVi": "5 milligrams of Ergothioneine daily: The dosage to shield mitochondria from premature aging",
+      "titleEn": "5 milligrams of Ergothioneine daily: The dosage to shield mitochondria from premature aging",
+      "organ": "Cellular Aging",
+      "tier": "Life Dispatch",
+      "doi": "10.1016/j.tifs.2022.11.018",
+      "date": "2026-11-24T05:00:00Z",
+      "tags": [
+        "aging",
+        "mitochondria",
+        "micronutrients",
+        "longevity"
+      ],
+      "leadVi": "",
+      "keywords": [
+        "milligrams",
+        "ergothioneine",
+        "daily",
+        "dosage",
+        "shield",
+        "mitochondria",
+        "premature",
+        "aging",
+        "micronutrients",
+        "longevity",
+        "not",
+        "merely",
+        "antioxidant",
+        "but",
+        "molecule",
+        "actively",
+        "transported",
+        "vital",
+        "organs",
+        "article",
+        "explores",
+        "compound",
+        "shields",
+        "degradation",
+        "comparing",
+        "natural",
+        "mushroom",
+        "sources",
+        "other",
+        "dietary"
       ]
     },
     {
