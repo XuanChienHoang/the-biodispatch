@@ -6343,6 +6343,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Ergothioneine acts as a unique sulfur-containing amino acid that protects DNA and proteins from oxidative damage. It is specifically sequestered by the OCTN1 transporter into mitochondria to maintain cellular integrity.",
     },
   ],
+  "lam-dung-men-vi-sinh-va-hau-sinh-hoc-postbiotic-vi": [
+    {
+      ordinal: 1,
+      label: "The interplay between diet and the gut microbiome: implications for health and disease",
+      pmid: "39009882",
+      doi: "10.1038/s41579-024-01068-4",
+      design: "Systematic Review",
+      sampleSize: null,
+      journal: "Nat Rev Microbiol",
+      year: 2024,
+      abstract: "This comprehensive review delineates how dietary substrates determine gut microbial metabolism, highlighting the critical role of microbiome-derived postbiotics in systemic metabolic health and immune regulation. It demonstrates that sustained dietary diversity, rather than transient probiotic supplementation, primary shapes stable host-microbe homeostasis.",
+    },
+  ],
+  "commercial-probiotics-versus-native-postbiotics-en": [
+    {
+      ordinal: 1,
+      label: "The interplay between diet and the gut microbiome: implications for health and disease",
+      pmid: "39009882",
+      doi: "10.1038/s41579-024-01068-4",
+      design: "Systematic Review",
+      sampleSize: null,
+      journal: "Nat Rev Microbiol",
+      year: 2024,
+      abstract: "This comprehensive review delineates how dietary substrates determine gut microbial metabolism, highlighting the critical role of microbiome-derived postbiotics in systemic metabolic health and immune regulation. It demonstrates that sustained dietary diversity, rather than transient probiotic supplementation, primary shapes stable host-microbe homeostasis.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
