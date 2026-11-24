@@ -6291,6 +6291,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Advanced glycation end products (AGEs) accumulate in dermal extracellular matrix proteins due to chronic high sugar intake and oxidative stress, leading to cross-linking of collagen fibers, loss of skin elasticity, and premature wrinkle formation. Dietary interventions focusing on low glycemic index foods and natural polyphenols effectively inhibit glycation pathways and preserve skin structural integrity.",
     },
   ],
+  "can-bang-ph-da-va-he-vi-sinh-vi": [
+    {
+      ordinal: 1,
+      label: "Moisturizing at a molecular level - The basis of Corneocare",
+      pmid: "36453857",
+      doi: "10.1111/ics.12832",
+      design: "Systematic Review",
+      sampleSize: null,
+      journal: "Int J Cosmet Sci",
+      year: 2023,
+      abstract: "The molecular mechanisms of skin moisturization involve complex interactions within the stratum corneum, emphasizing the role of pH regulation in maintaining barrier integrity and microbial homeostasis.",
+    },
+  ],
+  "skin-ph-balance-microbiome-en": [
+    {
+      ordinal: 1,
+      label: "Moisturizing at a molecular level - The basis of Corneocare",
+      pmid: "36453857",
+      doi: "10.1111/ics.12832",
+      design: "Systematic Review",
+      sampleSize: null,
+      journal: "Int J Cosmet Sci",
+      year: 2023,
+      abstract: "The molecular mechanisms of skin moisturization involve complex interactions within the stratum corneum, emphasizing the role of pH regulation in maintaining barrier integrity and microbial homeostasis.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
