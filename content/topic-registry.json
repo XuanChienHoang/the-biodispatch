@@ -1,8 +1,8 @@
 {
   "version": "3.0.0",
-  "fileCount": 242,
-  "lastUpdated": "2026-11-24T15:58:19.087Z",
-  "totalTopics": 219,
+  "fileCount": 244,
+  "lastUpdated": "2026-11-24T19:07:56.945Z",
+  "totalTopics": 221,
   "topics": [
     {
       "id": "commercial-probiotics-versus-native-postbiotics",
@@ -57,6 +57,58 @@
       ]
     },
     {
+      "id": "con-lac-tien-dinh-va-co-may-geroscience",
+      "slugs": [
+        "con-lac-tien-dinh-va-co-may-geroscience-vi"
+      ],
+      "lang": "vi",
+      "titleVi": "Con lắc tiền đình và cỗ máy geroscience: Trạm kiểm soát thăng bằng và đà suy giảm giác quan",
+      "titleEn": "Con lắc tiền đình và cỗ máy geroscience: Trạm kiểm soát thăng bằng và đà suy giảm giác quan",
+      "organ": "Brain",
+      "tier": "Clinical Deep-Dive",
+      "doi": "10.1001/jama.2025.11289",
+      "date": "2026-11-24T17:00:00Z",
+      "tags": [
+        "geroscience",
+        "lao-hoa",
+        "ruot",
+        "nang-luong"
+      ],
+      "leadVi": "Năm 1998, các nhà khoa học tại Viện Lão hóa Quốc gia Hoa Kỳ nhận thấy những con chuột bị tổn thương tế bào lông tai trong không chỉ mất thăn",
+      "keywords": [
+        "con",
+        "lac",
+        "tien",
+        "dinh",
+        "may",
+        "geroscience",
+        "tram",
+        "kiem",
+        "soat",
+        "thang",
+        "bang",
+        "suy",
+        "giam",
+        "giac",
+        "quan",
+        "lao",
+        "hoa",
+        "ruot",
+        "nang",
+        "luong",
+        "loang",
+        "choang",
+        "buoc",
+        "tinh",
+        "trang",
+        "thinh",
+        "luc",
+        "tuoi",
+        "trung",
+        "nien"
+      ]
+    },
+    {
       "id": "lam-dung-men-vi-sinh-va-hau-sinh-hoc-postbiotic",
       "slugs": [
         "lam-dung-men-vi-sinh-va-hau-sinh-hoc-postbiotic-vi"
@@ -106,6 +158,58 @@
         "ket",
         "qua",
         "nghien"
+      ]
+    },
+    {
+      "id": "vestibular-pendulum-and-geroscience-framework",
+      "slugs": [
+        "vestibular-pendulum-and-geroscience-framework-en"
+      ],
+      "lang": "en",
+      "titleVi": "The Vestibular Pendulum and the Geroscience Framework for Sensory Longevity",
+      "titleEn": "The Vestibular Pendulum and the Geroscience Framework for Sensory Longevity",
+      "organ": "Brain",
+      "tier": "Clinical Deep-Dive",
+      "doi": "10.1001/jama.2025.11289",
+      "date": "2026-11-24T17:00:00Z",
+      "tags": [
+        "geroscience",
+        "aging",
+        "brain",
+        "balance"
+      ],
+      "leadVi": "",
+      "keywords": [
+        "vestibular",
+        "pendulum",
+        "geroscience",
+        "framework",
+        "sensory",
+        "longevity",
+        "aging",
+        "brain",
+        "balance",
+        "loss",
+        "age",
+        "related",
+        "hearing",
+        "decline",
+        "are",
+        "not",
+        "merely",
+        "isolated",
+        "organ",
+        "failures",
+        "but",
+        "systemic",
+        "windows",
+        "reflecting",
+        "velocity",
+        "landmark",
+        "translational",
+        "review",
+        "jama",
+        "highlights"
       ]
     },
     {

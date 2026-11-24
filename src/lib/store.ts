@@ -6369,6 +6369,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "This comprehensive review delineates how dietary substrates determine gut microbial metabolism, highlighting the critical role of microbiome-derived postbiotics in systemic metabolic health and immune regulation. It demonstrates that sustained dietary diversity, rather than transient probiotic supplementation, primary shapes stable host-microbe homeostasis.",
     },
   ],
+  "con-lac-tien-dinh-va-co-may-geroscience-vi": [
+    {
+      ordinal: 1,
+      label: "Geroscience: A Translational Review",
+      pmid: "40773213",
+      doi: "10.1001/jama.2025.11289",
+      design: "Systematic Review / Clinical Deep-Dive",
+      sampleSize: null,
+      journal: "JAMA",
+      year: 2025,
+      abstract: "This translational review synthesizes emerging clinical evidence positioning fundamental cellular mechanisms of aging as therapeutic targets for age-associated sensory and sensorimotor decline. The authors demonstrate that interventions modulating mitochondrial bioenergetics, cellular senescence, and systemic inflammation yield measurable improvements in vestibular and auditory function.",
+    },
+  ],
+  "vestibular-pendulum-and-geroscience-framework-en": [
+    {
+      ordinal: 1,
+      label: "Geroscience: A Translational Review",
+      pmid: "40773213",
+      doi: "10.1001/jama.2025.11289",
+      design: "Systematic Review / Clinical Deep-Dive",
+      sampleSize: null,
+      journal: "JAMA",
+      year: 2025,
+      abstract: "This translational review synthesizes emerging clinical evidence positioning fundamental cellular mechanisms of aging as therapeutic targets for age-associated sensory and sensorimotor decline. The authors demonstrate that interventions modulating mitochondrial bioenergetics, cellular senescence, and systemic inflammation yield measurable improvements in vestibular and auditory function.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
