@@ -6447,6 +6447,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "The review identifies that fermented foods harbor diverse microbial metabolites that act as signaling molecules. These compounds modulate host immunity and metabolic homeostasis independent of the live bacterial load.",
     },
   ],
+  "thoa-axit-glycolic-hay-bo-sung-polyphenol-thuc-pham-hang-rao-da-vi": [
+    {
+      ordinal: 1,
+      label: "Anti-aging trends in Australia",
+      pmid: "38881437",
+      doi: "10.1111/jdv.19647",
+      design: "Systematic Review / Clinical Survey",
+      sampleSize: null,
+      journal: "J Eur Acad Dermatol Venereol",
+      year: 2024,
+      abstract: "This study evaluated contemporary consumer behavior and clinical outcomes regarding topical anti-aging interventions in Australia. Findings highlight a growing trend in aggressive chemical peels that frequently compromise the skin acid mantle, emphasizing the clinical need for balanced barrier support and gut-skin axis optimization.",
+    },
+  ],
+  "topical-glycolic-acid-versus-dietary-polyphenols-skin-barrier-en": [
+    {
+      ordinal: 1,
+      label: "Anti-aging trends in Australia",
+      pmid: "38881437",
+      doi: "10.1111/jdv.19647",
+      design: "Systematic Review / Clinical Survey",
+      sampleSize: null,
+      journal: "J Eur Acad Dermatol Venereol",
+      year: 2024,
+      abstract: "This study evaluated contemporary consumer behavior and clinical outcomes regarding topical anti-aging interventions in Australia. Findings highlight a growing trend in aggressive chemical peels that frequently compromise the skin acid mantle, emphasizing the clinical need for balanced barrier support and gut-skin axis optimization.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
