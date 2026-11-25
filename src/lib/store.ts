@@ -6395,6 +6395,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "This translational review synthesizes emerging clinical evidence positioning fundamental cellular mechanisms of aging as therapeutic targets for age-associated sensory and sensorimotor decline. The authors demonstrate that interventions modulating mitochondrial bioenergetics, cellular senescence, and systemic inflammation yield measurable improvements in vestibular and auditory function.",
     },
   ],
+  "canh-bao-suy-giam-xuong-gan-tien-man-kinh-vi": [
+    {
+      ordinal: 1,
+      label: "Effects of mind-body exercise on perimenopausal and postmenopausal women: a systematic review and meta-analysis",
+      pmid: "38669625",
+      doi: "10.1097/GME.0000000000002336",
+      design: "Systematic Review & Meta-analysis",
+      sampleSize: null,
+      journal: "Menopause",
+      year: 2024,
+      abstract: "This systematic review evaluated the impact of mind-body exercises on clinical symptoms, bone mineral density, and physical function in perimenopausal and postmenopausal women. The evidence indicates significant improvements in bone retention, joint mechanics, and neuro-endocrine stress markers through low-impact eccentric load movement.",
+    },
+  ],
+  "mind-body-exercise-perimenopause-bone-tendon-en": [
+    {
+      ordinal: 1,
+      label: "Effects of mind-body exercise on perimenopausal and postmenopausal women: a systematic review and meta-analysis",
+      pmid: "38669625",
+      doi: "10.1097/GME.0000000000002336",
+      design: "Systematic Review & Meta-analysis",
+      sampleSize: null,
+      journal: "Menopause",
+      year: 2024,
+      abstract: "This systematic review evaluated the impact of mind-body exercises on clinical symptoms, bone mineral density, and physical function in perimenopausal and postmenopausal women. The evidence indicates significant improvements in bone retention, joint mechanics, and neuro-endocrine stress markers through low-impact eccentric load movement.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
