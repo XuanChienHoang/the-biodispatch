@@ -1,9 +1,61 @@
 {
   "version": "3.0.0",
-  "fileCount": 250,
-  "lastUpdated": "2026-11-25T15:42:14.612Z",
-  "totalTopics": 227,
+  "fileCount": 252,
+  "lastUpdated": "2026-11-25T18:17:36.363Z",
+  "totalTopics": 229,
   "topics": [
+    {
+      "id": "repeating-healthy-greens-erodes-gut-microbiome-diversity",
+      "slugs": [
+        "repeating-healthy-greens-erodes-gut-microbiome-diversity-en"
+      ],
+      "lang": "en",
+      "titleVi": "Repeating a Few Healthy Greens Daily Quietly Erodes Gut Microbiome Diversity",
+      "titleEn": "Repeating a Few Healthy Greens Daily Quietly Erodes Gut Microbiome Diversity",
+      "organ": "Gut",
+      "tier": "Life Dispatch",
+      "doi": "10.1128/mSystems.00031-18",
+      "date": "2026-11-25T17:00:00Z",
+      "tags": [
+        "gut-microbiome",
+        "plant-diversity",
+        "scfa",
+        "metabolic-health"
+      ],
+      "leadVi": "",
+      "keywords": [
+        "repeating",
+        "few",
+        "greens",
+        "daily",
+        "quietly",
+        "erodes",
+        "gut",
+        "microbiome",
+        "diversity",
+        "plant",
+        "scfa",
+        "metabolic",
+        "consuming",
+        "large",
+        "quantities",
+        "just",
+        "two",
+        "three",
+        "green",
+        "vegetables",
+        "falls",
+        "short",
+        "building",
+        "resilient",
+        "intestinal",
+        "ecosystem",
+        "data",
+        "000",
+        "participants",
+        "american"
+      ]
+    },
     {
       "id": "thoa-axit-glycolic-hay-bo-sung-polyphenol-thuc-pham-hang-rao-da",
       "slugs": [
@@ -54,6 +106,58 @@
         "huong",
         "chong",
         "dai"
+      ]
+    },
+    {
+      "id": "thoi-quen-an-lap-lai-rau-xanh-lam-ngheo-he-vi-sinh-ruot",
+      "slugs": [
+        "thoi-quen-an-lap-lai-rau-xanh-lam-ngheo-he-vi-sinh-ruot-vi"
+      ],
+      "lang": "vi",
+      "titleVi": "Thói quen ăn lặp lại vài loại rau xanh lành mạnh vô tình kiệt quệ độ đa dạng hệ vi sinh đường ruột",
+      "titleEn": "Thói quen ăn lặp lại vài loại rau xanh lành mạnh vô tình kiệt quệ độ đa dạng hệ vi sinh đường ruột",
+      "organ": "Gut",
+      "tier": "Life Dispatch",
+      "doi": "10.1128/mSystems.00031-18",
+      "date": "2026-11-25T17:00:00Z",
+      "tags": [
+        "ruot",
+        "he-vi-sinh",
+        "dinh-duong",
+        "lao-hoa"
+      ],
+      "leadVi": "Nhiều người duy trì thói quen ăn uống vô cùng chuẩn mực bằng cách luộc một đĩa súp lơ xanh hoặc ăn một bát xà lách vào mỗi bữa tối. Họ tin r",
+      "keywords": [
+        "thoi",
+        "quen",
+        "lap",
+        "lai",
+        "vai",
+        "loai",
+        "rau",
+        "xanh",
+        "lanh",
+        "manh",
+        "tinh",
+        "kiet",
+        "que",
+        "dang",
+        "sinh",
+        "duong",
+        "ruot",
+        "dinh",
+        "lao",
+        "hoa",
+        "viec",
+        "deu",
+        "dan",
+        "duoc",
+        "coi",
+        "sieu",
+        "thuc",
+        "pham",
+        "nuoi",
+        "phong"
       ]
     },
     {

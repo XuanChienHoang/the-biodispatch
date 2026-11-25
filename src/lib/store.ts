@@ -6473,6 +6473,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "This study evaluated contemporary consumer behavior and clinical outcomes regarding topical anti-aging interventions in Australia. Findings highlight a growing trend in aggressive chemical peels that frequently compromise the skin acid mantle, emphasizing the clinical need for balanced barrier support and gut-skin axis optimization.",
     },
   ],
+  "thoi-quen-an-lap-lai-rau-xanh-lam-ngheo-he-vi-sinh-ruot-vi": [
+    {
+      ordinal: 1,
+      label: "American Gut: an Open Platform for Citizen Science Microbiome Research",
+      pmid: "29795809",
+      doi: "10.1128/mSystems.00031-18",
+      design: "Observational Cohort Study",
+      sampleSize: null,
+      journal: "mSystems",
+      year: 2018,
+      abstract: "Analysis of over 10,000 citizen science samples showed that individuals consuming more than 30 plant types per week had significantly higher gut microbial diversity compared to those consuming fewer than 10 plant types. This diversity strongly correlated with reduced antibiotic resistance genes and specialized short-chain fatty acid metabolic pathways.",
+    },
+  ],
+  "repeating-healthy-greens-erodes-gut-microbiome-diversity-en": [
+    {
+      ordinal: 1,
+      label: "American Gut: an Open Platform for Citizen Science Microbiome Research",
+      pmid: "29795809",
+      doi: "10.1128/mSystems.00031-18",
+      design: "Observational Cohort Study",
+      sampleSize: null,
+      journal: "mSystems",
+      year: 2018,
+      abstract: "Analysis of over 10,000 citizen science samples showed that individuals consuming more than 30 plant types per week had significantly higher gut microbial diversity compared to those consuming fewer than 10 plant types. This diversity strongly correlated with reduced antibiotic resistance genes and specialized short-chain fatty acid metabolic pathways.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
