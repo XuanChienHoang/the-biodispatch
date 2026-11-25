@@ -6421,6 +6421,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "This systematic review evaluated the impact of mind-body exercises on clinical symptoms, bone mineral density, and physical function in perimenopausal and postmenopausal women. The evidence indicates significant improvements in bone retention, joint mechanics, and neuro-endocrine stress markers through low-impact eccentric load movement.",
     },
   ],
+  "thuc-pham-len-men-va-he-sinh-thai-ti-hon-vi": [
+    {
+      ordinal: 1,
+      label: "Our extended microbiome: The human-relevant metabolites and biology of fermented foods",
+      pmid: "38569469",
+      doi: "10.1016/j.cmet.2024.03.007",
+      design: "Systematic Review",
+      sampleSize: null,
+      journal: "Cell Metab",
+      year: 2024,
+      abstract: "The review identifies that fermented foods harbor diverse microbial metabolites that act as signaling molecules. These compounds modulate host immunity and metabolic homeostasis independent of the live bacterial load.",
+    },
+  ],
+  "fermented-foods-and-our-extended-microbiome-en": [
+    {
+      ordinal: 1,
+      label: "Our extended microbiome: The human-relevant metabolites and biology of fermented foods",
+      pmid: "38569469",
+      doi: "10.1016/j.cmet.2024.03.007",
+      design: "Systematic Review",
+      sampleSize: null,
+      journal: "Cell Metab",
+      year: 2024,
+      abstract: "The review identifies that fermented foods harbor diverse microbial metabolites that act as signaling molecules. These compounds modulate host immunity and metabolic homeostasis independent of the live bacterial load.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

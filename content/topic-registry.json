@@ -1,8 +1,8 @@
 {
   "version": "3.0.0",
-  "fileCount": 246,
-  "lastUpdated": "2026-11-25T01:28:33.303Z",
-  "totalTopics": 223,
+  "fileCount": 248,
+  "lastUpdated": "2026-11-25T03:14:35.458Z",
+  "totalTopics": 225,
   "topics": [
     {
       "id": "canh-bao-suy-giam-xuong-gan-tien-man-kinh",
@@ -57,6 +57,58 @@
       ]
     },
     {
+      "id": "fermented-foods-and-our-extended-microbiome",
+      "slugs": [
+        "fermented-foods-and-our-extended-microbiome-en"
+      ],
+      "lang": "en",
+      "titleVi": "Traditional fermented foods: The extended microbiome of the human body",
+      "titleEn": "Traditional fermented foods: The extended microbiome of the human body",
+      "organ": "Gut",
+      "tier": "Life Dispatch",
+      "doi": "10.1016/j.cmet.2024.03.007",
+      "date": "2026-11-25T05:00:00Z",
+      "tags": [
+        "gut",
+        "immunity",
+        "metabolism",
+        "fermented-foods"
+      ],
+      "leadVi": "",
+      "keywords": [
+        "traditional",
+        "fermented",
+        "foods",
+        "extended",
+        "microbiome",
+        "human",
+        "gut",
+        "immunity",
+        "metabolism",
+        "recent",
+        "research",
+        "cell",
+        "reframes",
+        "mere",
+        "probiotics",
+        "they",
+        "provide",
+        "complex",
+        "matrix",
+        "bioactive",
+        "metabolites",
+        "interact",
+        "directly",
+        "our",
+        "immune",
+        "system",
+        "metabolic",
+        "pathways",
+        "effectively",
+        "turning"
+      ]
+    },
+    {
       "id": "mind-body-exercise-perimenopause-bone-tendon",
       "slugs": [
         "mind-body-exercise-perimenopause-bone-tendon-en"
@@ -106,6 +158,58 @@
         "exercises",
         "delivering",
         "gentle"
+      ]
+    },
+    {
+      "id": "thuc-pham-len-men-va-he-sinh-thai-ti-hon",
+      "slugs": [
+        "thuc-pham-len-men-va-he-sinh-thai-ti-hon-vi"
+      ],
+      "lang": "vi",
+      "titleVi": "Thực phẩm lên men truyền thống: Hệ sinh thái vi sinh vật mở rộng của cơ thể người",
+      "titleEn": "Thực phẩm lên men truyền thống: Hệ sinh thái vi sinh vật mở rộng của cơ thể người",
+      "organ": "Gut",
+      "tier": "Life Dispatch",
+      "doi": "10.1016/j.cmet.2024.03.007",
+      "date": "2026-11-25T05:00:00Z",
+      "tags": [
+        "ruot",
+        "mien-dich",
+        "chuyen-hoa",
+        "thuc-pham-len-men"
+      ],
+      "leadVi": "Trong những thập kỷ trước, các nhà vi sinh vật học từng tin rằng lợi ích của thực phẩm lên men nằm hoàn toàn ở số lượng vi khuẩn còn sống só",
+      "keywords": [
+        "thuc",
+        "pham",
+        "len",
+        "men",
+        "truyen",
+        "thong",
+        "sinh",
+        "thai",
+        "vat",
+        "rong",
+        "ruot",
+        "mien",
+        "dich",
+        "hoa",
+        "nghien",
+        "cuu",
+        "cell",
+        "metabolism",
+        "thay",
+        "doi",
+        "chung",
+        "nhin",
+        "nhan",
+        "chi",
+        "khuan",
+        "song",
+        "cap",
+        "tran",
+        "phuc",
+        "tap"
       ]
     },
     {
