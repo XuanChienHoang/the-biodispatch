@@ -6525,6 +6525,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "This meta-analysis establishes a significant correlation between social jetlag and increased body mass index (BMI). It highlights that even minor shifts in sleep timing disrupt peripheral metabolic oscillators.",
     },
   ],
+  "can-bang-ty-le-kem-dong-vi": [
+    {
+      ordinal: 1,
+      label: "Zinc-induced copper deficiency: a clinical review",
+      pmid: "",
+      doi: "10.1016/j.jtemb.2012.08.006",
+      design: "Systematic Review",
+      sampleSize: null,
+      journal: "Journal of Trace Elements in Medicine and Biology",
+      year: 2013,
+      abstract: "Excessive zinc intake induces metallothionein in enterocytes, which traps copper and prevents its absorption, leading to systemic copper depletion. This condition frequently manifests as hematological abnormalities, particularly anemia and leukopenia.",
+    },
+  ],
+  "zinc-copper-balance-en": [
+    {
+      ordinal: 1,
+      label: "Zinc-induced copper deficiency: a clinical review",
+      pmid: "",
+      doi: "10.1016/j.jtemb.2012.08.006",
+      design: "Systematic Review",
+      sampleSize: null,
+      journal: "Journal of Trace Elements in Medicine and Biology",
+      year: 2013,
+      abstract: "Excessive zinc intake induces metallothionein in enterocytes, which traps copper and prevents its absorption, leading to systemic copper depletion. This condition frequently manifests as hematological abnormalities, particularly anemia and leukopenia.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

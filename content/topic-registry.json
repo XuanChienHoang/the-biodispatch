@@ -1,9 +1,61 @@
 {
   "version": "3.0.0",
-  "fileCount": 254,
-  "lastUpdated": "2026-11-26T01:08:31.521Z",
-  "totalTopics": 231,
+  "fileCount": 256,
+  "lastUpdated": "2026-11-26T02:28:46.143Z",
+  "totalTopics": 233,
   "topics": [
+    {
+      "id": "can-bang-ty-le-kem-dong",
+      "slugs": [
+        "can-bang-ty-le-kem-dong-vi"
+      ],
+      "lang": "vi",
+      "titleVi": "Quy tắc tỷ lệ 15:1: Điểm mấu chốt để bổ sung kẽm không gây kiệt quệ đồng",
+      "titleEn": "Quy tắc tỷ lệ 15:1: Điểm mấu chốt để bổ sung kẽm không gây kiệt quệ đồng",
+      "organ": "Cellular Aging",
+      "tier": "Life Dispatch",
+      "doi": "10.1016/j.jtemb.2012.08.006",
+      "date": "2026-11-26T05:00:00Z",
+      "tags": [
+        "mien-dich",
+        "lao-hoa",
+        "noi-tiet",
+        "nang-luong"
+      ],
+      "leadVi": "Chúng ta thường xem kẽm như một vị cứu tinh cho hệ miễn dịch, đặc biệt là trong những thời điểm giao mùa khi hơi lạnh bắt đầu len lỏi qua từ",
+      "keywords": [
+        "quy",
+        "tac",
+        "diem",
+        "mau",
+        "chot",
+        "sung",
+        "kem",
+        "gay",
+        "kiet",
+        "que",
+        "dong",
+        "mien",
+        "dich",
+        "lao",
+        "hoa",
+        "noi",
+        "tiet",
+        "nang",
+        "luong",
+        "viec",
+        "lieu",
+        "cao",
+        "tang",
+        "cuong",
+        "thuong",
+        "quen",
+        "xich",
+        "sinh",
+        "hoc",
+        "quan"
+      ]
+    },
     {
       "id": "le-chach-nhip-sinh-hoc-va-suy-giam-chuyen-hoa",
       "slugs": [
@@ -105,6 +157,58 @@
         "these",
         "lens",
         "chronobiology"
+      ]
+    },
+    {
+      "id": "zinc-copper-balance",
+      "slugs": [
+        "zinc-copper-balance-en"
+      ],
+      "lang": "en",
+      "titleVi": "The 15:1 Ratio Rule: Protecting copper stores while supplementing zinc",
+      "titleEn": "The 15:1 Ratio Rule: Protecting copper stores while supplementing zinc",
+      "organ": "Cellular Aging",
+      "tier": "Life Dispatch",
+      "doi": "10.1016/j.jtemb.2012.08.006",
+      "date": "2026-11-26T05:00:00Z",
+      "tags": [
+        "immunity",
+        "aging",
+        "endocrine",
+        "energy"
+      ],
+      "leadVi": "",
+      "keywords": [
+        "ratio",
+        "rule",
+        "protecting",
+        "copper",
+        "stores",
+        "while",
+        "supplementing",
+        "zinc",
+        "immunity",
+        "aging",
+        "endocrine",
+        "energy",
+        "self",
+        "prescribing",
+        "high",
+        "dose",
+        "boost",
+        "often",
+        "ignores",
+        "critical",
+        "biological",
+        "link",
+        "imbalance",
+        "these",
+        "two",
+        "metals",
+        "causes",
+        "not",
+        "only",
+        "anemia"
       ]
     },
     {
