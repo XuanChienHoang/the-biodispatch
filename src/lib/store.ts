@@ -6499,6 +6499,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Analysis of over 10,000 citizen science samples showed that individuals consuming more than 30 plant types per week had significantly higher gut microbial diversity compared to those consuming fewer than 10 plant types. This diversity strongly correlated with reduced antibiotic resistance genes and specialized short-chain fatty acid metabolic pathways.",
     },
   ],
+  "le-chach-nhip-sinh-hoc-va-suy-giam-chuyen-hoa-vi": [
+    {
+      ordinal: 1,
+      label: "Social jetlag and obesity: A systematic review and meta-analysis",
+      pmid: "38072635",
+      doi: "10.1111/obr.13664",
+      design: "Systematic Review and Meta-analysis",
+      sampleSize: null,
+      journal: "Obes Rev",
+      year: 2024,
+      abstract: "This meta-analysis establishes a significant correlation between social jetlag and increased body mass index (BMI). It highlights that even minor shifts in sleep timing disrupt peripheral metabolic oscillators.",
+    },
+  ],
+  "social-jetlag-and-metabolic-dysfunction-en": [
+    {
+      ordinal: 1,
+      label: "Social jetlag and obesity: A systematic review and meta-analysis",
+      pmid: "38072635",
+      doi: "10.1111/obr.13664",
+      design: "Systematic Review and Meta-analysis",
+      sampleSize: null,
+      journal: "Obes Rev",
+      year: 2024,
+      abstract: "This meta-analysis establishes a significant correlation between social jetlag and increased body mass index (BMI). It highlights that even minor shifts in sleep timing disrupt peripheral metabolic oscillators.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
