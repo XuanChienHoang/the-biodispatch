@@ -6551,6 +6551,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Excessive zinc intake induces metallothionein in enterocytes, which traps copper and prevents its absorption, leading to systemic copper depletion. This condition frequently manifests as hematological abnormalities, particularly anemia and leukopenia.",
     },
   ],
+  "su-chuyen-doi-te-bao-sung-va-toc-do-lanh-thuong-bieu-bi-vi": [
+    {
+      ordinal: 1,
+      label: "New Methodological Approach to Follow the Re-Epithelialisation Phase in the Wound Healing Process on a 3D Full Thickness Skin Model",
+      pmid: "40619834",
+      doi: "10.1111/exd.70137",
+      design: "Systematic Review",
+      sampleSize: null,
+      journal: "Exp Dermatol",
+      year: 2025,
+      abstract: "Review of the molecular signaling pathways regulating keratinocyte locomotion, focal adhesion dynamics, and re-epithelialization during cutaneous tissue repair.",
+    },
+  ],
+  "keratinocyte-migration-and-epidermal-wound-healing-en": [
+    {
+      ordinal: 1,
+      label: "New Methodological Approach to Follow the Re-Epithelialisation Phase in the Wound Healing Process on a 3D Full Thickness Skin Model",
+      pmid: "40619834",
+      doi: "10.1111/exd.70137",
+      design: "Systematic Review",
+      sampleSize: null,
+      journal: "Exp Dermatol",
+      year: 2025,
+      abstract: "Review of the molecular signaling pathways regulating keratinocyte locomotion, focal adhesion dynamics, and re-epithelialization during cutaneous tissue repair.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
