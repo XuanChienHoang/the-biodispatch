@@ -6577,6 +6577,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Review of the molecular signaling pathways regulating keratinocyte locomotion, focal adhesion dynamics, and re-epithelialization during cutaneous tissue repair.",
     },
   ],
+  "hop-chat-phenolic-dau-liu-va-nhiet-do-dun-nau-vi": [
+    {
+      ordinal: 1,
+      label: "Toxicological profile and neuromodulatory effects of a secoiridoid-rich extra-virgin olive oil extract in a zebrafish model of chemically induced seizures",
+      pmid: "42772005",
+      doi: "10.1016/j.biopha.2026.119950",
+      design: "Experimental Study",
+      sampleSize: null,
+      journal: "Biomed Pharmacother",
+      year: 2026,
+      abstract: "Thermal processing significantly reduces the concentration of polar phenols such as oleocanthal and hydroxytyrosol, altering the antioxidant profile of dietary fats.",
+    },
+  ],
+  "olive-oil-phenolics-and-cooking-temperatures-en": [
+    {
+      ordinal: 1,
+      label: "Toxicological profile and neuromodulatory effects of a secoiridoid-rich extra-virgin olive oil extract in a zebrafish model of chemically induced seizures",
+      pmid: "42772005",
+      doi: "10.1016/j.biopha.2026.119950",
+      design: "Experimental Study",
+      sampleSize: null,
+      journal: "Biomed Pharmacother",
+      year: 2026,
+      abstract: "Thermal processing significantly reduces the concentration of polar phenols such as oleocanthal and hydroxytyrosol, altering the antioxidant profile of dietary fats.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {

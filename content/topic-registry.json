@@ -1,9 +1,61 @@
 {
   "version": "3.0.0",
-  "fileCount": 258,
-  "lastUpdated": "2026-11-26T15:24:30.176Z",
-  "totalTopics": 235,
+  "fileCount": 260,
+  "lastUpdated": "2026-11-26T17:54:50.500Z",
+  "totalTopics": 237,
   "topics": [
+    {
+      "id": "hop-chat-phenolic-dau-liu-va-nhiet-do-dun-nau",
+      "slugs": [
+        "hop-chat-phenolic-dau-liu-va-nhiet-do-dun-nau-vi"
+      ],
+      "lang": "vi",
+      "titleVi": "Thói quen đun nóng dầu ô liu tinh luyện ở nhiệt độ cao vô tình làm thất thoát hợp chất phenolic bảo vệ tế bào",
+      "titleEn": "Thói quen đun nóng dầu ô liu tinh luyện ở nhiệt độ cao vô tình làm thất thoát hợp chất phenolic bảo vệ tế bào",
+      "organ": "Oncology",
+      "tier": "Life Dispatch",
+      "doi": "10.1016/j.biopha.2026.119950",
+      "date": "2026-11-26T17:00:00Z",
+      "tags": [
+        "tim-mach",
+        "lao-hoa",
+        "ung-thu",
+        "dinh-duong"
+      ],
+      "leadVi": "Hơn 68 phần trăm hộ gia đình hiện đại thường xuyên sử dụng dầu ô liu nguyên chất để xào nấu ở nhiệt độ cao mà không hay biết về sự suy giảm ",
+      "keywords": [
+        "thoi",
+        "quen",
+        "dun",
+        "nong",
+        "dau",
+        "liu",
+        "tinh",
+        "luyen",
+        "nhiet",
+        "cao",
+        "thoat",
+        "hop",
+        "chat",
+        "phenolic",
+        "tim",
+        "mach",
+        "lao",
+        "hoa",
+        "ung",
+        "thu",
+        "dinh",
+        "duong",
+        "khoang",
+        "tram",
+        "nhien",
+        "nguyen",
+        "bien",
+        "tiep",
+        "xuc",
+        "chien"
+      ]
+    },
     {
       "id": "keratinocyte-migration-and-epidermal-wound-healing",
       "slugs": [
@@ -55,6 +107,58 @@
         "temporarily",
         "abandon",
         "tight"
+      ]
+    },
+    {
+      "id": "olive-oil-phenolics-and-cooking-temperatures",
+      "slugs": [
+        "olive-oil-phenolics-and-cooking-temperatures-en"
+      ],
+      "lang": "en",
+      "titleVi": "Heating extra virgin olive oil at high temperatures silently degrades cellular protective phenolic compounds",
+      "titleEn": "Heating extra virgin olive oil at high temperatures silently degrades cellular protective phenolic compounds",
+      "organ": "Oncology",
+      "tier": "Life Dispatch",
+      "doi": "10.1016/j.biopha.2026.119950",
+      "date": "2026-11-26T17:00:00Z",
+      "tags": [
+        "heart",
+        "aging",
+        "cancer",
+        "nutrition"
+      ],
+      "leadVi": "",
+      "keywords": [
+        "heating",
+        "extra",
+        "virgin",
+        "olive",
+        "oil",
+        "high",
+        "temperatures",
+        "silently",
+        "degrades",
+        "protective",
+        "phenolic",
+        "compounds",
+        "heart",
+        "aging",
+        "cancer",
+        "nutrition",
+        "roughly",
+        "percent",
+        "natural",
+        "risk",
+        "degradation",
+        "when",
+        "exposed",
+        "cooking",
+        "exceeding",
+        "smoke",
+        "points",
+        "article",
+        "examines",
+        "biochemical"
       ]
     },
     {
