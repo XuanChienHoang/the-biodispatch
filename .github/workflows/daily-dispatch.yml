@@ -3,10 +3,10 @@ name: Automated Dual-Dispatch Publishing Pipeline
 on:
   schedule:
     # GitHub hay trễ/bỏ lịch chạy đúng phút :00 -> dùng phút lẻ + slot dự phòng.
-    # Giới hạn cứng 4 bài/ngày ở bước "Daily quota guard".
-    # Slot chính (CEST): ~07:17, 11:17, 15:17, 19:17 | Dự phòng: ~09:47, 13:47, 17:47, 21:47
-    - cron: '17 5,9,13,17 * * *'
-    - cron: '47 7,11,15,19 * * *'
+    # Giới hạn cứng 3 bài/ngày ở bước "Daily quota guard" để tránh vượt ngưỡng Vercel Hobby.
+    # Slot chính (CEST): ~07:17, 13:17, 19:17 | Dự phòng: ~09:47, 15:47, 21:47
+    - cron: '17 5,11,17 * * *'
+    - cron: '47 7,13,19 * * *'
   workflow_dispatch: # Nút bấm chạy thử thủ công
 
 concurrency:
@@ -32,12 +32,12 @@ jobs:
           node-version: '22'
           cache: 'npm'
 
-      - name: Daily quota guard (max 4/day)
+      - name: Daily quota guard (max 3/day)
         id: quota
         run: |
           N=$(git log origin/main --since="$(date -u +%Y-%m-%d)T00:00:00Z" --grep="content(auto-dispatch)" --oneline | wc -l)
           echo "Auto-dispatch hôm nay: $N"
-          if [ "$N" -ge 4 ] && [ "${{ github.event_name }}" = "schedule" ]; then
+          if [ "$N" -ge 3 ] && [ "${{ github.event_name }}" = "schedule" ]; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
           else
             echo "skip=false" >> "$GITHUB_OUTPUT"

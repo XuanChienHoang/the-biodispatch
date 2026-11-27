@@ -120,6 +120,26 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "lang": "vi",
     "title": "Cà phê sau 2 giờ chiều và phân tử adenosine: Vì sao bạn vẫn chợp mắt được nhưng não bộ không thể bước vào pha ngủ sâu?"
   },
+  "can-bang-ph-da-va-he-vi-sinh-vi": {
+    "slug": "skin-ph-balance-microbiome-en",
+    "lang": "en",
+    "title": "5.5 is the golden pH: The natural acidic threshold keeping your skin armor unbroken"
+  },
+  "skin-ph-balance-microbiome-en": {
+    "slug": "can-bang-ph-da-va-he-vi-sinh-vi",
+    "lang": "vi",
+    "title": "5.5 là độ pH chuẩn: Mức độ axit tự nhiên giữ cho lớp áo giáp da không bị thủng lỗ chỗ"
+  },
+  "can-bang-ty-le-kem-dong-vi": {
+    "slug": "zinc-copper-balance-en",
+    "lang": "en",
+    "title": "The 15:1 Ratio Rule: Protecting copper stores while supplementing zinc"
+  },
+  "zinc-copper-balance-en": {
+    "slug": "can-bang-ty-le-kem-dong-vi",
+    "lang": "vi",
+    "title": "Quy tắc tỷ lệ 15:1: Điểm mấu chốt để bổ sung kẽm không gây kiệt quệ đồng"
+  },
   "cancer-seed-and-soil-metabolism": {
     "slug": "cancer-seed-and-soil-metabolism-en",
     "lang": "en",
@@ -129,6 +149,16 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "slug": "cancer-seed-and-soil-metabolism",
     "lang": "vi",
     "title": "Mật mã Ung thư Phần 2: Hạt giống & Thổ nhưỡng: Vì sao Vi môi trường mô quyết định số phận Khối u?"
+  },
+  "canh-bao-suy-giam-xuong-gan-tien-man-kinh-vi": {
+    "slug": "mind-body-exercise-perimenopause-bone-tendon-en",
+    "lang": "en",
+    "title": "Subtle joint crepitation when stepping down stairs signals accelerating bone and tendon cellular aging during perimenopause"
+  },
+  "mind-body-exercise-perimenopause-bone-tendon-en": {
+    "slug": "canh-bao-suy-giam-xuong-gan-tien-man-kinh-vi",
+    "lang": "vi",
+    "title": "Cảm giác lục khục khớp gối khi bước xuống bậc cầu thang cảnh báo đợt suy giảm mật độ xương và gân quanh tuổi tiền mãn kinh"
   },
   "ceramide-thuc-vat-tu-cam-gao-tai-lap-hang-rao-da-vi": {
     "slug": "oral-rice-phytoceramides-skin-barrier-tewl-en",
@@ -219,6 +249,26 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "slug": "con-duong-kynurenine-viem-nao-vi",
     "lang": "vi",
     "title": "Nghịch lý Kynurenine: Khi chuyển hóa Tryptophan trở thành 'kẻ thù' gây viêm não bộ"
+  },
+  "con-khat-ngam-tuoi-trung-nien-lam-giam-toc-do-loc-cau-than-vi": {
+    "slug": "subclinical-dehydration-diminishes-glomerular-filtration-en",
+    "lang": "en",
+    "title": "Subclinical Dehydration Diminishes Glomerular Filtration and Accelerates Early Brain Volume Loss"
+  },
+  "subclinical-dehydration-diminishes-glomerular-filtration-en": {
+    "slug": "con-khat-ngam-tuoi-trung-nien-lam-giam-toc-do-loc-cau-than-vi",
+    "lang": "vi",
+    "title": "Cơn khát ngầm tuổi trung niên làm suy giảm tốc độ lọc cầu thận và đẩy nhanh đợt teo não sớm"
+  },
+  "con-lac-tien-dinh-va-co-may-geroscience-vi": {
+    "slug": "vestibular-pendulum-and-geroscience-framework-en",
+    "lang": "en",
+    "title": "The Vestibular Pendulum and the Geroscience Framework for Sensory Longevity"
+  },
+  "vestibular-pendulum-and-geroscience-framework-en": {
+    "slug": "con-lac-tien-dinh-va-co-may-geroscience-vi",
+    "lang": "vi",
+    "title": "Con lắc tiền đình và cỗ máy geroscience: Trạm kiểm soát thăng bằng và đà suy giảm giác quan"
   },
   "creatine-tai-tao-nang-luong-nao-bo-vi": {
     "slug": "creatine-brain-energy-regeneration-en",
@@ -339,6 +389,16 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "slug": "duong-va-nep-nhan-da-hien-tuong-dut-gay-soi-collagen-vi",
     "lang": "vi",
     "title": "Đường và nếp nhăn da: Khi các phân tử đường vô tình bẻ gãy hệ thống lò xo collagen trong cơ thể"
+  },
+  "ergothioneine-chia-khoa-ty-the-vi": {
+    "slug": "ergothioneine-mitochondrial-key-en",
+    "lang": "en",
+    "title": "5 milligrams of Ergothioneine daily: The dosage to shield mitochondria from premature aging"
+  },
+  "ergothioneine-mitochondrial-key-en": {
+    "slug": "ergothioneine-chia-khoa-ty-the-vi",
+    "lang": "vi",
+    "title": "5 miligam Ergothioneine mỗi ngày: Liều lượng bảo vệ ty thể khỏi sự lão hóa sớm"
   },
   "ferroptosis-sat-te-bao-nao-vi": {
     "slug": "ferroptosis-brain-cell-death-en",
@@ -470,6 +530,16 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "lang": "vi",
     "title": "Hội chứng rò rỉ ruột và những cơn mệt mỏi vô cớ: Khi hàng rào niêm mạc lỏng lẻo"
   },
+  "hop-chat-phenolic-dau-liu-va-nhiet-do-dun-nau-vi": {
+    "slug": "olive-oil-phenolics-and-cooking-temperatures-en",
+    "lang": "en",
+    "title": "Heating extra virgin olive oil at high temperatures silently degrades cellular protective phenolic compounds"
+  },
+  "olive-oil-phenolics-and-cooking-temperatures-en": {
+    "slug": "hop-chat-phenolic-dau-liu-va-nhiet-do-dun-nau-vi",
+    "lang": "vi",
+    "title": "Thói quen đun nóng dầu ô liu tinh luyện ở nhiệt độ cao vô tình làm thất thoát hợp chất phenolic bảo vệ tế bào"
+  },
   "inositols-ti-le-vang-40-1-buong-trung-pcos-vi": {
     "slug": "inositols-golden-ratio-40-1-ovarian-pcos-en",
     "lang": "en",
@@ -489,6 +559,26 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "slug": "insulin-igf1-cancer-proliferation",
     "lang": "vi",
     "title": "Mật mã Ung thư Phần 3: Trục Insulin & IGF-1: Chiếc công tắc phân tử thúc đẩy tăng sinh tế bào ác tính"
+  },
+  "lam-dung-men-vi-sinh-va-hau-sinh-hoc-postbiotic-vi": {
+    "slug": "commercial-probiotics-versus-native-postbiotics-en",
+    "lang": "en",
+    "title": "Daily commercial probiotic supplements can suppress the native gut microbiome from producing essential postbiotics"
+  },
+  "commercial-probiotics-versus-native-postbiotics-en": {
+    "slug": "lam-dung-men-vi-sinh-va-hau-sinh-hoc-postbiotic-vi",
+    "lang": "vi",
+    "title": "Thói quen lạm dụng men vi sinh đóng chai có thể vô hiệu hóa khả năng tự sản xuất postbiotic của hệ vi sinh ruột"
+  },
+  "le-chach-nhip-sinh-hoc-va-suy-giam-chuyen-hoa-vi": {
+    "slug": "social-jetlag-and-metabolic-dysfunction-en",
+    "lang": "en",
+    "title": "Weekend social jetlag silently promotes adipose tissue accumulation"
+  },
+  "social-jetlag-and-metabolic-dysfunction-en": {
+    "slug": "le-chach-nhip-sinh-hoc-va-suy-giam-chuyen-hoa-vi",
+    "lang": "vi",
+    "title": "Lệch nhịp sinh học cuối tuần âm thầm thúc đẩy tích lũy mỡ thừa"
   },
   "lutein-zeaxanthin-bao-ve-mat-va-da-vi": {
     "slug": "lutein-zeaxanthin-eye-and-skin-protection-en",
@@ -840,6 +930,16 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "lang": "vi",
     "title": "Cú sốc phân tử từ Streptococcus pyogenes: Giải mã cơ chế siêu kháng nguyên kích hoạt bão cytokine trong hội chứng STSS"
   },
+  "su-chuyen-doi-te-bao-sung-va-toc-do-lanh-thuong-bieu-bi-vi": {
+    "slug": "keratinocyte-migration-and-epidermal-wound-healing-en",
+    "lang": "en",
+    "title": "Keratinocyte directional migration dictates dermal wound closure velocity"
+  },
+  "keratinocyte-migration-and-epidermal-wound-healing-en": {
+    "slug": "su-chuyen-doi-te-bao-sung-va-toc-do-lanh-thuong-bieu-bi-vi",
+    "lang": "vi",
+    "title": "Quá trình di cư của tế bào sừng quyết định tốc độ khép miệng vết thương ngoài da"
+  },
   "su-that-tra-thai-doc-gan-phase-1-phase-2-vi": {
     "slug": "the-truth-about-liver-detox-teas-phase-1-and-2-en",
     "lang": "en",
@@ -990,6 +1090,26 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "lang": "vi",
     "title": "Thịt đỏ chế biến sẵn và ung thư đại trực tràng: Cơ chế Nitrosamine, sắt Heme và giải pháp dinh dưỡng an toàn"
   },
+  "thoa-axit-glycolic-hay-bo-sung-polyphenol-thuc-pham-hang-rao-da-vi": {
+    "slug": "topical-glycolic-acid-versus-dietary-polyphenols-skin-barrier-en",
+    "lang": "en",
+    "title": "High-Concentration Topical Glycolic Acid versus Dietary Polyphenols: Epidermal Exfoliation versus pH 5.5 Skin Acid Mantle Restoration"
+  },
+  "topical-glycolic-acid-versus-dietary-polyphenols-skin-barrier-en": {
+    "slug": "thoa-axit-glycolic-hay-bo-sung-polyphenol-thuc-pham-hang-rao-da-vi",
+    "lang": "vi",
+    "title": "Thoa Axit Glycolic nồng độ cao hay bổ sung Polyphenol qua thực phẩm: Cuộc đối đầu giữa bong tróc biểu bì và phục hồi hàng rào màng axit pH 5.5"
+  },
+  "thoi-quen-an-lap-lai-rau-xanh-lam-ngheo-he-vi-sinh-ruot-vi": {
+    "slug": "repeating-healthy-greens-erodes-gut-microbiome-diversity-en",
+    "lang": "en",
+    "title": "Repeating a Few Healthy Greens Daily Quietly Erodes Gut Microbiome Diversity"
+  },
+  "repeating-healthy-greens-erodes-gut-microbiome-diversity-en": {
+    "slug": "thoi-quen-an-lap-lai-rau-xanh-lam-ngheo-he-vi-sinh-ruot-vi",
+    "lang": "vi",
+    "title": "Thói quen ăn lặp lại vài loại rau xanh lành mạnh vô tình kiệt quệ độ đa dạng hệ vi sinh đường ruột"
+  },
   "thuc-pham-chong-ung-thu-va-che-bien-dung-cach-vi": {
     "slug": "anticancer-foods-and-proper-culinary-preparation-en",
     "lang": "en",
@@ -999,6 +1119,16 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "slug": "thuc-pham-chong-ung-thu-va-che-bien-dung-cach-vi",
     "lang": "vi",
     "title": "Căn bếp chống ung thư: Nghệ thuật kết hợp thực phẩm và nhiệt độ để kích hoạt hoạt chất sinh học"
+  },
+  "thuc-pham-len-men-va-he-sinh-thai-ti-hon-vi": {
+    "slug": "fermented-foods-and-our-extended-microbiome-en",
+    "lang": "en",
+    "title": "Traditional fermented foods: The extended microbiome of the human body"
+  },
+  "fermented-foods-and-our-extended-microbiome-en": {
+    "slug": "thuc-pham-len-men-va-he-sinh-thai-ti-hon-vi",
+    "lang": "vi",
+    "title": "Thực phẩm lên men truyền thống: Hệ sinh thái vi sinh vật mở rộng của cơ thể người"
   },
   "thuc-pham-moc-aflatoxin-va-la-chan-phong-ngua-ung-thu-gan-vi": {
     "slug": "moldy-food-aflatoxin-and-liver-cancer-prevention-shield-en",
@@ -1079,6 +1209,16 @@ export const TWIN_CATALOG: Record<string, TwinInfo> = {
     "slug": "tuyen-giap-va-bo-doi-vi-chat-selen-iod-vi-sao-so-lanh-u-e-oai-vi",
     "lang": "vi",
     "title": "Tuyến giáp và bộ đôi vi chất Selen cùng I-ốt: Vì sao uống đủ nước, ngủ đủ giấc vẫn thấy uể oải sợ lạnh?"
+  },
+  "ty-le-1-1-giua-glycine-va-nac-phuc-hoi-glutathione-ty-the-vi": {
+    "slug": "one-to-one-glycine-nac-ratio-mitochondrial-glutathione-en",
+    "lang": "en",
+    "title": "The 1:1 Glycine and NAC Ratio: Restoring Endogenous Glutathione and Mitochondrial Resilience Beyond Age 45"
+  },
+  "one-to-one-glycine-nac-ratio-mitochondrial-glutathione-en": {
+    "slug": "ty-le-1-1-giua-glycine-va-nac-phuc-hoi-glutathione-ty-the-vi",
+    "lang": "vi",
+    "title": "Tỷ lệ 1:1 giữa Glycine và NAC: Đòn bẩy khôi phục Glutathione nội sinh và sức bền ty thể sau tuổi 45"
   },
   "ty-le-kali-natri-xua-tan-noi-lo-muoi-vi": {
     "slug": "potassium-sodium-ratio-blood-pressure-en",

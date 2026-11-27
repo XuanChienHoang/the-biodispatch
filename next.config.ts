@@ -27,6 +27,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/posts/:slug",
+        destination: "/blog/:slug",
+        permanent: true,
+      },
+      {
         source: "/blog/thoi-quen-nhai-ky-no-lau-vi-sinh-duong-ruot-en",
         destination: "/blog/chewing-slowly-satiety-gut-hormones",
         permanent: true,

@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { getArticles } from "@/lib/store";
 import { GIZMOS } from "@/lib/content";
 
+export const dynamic = "force-static";
+
 const BASE_URL = "https://www.phyto-codex.org";
 
 export async function GET() {

@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { getMarkdownPosts } from "@/lib/store";
 
+export const dynamic = "force-static";
+
 const BASE_URL = "https://www.phyto-codex.org";
 
 function escapeXml(unsafe: string): string {
