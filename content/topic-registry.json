@@ -1,9 +1,61 @@
 {
   "version": "3.0.0",
-  "fileCount": 262,
-  "lastUpdated": "2026-11-27T01:04:27.957Z",
-  "totalTopics": 239,
+  "fileCount": 264,
+  "lastUpdated": "2026-11-27T02:38:07.172Z",
+  "totalTopics": 241,
   "topics": [
+    {
+      "id": "con-khat-ngam-tuoi-trung-nien-lam-giam-toc-do-loc-cau-than",
+      "slugs": [
+        "con-khat-ngam-tuoi-trung-nien-lam-giam-toc-do-loc-cau-than-vi"
+      ],
+      "lang": "vi",
+      "titleVi": "Cơn khát ngầm tuổi trung niên làm suy giảm tốc độ lọc cầu thận và đẩy nhanh đợt teo não sớm",
+      "titleEn": "Cơn khát ngầm tuổi trung niên làm suy giảm tốc độ lọc cầu thận và đẩy nhanh đợt teo não sớm",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1016/j.clnu.2024.04.039",
+      "date": "2026-11-27T05:00:00Z",
+      "tags": [
+        "thiet-lap-nuoc",
+        "than-cau-loc",
+        "lao-hoa-nao",
+        "chuyen-hoa"
+      ],
+      "leadVi": "Cảm giác khô khốc thoáng qua ở vòm họng cùng vết nếp gấp trên da lưng bàn tay chậm nhả lại hình dáng ban đầu khi véo nhẹ là những tín hiệu s",
+      "keywords": [
+        "con",
+        "khat",
+        "ngam",
+        "tuoi",
+        "trung",
+        "nien",
+        "suy",
+        "giam",
+        "toc",
+        "loc",
+        "than",
+        "day",
+        "nhanh",
+        "dot",
+        "teo",
+        "som",
+        "thiet",
+        "lap",
+        "nuoc",
+        "lao",
+        "hoa",
+        "buoc",
+        "qua",
+        "thu",
+        "cam",
+        "nhan",
+        "suat",
+        "tham",
+        "thau",
+        "vung"
+      ]
+    },
     {
       "id": "one-to-one-glycine-nac-ratio-mitochondrial-glutathione",
       "slugs": [
@@ -54,6 +106,58 @@
         "supplements",
         "often",
         "suffer"
+      ]
+    },
+    {
+      "id": "subclinical-dehydration-diminishes-glomerular-filtration",
+      "slugs": [
+        "subclinical-dehydration-diminishes-glomerular-filtration-en"
+      ],
+      "lang": "en",
+      "titleVi": "Subclinical Dehydration Diminishes Glomerular Filtration and Accelerates Early Brain Volume Loss",
+      "titleEn": "Subclinical Dehydration Diminishes Glomerular Filtration and Accelerates Early Brain Volume Loss",
+      "organ": "Metabolic",
+      "tier": "Life Dispatch",
+      "doi": "10.1016/j.clnu.2024.04.039",
+      "date": "2026-11-27T05:00:00Z",
+      "tags": [
+        "dehydration",
+        "kidney-health",
+        "brain-aging",
+        "metabolism"
+      ],
+      "leadVi": "",
+      "keywords": [
+        "subclinical",
+        "dehydration",
+        "diminishes",
+        "glomerular",
+        "filtration",
+        "accelerates",
+        "early",
+        "brain",
+        "volume",
+        "loss",
+        "kidney",
+        "aging",
+        "metabolism",
+        "age",
+        "osmoreceptors",
+        "hypothalamus",
+        "experience",
+        "progressive",
+        "decline",
+        "sensitivity",
+        "suppressing",
+        "natural",
+        "thirst",
+        "response",
+        "chronic",
+        "elevates",
+        "circulating",
+        "arginine",
+        "vasopressin",
+        "causing"
       ]
     },
     {

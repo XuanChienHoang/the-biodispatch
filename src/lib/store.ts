@@ -6629,6 +6629,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "In a double-blind randomized clinical trial of older adults, 16 weeks of GlyNAC supplementation corrected intracellular glutathione deficiency and reversed mitochondrial fuel oxidation defects. The intervention significantly lowered systemic oxidative stress markers, reduced pro-inflammatory cytokines, and enhanced physical performance including gait speed.",
     },
   ],
+  "con-khat-ngam-tuoi-trung-nien-lam-giam-toc-do-loc-cau-than-vi": [
+    {
+      ordinal: 1,
+      label: "ESPEN guideline on nutrition and hydration in dementia - Update 2024",
+      pmid: "38772068",
+      doi: "10.1016/j.clnu.2024.04.039",
+      design: "Systematic Review / Clinical Guideline",
+      sampleSize: null,
+      journal: "Clin Nutr",
+      year: 2024,
+      abstract: "The updated ESPEN guidelines provide evidence-based recommendations on fluid intake, nutritional support, and hydration assessment for aging individuals with cognitive impairment. The expert panel underscores that low-intake dehydration is a frequent, underdiagnosed trigger for acute metabolic decompensation, renal function decline, and accelerated cognitive impairment.",
+    },
+  ],
+  "subclinical-dehydration-diminishes-glomerular-filtration-en": [
+    {
+      ordinal: 1,
+      label: "ESPEN guideline on nutrition and hydration in dementia - Update 2024",
+      pmid: "38772068",
+      doi: "10.1016/j.clnu.2024.04.039",
+      design: "Systematic Review / Clinical Guideline",
+      sampleSize: null,
+      journal: "Clin Nutr",
+      year: 2024,
+      abstract: "The updated ESPEN guidelines provide evidence-based recommendations on fluid intake, nutritional support, and hydration assessment for aging individuals with cognitive impairment. The expert panel underscores that low-intake dehydration is a frequent, underdiagnosed trigger for acute metabolic decompensation, renal function decline, and accelerated cognitive impairment.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
