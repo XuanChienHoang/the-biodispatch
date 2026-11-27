@@ -6603,6 +6603,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Thermal processing significantly reduces the concentration of polar phenols such as oleocanthal and hydroxytyrosol, altering the antioxidant profile of dietary fats.",
     },
   ],
+  "ty-le-1-1-giua-glycine-va-nac-phuc-hoi-glutathione-ty-the-vi": [
+    {
+      ordinal: 1,
+      label: "Supplementing Glycine and N-Acetylcysteine (GlyNAC) in Older Adults Improves Glutathione Deficiency, Oxidative Stress, Mitochondrial Dysfunction, Inflammation, Physical Function, and Aging Hallmarks: A Randomized Clinical Trial",
+      pmid: "35975308",
+      doi: "10.1093/gerona/glac135",
+      design: "RCT",
+      sampleSize: null,
+      journal: "J Gerontol A Biol Sci Med Sci",
+      year: 2023,
+      abstract: "In a double-blind randomized clinical trial of older adults, 16 weeks of GlyNAC supplementation corrected intracellular glutathione deficiency and reversed mitochondrial fuel oxidation defects. The intervention significantly lowered systemic oxidative stress markers, reduced pro-inflammatory cytokines, and enhanced physical performance including gait speed.",
+    },
+  ],
+  "one-to-one-glycine-nac-ratio-mitochondrial-glutathione-en": [
+    {
+      ordinal: 1,
+      label: "Supplementing Glycine and N-Acetylcysteine (GlyNAC) in Older Adults Improves Glutathione Deficiency, Oxidative Stress, Mitochondrial Dysfunction, Inflammation, Physical Function, and Aging Hallmarks: A Randomized Clinical Trial",
+      pmid: "35975308",
+      doi: "10.1093/gerona/glac135",
+      design: "RCT",
+      sampleSize: null,
+      journal: "J Gerontol A Biol Sci Med Sci",
+      year: 2023,
+      abstract: "In a double-blind randomized clinical trial of older adults, 16 weeks of GlyNAC supplementation corrected intracellular glutathione deficiency and reversed mitochondrial fuel oxidation defects. The intervention significantly lowered systemic oxidative stress markers, reduced pro-inflammatory cytokines, and enhanced physical performance including gait speed.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
