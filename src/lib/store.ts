@@ -6655,6 +6655,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "The updated ESPEN guidelines provide evidence-based recommendations on fluid intake, nutritional support, and hydration assessment for aging individuals with cognitive impairment. The expert panel underscores that low-intake dehydration is a frequent, underdiagnosed trigger for acute metabolic decompensation, renal function decline, and accelerated cognitive impairment.",
     },
   ],
+  "khoang-cach-nhin-gan-va-thoi-gian-ngoai-troi-vi": [
+    {
+      ordinal: 1,
+      label: "The influence of the environment and lifestyle on myopia",
+      pmid: "38297353",
+      doi: "10.1186/s40101-024-00354-7",
+      design: "Systematic Review",
+      sampleSize: null,
+      journal: "J Physiol Anthropol",
+      year: 2024,
+      abstract: "Lifestyle factors including near-work duration and outdoor time significantly influence refractive error development. Environmental interventions remain the most effective non-invasive strategies for myopia management.",
+    },
+  ],
+  "near-work-distance-and-outdoor-exposure-en": [
+    {
+      ordinal: 1,
+      label: "The influence of the environment and lifestyle on myopia",
+      pmid: "38297353",
+      doi: "10.1186/s40101-024-00354-7",
+      design: "Systematic Review",
+      sampleSize: null,
+      journal: "J Physiol Anthropol",
+      year: 2024,
+      abstract: "Lifestyle factors including near-work duration and outdoor time significantly influence refractive error development. Environmental interventions remain the most effective non-invasive strategies for myopia management.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
