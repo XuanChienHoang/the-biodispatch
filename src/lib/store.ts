@@ -6681,6 +6681,32 @@ const SEED_REFS: Record<string, Ref[]> = {
       abstract: "Lifestyle factors including near-work duration and outdoor time significantly influence refractive error development. Environmental interventions remain the most effective non-invasive strategies for myopia management.",
     },
   ],
+  "vitamin-c-va-co-may-ket-noi-collagen-vi": [
+    {
+      ordinal: 1,
+      label: "Unwinding the potentials of vitamin C in COVID-19 and other diseases: An updated review",
+      pmid: "36445072",
+      doi: "10.1177/02601060221139628",
+      design: "Review",
+      sampleSize: null,
+      journal: "Nutr Health",
+      year: 2023,
+      abstract: "Vitamin C is essential for collagen synthesis and stability by acting as a cofactor for prolyl and lysyl hydroxylase. Deficiency impairs wound healing by reducing collagen cross-linking and fibroblast migration.",
+    },
+  ],
+  "vitamin-c-and-the-collagen-knitting-machine-en": [
+    {
+      ordinal: 1,
+      label: "Unwinding the potentials of vitamin C in COVID-19 and other diseases: An updated review",
+      pmid: "36445072",
+      doi: "10.1177/02601060221139628",
+      design: "Review",
+      sampleSize: null,
+      journal: "Nutr Health",
+      year: 2023,
+      abstract: "Vitamin C is essential for collagen synthesis and stability by acting as a cofactor for prolyl and lysyl hydroxylase. Deficiency impairs wound healing by reducing collagen cross-linking and fibroblast migration.",
+    },
+  ],
 };
 
 export interface MarkdownArticleData extends Article {
